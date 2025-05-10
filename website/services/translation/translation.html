@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn Polyglot - Professional Translation Services</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* --- Base Hero --- */
+        .translation-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 70%), url('../../images/pathway_epic_journey_bg.png'); /* Optional texture if image exists and fits */
+            background-blend-mode: overlay;
+            background-size: cover;
+            color: var(--light-text);
+            padding: 100px 0 80px; /* Increased padding */
+            text-align: center;
+            position: relative;
+        }
+        .translation-hero::before { /* Darken overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .translation-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .translation-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
+            margin-bottom: 0.75rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .translation-hero p.subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        .translation-hero .btn-hero-cta {
+            padding: 0.9rem 2.2rem;
+            font-size: 1.05rem;
+            background-color: var(--accent-yellow);
+            color: var(--dark-text);
+            border-color: var(--accent-yellow);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .translation-hero .btn-hero-cta:hover {
+            background-color: #e6c300;
+            transform: translateY(-3px);
+        }
+
+        /* --- Why Choose Section --- */
+        .why-choose-section { background-color: var(--light-bg); }
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .why-choose-card {
+            background-color: #fff;
+            padding: 1.8rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            border-top: 4px solid var(--primary-red);
+        }
+        .why-choose-card .fas {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+        .why-choose-card h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+        .why-choose-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- Language & Scope Section --- */
+        .language-scope-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to 1 column */
+            gap: 2.5rem;
+        }
+        @media (min-width: 992px) {
+            .language-scope-grid {
+                grid-template-columns: 1.2fr 1fr; /* Languages wider */
+            }
+        }
+        .languages-offered-card, .scope-of-work-card {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+        .languages-offered-card h3, .scope-of-work-card h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .languages-offered-card .target-languages-box {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-red);
+        }
+        .languages-offered-card .target-languages-box strong { display: block; margin-bottom: 0.5rem; font-size: 1.05rem;}
+        .languages-offered-card .target-languages-box span {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--primary-red);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+        }
+        .source-languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 0.8rem;
+        }
+        .language-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .language-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+        .language-item img {
+            width: 20px;
+            height: auto;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        .scope-of-work-card ul {
+            list-style: none; padding-left: 0;
+        }
+        .scope-of-work-card li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .scope-of-work-card li .fas {
+            color: var(--primary-blue);
+            margin-right: 10px;
+            margin-top: 4px; /* Align with text */
+            width: 20px;
+        }
+        .exclusions-box {
+            background-color: #fff3cd; /* Light yellow for warning */
+            border-left: 5px solid #ffeeba;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .exclusions-box strong { color: #856404; }
+        .exclusions-box .fas { color: #856404; margin-right: 8px; }
+
+        /* --- Case Study Section --- */
+        .case-study-section { background-color: #fff; } /* White to stand out */
+        .case-study-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        @media (min-width: 992px) {
+            .case-study-content {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        .case-study-details { flex: 3; }
+        .case-study-image-testimonial { flex: 2; }
+        
+        .case-study-details h4 {
+            color: var(--primary-red);
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .case-study-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .meta-item strong { display: block; color: var(--dark-text); margin-bottom: 0.2rem; }
+        .meta-item span { color: #555; }
+
+        .case-study-image-testimonial .sample-image-container img {
+            width: 100%;
+            max-width: 350px; /* Limit size */
+            display: block;
+            margin: 0 auto 1rem auto; /* Center it */
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+        }
+        .case-study-image-testimonial .image-caption {
+            font-size:0.85em; color: #555; text-align: center; margin-bottom: 1.5rem;
+        }
+        .testimonial-bubble-styled {
+            background-color: #e7f3ff; /* Light blue, more subtle */
+            color: var(--dark-text);
+            padding: 1rem 1.2rem;
+            border-radius: 15px;
+            border-top-left-radius: 4px;
+            font-style: italic;
+            font-size: 0.95em;
+            line-height: 1.6;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #cce0f5;
+        }
+        .testimonial-bubble-styled::before {
+            content: "\f10d"; /* FontAwesome quote-left */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            font-size: 1.5em;
+            color: var(--primary-blue);
+            opacity: 0.2;
+        }
+         .testimonial-bubble-styled p { margin-left: 30px; } /* Indent text from quote */
+
+
+        /* --- How It Works Section --- */
+        .how-it-works-section { background-color: var(--light-bg); }
+        .process-steps-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            position: relative; /* For connecting lines if desired */
+        }
+        @media (min-width: 768px) {
+            .process-steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .process-steps-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .process-step-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 4px solid var(--accent-yellow);
+        }
+        .process-step-card .step-number {
+            background-color: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+        .process-step-card h4 {
+            font-family: var(--font-primary);
+            color: var(--dark-text);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .process-step-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        .pricing-info-box {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .pricing-info-box h4 { color: var(--primary-red); margin-bottom: 1rem; font-size: 1.3rem; }
+        .pricing-info-box p, .pricing-info-box ul { font-size: 0.95rem; }
+        .pricing-info-box ul { list-style: disc; padding-left: 20px; }
+
+        /* --- Order Form Section --- */
+        .order-form-section .section-subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .google-form-embed {
+            border: 2px solid var(--primary-blue); /* Emphasize form */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li class="dropdown">
+                    <a href="../../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size:0.8em;margin-left:4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../../languages/tagalog.html">Tagalog</a>
+                        <a href="../../languages/cebuano.html">Cebuano</a>
+                        <a href="../../languages/english.html">English</a>
+                        <a href="../../languages/spanish.html">Spanish</a>
+                        <a href="../../languages/french.html">French</a>
+                        <a href="../../languages/indonesian.html">Indonesian</a>
+                        <a href="../../languages/italian.html">Italian</a>
+                        <a href="../../languages/portuguese.html">Portuguese</a>
+                        <a href="../../languages/russian.html">Russian</a>
+                        <a href="../../languages/swedish.html">Swedish</a>
+                        <a href="../../languages/german.html">German</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size:0.8em;margin-left:4px;"></i></a>
+                     <div class="dropdown-content">
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+                    </div>
+                </li>
+                 <li class="dropdown"> <!-- Added this one - check if it should be there or just index -->
+                    <a href="../../index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../../blog.html">Polyglot Papers Blog</a>
+                        <a href="../../pathway.html">Pathway</a>
+                        <a href="../../resources/apps.html">Essential Apps & Tools</a>
+                        <a href="../../resources/routine.html">Daily Routine</a> 
+                        <a href="../../index.html#cultural-institutes">Language & Culture Centers</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn active-parent">Services <i class="fas fa-caret-down" style="font-size:0.8em;margin-left:4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../coaching/coaching.html">Language Coaching</a>
+                        <a href="translation.html" class="active-link">Translation Services</a> 
+                    </div>
+                </li>
+                <li><a href="../../shop/shop.html">Shop</a></li>
+                <li><a href="../../FAQ.html">FAQ</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="translation-hero">
+            <div class="container">
+                <h1>Your Words, Accurately Conveyed, Culturally Resonant.</h1>
+                <p class="subtitle">Need to bridge communication gaps? I provide dedicated translation services, ensuring your message is understood with clarity and cultural sensitivity across the languages I command.</p>
+                <a href="#order-form" class="btn btn-hero-cta">Request Your Translation Quote <i class="fas fa-angle-double-right"></i></a>
+            </div>
+        </section>
+
+        <section class="content-section why-choose-section">
+            <div class="container">
+                <h2 class="section-title">Why Entrust Me With Your Translations?</h2>
+                <p class="section-subtitle">Beyond words, I focus on meaning and connection.</p>
+                <div class="why-choose-grid">
+                    <div class="why-choose-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Deep Immersion Advantage</h3>
+                        <p>My extensive, self-driven immersion in each language provides a practical, nuanced understanding that goes beyond textbook knowledge.</p>
+                    </div>
+                    <div class="why-choose-card">
+                        <i class="fas fa-crosshairs"></i>
+                        <h3>Meticulous Attention</h3>
+                        <p>I treat every project, big or small, with intense dedication and a keen eye for detail, ensuring accuracy and faithfulness to the source.</p>
+                    </div>
+                    <div class="why-choose-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Cultural Sensitivity</h3>
+                        <p>Understanding cultural context is key. I strive to deliver translations that are not just linguistically correct but also culturally appropriate.</p>
+                    </div>
+                </div>
+                 <div class="disclaimer-box" style="margin-top: 2.5rem; text-align: center;">
+                    <p><strong>My Commitment to Quality:</strong> As a self-taught polyglot, I don't hold formal translation certifications. However, I approach every translation with full responsibility, dedication, and a deep respect for linguistic nuances. You can count on my best effort for the work I undertake.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">What I Translate For You</h2>
+                <div class="language-scope-grid">
+                    <div class="languages-offered-card">
+                        <h3><i class="fas fa-language" style="color: var(--primary-red); margin-right:10px;"></i>Language Capabilities</h3>
+                        <div class="target-languages-box">
+                            <strong>I primarily translate INTO:</strong>
+                            <span><i class="fas fa-check-circle" style="margin-right: 5px;"></i>English</span>
+                            <span><i class="fas fa-check-circle" style="margin-right: 5px;"></i>Tagalog</span>
+                        </div>
+                        <p style="margin-bottom: 0.5rem;"><strong>FROM any of these source languages:</strong></p>
+                        <div class="source-languages-grid">
+                          <span class="language-item"><img src="https://flagcdn.com/w40/es.png" alt="Spanish Flag"> Spanish</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/fr.png" alt="French Flag"> French</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/id.png" alt="Indonesian Flag"> Indonesian</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/it.png" alt="Italian Flag"> Italian</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag"> Portuguese</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/ru.png" alt="Russian Flag"> Russian</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/se.png" alt="Swedish Flag"> Swedish</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/de.png" alt="German Flag"> German</span>
+                          <span class="language-item"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag"> Cebuano</span>
+                        </div>
+                        <p style="margin-top: 1em; font-size: 0.9rem; font-style: italic;">Other language pair combinations among these may be possible. Please inquire!</p>
+                    </div>
+                    <div class="scope-of-work-card">
+                        <h3><i class="fas fa-file-alt" style="color: var(--primary-red); margin-right:10px;"></i>Types of Content</h3>
+                         <ul>
+                            <li><i class="fas fa-microphone-alt"></i> Audio/Video (Podcasts, Interviews, YouTube videos - Transcription & Translation)</li>
+                            <li><i class="fas fa-newspaper"></i> General Texts & Articles</li>
+                            <li><i class="fas fa-lightbulb"></i> Creative Content (Social media, non-technical scripts)</li>
+                            <li><i class="fas fa-envelope"></i> Personal Correspondence</li>
+                        </ul>
+                        <div class="exclusions-box">
+                            <p><i class="fas fa-exclamation-triangle"></i><strong>Important Exclusions:</strong> I do <strong>NOT</strong> translate official/legal documents (e.g., birth certificates, contracts, academic transcripts, medical records) or any material requiring certified translation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section case-study-section">
+            <div class="container">
+                <h2 class="section-title">See the Quality: A Case Study</h2>
+                <p class="section-subtitle">An example of a complex audio translation and client satisfaction.</p>
+                <div class="case-study-content">
+                    <div class="case-study-details">
+                        <h4>Bridging Cultures: Portuguese Podcast to Tagalog</h4>
+                        <div class="case-study-meta">
+                            <div class="meta-item"><strong>Client Need:</strong><span>Sensitive Podcast Translation</span></div>
+                            <div class="meta-item"><strong>Source:</strong><span>~3hr Portuguese Audio</span></div>
+                            <div class="meta-item"><strong>Target:</strong><span>Tagalog Transcription & Translation</span></div>
+                            <div class="meta-item"><strong>Challenge:</strong><span>Nuance, Tone, Cultural Sensitivity</span></div>
+                        </div>
+                        <p><strong>The Project:</strong> A client required a ~3-hour Portuguese podcast episode ("Por que saí do MIDI" - Ep. 324), featuring testimonies from ex-members of MCGI in Brazil, to be accurately transcribed and translated into Tagalog. The content's sensitivity demanded utmost care.</p>
+                        <p><strong>My Solution:</strong> I undertook meticulous listening to capture the precise meaning and emotional tone. This was followed by an accurate transcription and a culturally-aware Tagalog translation. The entire process, including thorough proofreading, spanned approximately 8 dedicated hours, resulting in a translation that resonated with the client's audience.</p>
+                        <a href="https://drive.google.com/file/d/1_vRZgGQBKknwASsLPCGfQh3FMEQKZEof/view?usp=sharing" target="_blank" class="btn btn-outline" style="margin-top: 1rem;"><i class="fas fa-file-pdf"></i> View Translation Sample (PDF)</a>
+                    </div>
+                    <div class="case-study-image-testimonial">
+                        <div class="sample-image-container">
+                            <img src="../../images/translation_commission_fb_post.png" alt="Facebook post about the translation commission"> 
+                        </div>
+                        <p class="image-caption"><em>My Facebook update on this commission (client identity and sensitive details are kept confidential).</em></p>
+                        <div class="testimonial-bubble-styled">
+                           <p>"Salamat po ng marami... It's OK po, willing to wait naman po... naeenjoy ko naman ang pagtranslate kase ang ganda ng usapan..."</p>
+                           <p style="text-align: right; font-size: 0.9em; margin-top: 0.5rem; opacity: 0.8;"><em>– Satisfied Client (via Messenger)</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section how-it-works-section">
+            <div class="container">
+                <h2 class="section-title">Your Translation Journey: Simple & Transparent</h2>
+                <p class="section-subtitle">Here’s how we’ll work together to bring your content to a new audience.</p>
+                <div class="process-steps-container">
+                    <div class="process-step-card">
+                        <div class="step-number">1</div>
+                        <h4>Submit Your Request</h4>
+                        <p>Fill out the Google Form below with your project details and upload your files. Be as specific as possible!</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">2</div>
+                        <h4>Quote & Confirmation</h4>
+                        <p>I'll review your submission and email you within 1-2 working days with a quote, timeline, and payment details.</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">3</div>
+                        <h4>Work Commences</h4>
+                        <p>Upon your 50% downpayment, I’ll begin the translation, keeping you updated on the progress.</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">4</div>
+                        <h4>Delivery & Finalization</h4>
+                        <p>After the final 50% payment, you'll receive your meticulously translated files, ready to use.</p>
+                    </div>
+                </div>
+                <div class="pricing-info-box">
+                    <h4><i class="fas fa-tags" style="margin-right: 8px;"></i>Pricing & Payment</h4>
+                    <p><strong>Text-to-Text:</strong> Baseline rate is ₱100 per page (A4, Arial 11, double-spaced).</p>
+                    <p><strong>Audio/Video Projects:</strong> Quoted individually based on audio length, complexity, and output needs (e.g., transcript, subtitles). The ~3-hour podcast mentioned was a custom project-based fee.</p>
+                    <p><strong>Payment Terms:</strong></p>
+                    <ul>
+                        <li>A <strong>50% downpayment</strong> (via GCash) is required to start.</li>
+                        <li>The remaining 50% is due upon completion, before final file delivery.</li>
+                        <li>Proof of downpayment may be requested via email to confirm.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="order-form" class="order-form-section content-section" style="padding-top: 2rem;">
+            <div class="container">
+                <h2 class="section-title">Ready to Start? Submit Your Project Details</h2>
+                <p class="section-subtitle">Use the secure Google Form below. I'm excited to help you connect with a wider audience!</p>
+                
+                <div class="google-form-embed">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd1CBhKyNQdP7qDVTyk7LND_dEr8cnLEXnuviXu5dTUJXxvig/viewform?embedded=true" width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+         <div class="container">
+             <div class="footer-content">
+                  <div class="footer-logo">
+                      <img src="../../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                      <span>Aljohn Polyglot</span>
+                  </div>
+                 <nav class="footer-links">
+                     <a href="../../index.html#about">About</a>
+                     <a href="../../pathway.html">Pathway</a>
+                     <a href="../../blog.html">Blog</a>
+                     <a href="../../resources/apps.html">Resources</a>
+                     <a href="../../contact.html">Contact</a>
+                 </nav>
+                 <div class="social-links">
+                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
+                     <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 </div>
+             </div>
+             <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+         </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

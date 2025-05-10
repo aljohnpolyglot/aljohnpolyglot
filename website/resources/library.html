@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn's Library - Books That Shaped My Journey - Aljohn Polyglot</title>
+    <!-- Assuming library.html is in resources/ folder, so paths are ../ -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .library-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-blue) 100%);
+            color: var(--light-text);
+            text-align: center;
+        }
+        .library-hero h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .library-hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 1.5rem auto;
+            opacity: 0.9;
+        }
+
+        .book-category {
+            padding: 40px 0;
+        }
+        .book-category:nth-child(odd) { /* Alternate background for categories */
+            background-color: var(--light-bg);
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .book-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        .book-cover-container {
+            width: 100%;
+            padding-top: 130%; /* Aspect ratio for book cover (e.g., 10:13). Adjust as needed. */
+            position: relative;
+            background-color: #e0e0e0; /* Placeholder background */
+            overflow: hidden;
+        }
+        .book-cover-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* or 'contain' if you prefer */
+        }
+        .book-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .book-info h3 { /* Book Title */
+            font-family: var(--font-primary);
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin: 0 0 0.3rem 0;
+            line-height: 1.3;
+        }
+        .book-info .author {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        .book-info .aljohns-note {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 1rem;
+            flex-grow: 1;
+        }
+        .book-links {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+            text-align: right;
+        }
+        .book-links .btn {
+            margin-left: 0.5rem;
+            margin-top: 0.5rem; /* Ensure spacing on wrap */
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+        }
+        .library-disclaimer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .library-disclaimer p { margin-bottom: 0.5rem;}
+        .library-disclaimer strong { color: #555;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo-link">
+                <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li class="dropdown">
+                    <a href="../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../languages/tagalog.html">Tagalog</a>
+                        <a href="../languages/cebuano.html">Cebuano</a>
+                        <!-- Add other languages -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                     <div class="dropdown-content">
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                        <!-- Add other playlists -->
+                    </div>
+                </li>
+                <li><a href="../pathway.html">Pathway</a></li>
+                <li class="dropdown">
+                    <a href="../index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../blog.html">Polyglot Papers Blog</a>
+                        <a href="../resources/apps.html">Essential Apps & Tools</a>
+                        <a href="../resources/routine.html">Daily Routine</a> 
+                        <a href="../resources/library.html" class="active-link">My Library</a>
+                    </div>
+                </li>
+                 <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../services/coaching/coaching.html">Language Coaching</a>
+                        <a href="../services/translation/translation.html">Translation</a> 
+                    </div>
+                </li>
+                <li><a href="../shop/shop.html">Shop</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="library-hero" class="library-hero">
+            <div class="container">
+                <h1>Aljohn's Bookshelf</h1>
+                <p>A curated collection of books that have fueled my curiosity, expanded my understanding of languages, science, and the world, or simply provided great stories in my target languages.</p>
+            </div>
+        </section>
+
+        <!-- 
+            IMPORTANT NOTE ON RESOURCE SHARING:
+            The user mentioned sites like Libgen and Anna's Archive. 
+            Directly linking to or promoting such sites can carry legal and ethical risks 
+            due to copyright concerns. This template focuses on linking to legitimate platforms 
+            like Goodreads or Amazon for book discovery and purchase. 
+            Please be mindful of copyright laws when sharing resources.
+        -->
+
+        <section class="book-category">
+            <div class="container">
+                <h2 class="section-title">Language Learning & Linguistics</h2>
+                <p class="section-subtitle">Foundational texts and insightful reads on how we acquire and learn languages.</p>
+                <div class="book-grid">
+                    <!-- Example Book Card 1 -->
+                    <div class="book-card">
+                        <div class="book-cover-container">
+                            <img src="https://via.placeholder.com/300x400.png?text=Book+Cover" alt="Book Title 1 Cover">
+                        </div>
+                        <div class="book-info">
+                            <h3>Principles and Practice in Second Language Acquisition</h3>
+                            <p class="author">Stephen Krashen</p>
+                            <p class="aljohns-note">This book was a game-changer, solidifying my understanding of comprehensible input. Krashen's theories are central to my 'acquisition, not learning' philosophy.</p>
+                            <div class="book-links">
+                                <a href="#" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Goodreads</a>
+                                <a href="#" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Example Book Card 2 -->
+                    <div class="book-card">
+                        <div class="book-cover-container">
+                             <img src="https://via.placeholder.com/300x400.png?text=Book+Cover" alt="Book Title 2 Cover">
+                        </div>
+                        <div class="book-info">
+                            <h3>Fluent Forever</h3>
+                            <p class="author">Gabriel Wyner</p>
+                            <p class="aljohns-note">Wyner's approach to using spaced repetition (like Anki) and creating effective flashcards deeply influenced my memorization techniques.</p>
+                            <div class="book-links">
+                                <a href="#" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Goodreads</a>
+                                <a href="#" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more book cards here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="book-category">
+            <div class="container">
+                <h2 class="section-title">Science, Philosophy & Big Ideas</h2>
+                <p class="section-subtitle">Books that sparked my insatiable curiosity long before my polyglot journey began.</p>
+                <div class="book-grid">
+                    <div class="book-card">
+                        <div class="book-cover-container">
+                            <img src="https://via.placeholder.com/300x400.png?text=Cosmos" alt="Cosmos Cover">
+                        </div>
+                        <div class="book-info">
+                            <h3>Cosmos</h3>
+                            <p class="author">Carl Sagan</p>
+                            <p class="aljohns-note">Sagan's ability to explain complex cosmic concepts with such wonder was incredibly inspiring. This book fueled my early love for learning.</p>
+                            <div class="book-links">
+                                <a href="#" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Goodreads</a>
+                                <a href="#" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="book-card">
+                        <div class="book-cover-container">
+                            <img src="https://via.placeholder.com/300x400.png?text=Brief+History" alt="A Brief History of Time Cover">
+                        </div>
+                        <div class="book-info">
+                            <h3>A Brief History of Time</h3>
+                            <p class="author">Stephen Hawking</p>
+                            <p class="aljohns-note">Tackling Hawking's ideas pushed my understanding. It showed me the vastness of knowledge yet to be explored.</p>
+                            <div class="book-links">
+                                <a href="#" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Goodreads</a>
+                                <a href="#" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more book cards here -->
+                </div>
+            </div>
+        </section>
+        
+        <section class="book-category">
+            <div class="container">
+                <h2 class="section-title">Fiction in Target Languages</h2>
+                <p class="section-subtitle">Reading familiar stories or engaging novels in my target languages was key for immersion.</p>
+                <div class="book-grid">
+                    <div class="book-card">
+                        <div class="book-cover-container">
+                            <img src="https://via.placeholder.com/300x400.png?text=Harry+Potter+ES" alt="Harry Potter Spanish Cover">
+                        </div>
+                        <div class="book-info">
+                            <h3>Harry Potter y la Piedra Filosofal</h3>
+                            <p class="author">J.K. Rowling</p>
+                            <p class="aljohns-note">My first full book in Spanish! Knowing the story allowed me to focus on the language. It took a month and a half, but was a huge milestone.</p>
+                            <div class="book-links">
+                                <a href="#" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Goodreads</a>
+                                <a href="#" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more book cards here, e.g., Russian Short Stories by Olly Richards -->
+                </div>
+            </div>
+        </section>
+        
+        <section class="library-disclaimer">
+            <div class="container">
+                <p><strong>Note:</strong> This library reflects books I've read and found impactful. Links provided are for informational purposes to platforms like Goodreads or Amazon.</p>
+                <p>Please support authors and publishers by acquiring books through legitimate channels.</p>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+         <div class="container">
+             <div class="footer-content">
+                  <div class="footer-logo">
+                      <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                      <span>Aljohn Polyglot</span>
+                  </div>
+                 <nav class="footer-links">
+                     <a href="../index.html#about">About</a>
+                     <a href="../pathway.html">Pathway</a> 
+                     <a href="../blog.html">Blog</a>
+                     <a href="../resources/apps.html">Resources</a>
+                     <a href="mailto:aljohnpolyglot.business@gmail.com">Contact</a> 
+                 </nav>
+                 <div class="social-links">
+                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
+                     <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 </div>
+             </div>
+             <p class="copyright">&copy; <span id="current-year">2024</span> Aljohn Polyglot. All rights reserved.</p>
+         </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        }
+
+        // --- Sticky Header ---
+        const header = document.querySelector('header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        // --- Copyright Year ---
+        const currentYearSpan = document.getElementById('current-year');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        // --- Scroll Animations ---
+        const scrollElements = document.querySelectorAll('.content-section, .book-category, .library-disclaimer');
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+        window.addEventListener('scroll', handleScrollAnimation);
+        handleScrollAnimation(); // Initial check
+    </script>
+</body>
+</html>
