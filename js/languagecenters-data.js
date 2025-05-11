@@ -139,7 +139,7 @@ const culturalInstitutesData = [
         website: "https://www.philippineitalianassociation.org/",
         facebook: "https://www.facebook.com/philippineitalianassociation/",
         instagram: "https://www.instagram.com/philitalian/",
-        contact: "(+63) 2 8815 1478, info@philippineitalianassociation.org",
+        contact: "+63(2) 5310 4974,philippineitalianassociation@gmail.com",
         addresses: ["2/F Zeta Building, 191 Salcedo Street, Legaspi Village, Makati City 1229"],
         keyOfferings: [
             "Major Cultural Events (Cine Europa, Art, Food Collaborations)",
@@ -185,7 +185,7 @@ const culturalInstitutesData = [
         website: "https://ladantemanila.com/",
         facebook: "https://www.facebook.com/SDA.Manila/",
         instagram: "https://www.instagram.com/ladantemanila/",
-        contact: "(+63) 9988581695, dantemanila@gmail.com",
+        contact: " +63(2) 5310 4974 , dantemanila.sda@gmail.com",
         addresses: ["Unit 45, 4/F Zeta Building, 191 Salcedo Street, Legaspi Village, Makati City"],
         keyOfferings: [
             "Italian Language Courses (All levels A1-C2)",
