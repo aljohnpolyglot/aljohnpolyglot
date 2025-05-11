@@ -134,7 +134,7 @@ const culturalInstitutesData = [
         },
         previewDescription: "Historic association promoting Italian culture, now also managing Società Dante Alighieri Manila. Focuses on major cultural events & community (Patronato) services.",
         description: "Established in 1962, the Philippine Italian Association (PIA) has a long history of promoting Italian culture through diverse events like film festivals (e.g., Cine Europa), cooking classes, and art exhibitions. PIA also provides vital Patronato services to the Italian community and Filipino OFWs regarding pensions. Since December 2024, PIA and Società Dante Alighieri Manila operate under a unified administration, though as distinct entities. PIA continues its focus on large-scale cultural programming and Patronato services, while language courses and translation are now primarily handled by Dante Manila.",
-        myExperience: "My internship at PIA was incredibly enriching! I was involved in cultural event planning, gave a presentation for Dantedì, and gained insight into their diverse operations, especially Patronato services and their collaborations with the Italian Embassy and EU delegation. It's a vibrant place.",
+        myExperience: "My internship at PIA was incredibly enriching! I was involved in cultural events, gave a presentation for Dantedì, and gained insight into their diverse operations, especially on Social Media and Content Creation.",
         partnershipDescription: "Operates in close partnership with Società Dante Alighieri Manila under a unified administration.", // For modal if needed
         website: "https://www.philippineitalianassociation.org/",
         facebook: "https://www.facebook.com/philippineitalianassociation/",
