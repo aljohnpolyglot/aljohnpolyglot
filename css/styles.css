@@ -819,179 +819,8 @@ footer { background-color: var(--dark-text); color: rgba(255, 255, 255, 0.7); pa
     }
 }
 /* --- Cultural Institutes Section (Revised for Collapsible Video) --- */
-.cultural-institutes-section { /* Keep existing */
-    padding: 60px 0;
-}
-
-.institute-grid { /* Keep existing */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-top: 2.5rem;
-}
-
-.institute-card { /* Keep existing shadow, radius etc. */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    position: relative; 
-}
-
-.institute-card:hover { /* Keep existing hover */
-    transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
-}
-
-.institute-header { /* Keep existing */
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    background-color: #f8f9fa; 
-}
-
-.institute-flag { /* Keep existing */
-    width: 40px; 
-    height: auto;
-    margin-right: 12px;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-}
-
-.institute-logo { /* Keep existing */
-    max-height: 50px; 
-    max-width: 150px; 
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    margin-left: auto; 
-}
-
-.institute-main-content { /* Keep existing */
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.institute-main-content h3 { /* Keep existing */
-    font-family: var(--font-primary);
-    font-size: 1.35rem; 
-    color: var(--primary-blue);
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-}
-
-.institute-description { /* Keep existing */
-    font-size: 0.9rem;
-    color: #444; 
-    line-height: 1.65;
-    margin-bottom: 1rem; /* Adjusted from 1.5rem */
-    flex-grow: 1;
-}
-
-.institute-links { /* Keep existing */
-    margin-top: auto; 
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border-color);
-    display: flex;
-    align-items: center;
-    gap: 12px; 
-}
-
-.institute-links .btn-small { /* Keep existing */
-    margin-right: auto; 
-    padding: 0.5rem 1rem; 
-}
-
-.institute-links i.fab { /* Keep existing */
-    font-size: 1.9em; 
-    color: var(--dark-text);
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-.institute-links i.fab:hover { transform: scale(1.1); }
-.institute-links a[title="Facebook"] i.fab:hover { color: #1877F2; }
-.institute-links a[title="Instagram"] i.fab:hover { color: #E4405F; }
 
 
-/* NEW/MODIFIED for Collapsible Video */
-.institute-video-toggle-container {
-    padding: 0 1.5rem 1rem; /* Add padding around the button */
-    text-align: center; /* Center the button */
-}
-
-.institute-video-toggle {
-    background-color: var(--accent-yellow);
-    color: var(--dark-text);
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-flex; /* To align icon and text */
-    align-items: center;
-}
-
-.institute-video-toggle:hover {
-    background-color: #e6c300; /* Darker yellow */
-    transform: translateY(-2px);
-}
-
-.institute-video-toggle .fas { /* Icon styling */
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-}
-
-.institute-card.video-active .institute-video-toggle .fa-play-circle {
-    display: none; /* Hide play when active */
-}
-.institute-card:not(.video-active) .institute-video-toggle .fa-minus-circle {
-    display: none; /* Hide minus when not active */
-}
-.institute-card.video-active .institute-video-toggle .fa-minus-circle {
-    display: inline-block; /* Show minus when active */
-}
-
-
-.institute-video-collapsible-area {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out; /* Smooth transition for collapse */
-    background-color: #e9ecef; /* Slight background for video area */
-    padding: 0; /* Padding will be on the embed container */
-}
-
-.institute-video-embed-container { /* New container for padding */
-    padding: 1.5rem; /* Add padding around the video */
-}
-
-.institute-video-embed {
-    width: 100%; 
-    aspect-ratio: 16 / 9; 
-    border-radius: 6px;
-    overflow: hidden; 
-    background-color: #000; /* Black background while video loads */
-}
-
-.institute-video-embed iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.video-placeholder-text-collapsible { /* For placeholders inside collapsible area */
-    color: var(--dark-text);
-    font-style: italic;
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.9rem;
-}
 /* --- Daily Immersion System Preview Section (for index.html) --- */
 .routine-preview-section {
     margin-top: 0; /* This was to touch the section above (Pathway) */
@@ -1037,7 +866,57 @@ footer { background-color: var(--dark-text); color: rgba(255, 255, 255, 0.7); pa
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
 }
+.section-eyebrow {
+    display: block; /* Or inline-block if preferred */
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+}
+/* Specific Eyebrow for Cultural Institutes Preview on Index Page */
+/* In D:\website\css\styles.css */
 
+.cultural-institutes-preview-section .cultural-eyebrow {
+    /* ORIGINAL STYLES (example based on previous)
+    color: var(--accent-yellow);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    */
+
+    /* UPDATED STYLES */
+    color: var(--accent-yellow); /* Keep text yellow */
+    background-color: rgba(0, 48, 135, 0.4); /* Darker, more solid blue background for contrast with yellow border */
+                                          /* Adjust opacity (0.4) as needed */
+    border: 2px solid var(--accent-yellow); /* Yellow border, 2px thick */
+    padding: 0.4em 0.8em; /* Use 'em' for padding relative to font size, making it hug the text */
+                           /* Adjust these values to get the desired spacing */
+    border-radius: 20px;   /* Keep or adjust for desired roundness (e.g., 4px for less round, 50px for pill) */
+    display: inline-block; /* THIS IS KEY: Makes the background and border hug the text content */
+    text-align: center;    /* Already there, but good to confirm */
+    font-size: 0.8rem;     /* Adjust font size if needed */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem; /* Increased margin below it */
+
+    /* Ensure it's centered if display: inline-block is used within a block parent */
+    /* The parent .container and the .section-eyebrow having text-align: center should handle this if .section-eyebrow is inline-block */
+    /* If .section-eyebrow must be block, then to center it: */
+    /* display: block; */
+    /* width: fit-content; /* Or max-content */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+/* Ensure the section title below it has enough space */
+.cultural-institutes-preview-section .section-title {
+    /* color: var(--lc-text-primary-darkbg); /* From previous */
+    margin-top: 0.5rem; /* Add some space if the eyebrow is larger now */
+}
 .section-title-dark { /* For dark backgrounds */
     font-family: var(--font-primary);
     font-size: clamp(2rem, 5vw, 3rem);

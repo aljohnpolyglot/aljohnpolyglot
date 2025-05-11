@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --primary-blue: #003087;
+            --accent-yellow: lch(86.93% 87.16 91.27);
+            --dark-text: #2c3e50;
+            --light-text: #ffffff;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+            --tech-cyan: #00A9FF;
+            --deep-space-blue: #0a0f1a;
+            --maintenance-page-bg: #0d1424;
+            --maintenance-panel-bg: rgba(10, 25, 47, 0.9);
+            --maintenance-border: rgba(0, 169, 255, 0.25);
+            --maintenance-text-light: #e0f2f7;
+            --maintenance-text-secondary: #a8c0d8;
+        }
+        html { scroll-behavior: smooth; }
+        body.maintenance-page-active {
+            font-family: var(--font-secondary);
+            background-color: var(--maintenance-page-bg);
+            color: var(--maintenance-text-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+            padding-top: 70px;
+        }
+        header {
+            width: 100%; position: fixed; top: 0; left: 0; z-index: 1000;
+            background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
+        }
+        header nav.container {
+            width: 90%; max-width: 1100px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
+        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
+        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+        .nav-links li.dropdown { position: relative; }
+        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; }
+        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
+        .dropdown-content {
+            display: none; position: absolute; background-color: var(--light-bg);
+            min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+            z-index: 1001; border-radius: 0 0 6px 6px; top: 100%; left: 0;
+            padding: 8px 0; border: 1px solid var(--border-color); border-top: none;
+            text-align: left;
+        }
+        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
+        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
+        .nav-links li.dropdown.open .dropdown-content { display: block; }
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
+        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
+        .nav-cta:hover::after { width: 0 !important; }
+        .menu-toggle { display: none; }
+        main.main-maintenance {
+            flex-grow: 1; display: flex; align-items: center; justify-content: center;
+            width: 100%; padding: 40px 20px; text-align: center;
+        }
+        .container-maintenance {
+            background-color: var(--maintenance-panel-bg); padding: 35px 40px 45px;
+            border-radius: 12px; box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
+            border: 1px solid var(--maintenance-border); max-width: 750px; width: 100%;
+        }
+        .maintenance-icon-area { margin-bottom: 1.8rem; }
+        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .maintenance-icon-area .fa-tools { display: none; font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .maintenance-message h1 {
+            font-family: var(--font-primary); font-size: clamp(1.8rem, 5vw, 2.6rem);
+            color: var(--accent-yellow); margin-top: 0; margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        .maintenance-message .subtitle {
+            font-family: var(--font-secondary); font-size: 1.15rem; color: var(--tech-cyan);
+            margin-bottom: 1.8rem; font-weight: 600;
+        }
+        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
+        .maintenance-description strong { color: var(--maintenance-text-light); }
+        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
+        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
+        .mini-challenge .challenge-word-display {
+            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
+            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
+            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
+            font-weight: 500; letter-spacing: 1.5px;
+        }
+        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
+        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
+        .clue strong { color: var(--maintenance-text-light); }
+        .guess-input-area { margin-bottom: 1.8rem; }
+        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
+        #languageGuess {
+            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
+            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
+            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
+        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
+        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
+        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
+        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
+        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
+        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
+        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
+        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
+        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
+        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
+        footer {
+            background-color: var(--deep-space-blue); color: var(--maintenance-text-secondary);
+            padding: 50px 0 30px; font-size: 0.9rem; border-top: 2px solid var(--tech-cyan);
+            width:100%; margin-top: auto;
+        }
+        footer .footer-content {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
+            max-width: 1100px; margin-left:auto; margin-right:auto; width:90%;
+        }
+        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
+        footer .footer-logo .logo-img { border-color: var(--accent-yellow); }
+        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
+        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
+        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
+        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
+        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
+        @media (max-width: 768px) {
+            body.maintenance-page-active { padding-top: 60px; }
+            header nav.container { height: 60px; }
+            .nav-links {
+                display: none; flex-direction: column; position: absolute;
+                top: 100%; left: 0; width: 100%; background-color: var(--light-bg);
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); padding: 10px 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
+            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
+            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; }
+            .menu-toggle { display: block; cursor:pointer; }
+            .container-maintenance { padding: 25px 20px 30px; }
+            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+            .maintenance-message .subtitle { font-size: 1rem; }
+            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
+            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="maintenance-page-active">
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo-link">
+                <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li class="dropdown">
+                    <a href="../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="tagalog.html">Tagalog</a>
+                        <a href="cebuano.html">Cebuano</a>
+                        <a href="english.html">English</a>
+                        <a href="spanish.html">Spanish</a>
+                        <a href="french.html">French</a>
+                        <a href="indonesian.html">Indonesian</a>
+                        <a href="italian.html">Italian</a>
+                        <a href="portuguese.html">Portuguese</a>
+                        <a href="russian.html">Russian</a>
+                        <a href="swedish.html">Swedish</a>
+                        <a href="german.html">German</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../blog.html">Polyglot Papers Blog</a>
+                        <a href="../pathway.html">Pathway</a>
+                        <a href="../apps.html">Essential Apps & Tools</a>
+                        <a href="../routine.html">Daily Routine</a>
+                        <a href="../library.html">My Library</a>
+                        <a href="../groups.html">Study Groups & Communities</a>
+                        <a href="../languagecenters.html">Language & Culture Centers</a>
+                        <a href="../FAQ.html">FAQ</a>
+                      
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../coaching.html">Language Coaching</a>
+                        <a href="../translation.html">Translation</a>
+                    </div>
+                </li>
+                <li><a href="../shop.html">Shop</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-maintenance">
+        <div class="container-maintenance">
+            <div class="maintenance-icon-area">
+                <img src="../images/aljohn_coding_maintenance.png" alt="Aljohn working on updates">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="maintenance-message">
+                <h1>System Upgrade in Progress!</h1>
+                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
+            </div>
+            <div class="maintenance-description">
+                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
+                <p>In the meantime, why not take a quick linguistic challenge?</p>
+            </div>
+
+            <div class="mini-challenge">
+                <h2>Linguistic Puzzle Break!</h2>
+                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
+                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
+
+                <div class="clues-container">
+                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
+                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
+                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
+                </div>
+
+                <div class="guess-input-area">
+                    <label for="languageGuess">Your guessed language:</label>
+                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
+                </div>
+                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
+                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
+                <div id="feedbackMessage"></div>
+            </div>
+
+            <div class="navigation-links">
+                <p>While this section is being polished, feel free to explore other parts of my world:</p>
+                <a href="../index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
+            </div>
+        </div>
+    </main>
+
+   <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
+            </div>
+            <nav class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../shop.html">Shop</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        const maintenanceWords = [
+            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
+            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
+            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
+            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
+            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
+            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
+            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
+            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
+            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
+            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
+        ];
+        let currentChallenge;
+        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
+        const cluesContainer = document.querySelector('.clues-container');
+        const languageGuessInput = document.getElementById('languageGuess');
+        const submitGuessBtn = document.getElementById('submitGuessBtn');
+        const newWordBtn = document.getElementById('newWordBtn');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+
+        function setupNewMaintenanceChallenge() {
+            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
+            challengeWordDisplay.textContent = currentChallenge.word;
+            cluesContainer.innerHTML = '';
+            currentChallenge.clues.forEach((clueText, index) => {
+                const clueDiv = document.createElement('div');
+                clueDiv.classList.add('clue');
+                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
+                cluesContainer.appendChild(clueDiv);
+            });
+            feedbackMessage.textContent = ''; languageGuessInput.value = '';
+            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
+            languageGuessInput.focus(); newWordBtn.style.display = 'none';
+        }
+        if (submitGuessBtn) {
+            submitGuessBtn.addEventListener('click', function() {
+                const userGuess = languageGuessInput.value.trim().toLowerCase();
+                const correctAnswer = currentChallenge.language.toLowerCase();
+                if (!userGuess) {
+                    feedbackMessage.textContent = "Please enter your language guess!";
+                    feedbackMessage.className = 'feedback-incorrect'; return;
+                }
+                if (userGuess === correctAnswer) {
+                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
+                    feedbackMessage.className = 'feedback-correct';
+                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
+                    newWordBtn.style.display = 'inline-block';
+                } else {
+                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
+                    feedbackMessage.className = 'feedback-incorrect';
+                    newWordBtn.style.display = 'inline-block';
+                }
+            });
+            languageGuessInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
+            });
+            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
+            setupNewMaintenanceChallenge();
+        }
+
+        const currentYearSpan = document.getElementById('current-year');
+        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        }
+
+        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
+        desktopDropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('a.dropbtn');
+            if (button) {
+                button.setAttribute('aria-haspopup', 'true');
+                button.setAttribute('aria-expanded', 'false');
+                button.addEventListener('click', function(event) {
+                    let shouldPreventDefault = true;
+                    const href = button.getAttribute('href');
+                    if (href && (href.startsWith('../index.html#') || !href.startsWith('javascript:void(0)')) ) {
+                        // Allow navigation if it's a link to a section on another page (index.html#)
+                        // Or if it's a link to a full page (e.g. ../blog.html from a dropdown item, not a dropbtn itself)
+                        // For dropbtns, we usually want to prevent default unless it's explicitly linking to index.html#section
+                        if (!href.startsWith('../index.html#')) { // If it's not linking to index.html#section, always prevent for dropbtn
+                           // For pure toggles or links to same-page sections that we might handle via JS later.
+                        } else {
+                            // For index.html#section links from a dropbtn, we can let them navigate after opening.
+                            // However, for simplicity of the toggle, we'll still preventDefault on click and let items inside navigate.
+                            // If you specifically want the dropbtn for "Languages" (href="../index.html#languages") to navigate,
+                            // you'd need more complex logic or to handle it differently.
+                        }
+                    }
+                     event.preventDefault(); // Keep this to ensure toggle behavior is primary
+
+                    const isCurrentlyOpen = dropdown.classList.contains('open');
+                    desktopDropdowns.forEach(otherDd => {
+                        if (otherDd !== dropdown) {
+                            otherDd.classList.remove('open');
+                            const otherButton = otherDd.querySelector('a.dropbtn');
+                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    if (isCurrentlyOpen) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        dropdown.classList.add('open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                    event.stopPropagation();
+                });
+            }
+        });
+        document.addEventListener('click', function(event) {
+            desktopDropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                    const button = dropdown.querySelector('a.dropbtn');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
