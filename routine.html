@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn's Daily Immersion System - Aljohn Polyglot</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Main site styles -->
+    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* --- Global Variables (from your styles.css, ensure they are loaded or defined here) --- */
+        :root {
+            --primary-red: #C8102E;
+            --primary-blue: #003087;
+            --accent-yellow: #FFD700;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --light-text: #ffffff;
+            --border-color: #e0e0e0; /* Default border */
+            --timeline-border-color: #444; /* Darker border for timeline elements */
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+
+        /* Reset some global styles if they conflict with page structure */
+        body { margin: 0; font-family: var(--font-secondary); line-height: 1.7; color: var(--dark-text); background-color: #fff; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        main { padding-top: 70px; /* Account for fixed header */ }
+
+        /* --- Header (Copied from your styles.css for standalone demo) --- */
+        header { background-color: var(--light-text); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: background-color 0.3s ease; }
+        header.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        header nav { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; height: 70px; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
+        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .nav-cta:hover { background-color: #A8001D; transform: translateY(-2px); color: var(--light-text) !important; }
+        .nav-cta::after { display: none; }
+        .menu-toggle { display: none; cursor: pointer; } .hamburger { width: 25px; height: 3px; background-color: var(--dark-text); position: relative; transition: all 0.3s linear; } .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: var(--dark-text); transition: all 0.3s linear; } .hamburger::before { top: -8px; } .hamburger::after { top: 8px; }
+        .nav-links li.dropdown { position: relative; } .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 1001; border-radius: 0 0 4px 4px; top: 100%; left: 0; padding: 5px 0; }
+        .dropdown-content a { color: var(--dark-text); padding: 10px 16px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 600; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dropdown-content a:hover { background-color: var(--light-bg); color: var(--primary-red); }
+        .nav-links li.dropdown:hover .dropdown-content { display: block; }
+
+
+        /* --- Routine Page Specific Styles --- */
+        .routine-hero { padding: 100px 0 60px; background: linear-gradient(135deg, var(--primary-blue) 0%, #2a0a12 100%); color: var(--light-text); }
+        .routine-hero .container { display: flex; align-items: center; gap: 2rem; }
+        .hero-text-content { flex: 1 1 55%; text-align: left; }
+        .hero-video-content { flex: 1 1 45%; max-width: 560px; }
+        .routine-hero h1 { font-family: var(--font-primary); font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: 1rem; line-height: 1.2; }
+        .routine-hero .highlight-text { color: var(--accent-yellow); }
+        .routine-hero p.hero-subtitle { font-size: 1.1rem; max-width: 100%; margin: 0 auto 1.5rem 0; opacity: 0.9; }
+        .routine-hero .btn-outline { border-color: var(--accent-yellow); color: var(--accent-yellow); display: inline-block; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 25px; font-weight: 600; }
+        .routine-hero .btn-outline:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
+        .hero-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .hero-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .interactive-breakdown { padding: 60px 0; background: linear-gradient(to bottom, #0a0f1a 0%, #182848 20%, #33658A 40%, #F6AE2D 60%, #F26419 75%, #2F4858 90%, #0a0f1a 100%); color: #e0e0e0; }
+        /* General Section Styling adapted for dark/light sections */
+        .section-title { font-family: var(--font-primary); font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; margin-bottom: 1rem; position: relative; padding-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; margin-right: 1rem; margin-top: 0.5rem; font-size: 0.95rem; border: 2px solid transparent; cursor: pointer; }
+        .btn-primary { background-color: var(--accent-yellow); color: var(--dark-text); border-color: var(--accent-yellow); }
+        .btn-primary:hover { background-color: #e6c300; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-outline { background-color: transparent; color: var(--dark-text); border: 2px solid var(--dark-text); } /* Default for light sections */
+        .routine-hero .btn-outline, .interactive-breakdown .btn-outline {color: var(--accent-yellow); border-color: var(--accent-yellow); } /* For dark sections */
+        .routine-hero .btn-outline:hover, .interactive-breakdown .btn-outline:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
+        .cta-center { text-align: center; margin-top: 2.5rem; }
+
+        .interactive-breakdown .section-title { color: var(--accent-yellow); }
+        .interactive-breakdown .section-title::after { background-color: var(--primary-red); }
+        .interactive-breakdown .section-subtitle { color: #c0c0d0; }
+
+        .timeline { position: relative; max-width: 800px; margin: 3rem auto 0; padding: 0; list-style: none; }
+        .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 30px; width: 4px; background: var(--primary-blue); border-radius: 2px; }
+        .timeline-item { margin-bottom: 30px; position: relative; padding-left: 70px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-marker { position: absolute; left: 10px; top: 5px; width: 40px; height: 40px; border-radius: 50%; background: var(--primary-red); border: 3px solid #0a0f1a; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--light-text); font-size: 1.2rem; }
+        .timeline-item[data-color="dark-blue"] .timeline-marker { background-color: #0d1b2a; border: 3px solid var(--accent-yellow);}
+        .timeline-item[data-color="yellow"] .timeline-marker { background-color: var(--accent-yellow); color: var(--dark-text); border: 3px solid #0a0f1a; }
+        .timeline-item[data-color="red"] .timeline-marker { background-color: var(--primary-red); border: 3px solid #0a0f1a;}
+        .timeline-item[data-color="blue"] .timeline-marker { background-color: var(--primary-blue); border: 3px solid #0a0f1a;}
+        .timeline-item[data-color="brown"] .timeline-marker { background-color: #774936; border: 3px solid #0a0f1a;}
+
+        .timeline-card { background: rgba(20, 30, 50, 0.7); backdrop-filter: blur(8px); border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+        .timeline-header { padding: 1.2rem 1.5rem; display: flex; flex-direction: column; }
+        .timeline-header h3 { font-family: var(--font-primary); font-size: 1.4rem; margin: 0 0 0.3rem 0; color: var(--light-text); display: flex; align-items: center; }
+        .timeline-header h3 i { margin-right: 10px; font-size: 1.3rem; width: 25px; text-align: center; color: var(--accent-yellow); }
+        .timeline-item[data-color="yellow"] .timeline-header h3 i { color: var(--primary-blue); }
+        .timeline-item[data-color="red"] .timeline-header h3 i { color: var(--accent-yellow); }
+        .timeline-header .time-display { font-size: 0.9rem; font-weight: 600; color: var(--accent-yellow); margin-bottom: 0.5rem; display: block; }
+        .timeline-header .summary-text { font-size: 1rem; color: #c0c0d0; line-height: 1.5; margin-bottom: 0.8rem; }
+        .details-toggle { background: none; border: 1px solid var(--accent-yellow); color: var(--accent-yellow); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease; align-self: flex-start; }
+        .details-toggle:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
+        .details-toggle .fas { margin-left: 5px; transition: transform 0.3s ease-out; }
+        
+        .timeline-details { /* Main content area that animates */
+            max-height: 0; 
+            overflow: hidden; 
+            background-color: rgba(15, 25, 45, 0.7);
+            transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
+            padding: 0 1.5rem; /* Horizontal padding is static, vertical animates with padding-top/bottom */
+        }
+        .timeline-item.active .timeline-details {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-top: 1px solid rgba(30, 40, 60, 0.8);
+        }
+        
+        /* STYLES FOR STATIC SUB-SECTIONS (NO LONGER NESTED ACCORDIONS) */
+        .sub-section-block { 
+            margin-bottom: 1.5rem; 
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.15); 
+        }
+        .sub-section-block:last-child { 
+            margin-bottom: 0; 
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .sub-section-header h4 { /* Styling for the static sub-section titles */
+            font-family: var(--font-primary);
+            font-size: 1.15rem; 
+            color: var(--accent-yellow);
+            margin: 0 0 0.75rem 0;
+        }
+        .sub-section-content .detail-block {} /* No specific styles needed, inherits */
+
+        .detail-block p, .detail-block ul { font-size: 0.95rem; line-height: 1.7; color: #d0d0e0; margin-bottom: 0.5rem; }
+        .detail-block ul { list-style: disc; padding-left: 20px; }
+        .detail-block strong { color: var(--light-text); font-weight: 600; }
+        .tool-highlight, a.tool-highlight { background-color: #3a3a6a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: var(--accent-yellow); font-size: 0.9em; text-decoration: none; border-bottom: 1px dashed var(--accent-yellow); }
+        a.tool-highlight:hover { background-color: var(--accent-yellow); color: #3a3a6a; border-bottom-color: #3a3a6a; }
+        .detail-block .beginner-tip { background-color: rgba(255, 215, 0, 0.1); border-left: 3px solid var(--accent-yellow); padding: 0.8rem 1rem; margin-top: 0.8rem; border-radius: 4px; font-size: 0.9rem; }
+        .detail-block .beginner-tip strong { color: var(--accent-yellow); }
+
+        /* Responsive Styles (Mobile nav included here for completeness) */
+        @media (max-width: 992px) { 
+            .routine-hero .container { flex-direction: column; text-align: center; }
+            .hero-text-content { order: 1; }
+            .routine-hero p.hero-subtitle { margin-right: auto; }
+            .hero-video-content { order: 2; width: 100%; max-width: 600px; margin-top: 2rem; }
+        }
+        @media (max-width: 768px) { 
+            .timeline::before { left: 20px; } .timeline-item { padding-left: 50px; } .timeline-marker { left: 0; width: 40px; height: 40px; }
+            .timeline-header h3 { font-size: 1.2rem; } .timeline-header .summary-text { font-size: 0.9rem; }
+            .routine-hero { padding-top: 80px; } .routine-hero h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+            .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 70px; left: 0; background-color: var(--light-text); box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding-bottom: 1rem; }
+            .nav-links.active { display: flex; } .nav-links li { margin: 0; width: 100%; text-align: center; } .nav-links a { display: block; padding: 1rem; border-bottom: 1px solid var(--border-color); } .nav-links li:last-child a { border-bottom: none; } .menu-toggle { display: block; }
+            .menu-toggle.active .hamburger { background-color: transparent; } .menu-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); } .menu-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+            .dropdown-content { position: static; box-shadow: none; border-radius: 0; background-color: transparent; padding:0; min-width: 100%; } .dropdown-content a { padding: 1rem; text-align: center; border-bottom: 1px solid var(--border-color); } .dropdown-content a:last-child { border-bottom: 1px solid var(--border-color); }
+        }
+        
+        /* Standard Sections Styling (Philosophy, Toolkit, Sacrifice, CTA, Footer) */
+        .philosophy-section, .toolkit-section, .sacrifice-section { padding: 60px 0; color: var(--dark-text); background-color: #fff; /* Ensure light background for these */ }
+        .philosophy-section .section-title, .toolkit-section .section-title, .sacrifice-section .section-title { color: var(--primary-blue); }
+        .philosophy-section .section-title::after, .toolkit-section .section-title::after, .sacrifice-section .section-title::after { background-color: var(--primary-red); }
+        .philosophy-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .philosophy-point { background: var(--light-bg); padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: var(--card-shadow); }
+        .philosophy-point i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 1rem; display: block; }
+        .philosophy-point h4 { font-family: var(--font-primary); font-size: 1.2rem; color: var(--primary-blue); margin-bottom: 0.5rem; }
+        .toolkit-section { background-color: var(--light-bg); } /* Alternate bg for toolkit */
+        .toolkit-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+        .tool-item { background-color: #fff; padding: 1rem 1.5rem; border-radius: 25px; box-shadow: var(--card-shadow); font-weight: 600; color: var(--dark-text); display: flex; align-items: center; gap: 8px; transition: transform 0.2s ease; text-decoration: none; }
+        .tool-item:hover { transform: translateY(-3px); }
+        .tool-item i { color: var(--primary-red); font-size: 1.2em; }
+        .tool-item img.app-icon-small { width: 24px; height: 24px; object-fit: contain; border-radius: 4px;}
+        .sacrifice-section .quote { max-width: 700px; margin: 1.5rem auto; border-left: 5px solid var(--primary-blue); background-color: #fff; color: #444; padding: 1rem; font-style: italic; }
+        .sacrifice-section .btn-outline { color: var(--primary-blue); border-color: var(--primary-blue); } /* Ensure outline button is correct for light bg */
+        .sacrifice-section .btn-outline:hover { background-color: var(--primary-blue); color: var(--light-text); }
+        .cta-section { background: linear-gradient(to right, var(--primary-red), var(--primary-blue)); color: var(--light-text); padding: 60px 0; text-align: center; }
+        .cta-section h2 { font-family: var(--font-primary); font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+        .btn-accent { background-color: var(--primary-red); color: var(--light-text); border-color: var(--primary-red); }
+        .btn-accent:hover { background-color: #A8001D; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        footer { background-color: var(--dark-text); color: rgba(255, 255, 255, 0.7); padding: 40px 0 20px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .footer-logo { display: flex; align-items: center; color: var(--light-text); font-weight: 600; text-decoration: none; }
+        .footer-logo .logo-img { border-color: var(--accent-yellow); } .footer-logo span { font-family: var(--font-primary); font-size: 1.2rem; }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s ease; } .footer-links a:hover { color: var(--light-text); }
+        .social-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 1.5rem; margin-left: 15px; transition: color 0.3s ease, transform 0.2s ease; }
+        .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        .copyright { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 1.5rem; margin-top: 1.5rem; }
+
+    </style>
+</head>
+<body>
+    <header>
+     <nav class="container">
+    <a href="index.html" class="logo-link">
+        <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+        <span class="logo-text">Aljohn Polyglot</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="dropdown">
+            <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <!-- Assuming language pages are still planned or in a future languages/ folder -->
+                <a href="languages/tagalog.html">Tagalog</a>
+                <a href="languages/cebuano.html">Cebuano</a>
+                <a href="languages/english.html">English</a>
+                <a href="languages/spanish.html">Spanish</a>
+                <a href="languages/french.html">French</a>
+                <a href="languages/indonesian.html">Indonesian</a>
+                <a href="languages/italian.html">Italian</a>
+                <a href="languages/portuguese.html">Portuguese</a>
+                <a href="languages/russian.html">Russian</a>
+                <a href="languages/swedish.html">Swedish</a>
+                <a href="languages/german.html">German</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="blog.html">Polyglot Papers Blog</a>
+                <a href="pathway.html">Pathway</a>
+                <a href="apps.html">Essential Apps & Tools</a>
+                <a href="routine.html">Daily Routine</a>
+                <a href="library.html">My Library</a>
+                <a href="groups.html">Study Groups & Communities</a>
+                 <a href="languagecenters.html">Language & Culture Centers</a>
+                <a href="FAQ.html">FAQ</a>
+            
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="coaching.html">Language Coaching</a>
+                <a href="translation.html">Translation</a>
+            </div>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
+</nav>
+    </header>
+
+    <main>
+        <section id="routine-hero" class="routine-hero">
+            <div class="container">
+                <div class="hero-text-content">
+                    <h1>The <span class="highlight-text">12-Hour Immersion</span> Engine</h1>
+                    <p class="hero-subtitle">My Exact Blueprint for Hyper-Fluency in 1-3 Months. This isn't a casual guide. This is the relentless, all-consuming daily system I forged to learn 11 languages by 21. It's built for extreme speed and profound depth. It can reshape your learning, but it will demand everything.</p>
+                    <a href="../blog.html" class="btn btn-outline" target="_blank">Understand the True Cost: Read "The Devil Within"</a>
+                </div>
+                <div class="hero-video-content">
+                    <div class="hero-video-wrapper">
+                         <iframe src="https://www.youtube.com/embed/ht9q5ENjlV4" title="Aljohn Polyglot's Daily Routine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-breakdown">
+            <div class="container">
+                <h2 class="section-title">The System Unveiled: Hour by Hour</h2>
+                <p class="section-subtitle">Each block is part of the overall system. Click “View Main Details” to expand and see the full breakdown for each time segment. Everything starts off collapsed — if it doesn’t open fully, just click again.</p>
+                
+                <div class="timeline">
+                    <!-- Morning Power Block -->
+                    <div class="timeline-item" data-color="dark-blue">
+                        <div class="timeline-marker"><i class="fas fa-moon"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">2:00 AM - 5:00 AM (3 hours)</span>
+                                <h3><i class="fas fa-brain"></i>Morning Power Block</h3>
+                                <p class="summary-text">Peak mental clarity. Anki recall, active diary writing, and first immersive reading session with breakfast.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header">
+                                        <h4>2:00 AM: Wake Up & Sleep Tracking ⏰</h4>
+                                    </div>
+                                    <div class="sub-section-content">
+                                        <div class="detail-block"><p><strong>Why:</strong> The world is silent. This pre-dawn quiet offers unparalleled, distraction-free focus, crucial for absorbing new information and setting an intense tone for the day. My mind is at its freshest.</p><p><strong>Tool:</strong> <a href="https://www.sleepcycle.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Sleep Cycle app</a> (or similar). Quality sleep isn't passive; it's when your brain consolidates memories. Consistent sleep/wake times are non-negotiable for making intense study stick.</p></div>
+                                    </div>
+                                </div>
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>2:00 AM - ~2:30 AM: Anki Review 📲</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Digital flashcards using a Spaced Repetition System (SRS). I review various card types: basic vocabulary (often with pictures), full sentences I've encountered (for grammar/usage), and cloze deletion cards (fill-in-the-blanks).</p><p><strong>Why:</strong> The brain is sharpest after sleep, ideal for the demanding task of recall. SRS shows cards just before you'd forget them, forcing stronger memory connections. It's incredibly efficient.</p><p><strong>My Method:</strong> Organized decks per language: 'Core' (individual vocab from immersion) and 'Output' (sentences to translate into target language). At my peak, I added <strong>50-100 new cards daily</strong>, plus all reviews.</p><p><strong>Tools:</strong> <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Anki</a> (Desktop), <a href="https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-highlight">AnkiDroid</a> (Mobile).</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Start with 10-20 new Anki cards a day. Consistency is far more important than volume initially. Build the habit.</p></div></div>
+                                </div>
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>~2:30 AM - ~3:00 AM: Diary Writing ✍️</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Writing a daily recap, random thoughts, opinions, or descriptions in my target language. The content doesn't matter as much as the act of production.</p><p><strong>Why:</strong> Immediately solidifies vocabulary and structures from Anki. It's crucial practice for formulating thoughts and bridges the gap between passive knowledge and active use before attempting fluent speech.</p><p><strong>Tools:</strong> Any note-taking app. Use <a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer" class="tool-highlight">DeepL</a> or <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">ChatGPT</a> for quick lookups if stuck, but try to produce first.</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Don't aim for perfection! Just get your thoughts down. Consistency trumps perfect grammar at this stage. This now takes me about 15 mins.</p></div></div>
+                                </div>
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>~3:00 AM - 5:00 AM: First Reading Session & Breakfast 🥣📚</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Immersive reading combined with my first meal to maximize time.</p><p><strong>Why:</strong> Eating doesn't require intense focus, so it's efficiently paired with comprehensible input through reading. Active reading builds vocabulary and internalizes sentence structures naturally.</p><p><strong>My Method:</strong> Read actively. When an unknown word appears, I tap it for a quick translation (in-app feature), then copy the word AND the full sentence it came from into my Anki 'Core' deck. Context is vital.</p><p><strong>Tools:</strong> <a href="https://play.google.com/store/apps/details?id=org.readera&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-highlight">ReadEra app</a> (for EPUB/PDF, has tap-to-translate). E-books.</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Start with books you know well in your native language (e.g., Harry Potter). This way, plot familiarity lets you focus on deciphering the language. Then move to topics that genuinely interest you.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transition / Buffer -->
+                    <div class="timeline-item" data-color="blue">
+                        <div class="timeline-marker"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">5:00 AM - 5:30 AM (30 mins)</span>
+                                <h3><i class="fas fa-coffee"></i>Transition / Buffer</h3>
+                                <p class="summary-text">Short break, prepare for physical activity, mental reset.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Transition & Mental Reset ⚙️</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>Why:</strong> A brief period to mentally switch gears from intense cognitive load to physical activity. Prepare workout gear, hydrate, and clear the mind for the next block of "dead time" utilization.</p><p>This buffer prevents burnout and helps maintain focus throughout the long day. Sometimes used for quick chores or planning.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calisthenics + Podcast Listening -->
+                    <div class="timeline-item" data-color="brown">
+                        <div class="timeline-marker"><i class="fas fa-dumbbell"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">~5:30 AM - 8:00 AM (2.5 hours)</span>
+                                <h3><i class="fas fa-headphones-alt"></i>Calisthenics + Podcast Listening</h3>
+                                <p class="summary-text">Utilizing "dead time" during exercise for passive audio immersion.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>"Dead Time" Annihilation: Exercise + Audio 🎧🏋️‍♂️</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Any time spent on physical activity that doesn't demand full mental concentration (exercise, commuting, chores) is "dead time" ripe for audio immersion.</p><p><strong>Why:</strong> Maximize every minute. This turns potentially "wasted" time into productive language exposure. Focus is on getting used to sounds, rhythm, and flow, picking up words/phrases through repetition.</p><p><strong>My Method:</strong> Listen to comprehensible input – content slightly above my current level but where I can grasp the main idea. This makes the input engaging but not overwhelming.</p><p><strong>Tools:</strong> <a href="https://play.google.com/store/apps/details?id=au.com.shiftyjelly.pocketcasts" target="_blank" rel="noopener noreferrer" class="tool-highlight">Pocket Casts app</a> (offline downloads are key). Earbuds.</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Look for "learner podcasts" for your target language (e.g., Duolingo Podcasts). Many come with transcripts, which are gold for reading along or reviewing later. Don't worry about understanding everything initially.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Immersion: Active Watching -->
+                    <div class="timeline-item" data-color="yellow">
+                        <div class="timeline-marker"><i class="fas fa-tv"></i></div>
+                         <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">8:00 AM - 12:00 PM (4 hours)</span>
+                                <h3><i class="fab fa-youtube"></i>Main Immersion: Active Watching</h3>
+                                <p class="summary-text">Core block for actively watching native content on YouTube, streaming sites.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                 <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Deep Dive: Active Video Immersion 📺</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> A core block dedicated to watching video content in the target language. "Flexible but intense" means I choose content that interests me, but I engage actively, not passively.</p><p><strong>Why:</strong> Visual context aids comprehension significantly. Exposure to natural speech, intonation, and cultural nuances. Training the ear and brain to process the language at native speed.</p><p><strong>My Method:</strong><ul><li>Start with <a href="https://www.languagereactor.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Language Reactor</a> extension for dual subtitles (target + native/English), then quickly transition to TARGET LANGUAGE SUBTITLES ONLY. This forces direct engagement.</li><li>Explore native streaming sites (e.g., rtve.es, france.tv, Kinostar.me) using a <a href="https://www.urban-vpn.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">VPN</a> (UrbanVPN, NordVPN) to bypass geo-restrictions.</li><li>Actively take notes of new vocabulary and interesting sentence structures for Anki.</li><li>Crucially, create <strong>separate Google/YouTube accounts for each language</strong>. This trains the algorithm to recommend relevant content, keeping immersion pure and effective.</li></ul></p><p class="beginner-tip"><strong>Beginner Tip:</strong> Start with content designed for learners or children's shows in the target language if native content is too fast. Gradually increase the difficulty.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flexible Interactions: Speaking Output -->
+                    <div class="timeline-item" data-color="red">
+                        <div class="timeline-marker"><i class="fas fa-comments"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">12:00 PM - 4:00 PM (4 hours, flexible)</span>
+                                <h3><i class="fas fa-users"></i>Flexible Interactions: Speaking Output</h3>
+                                <p class="summary-text">Switching to active output when input fatigue sets in.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Active Output & Connection 🗣️💬</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> This block is for actively using the language through speaking and writing in real-time or simulated conversations. The timing is flexible, guided by mental energy levels.</p><p><strong>Why:</strong> To practice recall, sentence construction, and conversational flow. Identifies gaps in knowledge and builds confidence. Input is crucial, but output solidifies learning and makes it practical.</p><p><strong>My Methods & Tools:</strong><ul><li><a href="https://www.tandem.net/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Tandem</a> / <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Discord</a> (e.g., 'Language Sloth' server): For finding language exchange partners for casual text/voice chats.</li><li><a href="https://www.italki.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">iTalki</a>: Booking lessons with tutors for structured practice or casual conversation. (My code ALJOHN for $5 credit on first $10 purchase - first 50 users!)</li><li><a href="https://gliglish.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Gliglish.com</a> / <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">ChatGPT</a>: AI roleplay for simulating conversations. AI provides instant feedback, great for practicing without pressure.</li><li><strong>Video Journaling</strong>: Recording myself speaking (e.g., '30 Day Record Yourself Challenge'). Uploading to a private Telegram channel for review and progress tracking (approx. 15 mins).</li></ul></p><p class="beginner-tip"><strong>Beginner Tip:</strong> Don't be afraid to make mistakes! The goal of early output is communication, not perfection. Native speakers are usually very encouraging.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Second Reading Session -->
+                    <div class="timeline-item" data-color="blue">
+                        <div class="timeline-marker"><i class="fas fa-book-reader"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">~4:00 PM - 6:00 PM (Flexible up to 2 hours)</span>
+                                <h3><i class="fas fa-book-open"></i>Second Reading Session</h3>
+                                <p class="summary-text">Final block of focused input for the day.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Winding Down with Words 📚🌙</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Another session of focused reading, similar to the morning block but generally with less intensity as the day winds down.</p><p><strong>Why:</strong> Provides a final dose of comprehensible input. Reading is a calmer activity that can naturally lead to sleepiness, aiding the transition to rest. Continues vocabulary exposure and pattern recognition.</p><p><strong>My Method:</strong> Read topics of interest in the target language. The duration is flexible; I read until my body signals it's time to wind down, often falling asleep with my phone/reader. No strict target, just consistent exposure.</p><p><strong>Tools:</strong> <a href="https://play.google.com/store/apps/details?id=org.readera&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-highlight">ReadEra app</a> or physical books.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sleep & Consolidation -->
+                    <div class="timeline-item" data-color="dark-blue">
+                        <div class="timeline-marker"><i class="fas fa-bed"></i></div>
+                         <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">~6:00 PM - 2:00 AM (8 hours)</span>
+                                <h3><i class="fas fa-power-off"></i>Sleep & Consolidation</h3>
+                                <p class="summary-text">Crucial rest period for memory consolidation.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>The Unsung Hero: Sleep 😴🧠</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>Why:</strong> This early bedtime is a direct consequence of the 2 AM wake-up. Sufficient, high-quality sleep is NON-NEGOTIABLE for memory consolidation. During sleep, the brain processes and stores the vast amounts of information absorbed during the day. Skimping on sleep sabotages learning.</p><p><strong>My Method:</strong> Strict adherence to the 6 PM bedtime to ensure a full 8 hours of rest. Minimize light and noise pollution. The goal is to wake up naturally (or with a gentle alarm) at 2 AM feeling refreshed and ready for another cycle of intense learning.</p><p><strong>Tool:</strong> Consistent sleep schedule, dark room, <a href="https://www.sleepcycle.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Sleep Cycle app</a> for tracking quality.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End .timeline -->
+                 <div class="cta-center" style="margin-top: 3rem;">
+                    <p style="font-size: 1.1rem; color: #e0e0e0; margin-bottom:1rem;">This system yields almost <strong>12 hours</strong> of focused language immersion daily (minus breaks).</p>
+                    <p style="font-size: 1rem; color: #c0c0d0;">Discipline is key, but building it around enjoyable activities (interesting content, connecting with friends) makes it a lifestyle, not a chore.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy, Toolkit, Sacrifice, CTA sections (HTML structure is the same, ensure content is there) -->
+        <section class="philosophy-section">
+            <div class="container">
+                <h2 class="section-title">The "Why It Works": Core Principles</h2>
+                <p class="section-subtitle">Rapid fluency isn't magic. It's a formula: Massive Input + Focused Intensity + Strategic Output, executed relentlessly.</p>
+                <div class="philosophy-points">
+                    <div class="philosophy-point"><i class="fas fa-tachometer-alt"></i><h4>The 500-Hour Rule</h4><p>Deep proficiency (thinking in the language, understanding almost everything) demands around 500+ hours of FOCUSED, ACTIVE engagement. Passive listening alone won't cut it for speed.</p></div>
+                    <div class="philosophy-point"><i class="fas fa-bolt"></i><h4>Intensity is Speed</h4><p>If you commit 10-12+ hours of quality immersion daily, you can hit 500 hours in ~50 days. That's the "secret" to 1-3 month fluency. Forget "5 minutes a day" for this kind of goal.</p></div>
+                    <div class="philosophy-point"><i class="fas fa-recycle"></i><h4>Active Engagement Loop</h4><p>The cycle of Reading, Listening (Comprehensible Input), Anki (Spaced Repetition), Writing, and Speaking creates a powerful feedback loop that accelerates acquisition and retention.</p></div>
+                </div>
+            </div>
+        </section>
+        <section class="toolkit-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">My Digital Language Arsenal</h2>
+                <p class="section-subtitle">These are the battle-tested tools that power my daily immersion. Each plays a crucial role in the system.</p>
+                <div class="toolkit-grid">
+                    <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://play-lh.googleusercontent.com/_44FigEVYCSLDsD-7f5nSChqJELh2E5xLRE0GqnrkR_sXQY2249p27klP2f25Mb_GI0" alt="Anki" class="app-icon-small"> Anki/AnkiDroid</a>
+                    <a href="https://play.google.com/store/apps/details?id=org.readera&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://play-lh.googleusercontent.com/i3H2Ybe20p0SOz3W5-x3_oAfHKeQt9G0W3hW0_L6HHYh1XNRaX6y2i3g80v0Y_j0J2Xv" alt="ReadEra" class="app-icon-small"> ReadEra</a>
+                    <a href="https://play.google.com/store/apps/details?id=au.com.shiftyjelly.pocketcasts" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://play-lh.googleusercontent.com/S8L2L0nffTM997XmU_3K8__0H1_8rR09jQ0eXNf_9D_0V4s72IBDEq78w_S5j3LdpnE" alt="Pocket Casts" class="app-icon-small"> Pocket Casts</a>
+                    <a href="https://www.languagereactor.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://www.languagereactor.com/assets/img/logo_192.png" alt="Language Reactor" class="app-icon-small"> Language Reactor</a>
+                    <a href="https://www.urban-vpn.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><i class="fas fa-globe"></i> VPN (UrbanVPN, etc.)</a>
+                    <a href="https://www.tandem.net/" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://play-lh.googleusercontent.com/qo2Q1wL4sJod_jQahIr6e9yYg9AlS64vkhp1hV0LgIW98iN0f0nB3p3L4Zq73t9V1mF1" alt="Tandem" class="app-icon-small"> Tandem / Discord</a>
+                    <a href="https://www.italki.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://www.italki.com/favicon.ico" alt="iTalki" class="app-icon-small"> iTalki</a>
+                    <a href="https://gliglish.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><i class="fas fa-robot"></i> Gliglish / ChatGPT</a>
+                    <a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer" class="tool-item"><img src="https://www.deepl.com/img/logo/deepl-logo-blue.svg" alt="DeepL" class="app-icon-small" style="background: white; padding: 2px;"> DeepL</a>
+                </div>
+                <div class="cta-center"><a href="../resources/apps.html" class="btn btn-primary">See My Full Toolkit Review</a></div>
+            </div>
+        </section>
+        <section class="sacrifice-section">
+            <div class="container">
+                <h2 class="section-title">The Unfiltered Truth: Sacrifice is Inevitable</h2>
+                <p class="section-subtitle">This path isn't a gentle stroll; it's a full-throttle sprint that reshapes your entire existence. Be prepared for the trade-offs.</p>
+                <div class="quote">"This path, this pursuit of rapid fluency, demands everything... It is a brutal, fundamental reshaping of identity."<br><strong>- Aljohn Polyglot, "The Devil Within"</strong></div>
+                <p style="text-align: center; max-width: 700px; margin: 1.5rem auto;">This routine is a framework for extreme results. The 'genius' they see is built on a foundation of relentless effort and sacrifice.</p>
+                <div class="cta-center"><a href="https://drive.google.com/file/d/1VgUrm_uor-gFGzvUDQ5UKgZ4cbZe0lpe/view?usp=drive_link" class="btn btn-outline" target="_blank">Read the Full Story of Sacrifice & Transformation</a></div>
+            </div>
+        </section>
+        <section id="cta" class="cta-section your-journey-section">
+            <div class="container">
+                <h2>Your Journey, Your Intensity</h2>
+                <p>This system is my blueprint. Adapt its principles, find your own rhythm, and define your own level of commitment. The world of languages awaits those bold enough to immerse themselves fully.</p>
+                <a href="https://www.youtube.com/@aljohnpolyglot?sub_confirmation=1" target="_blank" class="btn btn-accent">Follow My Journey on YouTube</a>
+            </div>
+        </section>
+    </main>
+
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
+            </div>
+            <nav class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add other social links here if you have them -->
+            </div>
+        </div>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Standard Setup (Menu, Header, Copyright, Scroll Animations) ---
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+            const header = document.querySelector('header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
+            
+            const scrollElements = document.querySelectorAll('.interactive-breakdown, .philosophy-section, .toolkit-section, .sacrifice-section, .your-journey-section');
+            const elementInView = (el, dividend = 1) => { if (!el) return false; const elementTop = el.getBoundingClientRect().top; return ( elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend ); };
+            const displayScrollElement = (element) => { if (element) element.classList.add('visible'); };
+            const handleScrollAnimation = () => { scrollElements.forEach((el) => { if (elementInView(el, 1.25)) { displayScrollElement(el); } }); };
+            window.addEventListener('scroll', handleScrollAnimation);
+            handleScrollAnimation();
+
+            // --- SIMPLIFIED Accordion Logic (Only Main Items are Interactive) ---
+            const mainTimelineItems = document.querySelectorAll('.timeline-item');
+
+            mainTimelineItems.forEach(item => {
+                const mainHeaderButton = item.querySelector('.details-toggle');
+                const mainDetails = item.querySelector('.timeline-details'); // This is the direct child that animates
+                const mainToggleIcon = mainHeaderButton ? mainHeaderButton.querySelector('.fas') : null;
+
+                // Initialize ALL main items as CLOSED
+                if (item && mainDetails && mainToggleIcon) {
+                    item.classList.remove('active'); 
+                    mainToggleIcon.classList.remove('fa-chevron-up');
+                    mainToggleIcon.classList.add('fa-chevron-down');
+                    mainDetails.style.maxHeight = '0px'; 
+                    // Ensure padding is also 0 when closed for a clean collapse
+                    // CSS will handle padding transition if .timeline-item.active .timeline-details has it
+                    if (!item.classList.contains('active')) {
+                        mainDetails.style.paddingTop = '0';
+                        mainDetails.style.paddingBottom = '0';
+                    }
+                }
+
+                if (mainHeaderButton && mainDetails && mainToggleIcon) {
+                    mainHeaderButton.addEventListener('click', () => {
+                        const isActive = item.classList.toggle('active');
+                        
+                        if (isActive) {
+                            // Opening:
+                            mainDetails.style.display = 'block'; // Make sure it's not display:none
+                             // Temporarily remove transition for measurement
+                            const originalTransition = mainDetails.style.transition;
+                            mainDetails.style.transition = 'none';
+                            mainDetails.style.maxHeight = 'auto'; // Let it calculate its full height
+                            const scrollHeight = mainDetails.scrollHeight;
+                            mainDetails.style.maxHeight = '0px'; // Set back to 0px
+                            mainDetails.offsetHeight; // Force reflow
+                            mainDetails.style.transition = originalTransition; // Restore transition
+                            
+                            requestAnimationFrame(() => { // Animate to full scrollHeight
+                                mainDetails.style.maxHeight = scrollHeight + "px";
+                                // Restore padding via CSS by letting .active class apply it
+                                mainDetails.style.paddingTop = ''; 
+                                mainDetails.style.paddingBottom = '';
+                            });
+
+                            mainToggleIcon.classList.remove('fa-chevron-down');
+                            mainToggleIcon.classList.add('fa-chevron-up');
+                        } else {
+                            // Closing:
+                            mainDetails.style.maxHeight = '0px';
+                            // Rely on CSS transition for padding if defined for .active state
+                            // Or set explicitly after a delay if needed:
+                            // setTimeout(() => {
+                            //    if (!item.classList.contains('active')) {
+                            //        mainDetails.style.paddingTop = '0';
+                            //        mainDetails.style.paddingBottom = '0';
+                            //    }
+                            // }, 500); // Match CSS transition duration for max-height
+
+                            mainToggleIcon.classList.remove('fa-chevron-up');
+                            mainToggleIcon.classList.add('fa-chevron-down');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

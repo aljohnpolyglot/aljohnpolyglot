@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn Polyglot - Language Coaching: Unlock Your Fluency</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* --- Coaching Page Hero --- */
+        .coaching-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 75%), url('../../images/pathway_epic_journey_bg.png'); /* Optional texture */
+            background-blend-mode: overlay; /* Or multiply, screen, etc. */
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        .coaching-hero::before { /* Darkening overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.35); /* Slightly darker overlay */
+            z-index: 1;
+        }
+        .coaching-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .coaching-hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            margin-bottom: 0.75rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        .coaching-hero p.subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        .coaching-hero .btn-hero-cta {
+            padding: 0.9rem 2.2rem;
+            font-size: 1.1rem;
+            background-color: var(--accent-yellow);
+            color: var(--dark-text);
+            border-color: var(--accent-yellow);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+        .coaching-hero .btn-hero-cta:hover {
+            background-color: #e6c300;
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        /* --- Why Coach With Me Section --- */
+        .why-coach-section { background-color: #fff; } /* White to stand out */
+        .why-coach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .benefit-card {
+            background-color: var(--light-bg);
+            padding: 1.8rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        .benefit-card .fas, .benefit-card .fab {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        .benefit-card h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-red);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+        .benefit-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* --- Meet Your Coach Section (Styling from original, with slight tweaks) --- */
+        .coaching-about-me { padding: 3rem 0; margin-top:0; border-radius: 8px; }
+        .coaching-about-me .about-content { display: flex; align-items: center; gap: 3rem; }
+        .coaching-about-me .about-image { flex-basis: 35%; max-width: 250px; flex-shrink: 0; text-align: center; }
+        .coaching-about-me .about-image img { width: 100%; border-radius: 50%; border: 6px solid var(--primary-blue); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+        .coaching-about-me .about-text { flex-basis: 65%; }
+        .coaching-about-me .about-text ul { list-style: none; padding-left: 0; }
+        .coaching-about-me .about-text ul li { margin-bottom: 1.2rem; display: flex; align-items: flex-start; font-size: 1.05rem; line-height: 1.7; }
+        .coaching-about-me .about-text ul li i { color: var(--primary-red); margin-right: 15px; font-size: 1.5em; margin-top: 4px; width: 25px; text-align: center; }
+        @media (max-width: 820px) { /* Adjusted breakpoint for stacking */
+            .coaching-about-me .about-content { flex-direction: column; text-align: center; }
+            .coaching-about-me .about-image { margin-bottom: 2rem; }
+            .coaching-about-me .about-text ul li { justify-content: flex-start; text-align: left; } /* Center icon, left align text */
+        }
+
+        /* --- Coaching Focus Section (Services Offered & Not Included) --- */
+        .coaching-focus-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        @media (min-width: 992px) {
+            .coaching-focus-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .focus-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+        .focus-card h3 {
+            font-family: var(--font-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+        .focus-card h3 i { margin-right: 12px; font-size: 1.3em; }
+        .focus-card.included h3 { color: var(--primary-blue); }
+        .focus-card.included h3 i { color: var(--primary-blue); }
+        .focus-card.excluded h3 { color: var(--primary-red); }
+        .focus-card.excluded h3 i { color: var(--primary-red); }
+        .focus-card ul { list-style: none; padding-left: 0; }
+        .focus-card ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .focus-card ul li i.fa-check-circle { color: #27ae60; margin-right: 10px; margin-top: 5px; font-size: 1.2em; }
+        .focus-card ul li i.fa-times-circle { color: #c0392b; margin-right: 10px; margin-top: 5px; font-size: 1.2em; }
+
+        /* --- My Approach Note --- */
+        .my-approach-note {
+            background-color: #e9f5f9; /* Lighter, more inviting blue */
+            border-left: 6px solid var(--primary-blue);
+            color: #1c5b7c; /* Darker blue text for contrast */
+            padding: 1.8rem 2.2rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .my-approach-note h4 {
+            margin-top: 0;
+            font-family: var(--font-primary);
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            color: var(--primary-blue); /* Heading color */
+        }
+        .my-approach-note h4 i { margin-right: 12px; }
+        .my-approach-note p { font-size: 1rem; line-height: 1.75; }
+
+        /* --- Investment Section (Pricing) --- */
+        .investment-section { text-align: center; padding: 3rem 1rem; border-radius: 10px; background-color: #fff; box-shadow: var(--card-shadow); }
+        .investment-section .section-title { margin-bottom: 0.5rem; }
+        .investment-section .price-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin: 0.5rem 0;
+            font-family: var(--font-primary);
+        }
+        .investment-section .payment-info { font-size: 1.15rem; color: #333; margin-bottom: 0.5rem; }
+        .investment-section .session-platform { font-size: 1rem; color: #555; }
+        .investment-section .payment-info strong { color: var(--primary-blue); }
+
+        /* --- Video Preview --- */
+        .coaching-video-preview .featured-video-player { max-width: 850px; margin: 0 auto; box-shadow: var(--hover-shadow); border-radius: 12px; background-color: #000; }
+        .coaching-video-preview .video-placeholder-text { text-align: center; margin-top: 1.5rem; font-style: italic; color: #555; }
+
+        /* --- Final CTA --- */
+        .final-cta-coaching {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-blue)); /* Reversed gradient for variety */
+            color: var(--light-text);
+            padding: 3.5rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        .final-cta-coaching h2 { font-family: var(--font-primary); font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 1rem; }
+        .final-cta-coaching p { font-size: 1.15rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.95; }
+        .final-cta-coaching .btn-accent {
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent-yellow);
+            color: var(--dark-text);
+            border-color: var(--accent-yellow);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+         .final-cta-coaching .btn-accent:hover {
+            background-color: #e6c300;
+            transform: translateY(-3px) scale(1.03);
+        }
+        .final-cta-coaching .btn-accent i { margin-left: 12px; }
+
+    </style>
+</head>
+<body>
+    <header>
+      <nav class="container">
+    <a href="index.html" class="logo-link">
+        <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+        <span class="logo-text">Aljohn Polyglot</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="dropdown">
+            <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <!-- Assuming language pages are still planned or in a future languages/ folder -->
+                <a href="languages/tagalog.html">Tagalog</a>
+                <a href="languages/cebuano.html">Cebuano</a>
+                <a href="languages/english.html">English</a>
+                <a href="languages/spanish.html">Spanish</a>
+                <a href="languages/french.html">French</a>
+                <a href="languages/indonesian.html">Indonesian</a>
+                <a href="languages/italian.html">Italian</a>
+                <a href="languages/portuguese.html">Portuguese</a>
+                <a href="languages/russian.html">Russian</a>
+                <a href="languages/swedish.html">Swedish</a>
+                <a href="languages/german.html">German</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="blog.html">Polyglot Papers Blog</a>
+                <a href="pathway.html">Pathway</a>
+                <a href="apps.html">Essential Apps & Tools</a>
+                <a href="routine.html">Daily Routine</a>
+                <a href="library.html">My Library</a>
+                <a href="groups.html">Study Groups & Communities</a>
+                 <a href="languagecenters.html">Language & Culture Centers</a>
+                <a href="FAQ.html">FAQ</a>
+               
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="coaching.html">Language Coaching</a>
+                <a href="translation.html">Translation</a>
+            </div>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
+</nav>
+    </header>
+
+    <main>
+        <section id="coaching-page-hero" class="coaching-hero">
+            <div class="container">
+                <h1>Ignite Your Language Learning Journey</h1>
+                <p class="subtitle">Personalized Coaching to Fast-Track Your Fluency with Proven Immersion Strategies.</p>
+                <a href="#booking-cta" class="btn btn-hero-cta">Book Your Session <i class="fas fa-rocket"></i></a>
+            </div>
+        </section>
+
+        <section id="why-coach-with-aljohn" class="content-section why-coach-section">
+            <div class="container">
+                <h2 class="section-title">Why Partner With Me on Your Path to Fluency?</h2>
+                <p class="section-subtitle">Gain insights and strategies from someone who lives and breathes intense language acquisition.</p>
+                <div class="why-coach-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Tailored Strategies</h3>
+                        <p>Receive personalized advice and help crafting a study plan that leverages my proven methods, adapted to your goals and learning style.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Real-World Fluency Focus</h3>
+                        <p>Benefit from conversation practice (Intermediate+) and guidance rooted in thousands of hours of actual language use and immersion.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-map-signs"></i>
+                        <h3>Clear Guidance & Resources</h3>
+                        <p>I'll demystify the learning process, guide you to effective resources, and help you overcome common obstacles, especially for beginners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="meet-your-coach" class="content-section coaching-about-me alt-bg">
+            <div class="container">
+                 <h2 class="section-title">Meet Your Coach: Aljohn</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/aljohn_portrait.png" alt="Aljohn Polyglot - Your Language Coach">
+                    </div>
+                    <div class="about-text">
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>
+                                <i class="fas fa-user-graduate fa-fw"></i>
+                                <span>A <span id="polyglot-age"></span>-year-old Polyglot from the Philippines, currently navigating the world in 11 languages.</span>
+                              </li>
+                            <li><i class="fas fa-hourglass-half fa-fw"></i>Committed 8-12 hours daily to immersive language study since the pandemic began, a testament to dedication.</li>
+                            <li><i class="fas fa-brain fa-fw"></i>Invested over 10,000+ hours in intensive language training, research, and real-world application.</li>
+                            <li>
+                                <i class="fab fa-youtube fa-fw"></i>
+                                <span>Creator of <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="inline-link">Aljohn Polyglot</a>, sharing authentic language interactions and cultural insights.</span>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coaching-focus" class="content-section">
+            <div class="container">
+                <h2 class="section-title">What We'll Achieve Together & What to Expect</h2>
+                <div class="coaching-focus-grid">
+                    <div class="focus-card included">
+                        <h3><i class="fas fa-cogs"></i>Coaching Focus: Areas We'll Cover</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Deep dive into my intensive study method, daily routines, and curated resource lists.</li>
+                            <li><i class="fas fa-check-circle"></i>Collaborative creation of your personalized, effective language study blueprint.</li>
+                            <li><i class="fas fa-check-circle"></i>Engaging conversation practice to significantly boost your fluency (Intermediate learners).</li>
+                            <li><i class="fas fa-check-circle"></i>Strategic insights for your target language and support in overcoming learning plateaus (Beginners).</li>
+                        </ul>
+                    </div>
+
+                    <div class="focus-card excluded">
+                        <h3><i class="fas fa-ban"></i>Setting Expectations: What's Not Included</h3>
+                         <ul>
+                            <li><i class="fas fa-times-circle"></i>Formal Exam Preparations (e.g., TOEFL, DELE, IELTS).</li>
+                            <li><i class="fas fa-times-circle"></i>Structured Language Lessons (e.g., traditional grammar drills, textbook-based teaching).</li>
+                            <li><i class="fas fa-times-circle"></i>Guaranteed fluency within a specific timeframe (progress depends on your effort!).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="my-approach-note">
+                    <h4><i class="fas fa-lightbulb fa-fw"></i>My Unique Approach: Your Guide, Not Your Teacher</h4>
+                    <p>While I don’t offer formal language teaching or certifications, my strength lies in guiding you. Think of me as your experienced mentor who can illuminate the path, introduce you to the core elements of your chosen language, and connect you with exceptional teachers, methods, and materials for your self-driven journey to fluency. I empower you to learn effectively and independently.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="coaching-investment" class="content-section investment-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Invest in Your Fluency</h2>
+                <p class="section-subtitle">Affordable, high-impact coaching to transform your language learning.</p>
+                <div class="price-display">250 PHP / 30 minutes</div>
+                <p class="payment-info">Payment Method: <strong>GCASH</strong> (Requested after our session)</p>
+                <p class="session-platform"><i class="fab fa-google" style="margin-right: 5px;"></i>Sessions are conducted via Google Meet for your convenience.</p>
+            </div>
+        </section>
+
+        <section id="coaching-preview" class="content-section coaching-video-preview">
+             <div class="container">
+                <h2 class="section-title">Curious About a Session?</h2>
+                <p class="section-subtitle">Here’s a sneak peek into the collaborative and insightful discussions we can have to elevate your language skills.</p>
+                <div class="featured-video-player">
+                    <iframe
+                        src="https://www.youtube.com/embed/J1gE25C5SB4" /* Replace VIDEO_ID_HERE with an actual relevant video ID if you have one, otherwise, keep it as a placeholder */
+                        title="Aljohn Polyglot Coaching Session Sample (Placeholder)"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="video-placeholder-text">(Placeholder: An actual coaching highlights video will be featured here soon! The current video is a sample of related content.)</p>
+            </div>
+        </section>
+
+        <section id="booking-cta" class="final-cta-coaching">
+            <div class="container">
+                <h2>Ready to Elevate Your Language Learning?</h2>
+                <p>Take the decisive step. Select your preferred time via the Google Calendar link below and answer a few short questions. Your personalized coaching session awaits!</p>
+                <a href="https://tinyurl.com/AljohnPolyglotCoaching" target="_blank" class="btn btn-accent">Book Your Coaching Session Now <i class="fas fa-calendar-check"></i></a>
+            </div>
+        </section>
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
+            </div>
+            <nav class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add other social links here if you have them -->
+            </div>
+        </div>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function calculateAge(birthDateString) {
+            const birthDate = new Date(birthDateString);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const ageSpan = document.getElementById('polyglot-age');
+            if (ageSpan) {
+                const birthDate = '2003-05-08'; // Your birth date
+                ageSpan.textContent = calculateAge(birthDate);
+            }
+            // Ensure correct active link for services dropdown
+            const serviceNavLinks = document.querySelectorAll('.nav-links .dropdown-content a');
+            const currentPage = window.location.href;
+            serviceNavLinks.forEach(link => {
+                if (link.href === currentPage) {
+                    link.classList.add('active-link');
+                    // Add active-parent to the main "Services" dropdown button
+                    const parentDropdown = link.closest('.dropdown');
+                    if (parentDropdown) {
+                        const dropbtn = parentDropdown.querySelector('.dropbtn');
+                        if (dropbtn) {
+                            dropbtn.classList.add('active-parent'); 
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

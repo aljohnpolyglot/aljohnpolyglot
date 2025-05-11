@@ -41,8 +41,31 @@
         }
         
         /* Standard Header styles from your main styles.css */
-        header { background-color: var(--light-text); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
-        header nav.container { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; height: 70px; max-width:1100px; margin: 0 auto; width:90%;}
+      header {
+    /* ... your existing header styles ... */
+    width: 100%; /* Crucial: Make header span full width */
+    /* Remove any margin: auto; if it exists here, as body will center it */
+    position: fixed; /* You already have this, good */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* You have this, good */
+    background-color: var(--light-bg, #f8f9fa); /* Ensure a background color for header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Standard shadow */
+}
+
+/* Ensure the nav.container within the header behaves as expected */
+header nav.container {
+    /* ... your existing nav.container styles from styles.css ... */
+    /* Example (make sure these match your main styles.css): */
+    width: 90%;
+    max-width: 1100px; /* Or whatever your standard max-width is */
+    margin: 0 auto; /* This will center the nav content WITHIN the full-width header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Your standard header height */
+    padding: 0.8rem 0; /* Adjust as per your styles.css */
+}
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
         .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
@@ -125,65 +148,69 @@
 <body>
     <header>
          <nav class="container">
-            <a href="index.html" class="logo-link">
-                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
-                <span class="logo-text">Aljohn Polyglot</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li class="dropdown">
-                    <a href="#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="languages/tagalog.html">Tagalog</a>
-                        <a href="languages/cebuano.html">Cebuano</a>
-                        <a href="languages/english.html">English</a>
-                        <a href="languages/spanish.html">Spanish</a>
-                        <a href="languages/french.html">French</a>
-                        <a href="languages/indonesian.html">Indonesian</a>
-                        <a href="languages/italian.html">Italian</a>
-                        <a href="languages/portuguese.html">Portuguese</a>
-                        <a href="languages/russian.html">Russian</a>
-                        <a href="languages/swedish.html">Swedish</a>
-                        <a href="languages/german.html">German</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="">Polyglot Papers Blog</a>
-                        <a href="pathway.html">Pathway</a>
-                        <a href="resources/apps.html">Essential Apps & Tools</a>
-                        <a href="resources\routine.html">Daily Routine</a> 
-                        <a href="index.html#cultural-institutes">Language & Culture Centers</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="services/coaching/coaching.html">Language Coaching</a>
-                        <a href="services/translation/translation.html">Translation</a> 
-                    </div>
-                </li>
-                <li><a href="shop/shop.html">Shop</a></li>
-                 <li><a href="FAQ.html">FAQ</a></li>
-                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <div class="hamburger"></div>
+    <a href="index.html" class="logo-link">
+        <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+        <span class="logo-text">Aljohn Polyglot</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="dropdown">
+            <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <!-- Assuming language pages are still planned or in a future languages/ folder -->
+                <a href="languages/tagalog.html">Tagalog</a>
+                <a href="languages/cebuano.html">Cebuano</a>
+                <a href="languages/english.html">English</a>
+                <a href="languages/spanish.html">Spanish</a>
+                <a href="languages/french.html">French</a>
+                <a href="languages/indonesian.html">Indonesian</a>
+                <a href="languages/italian.html">Italian</a>
+                <a href="languages/portuguese.html">Portuguese</a>
+                <a href="languages/russian.html">Russian</a>
+                <a href="languages/swedish.html">Swedish</a>
+                <a href="languages/german.html">German</a>
             </div>
-        </nav>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="blog.html">Polyglot Papers Blog</a>
+                <a href="pathway.html">Pathway</a>
+                <a href="apps.html">Essential Apps & Tools</a>
+                <a href="routine.html">Daily Routine</a>
+                <a href="library.html">My Library</a>
+                <a href="groups.html">Study Groups & Communities</a>
+                 <a href="languagecenters.html">Language & Culture Centers</a>
+                <a href="FAQ.html">FAQ</a>
+             
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="coaching.html">Language Coaching</a>
+                <a href="translation.html">Translation</a>
+            </div>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
+</nav>
     </header>
 
     <main class="main-404">
@@ -225,28 +252,28 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                 <div class="footer-logo">
-                     <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img"> 
-                     <span>Aljohn Polyglot</span>
-                 </div>
-                <nav class="footer-links">
-                    <a href="index.html#about">About</a>
-                    <a href="pathway.html">Pathway</a> 
-                    <a href="blog.html">Blog</a> 
-                    <a href="resources/apps.html">Resources</a> 
-                    <a href="contact.html">Contact</a> 
-                </nav>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
-                    <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                </div>
+   <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
             </div>
-            <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add other social links here if you have them -->
+            </div>
         </div>
-   </footer>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
 
     <script>
         const greetings = [

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
-    <link rel="stylesheet" href="css/styles.css"> {/* Path to main CSS from root */}
+    <link rel="stylesheet" href="css/styles.css"> 
     <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
@@ -13,158 +13,248 @@
         :root {
             --primary-red: #C8102E;
             --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27);
+            --accent-yellow: lch(86.93% 87.16 91.27); /* Gold-like yellow */
             --dark-text: #2c3e50;
             --light-text: #ffffff;
-            --light-bg: #f8f9fa;
+            --light-bg: #f8f9fa; /* Used for header background */
             --border-color: #e0e0e0;
             --font-primary: 'Montserrat', sans-serif;
             --font-secondary: 'Open Sans', sans-serif;
             --font-mono: 'Roboto Mono', monospace;
             --tech-cyan: #00A9FF;
-            --deep-space-blue: #0a0f1a;
+            --deep-space-blue: #0a0f1a; /* Darker blue for contrast */
+            --maintenance-page-bg: #0d1424; /* Specific background for this page */
+            --maintenance-panel-bg: rgba(10, 25, 47, 0.9); /* Panel background */
+            --maintenance-border: rgba(0, 169, 255, 0.25);
+            --maintenance-text-light: #e0f2f7;
+            --maintenance-text-secondary: #a8c0d8;
         }
 
-        body {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.maintenance-page-active { /* Add this class to body in HTML */
             font-family: var(--font-secondary);
-            background-color: #111d31; /* Slightly different dark blue */
-            color: var(--light-text);
+            background-color: var(--maintenance-page-bg);
+            color: var(--maintenance-text-light);
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
             margin: 0;
-            text-align: center;
             overflow-x: hidden;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z'/%3E%3C/g%3E%3C/svg%3E"); /* Blueprint/grid pattern */
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+            padding-top: 70px; /* For fixed header */
         }
-        
-        /* Standard Header styles from your main styles.css */
-        header { background-color: var(--light-text); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
-        header nav.container { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; height: 70px; max-width:1100px; margin: 0 auto; width:90%;}
+
+        /* Header Styles (Ensure these align with your global styles.css for consistency) */
+        /* If these are already perfectly defined in styles.css and linked, you might not need to repeat all of them here */
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: var(--light-bg); /* Light background for contrast */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header nav.container { /* This is the inner container for nav content */
+            width: 90%;
+            max-width: 1100px; /* Or your site's standard max-width */
+            margin: 0 auto; /* Centers the nav content within the full-width header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
         .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-        .nav-links { list-style: none; display: flex; align-items:center; } .nav-links li { margin-left: 18px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.85rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+
+        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); } .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-        .nav-links li.dropdown { position: relative; } .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
+        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+
+        .nav-links li.dropdown { position: relative; }
+        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; /* Match link padding */ }
         .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
-        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 180px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 1001; border-radius: 0 0 4px 4px; top: 100%; left: 0; padding: 5px 0; }
-        .dropdown-content a { color: var(--dark-text); padding: 9px 15px; text-decoration: none; display: block; font-size: 0.8rem; font-weight: 500; }
-        .dropdown-content a:hover { background-color: var(--light-bg); color: var(--primary-red); } .nav-links li.dropdown:hover .dropdown-content { display: block; }
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 7px 15px !important; border-radius: 20px; font-size:0.85rem !important; } .nav-cta:hover { background-color: #A8001D; }
-        .menu-toggle { display: none; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+            z-index: 1001;
+            border-radius: 0 0 6px 6px;
+            top: 100%;
+            left: 0; /* Aligns dropdown to the left of its parent li */
+            padding: 8px 0;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            text-align: left; /* Ensures content within dropdown is left-aligned */
+        }
+        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
+        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
+        .nav-links li.dropdown.open .dropdown-content { display: block; } /* For JS toggle */
+
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
+        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
+        .nav-cta:hover::after { width: 0 !important; } /* Prevent underline on CTA button */
+
+
+        .menu-toggle { display: none; /* Handled by global styles.css for mobile */ }
 
 
         main.main-maintenance {
-            flex-grow: 1; display: flex; align-items: center; justify-content: center;
-            padding: 100px 20px 40px; /* Account for fixed header + extra space */
+            flex-grow: 1;
+            display: flex; /* Use flex to center its child */
+            align-items: center; /* Vertically center */
+            justify-content: center; /* Horizontally center */
             width: 100%;
+            padding: 40px 20px; /* Adjusted top padding is handled by body */
+            text-align: center; /* Center text within this main block */
         }
 
         .container-maintenance {
-            background-color: rgba(20, 35, 55, 0.92); /* Slightly different dark panel */
-            padding: 30px 35px 40px; border-radius: 12px;
-            box-shadow: 0 0 35px rgba(0, 100, 180, 0.25), 0 0 12px rgba(0, 100, 180, 0.2);
-            border: 1px solid rgba(0, 120, 200, 0.3);
-            max-width: 750px; width: 100%;
+            background-color: var(--maintenance-panel-bg);
+            padding: 35px 40px 45px;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
+            border: 1px solid var(--maintenance-border);
+            max-width: 750px;
+            width: 100%;
+            /* text-align: center; is inherited from main.main-maintenance */
         }
-        
-        .maintenance-icon-area {
-            margin-bottom: 1.5rem;
-        }
-        .maintenance-icon-area img { /* For your "Aljohn coding" image */
-            max-width: 150px; /* Adjust as needed */
-            height: auto;
-            border-radius: 10px; /* Or 50% if it's a circular portrait */
-            /* filter: grayscale(50%) contrast(1.1); Optional effect */
-        }
-         .maintenance-icon-area .fa-tools { /* Fallback if no image */
-            font-size: 4rem;
-            color: var(--accent-yellow);
-            margin-bottom: 1rem;
-            animation: spin 8s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
+        .maintenance-icon-area { margin-bottom: 1.8rem; }
+        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .maintenance-icon-area .fa-tools { display: none; /* Hide if image is present */ font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         .maintenance-message h1 {
             font-family: var(--font-primary);
-            font-size: clamp(1.6rem, 5vw, 2.4rem);
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
             color: var(--accent-yellow);
             margin-top: 0;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
         .maintenance-message .subtitle {
             font-family: var(--font-secondary);
-            font-size: 1.1rem;
-            color: var(--tech-cyan, #ADEBFF);
-            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            color: var(--tech-cyan);
+            margin-bottom: 1.8rem;
             font-weight: 600;
         }
 
-        .maintenance-description {
-            font-size: 1.05rem;
-            color: #c0d6f0; 
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-        .maintenance-description strong {
-            color: var(--light-text);
-        }
+        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
+        .maintenance-description strong { color: var(--maintenance-text-light); }
 
-        .mini-challenge { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px dashed rgba(0, 169, 255, 0.25); }
-        .mini-challenge h2 { font-family: var(--font-primary); color: #ADEBFF; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
+        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
         .mini-challenge .challenge-word-display {
-            font-family: var(--font-mono);
-            font-size: clamp(1.6rem, 6vw, 2.5rem);
-            color: var(--accent-yellow);
-            background-color: rgba(0,0,0,0.25); padding: 8px 18px; border-radius: 8px;
-            margin: 0.5rem auto 1.5rem; display: inline-block;
-            border: 1px solid rgba(255,215,0,0.35); font-weight: 500;
-            letter-spacing: 1px;
+            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
+            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
+            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
+            font-weight: 500; letter-spacing: 1.5px;
         }
-        .clues-container { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; text-align: left; }
-        .clue { background-color: rgba(0, 169, 255, 0.08); padding: 10px 15px; border-radius: 6px; border: 1px solid rgba(0, 169, 255, 0.15); font-size: 0.95rem; color: #d0e0f0; }
-        .clue strong { color: #ADEBFF; }
-        .guess-input-area { margin-bottom: 1.5rem; }
-        .guess-input-area label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #ADEBFF; }
-        #languageGuess { padding: 10px 15px; border-radius: 6px; border: 1px solid rgba(0, 169, 255, 0.4); background-color: rgba(0, 20, 40, 0.7); color: var(--light-text); font-size: 1rem; width: calc(100% - 32px); max-width: 300px; font-family: var(--font-secondary); }
-        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 10px rgba(255,215,0,0.3); }
-        .btn { display: inline-block; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 20px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 0.95rem; margin: 5px; }
-        .btn-primary { background-color: var(--accent-yellow); color: var(--dark-text); border: 2px solid var(--accent-yellow); }
-        .btn-primary:hover { background-color: #e6c300; transform: translateY(-2px); }
-        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border: 2px solid var(--accent-yellow); }
-        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
-        #feedbackMessage { margin-top: 1rem; font-weight: bold; min-height: 1.5em; }
-        .feedback-correct { color: #2dce89; } .feedback-incorrect { color: #FF6347; }
-        .navigation-links { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0, 169, 255, 0.2); }
-        .navigation-links p { margin-bottom: 1rem; color: #c0d6f0; }
+        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
+        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
+        .clue strong { color: var(--maintenance-text-light); }
+        .guess-input-area { margin-bottom: 1.8rem; }
+        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
+        #languageGuess {
+            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
+            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
+            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
+        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
 
-        /* Footer styles from your main styles.css (ensure they are compatible with dark bg) */
-        footer { background-color: var(--deep-space-blue); color: rgba(224, 242, 247, 0.7); padding: 40px 0 20px; font-size: 0.9rem; border-top: 1px solid var(--tech-cyan, rgba(0, 169, 255, 0.2)); width:100%;}
-        footer .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; max-width: 1100px; margin-left:auto; margin-right:auto; width:90%;}
-        footer .footer-logo { display: flex; align-items: center; color: var(--light-text); font-weight: 600; text-decoration: none; }
-        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } footer .footer-logo span { font-family: var(--font-primary); font-size: 1.2rem; }
-        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
-        footer .footer-links a { color: rgba(200, 220, 240, 0.8); text-decoration: none; transition: color 0.3s ease; padding-bottom: 3px;}
-        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline;}
-        footer .social-links a { color: rgba(200, 220, 240, 0.8); text-decoration: none; font-size: 1.5rem; margin-left: 15px; transition: color 0.3s ease, transform 0.2s ease; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
+        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
+        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
+        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
+        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
+        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
+        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
+        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
+
+        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
+        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
+
+        /* Footer specific styles for dark theme */
+        footer {
+            background-color: var(--deep-space-blue);
+            color: var(--maintenance-text-secondary);
+            padding: 50px 0 30px;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--tech-cyan);
+            width:100%;
+            margin-top: auto; /* Pushes footer to bottom if content is short */
+        }
+        footer .footer-content { /* Assuming .container class is used for width/centering */
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
+        }
+        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
+        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } /* From your main styles */
+        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
+        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
+        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
+        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
         footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
-        footer .copyright { text-align: center; border-top: 1px solid rgba(0, 169, 255, 0.15); padding-top: 1.5rem; margin-top: 1.5rem; color: rgba(180,200,220,0.7); }
-        @media (max-width: 768px) { /* Mobile Nav specific for maintenance page */
-            .nav-links { display: none !important; }
-            .menu-toggle { display: none !important; }
-            header nav.container { justify-content: center; }
-            footer .footer-content { flex-direction: column; text-align: center; gap: 1rem; }
-        }
+        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
 
+        /* Responsive adjustments for maintenance page header/footer */
+        @media (max-width: 768px) {
+            body.maintenance-page-active {
+                padding-top: 60px; /* Adjust if mobile header height is different */
+            }
+            header nav.container {
+                height: 60px; /* Adjust if mobile header height is different */
+                /* If nav-links are hidden by default via main styles.css display:none, this is fine */
+                /* If they are not, and menu-toggle handles it, ensure menu-toggle is styled for this page */
+            }
+            .nav-links { /* This ensures mobile menu (if toggled by JS) behaves */
+                display: none; /* Initially hidden */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Position below header */
+                left: 0;
+                width: 100%;
+                background-color: var(--light-bg);
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+            .nav-links.active { display: flex; } /* JS adds 'active' to show */
+            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
+            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
+            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; /* Slightly different for contrast */}
+
+            .menu-toggle { display: block; /* Usually handled by global styles.css */ cursor:pointer; /* ... add your hamburger styles ... */ }
+
+
+            .container-maintenance { padding: 25px 20px 30px; }
+            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+            .maintenance-message .subtitle { font-size: 1rem; }
+            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
+
+            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
+        }
     </style>
 </head>
-<body>
+<body class="maintenance-page-active">
     <header>
         <nav class="container">
             <a href="index.html" class="logo-link">
@@ -172,9 +262,9 @@
                 <span class="logo-text">Aljohn Polyglot</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="index.html#about">About</a></li>
                 <li class="dropdown">
-                    <a href="#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="languages/tagalog.html">Tagalog</a>
                         <a href="languages/cebuano.html">Cebuano</a>
@@ -190,7 +280,7 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
                         <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
@@ -201,29 +291,32 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <a href="index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="">Polyglot Papers Blog</a>
+                        <a href="blog.html">Polyglot Papers Blog</a>
                         <a href="pathway.html">Pathway</a>
-                        <a href="resources/apps.html">Essential Apps & Tools</a>
-                        <a href="resources\routine.html">Daily Routine</a> 
-                        <a href="index.html#cultural-institutes">Language & Culture Centers</a>
+                        <a href="apps.html">Essential Apps & Tools</a>
+                        <a href="routine.html">Daily Routine</a>
+                        <a href="library.html">My Library</a>
+                        <a href="groups.html">Study Groups & Communities</a>
+                         <a href="languagecenters.html">Language & Culture Centers</a>
+                        <a href="FAQ.html">FAQ</a>
+                       
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="services/coaching/coaching.html">Language Coaching</a>
-                        <a href="services/translation/translation.html">Translation</a> 
+                        <a href="coaching.html">Language Coaching</a>
+                        <a href="translation.html">Translation</a>
                     </div>
                 </li>
-                <li><a href="shop/shop.html">Shop</a></li>
-                 <li><a href="FAQ.html">FAQ</a></li>
-                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
             </ul>
             <div class="menu-toggle">
-                <div class="hamburger"></div>
+                <div class="hamburger"></div> <!-- Ensure your styles.css has styling for this -->
             </div>
         </nav>
     </header>
@@ -231,9 +324,8 @@
     <main class="main-maintenance">
         <div class="container-maintenance">
             <div class="maintenance-icon-area">
-                <!-- Replace with your "Aljohn coding" image -->
                 <img src="images/aljohn_coding_maintenance.png" alt="Aljohn working on updates">
-               <i class="fas fa-tools"></i> 
+                {/* <i class="fas fa-tools"></i> Icon will be hidden by CSS if image loads */}
             </div>
             <div class="maintenance-message">
                 <h1>System Upgrade in Progress!</h1>
@@ -248,7 +340,7 @@
                 <h2>Linguistic Puzzle Break!</h2>
                 <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
                 <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
-                
+
                 <div class="clues-container">
                     <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
                     <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
@@ -272,32 +364,31 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                 <div class="footer-logo">
-                     <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img"> 
-                     <span>Aljohn Polyglot</span>
-                 </div>
-                <nav class="footer-links">
-                    <a href="index.html#about">About</a>
-                    <a href="pathway.html">Pathway</a> 
-                    <a href="blog.html">Blog</a> 
-                    <a href="resources/apps.html">Resources</a> 
-                    <a href="contact.html">Contact</a> 
-                </nav>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
-                    <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                </div>
+   <footer>
+    <div class="container"> {/* Ensure footer also uses a .container for consistency if needed */}
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
             </div>
-            <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
         </div>
-   </footer>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
 
     <script>
+        // Mini Challenge Game Logic
         const maintenanceWords = [
-            // Word meaning "to build/create/construct"
             { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
             { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
             { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
@@ -308,11 +399,8 @@
             { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
             { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
             { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
-            // English is excluded
         ];
-
         let currentChallenge;
-
         const challengeWordDisplay = document.getElementById('challengeWordDisplay');
         const cluesContainer = document.querySelector('.clues-container');
         const languageGuessInput = document.getElementById('languageGuess');
@@ -323,7 +411,6 @@
         function setupNewMaintenanceChallenge() {
             currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
             challengeWordDisplay.textContent = currentChallenge.word;
-            
             cluesContainer.innerHTML = '';
             currentChallenge.clues.forEach((clueText, index) => {
                 const clueDiv = document.createElement('div');
@@ -331,64 +418,100 @@
                 clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
                 cluesContainer.appendChild(clueDiv);
             });
-
-            feedbackMessage.textContent = '';
-            languageGuessInput.value = '';
-            submitGuessBtn.disabled = false;
-            languageGuessInput.disabled = false;
-            languageGuessInput.focus();
-            newWordBtn.style.display = 'none';
+            feedbackMessage.textContent = ''; languageGuessInput.value = '';
+            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
+            languageGuessInput.focus(); newWordBtn.style.display = 'none';
+        }
+        if (submitGuessBtn) { // Check if elements exist (they should on this page)
+            submitGuessBtn.addEventListener('click', function() {
+                const userGuess = languageGuessInput.value.trim().toLowerCase();
+                const correctAnswer = currentChallenge.language.toLowerCase();
+                if (!userGuess) {
+                    feedbackMessage.textContent = "Please enter your language guess!";
+                    feedbackMessage.className = 'feedback-incorrect'; return;
+                }
+                if (userGuess === correctAnswer) {
+                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
+                    feedbackMessage.className = 'feedback-correct';
+                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
+                    newWordBtn.style.display = 'inline-block';
+                } else {
+                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
+                    feedbackMessage.className = 'feedback-incorrect';
+                    newWordBtn.style.display = 'inline-block'; // Show new word button even on incorrect guess
+                }
+            });
+            languageGuessInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
+            });
+            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
+            setupNewMaintenanceChallenge(); // Initialize
         }
 
-        submitGuessBtn.addEventListener('click', function() {
-            const userGuess = languageGuessInput.value.trim().toLowerCase();
-            const correctAnswer = currentChallenge.language.toLowerCase();
-
-            if (!userGuess) {
-                feedbackMessage.textContent = "Please enter your language guess!";
-                feedbackMessage.className = 'feedback-incorrect';
-                return;
-            }
-
-            if (userGuess === correctAnswer) {
-                feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
-                feedbackMessage.className = 'feedback-correct';
-                submitGuessBtn.disabled = true;
-                languageGuessInput.disabled = true;
-                newWordBtn.style.display = 'inline-block';
-            } else {
-                feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
-                feedbackMessage.className = 'feedback-incorrect';
-                newWordBtn.style.display = 'inline-block';
-            }
-        });
-        
-        languageGuessInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' && !submitGuessBtn.disabled) {
-                submitGuessBtn.click();
-            }
-        });
-
-        newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
-
-        // Initialize the first challenge
-        setupNewMaintenanceChallenge();
-        
+        // Copyright Year
         const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) {
-            currentYearSpan.textContent = new Date().getFullYear();
-        }
+        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
 
-        // Mobile menu toggle for header (if using full nav)
+        // Mobile Menu Toggle (assuming .menu-toggle and .nav-links structure from global nav)
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) { // Check if they exist (might be hidden on mobile via CSS)
+        if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active'); // JS toggles this class
+                menuToggle.classList.toggle('active'); // For hamburger animation
             });
         }
 
+        // Desktop Dropdown Menu Logic
+        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
+        desktopDropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('a.dropbtn');
+            if (button) {
+                button.setAttribute('aria-haspopup', 'true');
+                button.setAttribute('aria-expanded', 'false');
+                button.addEventListener('click', function(event) {
+                    // For dropdowns where dropbtn itself is not a page link
+                    if (button.getAttribute('href') === 'javascript:void(0)' || button.getAttribute('href') === '#') {
+                        event.preventDefault();
+                    }
+                    // If it's a link to a page section (like index.html#languages), allow default but still open dropdown
+                    // For now, let's assume all dropbtns are primarily for toggling
+                    if (button.getAttribute('href').startsWith('#') && button.getAttribute('href') !== 'javascript:void(0)') {
+                        // If it's a fragment identifier for the same page, we might still want to prevent default and handle scroll
+                        // But for now, we focus on the toggle action
+                    } else {
+                         event.preventDefault(); // Prevent navigation for most dropbtn clicks
+                    }
+
+
+                    const isCurrentlyOpen = dropdown.classList.contains('open');
+                    desktopDropdowns.forEach(otherDd => {
+                        if (otherDd !== dropdown) {
+                            otherDd.classList.remove('open');
+                            const otherButton = otherDd.querySelector('a.dropbtn');
+                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    if (isCurrentlyOpen) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        dropdown.classList.add('open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                    event.stopPropagation();
+                });
+            }
+        });
+        document.addEventListener('click', function(event) {
+            desktopDropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                    const button = dropdown.querySelector('a.dropbtn');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
     </script>
 </body>
 </html>

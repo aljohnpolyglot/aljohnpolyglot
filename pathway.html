@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aljohn Polyglot | The Language Learning Pathway (A1-C2)</title>
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Metamorphous&display=swap" rel="stylesheet">
@@ -12,16 +12,15 @@
 
 <style>
     /* --- Pathway Page Specific Styles --- */
-   /* --- Pathway Page Specific Styles --- */
 :root {
     --pathway-bg: #F0EAD6; /* Parchment like - This will now be for content cards */
     --pathway-dark-brown: #4A3B2A;
-    --pathway-medium-brown: #6B4F2E; 
-    --pathway-green: #556B2F; 
-    --pathway-gold: #B8860B; 
-    --pathway-red-accent: #800000; 
-    --pathway-text: #3D2B1F; 
-    --pathway-border: #C1A87C; 
+    --pathway-medium-brown: #6B4F2E;
+    --pathway-green: #556B2F;
+    --pathway-gold: #B8860B;
+    --pathway-red-accent: #800000;
+    --pathway-text: #3D2B1F;
+    --pathway-border: #C1A87C;
     --pathway-card-bg: #FAF0E6; /* Existing card background, perfect for our "scrolls" */
     --font-themed-headings: 'MedievalSharp', cursive;
     --font-themed-text: 'Metamorphous', cursive;
@@ -30,84 +29,204 @@
 /* ---- NEW/MODIFIED BODY STYLING FOR BLURRED BACKGROUND ---- */
 body.pathway-page {
     font-family: 'Open Sans', sans-serif;
-    color: var(--pathway-text); /* Default text color for elements without specific bg */
-    padding-top: 70px; 
-    position: relative; /* For the ::before pseudo-element */
-    background-color: #4A3B2A; /* Fallback dark color if image doesn't load */
-    overflow-x: hidden; /* Prevent horizontal scroll from scaled pseudo-element */
+    color: var(--pathway-text);
+    padding-top: 70px;
+    position: relative;
+    background-color: #4A3B2A;
+    overflow-x: hidden;
 }
 
 body.pathway-page::before {
     content: '';
-    position: fixed; /* Fixed position to cover the whole viewport and stay put */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('images/pathway_coverart.png');
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('images/pathway_coverart.png'); /* Make sure this path is correct */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    filter: blur(8px) brightness(0.8); /* Adjust blur and brightness for readability */
-    transform: scale(1.05); /* Scale slightly to avoid blurred edges appearing in view */
-    z-index: -1; /* Place it behind all page content */
-    will-change: filter; /* Hint for browser optimization */
+    filter: blur(8px) brightness(0.8);
+    transform: scale(1.05);
+    z-index: -1;
+    will-change: filter;
 }
-/* ---- END OF NEW/MODIFIED BODY STYLING ---- */
 
 .pathway-page .section-title {
     font-family: var(--font-themed-headings);
     color: var(--pathway-dark-brown);
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Optional: subtle shadow for titles */
+    position: relative; /* For the ::after element */
+    padding-bottom: 10px; /* Space for the line */
+    margin-bottom: 20px; /* Default margin */
 }
+/* The line below section titles */
 .pathway-page .section-title::after {
+    content: '';
+    display: block;
+    width: 80px; /* Width of the line */
+    height: 3px; /* Thickness of the line */
     background-color: var(--pathway-gold);
+    margin: 15px auto 0; /* Centering the line */
+    border-radius: 2px;
 }
-.pathway-page .section-subtitle {
+.pathway-page .section-subtitle { /* This is the base style for subtitles/descriptive text */
     font-family: var(--font-themed-text);
     font-size: 1.2rem;
     color: var(--pathway-medium-brown);
-    max-width: 800px;
-    /* text-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Optional */
+    max-width: 700px; /* Control width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    padding: 0 20px; /* Horizontal padding */
 }
 
 .pathway-main-container {
-    padding-top: 20px; 
+    padding-top: 20px;
 }
 
 /* --- MODIFIED: pathway-map-intro --- */
 .pathway-map-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: var(--pathway-card-bg); /* Give it a solid scroll-like background */
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid var(--pathway-border);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow to lift it */
+    text-align: center; /* Center align content within this scroll */
+    margin-bottom: 60px; /* More space after this grand intro */
+    background-color: var(--pathway-card-bg);
+    padding: 40px 25px;
+    border-radius: 20px; /* Slightly more rounded */
+    border: 3px solid var(--pathway-border);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden; /* Good for any potential pseudo-element effects */
 }
-/* The .intro-banner-image class is no longer needed here as the img tag will be removed */
 
-.pathway-map-intro .pathway-video-links {
+/* Optional: Add a subtle texture or inner border to the scroll */
+.pathway-map-intro::before {
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px dashed rgba(184, 134, 11, 0.5); /* Fainter dashed gold border inside */
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.intro-main-title { /* Specific styling for the main title of this section */
+    font-size: clamp(2.8rem, 6vw, 4.5rem) !important; /* Make it grander */
+    color: var(--pathway-red-accent) !important;
+    margin-bottom: 30px !important;
+}
+.intro-main-title::after{
+    width: 120px; /* Longer line for the main title */
+    height: 4px;
+}
+
+.intro-map-container {
+    margin-bottom: 30px;
+}
+
+img.intro-banner-image {
+    max-width: 100%;
+    width: 650px; /* Max width for the map image */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 2px solid var(--pathway-border);
+    box-shadow: 0 8px 20px rgba(74, 59, 42, 0.2);
+    transition: transform 0.3s ease-out;
+}
+img.intro-banner-image:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+}
+
+.intro-description { /* Uses .section-subtitle base styles */
+    font-size: 1.25rem; /* Slightly larger for emphasis */
+    color: var(--pathway-text);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.intro-video-section {
     margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px dashed var(--pathway-border); /* Separator */
+}
+
+.video-section-title {
+    font-family: var(--font-themed-headings);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--pathway-dark-brown);
+    margin-bottom: 30px;
+    position: relative;
+}
+/* Optional: small flourish for video section title */
+.video-section-title::before,
+.video-section-title::after {
+    content: '~❖~'; /* Example flourish, can be changed or removed */
+    font-family: 'Times New Roman', Times, serif; /* A more generic serif for flourishes */
+    font-size: 0.7em;
+    color: var(--pathway-gold);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.video-section-title::before { left: -40px; } /* Adjust positioning as needed */
+.video-section-title::after { right: -40px; }
+
+
+.pathway-video-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
-.pathway-map-intro .video-link-card {
-    background-color: #fff9f0; /* Slightly different from main card bg for variety */
+.video-link-card {
+    background-color: #fff9f0;
     border: 1px solid var(--pathway-border);
-    width: 300px;
+    border-radius: 10px;
+    width: 320px; /* Fixed width for cards, will wrap */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure image corners are clipped by border-radius */
+    text-decoration: none; /* If the whole card is a link */
 }
- .pathway-map-intro .video-link-card img {
+.video-link-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.video-link-card a { /* Ensure link inside takes up full card space if needed */
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.video-link-card img {
     width: 100%;
-    height: 170px; 
+    height: 180px; /* Consistent height for video thumbnails */
     object-fit: cover;
+    border-bottom: 1px solid var(--pathway-border);
 }
-.pathway-map-intro .video-link-card h4 {
+.video-link-card h4 {
     font-family: var(--font-themed-text);
+    font-size: 1.15rem;
     color: var(--pathway-red-accent);
+    padding: 15px 15px 5px 15px;
+    margin: 0;
+}
+.video-link-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--pathway-text);
+    padding: 0 15px 15px 15px;
+    margin: 0;
+}
+
+/* Fade-in animation class */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .language-journey {
@@ -125,7 +244,7 @@ body.pathway-page::before {
     position: relative;
     overflow: hidden;
 }
-.journey-phase::before { 
+.journey-phase::before {
     content: '';
     position: absolute;
     top: 10px; left: 10px; right: 10px; bottom: 10px;
@@ -136,12 +255,12 @@ body.pathway-page::before {
 
 .phase-banner {
     width: 100%;
-    max-height: 300px; 
-    object-fit: contain; 
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 20px;
     border: 2px solid var(--pathway-border);
-    background-color: #E0D6C3; 
+    background-color: #E0D6C3;
 }
 
 .phase-title {
@@ -175,7 +294,7 @@ body.pathway-page::before {
     display: flex;
     align-items: center;
 }
-.phase-section-heading i.heading-icon { 
+.phase-section-heading i.heading-icon {
     margin-right: 10px;
     color: var(--pathway-gold);
 }
@@ -190,11 +309,11 @@ body.pathway-page::before {
     display: flex;
     align-items: flex-start;
 }
-.phase-goals-list li i.goal-icon { 
+.phase-goals-list li i.goal-icon {
     color: var(--pathway-green);
     margin-right: 10px;
     margin-top: 4px;
-    width: 1.2em; 
+    width: 1.2em;
     text-align: center;
 }
 
@@ -236,7 +355,7 @@ body.pathway-page::before {
     display: flex;
     align-items: center;
 }
-.toolkit-category-header h4 i.category-icon { 
+.toolkit-category-header h4 i.category-icon {
     margin-right: 10px;
     color: var(--pathway-red-accent);
 }
@@ -253,7 +372,7 @@ body.pathway-page::before {
     border-top: 1px dashed transparent;
 }
 .toolkit-category.active .toolkit-category-content {
-    max-height: 1500px; 
+    max-height: 1500px;
     padding: 15px 18px;
     border-top-color: var(--pathway-border);
 }
@@ -262,27 +381,27 @@ body.pathway-page::before {
 }
 
 .tool-item {
-    margin-bottom: 18px; 
-    padding-bottom: 18px; 
+    margin-bottom: 18px;
+    padding-bottom: 18px;
     border-bottom: 1px dotted var(--pathway-border);
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
 }
 .tool-item:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
-.tool-header { 
+.tool-header {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
-.tool-icon { 
-    font-size: 1.5em; 
+.tool-icon {
+    font-size: 1.5em;
     color: var(--pathway-medium-brown);
     margin-right: 10px;
-    width: 25px; 
+    width: 25px;
     text-align: center;
 }
 
@@ -290,7 +409,7 @@ body.pathway-page::before {
     font-size: 1.1rem;
     color: var(--pathway-green);
 }
-.tool-item strong a { 
+.tool-item strong a {
     color: inherit;
     text-decoration: none;
 }
@@ -301,31 +420,31 @@ body.pathway-page::before {
 .tool-item .rating {
     font-weight: bold;
     font-style: italic;
-    margin-left: 8px; 
+    margin-left: 8px;
 }
 .tool-item .rating.essential { color: var(--pathway-red-accent); }
 .tool-item .rating.recommended { color: var(--pathway-green); }
 
 .tool-item ul {
     list-style-type: disc;
-    margin-left: 35px; 
+    margin-left: 35px;
     margin-top: 5px;
 }
 .tool-item ul li { margin-bottom: 5px; font-size: 0.95rem; }
 .tool-item ul em { font-style: normal; font-weight: bold; }
-.tool-item p { 
-    font-size: 0.95rem; 
-    margin-top: 0; 
-    padding-left: 35px; 
+.tool-item p {
+    font-size: 0.95rem;
+    margin-top: 0;
+    padding-left: 35px;
 }
-.tool-item > p:first-of-type { 
+.tool-item > p:first-of-type {
     margin-top: 5px;
 }
 
-.usage-note { 
+.usage-note {
     font-size: 0.8em;
     font-style: italic;
-    font-weight: normal; 
+    font-weight: normal;
     color: var(--pathway-medium-brown);
 }
 
@@ -356,7 +475,7 @@ body.pathway-page::before {
     background-color: rgba(184, 134, 11, 0.05);
     max-width: 700px; margin-left: auto; margin-right: auto;
 }
-.pathway-final-scroll .btn-outline { 
+.pathway-final-scroll .btn-outline {
     border-color: var(--pathway-gold);
     color: var(--pathway-gold);
     font-family: var(--font-themed-text);
@@ -366,105 +485,135 @@ body.pathway-page::before {
     color: var(--pathway-card-bg); /* Changed to card bg for contrast */
 }
 
+/* --- Media Queries --- */
 @media (max-width: 768px) {
+    .pathway-map-intro { padding: 25px 15px; }
+    .intro-main-title { font-size: clamp(2.2rem, 7vw, 3rem) !important; }
+    .intro-main-title::after { width: 90px; }
+    img.intro-banner-image { width: 100%; max-width: 450px; }
+    .intro-description { font-size: 1.1rem; }
+    .video-section-title { font-size: clamp(1.5rem, 5vw, 2rem); }
+    .video-section-title::before, .video-section-title::after { display: none; } /* Hide flourishes on small screens */
+    .pathway-video-links { gap: 15px; }
+    .video-link-card { width: 100%; max-width: 300px; } /* Stack cards, but not too wide */
+
+    /* ... (Keep your other existing media query styles unchanged) ... */
     .journey-phase { padding: 15px; }
     .phase-title { font-size: 1.8rem; }
     .phase-section-heading { font-size: 1.5rem; }
     .toolkit-category-header h4 { font-size: 1.1rem; }
-    .pathway-map-intro .pathway-video-links { flex-direction: column; align-items: center; }
-    /* .pathway-map-intro .intro-banner-image is removed */
-    .tool-item p, .tool-item ul { padding-left: 5px; margin-left: 5px; } 
+    .tool-item p, .tool-item ul { padding-left: 5px; margin-left: 5px; }
 }
 
+@media (max-width: 480px) {
+    .intro-main-title { font-size: clamp(2rem, 8vw, 2.5rem) !important; }
+    .video-link-card h4 { font-size: 1.05rem; }
+    .video-link-card p { font-size: 0.85rem; }
+}
 </style>
 </head>
-<body class="pathway-page"> 
+<body class="pathway-page">
   <header>
-        <nav class="container">
-            <a href="index.html" class="logo-link">
-                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
-                <span class="logo-text">Aljohn Polyglot</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html#about">About</a></li>
-                <li class="dropdown">
-                    <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="languages/tagalog.html">Tagalog</a>
-                        <a href="languages/cebuano.html">Cebuano</a>
-                        <a href="languages/english.html">English</a>
-                        <a href="languages/spanish.html">Spanish</a>
-                        <a href="languages/french.html">French</a>
-                        <a href="languages/indonesian.html">Indonesian</a>
-                        <a href="languages/italian.html">Italian</a>
-                        <a href="languages/portuguese.html">Portuguese</a>
-                        <a href="languages/russian.html">Russian</a>
-                        <a href="languages/swedish.html">Swedish</a>
-                        <a href="languages/german.html">German</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                     <div class="dropdown-content">
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="index.html#resources" class="dropbtn active-parent">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="blog.html">Polyglot Papers Blog</a>
-                        <a href="pathway.html" class="active-link">Pathway</a> 
-                        <a href="resources/apps.html">Essential Apps & Tools</a>
-                        <a href="resources/routine.html">Daily Routine</a> 
-                        <a href="index.html#cultural-institutes">Language & Culture Centers</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="services/coaching/coaching.html">Language Coaching</a>
-                        <a href="services/translation/translation.html">Translation</a> 
-                    </div>
-                </li>
-                <li><a href="shop/shop.html">Shop</a></li> 
-                <li><a href="FAQ.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <div class="hamburger"></div>
+       <nav class="container">
+    <a href="index.html" class="logo-link">
+        <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+        <span class="logo-text">Aljohn Polyglot</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="dropdown">
+            <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <!-- Assuming language pages are still planned or in a future languages/ folder -->
+                <a href="languages/tagalog.html">Tagalog</a>
+                <a href="languages/cebuano.html">Cebuano</a>
+                <a href="languages/english.html">English</a>
+                <a href="languages/spanish.html">Spanish</a>
+                <a href="languages/french.html">French</a>
+                <a href="languages/indonesian.html">Indonesian</a>
+                <a href="languages/italian.html">Italian</a>
+                <a href="languages/portuguese.html">Portuguese</a>
+                <a href="languages/russian.html">Russian</a>
+                <a href="languages/swedish.html">Swedish</a>
+                <a href="languages/german.html">German</a>
             </div>
-        </nav>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="blog.html">Polyglot Papers Blog</a>
+                <a href="pathway.html">Pathway</a>
+                <a href="apps.html">Essential Apps & Tools</a>
+                <a href="routine.html">Daily Routine</a>
+                <a href="library.html">My Library</a>
+                <a href="groups.html">Study Groups & Communities</a>
+                 <a href="languagecenters.html">Language & Culture Centers</a>
+                <a href="FAQ.html">FAQ</a>
+               
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="coaching.html">Language Coaching</a>
+                <a href="translation.html">Translation</a>
+            </div>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
+</nav>
     </header>
 
-    <main id="top" class="pathway-main-container container">
+   <main id="top" class="pathway-main-container container">
+        <!-- === MODIFIED INTRO SECTION START === -->
         <section class="pathway-map-intro">
-            <h1 class="section-title">The Roadmap to Fluency</h1>
-            <img src="images/pathway_coverart.png" alt="Roadmap to Fluency - The Grand Map" class="intro-banner-image">
-            <p class="section-subtitle">This sacred map, etched from thousands of hours of linguistic adventure, guides you through the realms of language mastery. It demands courage and sacrifice, but promises treasures of fluency far swifter than conventional paths. Heed its wisdom, brave learner!</p>
-            
-            <div class="pathway-video-links">
-                 <div class="video-link-card">
-                    <a href="https://www.youtube.com/watch?v=O-C_SdCtkLg" target="_blank">
-                        <img src="https://i.ytimg.com/vi/O-C_SdCtkLg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBPmg9JuWTkHelCD415RJlTn9UVmg" alt="Method Overview Video Thumbnail">
-                        <h4>Video: Learn Languages FAST with this Method</h4>
-                        <p>The core philosophy and stage breakdown (Tagalog w/ Eng Subs).</p>
-                    </a>
-                 </div>
-                 <div class="video-link-card">
-                     <a href="https://www.youtube.com/watch?v=ht9q5ENjlV4" target="_blank">
-                         <img src="https://i.ytimg.com/vi/ht9q5ENjlV4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAT3xxaVuaB-i2gWizASSRgX3PxFQ" alt="Routine Video Thumbnail">
-                         <h4>Video: My Secret 12-Hour Daily Routine</h4>
-                         <p>A detailed look at the daily schedule, apps, and resources in action.</p>
-                     </a>
-                 </div>
+            <h1 class="section-title intro-main-title fade-in-element">The Roadmap to Fluency</h1>
+
+            <div class="intro-map-container fade-in-element">
+                <img src="images/pathway_coverart.png" alt="Roadmap to Fluency - The Grand Map" class="intro-banner-image">
+            </div>
+
+            <p class="section-subtitle intro-description fade-in-element">
+                This sacred map, etched from thousands of hours of linguistic adventure, guides you through the realms of language mastery. It demands courage and sacrifice, but promises treasures of fluency far swifter than conventional paths. Heed its wisdom, brave learner!
+            </p>
+
+            <div class="intro-video-section fade-in-element">
+                <h3 class="video-section-title">Unlock the Secrets</h3>
+                <div class="pathway-video-links">
+                     <div class="video-link-card">
+                        <a href="https://www.youtube.com/watch?v=O-C_SdCtkLg" target="_blank">
+                            <img src="https://i.ytimg.com/vi/O-C_SdCtkLg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBPmg9JuWTkHelCD415RJlTn9UVmg" alt="Method Overview Video Thumbnail">
+                            <h4>Video: Learn Languages FAST with this Method</h4>
+                            <p>The core philosophy and stage breakdown (Tagalog w/ Eng Subs).</p>
+                        </a>
+                     </div>
+                     <div class="video-link-card">
+                         <a href="https://www.youtube.com/watch?v=ht9q5ENjlV4" target="_blank">
+                             <img src="https://i.ytimg.com/vi/ht9q5ENjlV4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAT3xxaVuaB-i2gWizASSRgX3PxFQ" alt="Routine Video Thumbnail">
+                             <h4>Video: My Secret 12-Hour Daily Routine</h4>
+                             <p>A detailed look at the daily schedule, apps, and resources in action.</p>
+                         </a>
+                     </div>
+                </div>
             </div>
         </section>
+        <!-- === MODIFIED SECTION END === -->
 
         <div class="language-journey">
             <!-- Phase 1: Beginner / Foundation -->
@@ -778,28 +927,28 @@ body.pathway-page::before {
 
     </main>
 
-    <footer>
-         <div class="container">
-             <div class="footer-content">
-                  <div class="footer-logo">
-                      <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
-                      <span>Aljohn Polyglot</span>
-                  </div>
-                 <nav class="footer-links">
-                     <a href="index.html#about">About</a>
-                     <a href="#top">Pathway</a> 
-                     <a href="blog.html">Blog</a>
-                     <a href="resources/apps.html">Resources</a>
-                     <a href="mailto:youremail@example.com">Contact</a> 
-                 </nav>
-                 <div class="social-links">
-                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
-                     <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                 </div>
-             </div>
-             <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved. Language Learning, Intensified.</p>
-         </div>
-    </footer>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
+            </div>
+            <nav class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add other social links here if you have them -->
+            </div>
+        </div>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
     // --- Pathway Page Specific JavaScript ---
@@ -844,6 +993,80 @@ body.pathway-page::before {
             }
         }, { passive: true }); // Added passive for performance
     }
+    const fadeElements = document.querySelectorAll('.fade-in-element');
+
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- Your other potential pathway page specific JS could go here ---
+        // --- Desktop Dropdown Menu Logic ---
+        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
+
+        desktopDropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('a.dropbtn');
+
+            if (button) {
+                button.addEventListener('click', function(event) {
+                    // For dropdown toggles, we usually prevent default navigation
+                    event.preventDefault();
+
+                    const isCurrentlyOpen = dropdown.classList.contains('open');
+
+                    // Close all other open dropdowns
+                    desktopDropdowns.forEach(otherDd => {
+                        if (otherDd !== dropdown) {
+                            otherDd.classList.remove('open');
+                            const otherButton = otherDd.querySelector('a.dropbtn');
+                            if (otherButton) {
+                                otherButton.setAttribute('aria-expanded', 'false');
+                            }
+                        }
+                    });
+
+                    // Toggle the current dropdown
+                    if (isCurrentlyOpen) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        dropdown.classList.add('open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+
+                    event.stopPropagation(); // Prevent event from bubbling to document click listener immediately
+                });
+            }
+        });
+
+        // Close dropdowns if clicking outside of them
+        document.addEventListener('click', function(event) {
+            desktopDropdowns.forEach(dropdown => {
+                // Check if the click is outside the entire dropdown li element
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                    const button = dropdown.querySelector('a.dropbtn');
+                    if (button) {
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+        // --- End of Desktop Dropdown Menu Logic ---
 </script>
 </body>
 </html>
