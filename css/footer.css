@@ -1,71 +1,163 @@
 /* WEBSITE/css/footer.css */
-footer {
-    background-color: var(--dark-text);
-    color: rgba(255, 255, 255, 0.7);
-    padding: 40px 0 20px;
-    font-size: 0.9rem;
+
+/* Define fallbacks directly in case variables aren't loaded */
+:root {
+    --fallback-dark-text: #2d343e; /* Slightly less black dark blue/gray */
+    --fallback-light-text: #ffffff; /* Fallback light text */
+    --fallback-text-muted: rgba(230, 230, 230, 0.75); /* Slightly brighter muted text */
+    --fallback-accent-yellow: #f0a500; /* Fallback accent */
+    --fallback-font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Better fallback font */
+    --fallback-border-color: rgba(255, 255, 255, 0.2); /* Fallback border */
 }
 
+/* Use 'footer' tag selector if your HTML uses <footer>,
+   or '.site-footer' if your HTML template uses <div class="site-footer"> */
+footer, .site-footer {
+    background-color: var(--dark-text, var(--fallback-dark-text));
+    color: var(--footer-text-color, var(--fallback-text-muted));
+    padding: 40px 0 20px;
+    font-size: 0.9rem;
+    font-family: var(--font-primary, var(--fallback-font-primary));
+    line-height: 1.6;
+}
+
+/* Container for centering content */
+.footer-content .container,
+.footer-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Flex container for footer sections */
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.5rem 2rem;
     margin-bottom: 1.5rem;
 }
 
+/* Footer Sections */
+.footer-content > div,
+.footer-content > nav { /* Include nav if links are in nav */
+    flex: 1 1 auto; /* Allow shrinking/growing, basis auto */
+    /* min-width: 150px; /* Adjust as needed */
+    padding: 0 10px; /* Add padding to prevent touching */
+}
+/* Ensure logo/social don't take excessive space if middle links wrap */
+.footer-logo { flex-grow: 0; }
+.social-links { flex-grow: 0; text-align: right;} /* Align social icons right */
+
+
+/* Footer Logo Styling */
 .footer-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    color: var(--light-text);
+    color: var(--light-text, var(--fallback-light-text));
     font-weight: 600;
     text-decoration: none;
+    /* margin-bottom: 10px; /* Removed, rely on flex gap */
 }
 
 .footer-logo .logo-img {
-    border-color: var(--accent-yellow); /* Make sure this variable is available from styles.css */
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid var(--accent-yellow, var(--fallback-accent-yellow));
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 .footer-logo span {
-    font-family: var(--font-primary); /* Make sure this variable is available from styles.css */
+    font-family: var(--font-primary, var(--fallback-font-primary));
     font-size: 1.2rem;
+    white-space: nowrap;
 }
 
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 20px;
+/* Footer Links Styling */
+.footer-links { /* Applied to the <nav> or containing div */
+    text-align: center; /* Center the links themselves */
+    padding: 0;
+    margin: 0;
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--footer-link-color, var(--fallback-text-muted));
     text-decoration: none;
-    margin-left: 0; /* This was in your styles.css, keep if intended */
     transition: color 0.3s ease;
+    margin: 0 10px; /* Space between links */
+    display: inline-block; /* Treat as block for margin */
 }
 
 .footer-links a:hover {
-    color: var(--light-text);
+    color: var(--light-text, var(--fallback-light-text));
+}
+
+/* Footer Social Links Styling */
+.social-links {
+     /* margin-top: 10px; /* Removed, rely on flex alignment */
 }
 
 .social-links a {
-    color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    color: var(--footer-social-icon-color, var(--fallback-text-muted));
     text-decoration: none;
     font-size: 1.5rem;
-    margin-left: 15px;
+    margin-left: 15px; /* Space between social icons */
     transition: color 0.3s ease, transform 0.2s ease;
+}
+.social-links a:first-child {
+    margin-left: 0;
 }
 
 .social-links a:hover {
-    color: var(--accent-yellow); /* Make sure this variable is available from styles.css */
+    color: var(--accent-yellow, var(--fallback-accent-yellow));
     transform: scale(1.1);
 }
 
-.copyright {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+/* --- Copyright Styling --- */
+.footer-bottom {
+    width: 100%;
+    clear: both;
+    border-top: 1px solid var(--footer-border-color, var(--fallback-border-color));
     padding-top: 1.5rem;
     margin-top: 1.5rem;
+    font-size: 0.85em;
+    color: var(--footer-copyright-color, #aaa);
+}
+
+/* --- Explicitly center the paragraph inside footer-bottom --- */
+.footer-bottom p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem; /* Reduce gap */
+    }
+    .footer-content > div,
+    .footer-content > nav {
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+        padding: 0; /* Remove padding */
+        margin-bottom: 1rem; /* Add space between stacked items */
+    }
+    .social-links { text-align: center; } /* Center social links */
+    .social-links a { margin: 0 10px; }
+
+    .footer-bottom { margin-top: 1rem; }
+    .footer-bottom p { text-align: center; }
 }
