@@ -3,445 +3,432 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aljohn Polyglot - Master Languages with Intense Immersion</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="/css/navbar.css">
+    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+      <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/polyglot-papers-preview.css">
-    <link rel="stylesheet" href="/css/pathway-preview.css">
-    <link rel="stylesheet" href="/css/core-toolkit-preview.css">
-    <link rel="stylesheet" href="/css/routine-preview.css">
-    <link rel="stylesheet" href="css/languagecenters-index-preview.css">
     <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --primary-blue: #003087;
+            --accent-yellow: lch(86.93% 87.16 91.27); /* Gold-like yellow */
+            --dark-text: #2c3e50;
+            --light-text: #ffffff;
+            --light-bg: #f8f9fa; /* Used for header background */
+            --border-color: #e0e0e0;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+            --tech-cyan: #00A9FF;
+            --deep-space-blue: #0a0f1a; /* Darker blue for contrast */
+            --maintenance-page-bg: #0d1424; /* Specific background for this page */
+            --maintenance-panel-bg: rgba(10, 25, 47, 0.9); /* Panel background */
+            --maintenance-border: rgba(0, 169, 255, 0.25);
+            --maintenance-text-light: #e0f2f7;
+            --maintenance-text-secondary: #a8c0d8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.maintenance-page-active { /* Add this class to body in HTML */
+            font-family: var(--font-secondary);
+            background-color: var(--maintenance-page-bg);
+            color: var(--maintenance-text-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+            padding-top: 70px; /* For fixed header */
+        }
+
+        /* Header Styles (Ensure these align with your global styles.css for consistency) */
+        /* If these are already perfectly defined in styles.css and linked, you might not need to repeat all of them here */
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: var(--light-bg); /* Light background for contrast */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header nav.container { /* This is the inner container for nav content */
+            width: 90%;
+            max-width: 1100px; /* Or your site's standard max-width */
+            margin: 0 auto; /* Centers the nav content within the full-width header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
+
+        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
+        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+
+        .nav-links li.dropdown { position: relative; }
+        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; /* Match link padding */ }
+        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+            z-index: 1001;
+            border-radius: 0 0 6px 6px;
+            top: 100%;
+            left: 0; /* Aligns dropdown to the left of its parent li */
+            padding: 8px 0;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            text-align: left; /* Ensures content within dropdown is left-aligned */
+        }
+        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
+        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
+        .nav-links li.dropdown.open .dropdown-content { display: block; } /* For JS toggle */
+
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
+        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
+        .nav-cta:hover::after { width: 0 !important; } /* Prevent underline on CTA button */
+
+
+        .menu-toggle { display: none; /* Handled by global styles.css for mobile */ }
+
+
+        main.main-maintenance {
+            flex-grow: 1;
+            display: flex; /* Use flex to center its child */
+            align-items: center; /* Vertically center */
+            justify-content: center; /* Horizontally center */
+            width: 100%;
+            padding: 40px 20px; /* Adjusted top padding is handled by body */
+            text-align: center; /* Center text within this main block */
+        }
+
+        .container-maintenance {
+            background-color: var(--maintenance-panel-bg);
+            padding: 35px 40px 45px;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
+            border: 1px solid var(--maintenance-border);
+            max-width: 750px;
+            width: 100%;
+            /* text-align: center; is inherited from main.main-maintenance */
+        }
+
+        .maintenance-icon-area { margin-bottom: 1.8rem; }
+        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .maintenance-icon-area .fa-tools { display: none; /* Hide if image is present */ font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .maintenance-message h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            color: var(--accent-yellow);
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        .maintenance-message .subtitle {
+            font-family: var(--font-secondary);
+            font-size: 1.15rem;
+            color: var(--tech-cyan);
+            margin-bottom: 1.8rem;
+            font-weight: 600;
+        }
+
+        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
+        .maintenance-description strong { color: var(--maintenance-text-light); }
+
+        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
+        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
+        .mini-challenge .challenge-word-display {
+            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
+            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
+            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
+            font-weight: 500; letter-spacing: 1.5px;
+        }
+        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
+        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
+        .clue strong { color: var(--maintenance-text-light); }
+        .guess-input-area { margin-bottom: 1.8rem; }
+        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
+        #languageGuess {
+            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
+            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
+            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
+        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
+
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
+        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
+        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
+        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
+        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
+        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
+        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
+        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
+
+        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
+        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
+
+        /* Footer specific styles for dark theme */
+        footer {
+            background-color: var(--deep-space-blue);
+            color: var(--maintenance-text-secondary);
+            padding: 50px 0 30px;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--tech-cyan);
+            width:100%;
+            margin-top: auto; /* Pushes footer to bottom if content is short */
+        }
+        footer .footer-content { /* Assuming .container class is used for width/centering */
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
+        }
+        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
+        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } /* From your main styles */
+        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
+        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
+        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
+        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
+        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
+
+        /* Responsive adjustments for maintenance page header/footer */
+        @media (max-width: 768px) {
+            body.maintenance-page-active {
+                padding-top: 60px; /* Adjust if mobile header height is different */
+            }
+            header nav.container {
+                height: 60px; /* Adjust if mobile header height is different */
+                /* If nav-links are hidden by default via main styles.css display:none, this is fine */
+                /* If they are not, and menu-toggle handles it, ensure menu-toggle is styled for this page */
+            }
+            .nav-links { /* This ensures mobile menu (if toggled by JS) behaves */
+                display: none; /* Initially hidden */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Position below header */
+                left: 0;
+                width: 100%;
+                background-color: var(--light-bg);
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+            .nav-links.active { display: flex; } /* JS adds 'active' to show */
+            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
+            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
+            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; /* Slightly different for contrast */}
+
+            .menu-toggle { display: block; /* Usually handled by global styles.css */ cursor:pointer; /* ... add your hamburger styles ... */ }
+
+
+            .container-maintenance { padding: 25px 20px 30px; }
+            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+            .maintenance-message .subtitle { font-size: 1rem; }
+            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
+
+            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
+        }
+    </style>
 </head>
-<body>
-  <header id="main-header-placeholder"></header>
-
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <h1>Speak <span class="highlight-text" id="language-rotator">Multiple Languages</span></h1>
-                    <h2>Unlock Fluency Faster Than You Thought Possible.</h2>
-                    <p>I went from 3 to 11 languages in under 4 years. Discover the intense immersion system, the essential mindset, and the real story behind rapid language acquisition.</p>
-                    <a href="#about" class="btn btn-primary">Learn My Story</a>
-                    <a href="https://www.youtube.com/@aljohnpolyglot/videos" target="_blank" class="btn btn-secondary">See Me In Action</a>
-                </div>
-                <div class="hero-image-container">
-                    <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="hero-main-image">
-                    <div class="floating-flags">
-                        <img src="https://flagcdn.com/w40/es.png" srcset="https://flagcdn.com/w80/es.png 2x" alt="Spanish Flag" style="--delay: 0.1s;">
-                        <img src="https://flagcdn.com/w40/fr.png" srcset="https://flagcdn.com/w80/fr.png 2x" alt="French Flag" style="--delay: 0.3s;">
-                        <img src="https://flagcdn.com/w40/ru.png" srcset="https://flagcdn.com/w80/ru.png 2x" alt="Russian Flag" style="--delay: 0.5s;">
-                        <img src="https://flagcdn.com/w40/id.png" srcset="https://flagcdn.com/w80/id.png 2x" alt="Indonesian Flag" style="--delay: 0.7s;">
-                        <img src="https://flagcdn.com/w40/ph.png" srcset="https://flagcdn.com/w80/ph.png 2x" alt="Philippines Flag" style="--delay: 0.9s;">
-                        <img src="https://flagcdn.com/w40/it.png" srcset="https://flagcdn.com/w40/it.png 2x" alt="Italian Flag" style="--delay: 1.1s;">
-                        <img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="German Flag" style="--delay: 1.3s;">
-                        <img src="https://flagcdn.com/w40/br.png" srcset="https://flagcdn.com/w80/br.png 2x" alt="Brazilian Flag" style="--delay: 1.5s;">
-                        <img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt="American Flag" style="--delay: 1.7s;">
-                        <img src="https://flagcdn.com/w40/se.png" srcset="https://flagcdn.com/w80/se.png 2x" alt="Swedish Flag" style="--delay: 1.9s;">
-                    </div>
-                </div>
+<body class="maintenance-page-active">
+   <header id="main-header-placeholder"></header>
+    <main class="main-maintenance">
+        <div class="container-maintenance">
+            <div class="maintenance-icon-area">
+                <img src="images/aljohn_coding_maintenance.png" alt="Aljohn working on updates">
+                {/* <i class="fas fa-tools"></i> Icon will be hidden by CSS if image loads */}
             </div>
-        </section>
+            <div class="maintenance-message">
+                <h1>System Upgrade in Progress!</h1>
+                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
+            </div>
+            <div class="maintenance-description">
+                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
+                <p>In the meantime, why not take a quick linguistic challenge?</p>
+            </div>
 
-    <section id="featured-video" class="featured-video-section content-section">
-        <div class="container">
-            <h2 class="section-title">As Seen On TV: Over 1.5 Million Views!</h2>
-            <p class="section-subtitle">My journey gained national attention! Watch my guest appearance on NET25TV's "Kada Umaga" where I shared my story and tackled a fun language challenge.</p>
-            <div class="featured-video-content">
-                <div class="featured-video-player">
-                    <iframe src="https://www.youtube.com/embed/Ubt_pklbAME" title="This Filipino Polyglot can speak in 9 Languages (NET25 TV Guesting)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="mini-challenge">
+                <h2>Linguistic Puzzle Break!</h2>
+                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
+                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
+
+                <div class="clues-container">
+                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
+                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
+                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
                 </div>
-                <div class="featured-video-text">
-                    <h3>This Filipino Polyglot can speak in 9 Languages</h3>
-                    <p>Dive into the interview where I discuss how I learned 9 languages in just 2 years, my motivations, and see how I handle translating random phrases on the spot!</p>
-                    <ul class="video-highlights">
-                        <li><i class="fas fa-star"></i> Viral success with 1.5M+ views</li>
-                        <li><i class="fas fa-tv"></i> Featured on NET25TV "Kada Umaga"</li>
-                        <li><i class="fas fa-comments"></i> Includes story + live translation challenge</li>
-                    </ul>
-                    <a href="https://www.youtube.com/watch?v=Ubt_pklbAME" target="_blank" class="btn btn-primary">Watch Now on YouTube</a>
+
+                <div class="guess-input-area">
+                    <label for="languageGuess">Your guessed language:</label>
+                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
                 </div>
+                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
+                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
+                <div id="feedbackMessage"></div>
+            </div>
+
+            <div class="navigation-links">
+                <p>While this section is being polished, feel free to explore other parts of my world:</p>
+                <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
             </div>
         </div>
-    </section>
-
-        <section id="about" class="about-section content-section alt-bg">
-            <div class="container">
-                <h2 class="section-title">From Curiosity to 11 Languages</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                         <h3>Not a language prodigy, but obsessively curious.</h3>
-                        <p>Hi, I'm Aljohn. My journey began in 2021, not from lifelong immersion, but from a deep dive into language acquisition theories and a relentless drive to learn. Starting with Spanish, I built a system fueled by 12+ hours of daily study, transforming my life and achieving fluency in multiple languages.</p>
-                        <p>This site shares my unfiltered story: the intense routines, the mental shifts, the sacrifices made, and the powerful methods I developed to 'hack' language learning. It's proof that extreme dedication can yield extraordinary results.</p>
-                        <a href="https://drive.google.com/file/d/1VgUrm_uor-gFGzvUDQ5UKgZ4cbZe0lpe/view?usp=drive_link" class="btn btn-outline" target="_blank">Read the Full Story</a>
-
-                    </div>
-                    <div class="about-image">
-                        <img src="images/aljohn_portrait.png" alt="Aljohn studying or interacting">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="languages" class="languages-section content-section">
-            <div class="container">
-                <h2 class="section-title">The Languages I Live In</h2>
-                <p class="section-subtitle">Each language is a world I've immersed myself in. Click a flag to explore specific videos, resources, and cultural insights from its dedicated page.</p>
-                <div class="language-grid">
-                    <a href="languages/tagalog.html" class="language-item" aria-label="Tagalog Resources" data-lang="tl"><img src="https://flagcdn.com/w160/ph.png" alt="Philippines Flag"><span>Tagalog</span></a>
-                    <a href="languages/cebuano.html" class="language-item" aria-label="Cebuano Resources" data-lang="ceb"><img src="https://flagcdn.com/w160/ph.png" alt="Philippines Flag (Region)"><span>Cebuano</span></a>
-                    <a href="languages/english.html" class="language-item" aria-label="English Resources" data-lang="en"><img src="https://flagcdn.com/w160/us.png" alt="USA Flag"><span>English</span></a>
-                    <a href="languages/spanish.html" class="language-item" aria-label="Spanish Resources" data-lang="es"><img src="https://flagcdn.com/w160/es.png" alt="Spain Flag"><span>Spanish</span></a>
-                    <a href="languages/french.html" class="language-item" aria-label="French Resources" data-lang="fr"><img src="https://flagcdn.com/w160/fr.png" alt="France Flag"><span>French</span></a>
-                    <a href="languages/indonesian.html" class="language-item" aria-label="Indonesian Resources" data-lang="id"><img src="https://flagcdn.com/w160/id.png" alt="Indonesia Flag"><span>Indonesian</span></a>
-                    <a href="languages/italian.html" class="language-item" aria-label="Italian Resources" data-lang="it"><img src="https://flagcdn.com/w160/it.png" alt="Italy Flag"><span>Italian</span></a>
-                    <a href="languages/portuguese.html" class="language-item" aria-label="Portuguese Resources" data-lang="pt"><img src="https://flagcdn.com/w160/br.png" alt="Brazil Flag"><span>Portuguese</span></a>
-                    <a href="languages/russian.html" class="language-item" aria-label="Russian Resources" data-lang="ru"><img src="https://flagcdn.com/w160/ru.png" alt="Russia Flag"><span>Russian</span></a>
-                    <a href="languages/swedish.html" class="language-item" aria-label="Swedish Resources" data-lang="sv"><img src="https://flagcdn.com/w160/se.png" alt="Sweden Flag"><span>Swedish</span></a>
-                    <a href="languages/german.html" class="language-item" aria-label="German Resources" data-lang="de"><img src="https://flagcdn.com/w160/de.png" alt="Germany Flag"><span>German</span></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="playlists" class="playlists-section content-section alt-bg">
-            <div class="container">
-                <h2 class="section-title">The Aljohn Polyglot Experience</h2>
-                <p class="section-subtitle">From shocking natives (the fun stuff!) to deep dives and learning tips, explore my journey on YouTube.</p>
-                <div class="playlist-grid">
-                    <div class="playlist-card"><a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank"><img src="https://i.ytimg.com/vi/EUIb4wikb_8/maxresdefault.jpg" alt="OmeTV Playlist"><h3>OmeTV</h3><p>Watch the surprise and connection unfold as I use multiple languages in spontaneous conversations with strangers online.</p></a></div>
-                    <div class="playlist-card"><a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank"><img src="https://i.ytimg.com/vi/kpxdPlKvIaM/maxresdefault.jpg" alt="Collaborations Playlist"><h3>Collaborations</h3><p>Explore my guest appearances and team-ups with other creators, polyglots, and language learners. Sharing insights and experiences together!</p></a></div>
-                    <div class="playlist-card"><a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank"><img src="https://i.ytimg.com/vi/oDoST-RuizU/maxresdefault.jpg" alt="Polyglot Talks Playlist"><h3>Polyglot Talks</h3><p>Get inspired and learn from interviews with passionate language learners, polyglots, and experts from around the globe.</p></a></div>
-                    <div class="playlist-card"><a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank"><img src="https://i.ytimg.com/vi/O-C_SdCtkLg/maxresdefault.jpg" alt="Language Learning Methods Playlist"><h3>Language Learning Methods</h3><p>Practical tips, essential resources, and the core strategies from my own journey to help you start learning effectively today.</p></a></div>
-                    <div class="playlist-card"><a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank"><img src="https://i.ytimg.com/vi/Y4E7qlHhK84/maxresdefault.jpg" alt="Polyglot Shocks Playlist"><h3>Polyglot Shocks</h3><p>I challenge myself to speak with foreigners in their native language and capture their priceless reactions.</p></a></div>
-                    <div class="playlist-card"><a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank"><img src="https://i.ytimg.com/vi/g0zSWDoM4Ms/hqdefault.jpg" alt="Filipinos Speak Playlist"><h3>Filipinos Speak...</h3><p>Showcasing the linguistic talents of Filipinos speaking different foreign languages!</p></a></div>
-                </div>
-                 <div class="cta-center">
-                     <a href="https://www.youtube.com/@aljohnpolyglot/playlists" target="_blank" class="btn btn-outline">View All Playlists on YouTube</a>
-                 </div>
-            </div>
-        </section>
-<!-- The Polyglot Papers - Blog Preview Section -->
-        <section id="polyglot-papers-preview" class="polyglot-papers-preview content-section">
-            <div class="container">
-                <span class="papers-eyebrow">Declassified Intel</span>
-                <h2 class="section-title">The Polyglot Papers</h2>
-                <p class="section-subtitle">
-                    Groundbreaking research, field-tested methodologies, and critical analyses from the frontiers of accelerated language acquisition. 
-                    Enter the lab and dissect the science behind fluency.
-                </p>
-
-                <div class="papers-teasers-grid">
-                    <div class="paper-teaser-card">
-                        <div class="paper-icon"><i class="fas fa-cogs"></i></div>
-                        <h3>Immersion Systems & Hacks</h3>
-                        <p>In-depth analysis of effective language acquisition frameworks, daily routines, and unconventional shortcuts to accelerate your learning.</p>
-                         <a href="blog.html#category-systems" class="paper-link">Explore Systems »</a> 
-                    </div>
-
-                    <div class="paper-teaser-card">
-                        <div class="paper-icon"><i class="fas fa-brain"></i></div> 
-                        <h3>The Polyglot Mindset</h3>
-                        <p>Delving into the crucial mental frameworks, motivation strategies, and psychological aspects of mastering multiple languages and overcoming learning plateaus.</p>
-                         <a href="blog.html#category-mindset" class="paper-link">Cultivate the Mindset »</a> 
-                    </div>
-
-                    <div class="paper-teaser-card">
-                        <div class="paper-icon"><i class="fas fa-feather-alt"></i></div> 
-                        <h3>Unfiltered Journey & Insights</h3>
-                        <p>Personal reflections, cultural discoveries, the raw realities of deep immersion, and lessons learned from the front lines of language acquisition.</p>
-                         <a href="blog.html#category-journey" class="paper-link">Read My Dispatches »</a> 
-                    </div>
-                </div>
-
-                <div class="cta-center" style="margin-top: 3rem;">
-                    <a href="blog.html" class="btn btn-primary btn-papers-cta">
-                        <i class="fas fa-folder-open"></i> Access Full Research Archive
-                    </a>
-                </div>
-            </div>
-        </section>
-     <!--End of Polyglot Papers Preview-->
-<section id="pathway" class="pathway-section-preview content-section"> 
-    <div class="container">
-        <h2 class="section-title">Your <span class="highlight-text-alt">Roadmap</span> to Legendary Fluency</h2>
-        <p class="section-subtitle">This ain't no random stroll, adventurer! My journey follows a sacred, battle-tested map. Behold a glimpse of its wisdom! For the full, illuminated scrolls and strategy, you must venture forth...</p>
-        
-        <div class="pathway-preview-steps-container">
-            <div class="pathway-preview-step scroll-bg">
-                <div class="step-header">
-                    <!-- Emblem image removed, as it's now part of the section background concept -->
-                    <h3>Beginner's Grove (A1-A2)</h3>
-                </div>
-                <p class="step-goal"><strong>Quest:</strong> Forge your foundation, gather 1000+ words, and master the art of comprehension.</p>
-                <p class="step-focus"><strong>Ancient Wisdom:</strong> Focus on <span class="highlight-focus">Input & Exposure</span>. Output can wait.</p>
-            </div>
-
-            <div class="pathway-preview-step scroll-bg">
-                <div class="step-header">
-                    <!-- Emblem image removed -->
-                    <h3>City of Immersion (B1-B2)</h3>
-                </div>
-                <p class="step-goal"><strong>Quest:</strong> Dive into native realms, let the language flow, and expand your lexicon to 2500+ words.</p>
-                <p class="step-focus"><strong>Ancient Wisdom:</strong> Embrace <span class="highlight-focus">Massive Input</span>. Gentle output begins.</p>
-            </div>
-
-            <div class="pathway-preview-step scroll-bg">
-                <div class="step-header">
-                    <!-- Emblem image removed -->
-                    <h3>C2 Citadel (C1-C2)</h3>
-                </div>
-                <p class="step-goal"><strong>Quest:</strong> Ascend to mastery, command nuance, and speak with native-like confidence.</p>
-                <p class="step-focus"><strong>Ancient Wisdom:</strong> Perfect thy <span class="highlight-focus">Output & Polish</span> all skills.</p>
-            </div>
-        </div>
-
-        <div class="cta-center">
-            <a href="pathway.html" class="btn btn-primary btn-pathway-cta">
-                <i class="fas fa-scroll"></i> Unfurl the Full Ancient Map!
-            </a>
-        </div>
-    </div>
-    </section>
-
-      <!--  Core Toolkit Sneak Peek Section -->
-        <section id="core-toolkit-preview" class="core-toolkit-preview-section content-section tech-theme"> 
-            <div class="container">
-                <span class="core-toolkit-eyebrow tech-theme">My Go-To Digital Allies</span>
-                <h2 class="section-title tech-theme">A Glimpse Into My Essential Language Toolkit</h2> 
-                <p class="section-subtitle tech-theme">
-                    These are the absolute powerhouses – the apps I rely on daily to build and maintain fluency across multiple languages. 
-                    See how they supercharge different skills and why they are core to my learning system.
-                </p>
-
-                <div class="core-toolkit-grid-index tech-theme">
-                <!-- App Card 1: Anki -->
-                    <div class="app-preview-card-index tech-theme" id="preview-anki">
-                        <div class="app-preview-header-index tech-theme">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/2048px-Anki-icon.svg.png" alt="Anki Logo" class="app-preview-logo-index tech-theme">
-                            <div class="app-preview-title-group-index tech-theme">
-                                <h3>Anki / AnkiDroid</h3>
-                                <p class="app-preview-tagline-index tech-theme">The Memory Fortress: Never Forget.</p>
-                            </div>
-                        </div>
-                        <div class="app-preview-skills-index tech-theme">
-                            <span class="skill-tag tech-theme vocab"><i class="fas fa-layer-group"></i> Vocabulary</span>
-                            <span class="skill-tag tech-theme reading"><i class="fas fa-book-open"></i> Reading Aid</span>
-                            <span class="skill-tag tech-theme listening"><i class="fas fa-headphones"></i> Listening Aid</span>
-                        </div>
-                       
-                        <a href="apps.html#app-anki" class="btn btn-outline btn-small app-preview-link-index tech-theme">Anki Full Review »</a>
-                    </div>
-
-                    <!-- App Card 2: ChatGPT -->
-                    <div class="app-preview-card-index tech-theme" id="preview-chatgpt">
-                        <div class="app-preview-header-index tech-theme">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" alt="ChatGPT Logo" class="app-preview-logo-index tech-theme">
-                            <div class="app-preview-title-group-index tech-theme">
-                                <h3>ChatGPT</h3>
-                                <p class="app-preview-tagline-index tech-theme">Your AI Language Multitool.</p>
-                            </div>
-                        </div>
-                        <div class="app-preview-skills-index tech-theme">
-                            <span class="skill-tag tech-theme speaking"><i class="fas fa-comments"></i> Speaking</span>
-                            <span class="skill-tag tech-theme writing"><i class="fas fa-pencil-alt"></i> Writing</span>
-                            <span class="skill-tag tech-theme listening"><i class="fas fa-headphones"></i> Listening</span>
-                            <span class="skill-tag tech-theme reading"><i class="fas fa-book-open"></i> Reading</span>
-                        </div>
-                      
-                        <a href="apps.html#app-chatgpt" class="btn btn-outline btn-small app-preview-link-index tech-theme">ChatGPT Full Review »</a>
-                    </div>
-
-                    <!-- App Card 3: YouTube -->
-                    <div class="app-preview-card-index tech-theme" id="preview-youtube">
-                        <div class="app-preview-header-index tech-theme">
-                            <img src="https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png" alt="YouTube Logo" class="app-preview-logo-index tech-theme">
-                            <div class="app-preview-title-group-index tech-theme">
-                                <h3>YouTube</h3>
-                                <p class="app-preview-tagline-index tech-theme">The Infinite Immersion Library.</p>
-                            </div>
-                        </div>
-                        <div class="app-preview-skills-index tech-theme">
-                            <span class="skill-tag tech-theme listening"><i class="fas fa-headphones"></i> Listening</span>
-                            <span class="skill-tag tech-theme reading"><i class="fas fa-book-open"></i> Reading (Subs)</span>
-                            <span class="skill-tag tech-theme vocab"><i class="fas fa-layer-group"></i> Contextual Vocab</span>
-                        </div>
-                      
-                        <a href="apps.html#app-youtube" class="btn btn-outline btn-small app-preview-link-index tech-theme">YouTube Full Review »</a>
-                    </div>
-
-                    <!-- App Card 4: ReadEra -->
-                    <div class="app-preview-card-index tech-theme" id="preview-readera">
-                        <div class="app-preview-header-index tech-theme">
-                            <img src="https://play-lh.googleusercontent.com/qw8lAHXaZodAE4c3D1Jkia3V8Np-PxTnyQpUIx439ibABba0L50TVKI4jfY4N4QwzAA" alt="ReadEra Logo" class="app-preview-logo-index tech-theme">
-                            <div class="app-preview-title-group-index tech-theme">
-                                <h3>ReadEra</h3>
-                                <p class="app-preview-tagline-index tech-theme">My Favorite Ebook Reader.</p>
-                            </div>
-                        </div>
-                        <div class="app-preview-skills-index tech-theme">
-                            <span class="skill-tag tech-theme reading"><i class="fas fa-book-open"></i> Reading</span>
-                            <span class="skill-tag tech-theme vocab"><i class="fas fa-layer-group"></i> Vocabulary</span>
-                        </div>
-                       
-                        <a href="apps.html#app-readera" class="btn btn-outline btn-small app-preview-link-index tech-theme">ReadEra Full Review »</a>
-                    </div>
-
-                    <!-- App Card 5: Pocket Casts -->
-                    <div class="app-preview-card-index tech-theme" id="preview-pocketcasts">
-                        <div class="app-preview-header-index tech-theme">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pocket_Casts_icon.svg/2048px-Pocket_Casts_icon.svg.png" alt="Pocket Casts Logo" class="app-preview-logo-index tech-theme">
-                            <div class="app-preview-title-group-index tech-theme">
-                                <h3>Pocket Casts</h3>
-                                <p class="app-preview-tagline-index tech-theme">Podcast Immersion Powerhouse.</p>
-                            </div>
-                        </div>
-                        <div class="app-preview-skills-index tech-theme">
-                            <span class="skill-tag tech-theme listening"><i class="fas fa-headphones"></i> Listening</span>
-                            <span class="skill-tag tech-theme vocab"><i class="fas fa-layer-group"></i> Contextual Vocab</span>
-                        </div>
-                       
-                        <a href="apps.html#app-pocketcasts" class="btn btn-outline btn-small app-preview-link-index tech-theme">Pocket Casts Review »</a>
-                    </div>
-
-                    <!-- App Card 6: DeepL -->
-                    <div class="app-preview-card-index tech-theme" id="preview-deepl">
-                        <div class="app-preview-header-index tech-theme">
-                            <img src="https://cdn.worldvectorlogo.com/logos/deepl-1.svg" alt="DeepL Logo" class="app-preview-logo-index tech-theme">
-                            <div class="app-preview-title-group-index tech-theme">
-                                <h3>DeepL Translator</h3>
-                                <p class="app-preview-tagline-index tech-theme">Nuanced & Accurate Translation.</p>
-                            </div>
-                        </div>
-                        <div class="app-preview-skills-index tech-theme">
-                            <span class="skill-tag tech-theme reading"><i class="fas fa-book-open"></i> Reading Aid</span>
-                            <span class="skill-tag tech-theme writing"><i class="fas fa-pencil-alt"></i> Writing Aid</span>
-                            <span class="skill-tag tech-theme vocab"><i class="fas fa-layer-group"></i> Vocabulary</span>
-                        </div>
-                       
-                        <a href="apps.html#app-deepl" class="btn btn-outline btn-small app-preview-link-index tech-theme">DeepL Full Review »</a>
-                    </div>
-                </div>
-
-                <div class="toolkit-level-guide-promo-index tech-theme"> 
-                    <h4 class="tech-theme"><i class="fas fa-layer-group"></i> Tools Tailored to YOUR Level!</h4>
-                    <p>
-                        My full toolkit page includes an <strong>interactive guide</strong> matching these and many more apps to CEFR levels (A1-C2). 
-                        Stop guessing and get targeted recommendations for your current stage of learning.
-                    </p>
-                </div>
-
-                <div class="cta-center" style="margin-top: 2.5rem;">
-                    <a href="apps.html" class="btn btn-primary btn-toolkit-main-cta-index tech-theme"> 
-                        <i class="fas fa-cogs"></i> See All My Reviewed Apps & Tools
-                    </a>
-                </div>
-            </div>
-        </section>
-<!--End of Toolkit-->
-<!-- Daily Immersion System Preview Section -->
-        <section id="routine-preview" class="routine-preview-section">
-            <div class="container">
-                <span class="routine-eyebrow">The Engine of Fluency</span>
-                <h2 class="section-title-dark">Unlock My <span class="highlight-accent">12-Hour Daily Immersion System</span></h2>
-                <p class="section-subtitle-dark">
-                    This isn't just a schedule; it's the relentless, all-consuming blueprint I forged to master 11 languages. 
-                    Discover the hour-by-hour breakdown, the mindset, and the core principles behind hyper-accelerated language acquisition. 
-                    It's intense, it's demanding, but the results speak for themselves.
-                </p>
-                <div class="routine-preview-content">
-                    <div class="routine-preview-text">
-                        <h3>What You'll Discover:</h3>
-                        <ul>
-                            <li><i class="fas fa-moon"></i> The 2 AM Power Block: Maximizing peak mental clarity.</li>
-                            <li><i class="fas fa-headphones-alt"></i> "Dead Time" Annihilation: Turning exercise & chores into immersion.</li>
-                            <li><i class="fab fa-youtube"></i> Active Video Immersion: Techniques for YouTube & native streaming.</li>
-                            <li><i class="fas fa-comments"></i> Strategic Output: When and how to practice speaking.</li>
-                            <li><i class="fas fa-brain"></i> The Science of Sacrifice: Understanding the true cost of rapid fluency.</li>
-                        </ul>
-                        <div class="routine-preview-cta">
-                            <a href="routine.html" class="btn btn-primary btn-routine-cta">
-                                <i class="fas fa-bolt"></i> Uncover the Full System
-                            </a>
-                            <a href="https://www.youtube.com/embed/ht9q5ENjlV4" target="_blank" class="btn btn-outline btn-routine-cta-alt">
-                                <i class="fab fa-youtube"></i> Watch the Video Overview
-                            </a>
-                        </div>
-                    </div>
-                    <div class="routine-preview-visual">
-                        <!-- You can use an illustrative image here, or a stylized graphic -->
-                        <!-- For example, a collage of app icons, or a stylized clock/brain graphic -->
-                        <img src="images/aljohn_routine_preview_visual.png" alt="Visual representation of Aljohn's daily language immersion routine">
-                        <!-- Placeholder for the visual: <div class="visual-placeholder"></div> -->
-                    </div>
-                </div>
-            </div>
-        </section>
- <!--Cultural Institutes Sections-->
-   <section id="cultural-institutes" class="cultural-institutes-preview-section content-section">
-    <div class="container">
-        <!-- ADDED EYEBROW TEXT -->
-        <span class="section-eyebrow cultural-eyebrow">Your Local Portals</span> 
-        <h2 class="section-title">Connect with Language & Culture</h2>
-        <p class="section-subtitle">
-            <span class="highlight-text">Not a fan of intense self-study?</span> 
-            These renowned cultural institutes in the Philippines offer excellent programs and a chance to immerse yourself.
-            I've collaborated with some, interned at others, and love visiting them – you might even spot me there!
-        </p>
-        <div class="institute-preview-grid-wrapper"> 
-            <div class="institute-preview-grid" id="institutePreviewGrid">
-                {/* Institute preview cards will be dynamically generated here */}
-            </div>
-        </div>
-        <div class="all-centers-cta">
-            <a href="languagecenters.html" class="btn btn-primary btn-large">Explore All Language Centers <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
-</section>
-       <!--Community Section-->
-        <section id="friends" class="friends-section content-section alt-bg">
-            <div class="container">
-                <h2 class="section-title">Community & Connections</h2>
-                <p class="section-subtitle">Language learning connects us! Hover over a friend to see a collaboration video, or click their name to visit their channel.</p>
-                <h3 class="subsection-title">Fellow Creators & Polyglots</h3>
-                <div class="friend-grid">
-                    <div class="friend-card" data-video-id="kW3GQeHvVeQ"><a href="https://www.youtube.com/@Jayyhartmann" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGEN4byCGzw7yDEdhr9TE1v2DZTSr8fztflQ&s" alt="Jared Hartmann Profile"><h4>Jared Hartmann</h4></a><div class="video-preview-container"></div><p>Inspiring Canadian creator mastering Tagalog.</p><div class="friend-languages" aria-label="Languages: Canada, Tagalog, German"><img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" title="Canada"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" title="German"></div></div>
-                    <div class="friend-card" data-video-id="jZqZTp_nWro"><a href="https://www.youtube.com/@RyanHaleYT" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://www.famousbirthdays.com/faces/hale-ryan-image.jpg" alt="Ryan Hale Profile"><h4>Ryan Hale</h4></a><div class="video-preview-container"></div><p>The Omegle Polyglot King! Engaging with languages in fun, spontaneous ways.</p><div class="friend-languages" aria-label="Languages: English, Chinese, Korean, Indonesian, Russian, Italian, French"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/cn.png" alt="China Flag" title="Chinese"><img src="https://flagcdn.com/w40/kr.png" alt="South Korea Flag" title="Korean"><img src="https://flagcdn.com/w40/id.png" alt="Indonesia Flag" title="Indonesian"><img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" title="Russian"><img src="https://flagcdn.com/w40/it.png" alt="Italy Flag" title="Italian"><img src="https://flagcdn.com/w40/fr.png" alt="France Flag" title="French"></div></div>
-                    <div class="friend-card" data-video-id="dtz9QCVqAA8"><a href="https://www.youtube.com/@luelzone7474" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://scontent.fmnl33-4.fna.fbcdn.net/v/t39.30808-6/481450767_652397700797284_5457660800347360963_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH4Pq4hzwcjZGXCNVKjwrvkRW6MjYMBK0hFboyNgwErSN4Sz1P2Mh5BfgBXME9E3SuPkET2Dcu60uqkeEHcVLZM&_nc_ohc=yQYcUuzfUikQ7kNvwHLX8hy&_nc_oc=AdnhEnHcWO3WLgFhHXF8JIPhRClzOdyPhsxrGnwntrXVyJKyTfEU5sU7NXkC-DHWfWU&_nc_zt=23&_nc_ht=scontent.fmnl33-4.fna&_nc_gid=Zi_ZNmLw9oSpLiCiayqEPA&oh=00_AfKjNwDTttk7NwWk8zUBgF6F14YK1MiT4d-0U3rUYr7ufg&oe=681FB6A2" alt="Luel Zone Profile"><h4>Luel Zone</h4></a><div class="video-preview-container"></div><p>Fellow Filipino friend showcasing Spanish language.</p><div class="friend-languages" aria-label="Languages: Filipino (Tagalog, Ilonggo), English, Spanish"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog/Ilonggo"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"></div></div>
-                    <div class="friend-card" data-video-id="CU31o0Uv3zU"><a href="https://www.youtube.com/@EricMartinezPH" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/ytc/AIdro_ny2a-UhzSBi8o0DPtOubAuGI7ohgAOvOxAroNUNMQYNRvu=s900-c-k-c0x00ffffff-no-rj" alt="Eric Martinez PH Profile"><h4>Eric Martinez PH</h4></a><div class="video-preview-container"></div><p>Championing Spanish for Filipinos.</p><div class="friend-languages" aria-label="Languages: Filipino, English, Spanish"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Filipino"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"></div></div>
-                    <div class="friend-card" data-video-id="QJBP1iKojbA"><a href="https://www.youtube.com/@bngken5407" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/uP0cscq8cq4lt_id_Z0_iNFgzN3AvDnhHyLghiLTEWau35OAMesSGmQ_wz0G2WtNhEiAwT04ww=s120-c-k-c0x00ffffff-no-rj" alt="Abang Ken Profile"><h4>Abang Ken</h4></a><div class="video-preview-container"></div><p>Filipino friend diving into Indonesian.</p><div class="friend-languages" aria-label="Languages: Filipino, Indonesian, English"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Filipino"><img src="https://flagcdn.com/w40/id.png" alt="Indonesia Flag" title="Indonesian"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"></div></div>
-                    <div class="friend-card" data-video-id="oDoST-RuizU"><a href="https://www.youtube.com/@jonguer123" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/mV5FQYQS10MeRdi-WY7BxhMO37i8ZCrqV61pqzdfky1APRC2_s2TtIbovzQE4TE0uP5O0vdW=s120-c-k-c0x00ffffff-no-rj" alt="Jonathan Guerrero Profile"><h4>Jonathan Guerrero</h4></a><div class="video-preview-container"></div><p>Underrated Filipino polyglot sharing skills.</p><div class="friend-languages" aria-label="Languages: Tagalog, English, Spanish, Portuguese, Russian"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"><img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" title="Russian"></div></div>
-                    <div class="friend-card" data-video-id="CF3RExvS3_8"><a href="https://www.tiktok.com/@luisaguilarph" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://scontent.fmnl33-3.fna.fbcdn.net/v/t39.30808-1/467501637_8676739502412026_6820316715195113765_n.jpg?stp=dst-jpg_s160x160_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeF8lllHPUq9h5S-OZmaWzxDU1B901nGiTZTUH3TWcaJNiOVAprDBrQ3xx5OIc-ogl83omK4TBcEgU525G0cBmAH&_nc_ohc=2Dp_9fQpl_cQ7kNvwEqawo5&_nc_oc=AdkIPIlrlt0vowC_mi65DdVrtoQ2wLSiadmTiJGvN8VeWhX9eBlLfJfbN7VHji4tfTE&_nc_zt=24&_nc_ht=scontent.fmnl33-3.fna&_nc_gid=sWnZf16jXDy5pma6lkeRZQ&oh=00_AfLOZt1RUeA6pwE2d90XE_BblRN6eS9bR0dO0e9_p79Mig&oe=681FA038" alt="Luis Aguilar PH Profile"><h4>Luis Aguilar PH (TikTok)</h4></a><div class="video-preview-container"></div><p>Mexican friend in the Philippines.</p><div class="friend-languages" aria-label="Location: Mexico, Philippines, English"><img src="https://flagcdn.com/w40/mx.png" alt="Mexico Flag" title="Mexico"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Philippines"></div></div>
-                    <div class="friend-card" data-video-id="ik5oUOY63o0"><a href="https://www.youtube.com/@torchfamilymusic" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.ggpht.com/ic30Ti9eLmPQdAvKVND8QhIIBTl_5F3Tk3XNY4c1BEFoBBgeH9Bjar_KTtV9VVVTaLluiUPYRg=s176-c-k-c0x00ffffff-no-rj-mo" alt="Torch Family Music Profile"><h4>Torch Family Music</h4></a><div class="video-preview-container"></div><p>American family loving OPM!</p><div class="friend-languages" aria-label="Focus: OPM, USA, Philippines"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="USA"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="OPM Focus"></div></div>
-                    <div class="friend-card" data-video-id="-pIWjBCl22Y"><a href="https://www.youtube.com/@theuruguayanpolyglot8706" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/qrxy45U7jvwl5s6LQBopx6NTKK7ad0lrNOqRMqbzXLfg_VFM2UR5hoVKzfmwyc60DWdlC8EE9Ek=s120-c-k-c0x00ffffff-no-rj" alt="The Uruguayan Polyglot Profile"><h4>The Uruguayan Polyglot</h4></a><div class="video-preview-container"></div><p>Polyglot from Uruguay (9 languages).</p><div class="friend-languages" aria-label="Languages: UY, ES, CA, EN, DE, IT, SV, FR, RU, PT"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Catalonia.svg/128px-Flag_of_Catalonia.svg.png" alt="Catalan Flag" title="Catalan" style="width:30px; height:20px;"><img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" title="English"><img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" title="German"><img src="https://flagcdn.com/w40/it.png" alt="Italy Flag" title="Italian"><img src="https://flagcdn.com/w40/se.png" alt="Sweden Flag" title="Swedish"><img src="https://flagcdn.com/w40/fr.png" alt="France Flag" title="French"><img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" title="Russian"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"></div></div>
-                    <div class="friend-card" data-video-id="rvqjN9Z2G1s"><a href="https://www.youtube.com/@FayMoTube" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/dTBJnRoh8Kor8yNymmbmSYZ8b58fDap-WLWkAOose0s1wshUlTLdBRztoWNpKbk9NN9IZE22=s120-c-k-c0x00ffffff-no-rj" alt="FayMoTube Profile"><h4>Fay Mo</h4></a><div class="video-preview-container"></div><p>Filipino creator sharing fun Omegle content and his own learning journey.</p><div class="friend-languages" aria-label="Languages: Tagalog, English, Spanish"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"></div></div>
-                </div> 
-                <h3 class="subsection-title celebrity-title">Celebrity Friends</h3>
-                 <div class="friend-grid celebrity-grid">
-                    <div class="friend-card" data-video-id="biPy5irbLG4"><a href="https://www.instagram.com/xtianbautista/?hl=en" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQj9jt7h8iBoPgF4g8JiQNUlaUe9wndD-Zw&s" alt="Christian Bautista Profile"><h4>Christian Bautista</h4></a><div class="video-preview-container"></div><p>Iconic Filipino singer with huge success, especially in Indonesia!</p><div class="friend-languages" aria-label="Languages: Tagalog, English, Indonesian Focus"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/id.png" alt="Indonesia Flag" title="Indonesian Focus"><i class="fas fa-microphone-alt" title="Singer"></i></div></div>
-                    <div class="friend-card" data-video-id="D1GjiRb9m3U"><a href="https://www.instagram.com/daianamenezes_/?hl=en" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWIJyagmGEsMsHS2fgA0RQLchUmdqzn8FAQ&s" alt="Daiana Menezes Profile"><h4>Daiana Menezes</h4></a><div class="video-preview-container"></div><p>Vibrant Brazilian Amiga in the Philippines.</p><div class="friend-languages" aria-label="Languages: Portuguese, Tagalog, English"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"></div></div>
-                    <div class="friend-card" data-video-id="J-e97hHmhxc"><a href="https://www.instagram.com/ina_feleo/?hl=en" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeYzNVeSvAyhQ0cA_L_KEg_MN-127GkUUGRg&s" alt="Ina Feleo Profile"><h4>Ina Feleo</h4></a><div class="video-preview-container"></div><p>Talented Filipina actress, Italian speaker!</p><div class="friend-languages" aria-label="Languages: Tagalog, English, Italian"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/it.png" alt="Italy Flag" title="Italian"><i class="fas fa-film" title="Actress"></i></div></div>
-                 </div> 
-            </div> 
-        </section>
-   
-        <section id="cta" class="cta-section">
-            <div class="container">
-                <h2>Ready to Commit? Your Transformation Starts Now.</h2>
-                <p>Learning a language intensely isn't easy, but it's incredibly rewarding. Follow my ongoing journey, get practical tips, and connect with a community dedicated to serious language learning.</p>
-                <a href="https://www.youtube.com/@aljohnpolyglot?sub_confirmation=1" target="_blank" class="btn btn-accent">Subscribe on YouTube & Ignite Your Learning!</a>
-            </div>
-        </section>
     </main>
-
-  <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+ <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
 <script src="/js/navbar-loader.js" defer></script>
 <script src="/js/footer-loader.js" defer></script>
-   <script src="js/languagecenters-data.js"></script>
-    <script src="js/languagecenters-index-preview.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        // Mini Challenge Game Logic
+        const maintenanceWords = [
+            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
+            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
+            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
+            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
+            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
+            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
+            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
+            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
+            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
+            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
+        ];
+        let currentChallenge;
+        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
+        const cluesContainer = document.querySelector('.clues-container');
+        const languageGuessInput = document.getElementById('languageGuess');
+        const submitGuessBtn = document.getElementById('submitGuessBtn');
+        const newWordBtn = document.getElementById('newWordBtn');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+
+        function setupNewMaintenanceChallenge() {
+            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
+            challengeWordDisplay.textContent = currentChallenge.word;
+            cluesContainer.innerHTML = '';
+            currentChallenge.clues.forEach((clueText, index) => {
+                const clueDiv = document.createElement('div');
+                clueDiv.classList.add('clue');
+                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
+                cluesContainer.appendChild(clueDiv);
+            });
+            feedbackMessage.textContent = ''; languageGuessInput.value = '';
+            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
+            languageGuessInput.focus(); newWordBtn.style.display = 'none';
+        }
+        if (submitGuessBtn) { // Check if elements exist (they should on this page)
+            submitGuessBtn.addEventListener('click', function() {
+                const userGuess = languageGuessInput.value.trim().toLowerCase();
+                const correctAnswer = currentChallenge.language.toLowerCase();
+                if (!userGuess) {
+                    feedbackMessage.textContent = "Please enter your language guess!";
+                    feedbackMessage.className = 'feedback-incorrect'; return;
+                }
+                if (userGuess === correctAnswer) {
+                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
+                    feedbackMessage.className = 'feedback-correct';
+                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
+                    newWordBtn.style.display = 'inline-block';
+                } else {
+                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
+                    feedbackMessage.className = 'feedback-incorrect';
+                    newWordBtn.style.display = 'inline-block'; // Show new word button even on incorrect guess
+                }
+            });
+            languageGuessInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
+            });
+            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
+            setupNewMaintenanceChallenge(); // Initialize
+        }
+
+        // Copyright Year
+        const currentYearSpan = document.getElementById('current-year');
+        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+
+        // Mobile Menu Toggle (assuming .menu-toggle and .nav-links structure from global nav)
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active'); // JS toggles this class
+                menuToggle.classList.toggle('active'); // For hamburger animation
+            });
+        }
+
+        // Desktop Dropdown Menu Logic
+        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
+        desktopDropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('a.dropbtn');
+            if (button) {
+                button.setAttribute('aria-haspopup', 'true');
+                button.setAttribute('aria-expanded', 'false');
+                button.addEventListener('click', function(event) {
+                    // For dropdowns where dropbtn itself is not a page link
+                    if (button.getAttribute('href') === 'javascript:void(0)' || button.getAttribute('href') === '#') {
+                        event.preventDefault();
+                    }
+                    // If it's a link to a page section (like index.html#languages), allow default but still open dropdown
+                    // For now, let's assume all dropbtns are primarily for toggling
+                    if (button.getAttribute('href').startsWith('#') && button.getAttribute('href') !== 'javascript:void(0)') {
+                        // If it's a fragment identifier for the same page, we might still want to prevent default and handle scroll
+                        // But for now, we focus on the toggle action
+                    } else {
+                         event.preventDefault(); // Prevent navigation for most dropbtn clicks
+                    }
+
+
+                    const isCurrentlyOpen = dropdown.classList.contains('open');
+                    desktopDropdowns.forEach(otherDd => {
+                        if (otherDd !== dropdown) {
+                            otherDd.classList.remove('open');
+                            const otherButton = otherDd.querySelector('a.dropbtn');
+                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    if (isCurrentlyOpen) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        dropdown.classList.add('open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                    event.stopPropagation();
+                });
+            }
+        });
+        document.addEventListener('click', function(event) {
+            desktopDropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                    const button = dropdown.querySelector('a.dropbtn');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
