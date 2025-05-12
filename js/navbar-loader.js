@@ -220,14 +220,3 @@ function setActiveLink() {
      console.log("setActiveLink: Link highlighting complete."); // Add log
 }
 
-
-function activateParentDropdown(linkElement) {
-    // ... (keep the full function from previous answer) ...
-    const dropdownContent = linkElement.closest('.dropdown-content');
-    if (dropdownConten  t) {
-        const dropbtn = dropdownContent.previousElementSibling;
-        if (dropbtn && dropbtn.classList.contains('dropbtn')) {
-            dropbtn.classList.add('active-link');
-        }
-    }
-}
