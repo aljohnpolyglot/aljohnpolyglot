@@ -1,4 +1,4 @@
-// js/footer-loader.js - DEBUG VERSION with more logging
+// js/footer-loader.js - Fetches root template & runs footer scripts
 console.log("footer-loader.js: Script start");
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerPlaceholder = document.getElementById('main-footer-placeholder');
     if (footerPlaceholder) {
          console.log("footer-loader.js: Found #main-footer-placeholder");
-
-        // Path relative FROM JS FILE to the single root footer template
         const templatePathRelativeToJs = '../templates/footer.html';
         console.log(`Footer Loader: Attempting to fetch template from: ${templatePathRelativeToJs}`);
 
@@ -26,10 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
                  try {
                     footerPlaceholder.outerHTML = data;
                      console.log("Footer Loader: HTML injected successfully.");
-                    // NOTE: No path adjustments needed for footer usually
                     if (typeof initializeFooterScripts === 'function') {
                          console.log("Footer Loader: Calling initializeFooterScripts...");
-                        initializeFooterScripts();
+                        initializeFooterScripts(); // This will now update the year
                          console.log("Footer Loader: initializeFooterScripts finished.");
                     }
                  } catch (injectionError) {
@@ -38,24 +35,22 @@ document.addEventListener('DOMContentLoaded', function() {
                  }
             })
             .catch(error => {
-                // Catches fetch or initial processing errors
                 console.error('Error loading footer (fetch or initial processing):', error);
-                if (footerPlaceholder) {
-                    try {
-                        footerPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">Error loading footer data.</p>';
-                    } catch(e) {}
-                }
+                if (footerPlaceholder) { try { footerPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">Error loading footer data.</p>'; } catch(e) {} }
             });
     } else {
        console.warn('Footer Loader: #main-footer-placeholder NOT FOUND on this page.');
     }
 });
 
-// Make sure this function exists if your footer needs JS
+// FOOTER SPECIFIC SCRIPTS (Moved from script.js)
 function initializeFooterScripts() {
-    const currentYearSpan = document.getElementById('current-year');
+    // --- Update Copyright Year (from script.js) ---
+    const currentYearSpan = document.getElementById('current-year'); // Query *after* injection
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
+    } else {
+        console.warn("initializeFooterScripts: #current-year span not found in loaded footer.");
     }
-    // console.log("initializeFooterScripts: Year updated."); // Add log
+    console.log("initializeFooterScripts: Copyright year updated.");
 }
