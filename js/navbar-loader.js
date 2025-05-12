@@ -1,11 +1,43 @@
-// js/navbar-loader.js
+// js/navbar-loader.js - CORRECTED FETCH PATHS
 document.addEventListener('DOMContentLoaded', function() {
     const navbarPlaceholder = document.getElementById('main-header-placeholder');
     if (navbarPlaceholder) {
-        fetch('templates/navbar.html') // Root-relative path
+
+        // --- Determine Directory Depth of the HTML Page ---
+        const currentPagePath = window.location.pathname;
+        let depth = 0;
+        let effectivePath = currentPagePath;
+        if (effectivePath.endsWith('/index.html')) {
+             effectivePath = effectivePath.substring(0, effectivePath.lastIndexOf('/index.html'));
+        }
+        if (effectivePath === '/') { effectivePath = ''; }
+        if (effectivePath && effectivePath !== '/') {
+            const pathSegments = effectivePath.split('/').filter(segment => segment.length > 0);
+            depth = pathSegments.length;
+        }
+        // --- End Depth Determination ---
+
+        // --- Choose FIXED Template Path Relative to *THIS JS FILE* ---
+        let templatePathRelativeToJs = '';
+        if (depth === 0) { // Root level HTML page
+            templatePathRelativeToJs = '../templates/navbar.html'; // Path from js/ up to root, then down to templates/
+        } else if (depth >= 1) { // Any subdirectory HTML page (Level 1, 2, etc.)
+            templatePathRelativeToJs = '../templates/level2/navbar.html'; // Path from js/ up to root, then down to templates/level2/
+        } else {
+            console.error(`Navbar Loader: Unexpected depth calculated: ${depth}. Cannot determine template.`);
+             if (navbarPlaceholder) navbarPlaceholder.innerHTML = '<p>Error</p>';
+            return; // Stop
+        }
+        // --- End Template Path Choice ---
+
+        console.log(`Navbar Loader: HTML Depth ${depth}, Fetching template: ${templatePathRelativeToJs} (relative FROM JS folder)`);
+
+        // --- Fetch the chosen template USING THE CORRECT RELATIVE PATH ---
+        fetch(templatePathRelativeToJs)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    // Log the path that failed clearly
+                    throw new Error(`HTTP error! status: ${response.status} while fetching ${response.url}`);
                 }
                 return response.text();
             })
@@ -14,147 +46,121 @@ document.addEventListener('DOMContentLoaded', function() {
                 initializeNavbarScripts();
                 setActiveLink();
             })
-            .catch(error => console.error('Error loading navbar:', error));
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                if (navbarPlaceholder) navbarPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">Error loading navigation.</p>';
+            });
+
     } else {
-        console.warn('Navbar placeholder #main-header-placeholder not found on this page.');
+        // console.warn('Navbar placeholder #main-header-placeholder not found on this page.');
     }
 });
 
+
+// --- Navbar Interaction & Active Link Functions ---
+// (These should be the same robust functions from the previous answer)
+
 function initializeNavbarScripts() {
-    const menuToggle = document.querySelector('header .menu-toggle'); // Scoped to header
-    const navLinksUl = document.querySelector('header .nav-links'); // Scoped to header
-    const headerElement = document.querySelector('header'); // The injected header
-
+    const headerElement = document.querySelector('header');
+    if (!headerElement) { return; }
+    const menuToggle = headerElement.querySelector('.menu-toggle');
+    const navLinksUl = headerElement.querySelector('.nav-links');
     if (menuToggle && navLinksUl) {
-        menuToggle.addEventListener('click', () => {
+        const newMenuToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+        newMenuToggle.addEventListener('click', () => {
             navLinksUl.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            newMenuToggle.classList.toggle('active');
         });
     }
-
-    if (headerElement) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                headerElement.classList.add('scrolled');
-            } else {
-                headerElement.classList.remove('scrolled');
-            }
-        });
+    if (!window.navbarScrollListenerAdded) {
+        window.addEventListener('scroll', handleScroll);
+        window.navbarScrollListenerAdded = true;
     }
-
-    const dropdowns = document.querySelectorAll('header .nav-links .dropdown'); // Scoped
+    const dropdowns = headerElement.querySelectorAll('.nav-links .dropdown');
     dropdowns.forEach(dropdown => {
         const dropbtn = dropdown.querySelector('.dropbtn');
         if (dropbtn) {
-            dropbtn.addEventListener('click', function(event) {
-                const isMobile = window.innerWidth <= 768;
-                const hasRealHref = this.getAttribute('href') !== 'javascript:void(0)' && this.getAttribute('href') !== '#';
-                const dropdownContent = this.nextElementSibling;
-
-                if (isMobile) {
-                    if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
-                        event.preventDefault(); // Prevent navigation for parent item on mobile to allow toggle
-                        
-                        // Close other open dropdowns
-                        document.querySelectorAll('header .dropdown-content.show-mobile').forEach(openDropdown => {
-                            if (openDropdown !== dropdownContent) {
-                                openDropdown.classList.remove('show-mobile');
-                                openDropdown.style.maxHeight = null;
-                                const otherDropbtn = openDropdown.previousElementSibling;
-                                if (otherDropbtn) otherDropbtn.classList.remove('mobile-dropdown-open');
-                            }
-                        });
-
-                        dropdownContent.classList.toggle('show-mobile');
-                        this.classList.toggle('mobile-dropdown-open');
-                        if (dropdownContent.classList.contains('show-mobile')) {
-                            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
-                        } else {
-                            dropdownContent.style.maxHeight = null;
-                        }
-                    }
-                    // If it's a real link AND its dropdown is already open, allow navigation (second tap)
-                    // This logic can be complex; current setup: first tap on parent always toggles.
-                    // To navigate from parent on mobile: user would tap, dropdown opens, then they'd have to tap again
-                    // or the link itself would need to be separate from the toggle trigger.
-                    // For simplicity, links *within* the dropdown navigate directly.
-                }
-                // Desktop hover is handled by CSS. JS click on javascript:void(0) for accessibility if needed.
+            const newDropbtn = dropbtn.cloneNode(true);
+            dropbtn.parentNode.replaceChild(newDropbtn, dropbtn);
+            newDropbtn.addEventListener('click', function(event) {
+                handleDropdownClick(this, event, headerElement);
             });
         }
     });
+    handleScroll();
+}
+
+function handleDropdownClick(clickedDropbtn, event, headerElement) {
+    const isMobile = window.innerWidth <= 768;
+    const dropdownContent = clickedDropbtn.nextElementSibling;
+    if (isMobile && dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+        event.preventDefault();
+        headerElement.querySelectorAll('.dropdown-content.show-mobile').forEach(openDropdown => {
+            if (openDropdown !== dropdownContent) {
+                openDropdown.classList.remove('show-mobile');
+                openDropdown.style.maxHeight = null;
+                const otherDropbtn = openDropdown.previousElementSibling;
+                if (otherDropbtn) otherDropbtn.classList.remove('mobile-dropdown-open');
+            }
+        });
+        dropdownContent.classList.toggle('show-mobile');
+        clickedDropbtn.classList.toggle('mobile-dropdown-open');
+        dropdownContent.style.maxHeight = dropdownContent.classList.contains('show-mobile') ? dropdownContent.scrollHeight + "px" : null;
+    }
+}
+
+function handleScroll() {
+    const headerElement = document.querySelector('header');
+     if (headerElement) {
+            headerElement.classList.toggle('scrolled', window.scrollY > 50);
+     }
 }
 
 function setActiveLink() {
-    const currentPath = window.location.pathname;
-    const normalizedCurrentPath = (currentPath === '/' || currentPath === '') ? '/index.html' : currentPath;
-    const currentPageFile = normalizedCurrentPath.substring(normalizedCurrentPath.lastIndexOf('/') + 1);
-    const currentHash = window.location.hash;
-
-    const allLinks = document.querySelectorAll('header .nav-links a, header .dropdown-content a');
-
-    let bestMatch = null;
-    let bestMatchSpecificity = -1; // 0: path, 1: path+hash
-
+    const headerElement = document.querySelector('header');
+    if (!headerElement) return;
+    const currentFullUrl = window.location.href;
+    const urlObject = new URL(currentFullUrl);
+    const currentPathname = urlObject.pathname;
+    const currentHash = urlObject.hash;
+    let normalizedCurrentPath = currentPathname.endsWith('/') && currentPathname !== '/' ? currentPathname.slice(0, -1) : currentPathname;
+    normalizedCurrentPath = normalizedCurrentPath.endsWith('/index.html') ? normalizedCurrentPath.slice(0, -10) : normalizedCurrentPath;
+    if (normalizedCurrentPath === '') normalizedCurrentPath = '/';
+    const allLinks = headerElement.querySelectorAll('.nav-links a, .dropdown-content a');
     allLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (!linkHref || linkHref.startsWith('http')) return;
-
-        let normalizedLinkHref = (linkHref === '/' || linkHref === '') ? '/index.html' : linkHref;
-        
-        const linkPathPart = normalizedLinkHref.split('#')[0];
-        const linkHashPart = normalizedLinkHref.split('#')[1] ? '#' + normalizedLinkHref.split('#')[1] : '';
-
-        const currentPathPart = normalizedCurrentPath.split('#')[0];
-
-        if (linkPathPart === currentPathPart) {
-            // Exact path match
-            if (linkHashPart === currentHash) { // Path and hash match
-                if (bestMatchSpecificity < 1) {
-                    bestMatch = link;
-                    bestMatchSpecificity = 1;
-                }
-            } else if (!currentHash && !linkHashPart) { // Path matches, no hashes involved
-                if (bestMatchSpecificity < 0) { // Only if no hash match found yet
-                    bestMatch = link;
-                    bestMatchSpecificity = 0;
-                }
-            } else if (currentHash && linkPathPart === currentPathPart && linkHashPart === '' && (link.closest('.nav-links > li > a') || link.closest('.dropbtn'))) {
-                // Special case: if on index.html#about, make "index.html" (the parent) also active
-                // if it's a top-level link or a dropbtn for the current section.
-                // This makes the parent "Languages" active if on index.html#languages
-                 if (bestMatchSpecificity < 0) { // Only if no hash match found yet
-                    const parentDropbtn = link.closest('.dropdown')?.querySelector('.dropbtn');
-                    if (parentDropbtn && currentPathPart + currentHash === parentDropbtn.getAttribute('href')) {
-                       // this logic is a bit tricky; focus on direct matches first
-                    } else if (link.matches('.nav-links > li > a, .dropbtn')) { // if it's a main nav link
-                        // bestMatch = link; // Tentatively set it
-                        // bestMatchSpecificity = 0; // Lower specificity
-                    }
-                }
+        link.classList.remove('active-link');
+        const parentDropbtn = link.closest('.dropdown')?.querySelector('.dropbtn');
+        if (parentDropbtn) parentDropbtn.classList.remove('active-link');
+    });
+    let bestMatch = null;
+    let bestMatchLevel = -1;
+    allLinks.forEach(link => {
+        const linkHrefAttr = link.getAttribute('href');
+        if (!linkHrefAttr || linkHrefAttr.startsWith('http') || linkHrefAttr === 'javascript:void(0)' || linkHrefAttr === '#') return;
+        const linkAbsoluteUrl = new URL(linkHrefAttr, window.location.href).href;
+        const linkUrlObject = new URL(linkAbsoluteUrl);
+        let linkPathname = linkUrlObject.pathname;
+        const linkHashPart = linkUrlObject.hash;
+        linkPathname = linkPathname.endsWith('/') && linkPathname !== '/' ? linkPathname.slice(0, -1) : linkPathname;
+        linkPathname = linkPathname.endsWith('/index.html') ? linkPathname.slice(0, -10) : linkPathname;
+        if (linkPathname === '') linkPathname = '/';
+        if (linkPathname === normalizedCurrentPath) {
+            if (linkHashPart === currentHash) {
+                if (bestMatchLevel < 2) { bestMatch = link; bestMatchLevel = 2; }
+            } else if (!currentHash && !linkHashPart) {
+                if (bestMatchLevel < 1) { bestMatch = link; bestMatchLevel = 1; }
+            } else if (currentHash && !linkHashPart) {
+                if (bestMatchLevel < 1) { bestMatch = link; bestMatchLevel = 1; }
             }
         }
     });
-    
     if (bestMatch) {
         bestMatch.classList.add('active-link');
         activateParentDropdown(bestMatch);
-    } else {
-         // Fallback for index.html if no other specific link (especially hash link) was matched
-        if (normalizedCurrentPath === '/index.html' && !currentHash) {
-            const homeLink = document.querySelector('header .nav-links > li > a[href="/index.html"]:not([href*="#"]), header .nav-links > li > a[href="/"]:not([href*="#"])');
-            if (homeLink) {
-                homeLink.classList.add('active-link');
-                activateParentDropdown(homeLink);
-            }
-        }
-    }
-    // If still no active link and on index.html with a hash, try to make the parent of that hash active
-    if (!document.querySelector('header .nav-links .active-link') && normalizedCurrentPath === '/index.html' && currentHash) {
-        const sectionDropbtn = document.querySelector(`header .dropbtn[href="/index.html${currentHash}"]`);
-        if (sectionDropbtn) {
-            sectionDropbtn.classList.add('active-link');
-        }
+    } else if (normalizedCurrentPath === '/') {
+        const rootLink = headerElement.querySelector('a[href="/"], a[href="/index.html"]');
+         if (rootLink) { rootLink.classList.add('active-link'); }
     }
 }
 
@@ -163,13 +169,7 @@ function activateParentDropdown(linkElement) {
     if (dropdownContent) {
         const dropbtn = dropdownContent.previousElementSibling;
         if (dropbtn && dropbtn.classList.contains('dropbtn')) {
-            // Check if the dropbtn's href matches the main page part, or if it's a generic dropdown
-            const currentPathPart = (window.location.pathname === '/' ? '/index.html' : window.location.pathname).split('#')[0];
-            const dropbtnPathPart = dropbtn.getAttribute('href').split('#')[0];
-            
-            if (dropbtn.getAttribute('href') === 'javascript:void(0)' || dropbtnPathPart === currentPathPart) {
-                 dropbtn.classList.add('active-link');
-            }
+            dropbtn.classList.add('active-link');
         }
     }
 }

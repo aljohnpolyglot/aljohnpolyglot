@@ -3,7 +3,7 @@ const languageGroupsData = [
     {
         id: 'sff',
         name: 'Spanish for Filipinos (by Eric Martinez)',
-        logo: '../images/groups/spanish_for_filipinos_logo.jpg',
+        logo: 'images/groups/spanish_for_filipinos_logo.jpg',
         tagline: 'A vibrant community connecting Filipino learners with the Spanish-speaking world. Regular Luneta meetups!',
         languages: ['Spanish'],
         types: ['Facebook Group', 'Meetup (In-Person)',],
@@ -18,7 +18,7 @@ const languageGroupsData = [
     {
         id: 'sagingcava',
         name: 'Saging Ça Va ? - French for Filipinos',
-        logo: '../images/groups/saging_cava_logo_yellowbg.jpg',
+        logo: 'images/groups/saging_cava_logo_yellowbg.jpg',
         tagline: 'Practice French in a friendly environment. Monthly meet-ups!',
         languages: ['French'],
         types: ['Facebook Group', 'Meetup (In-Person)'],
@@ -33,7 +33,7 @@ const languageGroupsData = [
     {
         id: 'slm',
         name: 'Spanish Language Meetup - Makati',
-        logo: '../images/groups/spanish_language_meetup_logo.avif',
+        logo: 'images/groups/spanish_language_meetup_logo.avif',
         tagline: 'Enjoy learning and practicing Spanish in a fun, friendly atmosphere at Coffee Bean SM Jazz.',
         languages: ['Spanish'],
         types: ['Meetup (In-Person)'],
@@ -48,7 +48,7 @@ const languageGroupsData = [
     {
         id: 'chf',
         name: 'Club de Hispano-Hablantes Filipino',
-        logo: '../images/groups/club_hispanohablantes_logo.jpg',
+        logo: 'images/groups/club_hispanohablantes_logo.jpg',
         tagline: 'Fostering Spanish learning through mentorship and community support.',
         languages: ['Spanish'],
         types: ['Social Club', 'Mentorship', 'Facebook Page'],
