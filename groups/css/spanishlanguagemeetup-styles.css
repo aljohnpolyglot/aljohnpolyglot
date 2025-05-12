@@ -1,0 +1,523 @@
+/* groups/css/spanishlanguagemeetup-styles.css */
+:root {
+    --slm-logo-red-bg: #A82223; /* EXACT RED from your logo image background */
+    --slm-main-red: var(--slm-logo-red-bg); /* Use logo red as main red */
+    --slm-light-red: #C33432; 
+    --slm-white: #FDFDFD; /* Slightly off-white for a softer feel */
+    --slm-green: #4CA21E;
+    --slm-hero-yellow-text: #FDD870; 
+    --slm-hero-title-font: 'Bangers', cursive;
+    --slm-text-dark: #383838; /* Softer dark grey */
+    --slm-text-medium: #6c757d;
+    --slm-font-headings: 'Montserrat', sans-serif;
+    --slm-font-main: 'Open Sans', sans-serif;
+    --slm-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); /* Even softer */
+    --slm-section-padding: 80px 0;
+    --slm-border-radius: 12px;
+
+    --af-card-primary-blue: #0033A0;
+    --af-card-primary-red: #EF4135;
+    --af-card-light-text: #FFFFFF;
+}
+
+body {
+    font-family: var(--slm-font-main);
+    color: var(--slm-text-dark);
+    line-height: 1.75;
+    margin: 0; padding: 0;
+    background-color: var(--slm-white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+/* Hero Section - Centered, Solid Red BG matching logo */
+.slm-hero {
+    background-color: var(--slm-main-red); /* Solid red background like logo */
+    padding: 100px 20px 80px 20px;
+    min-height: 80vh; /* Increased min-height for more presence */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--slm-white);
+    position: relative;
+}
+.slm-hero-container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+    max-width: 700px; /* Constrain width of hero content for better focus */
+}
+
+.slm-main-logo {
+    width: 160px; 
+    height: auto;
+    border-radius: 10px; 
+    /* No background-color or padding if the logo image itself has the red square */
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25); /* Slightly stronger shadow for pop */
+    margin-bottom: 10 rem; /* Space below logo before title */
+}
+
+.slm-hero-title-stacked {
+    margin-bottom: 0.8rem; /* Reduced space after the whole title stack */
+}
+
+.slm-hero-title-stacked h1 {
+    font-family: var(--slm-hero-title-font);
+    font-size: 10rem; /* Slightly smaller max font size for title */
+    color: var(--slm-white);
+    line-height: 0.82;   /* Further tightened line height */
+    margin-top: -0.15em; /* Increased negative margin for tighter stack */
+    margin-bottom: -0.12em;/* Fine-tune vertical spacing */
+    padding: 0;        
+    text-shadow: 
+        3px 3px 0px rgba(0,0,0,0.25), /* More defined shadow */
+        1px 1px 0px rgba(0,0,0,0.1); /* Softer secondary shadow */
+    letter-spacing: 1.5px; /* Slightly more letter spacing */
+    display: block;     
+    width: 100%;    
+    text-align: center; 
+}
+
+/* No need for nth-child offsets if all are centered */
+/* .slm-hero-title-stacked h1:nth-child(2) { ... } */
+/* .slm-hero-title-stacked h1:nth-child(3) { ... } */
+
+.slm-hero-subtitle-group { 
+    margin: 0.8rem 0 1.2rem 0; /* Reduced vertical margins */
+}
+.slm-hero-subtitle-main {
+    font-family: var(--slm-font-headings); font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.1rem); color: var(--slm-hero-yellow-text);
+    margin:0; text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+}
+.slm-hero-subtitle-location {
+    font-family: var(--slm-font-headings); font-weight: 600;
+    font-size: clamp(1.2rem, 3.2vw, 1.7rem); color: var(--slm-hero-yellow-text);
+    opacity: 0.9; margin:0.15em 0 0 0; /* Slightly more space from "Damas y Caballeros" */
+}
+
+.slm-hero-description {
+    font-size: clamp(1rem, 2.5vw, 1.15rem); line-height: 1.7;
+    color: var(--slm-white); opacity: 0.95; max-width: 580px;
+    margin: 0 auto 2.5rem auto; /* Slightly less margin bottom */
+}
+.slm-cta-button {
+    display: inline-block; background-color: var(--slm-hero-yellow-text);
+    color: var(--slm-main-red); padding: 15px 38px; /* Slightly adjusted padding */
+    font-family: var(--slm-font-headings); font-weight: 700; font-size: 1.1rem;
+    text-decoration: none; border-radius: 30px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* transform: rotate(-2deg); /* Removing tilt for a cleaner centered look */
+}
+.slm-cta-button:hover {
+    background-color: darken(var(--slm-hero-yellow-text), 7%);
+    color: darken(var(--slm-main-red), 5%);
+    transform: scale(1.05); /* Keep scale on hover */
+    box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+}
+/* Content Sections */
+.content-section { padding: var(--slm-section-padding); }
+.slm-section-light { background-color: var(--slm-white); }
+.slm-section-dark-red { background-color: var(--slm-main-red); color: var(--slm-white); }
+.slm-section-light-red { background-color: var(--slm-light-red); color: var(--slm-white); }
+.slm-section-green { background-color: var(--slm-green); color: var(--slm-white); }
+.slm-section-white { background-color: var(--slm-white); }
+
+
+.section-title {
+    font-family: var(--slm-font-headings); font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3rem); text-align: center;
+    margin-bottom: 1.8rem; position: relative; padding-bottom: 1rem;
+}
+.slm-title-blue { color: var(--slm-main-red); } /* Using main red for titles on light bg */
+.slm-title-dark-red { color: var(--slm-main-red); }
+.slm-title-white { color: var(--slm-white); }
+
+.section-title::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 80px; height: 5px; border-radius: 2.5px;
+}
+.slm-title-blue::after, .slm-title-dark-red::after { background: linear-gradient(to right, var(--slm-main-red), var(--slm-hero-yellow-text)); }
+.slm-title-white::after { background: linear-gradient(to right, var(--slm-hero-yellow-text), var(--slm-white)); }
+
+.section-subtitle {
+    text-align: center; font-size: 1.15rem; margin-bottom: 3.5rem;
+    max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.8;
+}
+.slm-subtitle-dark { color: var(--slm-text-medium); } /* Use medium grey for subtitles */
+.slm-subtitle-light { color: rgba(255,255,255,0.88); }
+.slm-subtitle-light-alt { color: rgba(255,255,255,0.92); }
+
+
+/* About Section */
+.slm-about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 3.5rem; }
+.slm-about-text { flex: 1.2; min-width: 300px; }
+.slm-about-text p { font-size: 1.05rem; }
+.slm-about-image { flex: 1; min-width: 280px; text-align: center; }
+.slm-about-image img {
+    max-width: 100%; width: 450px; border-radius: var(--slm-border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); border: 5px solid var(--slm-white);
+}
+
+
+/* Meetup Info Section (Dark Red BG) */
+#meetup-details.slm-section-dark-red .section-title { color: var(--slm-white); }
+#meetup-details.slm-section-dark-red .section-title::after { background: linear-gradient(to right, var(--slm-hero-yellow-text), var(--slm-white));}
+.meetup-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+.meetup-info-card {
+    background-color: rgba(0,0,0,0.12); /* Slightly darker transparent cards */
+    padding: 2.5rem; border-radius: var(--slm-border-radius); text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15); border-top: 5px solid var(--slm-hero-yellow-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.meetup-info-card:hover { transform: translateY(-6px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+.meetup-info-card i { font-size: 3rem; color: var(--slm-hero-yellow-text); margin-bottom: 1.2rem; display: block; }
+.meetup-info-card h3 { font-family: var(--slm-font-headings); font-weight: 700; font-size: 1.8rem; color: var(--slm-white); margin-bottom: 1rem; }
+.meetup-info-card p { margin-bottom: 0.7rem; font-size: 1.05rem; opacity: 0.95; color: var(--slm-white)}
+.meetup-info-card .small-text {font-size: 0.9rem; opacity: 0.85;}
+#next-meetup-date { font-weight: bold; color: var(--slm-hero-yellow-text); }
+
+/* Featured Video (Light Red BG) */
+#featured-video.slm-section-light-red .section-title { color: var(--slm-white);}
+#featured-video.slm-section-light-red .section-title::after { background: linear-gradient(to right, var(--slm-hero-yellow-text), var(--slm-white));}
+#featured-video.slm-section-light-red .section-subtitle { color: rgba(255,255,255,0.9);}
+.video-wrapper.slm-video-wrapper { /* Centered and larger */
+    max-width: 800px; /* Adjusted max-width */
+    width: 90%; /* Use percentage for responsiveness */
+    margin: 2.5rem auto 0 auto; /* Center it and add top margin */
+    border-radius: var(--slm-border-radius);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    border: 5px solid var(--slm-white);
+    position: relative;
+    padding-bottom: 50.625%; /* Adjusted for 800px width with 16:9, or 56.25% if width is fluid */
+    height: 0;
+    overflow: hidden;
+}
+.video-wrapper.slm-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* Featured Video (Light Red BG) */
+#featured-video.slm-section-light-red .section-title { color: var(--slm-white);} /* White title */
+#featured-video.slm-section-light-red .section-title::after { background: linear-gradient(to right, var(--slm-hero-yellow-text), var(--slm-white));}
+#featured-video.slm-section-light-red .section-subtitle { color: rgba(255,255,255,0.9);}
+.video-wrapper.slm-video-wrapper {
+    max-width: 880px; /* Larger video */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 4px solid var(--slm-white); /* White border */
+}
+
+/* SLM Gallery & Modal (using unique class names) */
+/* ... Keep existing gallery and modal styles ... */
+/* Ensure the gallery nav arrows use a contrasting color against the white background of this section */
+.gallery-nav-arrow-slm { background-color: var(--slm-main-red); }
+.gallery-nav-arrow-slm:hover { background-color: var(--slm-light-red); }
+.gallery-nav-arrow-slm.disabled { background-color: lighten(var(--slm-main-red), 30%);}
+
+/* groups/css/spanishlanguagemeetup-styles.css */
+
+/* ... (all previous CSS for hero, about, meetup-details, featured-video, etc. remains the same) ... */
+
+/* SLM Gallery Section Styling (inside .slm-section-white) */
+#gallery.content-section.slm-section-white {
+    /* This section already has a white background from .slm-section-white */
+}
+
+#gallery .section-title.slm-title-dark-red {
+    color: var(--slm-main-red); /* Ensure title uses the page's main red */
+}
+#gallery .section-title.slm-title-dark-red::after {
+    background: linear-gradient(to right, var(--slm-main-red), var(--slm-light-red)); /* Matching underline */
+}
+
+.gallery-slider-container-slm {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 2.5rem; /* More space from title */
+    padding: 0 50px; /* Increased padding to give arrows more space from the grid */
+    max-width: 100%; /* Ensure it doesn't overflow container too much */
+}
+
+.gallery-grid-wrapper-slm {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px; /* Optional: rounded corners for the scrollable area */
+    /* box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Optional: subtle inset shadow */
+}
+
+.gallery-grid-slm {
+    display: grid;
+    grid-auto-flow: column; /* Essential for horizontal scroll */
+    grid-auto-columns: minmax(220px, 1fr); /* Default item width, adjust as needed */
+    gap: 1.25rem; /* Space between images */
+    padding: 5px; /* Small padding inside the scrollable area */
+    /* Width is set by JavaScript */
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smoother scroll animation */
+}
+
+/* Responsive column widths for the gallery grid items */
+@media (min-width: 768px) { 
+    .gallery-grid-slm { 
+        grid-auto-columns: minmax(240px, 1fr); 
+    } 
+}
+@media (min-width: 992px) { 
+    .gallery-grid-slm { 
+        grid-auto-columns: minmax(260px, 1fr); /* Slightly larger on desktops */
+    }
+}
+
+.gallery-item-slm {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for items */
+    box-shadow: var(--slm-card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 4 / 3; /* Maintain a consistent aspect ratio for items */
+}
+.gallery-item-slm img {
+    width: 100%;
+    height: 100%; /* Fill the aspect-ratio container */
+    object-fit: cover; /* Crop images to fit the aspect ratio */
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth zoom */
+}
+.gallery-item-slm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+.gallery-item-slm:hover img {
+    transform: scale(1.08); /* Slightly more pronounced zoom */
+}
+
+.gallery-nav-arrow-slm {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--slm-main-red);
+    color: var(--slm-white);
+    border: none;
+    font-size: 22px; /* Slightly smaller arrow icon */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 48px; /* Slightly larger button size */
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.gallery-nav-arrow-slm:hover {
+    background-color: var(--slm-light-red);
+    transform: translateY(-50%) scale(1.1); /* Slight scale on hover */
+}
+.gallery-nav-arrow-slm.prev-grid-arrow-slm {
+    left: 0px; /* Positioned at the edge of the container */
+}
+.gallery-nav-arrow-slm.next-grid-arrow-slm {
+    right: 0px; /* Positioned at the edge of the container */
+}
+.gallery-nav-arrow-slm.disabled {
+    opacity: 0.35;
+    cursor: default;
+    background-color: lighten(var(--slm-main-red), 25%);
+    transform: translateY(-50%) scale(1); /* Reset scale if disabled */
+}
+
+
+/* SLM Modal Styles (ensure these are correct and not conflicting) */
+.modal-slm { 
+    display: none; position: fixed; z-index: 1050; padding-top: 20px; 
+    left: 0; top: 0; width: 100%; height: 100%; overflow: auto; 
+    background-color: rgba(0,0,0,0.92); /* Slightly more opaque */
+    animation: fadeInModalSLM 0.3s ease-out;
+}
+.modal-content-slm { 
+    margin: auto; display: block; max-width: 88%; max-height: 82vh; /* Adjusted sizes */
+    animation: zoomInModalSLM 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncier zoom */
+}
+#caption-slm { 
+    margin: 12px auto; display: block; width: 85%; max-width: 700px; 
+    text-align: center; color: #ddd; padding: 10px 0; font-size: 1.05rem;
+}
+.close-slm { 
+    position: absolute; top: 10px; right: 20px; color: #f1f1f1; 
+    font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
+}
+.close-slm:hover, .close-slm:focus { color: #bbb; text-decoration: none; }
+.prev-slm, .next-slm { 
+    cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); 
+    padding: 14px 18px; color: white; font-weight: bold; font-size: 26px; 
+    transition: 0.4s ease; user-select: none; background-color: rgba(0,0,0,0.35); 
+    border-radius: 6px; /* Slightly squared off */
+}
+.prev-slm { left: 15px; } .next-slm { right: 15px; } /* Slightly more inset */
+.prev-slm:hover, .next-slm:hover { background-color: rgba(0,0,0,0.65); }
+
+@keyframes fadeInModalSLM { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomInModalSLM { 
+    from { transform: scale(0.7) translateY(20px); opacity: 0; } 
+    to { transform: scale(1) translateY(0); opacity: 1; } 
+}
+
+/* ... (rest of your existing CSS, including Alliance Française card styles, reveal on scroll, responsive, etc.) ... */
+/* Join CTA Section (Green BG) */
+#join-cta.slm-section-green .section-title { color: var(--slm-white); }
+#join-cta.slm-section-green .section-title::after { background: linear-gradient(to right, var(--slm-hero-yellow-text), var(--slm-white));}
+#join-cta.slm-section-green .section-subtitle { color: rgba(255,255,255,0.95); }
+.join-links-slm { text-align: center; margin-top: 1rem; }
+.btn.slm-btn-primary {
+    background-color: var(--slm-white); color: var(--slm-green);
+    border: 2px solid var(--slm-white); font-size: 1.15rem; padding: 1rem 2.8rem; /* Larger button */
+    border-radius: 30px; text-decoration: none; font-weight: 700;
+    transition: all 0.3s ease;
+}
+.btn.slm-btn-primary:hover {
+    background-color: var(--slm-green); color: var(--slm-white);
+    border-color: var(--slm-white); /* Keep border white on hover over green button */
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.btn.slm-btn-primary i { color: #E0393E; transition: color 0.3s ease;}
+.btn.slm-btn-primary:hover i { color: var(--slm-white); }
+
+/* Alliance Française Card - Self-contained styling */
+.slm-af-card {
+    display: flex;
+    justify-content: center; /* Center the card if it's the only one */
+    margin-top: 2rem;
+}
+.institute-card.af-manille-card-slm {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 550px; /* Control width */
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.institute-card.af-manille-card-slm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.institute-card.af-manille-card-slm .institute-card-image-container {
+    background-color: var(--af-card-primary-blue); /* AF Blue */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.institute-card.af-manille-card-slm .institute-logo {
+    max-height: 70px;
+    width: auto;
+  
+}
+.institute-card.af-manille-card-slm .institute-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.institute-card.af-manille-card-slm .institute-name {
+    font-family: var(--slm-font-headings);
+    font-size: 1.4rem;
+    color: var(--af-card-primary-blue);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.institute-card.af-manille-card-slm .country-flag {
+    width: 28px; height: auto; margin-right: 10px; border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.institute-card.af-manille-card-slm .institute-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+.institute-card.af-manille-card-slm .institute-card-actions {
+    margin-top: auto; /* Pushes actions to the bottom */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.institute-card.af-manille-card-slm .btn { /* General button style within this card */
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.institute-card.af-manille-card-slm .af-btn-primary {
+    background-color: var(--af-card-primary-blue);
+    color: var(--af-card-light-text);
+    border: 2px solid var(--af-card-primary-blue);
+}
+.institute-card.af-manille-card-slm .af-btn-outline {
+    background-color: transparent;
+    color: var(--af-card-primary-blue);
+    border: 2px solid var(--af-card-primary-blue);
+}
+.institute-card.af-manille-card-slm .af-btn-primary:hover,
+.institute-card.af-manille-card-slm .af-btn-outline:hover {
+    opacity: 0.85; transform: translateY(-1px);
+}
+.institute-card.af-manille-card-slm .institute-social-links {
+    margin-left: auto; /* Pushes social links to the right */
+    display: flex;
+    gap: 12px;
+}
+.institute-card.af-manille-card-slm .institute-social-links a {
+    color: var(--af-card-primary-blue);
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+.institute-card.af-manille-card-slm .institute-social-links a:hover {
+    color: var(--af-card-primary-red);
+}
+
+
+/* Reveal on Scroll Animations */
+.slm-reveal-on-scroll { opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.slm-reveal-on-scroll.slm-visible { opacity: 1; transform: translateY(0); }
+.slm-reveal-on-scroll.delay-0 { transition-delay: 0s; }
+.slm-reveal-on-scroll.delay-1 { transition-delay: 0.15s; }
+.slm-reveal-on-scroll.delay-2 { transition-delay: 0.3s; }
+.slm-reveal-on-scroll.delay-3 { transition-delay: 0.45s; }
+.slm-reveal-on-scroll.delay-4 { transition-delay: 0.6s; }
+.slm-reveal-on-scroll.delay-5 { transition-delay: 0.75s; }
+.slm-reveal-on-scroll.delay-6 { transition-delay: 0.9s; }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slm-hero-title-stacked h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); }
+    .slm-about-container { flex-direction: column-reverse; }
+    .slm-about-image { margin-bottom: 2rem; }
+    .meetup-info-grid { grid-template-columns: 1fr; }
+    .slm-video-wrapper { max-width: 95%; }
+    .slm-af-card .institute-card { flex-direction: column; } /* Stack AF card on mobile */
+    .slm-af-card .institute-card-image-container { border-radius: 12px 12px 0 0;}
+}
+@media (max-width: 480px) {
+    .slm-hero-title-stacked h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+    .slm-hero-subtitle-main {font-size: clamp(1.2rem, 3.5vw, 1.7rem);}
+    .slm-hero-subtitle-location {font-size: clamp(1rem, 2.8vw, 1.4rem);}
+    .slm-hero-description {font-size: clamp(0.85rem, 2.2vw, 1rem);}
+    .slm-cta-button {padding: 10px 25px; font-size: 0.95rem;}
+}

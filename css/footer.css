@@ -1,0 +1,71 @@
+/* WEBSITE/css/footer.css */
+footer {
+    background-color: var(--dark-text);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 40px 0 20px;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    color: var(--light-text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-logo .logo-img {
+    border-color: var(--accent-yellow); /* Make sure this variable is available from styles.css */
+}
+
+.footer-logo span {
+    font-family: var(--font-primary); /* Make sure this variable is available from styles.css */
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-left: 0; /* This was in your styles.css, keep if intended */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--light-text);
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-yellow); /* Make sure this variable is available from styles.css */
+    transform: scale(1.1);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}

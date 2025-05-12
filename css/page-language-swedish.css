@@ -1,0 +1,675 @@
+/* css/page-language-swedish.css */
+
+:root {
+    /* Re-declaring these here for clarity and potential overrides,
+       though they should be available from main styles.css if linked first. */
+    --swedish-blue: #006AA7;
+    --swedish-yellow: #FECC00;
+    --spotify-bg: #191414;
+    --spotify-green: #1DB954;
+    --youtube-bg: #282828;
+    --youtube-red: #FF0000;
+    --svt-play-bg: #1C1C1E;
+    --svt-play-accent: #00AEEF; /* Main SVT blue accent */
+    --aftonbladet-red: #D9000D; /* Official Aftonbladet red */
+    --expressen-yellow: #FFC900; /* Official Expressen yellow */
+    --peppa-pig-pink: #F4B9D8;
+    --peppa-pig-blue: #98D9F3;
+    --pocket-casts-orange: #F47121;
+}
+
+/* Apply main background to body only when this page is active */
+body.swedish-page-active {
+    background-color: var(--swedish-yellow); /* Main page background yellow */
+}
+
+/* Ensure content sections on this specific page don't get default white/light-bg from main styles.css */
+#language-page-swedish .content-section,
+#language-page-swedish .language-hero-section {
+    background-color: transparent; /* Makes them inherit the body's yellow or their own specific bg */
+}
+
+/* Alt background for sections on this page */
+#language-page-swedish .alt-bg {
+     background-color: rgba(0, 106, 167, 0.07); /* Very light Swedish Blue tint for alt sections on yellow bg */
+}
+
+/* --- Hero Section Specific to Swedish Page --- */
+.language-hero-section#swedish-hero {
+    background: var(--swedish-blue); /* Solid Swedish Blue for the hero itself */
+    color: var(--swedish-yellow);
+    padding-top: calc(70px + 50px); /* Navbar height + extra padding */
+    padding-bottom: 60px;
+    min-height: 60vh;
+    text-align: center;
+    position: relative;
+}
+
+#swedish-hero .language-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#swedish-hero .language-hero-image {
+    order: -1; /* Image appears above text */
+    margin-bottom: 2rem;
+    max-width: 250px; /* Control hero image size */
+}
+#swedish-hero .language-hero-image img {
+    border: 5px solid var(--swedish-yellow);
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#swedish-hero .language-hero-text h1 {
+    color: var(--swedish-yellow);
+    font-size: clamp(2rem, 5vw, 3.2rem); /* Adjusted size */
+    margin-bottom: 0.75rem;
+}
+
+#swedish-hero .highlight-swedish {
+    background-color: rgba(254, 204, 0, 0.8); /* More solid yellow highlight on blue bg */
+    color: var(--swedish-blue);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#swedish-hero .language-hero-subtitle {
+    font-size: 1.2rem; /* Adjusted size */
+    color: var(--light-text);
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#swedish-hero p { /* Paragraphs within hero text */
+    color: var(--light-text);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+
+#swedish-hero .btn-primary {
+    background-color: var(--swedish-yellow);
+    color: var(--swedish-blue);
+    border-color: var(--swedish-yellow);
+}
+#swedish-hero .btn-primary:hover {
+    background-color: #e6b800; /* Darker yellow */
+    border-color: #e6b800;
+    color: var(--swedish-blue);
+}
+#swedish-hero .btn-outline {
+    color: var(--swedish-yellow);
+    border-color: var(--swedish-yellow);
+}
+#swedish-hero .btn-outline:hover {
+    background-color: var(--swedish-yellow);
+    color: var(--swedish-blue);
+}
+
+/* --- Aljohn's Swedish Journey & Highlighted Video --- */
+#aljohns-swedish-journey .section-title { color: var(--swedish-blue); }
+#aljohns-swedish-journey .section-title::after { background-color: var(--swedish-yellow); }
+#aljohns-swedish-journey .journey-narrative p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--dark-text); }
+#aljohns-swedish-journey .quote {
+    border-left-color: var(--swedish-blue);
+    background-color: rgba(254, 204, 0, 0.1); /* Light yellow quote bg */
+    max-width: 750px;
+    margin: 2rem auto;
+}
+.subsection-title.centered-subsection-title {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.7em;
+    color: var(--swedish-blue);
+}
+
+.highlighted-video-feature {
+    background-color: var(--light-text); /* White background for contrast */
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--swedish-blue);
+}
+.highlighted-video-feature .video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.highlighted-video-feature iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;}
+.highlighted-video-feature h3 { color: var(--swedish-blue); margin-bottom: 0.75rem; font-size:1.6rem; text-align: center;}
+.highlighted-video-feature p { text-align: center; margin-bottom: 1rem; color: #444; }
+.highlighted-video-feature .inline-link { color: var(--primary-red); font-weight: bold;} /* Using primary red for action links */
+
+.restaurant-details-buttons { text-align: center; margin-top:1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;}
+.restaurant-info-toggle {
+    background-color: transparent;
+    color: var(--swedish-blue);
+    border: 1px solid var(--swedish-blue);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+.restaurant-info-toggle:hover {
+    background-color: var(--swedish-blue);
+    color: white;
+}
+.restaurant-details {
+    background-color: rgba(0, 106, 167, 0.03); /* Very light blue tint */
+    border: 1px solid rgba(0, 106, 167, 0.2);
+    border-left: 3px solid var(--swedish-blue);
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    text-align: left;
+    display: none;
+}
+.restaurant-details.visible { display: block; }
+.restaurant-details p { margin-bottom: 5px; color: var(--dark-text); }
+.restaurant-details strong { color: var(--swedish-blue); }
+
+
+/* --- Swedish Immersion Resources Section --- */
+#swedish-resources .section-title { color: var(--swedish-blue); }
+#swedish-resources .section-title::after { background-color: var(--swedish-yellow); }
+
+.resource-category-swedish {
+    margin-bottom: 3rem;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff; /* White background for resource categories */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+}
+.resource-category-swedish h3 {
+    font-family: var(--font-primary);
+    color: var(--swedish-blue); /* Default title color */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--swedish-yellow); /* Default underline */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.6rem;
+}
+.resource-category-swedish h3 .fab,
+.resource-category-swedish h3 .fas {
+    font-size: 0.9em;
+    width: 30px; /* Ensure space for icon */
+    text-align: center;
+}
+
+/* Specific Theme Colors for Resource Categories */
+.resource-category-swedish.music-theme { border-left: 5px solid var(--spotify-green); }
+.resource-category-swedish.music-theme h3 i { color: var(--spotify-green); }
+
+.resource-category-swedish.youtube-theme { border-left: 5px solid var(--youtube-red); }
+.resource-category-swedish.youtube-theme h3 i { color: var(--youtube-red); }
+
+.resource-category-swedish.tv-theme { border-left: 5px solid var(--svt-play-accent); }
+.resource-category-swedish.tv-theme h3 i { color: var(--svt-play-accent); }
+
+.resource-category-swedish.news-theme { border-left: 5px solid var(--aftonbladet-red); }
+.resource-category-swedish.news-theme h3 i { color: var(--aftonbladet-red); }
+
+.resource-category-swedish.football-theme { border-left: 5px solid #008000; } /* Standard Green for football */
+.resource-category-swedish.football-theme h3 i { color: #008000; }
+
+.resource-category-swedish.learning-theme { border-left: 5px solid var(--primary-red); }
+.resource-category-swedish.learning-theme h3 i { color: var(--primary-red); }
+
+.resource-category-swedish.kids-theme { border-left: 5px solid var(--peppa-pig-pink); }
+.resource-category-swedish.kids-theme h3 i { color: var(--peppa-pig-pink); }
+
+.resource-category-swedish.podcast-theme { border-left: 5px solid var(--pocket-casts-orange); }
+.resource-category-swedish.podcast-theme h3 i { color: var(--pocket-casts-orange); }
+
+
+.resource-category-swedish > p { margin-bottom: 1.5rem; color: #444; }
+
+.horizontal-scroll-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar { height: 8px; }
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--swedish-blue); border-radius: 4px;}
+.horizontal-scroll-wrapper::-webkit-scrollbar-track { background: rgba(254, 204, 0, 0.2); border-radius: 4px;}
+
+.swedish-item-grid { display: inline-flex; gap: 1.5rem; }
+.resource-item-card {
+    background-color: var(--light-text); padding: 1.2rem; border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; display: inline-flex;
+    flex-direction: column; width: 200px;
+    vertical-align: top; white-space: normal; min-height: 300px; /* Increased min-height */
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.resource-item-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+.resource-item-card img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 0.75rem; }
+.resource-item-card h4 { font-family: var(--font-secondary); font-weight: 600; color: var(--dark-text); font-size: 1rem; margin-bottom: 0.5rem; min-height: 2.4em; line-height: 1.2; }
+.resource-item-card p { font-size: 0.8rem; color: #666; margin-bottom: 1rem; line-height: 1.4; flex-grow: 1; }
+.resource-item-card .btn-group { margin-top: 0.5rem; display: flex; justify-content: center; gap: 0.5rem; }
+.resource-item-card .btn-icon {
+    padding: 0.4rem; /* Adjust for smaller icons */
+    font-size: 0.9rem; border-radius: 50%; /* Circular icons */
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; line-height: 1;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.resource-item-card .btn-icon:hover { transform: scale(1.1); }
+.resource-item-card .btn-icon i { margin-right: 0; }
+
+/* Palette specific icons */
+.btn-icon.spotify { background-color: var(--spotify-green); color: white; border: 1px solid var(--spotify-green); }
+.btn-icon.spotify:hover { background-color: #1aa34a; border-color: #1aa34a; }
+.btn-icon.youtube { background-color: var(--youtube-red); color: white; border: 1px solid var(--youtube-red); }
+.btn-icon.youtube:hover { background-color: #cc0000; border-color: #cc0000; }
+.btn-icon.svtplay { background-color: var(--svt-play-accent); color: white; border: 1px solid var(--svt-play-accent); }
+.btn-icon.svtplay:hover { background-color: #0095c7; border-color: #0095c7; }
+.btn-icon.website { background-color: #6c757d; color:white; border: 1px solid #6c757d;}
+.btn-icon.website:hover { background-color: #5a6268; border-color: #545b62;}
+
+
+.resource-tip { background-color: rgba(0, 106, 167, 0.08); border-left: 4px solid var(--swedish-blue); padding: 1rem; margin-top: 1.5rem; border-radius: 4px; font-size: 0.95em; }
+.resource-tip strong { color: var(--swedish-blue); }
+
+.snabbfakta-card { background-color: #1e1e1e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border: 1px solid #333; }
+.snabbfakta-card h4 { color: var(--swedish-yellow); margin-bottom: 0.75rem;}
+.snabbfakta-card img.snabbfakta-logo { width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 1rem; border: 2px solid var(--swedish-yellow); }
+.snabbfakta-card .video-title { font-size: 1.1rem; font-weight: bold; display: block; margin-bottom: 0.5rem; color: var(--light-text); }
+.snabbfakta-card .video-title:hover { color: var(--swedish-yellow); }
+.snabbfakta-card .video-description { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1rem; }
+.snabbfakta-card .aljohn-comment { background-color: #2a2a2a; padding: 0.75rem 1rem; border-radius: 4px; margin-top: 1rem; font-style: italic; font-size: 0.85rem; border-left: 3px solid var(--swedish-yellow); }
+.snabbfakta-card .aljohn-comment strong { color: var(--swedish-yellow); }
+
+/* --- Connections Section (Scandinavian Themed) --- */
+#swedish-connections { background-color: #EFF7FB; /* Very light blue, almost white */ }
+#swedish-connections .section-title { color: var(--swedish-blue); }
+#swedish-connections .section-title::after { background-color: var(--swedish-yellow); }
+.event-showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
+.event-card { background-color: var(--light-text); padding: 1.5rem; border-radius: 8px; box-shadow: var(--card-shadow); }
+/* Flag-based top borders */
+.event-card.norway-theme { border-top: 5px solid #EF2B2D; } /* Norwegian Red */
+.event-card.eu-theme { border-top: 5px solid #003399; }    /* EU Blue */
+.event-card.finland-theme { border-top: 5px solid #002F6C; } /* Finnish Blue */
+
+.event-card .event-image { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem; }
+.event-card h4 { font-family: var(--font-primary); color: var(--dark-text); margin-bottom: 0.75rem; font-size: 1.2rem; }
+.event-card h4 i { margin-right: 0.5rem; } /* For flag icons */
+.event-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; color: #444; }
+.event-card .inline-link { color: var(--swedish-blue); font-weight: bold;}
+
+
+/* --- Roadmap Adaptation for Swedish --- */
+#roadmap-swedish .section-title { color: var(--swedish-blue); }
+#roadmap-swedish .section-title::after { background-color: var(--swedish-yellow); }
+.roadmap-adaptation { margin-top: 2rem; }
+.roadmap-adaptation h4 { font-family: var(--font-primary); color: var(--swedish-blue); font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.roadmap-adaptation ul { list-style: none; padding-left: 0; }
+.roadmap-adaptation ul li { background-color: rgba(254, 204, 0, 0.1); padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-left: 3px solid var(--swedish-yellow); border-radius: 4px; }
+.roadmap-adaptation ul ul { margin-top: 0.5rem; padding-left: 1.5rem; }
+.roadmap-adaptation ul ul li { background-color: rgba(254, 204, 0, 0.05); font-size: 0.95em; }
+
+/* --- Final Encouragement Section --- */
+.final-thoughts-swedish { background-color: var(--swedish-blue); color: var(--swedish-yellow); }
+.final-thoughts-swedish .section-title { color: var(--swedish-yellow); }
+.final-thoughts-swedish .section-title::after { background-color: var(--swedish-yellow); }
+.final-thoughts-swedish .text-center { color: var(--light-text); opacity: 0.95; font-size: 1.15rem; line-height: 1.7;}
+.final-thoughts-swedish .btn-accent { background-color: var(--swedish-yellow); color: var(--swedish-blue); border-color: #e6b800; font-weight: bold;}
+.final-thoughts-swedish .btn-accent:hover { background-color: #005286; color: var(--swedish-yellow); border-color: #005286; }
+
+
+/* --- Responsive Overrides for Swedish Page --- */
+@media (max-width: 992px) {
+    .resource-item-card { width: 180px; min-height: 280px; }
+}
+
+@media (max-width: 768px) {
+    .language-hero-section#swedish-hero { min-height: auto; padding-top: calc(70px + 20px); padding-bottom: 40px; }
+    #swedish-hero .language-hero-image { max-width: 150px; }
+    #swedish-hero .language-hero-text h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    #swedish-hero .language-hero-subtitle { font-size: 1.1rem; }
+
+
+    .horizontal-scroll-wrapper { padding-bottom: 0.5rem;}
+    .swedish-item-grid { gap: 0.75rem; }
+    .resource-item-card { width: 150px; min-height: auto; padding: 0.8rem; } /* More compact cards */
+    .resource-item-card img { height: 80px; margin-bottom: 0.5rem; }
+    .resource-item-card h4 { font-size: 0.85rem; min-height: 2em; margin-bottom: 0.3rem; }
+    .resource-item-card p { font-size: 0.7rem; margin-bottom: 0.5rem; line-height: 1.3;}
+    .resource-item-card .btn-group { gap: 0.3rem; }
+    .resource-item-card .btn-icon { width: 30px; height: 26px; font-size: 0.8rem;}
+
+    .key-moments-grid, .event-showcase-grid { grid-template-columns: 1fr; }
+    .resource-category-swedish { padding: 1rem 1.2rem; }
+    .resource-category-swedish h3 { font-size: 1.3rem; }
+    .highlighted-video-feature { padding: 1.5rem; }
+    .highlighted-video-feature h3 { font-size: 1.3rem;}
+
+}
+    </style>
+</head>
+<body class="swedish-page-active">
+
+    <header id="main-header-placeholder"></header>
+
+    <main id="language-page-swedish">
+
+        <!-- SECTION 1: Hero -->
+        <section id="swedish-hero" class="language-hero-section">
+            <div class="container">
+                <div class="language-hero-content">
+                    <div class="language-hero-image">
+                        <img src="../images/aljohn_polyglot_magnus_mjolkson.png" alt="Aljohn Polyglot - Magnus Mjölkson, Swedish Persona">
+                    </div>
+                    <div class="language-hero-text">
+                        <h1>Hej! Jag är <span class="highlight-swedish">Magnus Mjölkson</span> (Aljohn)!</h1>
+                        <p class="language-hero-subtitle">Välkommen till min svenska värld – en resa fylld av Mello-feber, Zlatan-citat, IJustWantToBeCool-maraton och en hel del damfotboll!</p>
+                        <p>My Swedish journey? It kicked off thanks to a YouTube clip of chess player Anna Cramling. That sparked a curiosity, which (thanks to a certain interview answer about "blonde, educated, demure" women) morphed into a full-blown immersion. It's been a "bittersweet but fun" ride. This page is how I, Magnus Mjölkson, navigated the Swedish linguistic landscape.</p>
+                        <a href="#aljohns-swedish-journey" class="btn btn-primary">Min Svenska Resa</a>
+                        <a href="#swedish-resources" class="btn btn-outline">Utforska Resurser</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Aljohn's Swedish Journey & Highlighted Video -->
+        <section id="aljohns-swedish-journey" class="content-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Min Svenska Verklighet: Höjdpunkter & Reflektioner</h2>
+                
+                <div class="highlighted-video-feature">
+                    <h3><i class="fas fa-star" style="color: var(--swedish-yellow);"></i> Videohöjdpunkt: Chockar Svenska Expats!</h3>
+                    <p>Den här videon från när jag reste runt i Filippinerna och pratade svenska med expats är speciell. Det är lite bitterljuvt att se hur mitt uttal har förändrats sedan dess, med tanke på hur mycket fokus som lagts på andra språk. Men reaktionerna är ovärderliga!</p>
+                    <div class="video-embed-container">
+                        <iframe src="https://www.youtube.com/embed/xmwa5qkAqJU" title="Filipino Surprises Swedish Expats with his Fluency in Swedish" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p>Djupare tankar, lärdomar och kulturella insikter från dessa möten finns i <a href="../blog/swedish-expats-deep-dive.html" class="inline-link">det här blogginlägget</a>. Klicka nedan för lite snabbinfo om platserna!</p>
+                    <div class="restaurant-details-buttons">
+                        <button class="btn btn-outline btn-small restaurant-info-toggle" data-target="johanssons-info-details">Johansson's Detaljer</button>
+                        <div id="johanssons-info-details" class="restaurant-details">
+                            <p><strong>Johansson's Restaurant (Olongapo):</strong> Här pratade jag om svensk mat, skillnader mellan Sverige och Filippinerna, och varför svenskar är så bra på engelska.</p>
+                        </div>
+                        <button class="btn btn-outline btn-small restaurant-info-toggle" data-target="fika-manila-info-details">Fika Manila Detaljer</button>
+                        <div id="fika-manila-info-details" class="restaurant-details">
+                            <p><strong>Fika Manila (Quezon City):</strong> Träffade Mats. Vi diskuterade "fika"-traditionen, IKEA, Spotify, PewDiePie och varför han valde Filippinerna.</p>
+                        </div>
+                        <button class="btn btn-outline btn-small restaurant-info-toggle" data-target="harleys-info-details">Harley's Pub Detaljer</button>
+                        <div id="harleys-info-details" class="restaurant-details">
+                            <p><strong>Harley's Pub (Olongapo):</strong> Snackade med Micke om hans liv i Filippinerna, svenskars engelskkunskaper och mer om fika.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-narrative">
+                     <h3 class="subsection-title centered-subsection-title">Fragmenterad Verklighet som "Magnus Mjölkson"</h3>
+                    <p>Min svenska identitet, "Magnus Mjölkson" (en blinkning till Anna Cramling, Magnus Carlsen och mitt eget efternamn Mogatas), växte fram ur timmar av immersion. Från att ha memorerat kartor över Stockholm till att instinktivt veta att Gambir är närmare Monas i Jakarta än Pasar Senen – det är detaljerna som visar att man verkligen "lever" i ett språk och dess kultur. För svenskan innebar det att hänga med i Melodifestivalen, förstå IJustWantToBeCool's humor, och ja, bli ett stort fan av damfotboll.</p>
+                    <blockquote class="quote">
+                        "I didn’t learn languages to impress or show off... The more I immerse myself, the more I drift away from everything familiar... My identity is tangled up in the languages I speak, the places I’ve never truly lived, and the people I’ve lost along the way."
+                        <cite>- Aljohn Polyglot (ur min essä)</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Swedish Immersion Resources -->
+        <section id="swedish-resources" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Så Här Dök Jag In: "Magnus Mjölksons" Svenska Resurskista</h2>
+                <p class="section-subtitle">Inga dammiga textböcker här inte! Detta är vad jag faktiskt använde (och fortfarande älskar).</p>
+
+                <!-- Swedish Linguist Spotlight -->
+                <div class="resource-category-swedish podcast-theme">
+                    <h3><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-podcast"></i> Måste-Lyssning: The Swedish Linguist Podcast</h3>
+                    <p>Fredrik på <a href="https://www.swedishlinguist.com/" target="_blank" class="inline-link">The Swedish Linguist</a> är en RIKTIG hjälte. Hans podd, med autentiska konversationer (speciellt de med hans mamma – så mysigt!), är guld värd. Jag relaterar till hans resa och insikter. Lyssnar via <a href="../apps.html#app-pocketcasts" class="inline-link">Pocket Casts</a>. Att plöja hans 200+ avsnitt är en intensivkurs i sig. Han har transkriptioner på Patreon, men jag körde utan för att maxa hörförståelsen. 10/10 stjärnor från Magnus!</p>
+                    <div class="cta-center">
+                        <a href="https://www.swedishlinguist.com/podcast/" target="_blank" class="btn btn-primary" style="background-color: var(--pocket-casts-orange); color: white;">Till Podden!</a>
+                    </div>
+                </div>
+
+                <!-- Music -->
+                <div class="resource-category-swedish music-theme">
+                    <h3><i class="fab fa-spotify"></i> Svensk Musik: Mitt Immersion-Soundtrack</h3>
+                    <p>Svensk musik är nyckeln! Från Idol-upptäckter som Victor Leksell till Mello-favoriter som Benjamin Ingrosso & Marcus & Martinus. Och Darins "En säng av rosor" – magisk!</p>
+                    <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                            <!-- Artist Cards as before, including Newkid, Molly Sandén, Olivia Lobato, THEOZ, Laleh, Danny Saucedo, Marcus & Martinus -->
+                            <div class="resource-item-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Victor_Leksell_Rockbj%C3%B6rnen_2021_2.jpg/800px-Victor_Leksell_Rockbj%C3%B6rnen_2021_2.jpg" alt="Victor Leksell"><h4>Victor Leksell</h4><p>Upptäckt via Idol. "Svag", "Nätterna i Göteborg".</p><div class="btn-group"><a href="https://www.youtube.com/channel/UC63n6nJAlrfjXVOYnJ4yN4Q" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/6oB32jLgHeG7iA2gR93xro" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Benjamin_Ingrosso_Stj%C3%A4rnklart_2019.jpg/800px-Benjamin_Ingrosso_Stj%C3%A4rnklart_2019.jpg" alt="Benjamin Ingrosso"><h4>Benjamin Ingrosso</h4><p>Min "Disneyprins"! Älskar hans Mello & Så Mycket Bättre.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UC6k09gN2hLhht3kKk3D6u6w" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/7jEEE187pVG6InOxn03oA5" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Thomas_Stenstr%C3%B6m_-_St%C3%A5_Calm_05.jpg/800px-Thomas_Stenstr%C3%B6m_-_St%C3%A5_Calm_05.jpg" alt="Thomas Stenström"><h4>Thomas Stenström</h4><p>Poetisk pop/rock. "Elvis, Einstein och Jag" är djup.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UCG4N2L0t7yXQY9z9fN5f4qQ" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/2DWNa2o3BbsIHeBq7Iu6E7" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Darin_Zanyar_P3_Guld_2016_%28cropped%29.jpg/800px-Darin_Zanyar_P3_Guld_2016_%28cropped%29.jpg" alt="Darin"><h4>Darin</h4><p>"En säng av rosor" – ren magi.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UC7tMfn6gE68n72nL0gG5d5A" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/1rK3g2x8Y569wIOAWgR2Vn" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5eb2c8a9c1f72c3c6a9d0b3d8ea" alt="Newkid"><h4>Newkid</h4><p>Svensk pop/R&B. "Du måste finnas" – så känslosam!</p><div class="btn-group"><a href="https://www.youtube.com/channel/UC4f7N3A0_Q7YvQJc6b0fA2w" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/216NeWhA42jL62jVyS7z3J" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5ebc59985e50697994869916adc" alt="Molly Sandén"><h4>Molly Sandén</h4><p>Modern pop med stark röst. Älskar hennes sound.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UC6y9bRLXhBRE2m90f672j_g" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/0ZTeWTQwfeoSZdPCHb0V1q" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5ebe11084c74a71a602c097580e" alt="Olivia Lobato"><h4>Olivia Lobato</h4><p>"Syrener" är min favorit! Modern pop.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UCc5x8Q2fHw0D6_Y2nZ2kQZw" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/6Z55RO3q62S833n9N6t2uY" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5eb16b6b6443cf3b1084a5ae7a0" alt="THEOZ"><h4>THEOZ</h4><p>Ung Mello-stjärna med catchiga låtar.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UCn2gYDb9G3Xpd2O8hWQAV7Q" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/5v5E0v3N0f4n2D22l63YdG" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5eb545f6bd3617525c5f5912887" alt="Laleh"><h4>Laleh</h4><p>Hyllad artist och producent. Unik stil.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UCQ5wTq9f_YJ0Z0f5X_gY_5A" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/62QZPjYQMoo5g56FP9gJCV" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5eb78e5e9ea04d9247526684f23" alt="Danny Saucedo"><h4>Danny Saucedo</h4><p>Grym sångare! "Super 8" är en favorit.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UC9f0s1Z5c4c8p5f3t4eW6Nw" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/55Vw88gL0b6Ah22DTR8z43" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                             <div class="resource-item-card"><img src="https://i.scdn.co/image/ab6761610000e5eb4790093f9089e7a651c4f7c3" alt="Marcus & Martinus"><h4>Marcus & Martinus</h4><p>Mina idoler! Norska tvillingar som tog Sverige (och Eurovision) med storm.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UCRUhH2V22gN4qL339uF" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/3N4fiwF558sFZ8KzL339uF" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                             <div class="resource-item-card"><img src="https://lastfm.freetls.fastly.net/i/u/770x0/76696b023883018f4f4f482f62299118.jpg" alt="estraden"><h4>estraden</h4><p>Modern popgrupp. "Bra för dig" med Victor Leksell.</p><div class="btn-group"><a href="https://www.youtube.com/channel/UCc0IaHZm7rN7PAb5zbw2NQA" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://open.spotify.com/artist/2Osj5g9wBahb0uG2J2snbG" target="_blank" class="btn btn-small btn-icon spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a></div></div>
+                        </div>
+                    </div>
+                    <div class="resource-tip">
+                        <strong>Magnus Mjölkson säger:</strong> "Svensk musik är inte bara bra, den är ett fönster till språkets själ. Lyssna, sjung med (även om det låter illa i början!), och känn rytmen. 'Elvis, Einstein och Jag' av Thomas Stenström... den texten! Förstod den inte helt, men när polletten trillade ner – wow. Den handlar om att vara annorlunda, att hitta sin egen väg. Kändes väldigt personligt."
+                        <pre style="font-size: 0.7em; margin-top: 0.5em; white-space: pre-wrap; color: #555;">Skolgårdens grus mot mina händer... Ni kommer aldrig, aldrig trampa mer på mig... Det är Elvis och Einstein, Moder Teresa och jag...</pre>
+                    </div>
+                </div>
+                
+                <!-- Music Programs -->
+                <div class="resource-category-swedish tv-theme">
+                    <h3><i class="fas fa-tv"></i> Svenska Musikprogram: Där Jag Upptäcker Nytt</h3>
+                     <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                            <div class="resource-item-card">
+                                <img src="https://play-lh.googleusercontent.com/66g6sSEg5H9BAbH32v31h3VQB__K40z9KFO85kH72PqI0J5jQy7z0L2jY3m3Xz7_gjs" alt="TV4 Play"><h4>TV4 (Idol, Så Mycket Bättre)</h4><p>Många av mina favoritartister har jag upptäckt genom program som Idol och Så Mycket Bättre på TV4.</p>
+                                <div class="btn-group"><a href="https://www.tv4play.se/" target="_blank" class="btn btn-small btn-icon website" aria-label="Webbplats"><i class="fas fa-desktop"></i></a></div>
+                            </div>
+                            <div class="resource-item-card">
+                                 <img src="https://www.svtstatic.se/image/original/default/30709356/1645869126000" alt="Allsång på Skansen"><h4>Allsång på Skansen (SVT)</h4><p>Svensk sommartradition! Perfekt bakgrundsljud och ett kul sätt att lära sig klassiska svenska låtar. Otroligt mysigt väder och stämning!</p>
+                                <div class="btn-group"><a href="https://www.svtplay.se/allsang-pa-skansen" target="_blank" class="btn btn-small btn-icon svtplay" aria-label="SVT Play"><i class="fas fa-play-circle"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTubers -->
+                <div class="resource-category-swedish youtube-theme">
+                    <h3><i class="fab fa-youtube"></i> YouTube-Sverige: Humor, Kunskap & Vardag</h3>
+                    <p>IJustWantToBeCool är mina absoluta favoriter – mitt "happy pill"! Uppdrag: Mat är också fantastiskt (speciellt avsnittet med den filippinska kocken Peter Tanate). Och Snabb Fakta lär mig alltid något nytt.</p>
+                     <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_n021Ksoq3c3Yv7oQJv6Y6X7r7j8n2qZ5qJ0qZl_w=s176-c-k-c0x00ffffff-no-rj" alt="IJustWantToBeCool"><h4>IJustWantToBeCool</h4><p>Sveriges roligaste trio. Sketcher, spel, galenskap!</p><div class="btn-group"><a href="https://www.youtube.com/@IJustWantToBeCool" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_nE-G8J0Y8X3m7qY1aV0o5r_Q4g4mXbY9zQh9dZg=s176-c-k-c0x00ffffff-no-rj" alt="Uppdrag: Mat"><h4>Uppdrag: Mat (Mauri)</h4><p>Mauri testar allt! Kolla avsnittet "Sveriges nordligaste VS sydligaste restaurang".</p><div class="btn-group"><a href="https://www.youtube.com/@uppdragmat" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_A=s176-c-k-c0x00ffffff-no-rj" alt="Snabb Fakta"><h4>Snabb Fakta</h4><p>Intressanta fakta. Missa inte videon om Doña Paz!</p><div class="btn-group"><a href="https://www.youtube.com/@SnabbFakta" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/g2qBqD_Rxk3k-OJN8qDkS0U1W2m2m7YcTjUa-K6cWdMhYQ5O2m1oV2J_vYt7X4w=s176-c-k-c0x00ffffff-no-rj" alt="Albin Olsson"><h4>Albin Olsson</h4><p>Humorsketcher, "Vem vill bli idiot?".</p><div class="btn-group"><a href="https://www.youtube.com/@AlbinOlsson" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/o1hXYKPER9a2tj7e82uNdX025q5XhmLzaGz4XwBGoMg4dxW7pS2Pjp_x1mYV_b_7qg8o9zQ=s48-c-k-c0x00ffffff-no-rj" alt="Winsent Thunholm Wikman"><h4>Winsent T. Wikman</h4><p>Korta, relaterbara humorklipp.</p><div class="btn-group"><a href="https://www.youtube.com/@WinsentTW" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AIdro_l2z3F_8qDkS0U1W2m2m7YcTjUa-K6cWdMhYQ5O2m1oV2J_vYtX4wQZl_w=s48-c-k-c0x00ffffff-no-rj" alt="Burek Report"><h4>Burek Report</h4><p>Korta, roliga videor, ofta sportfokus.</p><div class="btn-group"><a href="https://www.youtube.com/@BurekReport" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AIdro_l2z3F_8qDkS0U1W2m2m7YcTjUa-K6cWdMhYQ5O2m1oV2J_vYtX4wQZl_w=s48-c-k-c0x00ffffff-no-rj" alt="Gordon Dewoon"><h4>Gordon Dewoon</h4><p>Utmaningar och vloggar.</p><div class="btn-group"><a href="https://www.youtube.com/@GordonDewoon" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AIdro_l2z3F_8qDkS0U1W2m2m7YcTjUa-K6cWdMhYQ5O2m1oV2J_vYtX4wQZl_w=s48-c-k-c0x00ffffff-no-rj" alt="Fabian Svorono"><h4>Fabian Svorono</h4><p>Pranks och utmaningar.</p><div class="btn-group"><a href="https://www.youtube.com/@FabianSvorono" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_mfb3Yh_N2Zl_AOG918z3H3Zf6Y6eJg2c5zGk5XwYhZl=s176-c-k-c0x00ffffff-no-rj" alt="THE SWEDISH FAMILY"><h4>THE SWEDISH FAMILY</h4><p>Vardagsliv med en svensk familj. Bra för "casual Swedish".</p><div class="btn-group"><a href="https://www.youtube.com/@THESWEDISHFAMILY" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                        </div>
+                    </div>
+                    <div class="snabbfakta-card">
+                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_A=s176-c-k-c0x00ffffff-no-rj" alt="Snabb Fakta Logo" class="snabbfakta-logo">
+                        <h4>Ett Måste från Snabb Fakta:</h4>
+                        <a href="https://www.youtube.com/watch?v=CgXqgFBdF9M" target="_blank" class="video-title inline-link">HUR SJÖNK DOÑA PAZ?</a> <!-- Example, use actual ID -->
+                        <p class="video-description">"I denna video går jag igenom den tragiska händelsen med MV Doña Paz... den värsta fartygskatastrofen någonsin i fredstid..."</p>
+                        <div class="aljohn-comment">
+                            <p><strong><i class="fas fa-user-circle"></i> Magnus Mjölkson kommenterade:</strong> "tack så mycket för att du presenterar mitt land. min mamma sa att hennes klasskamrat dog där och att kroppen inte hittades."</p>
+                            <p>Det här är ett exempel på hur språk och kultur knyter samman oväntade världar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Football -->
+                 <div class="resource-category-swedish football-theme">
+                    <h3><i class="fas fa-futbol"></i> Svensk Fotboll: En Stor Del av Min Värld!</h3>
+                    <p>VM med damlandslaget 2023 var en vändpunkt! Följer allt med SportTouchen (en av mina favorit kreatörer, vill bli sportjournalist som honom!), Swedish Football Content och SCOAR (FIFA & challenges är galna!). Fridolina Rolfö & Zećira Mušović – vilka stjärnor!</p>
+                     <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_lB9x3sZl8rQ9gY0vXjY5z_Qk6cWdMhYQ5O2m1o=s176-c-k-c0x00ffffff-no-rj" alt="SportTouchen"><h4>SportTouchen</h4><p>Snabba sportnyheter, quiz & diskussioner. Så passionerad!</p><div class="btn-group"><a href="https://www.youtube.com/@SportTouchen" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_npsm_g80yH5g-m8G1eF2qXjY9z_Qj4l_wO9pZl_A=s176-c-k-c0x00ffffff-no-rj" alt="Swedish Football Content"><h4>Swedish Football Content</h4><p>Intervjuer & bakom kulisserna med damlandslaget.</p><div class="btn-group"><a href="https://www.youtube.com/@Swedishfootballcontent" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_AOG91=s176-c-k-c0x00ffffff-no-rj" alt="SCOAR"><h4>SCOAR</h4><p>Fotboll och FIFA-gaming. Mycket challenges!</p><div class="btn-group"><a href="https://www.youtube.com/@scoar" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                             <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_lk_9x3sZl8rQ9gY0vXjY5z_Qk6cWdMhYQ5O2m0=s176-c-k-c0x00ffffff-no-rj" alt="svenskfotboll"><h4>Svensk Fotboll (Officiell)</h4><p>Highlights och landslagsmaterial från SvFF.</p><div class="btn-group"><a href="https://www.youtube.com/@svenskfotboll" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                             <div class="resource-item-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Fridolina_Rolf%C3%B6_20230330.jpg/800px-Fridolina_Rolf%C3%B6_20230330.jpg" alt="Fridolina Rolfö"><h4>Fridolina Rolfö</h4><p>En av mina absoluta favoritspelare. Världsklass!</p><div class="btn-group"><a href="https://www.instagram.com/fridolinarolfo/" target="_blank" class="btn btn-small btn-icon" style="background-color:#E1306C; color:white;" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Zecira_Musovic_Link%C3%B6pings_FC_2017.jpg/800px-Zecira_Musovic_Link%C3%B6pings_FC_2017.jpg" alt="Zećira Mušović"><h4>Zećira Mušović</h4><p>Målvakten som stod för otroliga VM-räddningar.</p><div class="btn-group"><a href="https://www.instagram.com/zeciramusovic/" target="_blank" class="btn btn-small btn-icon" style="background-color:#E1306C; color:white;" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SVT Play Series -->
+                <div class="resource-category-swedish tv-theme">
+                    <h3><i class="fas fa-tv"></i> SVT Play Serier: Djupdykning i Svensk Kultur & Drama</h3>
+                    <p>SVT Play är en guldgruva! "Historien om Sverige", "Äkta människor" och "I Zlatans fotspår" är några favoriter som gett mig så mycket.</p>
+                     <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                             <div class="resource-item-card"><img src="https://www.svtstatic.se/image/small/16x9/37379070/1668092792000" alt="Historien om Sverige"><h4>Historien om Sverige</h4><p>Från istid till våra dagar. Episkt!</p><div class="btn-group"><a href="https://www.svtplay.se/historien-om-sverige" target="_blank" class="btn btn-small btn-icon svtplay" aria-label="SVT Play"><i class="fas fa-play-circle"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://www.svtstatic.se/image/small/16x9/2009499/1469800337000" alt="Äkta människor"><h4>Äkta människor</h4><p>Sci-fi som får dig att tänka. En favorit!</p><div class="btn-group"><a href="https://www.svtplay.se/akta-manniskor" target="_blank" class="btn btn-small btn-icon svtplay" aria-label="SVT Play"><i class="fas fa-play-circle"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://www.svtstatic.se/image/small/16x9/10705514/1506006881000" alt="I Zlatans Fotspår"><h4>I Zlatans fotspår</h4><p>Zlatans mindset och unga talanger. Inspirerande.</p><div class="btn-group"><a href="https://www.svtplay.se/i-zlatans-fotspar" target="_blank" class="btn btn-small btn-icon svtplay" aria-label="SVT Play"><i class="fas fa-play-circle"></i></a></div></div>
+                            <!-- Add other SVT Play favorites like Allsång på Skansen -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language Learning Specific Channels -->
+                <div class="resource-category-swedish learning-theme">
+                    <h3><i class="fas fa-graduation-cap"></i> Språkinlärningskanaler: Extra Stöd</h3>
+                    <p>För grammatik, uttal och när man behöver saker förklarade lite extra tydligt.</p>
+                     <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_AOG91=s176-c-k-c0x00ffffff-no-rj" alt="Svenska med Anastasia"><h4>Svenska med Anastasia</h4><p>Tydliga lektioner och tips.</p><div class="btn-group"><a href="https://www.youtube.com/@SvenskamedAnastasia" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_AOG91=s176-c-k-c0x00ffffff-no-rj" alt="Simple Swedish with Fred"><h4>Simple Swedish with Fred</h4><p>Vardagssvenska och bra förklaringar.</p><div class="btn-group"><a href="https://www.youtube.com/@TheSwedishLinguist" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_AOG91=s176-c-k-c0x00ffffff-no-rj" alt="Slow Swedish with Katrin"><h4>Slow Swedish with Katrin</h4><p>Långsammare takt, perfekt för nybörjare.</p><div class="btn-group"><a href="https://www.youtube.com/@SlowSwedishwithKatrin" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                             <div class="resource-item-card"><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYgL8XZ3_8z3H3Zf6Y6eJg2c5zGk5XwYhZl_AOG91=s176-c-k-c0x00ffffff-no-rj" alt="UR Play"><h4>UR Play</h4><p>Utbildningsmaterial, ofta med text.</p><div class="btn-group"><a href="https://www.urplay.se/" target="_blank" class="btn btn-small btn-icon website" aria-label="Webbplats"><i class="fas fa-desktop"></i></a></div></div>
+                            <!-- Add Fun Swedish, Say It In Swedish, Svenska med Johan, Sigun Boström -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kids Content -->
+                <div class="resource-category-swedish kids-theme">
+                    <h3><i class="fas fa-child"></i> Barninnehåll: Roligt & Lärorikt!</h3>
+                    <p>Enkelt språk, tydligt uttal och repetition. Perfekt i början av resan!</p>
+                     <div class="horizontal-scroll-wrapper">
+                        <div class="swedish-item-grid">
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AAUvwnhQ5gG3X6z_7r_wJ_0j_F_6v_z_7Q_wJ_0j_F_6v_z=s176-c-k-c0x00ffffff-no-rj" alt="Greta Gris"><h4>Greta Gris (Peppa Pig)</h4><p>Ja, Greta! Enkel dialog, tydligt tal.</p><div class="btn-group"><a href="https://www.youtube.com/@PeppaPigSV" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AAUvwnhQ5gG3X6z_7r_wJ_0j_F_6v_z_7Q_wJ_0j_F_6v_z=s176-c-k-c0x00ffffff-no-rj" alt="Miraculous"><h4>Miraculous - Svenska</h4><p>Populär animerad serie, dubbad.</p><div class="btn-group"><a href="https://www.youtube.com/@MiraculousLadybugSvenska" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AAUvwnhQ5gG3X6z_7r_wJ_0j_F_6v_z_7Q_wJ_0j_F_6v_z=s176-c-k-c0x00ffffff-no-rj" alt="Disney Channel Sverige"><h4>Disney Channel Sverige</h4><p>Klassiker och nya serier på svenska.</p><div class="btn-group"><a href="https://www.youtube.com/@DisneyChannelSverige" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AAUvwnhQ5gG3X6z_7r_wJ_0j_F_6v_z_7Q_wJ_0j_F_6v_z=s176-c-k-c0x00ffffff-no-rj" alt="CoComelon Svenska"><h4>CoComelon Svenska</h4><p>Barnvisor och sånger.</p><div class="btn-group"><a href="https://www.youtube.com/@CoComelonSvenska" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                            <div class="resource-item-card"><img src="https://yt3.ggpht.com/ytc/AAUvwnhQ5gG3X6z_7r_wJ_0j_F_6v_z_7Q_wJ_0j_F_6v_z=s176-c-k-c0x00ffffff-no-rj" alt="Blippi Svenska"><h4>Blippi Svenska</h4><p>Pedagogiska videor för barn.</p><div class="btn-group"><a href="https://www.youtube.com/@BlippiSvenska" target="_blank" class="btn btn-small btn-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Connecting with Scandinavia -->
+        <section id="swedish-connections" class="content-section alt-bg" style="background-color: #F0F8FF;"> <!-- Light Alice Blue for a broader Scandinavian feel -->
+            <div class="container">
+                <h2 class="section-title" style="color: var(--swedish-blue);">Att Ansluta till Sverige & Skandinavien</h2>
+                <p class="section-subtitle" style="color: #333;">Några minnesvärda möten och kulturkrockar som vidgade mina vyer.</p>
+                <div class="event-showcase-grid">
+                     <div class="event-card norway-theme">
+                        <img src="../images/norwegian_embassy_event_ambassador.jpg" alt="Aljohn with Norwegian Ambassador" class="event-image"> <!-- More specific image -->
+                        <h4><i class="fas fa-flag-checkered" style="color:#EF2B2D;"></i>🇳🇴 Norska Ambassaden & Språktestet</h4>
+                        <p>På Norska Ambassadens (<a href="https://www.facebook.com/NorwegianEmbassyManila/" target="_blank">FB</a>) språkcafé. Att testa min svenska mot norska och prata med Ambassadör Christian Halaas Lyster var en upplevelse! Läs mer på <a href="../blog/norwegian-event-insights.html" class="inline-link">bloggen</a>.</p>
+                    </div>
+                    <div class="event-card eu-theme"> <!-- Changed to EU theme, can be more specific -->
+                        <img src="../images/ehef_uppsala_danish_girl.jpg" alt="Aljohn at EHEF with Uppsala Rep and Danish Student" class="event-image"> <!-- More specific image -->
+                        <h4><i class="fas fa-university" style="color:#003399;"></i>🇪🇺 European Higher Education Fair</h4>
+                        <p>Möten med Uppsala Universitet och den (förvirrande) konversationen på "svorsk/danska" med en dansk student. En inblick i akademisk svenska! Läs mer på <a href="../blog/ehef-scandinavian-chats.html" class="inline-link">bloggen</a>.</p>
+                    </div>
+                    <div class="event-card finland-theme">
+                         <img src="../images/international_bazaar_finland.jpg" alt="Aljohn with Finnish Ambassador" class="event-image"> <!-- More specific image -->
+                        <h4><i class="fas fa-globe-europe" style="color:#002F6C;"></i>🇫🇮 Internationella Basaren & Finsk-Svenska</h4>
+                        <p>Träffade Finlands ambassadör och pratade om den svensktalande minoriteten i Finland. Alltid fascinerande hur språken vävs samman i Norden. Läs mer på <a href="../blog/bazaar-finland-connection.html" class="inline-link">bloggen</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Roadmap to Swedish Fluency (Simplified for this view) -->
+        <section id="roadmap-swedish" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Din Väg till Svensk Flyt: Anpassa Min Karta</h2>
+                <p class="section-subtitle">Min <a href="../pathway.html" class="inline-link">generella roadmap</a> är grunden. För svenska, tänk på att integrera resurserna ovan i de olika faserna.</p>
+                <div class="roadmap-adaptation">
+                    <h4>Steg 1 (A1-A2): Grunden</h4>
+                    <p>Fokusera på barninnehåll (Greta Gris, Blippi), nybörjarlektioner (Slow Swedish with Katrin, Svenska med Anastasia), och enkla sånger.</p>
+                    <h4>Steg 2 (B1-B2): Immersion</h4>
+                    <p>Dyk in i musik (dina favoriter!), YouTube (IJWTBC, Mauri, SportTouchen), SVT Play (Lilla Aktuellt, enklare serier), och The Swedish Linguist Podcast.</p>
+                    <h4>Steg 3 (C1-C2): Finess</h4>
+                    <p>Avancerade SVT-dokumentärer, nyhetsanalyser, djupare diskussioner med svenskar, och finslipa uttalet genom att härma modersmålstalare.</p>
+                </div>
+                <div class="cta-center">
+                    <a href="../pathway.html" class="btn btn-primary">Se Hela Min Generella Roadmap</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Final Encouragement -->
+        <section class="content-section alt-bg final-thoughts-swedish">
+            <div class="container">
+                 <h2 class="section-title">Kör Hårt & Ha Kul Med Svenskan, Heja Magnus!</h2>
+                 <p class="text-center">Att lära sig svenska har varit en otrolig, och ibland identitetsförvirrande, resa. Det handlar om att hitta din egen "fucking immersion" och njuta av varje Mello-låt, varje fotbollsmatch, varje IJWTBC-skratt. Hoppas den här sidan, från mig Aljohn (alias Magnus Mjölkson), ger dig lite inspiration. Lycka till!</p>
+                 <div class="cta-center">
+                     <a href="https://www.youtube.com/@aljohnpolyglot?sub_confirmation=1" target="_blank" class="btn btn-accent">Följ Aljohn (och Magnus!) på YouTube!</a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="main-footer-placeholder"></div>
+
+    <script src="../js/navbar-loader.js" defer></script>
+    <script src="../js/footer-loader.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Restaurant Info Toggle
+            const restaurantToggleButtons = document.querySelectorAll('.restaurant-info-toggle');
+            restaurantToggleButtons.forEach(button => {
+                if (!button.dataset.originalText) {
+                    button.dataset.originalText = button.textContent.replace(' Detaljer', '').replace('Visa ', '').replace('Dölj ', '');
+                }
+                const targetId = button.dataset.target;
+                const targetInfo = document.getElementById(targetId);
+                if (targetInfo && targetInfo.classList.contains('visible')) {
+                     button.textContent = 'Dölj ' + button.dataset.originalText;
+                } else {
+                     button.textContent = 'Visa ' + button.dataset.originalText + ' Detaljer';
+                }
+
+                button.addEventListener('click', function() {
+                    const currentTargetId = this.dataset.target;
+                    const currentTargetInfo = document.getElementById(currentTargetId);
+                    if (currentTargetInfo) {
+                        const isVisible = currentTargetInfo.classList.toggle('visible');
+                        if (isVisible) {
+                            this.textContent = 'Dölj ' + this.dataset.originalText;
+                        } else {
+                            this.textContent = 'Visa ' + this.dataset.originalText + ' Detaljer';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

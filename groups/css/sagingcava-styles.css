@@ -1,0 +1,331 @@
+/* groups/css/sagingcava-styles.css */
+:root {
+    --scv-main-yellow: #ffcb03; /* Dominant Yellow from logo BG */
+    --scv-accent-blue: #00529F; /* French Flag Blue from logo */
+    --scv-accent-red: #EF4135;    /* French Flag Red from logo */
+    --scv-text-dark: #30336b; /* A deep, friendly dark blue/purple */
+    --scv-text-light: #FFFFFF;
+    --scv-bg-light-alt: #FFF9E6; /* Very light creamy yellow for alternate sections */
+    --scv-card-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --scv-font-headings: 'Poppins', sans-serif; /* Playful yet modern */
+    --scv-font-main: 'Open Sans', sans-serif;
+
+    /* Poster-inspired palette for "But I'M A CRÊPE" section */
+    --crepe-bg: #FAF0E6; /* Linen / Light Beige */
+    --crepe-text-dark: #704214; /* Chocolate Brown */
+    --crepe-accent-red: #D9534F; /* Muted Red */
+}
+
+body {
+    font-family: var(--scv-font-main);
+    color: var(--scv-text-dark);
+    line-height: 1.7;
+    margin: 0; padding: 0;
+    background-color: var(--scv-text-light); /* Default white */
+}
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+/* Hero Section - Seamless Yellow */
+.scv-hero {
+    background-color: var(--scv-main-yellow);
+    background-image: linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 30px 30px, 30px 30px;
+    color: var(--scv-text-dark);
+    padding: 100px 0 70px 0;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.hero-content-scv { position: relative; z-index: 1; }
+
+.logo-container-scv {
+    background-color: var(--scv-main-yellow); 
+    padding: 0px; 
+    border-radius: 12px; 
+    display: inline-block; 
+    margin-bottom: 0rem; /* Keep this at 0 */
+    line-height: 0; /* Helps collapse space around inline-block image */
+}
+.group-logo-scv {
+    max-width: 220px; 
+    height: auto;
+    display: block; /* Removes extra space below if inline */
+    vertical-align: bottom; /* Further ensures it sits at bottom of its line-box */
+}
+.hero-title-scv { /* This is "Saging Ça Va ?" */
+    font-family: var(--scv-font-headings);
+    font-weight: 800;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    color: var(--scv-accent-blue);
+    margin-bottom: 0.25rem; 
+    /* --- CRITICAL ADJUSTMENTS FOR CLOSENESS --- */
+    margin-top: -0.4rem;   /* Increase negative margin; try -0.3rem, -0.4rem, -0.5rem */
+    padding-top: 0;        /* Ensure no top padding */
+    line-height: 1;        /* Make H1 box height closer to actual text height */
+    /* display: inline-block; /* OPTIONAL: If still issues, try this, but may affect centering */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.hero-subtitle-scv { /* "French for Filipinos" */
+    font-family: var(--scv-font-headings);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--scv-accent-red);
+    margin-bottom: 1.5rem;
+    margin-top: 1 rem; /* Reduced from 0.2rem to bring it slightly closer to main title */
+    line-height: 1.1;
+}
+.hero-description-scv {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto; margin-right: auto;
+    color: var(--scv-text-dark);
+    opacity: 0.9;
+}
+.btn.scv-hero-cta { /* Red button */
+    background-color: var(--scv-accent-red);
+    color: var(--scv-text-light);
+    border: 2px solid var(--scv-accent-red);
+    padding: 0.9rem 2.5rem;
+    font-size: 1.05rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn.scv-hero-cta:hover {
+    background-color: #d9412c; /* Darker red */
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(239, 65, 53, 0.3);
+}
+/* General Content Sections */
+.content-section { padding: 70px 0; }
+.scv-alt-bg { background-color: var(--scv-bg-light-alt); } /* Light creamy yellow */
+.scv-light-bg { background-color: var(--scv-text-light); } /* White */
+
+.section-title {
+    font-family: var(--scv-font-headings); font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 2.8rem); text-align: center;
+    margin-bottom: 1.5rem; position: relative; padding-bottom: 0.75rem;
+}
+.scv-title-blue { color: var(--scv-accent-blue); }
+.scv-title-red { color: var(--scv-accent-red); }
+.scv-title-dark { color: var(--scv-text-dark); }
+
+.section-title::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 70px; height: 4px; border-radius: 2px;
+}
+.scv-title-blue::after { background: linear-gradient(to right, var(--scv-accent-blue), var(--scv-main-yellow)); }
+.scv-title-red::after { background: linear-gradient(to right, var(--scv-accent-red), lighten(var(--scv-accent-red), 15%)); }
+.scv-title-dark::after { background: linear-gradient(to right, var(--scv-accent-blue), var(--scv-accent-red));}
+
+.section-subtitle {
+    text-align: center; font-size: 1.1rem; margin-bottom: 3rem;
+    max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;
+}
+.scv-subtitle-dark { color: var(--scv-text-dark); opacity: 0.85; }
+
+
+/* About Section */
+.scv-about-section { background-color: var(--scv-text-light); } /* White BG */
+.about-content-scv { display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; }
+.about-text-scv { flex: 1.2; min-width: 300px; }
+.about-text-scv p { margin-bottom: 1rem; font-size: 1.05rem;}
+.about-image-scv { flex: 1; min-width: 300px; text-align: center; }
+.about-group-photo-scv {
+    max-width: 100%; width: 450px; border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 5px solid var(--scv-text-light); /* White frame */
+}
+.image-caption-scv { font-size: 0.9rem; color: #777; margin-top: 0.75rem; font-style: italic; }
+
+/* Founders Section */
+.founders-grid-scv { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+.founder-profile-scv {
+    text-align: center; padding: 1.5rem;
+    background-color: var(--scv-text-light); border-radius: 10px;
+    box-shadow: var(--scv-card-shadow); transition: transform 0.3s ease;
+}
+.founder-profile-scv:hover { transform: translateY(-5px); }
+.founder-profile-scv.main-founder { flex-basis: 280px; border-top: 5px solid var(--scv-accent-blue); }
+.founder-profile-scv.co-founder { flex-basis: 220px; border-top: 4px solid var(--scv-accent-red); opacity: 0.9;}
+.founder-profile-scv img {
+    width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem;
+    border: 3px solid var(--scv-main-yellow);
+}
+.founder-profile-scv.main-founder img { width: 150px; height: 150px; }
+.founder-profile-scv h4 { font-family: var(--scv-font-headings); font-weight: 700; color: var(--scv-text-dark); margin-bottom: 0.25rem; font-size: 1.2rem;}
+.founder-profile-scv.main-founder h4 {font-size: 1.4rem;}
+.founder-role { font-size: 0.9rem; color: #666; font-style: italic; }
+.founder-nuance-scv {
+    text-align: center; margin-top: 2rem; font-size: 0.95rem;
+    color: var(--scv-text-dark); opacity: 0.7; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.founder-nuance-scv i { color: var(--scv-accent-blue); }
+
+
+/* Featured Video Section (Aljohn & Ernesto) */
+.video-wrapper-scv {
+    position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+    max-width: 800px; margin: 2rem auto 0 auto; border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.video-wrapper-scv iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* "But I'M A CRÊPE" Meetup Section */
+.scv-crepe-meetup-section { background-color: var(--crepe-bg); }
+.scv-title-crepe { color: var(--crepe-text-dark); }
+.scv-title-crepe::after { background: linear-gradient(to right, var(--crepe-accent-red), lighten(var(--crepe-accent-red), 20%)); }
+.scv-subtitle-crepe { color: var(--crepe-text-dark); opacity: 0.9; }
+.crepe-meetup-content {
+    display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; margin-top: 2rem;
+}
+.crepe-poster-container { flex: 1; min-width: 280px; max-width: 400px; margin: 0 auto; }
+.crepe-meetup-poster {
+    width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(112, 66, 20, 0.15);
+    border: 3px solid var(--scv-text-light);
+}
+.crepe-gallery-container { flex: 1.5; min-width: 320px; }
+.gallery-title-crepe {
+    font-family: var(--scv-font-headings); font-size: 1.6rem;
+    color: var(--crepe-text-dark); margin-bottom: 1.5rem; text-align: center;
+    border-bottom: 2px solid var(--crepe-accent-red); padding-bottom: 0.5rem; display: inline-block;
+}
+/* Gallery Slider for Crepe Meetup */
+.gallery-slider-container-scv { position: relative; display: flex; align-items: center; justify-content: center; margin-top: 1rem; padding: 0 35px; }
+.gallery-grid-wrapper-scv { overflow: hidden; width: 100%; margin: 0 auto; }
+.gallery-grid-scv { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(180px, 1fr); gap: 0.8rem; transition: transform 0.5s ease-in-out; }
+@media (min-width: 768px) { .gallery-grid-scv { grid-auto-columns: minmax(200px, 1fr); } }
+.gallery-item-scv { cursor: pointer; overflow: hidden; border-radius: 8px; box-shadow: var(--scv-card-shadow); transition: transform 0.3s ease; }
+.gallery-item-scv img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.gallery-item-scv:hover img { transform: scale(1.1); }
+.gallery-nav-arrow-scv {
+    position: absolute; top: 50%; transform: translateY(-50%); background-color: var(--crepe-accent-red); color: white;
+    border: none; padding: 8px 10px; font-size: 20px; cursor: pointer; z-index: 10; border-radius: 50%;
+    width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;
+}
+.gallery-nav-arrow-scv:hover { background-color: darken(var(--crepe-accent-red), 10%); }
+.gallery-nav-arrow-scv.prev-grid-arrow-scv { left: -5px; }
+.gallery-nav-arrow-scv.next-grid-arrow-scv { right: -5px; }
+.gallery-nav-arrow-scv.disabled { opacity: 0.4; cursor: default; background-color: lighten(var(--crepe-accent-red), 15%);}
+
+/* SCV Modal Styles */
+.modal-scv { display: none; position: fixed; z-index: 1050; padding-top: 20px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(48, 51, 107, 0.9); animation: fadeInModalSCV 0.3s ease-out;}
+.modal-content-scv { margin: auto; display: block; max-width: 90%; max-height: 85vh; animation: zoomInModalSCV 0.3s ease-out;}
+#caption-scv { margin: 10px auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ddd; padding: 10px 0; font-size: 1.1rem;}
+.close-scv { position: absolute; top: 15px; right: 25px; color: #f1f1f1; font-size: 35px; font-weight: bold; transition: 0.3s; cursor: pointer;}
+.close-scv:hover, .close-scv:focus { color: #bbb; text-decoration: none; }
+.prev-scv, .next-scv { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); padding: 12px 16px; color: white; font-weight: bold; font-size: 28px; transition: 0.4s ease; user-select: none; background-color: rgba(0,0,0,0.4); border-radius: 4px;}
+.prev-scv { left: 10px; } .next-scv { right: 10px; }
+.prev-scv:hover, .next-scv:hover { background-color: rgba(0,0,0,0.7); }
+@keyframes fadeInModalSCV { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomInModalSCV { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+
+/* How to Join Section */
+.join-links-scv { text-align: center; margin-bottom: 2.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap:1rem; }
+.btn.scv-join-btn {
+    min-width: 280px; text-decoration: none; padding: 0.9rem 2rem;
+    border-radius: 30px; font-weight: 700; font-size: 1rem;
+}
+.btn.scv-join-btn.btn-primary { background-color: var(--scv-accent-blue); color: var(--scv-text-light); border-color: var(--scv-accent-blue); }
+.btn.scv-join-btn.btn-primary:hover { background-color: darken(var(--scv-accent-blue), 10%); }
+.btn.scv-join-btn.btn-secondary { background-color: var(--scv-accent-red); color: var(--scv-text-light); border-color: var(--scv-accent-red); }
+.btn.scv-join-btn.btn-secondary:hover { background-color: darken(var(--scv-accent-red), 10%); }
+.community-snapshot-scv img {
+    display: block; max-width: 600px; width: 100%; margin: 2rem auto 0 auto;
+    border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 3px solid var(--scv-text-light);
+}
+
+/* Final CTA Section */
+/* Final CTA Section */
+.scv-final-cta-section {
+    background-color: var(--scv-accent-blue);
+    color: var(--scv-text-light);
+    /* text-align: center; /* ADD THIS IF MISSING FROM SECTION/CONTAINER */
+}
+.scv-final-cta-section .container { /* Ensure container itself is centered if needed, but usually it's for content within */
+    text-align: center; /* THIS WILL CENTER THE BUTTON IF IT'S INLINE-BLOCK */
+}
+
+.scv-title-cta { /* This is "Prêt à parler français ?" */
+    color: var(--scv-main-yellow);
+    /* text-align: center; /* Already handled by parent */
+}
+.scv-title-cta::after {
+    background: linear-gradient(to right, var(--scv-main-yellow), var(--scv-accent-red));
+}
+.scv-subtitle-cta { /* This is "Don't wait!..." */
+    color: rgba(255,255,255,0.9);
+    /* text-align: center; /* Already handled by parent */
+}
+.btn.scv-final-cta-btn { /* This is "Rejoignez la communauté !" */
+    background-color: var(--scv-main-yellow);
+    color: var(--scv-text-dark);
+    border: 2px solid var(--scv-main-yellow);
+    padding: 1rem 2.8rem;
+    font-size: 1.15rem;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 1rem; /* This gives space above it */
+    display: inline-block; /* Ensures text-align: center on parent works */
+}
+.btn.scv-final-cta-btn:hover {
+    background-color: darken(var(--scv-main-yellow), 8%);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(255, 221, 87, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .about-content-scv { flex-direction: column-reverse; /* Image on top on mobile for this section */ }
+    .about-image-scv { margin-bottom: 2rem; }
+    .crepe-meetup-content { flex-direction: column; align-items: center;}
+    .crepe-poster-container { margin-bottom: 2rem; }
+}
+@media (max-width: 768px) {
+    .scv-hero { padding: 90px 0 50px 0; min-height: auto; }
+    .group-logo-scv { max-width: 180px; }
+    .founders-grid-scv { flex-direction: column; align-items: center; }
+    .founder-profile-scv.main-founder, .founder-profile-scv.co-founder { flex-basis: auto; width: 90%; max-width: 280px;}
+    .gallery-grid-scv { grid-auto-columns: minmax(160px, 1fr); }
+    .gallery-nav-arrow-scv { width: 35px; height: 35px; font-size: 18px; padding: 6px 8px;}
+}
+/* ... (at the end of your existing sagingcava-styles.css) ... */
+
+/* --- REVEAL ON SCROLL ANIMATIONS --- */
+.scv-reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Start slightly lower */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scv-reveal-on-scroll.scv-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* You can create variations if needed */
+.scv-reveal-on-scroll.delay-1 { transition-delay: 0.1s; }
+.scv-reveal-on-scroll.delay-2 { transition-delay: 0.2s; }
+.scv-reveal-on-scroll.delay-3 { transition-delay: 0.3s; }
+
+/* Fallback for browsers that don't support IntersectionObserver well, or if JS fails */
+.scv-reveal-on-scroll-fallback {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HERO PARALLAX BACKGROUND ADJUSTMENT --- */
+/* Ensure the hero background is set up to allow background-position changes effectively */
+.scv-hero {
+    /* ... your existing hero styles ... */
+    background-attachment: fixed; /* This can help with some parallax effects, but might conflict with your stripes. Test it. */
+                                 /* If it conflicts, the JS moving backgroundPositionY will still work but might be less smooth or behave differently with scrolling content on top. */
+                                 /* For your stripes, just moving backgroundPositionY might be enough. */
+}

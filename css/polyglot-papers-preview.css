@@ -1,0 +1,150 @@
+/* --- The Polyglot Papers - Blog Preview Section (Biotech/Green Theme) --- */
+.polyglot-papers-preview {
+    padding: 80px 0;
+    background-color: #081c15; /* Very Dark Forest Green Fallback */
+    background-image:
+        /* Subtle Hexagonal Grid Overlay */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232dce89' fill-opacity='0.06' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        /* Main Gradient */
+        linear-gradient(140deg,
+            #040f0a 0%,    /* Near Black-Green */
+            #0a2e1a 30%,   /* Dark Emerald */
+            #104527 60%,   /* Forest Green */
+            #1c5c34 100%   /* Deeper Forest Green */
+        );
+    color: #c8f7e0; /* Light Mint Green for text */
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(45, 206, 137, 0.2); /* Subtle green border */
+    border-bottom: 2px solid rgba(45, 206, 137, 0.2);
+}
+
+/* If it follows a dark section and needs to touch or have specific spacing */
+.tech-theme-alt + .polyglot-papers-preview, /* If it follows the purple dispatch preview */
+.core-toolkit-preview-section.tech-theme + .polyglot-papers-preview { /* If it follows blue toolkit preview */
+    margin-top: 0;
+    /* padding-top: 0; /* To touch directly, if the section above has padding-bottom: 0 */
+    /* OR this section's default 80px padding-top might be fine */
+}
+
+
+.papers-eyebrow {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2dce89; /* Vibrant Biotech Green */
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 0.75rem;
+    padding: 0.35rem 0.9rem;
+    background-color: rgba(45, 206, 137, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(45, 206, 137, 0.3);
+    font-family: 'Roboto Mono', monospace; /* Techy font */
+}
+
+.polyglot-papers-preview .section-title {
+    color: #d4fdec; /* Brighter Mint/White */
+    text-shadow: 0 0 12px rgba(45, 206, 137, 0.5), 0 0 6px rgba(45, 206, 137, 0.3); /* Green glow */
+    font-family: var(--font-primary);
+}
+.polyglot-papers-preview .section-title::after {
+    background-color: #2dce89; /* Vibrant Biotech Green underline */
+    box-shadow: 0 0 8px rgba(45, 206, 137, 0.7);
+}
+
+.polyglot-papers-preview .section-subtitle {
+    color: #a0d8c0; /* Softer Mint Green */
+    margin-bottom: 3.5rem;
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+.papers-teasers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem; /* More space between cards */
+}
+
+.paper-teaser-card {
+    background-color: rgba(10, 38, 25, 0.7); /* Darker green, semi-transparent panel */
+    backdrop-filter: blur(5px);
+    border-radius: 6px; /* Sharper, more "digital" edges */
+    padding: 2rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 80, 40, 0.25), inset 0 0 15px rgba(0,50,25,0.3);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(45, 206, 137, 0.25); /* Green border */
+}
+.paper-teaser-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(45, 206, 137, 0.35), inset 0 0 20px rgba(25,75,50,0.4);
+    border-color: rgba(45, 206, 137, 0.5);
+}
+
+.paper-teaser-card .paper-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    color: #040f0a; /* Darkest Green for icon on light bg */
+    background: linear-gradient(135deg, #59f0a8, #2dce89); /* Vibrant Green Gradient */
+    box-shadow: 0 4px 10px rgba(45, 206, 137, 0.3), inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.paper-teaser-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    color: #e0f9ee; /* Bright Mint for titles */
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.paper-teaser-card p {
+    font-size: 0.95rem;
+    color: #b0e6c8; /* Readable Mint Green */
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+/* Optional Teaser link style if you uncomment them in HTML */
+.paper-teaser-card .paper-link {
+    font-size: 0.9rem;
+    color: #2dce89; /* Vibrant Green */
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed rgba(45, 206, 137, 0.5);
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+.paper-teaser-card .paper-link:hover {
+    color: #8affc4; /* Lighter Green */
+    border-bottom-color: #8affc4;
+}
+
+.btn-papers-cta.btn.btn-primary {
+    background: linear-gradient(135deg, #2dce89, #27b376); /* Green gradient button */
+    color: #040f0a; /* Dark text on green button */
+    border: none; /* Remove border for gradient button */
+    font-size: 1.1rem;
+    padding: 0.9rem 2.2rem;
+    box-shadow: 0 0 15px rgba(45, 206, 137, 0.4), 0 0 5px rgba(45, 206, 137, 0.3);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-papers-cta.btn.btn-primary:hover {
+    background: linear-gradient(135deg, #35e096, #2dce89);
+    box-shadow: 0 0 25px rgba(45, 206, 137, 0.6), 0 0 10px rgba(45, 206, 137, 0.5);
+    transform: translateY(-2px) scale(1.02);
+    color: #020805;
+}
+.btn-papers-cta i {
+    margin-right: 10px;
+}
