@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Communities & Study Groups - Aljohn Polyglot</title>
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/groups-styles.css"> <!-- New CSS file for this page -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="css/groups-styles.css">
     <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,61 +14,61 @@
 <body>
     <header id="main-header-placeholder"></header>
 
-    <main>
-        <section class="hero groups-hero">
-            <div class="container">
-                <h1 class="groups-hero-title">Discover Your Language Community</h1>
-                <p class="groups-hero-subtitle">Explore a curated directory of language groups and communities I'm involved with or recommend. Find your tribe and accelerate your learning journey!</p>
-            </div>
-        </section>
-
-        <section class="filters-section">
-            <div class="container">
-                <div class="filter-group">
-                    <h3 class="filter-title">Filter by Language:</h3>
+    <main class="groups-page-layout">
+        <aside class="filters-sidebar">
+            <div class="filters-sticky-content">
+                <h2 class="sidebar-title">Refine Your Search</h2>
+                <div class="filter-group" id="language-filter-group">
+                    <h3 class="filter-title"><i class="fas fa-language"></i> By Language:</h3>
                     <div class="filter-buttons" id="language-filters">
                         <button class="filter-btn active" data-filter-lang="all">All Languages</button>
-                       <button class="filter-btn" data-filter-lang="Spanish"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="filter-flag"> Spanish</button>
-                            <button class="filter-btn" data-filter-lang="French"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="filter-flag"> French</button>
-                            <button class="filter-btn" data-filter-lang="Indonesian"><img src="https://flagcdn.com/w20/id.png" alt="ID" class="filter-flag"> Indonesian</button>
-                            <button class="filter-btn" data-filter-lang="Italian"><img src="https://flagcdn.com/w20/it.png" alt="IT" class="filter-flag"> Italian</button>
-                            <button class="filter-btn" data-filter-lang="Portuguese"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="filter-flag"> Portuguese</button>
-                            <button class="filter-btn" data-filter-lang="Russian"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="filter-flag"> Russian</button>
-                            <button class="filter-btn" data-filter-lang="Swedish"><img src="https://flagcdn.com/w20/se.png" alt="SE" class="filter-flag"> Swedish</button>
-                            <button class="filter-btn" data-filter-lang="German"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="filter-flag"> German</button>
-                     
+                        <button class="filter-btn" data-filter-lang="Spanish"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="filter-flag"> Spanish</button>
+                        <button class="filter-btn" data-filter-lang="French"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="filter-flag"> French</button>
+                        <button class="filter-btn" data-filter-lang="Indonesian"><img src="https://flagcdn.com/w20/id.png" alt="ID" class="filter-flag"> Indonesian</button>
+                        <button class="filter-btn" data-filter-lang="Italian"><img src="https://flagcdn.com/w20/it.png" alt="IT" class="filter-flag"> Italian</button>
+                        <button class="filter-btn" data-filter-lang="Portuguese"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="filter-flag"> Portuguese</button>
+                        <button class="filter-btn" data-filter-lang="Russian"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="filter-flag"> Russian</button>
+                        <button class="filter-btn" data-filter-lang="Swedish"><img src="https://flagcdn.com/w20/se.png" alt="SE" class="filter-flag"> Swedish</button>
+                        <button class="filter-btn" data-filter-lang="German"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="filter-flag"> German</button>
                     </div>
                 </div>
-                <div class="filter-group">
-                    <h3 class="filter-title">Filter by Group Type:</h3>
+                <div class="filter-group" id="type-filter-group">
+                    <h3 class="filter-title"><i class="fas fa-users-cog"></i> By Group Type:</h3>
                     <div class="filter-buttons" id="type-filters">
-                        <button class="filter-btn active" data-filter-type="all">All Types</button>
-                        <button class="filter-btn" data-filter-type="Facebook Group">Facebook Group</button>
-                        <button class="filter-btn" data-filter-type="Meetup (In-Person)">Meetup (In-Person)</button>
-                        <button class="filter-btn" data-filter-type="Online Meetup">Online Meetup</button>
-                  
+                        <button class="filter-btn active" data-filter-type="all"><i class="fas fa-globe"></i> All Types</button>
+                        <button class="filter-btn" data-filter-type="Facebook Group"><i class="fab fa-facebook-square"></i> Facebook Group</button>
+                        <button class="filter-btn" data-filter-type="Meetup (In-Person)"><i class="fas fa-map-marker-alt"></i> In-Person Meetup</button>
+                        <button class="filter-btn" data-filter-type="Online Meetup"><i class="fas fa-laptop-house"></i> Online Meetup</button>
+                        <button class="filter-btn" data-filter-type="Social Club"><i class="fas fa-glass-cheers"></i> Social Club</button>
+                        <button class="filter-btn" data-filter-type="Mentorship"><i class="fas fa-hands-helping"></i> Mentorship</button>
+                    
                     </div>
                 </div>
             </div>
-        </section>
+        </aside>
 
-        <section class="groups-display-section">
-            <div class="container">
-                <div id="groups-grid" class="groups-grid-container">
-                    <!-- Group cards will be dynamically inserted here by JavaScript -->
-                </div>
-                <div id="no-groups-message" class="no-groups-found" style="display: none;">
-                    <p>No groups match your current filters. Try different options!</p>
-                    <p>If you're looking for a group in a language I speak (Spanish, French, Indonesian, Italian, Portuguese, Russian, Swedish, German) and don't see one, feel free to <a href="../contact.html" class="inline-link">contact me</a>. I'm more of a community member and organizer than a group leader myself, but perhaps we can find or build something together!</p>
-                </div>
+        <section class="groups-main-content">
+            <div class="groups-content-header">
+                <h1 class="groups-page-main-title">Discover Your Language Community</h1>
+                <p class="groups-page-subtitle">Explore a curated directory of language groups and communities I'm involved with or recommend. Find your tribe and accelerate your learning journey!</p>
+            </div>
+
+            <div id="groups-grid" class="groups-grid-container">
+                <!-- Group cards will be dynamically inserted here by JavaScript -->
+            </div>
+            <div id="no-groups-message" class="no-groups-found" style="display: none;">
+                <i class="fas fa-comments-dollar fa-3x no-groups-icon"></i>
+                <h3>No Communities Found</h3>
+                <p>No groups match your current filters. Try adjusting your search or view all groups!</p>
+                <p>If you're looking for a group in a language I speak (Spanish, French, Indonesian, Italian, Portuguese, Russian, Swedish, German) and don't see one, please <a href="../contact.html" class="inline-link">reach out</a>. I'm more of a community enthusiast and organizer than a group leader, but maybe we can build something amazing together!</p>
             </div>
         </section>
     </main>
 
     <div id="main-footer-placeholder"></div>
-    <script src="js/navbar-loader.js" defer></script>
-    <script src="js/footer-loader.js" defer></script>
-    <script src="js/groups-data.js" defer></script> <!-- Data for the groups -->
-    <script src="js/groups-logic.js" defer></script> <!-- Logic for filtering and rendering -->
+    <script src="../js/navbar-loader.js" defer></script>
+    <script src="../js/footer-loader.js" defer></script>
+    <script src="js/groups-data.js" defer></script>
+    <script src="js/groups-logic.js" defer></script>
 </body>
 </html>
