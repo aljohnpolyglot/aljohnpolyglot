@@ -1,66 +1,113 @@
-// js/navbar-loader.js - CORRECTED FETCH PATHS
+// js/navbar-loader.js - DEBUG VERSION with more logging
+console.log("navbar-loader.js: Script start"); // Log script start
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("navbar-loader.js: DOMContentLoaded event fired"); // Log DOM ready
     const navbarPlaceholder = document.getElementById('main-header-placeholder');
+
     if (navbarPlaceholder) {
+        console.log("navbar-loader.js: Found #main-header-placeholder");
 
-        // --- Determine Directory Depth of the HTML Page ---
-        const currentPagePath = window.location.pathname;
-        let depth = 0;
-        let effectivePath = currentPagePath;
-        if (effectivePath.endsWith('/index.html')) {
-             effectivePath = effectivePath.substring(0, effectivePath.lastIndexOf('/index.html'));
-        }
-        if (effectivePath === '/') { effectivePath = ''; }
-        if (effectivePath && effectivePath !== '/') {
-            const pathSegments = effectivePath.split('/').filter(segment => segment.length > 0);
-            depth = pathSegments.length;
-        }
-        // --- End Depth Determination ---
+        // Path relative FROM JS FILE to the single root navbar template
+        const templatePathRelativeToJs = '../templates/navbar.html';
+        console.log(`Navbar Loader: Attempting to fetch template from: ${templatePathRelativeToJs}`);
 
-        // --- Choose FIXED Template Path Relative to *THIS JS FILE* ---
-        let templatePathRelativeToJs = '';
-        if (depth === 0) { // Root level HTML page
-            templatePathRelativeToJs = '../templates/navbar.html'; // Path from js/ up to root, then down to templates/
-        } else if (depth >= 1) { // Any subdirectory HTML page (Level 1, 2, etc.)
-            templatePathRelativeToJs = '../templates/level2/navbar.html'; // Path from js/ up to root, then down to templates/level2/
-        } else {
-            console.error(`Navbar Loader: Unexpected depth calculated: ${depth}. Cannot determine template.`);
-             if (navbarPlaceholder) navbarPlaceholder.innerHTML = '<p>Error</p>';
-            return; // Stop
-        }
-        // --- End Template Path Choice ---
-
-        console.log(`Navbar Loader: HTML Depth ${depth}, Fetching template: ${templatePathRelativeToJs} (relative FROM JS folder)`);
-
-        // --- Fetch the chosen template USING THE CORRECT RELATIVE PATH ---
         fetch(templatePathRelativeToJs)
             .then(response => {
+                console.log(`Navbar Loader: Fetch response received. Status: ${response.status}`); // Log response status
                 if (!response.ok) {
                     // Log the path that failed clearly
+                    console.error(`Navbar Loader: Fetch failed for ${response.url}`);
                     throw new Error(`HTTP error! status: ${response.status} while fetching ${response.url}`);
                 }
+                console.log("Navbar Loader: Fetch successful, getting text...");
                 return response.text();
             })
             .then(data => {
-                navbarPlaceholder.outerHTML = data;
-                initializeNavbarScripts();
-                setActiveLink();
+                console.log("Navbar Loader: Template text received. Injecting HTML...");
+                try {
+                    navbarPlaceholder.outerHTML = data; // Inject the HTML
+                    console.log("Navbar Loader: HTML injected successfully.");
+
+                    // --- Call the function to adjust links/srcs INSIDE the injected HTML ---
+                    console.log("Navbar Loader: Calling adjustLinksForBasePath...");
+                    adjustLinksForBasePath();
+                    console.log("Navbar Loader: adjustLinksForBasePath finished.");
+
+                    // Now initialize the rest
+                    console.log("Navbar Loader: Calling initializeNavbarScripts...");
+                    initializeNavbarScripts();
+                    console.log("Navbar Loader: initializeNavbarScripts finished.");
+
+                    console.log("Navbar Loader: Calling setActiveLink...");
+                    setActiveLink();
+                    console.log("Navbar Loader: setActiveLink finished.");
+
+                } catch (injectionError) {
+                    console.error("Navbar Loader: Error during HTML injection or subsequent script initialization:", injectionError);
+                     if(navbarPlaceholder) navbarPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px; background: #fff;">JS Error after loading navigation data.</p>';
+                }
             })
             .catch(error => {
-                console.error('Error loading navbar:', error);
-                if (navbarPlaceholder) navbarPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">Error loading navigation.</p>';
+                // This catches errors from fetch() or the .then() blocks before the final try/catch
+                console.error('Error loading navbar (fetch or initial processing):', error);
+                if(navbarPlaceholder) {
+                   try {
+                      navbarPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px; background: #fff;">Error loading navigation data.</p>';
+                   } catch(e){}
+                }
             });
 
     } else {
-        // console.warn('Navbar placeholder #main-header-placeholder not found on this page.');
+        console.warn('Navbar Loader: #main-header-placeholder NOT FOUND on this page.');
     }
 });
 
+// --- Function to Adjust Paths INSIDE the loaded navbar ---
+function adjustLinksForBasePath() {
+    const headerElement = document.querySelector('header');
+    if (!headerElement) {
+        console.error("adjustLinksForBasePath: Header element not found after injection.");
+        return;
+    }
 
-// --- Navbar Interaction & Active Link Functions ---
-// (These should be the same robust functions from the previous answer)
+    // <<< --- CRITICAL: SET YOUR BASE PATH HERE --- >>>
+    const siteBasePath = '/aljohnpolyglot/'; // <--- !!! SET TO '/' OR '/your-repo-name/' !!!
+    // <<< --- END OF CRITICAL SETTING --- >>>
 
+    console.log(`adjustLinksForBasePath: Using siteBasePath: '${siteBasePath}'`);
+
+    if (siteBasePath === '/') {
+        // console.log("adjustLinksForBasePath: Deploying to root, no adjustments needed.");
+        return;
+    }
+    const correctBasePath = siteBasePath.endsWith('/') ? siteBasePath : siteBasePath + '/';
+    const allInternalLinks = headerElement.querySelectorAll('a[href^="/"]:not([href^="//"])');
+    let adjustedLinks = 0;
+    allInternalLinks.forEach(link => {
+        const originalHref = link.getAttribute('href');
+        if (!originalHref.startsWith(correctBasePath)) {
+            const correctedHref = correctBasePath + originalHref.substring(1);
+            link.setAttribute('href', correctedHref);
+            adjustedLinks++;
+        }
+    });
+    const rootImages = headerElement.querySelectorAll('img[src^="/"]:not([src^="//"])');
+     let adjustedImages = 0;
+    rootImages.forEach(img => {
+        const originalSrc = img.getAttribute('src');
+         if (!originalSrc.startsWith(correctBasePath)) {
+            const correctedSrc = correctBasePath + originalSrc.substring(1);
+            img.setAttribute('src', correctedSrc);
+            adjustedImages++;
+         }
+    });
+     console.log(`adjustLinksForBasePath: Adjusted ${adjustedLinks} links and ${adjustedImages} images.`);
+}
+
+// --- Your existing functions below (Use the robust ones) ---
 function initializeNavbarScripts() {
+    // ... (keep the full function from previous answer) ...
     const headerElement = document.querySelector('header');
     if (!headerElement) { return; }
     const menuToggle = headerElement.querySelector('.menu-toggle');
@@ -88,10 +135,12 @@ function initializeNavbarScripts() {
             });
         }
     });
-    handleScroll();
+    handleScroll(); // Initial check
+    console.log("initializeNavbarScripts: Handlers attached."); // Add log
 }
 
 function handleDropdownClick(clickedDropbtn, event, headerElement) {
+    // ... (keep the full function from previous answer) ...
     const isMobile = window.innerWidth <= 768;
     const dropdownContent = clickedDropbtn.nextElementSibling;
     if (isMobile && dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
@@ -111,6 +160,7 @@ function handleDropdownClick(clickedDropbtn, event, headerElement) {
 }
 
 function handleScroll() {
+    // ... (keep the full function from previous answer) ...
     const headerElement = document.querySelector('header');
      if (headerElement) {
             headerElement.classList.toggle('scrolled', window.scrollY > 50);
@@ -118,15 +168,21 @@ function handleScroll() {
 }
 
 function setActiveLink() {
+    // ... (keep the full function from previous answer) ...
     const headerElement = document.querySelector('header');
-    if (!headerElement) return;
+    if (!headerElement) { console.log("setActiveLink: Header not found."); return; }
+    const siteBasePath = '/aljohnpolyglot/'; // <--- !!! ENSURE MATCHES adjustLinksForBasePath !!!
     const currentFullUrl = window.location.href;
     const urlObject = new URL(currentFullUrl);
     const currentPathname = urlObject.pathname;
     const currentHash = urlObject.hash;
-    let normalizedCurrentPath = currentPathname.endsWith('/') && currentPathname !== '/' ? currentPathname.slice(0, -1) : currentPathname;
-    normalizedCurrentPath = normalizedCurrentPath.endsWith('/index.html') ? normalizedCurrentPath.slice(0, -10) : normalizedCurrentPath;
-    if (normalizedCurrentPath === '') normalizedCurrentPath = '/';
+    let pathForComparison = currentPathname;
+    if (siteBasePath !== '/' && pathForComparison.startsWith(siteBasePath)) {
+        pathForComparison = '/' + pathForComparison.substring(siteBasePath.length);
+    }
+    pathForComparison = pathForComparison.endsWith('/') && pathForComparison !== '/' ? pathForComparison.slice(0, -1) : pathForComparison;
+    pathForComparison = pathForComparison.endsWith('/index.html') ? pathForComparison.slice(0, -10) : pathForComparison;
+    if (pathForComparison === '') pathForComparison = '/';
     const allLinks = headerElement.querySelectorAll('.nav-links a, .dropdown-content a');
     allLinks.forEach(link => {
         link.classList.remove('active-link');
@@ -138,14 +194,13 @@ function setActiveLink() {
     allLinks.forEach(link => {
         const linkHrefAttr = link.getAttribute('href');
         if (!linkHrefAttr || linkHrefAttr.startsWith('http') || linkHrefAttr === 'javascript:void(0)' || linkHrefAttr === '#') return;
-        const linkAbsoluteUrl = new URL(linkHrefAttr, window.location.href).href;
-        const linkUrlObject = new URL(linkAbsoluteUrl);
-        let linkPathname = linkUrlObject.pathname;
-        const linkHashPart = linkUrlObject.hash;
-        linkPathname = linkPathname.endsWith('/') && linkPathname !== '/' ? linkPathname.slice(0, -1) : linkPathname;
-        linkPathname = linkPathname.endsWith('/index.html') ? linkPathname.slice(0, -10) : linkPathname;
-        if (linkPathname === '') linkPathname = '/';
-        if (linkPathname === normalizedCurrentPath) {
+        let normalizedLinkHref = linkHrefAttr.startsWith('/') ? linkHrefAttr : '/' + linkHrefAttr;
+        normalizedLinkHref = normalizedLinkHref.endsWith('/') && normalizedLinkHref !== '/' ? normalizedLinkHref.slice(0, -1) : normalizedLinkHref;
+        normalizedLinkHref = normalizedLinkHref.endsWith('/index.html') ? normalizedLinkHref.slice(0, -10) : normalizedLinkHref;
+        if (normalizedLinkHref === '') normalizedLinkHref = '/';
+        const linkPathPart = normalizedLinkHref.split('#')[0];
+        const linkHashPart = normalizedLinkHref.includes('#') ? '#' + normalizedLinkHref.split('#')[1] : '';
+         if (linkPathPart === pathForComparison) {
             if (linkHashPart === currentHash) {
                 if (bestMatchLevel < 2) { bestMatch = link; bestMatchLevel = 2; }
             } else if (!currentHash && !linkHashPart) {
@@ -158,15 +213,18 @@ function setActiveLink() {
     if (bestMatch) {
         bestMatch.classList.add('active-link');
         activateParentDropdown(bestMatch);
-    } else if (normalizedCurrentPath === '/') {
+    } else if (pathForComparison === '/') {
         const rootLink = headerElement.querySelector('a[href="/"], a[href="/index.html"]');
          if (rootLink) { rootLink.classList.add('active-link'); }
     }
+     console.log("setActiveLink: Link highlighting complete."); // Add log
 }
 
+
 function activateParentDropdown(linkElement) {
+    // ... (keep the full function from previous answer) ...
     const dropdownContent = linkElement.closest('.dropdown-content');
-    if (dropdownContent) {
+    if (dropdownConten  t) {
         const dropbtn = dropdownContent.previousElementSibling;
         if (dropbtn && dropbtn.classList.contains('dropbtn')) {
             dropbtn.classList.add('active-link');

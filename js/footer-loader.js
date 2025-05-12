@@ -1,63 +1,61 @@
-// js/footer-loader.js - CORRECTED FETCH PATHS
+// js/footer-loader.js - DEBUG VERSION with more logging
+console.log("footer-loader.js: Script start");
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("footer-loader.js: DOMContentLoaded event fired");
     const footerPlaceholder = document.getElementById('main-footer-placeholder');
     if (footerPlaceholder) {
+         console.log("footer-loader.js: Found #main-footer-placeholder");
 
-        // --- Determine Directory Depth of the HTML Page ---
-        const currentPagePath = window.location.pathname;
-        let depth = 0;
-        let effectivePath = currentPagePath;
-        if (effectivePath.endsWith('/index.html')) {
-             effectivePath = effectivePath.substring(0, effectivePath.lastIndexOf('/index.html'));
-        }
-        if (effectivePath === '/') { effectivePath = ''; }
-        if (effectivePath && effectivePath !== '/') {
-            const pathSegments = effectivePath.split('/').filter(segment => segment.length > 0);
-            depth = pathSegments.length;
-        }
-        // --- End Depth Determination ---
+        // Path relative FROM JS FILE to the single root footer template
+        const templatePathRelativeToJs = '../templates/footer.html';
+        console.log(`Footer Loader: Attempting to fetch template from: ${templatePathRelativeToJs}`);
 
-        // --- Choose FIXED Template Path Relative to *THIS JS FILE* ---
-        let templatePathRelativeToJs = '';
-        if (depth === 0) { // Root level HTML page
-            templatePathRelativeToJs = '../templates/footer.html'; // Path from js/ up to root, then down to templates/
-        } else if (depth >= 1) { // Any subdirectory HTML page (Level 1, 2, etc.)
-            templatePathRelativeToJs = '../templates/level2/footer.html'; // Path from js/ up to root, then down to templates/level2/
-        } else {
-            console.error(`Footer Loader: Unexpected depth calculated: ${depth}. Cannot determine template.`);
-             if (footerPlaceholder) footerPlaceholder.innerHTML = '<p>Error</p>';
-            return; // Stop
-        }
-        // --- End Template Path Choice ---
-
-        console.log(`Footer Loader: HTML Depth ${depth}, Fetching template: ${templatePathRelativeToJs} (relative FROM JS folder)`);
-
-        // --- Fetch the chosen template USING THE CORRECT RELATIVE PATH ---
         fetch(templatePathRelativeToJs)
             .then(response => {
+                 console.log(`Footer Loader: Fetch response received. Status: ${response.status}`);
                 if (!response.ok) {
-                    // Log the path that failed clearly
+                     console.error(`Footer Loader: Fetch failed for ${response.url}`);
                     throw new Error(`HTTP error! status: ${response.status} while fetching ${response.url}`);
                 }
+                 console.log("Footer Loader: Fetch successful, getting text...");
                 return response.text();
             })
             .then(data => {
-                footerPlaceholder.outerHTML = data;
-                initializeFooterScripts();
+                 console.log("Footer Loader: Template text received. Injecting HTML...");
+                 try {
+                    footerPlaceholder.outerHTML = data;
+                     console.log("Footer Loader: HTML injected successfully.");
+                    // NOTE: No path adjustments needed for footer usually
+                    if (typeof initializeFooterScripts === 'function') {
+                         console.log("Footer Loader: Calling initializeFooterScripts...");
+                        initializeFooterScripts();
+                         console.log("Footer Loader: initializeFooterScripts finished.");
+                    }
+                 } catch (injectionError) {
+                     console.error("Footer Loader: Error during HTML injection or subsequent script initialization:", injectionError);
+                     if(footerPlaceholder) footerPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">JS Error after loading footer data.</p>';
+                 }
             })
             .catch(error => {
-                console.error('Error loading footer:', error);
-                if (footerPlaceholder) footerPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">Error loading footer.</p>';
+                // Catches fetch or initial processing errors
+                console.error('Error loading footer (fetch or initial processing):', error);
+                if (footerPlaceholder) {
+                    try {
+                        footerPlaceholder.innerHTML = '<p style="color:red; text-align:center; padding: 10px;">Error loading footer data.</p>';
+                    } catch(e) {}
+                }
             });
     } else {
-       // console.warn('Footer placeholder #main-footer-placeholder not found on this page.');
+       console.warn('Footer Loader: #main-footer-placeholder NOT FOUND on this page.');
     }
 });
 
+// Make sure this function exists if your footer needs JS
 function initializeFooterScripts() {
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
-    // Add any other footer-specific JavaScript initializations here
+    // console.log("initializeFooterScripts: Year updated."); // Add log
 }
