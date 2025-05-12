@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbarPlaceholder = document.getElementById('main-header-placeholder');
     if (navbarPlaceholder) {
-        fetch('/templates/navbar.html') // Root-relative path
+        fetch('templates/navbar.html') // Root-relative path
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

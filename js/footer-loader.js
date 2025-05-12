@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const footerPlaceholder = document.getElementById('main-footer-placeholder');
     if (footerPlaceholder) {
-        fetch('/templates/footer.html') // Root-relative path
+        fetch('templates/footer.html') // Root-relative path
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
