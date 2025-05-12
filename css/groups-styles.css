@@ -1,225 +1,280 @@
 /* groups/css/groups-styles.css */
+/* groups/css/groups-styles.css */
 :root {
-    --groups-primary-purple: #5D3DAA; /* A slightly more vibrant purple */
-    --groups-secondary-purple: #8E44AD; /* Lighter purple for gradient */
-    --groups-accent-gold: #F1C40F;   /* Brighter Gold */
-    --groups-text-light: #FDFEFE;    
-    --groups-text-dark: #2c3e50;     
-    --groups-card-bg: #FFFFFF;       
-    --groups-bg-main: #5D3DAA;       /* Lighter grey for page background */
-    --groups-filter-bg: #FFFFFF;
-    --groups-filter-active-bg: var(--groups-primary-purple);
-    --groups-filter-active-text: var(--groups-text-light);
-    --groups-filter-border: #d1d8e0; /* Softer border for filters */
-
-    --groups-card-shadow: 0 7px 20px rgba(0, 0, 0, 0.06); /* Softer, slightly larger shadow */
-    --groups-card-hover-shadow: 0 10px 30px rgba(93, 61, 170, 0.15); /* Purple-tinted hover shadow */
+    --groups-bg-main: #f0e6ff; 
+    --groups-sidebar-bg: #ffffff; 
+    --groups-content-bg: #fdfcff; /* Slightly off-white for content area */
+    
+    --groups-primary-purple: #6A0DAD; /* Richer Purple */
+    --groups-secondary-purple: #834ED9; /* Lighter purple for accents */
+    --groups-accent-gold: #FFC107;   /* Brighter Gold */
+    --groups-text-dark: #343a40; /* Bootstrap dark */
+    --groups-text-medium: #6c757d; /* Bootstrap secondary */
+    --groups-text-light: #f8f9fa;  /* Bootstrap light */
+    
+    --groups-card-bg: #FFFFFF;
+    --groups-card-shadow: 0 7px 20px rgba(93, 63, 211, 0.07); /* Softer, more spread shadow */
+    --groups-card-hover-shadow: 0 10px 30px rgba(93, 63, 211, 0.12);
     --groups-font-headings: 'Montserrat', sans-serif;
     --groups-font-main: 'Open Sans', sans-serif;
-    --groups-border-radius: 12px; /* More rounded */
+    --groups-border-radius: 12px; /* Consistent, softer radius */
+    --groups-navbar-height: 70px; 
 }
 
-/* ... (body, container styles remain largely the same) ... */
 body {
     font-family: var(--groups-font-main);
     color: var(--groups-text-dark);
     line-height: 1.7;
     margin: 0; padding: 0;
     background-color: var(--groups-bg-main);
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.container { width: 95%; max-width: 1400px; margin: 0 auto; }
 
+/* Two-Column Page Layout */
+.groups-page-layout { display: flex; padding-top: var(--groups-navbar-height); gap: 30px; } /* Increased gap */
+.filters-sidebar {
+    flex: 0 0 300px; /* Slightly wider sidebar */
+    background-color: var(--groups-sidebar-bg);
+    padding: 30px;
+    height: calc(100vh - var(--groups-navbar-height)); 
+    position: sticky; top: var(--groups-navbar-height);
+    overflow-y: auto; 
+    box-shadow: 4px 0 18px rgba(0,0,0,0.04);
+    border-right: 1px solid #e9ecef;
+}
+.sidebar-title {
+    font-family: var(--groups-font-headings); font-size: 1.6rem; font-weight: 700;
+    color: var(--groups-primary-purple); margin-bottom: 25px; padding-bottom: 12px;
+    border-bottom: 3px solid var(--groups-accent-gold); display: inline-block;
+}
+.groups-main-content { flex-grow: 1; padding: 30px; background-color: var(--groups-content-bg); min-height: calc(100vh - var(--groups-navbar-height)); }
 
-/* Hero Section - Purple Gradient */
-.groups-hero {
-    background: linear-gradient(135deg, var(--groups-primary-purple) 0%, var(--groups-secondary-purple) 100%);
+/* Hero-like content header in the right column */
+.groups-content-header {
+    background: linear-gradient(135deg, var(--groups-primary-purple), var(--groups-secondary-purple));
     color: var(--groups-text-light);
-    padding: 100px 20px 70px 20px;
+    padding: 60px 40px; /* More padding */
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 6px solid var(--groups-accent-gold); /* Gold border bottom */
+    border-radius: var(--groups-border-radius);
+    margin-bottom: 40px; /* More space below */
+    box-shadow: 0 8px 25px rgba(93, 63, 211, 0.2);
 }
-.groups-hero::before { /* More dynamic pattern */
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background-image: 
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    z-index: 0; animation: subtleShine 20s linear infinite;
-}
-@keyframes subtleShine {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 200px 200px; }
-}
-.groups-hero .container { position: relative; z-index: 1; }
-.groups-hero-title {
+.groups-page-main-title {
     font-family: var(--groups-font-headings); font-weight: 800;
-    font-size: clamp(2.8rem, 6vw, 4.2rem); margin-bottom: 1rem; /* Increased bottom margin */
-    text-shadow: 2px 3px 6px rgba(0,0,0,0.2);
+    font-size: clamp(2.4rem, 5vw, 3.5rem); /* Adjusted size */
+    margin-bottom: 1rem; /* More space */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    color: var(--groups-text-light); /* Ensure it's light for readability */
 }
-.groups-hero-subtitle {
-    font-size: clamp(1.15rem, 2.8vw, 1.45rem); max-width: 750px;
-    margin: 0 auto; opacity: 0.95; font-weight: 400;
+.groups-page-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* Adjusted size */
+    max-width: 700px; margin: 0 auto;
+    opacity: 0.95; /* Brighter subtitle */
+    font-weight: 400;
+    color: var(--groups-text-light); /* Ensure it's light */
 }
 
-/* Filters Section */
-.filters-section {
-    padding: 35px 0 25px 0;
-    background-color: var(--groups-filter-bg);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    position: -webkit-sticky; position: sticky;
-    top: 60px; z-index: 990;
-    border-bottom: 1px solid var(--groups-filter-border);
-}
-.filter-group { margin-bottom: 20px; }
-.filter-group:last-child { margin-bottom: 5px; } /* Reduced last margin */
+/* Filters Styling */
+.filter-group { margin-bottom: 30px; } /* More space between filter groups */
 .filter-title {
-    font-family: var(--groups-font-headings); font-size: 1.1rem;
-    font-weight: 700; margin-bottom: 15px; color: var(--groups-primary-purple);
-    display: flex; align-items: center; gap: 10px;
+    font-family: var(--groups-font-headings); font-size: 1.1rem; font-weight: 600;
+    margin-bottom: 15px; color: var(--groups-text-medium); display: flex; align-items: center;
 }
-.filter-title i { font-size: 1.1em; opacity: 0.8; }
-.filter-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.filter-title i { margin-right: 10px; color: var(--groups-primary-purple); font-size: 1.1em; }
+.filter-buttons { display: flex; flex-direction: column; gap: 10px; }
 .filter-btn {
-    background-color: #eef0f2; color: var(--groups-text-dark);
-    border: 1px solid #d1d5db; padding: 8px 18px;
-    border-radius: 25px; font-size: 0.88rem; font-weight: 600;
-    cursor: pointer; transition: all 0.25s ease; text-decoration: none;
-    display: flex; align-items: center; gap: 8px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    background-color: #f8f9fa; /* Lighter default button */
+    color: var(--groups-text-dark); border: 1px solid #dee2e6;
+    padding: 12px 18px; border-radius: 8px; /* Slightly larger, less rounded */
+    font-size: 0.95rem; font-weight: 500; cursor: pointer;
+    transition: all 0.25s ease; text-decoration: none; text-align: left;
+    display: flex; align-items: center;
 }
-.filter-flag { width: 18px; height: auto; border-radius: 3px; border: 1px solid #ccc;}
+.filter-flag { width: 20px; height: auto; margin-right: 10px; border-radius: 3px; border: 1px solid #ddd;}
+.filter-btn i { margin-right: 10px; width: 20px; text-align: center; color: var(--groups-text-medium); }
 .filter-btn:hover {
-    background-color: #dfe3e6; border-color: #c0c5cb;
-    transform: translateY(-1px);
+    background-color: #e9ecef; border-color: #ced4da; color: var(--groups-primary-purple);
+    transform: translateX(3px);
 }
 .filter-btn.active {
-    background-color: var(--groups-filter-active-bg);
-    color: var(--groups-filter-active-text);
-    border-color: var(--groups-filter-active-bg);
-    box-shadow: 0 3px 10px rgba(106, 13, 173, 0.35);
+    background-color: var(--groups-primary-purple); color: var(--groups-text-light);
+    border-color: var(--groups-primary-purple); font-weight: 600;
+    box-shadow: 0 4px 10px rgba(93, 63, 211, 0.25);
+    transform: translateX(5px);
 }
-.filter-btn.active .filter-flag { box-shadow: 0 0 4px rgba(255,255,255,0.6); }
+.filter-btn.active i { color: var(--groups-accent-gold); }
+.filter-btn.active .filter-flag { box-shadow: 0 0 5px var(--groups-accent-gold); }
+
 
 /* Groups Display Section */
-.groups-display-section { padding: 50px 0; }
 .groups-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Slightly wider cards */
-    gap: 35px; /* Increased gap */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Min card width 300px */
+    gap: 30px; /* Increased gap */
 }
 
-/* Group Card Style - Collapsible Description */
+/* Refined Group Card Style */
 .group-card {
-    background-color: var(--groups-card-bg); /* Fallback, JS will override */
-    color: var(--groups-text-dark); /* Fallback, JS will override */
-    border-radius: var(--groups-border-radius);
-    box-shadow: var(--groups-card-shadow);
-    overflow: hidden; display: flex; flex-direction: column;
-    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
-                min-height 0.4s ease-in-out; /* For description expansion */
-    position: relative; /* For potential absolute elements inside if needed */
-    min-height: 220px; /* Initial min-height without description */
-}
-.group-card:hover { transform: translateY(-7px); box-shadow: var(--groups-card-hover-shadow); }
-
-.group-card-clickable-area { /* New wrapper for hover/click to show description */
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer; /* Indicate it's interactive */
-}
-
-.group-card-header {
-    /* padding: 20px 20px 15px 20px; */ /* Padding now on clickable-area */
-    display: flex; align-items: center; gap: 15px;
-    margin-bottom: 12px; /* Space after header */
-}
-.group-card-logo {
-    width: 60px; height: 60px; object-fit: cover;
-    border-radius: 8px; flex-shrink: 0;
-    background-color: rgba(255,255,255,0.15);
-    padding: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.group-card-name {
-    font-family: var(--groups-font-headings); font-size: 1.3rem;
-    font-weight: 700; margin: 0; line-height: 1.3;
-    /* Text color set by JS (group.theme.accentColor) */
-}
-.group-card-body { 
-    /* padding: 0 20px 20px 20px; */ /* Padding now on clickable-area */
-    flex-grow: 1; display: flex; flex-direction: column;
-}
-
-.group-card-languages, .group-card-types {
-    margin-bottom: 12px; font-size: 0.82rem;
-    display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center;
-    /* Text color for tags inherited from card or set by JS */
-}
-.group-card-languages .lang-flag { width: 18px; height: auto; margin-right: 4px; vertical-align: middle; border: 1px solid rgba(0,0,0,0.1); border-radius: 2px;}
-.group-card-languages span, .group-card-types .type-tag {
-    background-color: rgba(0,0,0,0.08); /* Slightly darker for better contrast on various card BGs */
-    padding: 4px 10px; border-radius: 15px;
-    font-weight: 600;
-    /* Ensure tag text has enough contrast with its own BG and card BG */
-}
-.group-card-types .type-tag i { margin-right: 6px; opacity: 0.8; }
-
-.group-card-tagline {
-    font-size: 0.9rem; /* Slightly smaller tagline */
-    line-height: 1.55;
-    max-height: 0; /* Initially hidden */
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out 0.1s, margin-bottom 0.4s ease-in-out;
-    margin-bottom: 0; /* No margin when hidden */
-    /* Text color inherited from card or set by JS */
-}
-.group-card:hover .group-card-tagline,
-.group-card.description-visible .group-card-tagline { /* JS will add .description-visible on click/tap */
-    max-height: 150px; /* Adjust as needed for typical tagline length */
-    opacity: 1;
-    margin-bottom: 15px; /* Add margin when visible */
-}
-
-.group-card-footer {
-    margin-top: auto; /* Pushes button to bottom */
-    padding: 15px 20px 20px 20px; /* Padding for the footer area containing the button */
-    /* border-top: 1px solid rgba(0,0,0,0.05); /* Very subtle separator if needed */
-}
-.btn-view-group {
-    display: block; width: 100%; text-align: center;
-    padding: 12px 15px; border-radius: 8px; /* More modern button */
-    font-weight: 700; text-decoration: none;
-    transition: opacity 0.25s ease, transform 0.2s ease;
-    font-size: 0.95rem; border: none; 
-    /* Background, text, border color set by JS from group.theme */
-}
-.btn-view-group:hover { opacity: 0.88; transform: scale(1.02); }
-/* No Groups Found Message - Purple Theme */
-.no-groups-found {
-    text-align: center; padding: 40px 20px;
     background-color: var(--groups-card-bg);
     border-radius: var(--groups-border-radius);
-    box-shadow: var(--groups-card-shadow); margin-top: 30px;
+    box-shadow: var(--groups-card-shadow);
+    overflow: hidden; /* Important for border-top to look right */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-top: 6px solid transparent; /* Default transparent, themed by JS */
 }
-.no-groups-found p { margin-bottom: 12px; font-size: 1.1rem; color: var(--groups-text-medium);}
-.no-groups-found .inline-link { color: var(--groups-primary-purple); text-decoration: underline; font-weight: 600;}
-.no-groups-found .inline-link:hover { color: darken(var(--groups-primary-purple), 10%);}
+.group-card:hover { transform: translateY(-8px); box-shadow: var(--groups-card-hover-shadow); }
 
+.group-card-header {
+    padding: 20px; display: flex; align-items: center; gap: 18px;
+    /* Background color applied by JS from theme */
+    /* Text color applied by JS from theme */
+    border-bottom: 1px solid #f0f0f0; /* Subtle separator if header has different bg */
+}
+.group-card-logo {
+    width: 65px; height: 65px; object-fit: contain;
+    border-radius: 8px; flex-shrink: 0;
+    background-color: rgba(255,255,255,0.8); /* Light bg for logo if it's transparent */
+    padding: 5px;
+    border: 1px solid #eee;
+}
+.group-card-name {
+    font-family: var(--groups-font-headings);
+    font-size: 1.25rem; font-weight: 700; margin: 0; line-height: 1.3;
+    /* Color should be set by JS for contrast with header BG */
+}
+
+.group-card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+
+.group-card-info-line { /* Wrapper for Languages AND Types */
+    display: flex;
+    flex-direction: column; /* Stack languages and types vertically */
+    gap: 8px; /* Space between lang line and type line */
+    margin-bottom: 15px; /* Space after info lines */
+}
+.group-card-languages-tags, .group-card-types-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px; /* Row gap, column gap for tags */
+    align-items: center;
+}
+.lang-tag, .type-tag { /* Common styling for all tags */
+    background-color: #eef2f5; /* Lighter, neutral tag background */
+    padding: 5px 12px; /* Slightly more padding */
+    border-radius: 16px; /* More pill-like */
+    font-size: 0.78rem; /* Slightly smaller tag text */
+    font-weight: 500;
+    color: var(--groups-text-medium);
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.4; /* Ensure text fits well */
+}
+.lang-tag .filter-flag { /* Re-using filter-flag style for consistency */
+    width: 16px; height: auto; margin-right: 6px; border-radius: 2px;
+}
+.type-tag i { margin-right: 6px; font-size: 0.9em; opacity: 0.8; }
+
+.group-card-tagline {
+    font-size: 0.92rem;
+    margin-bottom: 18px; /* More space before button */
+    line-height: 1.6;
+    flex-grow: 1;
+    color: var(--groups-text-medium);
+}
+.group-card-footer {
+    margin-top: auto; 
+    padding-top: 15px;
+    padding-left: 0; /* Ensure footer itself has no side padding affecting button width */
+    padding-right: 0;
+}
+
+.btn-view-group {
+ display: block; /* Make it a block element to easily control width and centering of text */
+    width: calc(100% - 4px); /* Account for potential border width if you add one, otherwise 100% */
+    /* If you add a 2px border later, use calc(100% - 4px) to prevent overflow */
+    /* If no border, width: 100% is fine. */
+    margin-left: auto;  /* Center the block button if its container allows */
+    margin-right: auto; /* Center the block button */
+    
+    text-align: center; /* Explicitly center the text within the button */
+    
+    /* Balanced Padding: Adjust these values as needed */
+    padding: 12px 20px; /* Example: 12px top/bottom, 20px left/right */
+    /* OR more specific if needed:
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    padding-right: 25px; 
+    */
+    
+    border-radius: 8px; 
+    font-weight: 600; 
+    text-decoration: none;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+    border: none; /* Current style is borderless */
+    /* If you want a border later, e.g., border: 2px solid transparent;
+       and then set border-color dynamically in JS. */
+    cursor: pointer;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    /* Background and text color applied by JavaScript based on theme */
+}
+.btn-view-group:hover {
+   opacity: 0.88; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* Theming classes for buttons (JS applies these from groups-data.js) */
+/* Example for SFF card, others would be similar */
+.group-card .sff-button {
+    background-color: var(--sff-banner-yellow); color: var(--sff-banner-text-dark); border-color: var(--sff-banner-yellow);
+}
+.group-card .sff-button:hover { background-color: darken(var(--sff-banner-yellow), 10%); color: var(--sff-banner-text-dark);}
+
+.group-card .scv-button { background-color: var(--scv-accent-red); color: var(--scv-text-light); border-color: var(--scv-accent-red); }
+.group-card .scv-button:hover { background-color: darken(var(--scv-accent-red), 10%); color: var(--scv-text-light); }
+
+.group-card .slm-button { background-color: var(--slm-hero-yellow-text); color: var(--slm-main-red); border-color: var(--slm-hero-yellow-text); }
+.group-card .slm-button:hover { background-color: darken(var(--slm-hero-yellow-text), 10%); color: var(--slm-main-red); }
+
+.group-card .chf-button { background-color: var(--chf-accent-yellow); color: var(--chf-text-dark); border-color: var(--chf-accent-yellow); }
+.group-card .chf-button:hover { background-color: darken(var(--chf-accent-yellow), 10%); color: var(--chf-text-dark); }
+
+
+/* No Groups Found Message */
+.no-groups-found {
+    text-align: center; padding: 60px 30px; background-color: var(--groups-card-bg);
+    border-radius: var(--groups-border-radius); box-shadow: var(--groups-card-shadow);
+    margin-top: 30px; display: none; /* Hidden by default */
+    flex-direction: column; align-items: center; /* For icon centering */
+}
+.no-groups-icon { color: var(--groups-primary-purple); margin-bottom: 20px; opacity: 0.6;}
+.no-groups-found h3 { font-family: var(--groups-font-headings); font-size: 1.8rem; color: var(--groups-primary-purple); margin-bottom: 12px;}
+.no-groups-found p { margin-bottom: 12px; font-size: 1.1rem; color: var(--groups-text-medium); max-width: 600px;}
+.no-groups-found .inline-link { color: var(--groups-primary-purple); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--groups-primary-purple); }
+.no-groups-found .inline-link:hover { color: darken(var(--groups-primary-purple), 10%); border-bottom-style: solid;}
 
 /* Reveal on Scroll */
 .group-card.reveal-item { opacity: 0; transform: translateY(30px) scale(0.98); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
 .group-card.reveal-item.visible { opacity: 1; transform: translateY(0) scale(1); }
-
-
 /* Responsive Adjustments */
+@media (max-width: 992px) {
+    .groups-page-layout { flex-direction: column; }
+    .filters-sidebar {
+        flex: 0 0 auto; width: 100%; position: static; height: auto;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-right: none; border-bottom: 1px solid #e0e0e0;
+        padding: 20px;
+    }
+    .sidebar-title { text-align: center; display: block; }
+    .filter-buttons { flex-direction: row; justify-content: center; }
+    .filter-btn { flex-grow: 0; max-width: none; /* Let them size naturally in a row */ }
+    .groups-main-content { padding: 25px 15px; }
+    .groups-content-header { padding: 40px 25px; }
+}
 @media (max-width: 768px) {
-    .filters-section { top: 50px; }
-    .filter-group { text-align: center; }
-    .filter-buttons { justify-content: center; }
     .groups-grid-container { grid-template-columns: 1fr; }
+    .filter-btn { padding: 10px 15px; font-size: 0.9rem; }
 }
