@@ -40,42 +40,49 @@ body {
     justify-content: center;
     position: relative;
 }
-.hero-content-scv { position: relative; z-index: 1; }
-
+.hero-content-scv {
+    position: relative;
+    z-index: 1;
+    width: 100%; /* Allow it to take width from parent .container or direct sizing */
+    max-width: 800px; /* You can adjust this to control overall hero content width */
+    margin: 0 auto; /* Center the hero content block */
+}
 .logo-container-scv {
-    background-color: var(--scv-main-yellow); 
-    padding: 0px; 
-    border-radius: 12px; 
-    display: inline-block; 
-    margin-bottom: 0rem; /* Keep this at 0 */
-    line-height: 0; /* Helps collapse space around inline-block image */
+    background-color: var(--scv-main-yellow);
+    padding: 0px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 0.5rem; /* SLIGHTLY increased space below logo before "Saging Ca Va" */
+    line-height: 0;
 }
 .group-logo-scv {
-    max-width: 220px; 
+    max-width: 220px;
     height: auto;
-    display: block; /* Removes extra space below if inline */
-    vertical-align: bottom; /* Further ensures it sits at bottom of its line-box */
+    display: block;
+    vertical-align: bottom;
 }
 .hero-title-scv { /* This is "Saging Ça Va ?" */
     font-family: var(--scv-font-headings);
     font-weight: 800;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 8vw, 5rem); /* Adjusted clamp for potentially larger feel */
     color: var(--scv-accent-blue);
-    margin-bottom: 0.25rem; 
-    /* --- CRITICAL ADJUSTMENTS FOR CLOSENESS --- */
-    margin-top: -0.4rem;   /* Increase negative margin; try -0.3rem, -0.4rem, -0.5rem */
-    padding-top: 0;        /* Ensure no top padding */
-    line-height: 1;        /* Make H1 box height closer to actual text height */
-    /* display: inline-block; /* OPTIONAL: If still issues, try this, but may affect centering */
+    /* margin-bottom: 2 rem; /* Typo here, should be 0.2rem or similar */
+    margin-bottom: 0.2rem;   /* Keep this small if subtitle is very close */
+    margin-top: -0.2em;      /* Adjusted to bring it slightly closer to logo IF NEEDED (depends on font) */
+                               /* Use em for vertical margin relative to font size for better scaling */
+    padding-top: 0;
+    line-height: 1;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
+
 .hero-subtitle-scv { /* "French for Filipinos" */
     font-family: var(--scv-font-headings);
     font-weight: 700;
-    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.3rem, 4vw, 2rem); /* Adjusted clamp */
     color: var(--scv-accent-red);
-    margin-bottom: 1.5rem;
-    margin-top: 1 rem; /* Reduced from 0.2rem to bring it slightly closer to main title */
+    margin-bottom: 1.8rem; /* Space after this subtitle */
+    /* --- THIS IS THE KEY ADJUSTMENT --- */
+    margin-top: 0.8rem;  /* INCREASED: Was 0rem (after correcting typo). Try 0.5rem, 0.8rem, 1rem to see what looks best */
     line-height: 1.1;
 }
 .hero-description-scv {

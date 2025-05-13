@@ -51,15 +51,13 @@ body {
 .chf-hero {
     background-color: var(--chf-bg-light);
     color: var(--chf-text-dark);
-    padding: 120px 0 80px 0;
-    text-align: center;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
+    padding: 100px 0;
+    display: flex; /* Kept for overall vertical alignment of .hero-content */
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    text-align: center; /* Set text-align center on the main hero section */
 }
 .hero-background-elements {
     position: absolute;
@@ -99,22 +97,57 @@ body {
     50% { transform: translateY(0) translateX(-15px) scale(1); }
     75% { transform: translateY(15px) translateX(5px) scale(0.95); }
 }
-.chf-hero .hero-content { position: relative; z-index: 1; max-width: 750px; }
-.chf-hero .group-logo-hero { max-width: 280px; height: auto; margin-bottom: 1.5rem; }
+.chf-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* STACK logo and text content by default */
+    align-items: center;   /* Center items within this column (logo, text-block) */
+    gap: 20px; /* Space between logo and text block when stacked */
+    /* text-align: left; /* REMOVE THIS if everything inside should be centered */
+}
+.chf-hero .hero-logo-column { /* This div might be optional if stacking directly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Allow it to be full width for centering logo */
+}
+.chf-hero .group-logo-hero {
+    max-width: 100%;
+    width: clamp(200px, 30vw, 280px); /* Responsive logo size */
+    height: auto;
+    margin-bottom: 1rem; /* Space below logo before title, if stacked */
+}
+.chf-hero .hero-text-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the H1, P, and wrapper within this column */
+    width: 100%; /* Take full width for its content to be centered */
+    /* flex: 2 1 500px; /* Remove if stacking by default */
+}
 .chf-hero h1 {
     font-family: var(--chf-font-headings);
     font-weight: 800;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.5rem); /* Readjust if needed */
+    line-height: 1.15;
     margin-bottom: 0.75rem;
     color: var(--chf-primary);
+    text-align: center; /* Ensure title is centered */
+    max-width: 700px; /* Prevent very long titles from being too wide */
 }
+
 .chf-hero .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: var(--chf-text-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 400;
-    max-width: 600px;
-    margin-left: auto; margin-right: auto;
+    line-height: 1.6;
+    max-width: 600px; /* Constrain subtitle width */
+    text-align: center; /* Ensure subtitle is centered */
+    margin-left: auto; /* Helps with centering if max-width is applied */
+    margin-right: auto;
 }
 .chf-hero .hero-since {
     font-family: var(--chf-font-headings);

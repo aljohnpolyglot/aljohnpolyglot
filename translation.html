@@ -736,6 +736,15 @@
     </main>
 
   <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+  <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
 <script src="js/navbar-loader.js" defer></script>
 <script src="js/footer-loader.js" defer></script>
 <script src="js/navbar-loader.js" defer></script>

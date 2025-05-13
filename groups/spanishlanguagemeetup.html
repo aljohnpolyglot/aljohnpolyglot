@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spanish Language Meetup - Makati</title>
+   <!-- 1. MAIN STYLESHEET (with CSS Variables and global styles) - CRITICAL! -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 2. Component Stylesheets -->
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- 3. Page-Specific Stylesheet -->
     <link rel="stylesheet" href="css/spanishlanguagemeetup-styles.css">
+    <!-- Path for spanishlanguagemeetup-styles.css:
+         If this file is in "website/groups/css/spanishlanguagemeetup-styles.css",
+         then href="css/spanishlanguagemeetup-styles.css" is CORRECT (relative to "website/groups/spanishlanguagemeetup.html")
+    -->
     <!-- No need to link main styles.css if AF card is self-contained below -->
     <link rel="icon" href="../images/groups/spanish_language_meetup_logo.avif" type="image/avif">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -162,6 +172,15 @@
     </main>
 
     <div id="main-footer-placeholder"></div>
+    <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
     <script src="../js/navbar-loader.js" defer></script>
     <script src="../js/footer-loader.js" defer></script>
     <script src="js/spanishlanguagemeetup-dynamic.js" defer></script> 

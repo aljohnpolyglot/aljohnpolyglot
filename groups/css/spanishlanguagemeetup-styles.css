@@ -29,14 +29,15 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-top: 40px;
 }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
 /* Hero Section - Centered, Solid Red BG matching logo */
 .slm-hero {
-    background-color: var(--slm-main-red); /* Solid red background like logo */
-    padding: 100px 20px 80px 20px;
-    min-height: 80vh; /* Increased min-height for more presence */
+    background-color: var(--slm-main-red);
+    padding: 60px 20px 60px 20px; /* Adjust padding if needed */
+    min-height: 70vh; /* Can adjust */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,45 +45,46 @@ body {
     text-align: center;
     color: var(--slm-white);
     position: relative;
-}
-.slm-hero-container { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    width: 100%;
-    max-width: 700px; /* Constrain width of hero content for better focus */
+   
 }
 
+.slm-hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 750px; /* Increased max-width slightly for the title */
+}
 .slm-main-logo {
-    width: 160px; 
+    width: clamp(100px, 20vw, 140px); /* Responsive logo size: min, preferred, max */
     height: auto;
-    border-radius: 10px; 
-    /* No background-color or padding if the logo image itself has the red square */
-    box-shadow: 0 8px 22px rgba(0,0,0,0.25); /* Slightly stronger shadow for pop */
-    margin-bottom: 10 rem; /* Space below logo before title */
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem; /* Increased space between logo and title */
+    /* Ensure image scaling is good if the AVIF has transparent areas */
 }
 
 .slm-hero-title-stacked {
-    margin-bottom: 0.8rem; /* Reduced space after the whole title stack */
+    margin-bottom: 1rem; /* Space after the stacked title */
 }
 
 .slm-hero-title-stacked h1 {
     font-family: var(--slm-hero-title-font);
-    font-size: 10rem; /* Slightly smaller max font size for title */
+    font-size: clamp(4rem, 12vw, 8rem); /* Responsive font size for the title */
     color: var(--slm-white);
-    line-height: 0.82;   /* Further tightened line height */
-    margin-top: -0.15em; /* Increased negative margin for tighter stack */
-    margin-bottom: -0.12em;/* Fine-tune vertical spacing */
-    padding: 0;        
-    text-shadow: 
-        3px 3px 0px rgba(0,0,0,0.25), /* More defined shadow */
-        1px 1px 0px rgba(0,0,0,0.1); /* Softer secondary shadow */
-    letter-spacing: 1.5px; /* Slightly more letter spacing */
-    display: block;     
-    width: 100%;    
-    text-align: center; 
+    line-height: 0.9;   /* Adjust for Bangers font if needed */
+    margin-top: -0.1em; /* Adjust for Bangers font */
+    margin-bottom: -0.05em;/* Adjust for Bangers font */
+    padding: 0;
+    text-shadow:
+        2px 2px 0px rgba(0,0,0,0.2),
+        3px 3px 5px rgba(0,0,0,0.15); /* Adjusted shadow */
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; /* Usually Bangers looks good uppercase */
 }
-
 /* No need for nth-child offsets if all are centered */
 /* .slm-hero-title-stacked h1:nth-child(2) { ... } */
 /* .slm-hero-title-stacked h1:nth-child(3) { ... } */

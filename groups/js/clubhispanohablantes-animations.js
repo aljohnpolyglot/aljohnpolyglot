@@ -1,64 +1,102 @@
+// groups/js/clubhispanohablantes-animations.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for general scroll animations
+    console.log("CHF Animations: DOMContentLoaded - SCRIPT HAS STARTED");
+
+    // --- Intersection Observer for general scroll animations ---
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    console.log("CHF Animations: Found .animate-on-scroll elements:", animatedElements);
+
     if (animatedElements.length > 0) {
-        const observer = new IntersectionObserver((entries, observerInstance) => {
+        const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
+                // Log every time the observer fires for an element
+                console.log("CHF Animations: Observer entry for target:", entry.target, "Is Intersecting:", entry.isIntersecting);
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observerInstance.unobserve(entry.target); // Stop observing once visible
+                    console.log("CHF Animations: Added 'is-visible' to", entry.target);
+                    observer.unobserve(entry.target); // Stop observing once animated
                 }
             });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+        // Try a very sensitive threshold for testing
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.01 }; // Changed to 0.01
+        const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+        animatedElements.forEach(el => {
+            console.log("CHF Animations: Observing element:", el);
+            scrollObserver.observe(el);
         });
-
-        animatedElements.forEach(element => {
-            observer.observe(element);
-        });
+        console.log(`CHF Animations: Scroll observer initialized for ${animatedElements.length} .animate-on-scroll elements.`);
+    } else {
+        console.log("CHF Animations: No .animate-on-scroll elements found.");
     }
 
-    // Hero elements initial animation (triggered once)
+    // --- Intersection Observer for Staggered Animations ---
+    const staggeredContainers = document.querySelectorAll('.stagger-children');
+    console.log("CHF Animations: Found .stagger-children containers:", staggeredContainers);
+    if (staggeredContainers.length > 0) {
+        const staggerObserverCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                console.log("CHF Animations: Stagger observer entry for target:", entry.target, "Is Intersecting:", entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    console.log("CHF Animations: Added 'is-visible' to stagger parent:", entry.target);
+                    const children = entry.target.children;
+                    for (let i = 0; i < children.length; i++) {
+                        children[i].style.transitionDelay = `${i * 0.12}s`;
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+        const staggerObserverOptions = { threshold: 0.1 }; // Can also try 0.01 if needed
+        const staggerObserver = new IntersectionObserver(staggerObserverCallback, staggerObserverOptions);
+        staggeredContainers.forEach(container => {
+            console.log("CHF Animations: Observing stagger container:", container);
+            staggerObserver.observe(container);
+        });
+        console.log(`CHF Animations: Stagger observer initialized for ${staggeredContainers.length} .stagger-children elements.`);
+    } else {
+        console.log("CHF Animations: No .stagger-children elements found.");
+    }
+
+    // --- Hero Entrance Animation Trigger ---
     const heroSection = document.querySelector('.chf-hero');
     if (heroSection) {
-        // Give a slight delay for CSS to load, then trigger hero animation
         setTimeout(() => {
             heroSection.classList.add('hero-elements-visible');
-        }, 100); // 100ms delay
+            console.log("CHF Animations: '.hero-elements-visible' class added to .chf-hero.");
+        }, 150); // Slightly increased delay to ensure DOM is super ready
+    } else {
+        console.log("CHF Animations: .chf-hero element not found for entrance animation.");
+    }
 
-        // Parallax for hero bubbles
-        const bubbles = heroSection.querySelectorAll('.hero-background-elements .bg-bubble');
-        if (bubbles.length > 0) {
-            window.addEventListener('scroll', () => {
-                let scrollPosition = window.pageYOffset;
-                // Only apply parallax if hero is somewhat in view to save performance
-                if (scrollPosition < window.innerHeight * 1.5) {
-                    bubbles.forEach((bubble, index) => {
-                        const speedFactor = parseFloat(bubble.getAttribute('data-parallax-speed') || '0.1');
-                        // Alternate direction for some bubbles
-                        const direction = (index % 2 === 0) ? -1 : 1;
-                        bubble.style.transform = `translateY(${scrollPosition * speedFactor * direction}px) scale(${1 + scrollPosition * 0.00005 * (index + 1)})`;
+    // --- Parallax for Hero Bubbles ---
+    const heroForBubbles = document.querySelector('.chf-hero');
+    if (heroForBubbles) {
+        const parallaxBubbles = heroForBubbles.querySelectorAll('.bg-bubble[data-parallax-speed]');
+        console.log("CHF Animations: Found parallax bubbles:", parallaxBubbles);
+        if (parallaxBubbles.length > 0) {
+            const handleScrollParallax = () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const heroRect = heroForBubbles.getBoundingClientRect();
+                if (heroRect.bottom >= 0 && heroRect.top <= window.innerHeight) {
+                    parallaxBubbles.forEach(bubble => {
+                        const speed = parseFloat(bubble.dataset.parallaxSpeed);
+                        if (!isNaN(speed)) {
+                            const yPos = -(scrollTop * speed);
+                            bubble.style.transform = `translateY(${yPos}px)`;
+                        }
                     });
                 }
-            });
+            };
+            window.addEventListener('scroll', handleScrollParallax, { passive: true });
+            handleScrollParallax(); // Initial position
+            console.log(`CHF Animations: Parallax initialized for ${parallaxBubbles.length} .bg-bubble elements.`);
+        } else {
+            console.log("CHF Animations: No .bg-bubble elements with data-parallax-speed found.");
         }
+    } else {
+         console.log("CHF Animations: .chf-hero not found for bubble parallax.");
     }
-
-    // Staggered list item animations (e.g., in event details)
-    const listContainers = document.querySelectorAll('.stagger-list-items');
-    listContainers.forEach(container => {
-        const listItems = container.querySelectorAll('li');
-        listItems.forEach((item, index) => {
-            item.classList.add('animate-on-scroll', 'fade-in-up'); // Base animation classes
-            item.style.transitionDelay = `${index * 0.1}s`; // Apply individual delay via style
-        });
-    });
-     // Re-observe these newly classed items if they weren't caught by the initial query
-    const newlyAnimatedListItems = document.querySelectorAll('.stagger-list-items li.animate-on-scroll');
-    if (newlyAnimatedListItems.length > 0 && typeof observer !== 'undefined') { // check if observer is defined
-        newlyAnimatedListItems.forEach(element => {
-            observer.observe(element);
-        });
-    }
-
+    console.log("CHF Animations: Script execution finished.");
 });

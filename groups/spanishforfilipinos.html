@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spanish for Filipinos (by Eric Martinez) - Learn and Connect</title>
+      <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="css/spanishforfilipinos-styles.css">
@@ -107,14 +108,14 @@
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube.com/embed/HXCND-vWxeQ" title="These Filipinos are speaking Spanish in Luneta!? But Why!?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p>Eric Martinez PH headed the opening for this big project promoting Spanish practice in a historical place.</p>
+                        <p class="video-description">Eric Martinez PH headed the opening for this big project promoting Spanish practice in a historical place.</p>
                     </div>
                     <div class="meetup-video-card prominent-video">
                         <h3>The Monthly Gatherings in Action</h3>
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube.com/embed/kdyt98bZTD4" title="I Travelled all over the Philippines to see the Rise of Filipino Spanish Speakers!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p>Experience the vibrant atmosphere of our regular meetups at Luneta, as featured by Aljohn Polyglot.</p>
+                        <p class="video-description">Experience the vibrant atmosphere of our regular meetups at Luneta, as featured by Aljohn Polyglot.</p>
                     </div>
                 </div>
                 
@@ -224,7 +225,15 @@
     </main>
 
     <div id="main-footer-placeholder"></div>
-
+<script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
     <script src="../js/navbar-loader.js" defer></script>
     <script src="../js/footer-loader.js" defer></script>
     <script src="js/spanishforfilipinos-gallery.js" defer></script>
