@@ -43,16 +43,16 @@ body {
 .hero-content-scv {
     position: relative;
     z-index: 1;
-    width: 100%; /* Allow it to take width from parent .container or direct sizing */
-    max-width: 800px; /* You can adjust this to control overall hero content width */
-    margin: 0 auto; /* Center the hero content block */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 .logo-container-scv {
     background-color: var(--scv-main-yellow);
     padding: 0px;
     border-radius: 12px;
     display: inline-block;
-    margin-bottom: 0.5rem; /* SLIGHTLY increased space below logo before "Saging Ca Va" */
+    margin-bottom: 0.5rem;
     line-height: 0;
 }
 .group-logo-scv {
@@ -61,28 +61,25 @@ body {
     display: block;
     vertical-align: bottom;
 }
-.hero-title-scv { /* This is "Saging Ça Va ?" */
+.hero-title-scv {
     font-family: var(--scv-font-headings);
     font-weight: 800;
-    font-size: clamp(3rem, 8vw, 5rem); /* Adjusted clamp for potentially larger feel */
+    font-size: clamp(3rem, 8vw, 5rem);
     color: var(--scv-accent-blue);
-    /* margin-bottom: 2 rem; /* Typo here, should be 0.2rem or similar */
-    margin-bottom: 0.2rem;   /* Keep this small if subtitle is very close */
-    margin-top: -0.2em;      /* Adjusted to bring it slightly closer to logo IF NEEDED (depends on font) */
-                               /* Use em for vertical margin relative to font size for better scaling */
+    margin-bottom: 0.2rem;
+    margin-top: -0.2em;
     padding-top: 0;
     line-height: 1;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.hero-subtitle-scv { /* "French for Filipinos" */
+.hero-subtitle-scv {
     font-family: var(--scv-font-headings);
     font-weight: 700;
-    font-size: clamp(1.3rem, 4vw, 2rem); /* Adjusted clamp */
+    font-size: clamp(1.3rem, 4vw, 2rem);
     color: var(--scv-accent-red);
-    margin-bottom: 1.8rem; /* Space after this subtitle */
-    /* --- THIS IS THE KEY ADJUSTMENT --- */
-    margin-top: 0.8rem;  /* INCREASED: Was 0rem (after correcting typo). Try 0.5rem, 0.8rem, 1rem to see what looks best */
+    margin-bottom: 1.8rem;
+    margin-top: 0.8rem;
     line-height: 1.1;
 }
 .hero-description-scv {
@@ -93,7 +90,7 @@ body {
     color: var(--scv-text-dark);
     opacity: 0.9;
 }
-.btn.scv-hero-cta { /* Red button */
+.btn.scv-hero-cta {
     background-color: var(--scv-accent-red);
     color: var(--scv-text-light);
     border: 2px solid var(--scv-accent-red);
@@ -104,14 +101,14 @@ body {
     transition: all 0.3s ease;
 }
 .btn.scv-hero-cta:hover {
-    background-color: #d9412c; /* Darker red */
+    background-color: #d9412c;
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 6px 15px rgba(239, 65, 53, 0.3);
 }
 /* General Content Sections */
 .content-section { padding: 70px 0; }
-.scv-alt-bg { background-color: var(--scv-bg-light-alt); } /* Light creamy yellow */
-.scv-light-bg { background-color: var(--scv-text-light); } /* White */
+.scv-alt-bg { background-color: var(--scv-bg-light-alt); }
+.scv-light-bg { background-color: var(--scv-text-light); }
 
 .section-title {
     font-family: var(--scv-font-headings); font-weight: 700;
@@ -138,7 +135,7 @@ body {
 
 
 /* About Section */
-.scv-about-section { background-color: var(--scv-text-light); } /* White BG */
+.scv-about-section { background-color: var(--scv-text-light); }
 .about-content-scv { display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; }
 .about-text-scv { flex: 1.2; min-width: 300px; }
 .about-text-scv p { margin-bottom: 1rem; font-size: 1.05rem;}
@@ -146,7 +143,7 @@ body {
 .about-group-photo-scv {
     max-width: 100%; width: 450px; border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    border: 5px solid var(--scv-text-light); /* White frame */
+    border: 5px solid var(--scv-text-light);
 }
 .image-caption-scv { font-size: 0.9rem; color: #777; margin-top: 0.75rem; font-style: italic; }
 
@@ -250,28 +247,24 @@ body {
 }
 
 /* Final CTA Section */
-/* Final CTA Section */
 .scv-final-cta-section {
     background-color: var(--scv-accent-blue);
     color: var(--scv-text-light);
-    /* text-align: center; /* ADD THIS IF MISSING FROM SECTION/CONTAINER */
 }
-.scv-final-cta-section .container { /* Ensure container itself is centered if needed, but usually it's for content within */
-    text-align: center; /* THIS WILL CENTER THE BUTTON IF IT'S INLINE-BLOCK */
+.scv-final-cta-section .container {
+    text-align: center;
 }
 
-.scv-title-cta { /* This is "Prêt à parler français ?" */
+.scv-title-cta {
     color: var(--scv-main-yellow);
-    /* text-align: center; /* Already handled by parent */
 }
 .scv-title-cta::after {
     background: linear-gradient(to right, var(--scv-main-yellow), var(--scv-accent-red));
 }
-.scv-subtitle-cta { /* This is "Don't wait!..." */
+.scv-subtitle-cta {
     color: rgba(255,255,255,0.9);
-    /* text-align: center; /* Already handled by parent */
 }
-.btn.scv-final-cta-btn { /* This is "Rejoignez la communauté !" */
+.btn.scv-final-cta-btn {
     background-color: var(--scv-main-yellow);
     color: var(--scv-text-dark);
     border: 2px solid var(--scv-main-yellow);
@@ -279,8 +272,8 @@ body {
     font-size: 1.15rem;
     border-radius: 30px;
     text-decoration: none;
-    margin-top: 1rem; /* This gives space above it */
-    display: inline-block; /* Ensures text-align: center on parent works */
+    margin-top: 1rem;
+    display: inline-block;
 }
 .btn.scv-final-cta-btn:hover {
     background-color: darken(var(--scv-main-yellow), 8%);
@@ -290,11 +283,28 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-    .about-content-scv { flex-direction: column-reverse; /* Image on top on mobile for this section */ }
+    .about-content-scv { flex-direction: column-reverse; }
     .about-image-scv { margin-bottom: 2rem; }
-    .crepe-meetup-content { flex-direction: column; align-items: center;}
-    .crepe-poster-container { margin-bottom: 2rem; }
+
+    .crepe-meetup-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .crepe-poster-container {
+        margin-bottom: 2rem;
+        width: 100%; /* Take full width in column */
+        max-width: 420px; /* Cap the width */
+        margin-left: auto; /* Center if max-width is less than 100% of parent */
+        margin-right: auto;
+    }
+    .crepe-gallery-container {
+        width: 100%; /* Take full width in column */
+        max-width: 480px; /* Cap the width, adjust to match poster if needed or allow slightly wider */
+        margin-left: auto; /* Center if max-width is less than 100% of parent */
+        margin-right: auto;
+    }
 }
+
 @media (max-width: 768px) {
     .scv-hero { padding: 90px 0 50px 0; min-height: auto; }
     .group-logo-scv { max-width: 180px; }
@@ -302,13 +312,254 @@ body {
     .founder-profile-scv.main-founder, .founder-profile-scv.co-founder { flex-basis: auto; width: 90%; max-width: 280px;}
     .gallery-grid-scv { grid-auto-columns: minmax(160px, 1fr); }
     .gallery-nav-arrow-scv { width: 35px; height: 35px; font-size: 18px; padding: 6px 8px;}
+
+    .hero-title-scv {
+        font-size: clamp(2.8rem, 7vw, 4.5rem);
+        margin-bottom: 0.1rem;
+    }
+    .hero-subtitle-scv {
+        font-size: clamp(1.2rem, 3.8vw, 1.9rem);
+        margin-top: 0.6rem;
+        margin-bottom: 1.6rem;
+    }
+    .hero-description-scv {
+        font-size: 1.05rem;
+        margin-bottom: 2.2rem;
+    }
+    .btn.scv-hero-cta {
+        padding: 0.85rem 2.2rem;
+        font-size: 1.02rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.9rem, 4.2vw, 2.6rem);
+        margin-bottom: 1.2rem;
+    }
+    .section-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .crepe-poster-container {
+        width: 100%; /* Ensure it tries to fill available column width */
+        max-width: min(400px, 85%); /* Responsive max-width */
+        /* Centering handled by parent's align-items: center or its own margin:auto if needed */
+    }
+    .crepe-gallery-container {
+        width: 100%; /* Ensure it tries to fill available column width */
+        max-width: min(450px, 90%); /* Slightly wider or match poster: min(400px, 85%) */
+         /* Centering handled by parent's align-items: center or its own margin:auto if needed */
+    }
+    .gallery-slider-container-scv {
+        padding: 0 45px;
+    }
+    .gallery-item-scv img {
+        height: 160px;
+    }
+    .gallery-nav-arrow-scv.prev-grid-arrow-scv {
+        left: 5px;
+    }
+    .gallery-nav-arrow-scv.next-grid-arrow-scv {
+        right: 5px;
+    }
+
+    .join-links-scv {
+        gap: 0.8rem;
+    }
+    .btn.scv-join-btn {
+        font-size: 0.98rem;
+        padding: 0.85rem 1.8rem;
+    }
+
+    .btn.scv-final-cta-btn {
+        padding: 0.9rem 2.5rem;
+        font-size: 1.1rem;
+    }
 }
-/* ... (at the end of your existing sagingcava-styles.css) ... */
+
+@media (max-width: 576px) {
+    body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .container {
+        width: 95%;
+    }
+
+    .scv-hero {
+        padding: 70px 0 40px 0;
+    }
+    .group-logo-scv {
+        max-width: 150px;
+    }
+    .hero-title-scv {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        margin-top: -0.1em;
+        margin-bottom: 0.1rem;
+    }
+    .hero-subtitle-scv {
+        font-size: clamp(1.0rem, 4.5vw, 1.5rem);
+        margin-top: 0.4rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-description-scv {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        max-width: 90%;
+    }
+    .btn.scv-hero-cta {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
+    }
+
+    .content-section {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: clamp(1.7rem, 5.5vw, 2.2rem);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    .section-title::after {
+        width: 50px;
+        height: 3px;
+    }
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        max-width: 90%;
+    }
+
+    .about-text-scv p {
+        font-size: 0.95rem;
+    }
+    .about-group-photo-scv {
+        width: 100%;
+    }
+    .about-image-scv {
+        min-width: unset;
+    }
+    .image-caption-scv {
+        font-size: 0.85rem;
+    }
+
+    .founder-profile-scv {
+        padding: 1.2rem 1rem;
+    }
+    .founder-profile-scv.main-founder, .founder-profile-scv.co-founder {
+        width: 100%;
+        max-width: 280px;
+    }
+    .founder-profile-scv img {
+        width: 90px;
+        height: 90px;
+    }
+    .founder-profile-scv.main-founder img {
+        width: 110px;
+        height: 110px;
+    }
+    .founder-profile-scv h4 { font-size: 1.05rem; }
+    .founder-profile-scv.main-founder h4 {font-size: 1.2rem;}
+    .founder-role { font-size: 0.85rem; }
+    .founder-nuance-scv {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+
+    .video-wrapper-scv {
+        margin-top: 1.5rem;
+    }
+
+    .crepe-meetup-content {
+        gap: 1.5rem;
+    }
+    .crepe-poster-container {
+        width: 100%;
+        max-width: 100%; /* Let it fill available space from parent .container */
+        min-width: unset;
+    }
+    .crepe-gallery-container {
+        width: 100%;
+        /* max-width: 100%; /* Let it fill available space */
+        min-width: unset;
+    }
+    .gallery-title-crepe {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    .gallery-slider-container-scv {
+        padding: 0 40px;
+    }
+    .gallery-grid-scv {
+        grid-auto-columns: minmax(140px, 1fr);
+    }
+     .gallery-item-scv img {
+        height: 140px;
+    }
+    .gallery-nav-arrow-scv {
+        width: 32px; height: 32px; font-size: 16px; padding: 4px 6px;
+    }
+    .gallery-nav-arrow-scv.prev-grid-arrow-scv {
+        left: 4px;
+    }
+    .gallery-nav-arrow-scv.next-grid-arrow-scv {
+        right: 4px;
+    }
+
+    .modal-content-scv {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+    #caption-scv {
+        font-size: 0.9rem;
+    }
+    .close-scv {
+        font-size: 28px;
+        top: 10px; right: 15px;
+    }
+    .prev-scv, .next-scv {
+        padding: 8px 12px;
+        font-size: 20px;
+    }
+    .prev-scv { left: 5px; }
+    .next-scv { right: 5px; }
+
+    .join-links-scv {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .btn.scv-join-btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+        min-width: unset;
+    }
+    .btn.scv-join-btn i {
+        margin-right: 0.4rem;
+    }
+    .community-snapshot-scv img {
+        margin-top: 1.5rem;
+    }
+
+    .btn.scv-final-cta-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        width: 90%;
+        max-width: 280px;
+    }
+    .btn.scv-final-cta-btn i {
+        margin-right: 0.4rem;
+    }
+}
 
 /* --- REVEAL ON SCROLL ANIMATIONS --- */
 .scv-reveal-on-scroll {
     opacity: 0;
-    transform: translateY(40px); /* Start slightly lower */
+    transform: translateY(40px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -317,10 +568,11 @@ body {
     transform: translateY(0);
 }
 
-/* You can create variations if needed */
 .scv-reveal-on-scroll.delay-1 { transition-delay: 0.1s; }
 .scv-reveal-on-scroll.delay-2 { transition-delay: 0.2s; }
 .scv-reveal-on-scroll.delay-3 { transition-delay: 0.3s; }
+.scv-reveal-on-scroll.delay-4 { transition-delay: 0.4s; }
+
 
 /* Fallback for browsers that don't support IntersectionObserver well, or if JS fails */
 .scv-reveal-on-scroll-fallback {
@@ -329,10 +581,6 @@ body {
 }
 
 /* --- HERO PARALLAX BACKGROUND ADJUSTMENT --- */
-/* Ensure the hero background is set up to allow background-position changes effectively */
 .scv-hero {
-    /* ... your existing hero styles ... */
-    background-attachment: fixed; /* This can help with some parallax effects, but might conflict with your stripes. Test it. */
-                                 /* If it conflicts, the JS moving backgroundPositionY will still work but might be less smooth or behave differently with scrolling content on top. */
-                                 /* For your stripes, just moving backgroundPositionY might be enough. */
+    /* background-attachment: fixed; */
 }
