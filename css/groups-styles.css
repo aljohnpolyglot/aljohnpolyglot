@@ -1,5 +1,4 @@
 /* groups/css/groups-styles.css */
-/* groups/css/groups-styles.css */
 :root {
     --groups-bg-main: #f0e6ff; 
     --groups-sidebar-bg: #ffffff; 
@@ -44,7 +43,7 @@ body {
     box-shadow: 4px 0 18px rgba(0,0,0,0.04);
     border-right: 1px solid #e9ecef;
 }
-.sidebar-title {
+.sidebar-title { /* "Refine Your Search" */
     font-family: var(--groups-font-headings); font-size: 1.6rem; font-weight: 700;
     color: var(--groups-primary-purple); margin-bottom: 25px; padding-bottom: 12px;
     border-bottom: 3px solid var(--groups-accent-gold); display: inline-block;
@@ -83,7 +82,12 @@ body {
     margin-bottom: 15px; color: var(--groups-text-medium); display: flex; align-items: center;
 }
 .filter-title i { margin-right: 10px; color: var(--groups-primary-purple); font-size: 1.1em; }
-.filter-buttons { display: flex; flex-direction: column; gap: 10px; }
+
+.filter-buttons { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
 .filter-btn {
     background-color: #f8f9fa; /* Lighter default button */
     color: var(--groups-text-dark); border: 1px solid #dee2e6;
@@ -91,9 +95,11 @@ body {
     font-size: 0.95rem; font-weight: 500; cursor: pointer;
     transition: all 0.25s ease; text-decoration: none; text-align: left;
     display: flex; align-items: center;
+    box-sizing: border-box; /* Added for consistency */
 }
 .filter-flag { width: 20px; height: auto; margin-right: 10px; border-radius: 3px; border: 1px solid #ddd;}
 .filter-btn i { margin-right: 10px; width: 20px; text-align: center; color: var(--groups-text-medium); }
+
 .filter-btn:hover {
     background-color: #e9ecef; border-color: #ced4da; color: var(--groups-primary-purple);
     transform: translateX(3px);
@@ -130,56 +136,53 @@ body {
 
 .group-card-header {
     padding: 20px; display: flex; align-items: center; gap: 18px;
-    /* Background color applied by JS from theme */
-    /* Text color applied by JS from theme */
-    border-bottom: 1px solid #f0f0f0; /* Subtle separator if header has different bg */
+    border-bottom: 1px solid #f0f0f0; 
 }
 .group-card-logo {
     width: 65px; height: 65px; object-fit: contain;
     border-radius: 8px; flex-shrink: 0;
-    background-color: rgba(255,255,255,0.8); /* Light bg for logo if it's transparent */
+    background-color: rgba(255,255,255,0.8); 
     padding: 5px;
     border: 1px solid #eee;
 }
 .group-card-name {
     font-family: var(--groups-font-headings);
     font-size: 1.25rem; font-weight: 700; margin: 0; line-height: 1.3;
-    /* Color should be set by JS for contrast with header BG */
 }
 
 .group-card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
 
-.group-card-info-line { /* Wrapper for Languages AND Types */
+.group-card-info-line { 
     display: flex;
-    flex-direction: column; /* Stack languages and types vertically */
-    gap: 8px; /* Space between lang line and type line */
-    margin-bottom: 15px; /* Space after info lines */
+    flex-direction: column; 
+    gap: 8px; 
+    margin-bottom: 15px; 
 }
 .group-card-languages-tags, .group-card-types-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px 8px; /* Row gap, column gap for tags */
+    gap: 6px 8px; 
     align-items: center;
 }
-.lang-tag, .type-tag { /* Common styling for all tags */
-    background-color: #eef2f5; /* Lighter, neutral tag background */
-    padding: 5px 12px; /* Slightly more padding */
-    border-radius: 16px; /* More pill-like */
-    font-size: 0.78rem; /* Slightly smaller tag text */
+.lang-tag, .type-tag { 
+    background-color: #eef2f5; 
+    padding: 5px 12px; 
+    border-radius: 16px; 
+    font-size: 0.78rem; 
     font-weight: 500;
     color: var(--groups-text-medium);
     display: inline-flex;
     align-items: center;
-    line-height: 1.4; /* Ensure text fits well */
+    line-height: 1.4; 
 }
-.lang-tag .filter-flag { /* Re-using filter-flag style for consistency */
+.lang-tag .filter-flag { 
     width: 16px; height: auto; margin-right: 6px; border-radius: 2px;
 }
 .type-tag i { margin-right: 6px; font-size: 0.9em; opacity: 0.8; }
 
 .group-card-tagline {
     font-size: 0.92rem;
-    margin-bottom: 18px; /* More space before button */
+    margin-bottom: 18px; 
     line-height: 1.6;
     flex-grow: 1;
     color: var(--groups-text-medium);
@@ -187,62 +190,31 @@ body {
 .group-card-footer {
     margin-top: auto; 
     padding-top: 15px;
-    padding-left: 0; /* Ensure footer itself has no side padding affecting button width */
+    padding-left: 0; 
     padding-right: 0;
 }
 
 .btn-view-group {
- display: block; /* Make it a block element to easily control width and centering of text */
-    width: calc(100% - 4px); /* Account for potential border width if you add one, otherwise 100% */
-    /* If you add a 2px border later, use calc(100% - 4px) to prevent overflow */
-    /* If no border, width: 100% is fine. */
-    margin-left: auto;  /* Center the block button if its container allows */
-    margin-right: auto; /* Center the block button */
-    
-    text-align: center; /* Explicitly center the text within the button */
-    
-    /* Balanced Padding: Adjust these values as needed */
-    padding: 12px 20px; /* Example: 12px top/bottom, 20px left/right */
-    /* OR more specific if needed:
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 25px;
-    padding-right: 25px; 
-    */
-    
+    display: block; 
+    width: 100%; 
+    margin-left: auto;  
+    margin-right: auto; 
+    text-align: center; 
+    padding: 12px 20px; 
     border-radius: 8px; 
     font-weight: 600; 
     text-decoration: none;
     transition: all 0.25s ease;
     font-size: 0.95rem;
-    border: none; /* Current style is borderless */
-    /* If you want a border later, e.g., border: 2px solid transparent;
-       and then set border-color dynamically in JS. */
+    border: none; 
     cursor: pointer;
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-    /* Background and text color applied by JavaScript based on theme */
+    box-sizing: border-box; 
 }
 .btn-view-group:hover {
    opacity: 0.88; 
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-/* Theming classes for buttons (JS applies these from groups-data.js) */
-/* Example for SFF card, others would be similar */
-.group-card .sff-button {
-    background-color: var(--sff-banner-yellow); color: var(--sff-banner-text-dark); border-color: var(--sff-banner-yellow);
-}
-.group-card .sff-button:hover { background-color: darken(var(--sff-banner-yellow), 10%); color: var(--sff-banner-text-dark);}
-
-.group-card .scv-button { background-color: var(--scv-accent-red); color: var(--scv-text-light); border-color: var(--scv-accent-red); }
-.group-card .scv-button:hover { background-color: darken(var(--scv-accent-red), 10%); color: var(--scv-text-light); }
-
-.group-card .slm-button { background-color: var(--slm-hero-yellow-text); color: var(--slm-main-red); border-color: var(--slm-hero-yellow-text); }
-.group-card .slm-button:hover { background-color: darken(var(--slm-hero-yellow-text), 10%); color: var(--slm-main-red); }
-
-.group-card .chf-button { background-color: var(--chf-accent-yellow); color: var(--chf-text-dark); border-color: var(--chf-accent-yellow); }
-.group-card .chf-button:hover { background-color: darken(var(--chf-accent-yellow), 10%); color: var(--chf-text-dark); }
-
 
 /* No Groups Found Message */
 .no-groups-found {
@@ -255,26 +227,160 @@ body {
 .no-groups-found h3 { font-family: var(--groups-font-headings); font-size: 1.8rem; color: var(--groups-primary-purple); margin-bottom: 12px;}
 .no-groups-found p { margin-bottom: 12px; font-size: 1.1rem; color: var(--groups-text-medium); max-width: 600px;}
 .no-groups-found .inline-link { color: var(--groups-primary-purple); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--groups-primary-purple); }
-.no-groups-found .inline-link:hover { color: darken(var(--groups-primary-purple), 10%); border-bottom-style: solid;}
+.no-groups-found .inline-link:hover { color: var(--groups-secondary-purple); border-bottom-style: solid;}
 
 /* Reveal on Scroll */
 .group-card.reveal-item { opacity: 0; transform: translateY(30px) scale(0.98); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
 .group-card.reveal-item.visible { opacity: 1; transform: translateY(0) scale(1); }
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-    .groups-page-layout { flex-direction: column; }
-    .filters-sidebar {
-        flex: 0 0 auto; width: 100%; position: static; height: auto;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-right: none; border-bottom: 1px solid #e0e0e0;
-        padding: 20px;
+    .groups-page-layout { 
+        flex-direction: column; 
+        padding-top: calc(var(--groups-navbar-height) + 10px); /* Add some space if navbar is fixed */
     }
-    .sidebar-title { text-align: center; display: block; }
-    .filter-buttons { flex-direction: row; justify-content: center; }
-    .filter-btn { flex-grow: 0; max-width: none; /* Let them size naturally in a row */ }
+    .filters-sidebar {
+        flex: 0 0 auto; 
+        width: 100%; 
+        position: static; 
+        height: auto;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+        border-right: none; 
+        border-bottom: 1px solid #e0e0e0;
+        padding: 20px; /* Main padding for the sidebar */
+        overflow-y: visible; /* Allow content to expand */
+    }
+    .sidebar-title { /* "Refine Your Search" */
+        text-align: center; 
+        display: block; 
+        margin-bottom: 20px; /* Space before first filter group */
+        border-bottom-width: 2px; /* Thinner border */
+        font-size: 1.4rem; /* Slightly smaller */
+    }
+
+    .filter-group {
+        margin-bottom: 10px; /* Reduced space between filter groups */
+    }
+    .filter-group .filter-title {
+        cursor: pointer;
+        position: relative; /* For positioning the pseudo-element icon */
+        padding: 10px 25px 10px 0; /* Add some padding for easier tapping, space for icon */
+        user-select: none; /* Prevent text selection on tap */
+        margin-bottom: 0; /* Remove bottom margin, spacing handled by .filter-buttons */
+        border-bottom: 1px solid #eee; /* Separator for collapsed title */
+    }
+    .filter-group.expanded .filter-title {
+        border-bottom-color: transparent; /* Remove border when expanded */
+    }
+
+    .filter-group .filter-title::after {
+        content: '\f078'; /* FontAwesome chevron-down */
+        font-family: 'Font Awesome 6 Free', 'FontAwesome'; /* Fallback for older FA versions if any */
+        font-weight: 900;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.2s ease-in-out;
+        font-size: 0.9em;
+        color: var(--groups-text-medium);
+    }
+    .filter-group.expanded .filter-title::after {
+        transform: translateY(-50%) rotate(180deg); /* Chevron-up */
+    }
+
+    /* Default for filter buttons container on mobile: hidden */
+    .filter-group .filter-buttons {
+        display: none;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 8px; /* Space between buttons */
+        padding: 15px 0 10px 15px; /* Indent filter options slightly, add padding */
+        /* margin-top: 0; Removed, padding handles space */
+        background-color: #fdfcff; /* Slightly different bg to distinguish expanded area */
+        border-bottom: 1px solid #eee; /* Separator for expanded section */
+    }
+    /* Show buttons when group is expanded */
+    .filter-group.expanded .filter-buttons {
+        display: flex;
+    }
+
+    /* Individual filter buttons on mobile */
+    .filter-btn { 
+        flex-grow: 0; 
+        max-width: none; 
+        width: 100%; /* Make buttons take full width */
+        padding: 10px 12px; /* Adjust padding for mobile */
+        font-size: 0.9rem;
+        transform: none !important; /* Disable hover/active transform for tap consistency */
+    }
+    .filter-btn:hover { /* Keep hover for non-touch if applicable, but remove transform */
+        transform: none;
+    }
+    .filter-btn.active { /* Keep active state distinct */
+        transform: none !important; /* Disable transform for active state too on mobile */
+         box-shadow: 0 2px 5px rgba(93, 63, 211, 0.15); /* Softer shadow for active mobile */
+    }
+
     .groups-main-content { padding: 25px 15px; }
     .groups-content-header { padding: 40px 25px; }
 }
+
 @media (max-width: 768px) {
-    .groups-grid-container { grid-template-columns: 1fr; }
-    .filter-btn { padding: 10px 15px; font-size: 0.9rem; }
+    .groups-grid-container { 
+        grid-template-columns: 1fr; 
+        gap: 20px; /* Slightly reduced gap for single column */
+    }
+    /* .filter-btn styles already adjusted in 992px breakpoint */
+    .groups-page-main-title {
+        font-size: clamp(2rem, 6vw, 2.8rem); 
+    }
+    .groups-page-subtitle {
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
+    }
+    .group-card-header {
+        padding: 15px;
+        gap: 12px;
+    }
+    .group-card-logo {
+        width: 50px;
+        height: 50px;
+    }
+    .group-card-name {
+        font-size: 1.1rem;
+    }
+    .group-card-body {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .groups-content-header {
+        padding: 30px 15px; /* Less padding on very small screens */
+    }
+    .sidebar-title {
+        font-size: 1.25rem;
+    }
+    .filter-group .filter-title {
+        font-size: 1rem; /* Slightly smaller filter titles */
+        padding-left: 5px; /* Reduce padding if icons are tight */
+        padding-right: 20px; /* Space for chevron */
+    }
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+    .filter-group .filter-buttons {
+        padding-left: 10px; /* Less indent for options */
+    }
+    .lang-tag, .type-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+    .group-card-tagline {
+        font-size: 0.88rem;
+    }
+    .btn-view-group {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
 }
