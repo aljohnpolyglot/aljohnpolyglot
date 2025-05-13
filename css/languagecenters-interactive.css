@@ -36,7 +36,7 @@ body.lc-interactive-page {
         linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 100% 100%, 38px 38px, 38px 38px; /* Slightly adjusted grid */
     color: var(--lc-text-primary-darkbg);
-    padding-top: 70px;
+    padding-top: 70px; /* Assuming fixed navbar height */
     margin: 0;
     overflow-x: hidden;
     min-height: 100vh;
@@ -44,13 +44,13 @@ body.lc-interactive-page {
     flex-direction: column;
     font-family: var(--font-secondary, 'Open Sans', sans-serif);
 }
-body.lc-interactive-page.modal-open { overflow: hidden; }
+body.lc-interactive-page.modal-open { overflow: hidden; } /* Prevents page behind modal from scrolling */
 
 #languageHubExplorer {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 30px 0; /* Increased top/bottom padding */
+    padding: 30px 0; 
     width: 100%;
     box-sizing: border-box;
 }
@@ -58,19 +58,19 @@ body.lc-interactive-page.modal-open { overflow: hidden; }
 /* Persistent Header (Title, Language Filters, Initial Prompt) */
 .lc-persistent-header {
     text-align: center;
-    margin-bottom: 2.5rem; /* Increased space, was 2rem, then 2.5rem */
+    margin-bottom: 2.5rem; 
     padding: 0 20px;
     width: 100%;
     box-sizing: border-box;
 }
-.lc-hero-interactive { margin-bottom: 1.5rem; /* was 1.8rem, then 1.5rem */ }
+.lc-hero-interactive { margin-bottom: 1.5rem; }
 .lc-hero-interactive h1 {
     font-family: var(--font-primary, 'Montserrat', sans-serif);
-    font-size: clamp(1.9rem, 5vw, 2.7rem); /* was clamp(1rem, 3vw, 2.7rem) */
+    font-size: clamp(1.9rem, 5vw, 2.7rem); 
     color: var(--lc-text-primary-darkbg);
     text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     margin-bottom: 0;
-    line-height: 1.3; /* Added for better spacing if h1 wraps */
+    line-height: 1.3; 
 }
 .language-filter-grid {
     display: flex;
@@ -78,7 +78,7 @@ body.lc-interactive-page.modal-open { overflow: hidden; }
     justify-content: center;
     gap: 0.9rem;
     max-width: 750px;
-    margin: 0 auto 1.5rem auto; /* Adjusted bottom margin, was 1.8rem, then 1.5rem */
+    margin: 0 auto 1.5rem auto; 
 }
 .lang-filter-button {
     background-color: rgba(35, 58, 94, 0.6); 
@@ -114,58 +114,24 @@ body.lc-interactive-page.modal-open { overflow: hidden; }
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 
-/* NEW STYLES for the introductory text block (as per your "NEW STYLES" section) */
-.lc-section-intro-text {
-    max-width: 700px; 
-    margin: 1rem auto 2rem auto; 
-    padding: 1rem 1.5rem;
-    background-color: rgba(12, 30, 58, 0.65); 
-    border-radius: 8px;
-    border: 1px solid var(--lc-panel-border);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
-}
-.lc-section-intro-text p {
-    font-size: 0.95rem;
-    color: var(--lc-text-secondary-darkbg);
-    opacity: 0.9;
-    line-height: 1.65; 
-    margin:0;
-    text-align: center; 
-}
-.lc-section-intro-text p .highlight-text { 
-    color: var(--lc-highlight-yellow);
-    font-weight: 600;
-}
-.section-eyebrow { /* This was part of your "NEW STYLES" section */
-    display: block; 
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.75rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-}
-
-.lc-initial-prompt { /* Modified as per your "NEW STYLES" section */
-    margin-top: 1rem; /* Was 0.5rem, then 1rem */
-    padding: 0.8rem 1rem; /* Was 1rem 1.5rem, then 0.8rem 1rem */
-    background-color: transparent; /* Changed from rgba(12, 30, 58, 0.8) */
-    border-radius: 6px; /* Was 8px, then 6px */
-    max-width: 500px; /* Was 550px, then 500px */
+.lc-initial-prompt { 
+    margin-top: 1rem; 
+    padding: 0.8rem 1rem; 
+    background-color: transparent; 
+    border-radius: 6px; 
+    max-width: 500px; 
     margin-left: auto;
     margin-right: auto;
-    border: none; /* Removed var(--lc-panel-border) */
-    box-shadow: none; /* Removed inset shadow */
+    border: none; 
+    box-shadow: none; 
 }
 .lc-initial-prompt p {
-    font-size: 0.85rem; /* Was 0.9rem, then 0.85rem */
+    font-size: 0.85rem; 
     color: var(--lc-text-secondary-darkbg);
-    opacity: 0.7; /* Was 0.9, then 0.7 */
-    line-height: 1.5; /* Was 1.55, then 1.5 */
+    opacity: 0.7; 
+    line-height: 1.5; 
     margin:0;
-    font-style: italic; /* Added */
+    font-style: italic; 
 }
 
 
@@ -333,7 +299,7 @@ img.language-title-flag {
     margin-top: 1.5rem;
 }
 
-/* MODAL STYLES (This is the full block you provided) */
+/* MODAL STYLES */
 .lc-modal {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(10, 25, 47, 0.92); 
@@ -345,16 +311,25 @@ img.language-title-flag {
     box-sizing: border-box;
 }
 .lc-modal.open { display: flex; opacity: 1; }
-.lc-modal-content-wrapper { width: 100%; max-width: 1000px; height: 90vh; max-height: 680px; display: flex; } 
-.lc-modal-content {
+
+.lc-modal-content-wrapper { 
+    width: 100%; max-width: 1000px; 
+    height: 90vh; max-height: 680px; 
+    display: flex; 
+} 
+
+.lc-modal-content { /* Base style for the white box */
     background-color: var(--light-text-global); color: var(--dark-text-global);
     border-radius: 10px; 
     box-shadow: 0 10px 35px rgba(0,0,0,0.3); 
-    display: flex; width: 100%; height: 100%;
-    overflow: hidden; position: relative;
+    display: flex; /* Side-by-side layout for desktop */
+    width: 100%; height: 100%; /* Fill the wrapper */
+    overflow: hidden; /* IMPORTANT: Good for desktop, children will scroll internally */
+    position: relative;
     transform: scale(0.97); transition: transform 0.3s ease-out;
 }
 .lc-modal.open .lc-modal-content { transform: scale(1); }
+
 .close-modal-btn {
     position: absolute; top: 15px; right: 18px; background: none; border: none;
     font-size: 2rem; color: #aaa;
@@ -370,14 +345,18 @@ img.language-title-flag {
     display: flex; flex-direction: column; text-align: center;
     border-right: 1px solid #dde4ee;
     flex-shrink: 0; height: 100%; box-sizing: border-box;
+    overflow-y: auto; /* Sidebar scrolls independently on desktop if content is too tall */
 }
-.modal-sidebar-content-centered {
+.lc-modal-sidebar::-webkit-scrollbar { width: 5px; }
+.lc-modal-sidebar::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 5px; }
+.lc-modal-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 5px; }
+
+.modal-sidebar-content-centered { /* Renamed from previous for clarity, but was effectively this */
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    flex-grow: 1; width: 100%; overflow-y: auto; padding-bottom: 1rem;
+    flex-grow: 1; width: 100%; 
+    /* padding-bottom: 1rem; -- Removed, let scrollbar handle if needed */
 }
-.modal-sidebar-content-centered::-webkit-scrollbar { width: 5px; }
-.modal-sidebar-content-centered::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 5px; }
-.modal-sidebar-content-centered::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 5px; }
+
 .modal-flag { width: 40px; height: auto; margin-bottom: 0.8rem; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .modal-logo-display { max-width: 180px; max-height: 70px; object-fit: contain; margin-bottom: 1.2rem; }
 #modalInstituteName { font-family: var(--font-primary, 'Montserrat', sans-serif); font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1.2rem; line-height: 1.3; }
@@ -387,8 +366,6 @@ img.language-title-flag {
     text-align: left; width: 100%; box-sizing: border-box; border-left: 3px solid var(--primary-blue);
 }
 .modal-partnership-info p { margin: 0; }
-.modal-partnership-info .partner-link-btn { background:none; border:none; color:var(--primary-blue); text-decoration:underline; cursor:pointer; font-size:inherit; padding:0; font-weight: 600;}
-.modal-partnership-info .partner-link-btn:hover { color: var(--primary-red); }
 .modal-sidebar-links { margin-top: 0.2rem; margin-bottom: 1.2rem; width: 100%; display: flex; flex-direction: column; align-items: center; }
 .modal-sidebar-links .btn.btn-small {
     display: block; width: 100%; max-width: 210px; margin-bottom: 1rem; text-align: center;
@@ -408,10 +385,15 @@ img.language-title-flag {
 }
 .back-btn-modal:hover { background: #d8dde3; border-color: #c2c9d1;}
 .back-btn-modal i { margin-right: 6px; }
-.lc-modal-main { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+.lc-modal-main { /* Desktop: takes remaining space, scrolls its own content (tab panel) */
+    flex-grow: 1; display: flex; flex-direction: column; 
+    overflow: hidden; /* Important for desktop: main area handles its own scroll */
+}
 .lc-modal-tabs {
     display: flex; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; background-color: #fcfdff;
-    padding: 0 1.2rem; padding-right: 45px; overflow-x: auto; position: relative;
+    padding: 0 1.2rem; padding-right: 45px; /* Space for close button */
+    overflow-x: auto; position: relative;
 }
 .lc-modal-tabs::-webkit-scrollbar { height: 4px; }
 .lc-modal-tabs::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); }
@@ -423,10 +405,16 @@ img.language-title-flag {
 }
 .lc-tab-button:hover { color: var(--primary-blue); }
 .lc-tab-button.active { color: var(--primary-red); border-bottom-color: var(--primary-red); }
-.lc-tab-panel { padding: 1.8rem 2rem; overflow-y: auto; flex-grow: 1; background-color: var(--light-text-global); }
+
+.lc-tab-panel { /* Desktop: this is the scrollable part within lc-modal-main */
+    padding: 1.8rem 2rem; 
+    overflow-y: auto; 
+    flex-grow: 1; background-color: var(--light-text-global); 
+}
 .lc-tab-panel::-webkit-scrollbar { width: 6px; }
 .lc-tab-panel::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 6px; }
 .lc-tab-panel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.25); border-radius: 6px; }
+
 .lc-tab-content { display: none; }
 .lc-tab-content.active { display: block; animation: fadeInTab 0.3s ease-out; }
 @keyframes fadeInTab { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -443,7 +431,6 @@ img.language-title-flag {
 .tab-hr { border: 0; height: 1px; background-color: #e8eef3; margin: 2rem 0; }
 .video-wrapper-modal { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background-color: #000; border: 1px solid #d8e0e8; margin: 0 auto 1.2rem auto; }
 .video-wrapper-modal iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-.video-placeholder-modal { text-align:center; font-style:italic; color:#777; padding:1.2rem; background:#f9fafb; border-radius:6px; border: 1px dashed #ccc;}
 #modalPhotoGallery.modal-photo-gallery-slideshow { position: relative; width: 100%; max-width: 600px; margin: 1.2rem auto; overflow: hidden; border-radius: 10px; background-color: #eef2f7; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
 .slideshow-container { display: flex; transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55); align-items: center; }
 .slide { min-width: 100%; max-width: 100%; box-sizing: border-box; text-align: center; }
@@ -458,28 +445,19 @@ img.language-title-flag {
 #modalCommunityPost .post-snippet-modal p { margin-bottom: 0.6rem; color: #38424e; }
 #modalCommunityPost .post-snippet-modal a { color: var(--primary-blue); text-decoration: none; font-weight: 600; }
 #modalCommunityPost .post-snippet-modal a:hover { text-decoration: underline; }
-/* END OF FULL MODAL STYLES */
 
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Tablet */
     #languageHubExplorer { padding: 20px 0; }
     .lc-persistent-header { margin-bottom: 1.5rem; padding: 0 10px; }
-    .lc-hero-interactive h1 { font-size: 1.5rem; } /* Overrides clamp for smaller screens */
+    .lc-hero-interactive h1 { font-size: 1.7rem; } 
     .language-filter-grid { gap: 0.5rem; }
     .lang-filter-button { padding: 0.45rem 0.7rem; font-size: 0.7rem; }
     .lang-filter-button img.lang-flag-filter { width: 16px; }
 
-    .lc-section-intro-text { /* Responsive for the new intro text block */
-        margin: 0.8rem auto 1.5rem auto;
-        padding: 0.8rem 1rem;
-    }
-    .lc-section-intro-text p {
-        font-size: 0.9rem;
-    }
-
     .lc-institutes-content-area { padding: 0 10px; }
-    #selectedLanguageTitle { font-size: 1.3rem; margin-bottom: 1.2rem; } /* Overrides clamp */
+    #selectedLanguageTitle { font-size: 1.4rem; margin-bottom: 1.2rem; } 
     img.language-title-flag { width: 22px; }
 
     .institute-preview-interactive { padding: 0.7rem; gap: 0.6rem;}
@@ -488,65 +466,80 @@ img.language-title-flag {
     .institute-preview-interactive p.preview-description-text { font-size: 0.68rem; -webkit-line-clamp: 2; min-height: calc(0.68rem * 1.4 * 2); }
     .institute-preview-interactive .btn-small.view-details-btn-preview { padding: 0.35rem 0.7rem; font-size: 0.6rem; margin-left: 0.5rem; }
     
-    /* Modal responsive for 768px (adjustments if any for this breakpoint) */
-    /* Most modal adjustments are for < 480px, but if you have any for 768px, they go here */
+    .lc-modal-content-wrapper {
+        max-height: 95vh; 
+    }
+    .slide img { max-height: 300px; }
 }
 
-@media (max-width: 480px) {
-    .language-filter-grid { flex-direction: row; justify-content: space-around; } 
-    .lang-filter-button { flex-grow:1; max-width: 100px; justify-content:center; } 
-    .lc-initial-prompt p { font-size: 0.8rem; } /* Overrides 0.85rem */
+@media (max-width: 480px) { /* Phone */
+    .lc-hero-interactive h1 { font-size: 1.5rem; }
+    .language-filter-grid { flex-direction: row; justify-content: space-around; flex-wrap: wrap;} 
+    .lang-filter-button { flex-grow:1; max-width: 110px; justify-content:center; font-size:0.65rem; padding: 0.4rem 0.6rem;} 
+    .lang-filter-button img.lang-flag-filter { width: 14px; gap: 0.4rem;}
+    .lc-initial-prompt p { font-size: 0.8rem; } 
     .btn.back-btn-main-site { padding: 0.5rem 1rem; font-size: 0.75rem; }
+    #selectedLanguageTitle { font-size: 1.2rem; } 
 
     /* MODAL FIXES FOR MOBILE SCROLLING & LAYOUT */
     .lc-modal-content-wrapper {
         padding: 5px; 
-        max-height: 100vh; /* Consider 100dvh for dynamic viewport height */
-        height: 100%;    /* Consider 100dvh */
-        overflow-y: auto; /* MAKE THE WRAPPER THE SCROLL CONTAINER */
+        height: 100dvh; /* Use dynamic viewport height */   
+        overflow-y: auto; /* THIS IS THE MAIN SCROLL FOR THE ENTIRE MODAL VIEW ON MOBILE */
         box-sizing: border-box;
     }
-    .lc-modal-content {
-        flex-direction: column; /* Stack sidebar & main */
-        border-radius: 0;     /* No radius for full screen */
-        height: auto;         /* ALLOW CONTENT TO DETERMINE HEIGHT */
-        /* overflow: visible; /* Ensure children are not clipped if needed, but wrapper handles scroll */
+    .lc-modal-content { /* The white box inside the wrapper */
+        flex-direction: column; /* Stack sidebar & main content */
+        border-radius: 0;     
+        height: auto;         /* Allow content to determine its height */
+        overflow-y: visible;  /* CRITICAL: Override desktop's overflow:hidden. Allows content to grow beyond viewport triggering wrapper scroll. */
     }
 
     .lc-modal-sidebar {
         width: 100%;          
         height: auto;         /* Let content define height */
-        padding: 0.8rem;      
+        padding: 1rem 0.8rem; 
         border-bottom: 1px solid #dde4ee; 
         border-right: none;   
         flex-shrink: 0;       
+        overflow-y: visible; /* No independent scroll for sidebar on mobile */
     }
-    .modal-sidebar-content-centered {
-        overflow-y: visible;  /* REMOVE INDEPENDENT SCROLL */
-        flex-grow: 0;         /* LET IT SIZE TO ITS CONTENT */
-        /* justify-content: flex-start; /* Optional: align to top if preferred over center for short content */
+    .modal-sidebar-content-centered { /* Content within sidebar */
+        /* overflow-y: visible; -- Already covered by .lc-modal-sidebar */
+        flex-grow: 0;         
+        padding-bottom: 0.5rem; 
     }
+    #modalInstituteName { font-size: 1.25rem; margin-bottom: 0.8rem; }
+    .modal-partnership-info { font-size: 0.75rem; padding: 0.6rem 0.8rem; margin-bottom: 1rem; }
+    .modal-sidebar-links .btn.btn-small { font-size: 0.8rem; padding: 0.6rem 1rem; }
+    .modal-social-icons { gap: 1.5rem; }
+    .modal-social-icons a { font-size: 1.4rem; }
 
-    .lc-modal-main {
-        flex-grow: 0;         /* DO NOT TRY TO FILL FIXED PARENT HEIGHT */
-        flex-shrink: 0;       /* PREVENT SHRINKING */
-        height: auto;         /* LET CONTENT DEFINE HEIGHT */
-        overflow: visible;    /* REMOVE INDEPENDENT CLIPPING/SCROLL */
+    .lc-modal-main { /* Container for tabs and tab panels */
+        flex-grow: 0;        
+        flex-shrink: 0;       
+        height: auto;        
+        overflow: visible;    /* Ensure it doesn't clip tall tab panel */
     }
-    .lc-tab-panel {
-        overflow-y: visible;  /* REMOVE INDEPENDENT SCROLL */
-        flex-grow: 0;         /* LET IT SIZE TO ITS CONTENT */
-        height: auto;         /* ENSURE IT TAKES CONTENT HEIGHT */
-        padding: 1rem 1.2rem; /* Slightly reduce padding for very small screens */
+    .lc-tab-panel { /* Individual tab content */
+        overflow-y: visible;  /* No independent scroll for tab panel on mobile */
+        flex-grow: 0;        
+        height: auto;        
+        padding: 1rem 1rem; 
     }
-    /* END OF MOBILE MODAL SCROLLING FIXES */
+    .back-btn-modal { margin-top: 1rem; padding: 0.6rem 1.2rem; font-size: 0.75rem;}
+    .lc-modal-tabs { padding: 0 0.4rem; padding-right: 30px;} /* padding-right for close btn */
+    .lc-tab-button { font-size: 0.75rem; padding: 0.7rem 0.6rem;} 
+    .close-modal-btn { top: 10px; right: 12px; font-size: 1.8rem; } 
 
-    .back-btn-modal { margin-top: 1rem;}
-    .lc-modal-tabs { padding: 0 0.5rem; padding-right: 30px;}
-    .lc-tab-button { font-size: 0.7rem; padding: 0.6rem 0.5rem;}
-    .close-modal-btn { top: 8px; right: 10px; font-size: 1.8rem; } /* Smaller, repositioned close button */
+    .lc-tab-content h4 { font-size: 1.05rem; margin-bottom: 1rem; } 
+    .lc-tab-content p, .lc-tab-content ul { font-size: 0.82rem; line-height: 1.65; } 
+    .lc-tab-content ul li { margin-bottom: 0.6rem; }
 
-    .lc-tab-content h4 { font-size: 1rem; } /* Slightly smaller tab titles */
-    .lc-tab-content p, .lc-tab-content ul { font-size: 0.85rem; } /* Slightly smaller tab content text */
-
+    /* Gallery and Media in Modal for mobile */
+    .slide img { max-height: 220px; }
+    .slide-caption { font-size: 0.75rem; padding-top: 8px; }
+    .slideshow-controls button { padding: 8px 10px; font-size: 1rem; }
+    #modalMapEmbed.modal-map-embed-container iframe { height: 250px; }
+    #modalCommunityPost .post-snippet-modal { padding: 1rem; font-size: 0.82rem; }
 }
