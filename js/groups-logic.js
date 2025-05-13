@@ -168,3 +168,34 @@ document.addEventListener('DOMContentLoaded', () => {
         groupsGrid.innerHTML = '';
     }
 });
+// Add this to your JavaScript file (e.g., groups-logic.js)
+document.addEventListener('DOMContentLoaded', () => {
+    const filterGroups = document.querySelectorAll('.filters-sidebar .filter-group');
+
+    filterGroups.forEach(group => {
+        const title = group.querySelector('.filter-title');
+        if (title) {
+            title.addEventListener('click', () => {
+                // Close other expanded groups for an accordion effect (optional)
+                // filterGroups.forEach(otherGroup => {
+                //     if (otherGroup !== group && otherGroup.classList.contains('expanded')) {
+                //         otherGroup.classList.remove('expanded');
+                //     }
+                // });
+                group.classList.toggle('expanded');
+            });
+
+            // Optional: Check if any filter button inside this group is active
+            // and expand the group by default if so.
+            // const hasActiveFilter = group.querySelector('.filter-btn.active:not([data-filter-lang="all"]):not([data-filter-type="all"])');
+            // if (hasActiveFilter) {
+            //    group.classList.add('expanded');
+            // }
+        }
+    });
+
+    // Optional: Expand the first filter group by default on mobile
+    // if (window.innerWidth <= 992 && filterGroups.length > 0) {
+    //    filterGroups[0].classList.add('expanded');
+    // }
+});
