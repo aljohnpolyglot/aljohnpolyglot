@@ -7,11 +7,14 @@
     --sff-banner-text-dark: #1A1A1A;
     --sff-banner-text-light: #FFFFFF;
 
+    /* For RGBA overlay */
+    --sff-banner-blue-rgb: 0, 56, 168; /* Added for the comostahan overlay */
+
     /* Como'stahan Theme (SFF Blue as base) */
     --comostahan-bg-main: var(--sff-banner-blue);
     --comostahan-accent-red: var(--sff-banner-red); 
     --comostahan-text-light: #FFFFFF;
-    --comostahan-text-medium: #e4e6eb; /* Slightly brighter light gray for better contrast */
+    --comostahan-text-medium: #e4e6eb;
 
     /* General Theme */
     --sff-primary-red: var(--sff-banner-red);
@@ -20,10 +23,10 @@
     
     --sff-light-bg: #f8f9fa; 
     --sff-white-bg: #FFFFFF;
-    --sff-dark-text: #212529; /* Standard dark text */
+    --sff-dark-text: #212529;
     --sff-medium-dark-text: #495057; 
     --sff-light-text: #ffffff;
-    --sff-card-shadow: 0 6px 18px rgba(0, 0, 0, 0.07); /* Softer shadow */
+    --sff-card-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
     --sff-font-primary: 'Montserrat', sans-serif; 
     --sff-font-secondary: 'Open Sans', sans-serif; 
 }
@@ -31,58 +34,58 @@
 body {
     font-family: var(--sff-font-secondary);
     color: var(--sff-dark-text);
-    font-size: 16.5px; /* Slightly larger base for readability */
-    line-height: 1.75; /* More generous line height */
+    font-size: 16.5px;
+    line-height: 1.75;
     margin: 0; padding: 0;
     background-color: var(--sff-white-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.container { width: 90%; max-width: 1140px; margin: 0 auto; } /* Slightly wider max-width */
+.container { width: 90%; max-width: 1140px; margin: 0 auto; }
+
 .sff-banner.sff-full-width-banner {
-  width: 100%; /* Explicitly set to full viewport width */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-family: var(--sff-font-primary);
-  font-weight: 900;
-  text-transform: uppercase;
-  z-index: 10; /* Ensure it's above other content if any overlap issues initially */
-  margin-top: 80px; /* Adjust this value based on your navbar height */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: var(--sff-font-primary);
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: 10;
+    margin-top: 80px; /* This should match your navbar height */
 }
 
-/* Ensure banner-row still behaves as expected */
 .sff-banner.sff-full-width-banner .banner-row {
-  padding: 1.8rem 1rem; /* Increased padding for more impact */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+    padding: 1.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Adjusting font sizes for a more impactful full-width banner */
 .sff-banner.sff-full-width-banner .banner-text-spanish {
-  font-size: clamp(3rem, 8vw, 5.5rem); /* Larger */
-  letter-spacing: 0.06em;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    letter-spacing: 0.06em;
 }
 
 .sff-banner.sff-full-width-banner .banner-text-for {
-  font-size: clamp(1.8rem, 5vw, 3.2rem); /* Larger */
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
 }
 
 .sff-banner.sff-full-width-banner .banner-text-espanol {
-  font-size: clamp(1.5rem, 4vw, 2.6rem); /* Larger */
+    font-size: clamp(1.5rem, 4vw, 2.6rem);
 }
 
 .sff-banner.sff-full-width-banner .banner-red-bg.sff-banner-bottom {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 }
+
 /* Hero Section Revised */
 .eric-banner-hero {
     padding: 0; min-height: auto;
     display: flex; flex-direction: column;
     align-items: center; justify-content: flex-start;
-    padding-top: 80px; 
+    /* padding-top: 80px; No longer needed if using margin-top on banner */
     background-color: var(--sff-white-bg); 
 }
 .sff-banner { 
@@ -91,7 +94,7 @@ body {
     text-transform: uppercase; z-index: 2; 
 }
 
-.banner-row { padding: 1.6rem 1rem; display: flex; align-items: center; justify-content: center; width: 100%; } /* Slightly more padding */
+.banner-row { padding: 1.6rem 1rem; display: flex; align-items: center; justify-content: center; width: 100%; }
 .banner-blue-bg { background-color: var(--sff-banner-blue); }
 .banner-yellow-bg { background-color: var(--sff-banner-yellow); }
 .banner-red-bg.sff-banner-bottom { 
@@ -111,8 +114,8 @@ body {
     background-color: var(--sff-white-bg); 
 }
 .hero-side-extension-red {
-    flex-basis: calc((100% - 1140px) / 2); /* Dynamically calculate basis based on container max-width */
-    min-width: 5%; /* Ensure some red is visible even if container is smaller than 1140px */
+    flex-basis: calc((100% - 1140px) / 2);
+    min-width: 5%;
     background-color: var(--sff-banner-red);
     min-height: 100%; 
 }
@@ -127,7 +130,7 @@ body {
     width: 100%;
     height: 100%; 
     object-fit: cover; 
-   object-position: center 10%; /* Example: Starts focusing much lower */
+    object-position: center 10%;
     display: block;
 }
 .hero-central-box {
@@ -138,7 +141,7 @@ body {
     padding: 0; 
 }
 .hero-content-below-banner {
-    padding: 50px 30px; /* Increased top padding */
+    padding: 50px 30px;
     text-align: center;
 }
 .hero-content-below-banner h2 {
@@ -147,7 +150,7 @@ body {
     margin-bottom: 1.5rem; line-height: 1.35;
 }
 .hero-content-below-banner p {
-    font-size: clamp(1.1rem, 2.6vw, 1.2rem); color: var(--sff-medium-dark-text); /* Softer text */
+    font-size: clamp(1.1rem, 2.6vw, 1.2rem); color: var(--sff-medium-dark-text);
     margin-bottom: 2.8rem; line-height: 1.8;
     max-width: 720px; margin-left: auto; margin-right: auto;
 }
@@ -155,10 +158,10 @@ body {
     background-color: var(--sff-accent-yellow);
     color: var(--sff-banner-text-dark);
     border: 2px solid var(--sff-accent-yellow);
-    font-size: 1.15rem; padding: 1rem 2.4rem; /* Slightly larger */
+    font-size: 1.15rem; padding: 1rem 2.4rem;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
     text-decoration: none; font-weight: 700; letter-spacing: 0.5px;
-    border-radius: 6px; /* Consistent radius */
+    border-radius: 6px;
 }
 .btn.hero-cta-sff:hover {
     background-color: #eab308; transform: translateY(-3px);
@@ -178,7 +181,7 @@ body {
     color: var(--sff-dark-text); 
 }
 .sff-section-in-hero-box .about-text-content p strong {
-    font-weight: 600; /* Open Sans Semibold */
+    font-weight: 600;
     color: var(--sff-primary-blue);
 }
 .sff-section-in-hero-box .about-text-content p em { 
@@ -188,7 +191,7 @@ body {
 }
 
 /* General Content Sections & Titles */
-.content-section { padding: 80px 0; } /* Increased base padding */
+.content-section { padding: 80px 0; }
 .sff-section-light { background-color: var(--sff-light-bg); color: var(--sff-dark-text); }
 .sff-section-red { background-color: var(--sff-primary-red); color: var(--sff-light-text); }
 .sff-section-blue { background-color: var(--sff-primary-blue); color: var(--sff-light-text); }
@@ -228,7 +231,7 @@ body {
 
 /* About Section Founder Card */
 .about-founder-flex { display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; }
-.about-text-content { flex: 1.8; min-width: 320px; } /* Give text slightly more space */
+.about-text-content { flex: 1.8; min-width: 320px; }
 .founder-card.sff-founder-card {
     flex: 1; min-width: 300px; background-color: var(--sff-white-bg);
     padding: 2.8rem; border-radius: 12px; box-shadow: var(--sff-card-shadow);
@@ -274,7 +277,7 @@ body {
     gap: 1.8rem; 
     flex-wrap: wrap;
 }
-.main-join-buttons .btn { /* Relies on .sff-btn-cta-* for specific colors */
+.main-join-buttons .btn {
     min-width: 280px; 
     font-size: 1.1rem; 
     padding: 1rem 2.2rem; 
@@ -301,54 +304,49 @@ body {
 /* Como'stahan Meetups Section */
 .comostahan-section {
     position: relative;
-    /* Background color as fallback */
     background-color: var(--comostahan-bg-main);
     color: var(--comostahan-text-light);
-    padding: 80px 20px;
+    padding: 80px 20px; /* Base padding, adjust per breakpoint */
     overflow: hidden;
     text-align: center;
-
-    /* ACTUAL BACKGROUND IMAGE APPLIED HERE */
-    background-image: url('../../images/groups/spanish_for_filipinos_september_2024_meetup_group_pic_luneta.JPG'); /* Corrected path */
+    background-image: url('../../images/groups/spanish_for_filipinos_september_2024_meetup_group_pic_luneta.JPG');
     background-size: cover;
     background-position: center 70%;
-    background-attachment: fixed; /* KEY */
+    background-attachment: fixed;
 }
 
-.comostahan-bg-overlay { /* This overlay is NOW JUST FOR TINT/FILTER */
+.comostahan-bg-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(var(--sff-banner-blue-rgb, 0, 56, 168), 0.6); /* Example tint, define --sff-banner-blue-rgb or use a direct rgba value */
-    filter: blur(4px) brightness(0.6); /* Apply filter to the tint overlay if needed */
-    opacity: 1; /* Overlay is fully opaque with its own background color */
+    background-color: rgba(var(--sff-banner-blue-rgb), 0.6); 
+    /* Removed filter and opacity, let the background-color do the work */
     z-index: 0;
-    /* NO background-image here */
-    /* NO transform here */
 }
 .comostahan-content-container {
     position: relative;
-    z-index: 1; /* Content above the overlay */
+    z-index: 1;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 15px; /* Add some horizontal padding for content on smaller screens */
 }
 .comostahan-section .section-title.comostahan-title-main {
-    color: var(--sff-accent-yellow); /* Use yellow for main title for pop */
+    color: var(--sff-accent-yellow);
     margin-bottom: 0.5rem;
-    text-shadow: 2px 3px 6px rgba(0,0,0,0.7); /* Stronger shadow */
-    font-size: clamp(2.8rem, 7vw, 4.5rem); /* Make it bigger */
-    font-weight: 900; /* If your primary font supports it */
+    text-shadow: 2px 3px 6px rgba(0,0,0,0.7);
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    font-weight: 900;
     letter-spacing: 1px;
 }
 .comostahan-section .section-title.comostahan-title-main::after { display: none; }
 
-.comostahan-subtitle-secondary { /* "Luneta Park Meetups" */
+.comostahan-subtitle-secondary {
     display: block;
     text-align: center;
     font-family: var(--sff-font-primary);
     font-weight: 700;
-    font-size: clamp(1.5rem, 4vw, 2.2rem); /* Slightly smaller than main title */
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
     color: var(--comostahan-text-light);
-    margin-bottom: 2.5rem; /* More space before intro */
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
@@ -356,35 +354,39 @@ body {
     text-shadow: 1px 2px 4px rgba(0,0,0,0.6);
 }
 .comostahan-subtitle-secondary::after {
-    /* Keep the red underline, maybe slightly thicker or brighter */
+    content: ''; /* Ensure content is present for pseudo-element */
+    position: absolute; /* Position relative to parent */
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
     background-color: var(--comostahan-accent-red);
     height: 3px;
     width: 80px;
 }
 .comostahan-section .section-intro {
-    color: var(--comostahan-text-medium); /* Use medium for better readability */
-    max-width: 700px; /* Constrain width */
-    margin: 0 auto 3rem auto; /* Adjust margins */
+    color: var(--comostahan-text-medium);
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
     font-size: clamp(1.1rem, 2.5vw, 1.2rem);
     line-height: 1.8;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    font-weight: 400; /* Ensure it's not too bold */
+    font-weight: 400;
 }
 .sponsors-container {
     text-align: center;
     margin-top: 2.5rem;
     margin-bottom: 3.5rem;
-    background-color: rgba(0, 0, 0, 0.2); /* Subtle dark box for this area */
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 1.5rem 1rem;
     border-radius: 10px;
-    display: inline-block; /* To make it only as wide as its content */
+    display: inline-block;
     border: 1px solid rgba(255,255,255,0.15);
 }
 .sponsors-container p {
     margin-bottom: 0.8rem;
     font-size: 1rem;
     color: var(--comostahan-text-medium);
-    text-shadow: none; /* Remove shadow if on a box */
+    text-shadow: none;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -395,40 +397,39 @@ body {
     gap: 10px;
     color: var(--comostahan-text-light);
     text-decoration: none;
-    padding: 10px 18px; /* Slightly smaller button */
+    padding: 10px 18px;
     border-radius: 6px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 700; /* Make link text bolder */
+    font-weight: 700;
     font-size: 1.1rem;
-    background-color: rgba(255,255,255,0.15); /* Slightly lighter than its parent box */
-    border: none; /* Remove border if bg is distinct */
+    background-color: rgba(255,255,255,0.15);
+    border: none;
 }
 .sponsors-container a:hover {
     background-color: rgba(255,255,255,0.25);
     transform: translateY(-2px);
 }
-.npdc-logo { /* Ensure logo is clearly visible */
+.npdc-logo {
     width: 38px;
     height: auto;
-    filter: brightness(0) invert(1) contrast(1.2); /* Make it pure white and sharp */
+    filter: brightness(0) invert(1) contrast(1.2);
 }
 
 .meetup-videos-showcase {
-    display: grid; /* Use grid for better alignment */
-    grid-template-columns: 1fr; /* Default to one column */
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
 }
 @media (min-width: 768px) {
     .meetup-videos-showcase {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 2 columns on larger screens if space */
-        max-width: 1000px; /* Limit overall width of video area */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Reduced minmax for better fit */
+        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
 }
 .meetup-video-card.prominent-video {
-    /* ... existing styles ... */
     background-color: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 12px;
@@ -438,15 +439,13 @@ body {
     text-align: left;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Important for containing the animated description */
-    transition: background-color 0.3s ease; /* Optional: transition for card hover */
+    overflow: hidden;
+    transition: background-color 0.3s ease;
 }
-/* Optional: Slight visual feedback on card hover */
 .meetup-video-card.prominent-video:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker on hover */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .meetup-video-card h3 {
-    /* ... existing styles ... */
     font-family: var(--sff-font-primary);
     font-size: clamp(1.4rem, 2.8vw, 1.8rem);
     color: var(--sff-accent-yellow);
@@ -455,53 +454,41 @@ body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     text-align: center;
 }
-.meetup-video-card p { /* Description below video */
-    font-size: clamp(0.95rem, 1.8vw, 1rem);
-    margin-top: 1rem;
-    line-height: 1.65;
-    color: var(--comostahan-text-medium);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    font-weight: 400;
-    flex-grow: 1; /* Allow p to take up space if cards are equal height */
-}
-.video-wrapper {
-    position: relative; padding-bottom: 56.25%; height: 0;
-    overflow: hidden; width: 100%; 
-   margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-    position: relative; /* Ensure z-index works if needed */
-    z-index: 1; /* Keep video above potentially expanding description initially */
-}
-/* ---- STYLES FOR COLLAPSIBLE DESCRIPTION ---- */
-.meetup-video-card p.video-description { /* Add .video-description class to your <p> tag */
-    font-size: clamp(0.9rem, 1.7vw, 0.95rem); /* Slightly smaller for description */
+.meetup-video-card p.video-description {
+    font-size: clamp(0.9rem, 1.7vw, 0.95rem);
     line-height: 1.6;
     color: var(--comostahan-text-medium);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     font-weight: 400;
     margin-top: 1rem;
-    flex-grow: 1; /* Allows it to take available space */
-
-    /* Collapse by default */
+    flex-grow: 1;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transform: translateY(10px); /* Optional: slight upward movement on expand */
+    transform: translateY(10px);
     transition: max-height 0.4s ease-in-out,
-                opacity 0.3s ease-in-out 0.1s, /* Delay opacity for smoother feel */
+                opacity 0.3s ease-in-out 0.1s,
                 transform 0.4s ease-in-out,
                 margin-top 0.4s ease-in-out;
-    will-change: max-height, opacity, transform; /* Hint for browser animation performance */
+    will-change: max-height, opacity, transform;
 }
 .meetup-video-card.prominent-video:hover p.video-description {
-    /* Expand on card hover */
-    max-height: 200px; /* Set to a value larger than the expected content height */
+    max-height: 200px;
     opacity: 1;
     transform: translateY(0);
-    margin-top: 1.2rem; /* Add some margin when expanded */
+    margin-top: 1.2rem;
+}
+.video-wrapper {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; width: 100%; 
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 1;
 }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
 .tarpaulin-showcase { text-align: center; margin-top: 2.5rem; }
 .tarpaulin-showcase img { max-width: 100%; width: 720px; border-radius: 12px; box-shadow: 0 7px 20px rgba(0,0,0,0.28); }
 
@@ -592,7 +579,7 @@ body {
 /* SFF Collaboration with CHF Card */
 .sff-collab-card {
     display: flex; flex-wrap: wrap; align-items: center; gap: 2.8rem;
-    background-color: var(--sff-white-bg); padding: 2.8rem; border-radius: 15px; /* Softer radius */
+    background-color: var(--sff-white-bg); padding: 2.8rem; border-radius: 15px;
     box-shadow: var(--sff-card-shadow); margin-top: 2.8rem;
     border-left: 7px solid var(--sff-primary-blue);
 }
@@ -609,9 +596,9 @@ body {
 .btn.sff-btn-modern-outline { 
     background-color: transparent;
     color: var(--sff-primary-blue);
-    border: 2.5px solid var(--sff-primary-blue); /* Slightly thicker border */
+    border: 2.5px solid var(--sff-primary-blue);
     padding: 0.85rem 1.9rem;
-    border-radius: 30px; /* Pill shape */
+    border-radius: 30px;
     font-weight: 700; 
     text-decoration: none;
     transition: all 0.3s ease; font-size: 1.05rem; letter-spacing: 0.5px;
@@ -632,19 +619,25 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
+.btn.sff-btn-cta-blue { background-color: var(--sff-primary-blue); color: var(--sff-light-text); border: 2px solid var(--sff-primary-blue); }
+.btn.sff-btn-cta-red { background-color: var(--sff-primary-red); color: var(--sff-light-text); border: 2px solid var(--sff-primary-red); }
+
 .btn.sff-btn-cta-blue:hover { background-color: #002c7a; box-shadow: 0 4px 12px rgba(0,0,0,0.18); transform: translateY(-2px);}
 .btn.sff-btn-cta-red:hover { background-color: #b01020; box-shadow: 0 4px 12px rgba(0,0,0,0.18); transform: translateY(-2px); }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
+    .container { max-width: 960px; } /* Adjust container for tablets */
     .hero-side-extension-red { display: none; } 
-    .hero-content-below-banner { max-width: 100%; box-shadow: none;}
-    .hero-central-box { max-width: 100%; } /* Allow central box to be full width */
+    .hero-central-box { max-width: 100%; }
+    .sff-banner.sff-full-width-banner { margin-top: 70px; } /* Adjust if navbar height changes */
 }
 
 @media (max-width: 768px) {
-    body { font-size: 16px; } /* Reset base for smaller screens */
-    .eric-banner-hero { padding-top: 70px; }
+    body { font-size: 16px; }
+    .container { width: 95%; } /* More space on smaller tablets/phones */
+    .sff-banner.sff-full-width-banner { margin-top: 60px; /* Adjust if navbar height changes */ }
+    .eric-banner-hero { /* padding-top: 70px; Removed, banner handles top spacing */ }
     .banner-text-spanish { font-size: clamp(1.9rem, 5.8vw, 3.5rem); }
     .banner-text-for { font-size: clamp(1.3rem, 3.8vw, 2.1rem); }
     .banner-text-espanol { font-size: clamp(1rem, 2.8vw, 1.7rem); }
@@ -652,29 +645,53 @@ body {
     .hero-top-image-container { max-height: 320px; }
     .about-founder-flex, .sff-collab-card { flex-direction: column; gap: 2rem; } 
     .founder-card.sff-founder-card { margin-top: 2.5rem;}
-    .gallery-slider-container-sff { padding: 0 10px; } /* Reduced padding for arrows */
-    .gallery-nav-arrow-sff.prev-grid-arrow-sff { left: 5px; } 
-    .gallery-nav-arrow-sff.next-grid-arrow-sff { right: 5px; } 
-    .meetup-videos-showcase { flex-direction: column; gap: 2.5rem; } 
+    .gallery-slider-container-sff { padding: 0 35px; } /* Adjusted padding */
+    .gallery-nav-arrow-sff { width: 42px; height: 42px; font-size: 22px; }
+    .gallery-nav-arrow-sff.prev-grid-arrow-sff { left: -5px; } 
+    .gallery-nav-arrow-sff.next-grid-arrow-sff { right: -5px; } 
+    /* .meetup-videos-showcase { flex-direction: column; gap: 2.5rem; } Already handled by grid default */
     .content-section { padding: 60px 0; }
+    .comostahan-section { padding: 60px 10px; } /* Reduce padding for comostahan */
+    .comostahan-content-container { padding: 0 10px; }
     .section-title { font-size: clamp(2rem, 5vw, 2.6rem); margin-bottom: 1.5rem; }
+    .comostahan-section .section-title.comostahan-title-main { font-size: clamp(2.2rem, 6vw, 3.5rem); }
+    .comostahan-subtitle-secondary { font-size: clamp(1.3rem, 3.5vw, 1.9rem); }
     .section-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.2rem); margin-bottom: 2.5rem; }
+    .meetup-videos-showcase { grid-template-columns: 1fr; gap: 2rem; } /* Ensure 1 column, slightly smaller gap */
+    .meetup-video-card.prominent-video { padding: 1.5rem; }
+    .tarpaulin-showcase img { width: 100%; max-width: 90%; } /* Make tarpaulin responsive */
 }
+
 @media (max-width: 480px) {
+    .sff-banner.sff-full-width-banner { margin-top: 50px; /* Adjust if navbar height changes */ }
     .banner-row { padding: 1.2rem 0.75rem; }
     .banner-text-spanish { font-size: clamp(1.7rem, 5.5vw, 2.8rem); }
     .hero-top-image-container { max-height: 250px; }
     .main-join-buttons .btn, .final-cta-buttons .btn { 
-        width: 95%; /* Slightly less than 100% for visual */
+        width: 95%;
         margin: 0.7rem auto; 
         font-size: 1rem; 
         padding: 0.95rem 1.6rem;
     }
     .section-title { font-size: clamp(1.7rem, 5.5vw, 2.2rem); }
+    .comostahan-section .section-title.comostahan-title-main { font-size: clamp(2rem, 6.5vw, 3rem); }
+    .comostahan-subtitle-secondary { font-size: clamp(1.2rem, 3.8vw, 1.7rem); letter-spacing: 1.5px; }
+    .comostahan-section .section-intro { font-size: clamp(1rem, 2.8vw, 1.1rem); }
     .section-subtitle { font-size: clamp(1rem, 2.8vw, 1.1rem); }
     #about.content-section.sff-section-light,
     .content-section { padding: 50px 0; } 
-    .meetup-video-card.prominent-video, .founder-card.sff-founder-card, .sff-rules-light-text .rules-column, .sff-collab-card { padding: 1.8rem; } /* Reduce padding in cards */
+    .comostahan-section { padding: 50px 5px; }
+    .comostahan-content-container { padding: 0 5px; }
+    .meetup-video-card.prominent-video, .founder-card.sff-founder-card, .sff-rules-light-text .rules-column, .sff-collab-card { padding: 1.5rem; }
+    .sponsors-container { padding: 1rem 0.5rem; display: block; width: auto; } /* Make sponsor box block */
+    .sponsors-container a { font-size: 1rem; padding: 8px 12px; }
+    .npdc-logo { width: 30px; }
+    .meetup-video-card h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+    .tarpaulin-showcase img { width: 100%; max-width: 100%; }
+    .gallery-slider-container-sff { padding: 0 25px; }
+    .gallery-nav-arrow-sff { width: 38px; height: 38px; font-size: 18px; }
+    .gallery-nav-arrow-sff.prev-grid-arrow-sff { left: -2px; }
+    .gallery-nav-arrow-sff.next-grid-arrow-sff { right: -2px; }
 }
 
 /* Icon button support for FAB icons */
@@ -693,7 +710,7 @@ body {
 .anim-fade-in-right,
 .anim-zoom-in {
     opacity: 0;
-    transition: opacity 0.75s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smoother easing */
+    transition: opacity 0.75s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .anim-fade-in-up { transform: translateY(50px); }
 .anim-fade-in-left { transform: translateX(-50px); }
@@ -730,7 +747,7 @@ body {
     color: var(--sff-light-text);
     border: none;
     border-radius: 50%; 
-    width: 55px; /* Slightly larger */
+    width: 55px;
     height: 55px;
     font-size: 1.4rem; 
     display: flex;
@@ -739,7 +756,7 @@ body {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(25px) scale(0.9); /* Start smaller and down */
+    transform: translateY(25px) scale(0.9);
     transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background-color 0.3s ease;
     z-index: 1000; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -751,7 +768,7 @@ body {
 }
 #backToTopBtn:hover {
     background-color: #002a80; 
-    transform: scale(1.08) translateY(-2px); /* More dynamic hover */
+    transform: scale(1.08) translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 #backToTopBtn i.fas { 
