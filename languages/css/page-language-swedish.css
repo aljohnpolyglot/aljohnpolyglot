@@ -1,0 +1,3078 @@
+
+/*=========================================================================
+   Aljohn Polyglot - Swedish Language Page - CSS V11.COMPLETE
+   Designer: Gemini (AI Assistant)
+   Date: May 16, 2025
+   Colors: Swedish Flag Blue #005293, Swedish Flag Yellow #FECB00
+   Focus: ABSOLUTE COMPLETENESS, Correct Order, Vision Checklist,
+          All Themed Sections, Horizontal Scroll, Hover Reveals,
+          Contrast, Dynamism, ALL Modals, ALL Responsive.
+   ========================================================================== */
+
+/*=========================================================================
+   0. Root Variables & Base Setup
+   ========================================================================== */
+:root {
+    /* Core Dark Theme Palette */
+    --sw-bg-primary: #06080D;
+    --sw-bg-secondary: #0E131B;
+    --sw-bg-tertiary: #151D27;
+    --sw-border-color: #2B3646;
+    --sw-border-color-light: #3D4C5F;
+    --sw-text-primary: #EFF3F7;
+    --sw-text-secondary: #BFCAD9;
+    --sw-text-tertiary: #828FA3;
+
+    /* RGB versions for rgba() */
+    --sw-bg-primary-rgb: 6, 8, 13;
+    --sw-bg-secondary-rgb: 14, 19, 27;
+    --sw-bg-tertiary-rgb: 21, 29, 39;
+    --sw-border-color-rgb: 43, 54, 70; /* Added for consistency */
+    --sw-border-color-light-rgb: 61, 76, 95;
+    --sw-flag-yellow-rgb: 254, 203, 0;
+    --sw-flag-blue-rgb: 0, 82, 147;
+    --sw-resource-youtube-red-rgb: 255, 0, 0;
+    --sw-text-on-yellow-rgb: 0, 38, 64;
+
+    /* Swedish Flag Colors */
+    --sw-flag-blue: #005293;
+    --sw-flag-yellow: #FECB00;
+
+    /* Derived Accents */
+    --sw-accent-blue-darker: #004073;
+    --sw-accent-yellow-darker: #E0B000;
+    --sw-text-on-yellow: #002640;
+    --sw-text-on-blue: #FFFFFF;
+
+    /* Semantic & Utility Colors */
+    --sw-danger-red: #D12C2C;
+    --sw-resource-spotify-green: #1DB954;
+    --sw-resource-youtube-red: #FF0000;
+    --sw-resource-peppa-pig-pink: #F4B9D8;
+    --sw-resource-news-red: var(--sw-danger-red);
+    --sw-resource-tv-blue: var(--sw-flag-blue);
+
+    /* Yellow Theme Variables */
+    --sw-yellow-theme-bg-start: #FECB00;
+    --sw-yellow-theme-bg-end: #FAD02C;
+    --sw-yellow-theme-text-primary: #1A1C20;
+    --sw-yellow-theme-text-secondary: #2C3038;
+    --sw-yellow-theme-accent: #003E6B;
+    --sw-yellow-theme-accent-rgb: 0, 62, 107; /* Added for consistency */
+    --sw-yellow-theme-border: #DBA500;
+
+    /* Encounter Theme Palettes */
+    --norway-accent: #D9534F;
+    --denmark-accent: #C0392B;
+    --finland-accent: #3498DB;
+
+    /* Typography */
+    --sw-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --sw-font-secondary: 'Roboto', sans-serif;
+    --sw-font-display: 'Poppins', sans-serif;
+    --sw-font-hero-main: 'Montserrat', sans-serif;
+    --sw-font-hero-highlight: 'Anton', sans-serif;
+
+    /* Spacing & Radius */
+    --sw-spacing-unit: 8px;
+    --sw-radius-sm: 4px;
+    --sw-radius-md: 8px;
+    --sw-radius-lg: 12px;
+    --sw-radius-xl: 16px;
+    --sw-radius-round: 50%;
+
+    /* Shadows */
+    --sw-shadow-sm: 0 2px 5px rgba(0,0,0,0.25);
+    --sw-shadow-md: 0 4px 10px rgba(0,0,0,0.3);
+    --sw-shadow-lg: 0 7px 22px rgba(0,0,0,0.35);
+    --sw-shadow-on-yellow: 0 3px 10px rgba(0, 10, 20, 0.12);
+
+    /* Transitions */
+    --sw-transition-speed: 0.3s;
+    --sw-transition-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Main Navbar Height - CRITICAL for sticky elements */
+    --main-navbar-height: 70px; /* Default, JS will try to get live height */
+
+    /* CEFR Panel Specific Vars */
+    --cefr-panel-bg: var(--sw-bg-primary);
+    --cefr-panel-elevated-bg: var(--sw-bg-primary); /* For consistency if used interchangeably */
+    --cefr-panel-accent-glow: var(--sw-flag-yellow);
+    --cefr-panel-title-color: var(--sw-flag-yellow); /* Changed to Yellow */
+    --cefr-panel-border-color: var(--sw-border-color-light);
+    --cefr-panel-shadow-sticky: 0 5px 15px rgba(0,0,0,0.35);
+
+    --cefr-btn-bg: var(--sw-bg-tertiary);
+    --cefr-btn-border: var(--sw-border-color);
+    --cefr-btn-text: var(--sw-text-secondary);
+    --cefr-btn-hover-border: var(--sw-flag-blue);
+    --cefr-btn-hover-text: var(--sw-flag-blue);
+    --cefr-btn-active-bg: var(--sw-flag-blue);
+    --cefr-btn-active-text: var(--sw-text-on-blue);
+    --cefr-btn-active-tag-bg: var(--sw-text-on-blue);
+    --cefr-btn-active-tag-text: var(--sw-flag-blue);
+
+    --cefr-btn-clear-bg: var(--sw-flag-yellow);
+    --cefr-btn-clear-text: var(--sw-text-on-yellow);
+    --cefr-btn-clear-hover-bg: var(--sw-accent-yellow-darker);
+}
+
+/*=========================================================================
+   1. Base HTML Element Styling & Font Imports
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    scroll-padding-top: var(--main-navbar-height);
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body.swedish-page-active {
+    background-color: var(--sw-bg-primary);
+    background-image: linear-gradient(178deg, #040609 0%, var(--sw-bg-primary) 95%);
+    color: var(--sw-text-primary);
+    font-family: var(--sw-font-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main#language-page-swedish {
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    font-family: var(--sw-font-display);
+    color: var(--sw-text-primary);
+    line-height: 1.3;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.9rem; }
+
+p {
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--sw-flag-yellow);
+    text-decoration: none;
+    transition: color var(--sw-transition-speed) var(--sw-transition-easing);
+}
+a:hover, a:focus {
+    color: var(--sw-accent-yellow-darker);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style-position: inside;
+    padding-left: calc(var(--sw-spacing-unit) * 2);
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+}
+
+/*=========================================================================
+   2. Global Styles & Utilities
+   ========================================================================== */
+#language-page-swedish .container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(var(--sw-spacing-unit) * 2);
+    padding-right: calc(var(--sw-spacing-unit) * 2);
+}
+
+#language-page-swedish .content-section {
+    padding-top: calc(var(--sw-spacing-unit) * 5.5);
+    padding-bottom: calc(var(--sw-spacing-unit) * 5.5);
+    position: relative;
+}
+
+#language-page-swedish .custom-hero-section { /* Special case for hero with no top/bottom padding */
+    padding: 0;
+}
+
+#language-page-swedish .alt-bg {
+    background-color: var(--sw-bg-secondary);
+    background-image: linear-gradient(180deg, var(--sw-bg-secondary) 0%, #0C1118 100%);
+    border-top: 1px solid var(--sw-border-color);
+    border-bottom: 1px solid var(--sw-border-color);
+}
+
+/* General Section Title (Used if no more specific title style is applied) */
+#language-page-swedish .section-title {
+    font-family: var(--sw-font-display);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: var(--sw-text-primary);
+    text-align: center;
+    margin-bottom: calc(var(--sw-spacing-unit) * 3);
+    line-height: 1.2;
+    padding-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    position: relative;
+}
+#language-page-swedish .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: var(--sw-flag-yellow);
+    border-radius: 2px;
+}
+
+/* General Subsection Title */
+#language-page-swedish .subsection-title {
+    font-family: var(--sw-font-display);
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: var(--sw-text-primary);
+    margin-bottom: calc(var(--sw-spacing-unit) * 2);
+    line-height: 1.3;
+}
+
+/* Links */
+#language-page-swedish .inline-link {
+    color: var(--sw-flag-yellow);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted rgba(var(--sw-flag-yellow-rgb), 0.7);
+    padding: 0.05em 0.1em;
+    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+}
+#language-page-swedish .inline-link:hover,
+#language-page-swedish .inline-link:focus {
+    color: var(--sw-text-on-yellow);
+    background-color: rgba(var(--sw-flag-yellow-rgb), 0.95);
+    border-bottom-color: var(--sw-flag-yellow);
+    border-radius: var(--sw-radius-sm);
+    text-decoration: none;
+    outline: none;
+}
+
+/* Buttons */
+#language-page-swedish .btn {
+    display: inline-block;
+    font-family: var(--sw-font-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    padding: calc(var(--sw-spacing-unit)*1.1) calc(var(--sw-spacing-unit)*2.6);
+    border-radius: var(--sw-radius-sm);
+    border: 1px solid transparent;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+}
+#language-page-swedish .btn-primary {
+    background-color: var(--sw-flag-yellow);
+    color: var(--sw-text-on-yellow);
+    border-color: var(--sw-flag-yellow);
+    box-shadow: var(--sw-shadow-sm);
+}
+#language-page-swedish .btn-primary:hover,
+#language-page-swedish .btn-primary:focus {
+    background-color: var(--sw-accent-yellow-darker);
+    border-color: var(--sw-accent-yellow-darker);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(var(--sw-flag-yellow-rgb), 0.3);
+}
+#language-page-swedish .btn-outline {
+    background-color: rgba(var(--sw-bg-tertiary-rgb), 0.6);
+    color: var(--sw-text-primary);
+    border: 1px solid var(--sw-border-color-light);
+}
+#language-page-swedish .btn-outline:hover,
+#language-page-swedish .btn-outline:focus {
+    background-color: var(--sw-bg-tertiary);
+    border-color: var(--sw-flag-blue);
+    color: var(--sw-flag-blue);
+}
+#language-page-swedish .btn-small {
+    font-size: 0.8rem;
+    padding: calc(var(--sw-spacing-unit)*0.75) calc(var(--sw-spacing-unit)*1.5);
+}
+#language-page-swedish .btn-icon {
+    background-color: transparent;
+    color: var(--sw-text-tertiary);
+    border: 1px solid var(--sw-border-color);
+    width: calc(var(--sw-spacing-unit) * 4);
+    height: calc(var(--sw-spacing-unit) * 4);
+    border-radius: var(--sw-radius-round);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    padding: 0; /* Reset padding for icon buttons */
+}
+#language-page-swedish .btn-icon:hover,
+#language-page-swedish .btn-icon:focus {
+    transform: scale(1.12);
+    box-shadow: var(--sw-shadow-sm);
+}
+#language-page-swedish .btn-icon.youtube:hover { color: var(--sw-resource-youtube-red); border-color: var(--sw-resource-youtube-red); background-color: rgba(var(--sw-resource-youtube-red-rgb), 0.05); }
+#language-page-swedish .btn-icon.spotify:hover { color: var(--sw-resource-spotify-green); border-color: var(--sw-resource-spotify-green); background-color: rgba(29,185,84, 0.05); }
+#language-page-swedish .btn-icon.instagram:hover { color: #C13584; border-color: #C13584; background-color: rgba(193,53,132, 0.05); }
+#language-page-swedish .btn-icon.twitch:hover { color: #9146FF; border-color: #9146FF; background-color: rgba(145,70,255, 0.05); }
+#language-page-swedish .btn-icon.svtplay:hover { color: var(--sw-flag-blue); border-color: var(--sw-flag-blue); background-color: rgba(var(--sw-flag-blue-rgb), 0.05); }
+#language-page-swedish .btn-icon.website:hover { color: var(--sw-flag-yellow); border-color: var(--sw-flag-yellow); background-color: rgba(var(--sw-flag-yellow-rgb),0.05); }
+#language-page-swedish .btn-icon.facebook-f:hover { color: #1877F2; border-color: #1877F2; background-color: rgba(24, 119, 242, 0.05); } /* For restaurant cards */
+
+/*=========================================================================
+   3. Helper / Utility Classes
+   ========================================================================== */
+.hidden-by-filter {
+    display: none !important;
+}
+.empty-category-message {
+    color: var(--sw-text-secondary);
+    font-style: italic;
+    text-align: center;
+    padding: calc(var(--sw-spacing-unit) * 2);
+}
+.text-center {
+    text-align: center;
+}
+
+/*=========================================================================
+   SECTION 1: Custom Swedish Hero Header - PARALLAX REDESIGN
+   ========================================================================== */
+/*=========================================================================
+   SECTION 1: Custom Swedish Hero Header - PARALLAX REDESIGN V2
+   ========================================================================== */
+/*=========================================================================
+   SECTION 1: Custom Swedish Hero Header - PARALLAX REDESIGN V3
+   ========================================================================== */
+/*=========================================================================
+   SECTION 1: Custom Swedish Hero Header - PARALLAX & IMAGE VISIBILITY FIX
+   ========================================================================== */
+
+/* Ensure parallax speed variables are in :root */
+:root {
+    /* Ensure these are here or in your main :root */
+    --parallax-bg-speed: 0.15; 
+    --parallax-fg-speed: 0.08; 
+    --main-navbar-height: 70px; /* CRITICAL: Adjust to your actual navbar height */
+}
+
+.custom-hero-section#swedish-custom-hero {
+    display: flex;
+    align-items: center; /* Vertically center .hero-text-overlay */
+    justify-content: center; /* Horizontally center .hero-text-overlay */
+    position: relative; 
+min-height: 80vh; /* ADJUST: If content is more compact, you might not need as much min-height */
+    height: auto;     /* Let content and padding primarily define the height */
+    max-height: 700px;/* Keep a max height */
+    padding-top: calc(var(--main-navbar-height) + var(--sw-spacing-unit) * 3); /* ADJUSTED: Space below navbar before content starts */
+    padding-bottom: calc(var(--sw-spacing-unit) * 4); /* Space at the very bottom of the hero section */
+}
+
+/* Parallax Layers Common Styling */
+/* Parallax Layers */
+/* Parallax Layers Common Styling */
+.custom-hero-section#swedish-custom-hero .hero-parallax-layer {
+    position: absolute;
+    left: 0; right: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    will-change: transform; /* Performance hint for browsers */
+}
+/* Background Layer (Scenic - Stockholm) - swedes_header_bg.png */
+/* Background Layer (Scenic - Stockholm) */
+.custom-hero-section#swedish-custom-hero .hero-parallax-bg {
+    top: 0; 
+    height: 100%; /* Takes height of parent hero section */
+    background-image: url('../../images/languages/swedish/header_design_test.png');
+    background-position: center center; 
+    background-attachment: fixed; /* Creates parallax by staying fixed as content scrolls */
+    z-index: 1;
+}
+
+
+/* Scrim for Text Readability */
+.custom-hero-section#swedish-custom-hero .hero-content-scrim {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(var(--sw-bg-primary-rgb), 0.1) 0%, 
+        rgba(var(--sw-bg-primary-rgb), 0.35) 30%, /* Darker gradient sooner */
+        rgba(var(--sw-bg-primary-rgb), 0.80) 100%);
+    z-index: 3;
+    opacity: 0.85; /* Slightly more opaque scrim */
+}
+/* Text Overlay Container */
+.custom-hero-section#swedish-custom-hero .hero-text-overlay {
+    position: relative; 
+    z-index: 4; 
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2); /* REDUCED padding inside overlay */
+    width: 90%;
+    max-width: 680px; /* REDUCED max-width for a tighter text block */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: var(--main-navbar-height); /* Handled by section's padding-top */
+    background: linear-gradient(180deg, 
+        rgba(var(--sw-bg-primary-rgb), 0.2) 0%, 
+        rgba(var(--sw-bg-primary-rgb), 0.55) 50%, /* Adjusted scrim for readability */
+        rgba(var(--sw-bg-primary-rgb), 0.85) 100%);
+    border-radius: var(--sw-radius-md); /* Slightly more rounded */
+}
+/* Title Box & Flag */
+.custom-hero-section#swedish-custom-hero .hero-main-title-box {
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* REDUCED space after title block */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-flag {
+    width: clamp(35px, 4vw, 45px); /* REDUCED flag size further */
+    height: auto;
+    margin-bottom: calc(var(--sw-spacing-unit) * 1); /* REDUCED space below flag */
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    opacity: 0.95;
+}
+
+/* Main Hero Title H1 - More Compact */
+.custom-hero-section#swedish-custom-hero .hero-main-title-box h1 {
+    font-family: var(--sw-font-display); 
+    font-weight: 300; 
+    color: rgba(250, 250, 255, 0.85);
+    line-height: 1.1; /* TIGHTER line height for combined title */
+    text-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    margin: 0;
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-1 {
+    display: block;
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* REDUCED size for "Välkommen till" */
+    letter-spacing: 0.5px;
+    margin-bottom: 0; /* REMOVED margin to bring it very close to line 2 */
+    text-transform: uppercase; 
+    opacity: 0.8;
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
+    display: block; 
+    font-family: var(--sw-font-hero-main); 
+    font-weight: 700; 
+    font-size: clamp(2.2rem, 7vw, 3.8rem); /* REDUCED size slightly for main part */
+    letter-spacing: -0.5px; 
+    line-height: 1; /* Very tight line height */
+    color: var(--sw-text-on-blue); 
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow {
+    color: var(--sw-flag-yellow);
+    font-family: var(--sw-font-hero-highlight); 
+    text-shadow: 0 0 6px rgba(var(--sw-flag-yellow-rgb), 0.5), 
+                 0 0 12px rgba(var(--sw-flag-yellow-rgb), 0.3);
+    /* line-height: 0.9; /* Consider if Anton still causes too much space */
+}
+/* Main Hero Title H1 - Refined Typography */
+//* Main Hero Title H1 - Refined Typography */
+.custom-hero-section#swedish-custom-hero .hero-main-title-box h1 {
+    font-family: var(--sw-font-display); 
+    font-weight: 300; 
+    color: rgba(250, 250, 255, 0.9);
+    line-height: 1.2;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.65); /* Slightly softer */
+    margin: 0;
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-1 {
+    display: block;
+    font-size: clamp(1.2rem, 3vw, 1.7rem); 
+    letter-spacing: 0.6px; /* Slightly more spacing */
+    margin-bottom: calc(var(--sw-spacing-unit) * 0.20); 
+    text-transform: uppercase; 
+    opacity: 0.85;
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
+    display: block; 
+    font-family: var(--sw-font-hero-main); 
+    font-weight: 700; /* Montserrat bold */
+    font-size: clamp(2.6rem, 7.5vw, 4.2rem); /* Slightly adjusted for overall balance */
+    letter-spacing: -0.5px; 
+    line-height: 1.05; 
+    color: var(--sw-text-on-blue); 
+}
+.custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow {
+    color: var(--sw-flag-yellow);
+    font-family: var(--sw-font-hero-highlight); /* Anton for "Värld" */
+    text-shadow: 0 0 7px rgba(var(--sw-flag-yellow-rgb), 0.55), 
+                 0 0 16px rgba(var(--sw-flag-yellow-rgb), 0.35);
+    padding: 0 0.1em; /* Add a tiny bit of padding if Anton clips */
+}
+/* Intro Paragraph - More Compact Spacing */
+.custom-hero-section#swedish-custom-hero .hero-intro-text {
+    font-family: var(--sw-font-primary);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem); /* REDUCED size for intro text */
+    line-height: 1.65; /* Slightly tighter */
+    max-width: 600px; /* Narrower for better readability in compact space */
+    margin: calc(var(--sw-spacing-unit) * 1.5) auto calc(var(--sw-spacing-unit) * 2.5) auto; /* REDUCED top/bottom margins */
+    color: #E0E8F0; 
+    text-shadow: 0 1px 4px rgba(0,0,0,0.9); 
+}
+.custom-hero-section#swedish-custom-hero .hero-intro-text .intro-text-highlight {
+    display: block; 
+    font-weight: 500; 
+    color: var(--sw-text-on-blue); 
+    font-size: 1.05em; 
+    margin-bottom: calc(var(--sw-spacing-unit) * 0.75); /* More distinct space */
+}
+/* Emphasized first line of intro text */
+.custom-hero-section#swedish-custom-hero .hero-intro-text .intro-text-highlight {
+    display: block; 
+    font-weight: 600; /* Bolder highlight */
+    color: var(--sw-text-on-blue); 
+    font-size: 1.1em; /* Relative to its parent p, so also smaller */
+    line-height: 1.3; /* Tighter line height for the highlight */
+    margin-bottom: calc(var(--sw-spacing-unit) * 1); /* Space before the <br><br> */
+    letter-spacing: 0.2px;
+}
+/* CTA Buttons - Refined */
+/* CTA Buttons - Refined */
+.custom-hero-section#swedish-custom-hero .hero-cta-buttons {
+    display: flex;
+    gap: calc(var(--sw-spacing-unit) * 1.75); /* Slightly less gap */
+    justify-content: center;
+}
+.custom-hero-section#swedish-custom-hero .hero-cta-buttons .btn {
+    padding: calc(var(--sw-spacing-unit)*1.2) calc(var(--sw-spacing-unit)*2.8); 
+    font-size: 0.85rem; /* Slightly smaller for balance */
+    font-weight: 600; 
+    border-radius: var(--sw-radius-md); /* Consistent rounding */
+    transition: all 0.25s var(--sw-transition-easing);
+    letter-spacing: 0.4px;
+    border-width: 2px;
+    border-style: solid;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.custom-hero-section#swedish-custom-hero .btn.btn-hero-primary {
+    background-color: var(--sw-flag-yellow);
+    color: var(--sw-text-on-yellow);
+    border-color: var(--sw-flag-yellow);
+    box-shadow: 0 4px 12px rgba(var(--sw-flag-yellow-rgb), 0.25), 0 2px 4px rgba(0,0,0,0.15);
+}
+.custom-hero-section#swedish-custom-hero .btn.btn-hero-primary:hover {
+    background-color: var(--sw-accent-yellow-darker);
+    border-color: var(--sw-accent-yellow-darker);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 7px 18px rgba(var(--sw-flag-yellow-rgb), 0.35), 0 3px 6px rgba(0,0,0,0.2);
+}
+.custom-hero-section#swedish-custom-hero .btn.btn-hero-outline {
+    background-color: rgba(var(--sw-text-on-blue-rgb), 0.05); /* Very faint fill */
+    color: var(--sw-text-on-blue);
+    border-color: rgba(var(--sw-text-on-blue-rgb), 0.7); 
+}
+.custom-hero-section#swedish-custom-hero .btn.btn-hero-outline:hover {
+    background-color: rgba(var(--sw-flag-yellow-rgb), 0.9); 
+    border-color: var(--sw-flag-yellow); 
+    color: var(--sw-text-on-yellow); 
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 5px 12px rgba(var(--sw-flag-yellow-rgb),0.2);
+}
+
+/* Entry Animations (Keep as is, they are good) */
+/* ... (your @keyframes hero-text-fade-in and animation assignments) ... */
+
+/* Entry Animations for Text Elements */
+.custom-hero-section#swedish-custom-hero .hero-main-title-box,
+.custom-hero-section#swedish-custom-hero .hero-intro-text,
+.custom-hero-section#swedish-custom-hero .hero-cta-buttons {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-text-fade-in 0.8s var(--sw-transition-easing) forwards;
+}
+.custom-hero-section#swedish-custom-hero .hero-intro-text { animation-delay: 0.2s; }
+.custom-hero-section#swedish-custom-hero .hero-cta-buttons { animation-delay: 0.4s; }
+
+@keyframes hero-text-fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*=========================================================================
+   SECTION 2: Fragmenterad Verklighet (#fragmenterad-verklighet-section)
+   Layout: Portrait Left, Text Right, Portrait Vertically Centered (Corrected)
+   ========================================================================== */
+#fragmenterad-verklighet-section {
+    background-color: var(--sw-yellow-theme-bg-start);
+    background-image: linear-gradient(150deg, var(--sw-yellow-theme-bg-start) 0%, var(--sw-yellow-theme-bg-end) 100%);
+    color: var(--sw-yellow-theme-text-primary);
+    padding-top: calc(var(--sw-spacing-unit) * 5.5);
+    padding-bottom: calc(var(--sw-spacing-unit) * 5.5);
+    border-top: 3px solid var(--sw-yellow-theme-border);
+    border-bottom: 3px solid var(--sw-yellow-theme-border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Wrapper for the two columns */
+#fragmenterad-verklighet-section .essay-portrait-wrapper.layout-columns { 
+    display: flex; 
+    flex-direction: column; /* Mobile-first: stack columns */
+    align-items: center; /* Center content horizontally when stacked */
+    gap: calc(var(--sw-spacing-unit) * 3); 
+}
+
+/* Desktop and Tablet Layout (side-by-side) */
+@media (min-width: 768px) {
+    #fragmenterad-verklighet-section .essay-portrait-wrapper.layout-columns {
+        flex-direction: row; /* Columns side-by-side */
+        align-items: center; /* <<< THIS IS THE KEY for vertical centering of the columns */
+        gap: calc(var(--sw-spacing-unit) * 5); /* Wider gap for desktop */
+    }
+}
+
+/* Portrait Column Styling */
+#fragmenterad-verklighet-section .portrait-column-essay {
+    order: 1; /* Portrait appears first in the flex flow (left on desktop) */
+    width: 100%; /* Full width on mobile stack */
+    max-width: 300px; /* Limit width on mobile if desired, or adjust flex-basis for desktop */
+    display: flex; /* To center the circular portrait within this column */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent this column from shrinking if text is very wide */
+}
+@media (min-width: 768px) {
+    #fragmenterad-verklighet-section .portrait-column-essay {
+        flex-basis: 35%;  /* Adjust % for desired width proportion */
+        max-width: 280px; /* Max width of the portrait column itself */
+        width: auto;      /* Reset width, flex-basis takes over */
+    }
+}
+
+/* Circular Portrait Container */
+#fragmenterad-verklighet-section .journey-portrait-container-inline.circular-portrait {
+    width: clamp(220px, 100%, 260px); /* Responsive size for the circle itself */
+    aspect-ratio: 1 / 1;
+    border-radius: var(--sw-radius-round);
+    overflow: hidden;
+    box-shadow: 0 0 0 7px var(--sw-text-on-blue), /* White ring */
+                0 0 0 10px var(--sw-bg-primary),   /* Dark blue ring (from site's dark theme) */
+                var(--sw-shadow-on-yellow);        /* Shadow on yellow background */
+    background-color: var(--sw-bg-primary); 
+    position: relative;
+}
+
+#fragmenterad-verklighet-section .journey-portrait-img-inline { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center top; /* Adjust if portrait needs different framing */
+}
+
+/* Narrative/Text Column Styling */
+#fragmenterad-verklighet-section .narrative-column-essay {
+    order: 2; /* Text column appears second */
+    width: 100%; /* Full width on mobile stack */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; /* Only if text block is shorter than image and needs centering in its own column */
+}
+@media (min-width: 768px) {
+    #fragmenterad-verklighet-section .narrative-column-essay {
+        flex-basis: 65%; /* Adjust % for desired width proportion */
+        width: auto; /* Reset width */
+    }
+}
+
+/* Section Title (Fragmenterad Verklighet...) - Assuming it's INSIDE .narrative-column-essay */
+#fragmenterad-verklighet-section .narrative-column-essay .subsection-title.centered-subsection-title {
+    font-family: var(--sw-font-display);
+    font-weight: 700;
+    color: var(--sw-yellow-theme-text-primary); /* Dark text on yellow BG */
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Adjusted to better match screenshot */
+    text-align: left; /* CHANGED from center for this layout */
+    margin: 0 0 calc(var(--sw-spacing-unit) * 2.5) 0; /* Bottom margin before text block */
+    line-height: 1.25;
+    padding-bottom: calc(var(--sw-spacing-unit) * 1.25); /* Space for underline */
+    position: relative;
+    max-width: 100%; /* Takes width of its column */
+}
+#fragmenterad-verklighet-section .narrative-column-essay .subsection-title.centered-subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* CHANGED from 50% for left alignment */
+    transform: translateX(0); /* CHANGED from -50% */
+    width: 80px; /* Or adjust to preference */
+    height: 4px;
+    background-color: var(--sw-yellow-theme-accent); /* Dark blue underline */
+    border-radius: 2px;
+}
+
+
+#fragmenterad-verklighet-section .journey-narrative-content {
+    width: 100%;
+}
+
+#fragmenterad-verklighet-section .narrative-text-blocks-container p.narrative-text-block {
+    color: var(--sw-yellow-theme-text-secondary);
+    font-family: var(--sw-font-secondary);
+    font-size: clamp(0.9rem, 2.1vw, 1rem);
+    line-height: 1.75;
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.75);
+    text-align: left;
+}
+#fragmenterad-verklighet-section .narrative-text-blocks-container p.narrative-text-block strong {
+    color: var(--sw-yellow-theme-text-primary);
+    font-weight: 600;
+}
+
+/* Read More Functionality Styling */
+#fragmenterad-verklighet-section .narrative-hidden {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease-out 0.1s,
+                margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth margin transition */
+}
+#fragmenterad-verklighet-section .narrative-hidden.show {
+    display: block;
+    max-height: 1500px; /* Generous max height */
+    opacity: 1;
+    margin-top: calc(var(--sw-spacing-unit) * 1.75); /* Add margin when shown */
+}
+
+#fragmenterad-verklighet-section #read-more-narrative-btn.btn.btn-secondary-yellow-theme {
+    display: inline-block;
+    align-self: flex-start; 
+    margin-top: calc(var(--sw-spacing-unit) * 2); /* Increased margin */
+    background-color: var(--sw-yellow-theme-accent); /* Dark blue button */
+    color: var(--sw-text-on-blue); /* White text */
+    border: none;
+    padding: calc(var(--sw-spacing-unit) * 1.25) calc(var(--sw-spacing-unit) * 3);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--sw-radius-md);
+    cursor: pointer;
+    transition: background-color var(--sw-transition-speed) ease, transform var(--sw-transition-speed) ease;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    box-shadow: 0 2px 5px rgba(var(--sw-yellow-theme-accent-rgb, 0, 62, 107), 0.3); /* Assuming you have --sw-yellow-theme-accent-rgb */
+}
+#fragmenterad-verklighet-section #read-more-narrative-btn.btn.btn-secondary-yellow-theme:hover {
+    background-color: color-mix(in srgb, var(--sw-yellow-theme-accent) 85%, black 10%); /* Darken slightly on hover */
+    transform: translateY(-2px);
+}
+
+/*=========================================================================
+   SECTION 3: Videohöjdpunkt (#video-highlight-main-section)
+   ========================================================================== */
+#video-highlight-main-section.video-highlight-theme {
+    background-color: var(--sw-flag-blue);
+    background-image: linear-gradient(160deg, var(--sw-flag-blue) 0%, var(--sw-accent-blue-darker) 100%);
+    padding-top: calc(var(--sw-spacing-unit) * 4.5);
+    padding-bottom: calc(var(--sw-spacing-unit) * 4.5);
+}
+
+#video-highlight-main-section .container { /* Container for this specific section */
+    max-width: 700px; /* Constrain width for video highlight */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#video-highlight-main-section .highlighted-video-feature {
+    background-color: var(--sw-bg-tertiary);
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
+    border-radius: var(--sw-radius-lg);
+    box-shadow: var(--sw-shadow-lg);
+    border: 1px solid var(--sw-border-color-light);
+    margin: 0; /* Remove default article margins if any */
+    /* For flip card functionality */
+    perspective: 1200px;
+}
+
+#video-highlight-main-section .highlighted-video-feature .video-highlight-title {
+    font-family: var(--sw-font-display);
+    font-weight: 600;
+    color: var(--sw-text-primary);
+    font-size: clamp(1.2rem, 3.5vw, 1.45rem);
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    display: flex;
+    align-items: center;
+    line-height: 1.3;
+}
+#video-highlight-main-section .highlighted-video-feature .video-highlight-title i.fa-star,
+#video-highlight-main-section .highlighted-video-feature .video-highlight-title i.fa-history {
+    color: var(--sw-flag-yellow);
+    margin-right: calc(var(--sw-spacing-unit) * 1);
+    font-size: 1.05em;
+}
+
+/* Flip Card Mechanics */
+#video-highlight-main-section .highlighted-video-feature .card-inner {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    transition: transform 0.7s var(--sw-transition-easing);
+    transform-style: preserve-3d;
+}
+#video-highlight-main-section .highlighted-video-feature.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+#video-highlight-main-section .highlighted-video-feature .card-front,
+#video-highlight-main-section .highlighted-video-feature .card-back {
+    width: 100%;
+    min-height: 300px; /* Ensure card has some height */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#video-highlight-main-section .highlighted-video-feature .card-front {
+    /* Content already defined by .video-highlight-title, .video-embed-container, etc. */
+}
+
+#video-highlight-main-section .highlighted-video-feature .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Take full height of the card */
+    transform: rotateY(180deg);
+    padding: calc(var(--sw-spacing-unit) * 2.5);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--sw-bg-secondary); /* Slightly different bg for back */
+    border-radius: var(--sw-radius-lg); /* Match front card's rounding */
+    overflow: auto; /* If content overflows */
+}
+
+#video-highlight-main-section .highlighted-video-feature .video-embed-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--sw-radius-md);
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.25);
+    background-color: #000; /* Black background for video area */
+}
+#video-highlight-main-section .highlighted-video-feature .video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#video-highlight-main-section .highlighted-video-feature .video-description-front {
+    color: var(--sw-text-secondary);
+    font-size: 0.825rem;
+    line-height: 1.5;
+    margin-bottom: calc(var(--sw-spacing-unit) * 0.25);
+}
+#video-highlight-main-section .highlighted-video-feature .flip-prompt {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--sw-flag-yellow);
+    margin-top: calc(var(--sw-spacing-unit)*0.25);
+    font-style: italic;
+    cursor: pointer;
+    padding: calc(var(--sw-spacing-unit) * 0.25) 0;
+    border-bottom: 1px dotted transparent;
+    transition: border-bottom-color var(--sw-transition-speed) ease;
+    text-align: left; /* Explicitly left for the prompt in card front */
+}
+#video-highlight-main-section .highlighted-video-feature .flip-prompt:hover {
+    border-bottom-color: var(--sw-flag-yellow);
+}
+
+#video-highlight-main-section .highlighted-video-feature .card-back p {
+    color: var(--sw-text-secondary);
+    line-height: 1.6;
+    font-size: 0.85rem;
+    margin-bottom: calc(var(--sw-spacing-unit) * 2);
+    max-width: 90%; /* Prevent text from touching edges */
+}
+#video-highlight-main-section .highlighted-video-feature .flip-back-btn {
+    font-family: var(--sw-font-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: var(--sw-bg-tertiary);
+    color: var(--sw-text-secondary);
+    border: 1px solid var(--sw-border-color);
+    padding: calc(var(--sw-spacing-unit)*0.8) calc(var(--sw-spacing-unit)*1.6);
+    border-radius: var(--sw-radius-sm);
+    cursor: pointer;
+    transition: background-color var(--sw-transition-speed) ease, color var(--sw-transition-speed) ease;
+    margin-top: calc(var(--sw-spacing-unit) * 1.5);
+}
+#video-highlight-main-section .highlighted-video-feature .flip-back-btn:hover {
+    background-color: var(--sw-border-color-light);
+    color: var(--sw-text-primary);
+}
+
+/*=========================================================================
+   SECTION 4: Swedish Immersion Resources (#swedish-resources)
+   ========================================================================== */
+#swedish-resources {
+    background-color: var(--sw-bg-secondary);
+    color: var(--sw-text-primary);
+    position: relative; 
+    z-index: 5; 
+    /* padding-top and padding-bottom are inherited from .content-section, which is good. */
+}
+/* 4.1 Resources Section Header */
+#swedish-resources .resources-section-header {
+   text-align: center;
+    padding: calc(var(--sw-spacing-unit) * 2.5) 0 calc(var(--sw-spacing-unit) * 1.5) 0; /* Adjusted overall padding */
+    margin-bottom: calc(var(--sw-spacing-unit) * 2); /* Space before CEFR panel */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#swedish-resources .resources-section-header .main-section-title {
+    font-family: var(--sw-font-display);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--sw-flag-blue); /* Default: Blue title */
+    margin: 0 auto calc(var(--sw-spacing-unit) * 1) auto;
+    max-width: 800px;
+    letter-spacing: 0.5px;
+    /* Override general .section-title styles */
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: inherit; /* Let inner spans control size */
+}
+#swedish-resources .resources-section-header .main-section-title::after {
+    display: none; /* Remove general underline */
+}
+#swedish-resources .resources-section-header .main-section-title .title-line-1 {
+    display: block;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    opacity: 0.9;
+}
+#swedish-resources .resources-section-header .main-section-title .title-line-2 {
+    display: block;
+    font-size: clamp(2.4rem, 7vw, 3.8rem);
+}
+#swedish-resources .resources-section-header .main-section-title .title-highlight-yellow {
+    color: var(--sw-flag-yellow);
+    text-shadow: 0 1px 3px rgba(var(--sw-text-on-yellow-rgb), 0.3);
+}
+#swedish-resources .resources-section-header .main-section-subtitle {
+    font-family: var(--sw-font-secondary);
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    color: var(--sw-text-secondary);
+    max-width: 600px;
+    margin: 0 auto calc(var(--sw-spacing-unit) * 2.5) auto;
+    line-height: 1.65;
+    font-style: italic;
+    opacity: 0.95;
+}
+#swedish-resources .resources-section-header .title-separator-icon {
+    font-size: 2rem;
+    color: var(--sw-flag-yellow);
+    opacity: 0.6;
+    margin: 0 auto;
+}
+/* First subtitle (introductory) */
+.resources-section-header .main-section-subtitle.intro-subtitle {
+    font-family: var(--sw-font-secondary);
+    font-size: clamp(0.85rem, 2vw, 1rem); /* More compact */
+    color: var(--sw-text-secondary);
+    max-width: 700 px; 
+    margin: 0 auto calc(var(--sw-spacing-unit) * 2) auto; /* Space before image */
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.magnus-info-icon-container {
+    margin-bottom: calc(var(--sw-spacing-unit) * 2); 
+    position: relative; /* For absolute positioning of hover image */
+    width: 120px; /* ADJUST to fit your image's desired display size */
+    height: 120px; /* ADJUST to fit your image's desired display size */
+    cursor: default; /* Or pointer if you want the image itself to seem clickable */
+}
+.magnus-header-icon-img {
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* Ensure whole image is visible */
+    position: absolute; /* Overlay images */
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out; /* For smooth fade between images */
+}
+.magnus-header-icon-img.normal-state {
+    opacity: 1;
+    z-index: 2;
+}
+.magnus-header-icon-img.hover-state {
+    opacity: 0;
+    z-index: 1;
+}
+/* Hover effect for the container to swap images */
+.magnus-info-icon-container:hover .normal-state {
+    opacity: 0;
+}
+.magnus-info-icon-container:hover .hover-state {
+    opacity: 1;
+    /* Optional: add a subtle animation to the glowing sign */
+    /* animation: pulse-glow 1.5s infinite alternate ease-in-out; */
+}
+
+/* Optional pulsing glow animation for the hover image's sign */
+
+@keyframes pulse-glow {
+    0% { filter: drop-shadow(0 0 3px rgba(var(--sw-flag-yellow-rgb), 0.4)); }
+    100% { filter: drop-shadow(0 0 10px rgba(var(--sw-flag-yellow-rgb), 0.7)); }
+}
+
+
+/* Subtitle Line 1 - Highlighted */
+.resources-section-header .main-section-subtitle.action-subtitle-line1 {
+    font-family: var(--sw-font-display); /* More prominent font */
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Larger */
+    color: var(--sw-flag-yellow); /* Yellow highlight */
+    font-weight: 600;
+    margin: 0 auto calc(var(--sw-spacing-unit) * 0.5) auto; /* Small space below */
+    line-height: 1.3;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Subtitle Line 2 - Instructional */
+.resources-section-header .main-section-subtitle.action-subtitle-line2 {
+    font-family: var(--sw-font-secondary);
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem); /* Smaller, instructional */
+    color: var(--sw-text-tertiary);
+    max-width: 520px; 
+    margin: 0 auto;
+    line-height: 1.5;
+}
+.resources-section-header .main-section-subtitle.action-subtitle-line2 .fa-info-circle {
+    color: var(--sw-flag-yellow); /* Ensure icon is visible */
+    font-size: 1em; /* Relative to this subtitle's font size */
+    margin: 0 3px; 
+    vertical-align: -0.08em; /* Fine-tune */
+}
+/* 4.2 CEFR Filter Panel */
+#cefr-filter-sticky-wrapper {
+    position: relative;
+    margin-top: 0; /* Let the header above it define the space */
+    /* ADJUSTED: INCREASED margin-bottom for more space BEFORE the first resource category */
+    margin-bottom: calc(var(--sw-spacing-unit) * 5); /* Was *4, try *5 or *6 */
+    z-index: 200; /* Ensure it's above normal content */
+}
+
+#cefr-filter-controls-container {
+    background-color: var(--cefr-panel-bg); /* Uses --sw-bg-primary from your :root */
+    border: 1px solid var(--cefr-panel-border-color);
+    border-radius: var(--sw-radius-lg);
+    /* Top accent glow and main shadow */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18), 
+                0 -4px 0 0 var(--cefr-panel-accent-glow), /* Top accent */
+                0 -6px 12px -4px rgba(var(--sw-flag-yellow-rgb), 0.45); /* Accent glow */
+    position: relative; /* For popover context if icons are inside */
+    overflow: visible; /* Allow popovers from child icons to show */
+   max-width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cefr-filter-controls-container .cefr-panel-content-wrapper {
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2);
+    text-align: center; /* Center header, intro, buttons */
+}
+
+/* CEFR Panel Header Content */
+#cefr-filter-controls-container .cefr-panel-header {
+    text-align: center;
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+}
+#cefr-filter-controls-container .cefr-panel-header h3 {
+    color: var(--cefr-panel-title-color); /* Yellow */
+    font-family: var(--sw-font-display);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3.8vw, 1.8rem);
+    margin: 0 0 calc(var(--sw-spacing-unit) * 0.75) 0;
+    letter-spacing: 0.5px;
+}
+#cefr-filter-controls-container .cefr-panel-header h3 i {
+    margin-right: calc(var(--sw-spacing-unit) * 0.75);
+    color: var(--cefr-panel-title-color); /* Match title */
+    font-size: 0.9em;
+}
+#cefr-filter-controls-container .cefr-panel-intro {
+    font-size: clamp(0.75rem, 1.7vw, 0.85rem);
+    color: var(--sw-text-secondary);
+    line-height: 1.55;
+    max-width: 700px;
+    margin: 0 auto calc(var(--sw-spacing-unit) * 2); /* Added bottom margin */
+    text-align: center;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-bottom 0.3s ease, font-size 0.3s ease;
+}
+#cefr-filter-controls-container .cefr-panel-intro .inline-link {
+    white-space: nowrap;
+}
+#cefr-filter-controls-container.is-sticky .cefr-panel-header { /* Reduced margin when sticky */
+    margin-bottom: calc(var(--sw-spacing-unit) * 1);
+}
+#cefr-filter-controls-container.is-sticky .cefr-panel-intro { /* Hide intro when sticky */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+    font-size: 0rem;
+}
+
+/* CEFR Buttons Area */
+#cefr-filter-controls-container .cefr-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 1);
+}
+#cefr-filter-controls-container .btn-filter-cefr {
+    background-color: var(--cefr-btn-bg);
+    color: var(--cefr-btn-text);
+    border: 1px solid var(--cefr-btn-border);
+    padding: calc(var(--sw-spacing-unit)*0.8) calc(var(--sw-spacing-unit)*1.5);
+    border-radius: var(--sw-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s var(--sw-transition-easing);
+    display: flex;
+    align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 0.5);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.02), 0 1px 0px rgba(0,0,0,0.05);
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#cefr-filter-controls-container .btn-filter-cefr .cefr-level-tag {
+    background-color: var(--sw-border-color);
+    color: var(--sw-text-primary);
+    padding: calc(var(--sw-spacing-unit)*0.2) calc(var(--sw-spacing-unit)*0.6);
+    border-radius: var(--sw-radius-sm);
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1;
+    transition: all 0.25s ease;
+}
+#cefr-filter-controls-container .btn-filter-cefr .cefr-level-desc {
+    transition: all 0.25s ease;
+    font-size: 0.8em;
+}
+#cefr-filter-controls-container .btn-filter-cefr:not(.active):hover,
+#cefr-filter-controls-container .btn-filter-cefr:not(.active):focus {
+    border-color: var(--cefr-btn-hover-border);
+    color: var(--cefr-btn-hover-text);
+    background-color: rgba(var(--sw-flag-blue-rgb), 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(var(--sw-flag-blue-rgb), 0.1);
+}
+#cefr-filter-controls-container .btn-filter-cefr:not(.active):hover .cefr-level-tag {
+    background-color: var(--cefr-btn-hover-border);
+    color: var(--cefr-btn-active-tag-bg);
+}
+#cefr-filter-controls-container .btn-filter-cefr.active {
+    background-color: var(--cefr-btn-active-bg);
+    color: var(--cefr-btn-active-text);
+    border-color: var(--cefr-btn-active-bg);
+    font-weight: 600;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 3px 7px rgba(var(--sw-flag-blue-rgb), 0.25), inset 0 1px 2px rgba(0,0,0,0.15);
+}
+#cefr-filter-controls-container .btn-filter-cefr.active .cefr-level-tag {
+    background-color: var(--cefr-btn-active-tag-bg);
+    color: var(--cefr-btn-active-tag-text);
+}
+#cefr-filter-controls-container .btn-filter-cefr.active:hover {
+    background-color: var(--sw-accent-blue-darker);
+    border-color: var(--sw-accent-blue-darker);
+}
+
+/* Clear Button */
+#cefr-filter-controls-container .btn-filter-cefr-clear {
+    background-color: var(--cefr-btn-clear-bg);
+    color: var(--cefr-btn-clear-text);
+    border: 1px solid var(--cefr-btn-clear-bg);
+    padding: calc(var(--sw-spacing-unit)*0.9) calc(var(--sw-spacing-unit)*1.8);
+    border-radius: var(--sw-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 0.75);
+    box-shadow: 0 2px 5px rgba(var(--sw-flag-yellow-rgb),0.2), inset 0 -1px 1px rgba(0,0,0,0.05);
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#cefr-filter-controls-container .btn-filter-cefr-clear i {
+    font-size: 0.9em;
+}
+#cefr-filter-controls-container .btn-filter-cefr-clear:hover,
+#cefr-filter-controls-container .btn-filter-cefr-clear:focus {
+    background-color: var(--cefr-btn-clear-hover-bg);
+    border-color: var(--cefr-btn-clear-hover-bg);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(var(--sw-flag-yellow-rgb), 0.3);
+}
+
+/* Compact CEFR buttons when panel is sticky */
+#cefr-filter-controls-container.is-sticky .btn-filter-cefr {
+    padding: calc(var(--sw-spacing-unit)*0.5) calc(var(--sw-spacing-unit)*0.8);
+}
+#cefr-filter-controls-container.is-sticky .btn-filter-cefr .cefr-level-desc {
+    display: none;
+}
+#cefr-filter-controls-container.is-sticky .btn-filter-cefr .cefr-level-tag {
+    font-size: 0.7rem;
+    padding: calc(var(--sw-spacing-unit)*0.2) calc(var(--sw-spacing-unit)*0.5);
+}
+#cefr-filter-controls-container.is-sticky .btn-filter-cefr-clear {
+    padding: calc(var(--sw-spacing-unit)*0.6) calc(var(--sw-spacing-unit)*1.2);
+    font-size: 0.8rem;
+}
+
+/* Active Filters Display */
+#cefr-filter-controls-container #active-filters-display-container {
+    min-height: 1.5em;
+    margin-top: calc(var(--sw-spacing-unit) * 0.75);
+    text-align: center;
+}
+#cefr-filter-controls-container.is-sticky #active-filters-display-container {
+    display: none; /* Hide filter display text when sticky and compact */
+}
+#cefr-filter-controls-container #active-filters-display {
+    font-size: 0.75rem;
+    background-color: rgba(var(--sw-bg-tertiary-rgb), 0.7);
+    padding: calc(var(--sw-spacing-unit)*0.5) var(--sw-spacing-unit);
+    border-radius: var(--sw-radius-sm);
+    display: inline-block; /* So background fits text */
+}
+
+/* 4.3 Resource Category General Styles */
+#swedish-resources .resource-category-wrapper {
+    margin-bottom: calc(var(--sw-spacing-unit) * 3.5);
+    position: relative;
+}
+#swedish-resources .resource-category-swedish {
+    background-color: var(--sw-bg-tertiary);
+    border: 1px solid var(--sw-border-color);
+    border-radius: var(--sw-radius-lg);
+    padding: calc(var(--sw-spacing-unit) * 2) calc(var(--sw-spacing-unit) * 2.5); /* Reduced top/bottom padding slightly */
+    box-shadow: var(--sw-shadow-md);
+    border-left-width: 5px; /* Default, color set by theme class */
+}
+/* Resource Category Theming */
+#swedish-resources .resource-category-swedish.learning-theme { border-left-color: var(--sw-flag-blue); }
+#swedish-resources .resource-category-swedish.kids-theme { border-left-color: var(--sw-resource-peppa-pig-pink); }
+#swedish-resources .resource-category-swedish.music-theme { border-left-color: var(--sw-resource-spotify-green); }
+#swedish-resources .resource-category-swedish.tv-theme { border-left-color: var(--sw-resource-tv-blue); }
+#swedish-resources .resource-category-swedish.youtube-theme { border-left-color: var(--sw-resource-youtube-red); }
+#swedish-resources .resource-category-swedish.personalities-interests-theme { border-left-color: var(--sw-flag-yellow); }
+#swedish-resources .resource-category-swedish.news-theme { border-left-color: var(--sw-resource-news-red); }
+
+/* Resource Category Titles */
+#swedish-resources .resource-category-swedish .subsection-title {
+    font-family: var(--sw-font-display);
+    font-weight: 600;
+    font-size: clamp(1.2rem, 3.5vw, 1.65rem); /* ADJUSTED: Slightly smaller for better fit */
+    color: var(--sw-text-primary);
+    border-bottom: 1px solid var(--sw-border-color-light);
+    padding-bottom: calc(var(--sw-spacing-unit) * 1); /* Standard padding for underline */
+    margin-top: 0; /* Space above title controlled by parent's padding */
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space between title and its description */
+    display: flex; 
+    align-items: center;
+    /* justify-content: space-between; /* Keep this if icon is direct child */
+    text-align: left; 
+    letter-spacing: normal;
+}
+#swedish-resources .resource-category-swedish .subsection-title i:first-child { /* The main category icon */
+    font-size: 0.9em; /* Relative to title's font-size */
+    margin-right: calc(var(--sw-spacing-unit)*1.25);
+    opacity: 0.85;
+}
+#swedish-resources .resource-category-swedish .subsection-title .title-text-main {
+    flex-grow: 1; /* Allows text to take available space */
+    margin-right: calc(var(--sw-spacing-unit) * 0.5); /* Add a small gap before info icon if it's next */
+}
+/* Icon colors for category titles */
+#swedish-resources .learning-theme .subsection-title i:first-child { color: var(--sw-flag-blue); }
+#swedish-resources .kids-theme .subsection-title i:first-child { color: var(--sw-resource-peppa-pig-pink); }
+#swedish-resources .music-theme .subsection-title i:first-child { color: var(--sw-resource-spotify-green); }
+#swedish-resources .tv-theme .subsection-title i:first-child { color: var(--sw-resource-tv-blue); }
+#swedish-resources .youtube-theme .subsection-title i:first-child { color: var(--sw-resource-youtube-red); }
+#swedish-resources .personalities-interests-theme .subsection-title i:first-child { color: var(--sw-flag-yellow); }
+#swedish-resources .news-theme .subsection-title i:first-child { color: var(--sw-resource-news-red); }
+
+/* Specific styling for "Svenska Musikprogram" title (red underline variation) */
+#swedish-resources .resource-category-swedish.tv-theme[data-category-id="music-programs"] .subsection-title {
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative; /* For pseudo-element */
+}
+#swedish-resources .resource-category-swedish.tv-theme[data-category-id="music-programs"] .subsection-title .title-text-wrapper {
+    /* Wrapper for "Svenska Musikprogram" to apply underline to it */
+    display: inline-block; /* Or block */
+}
+#swedish-resources .resource-category-swedish.tv-theme[data-category-id="music-programs"] .subsection-title .title-text-wrapper::after {
+    content: '';
+    display: block;
+    width: 60%; /* Adjust width of underline */
+    height: 3px;
+    background-color: var(--sw-danger-red); /* Red underline */
+    margin-top: calc(var(--sw-spacing-unit) * 0.5);
+}
+#swedish-resources .resource-category-swedish.tv-theme[data-category-id="music-programs"] .subsection-title .title-highlight-red-underline {
+    /* If you use a span for the text to be underlined, style it here or let the wrapper handle it */
+}
+/* Ensure TV icon for this specific title is not themed red if not intended */
+#swedish-resources .resource-category-swedish.tv-theme[data-category-id="music-programs"] .subsection-title i.fa-tv {
+    color: var(--sw-text-tertiary); /* Or var(--sw-resource-tv-blue) if it should be blue */
+}
+
+/* Resource Category Description Paragraphs */
+#swedish-resources .resource-category-swedish > p[id$="-desc"] {
+    color: var(--sw-text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: calc(var(--sw-spacing-unit) * 2);
+    line-height: 1.6;
+}
+
+/* Info Icon & Popover (Used within resource category titles) */
+#swedish-resources .info-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-left: calc(var(--sw-spacing-unit) * 1);
+    color: var(--sw-text-tertiary);
+    cursor: pointer;
+    transition: color var(--sw-transition-speed) ease, transform var(--sw-transition-speed) ease;
+    font-size: 0.8em; /* Relative to parent title's font size */
+    position: relative; /* For popover positioning */
+}
+#swedish-resources .info-icon-wrapper:hover,
+#swedish-resources .info-icon-wrapper:focus {
+    color: var(--sw-flag-yellow);
+    transform: scale(1.15);
+}
+#swedish-resources .info-icon-wrapper i.fa-info-circle,
+#swedish-resources .info-icon-wrapper i.fa-lightbulb,
+#swedish-resources .info-icon-wrapper i.fa-closed-captioning {
+    /* Styles inherited or can be specific if needed */
+}
+
+/* Popover Styles */
+#swedish-resources .info-popover {
+    position: absolute;
+    bottom: 100%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px); /* Center and add gap */
+    background-color: var(--sw-bg-secondary);
+    color: var(--sw-text-secondary);
+    border: 1px solid var(--sw-border-color);
+    border-radius: var(--sw-radius-md);
+    padding: calc(var(--sw-spacing-unit) * 1.75) calc(var(--sw-spacing-unit) * 2.25);
+    box-shadow: var(--sw-shadow-lg);
+    width: clamp(280px, 80vw, 400px);
+    z-index: 1000; /* High z-index */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--sw-transition-speed) var(--sw-transition-easing),
+                visibility 0s linear var(--sw-transition-speed),
+                transform 0.2s var(--sw-transition-easing);
+    font-size: 0.85rem; /* Popover specific font size */
+    line-height: 1.6;
+    text-align: left;
+}
+#swedish-resources .info-popover.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-15px); /* Slight up-shift */
+    transition-delay: 0s, 0s, 0s;
+}
+#swedish-resources .info-popover::after { /* Arrow */
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--sw-bg-secondary) transparent transparent transparent;
+}
+#swedish-resources .info-popover-header {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 1);
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    padding-bottom: calc(var(--sw-spacing-unit) * 1);
+    border-bottom: 1px solid var(--sw-border-color-light);
+}
+#swedish-resources .info-popover-header .popover-icon { /* General class for icon in popover header */
+    font-size: 1.5em;
+    /* Color is set inline via JS or specific class like .fa-youtube */
+}
+#swedish-resources .info-popover-header .popover-icon.fa-youtube {
+    color: var(--sw-resource-youtube-red);
+}
+#swedish-resources .info-popover-header h5 {
+    font-family: var(--sw-font-display);
+    color: var(--sw-text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+#swedish-resources .info-popover-content p {
+    margin-bottom: calc(var(--sw-spacing-unit) * 1);
+    color: var(--sw-text-secondary); /* Ensure p inherits popover text color */
+}
+#swedish-resources .info-popover-content p:last-child {
+    margin-bottom: 0;
+}
+/* inline-link within popover inherits global .inline-link style */
+
+/* 4.4 Inline Tip Box (Small, subtle tip) */
+#swedish-resources .inline-tip {
+    background-color: rgba(var(--sw-bg-primary-rgb), 0.2);
+    border-left: 3px solid; /* Color set by specific class */
+    border-radius: var(--sw-radius-sm);
+    padding: calc(var(--sw-spacing-unit) * 1.5) calc(var(--sw-spacing-unit) * 2);
+    margin: calc(var(--sw-spacing-unit) * 2.5) 0;
+    display: flex;
+    gap: calc(var(--sw-spacing-unit) * 1.5);
+    align-items: flex-start;
+}
+#swedish-resources .inline-tip.youtube-subs-inline-tip {
+    border-left-color: var(--sw-resource-youtube-red);
+    background-color: rgba(var(--sw-resource-youtube-red-rgb), 0.03);
+}
+#swedish-resources .inline-tip-icon-area {
+    flex-shrink: 0;
+    margin-top: calc(var(--sw-spacing-unit) * 0.25);
+}
+#swedish-resources .inline-tip-icon-area i {
+    font-size: 1.3em;
+    color: var(--sw-text-tertiary);
+    opacity: 0.8;
+}
+#swedish-resources .youtube-subs-inline-tip .inline-tip-icon-area i {
+    color: var(--sw-resource-youtube-red);
+}
+#swedish-resources .inline-tip-content p {
+    font-size: 0.85rem;
+    color: var(--sw-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--sw-spacing-unit);
+}
+#swedish-resources .inline-tip-content p:last-child { margin-bottom: 0; }
+#swedish-resources .inline-tip-content p strong {
+    color: var(--sw-text-primary);
+    font-weight: 600;
+}
+#swedish-resources .youtube-subs-inline-tip .inline-tip-content p strong {
+    color: var(--sw-resource-youtube-red);
+}
+
+/* 4.5 Grand YouTube Tip Box (Large, designed tip) */
+#swedish-resources .modern-tip-box.grand-youtube-tip {
+    background-color: var(--sw-bg-secondary); /* Matches resource section bg */
+    border: 1px solid var(--sw-border-color-light);
+    border-radius: var(--sw-radius-lg);
+    padding: 0; /* Inner elements will handle padding */
+    margin: calc(var(--sw-spacing-unit) * 5) 0; /* Spacing around this large tip */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(var(--sw-border-color-rgb), 0.5);
+    display: flex;
+    align-items: stretch; /* Make children stretch to full height */
+    position: relative;
+    overflow: hidden;
+    border-left: none !important; /* Explicitly remove any general left border from other tip styles */
+}
+#swedish-resources .grand-youtube-tip .tip-accent-bar {
+    flex-shrink: 0;
+    width: calc(var(--sw-spacing-unit) * 1.5); /* 12px */
+    background-color: var(--sw-resource-youtube-red);
+    background-image: linear-gradient(to right, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
+    box-shadow: inset 2px 0 5px rgba(0,0,0,0.2);
+}
+#swedish-resources .grand-youtube-tip .tip-icon-area {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2);
+}
+#swedish-resources .grand-youtube-tip .tip-icon-area .tip-icon.fa-youtube {
+    font-size: 3em !important; /* Ensure size */
+    color: var(--sw-resource-youtube-red) !important; /* Ensure color */
+    filter: drop-shadow(0 2px 4px rgba(var(--sw-resource-youtube-red-rgb), 0.3));
+    transition: transform 0.3s ease;
+    margin-top: 0;
+}
+#swedish-resources .grand-youtube-tip:hover .tip-icon-area .tip-icon.fa-youtube {
+    transform: scale(1.1) rotate(-5deg);
+}
+#swedish-resources .grand-youtube-tip .tip-content {
+    flex-grow: 1;
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
+    padding-left: calc(var(--sw-spacing-unit) * 2.5); /* Ensure balanced padding if icon area is small */
+}
+#swedish-resources .grand-youtube-tip .tip-content h3 {
+    font-family: var(--sw-font-display);
+    font-weight: 700;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    color: var(--sw-text-primary);
+    margin: 0 0 calc(var(--sw-spacing-unit) * 1.5) 0;
+    line-height: 1.3;
+}
+#swedish-resources .grand-youtube-tip .tip-content h3 .tip-title-highlight {
+    color: var(--sw-resource-youtube-red);
+}
+#swedish-resources .grand-youtube-tip .tip-content p {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    color: var(--sw-text-secondary);
+    line-height: 1.75;
+    margin-bottom: var(--sw-spacing-unit);
+}
+#swedish-resources .grand-youtube-tip .tip-content p:last-child {
+    margin-bottom: 0;
+}
+#swedish-resources .grand-youtube-tip .tip-content .inline-link {
+    color: var(--sw-flag-yellow); /* Yellow links within this tip */
+    font-weight: 600;
+    border-bottom: 1px solid rgba(var(--sw-flag-yellow-rgb), 0.7);
+}
+#swedish-resources .grand-youtube-tip .tip-content .inline-link:hover {
+    background-color: var(--sw-flag-yellow);
+    color: var(--sw-text-on-yellow);
+}
+#swedish-resources .grand-youtube-tip .tip-content .tip-takeaway { /* Second paragraph specific styling */
+    margin-top: calc(var(--sw-spacing-unit) * 2);
+    padding: calc(var(--sw-spacing-unit) * 1.5);
+    background-color: rgba(var(--sw-bg-primary-rgb), 0.3);
+    border-radius: var(--sw-radius-md);
+    border-left: 3px solid var(--sw-flag-yellow);
+    font-size: clamp(0.82rem, 1.8vw, 0.9rem);
+    color: var(--sw-text-secondary);
+    line-height: 1.65;
+    position: relative;
+}
+#swedish-resources .grand-youtube-tip .tip-content .tip-takeaway .tip-takeaway-icon {
+    color: var(--sw-flag-yellow);
+    margin-right: calc(var(--sw-spacing-unit) * 0.75);
+    font-size: 1.1em;
+}
+#swedish-resources .grand-youtube-tip .tip-content .tip-takeaway:last-child {
+    margin-bottom: 0;
+}
+
+/* 4.6 General Persona Tip Box (within categories) */
+#swedish-resources .resource-tip { /* Targets general tip boxes like Magnus's advice */
+    background-color: var(--sw-bg-tertiary); /* Darker than section, similar to cards */
+    color: var(--sw-text-secondary);
+    padding: calc(var(--sw-spacing-unit) * 2) calc(var(--sw-spacing-unit) * 2.5);
+    border-radius: var(--sw-radius-md);
+    margin: calc(var(--sw-spacing-unit) * 2.5) 0;
+    border-left: 4px solid var(--sw-flag-blue); /* Default blue accent */
+    box-shadow: var(--sw-shadow-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--sw-spacing-unit) * 1.5);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+#swedish-resources .resource-tip .tip-icon { /* Font Awesome icon in tip */
+    font-size: 1.6em;
+    color: var(--sw-flag-blue);
+    margin-top: calc(var(--sw-spacing-unit) * 0.25);
+    flex-shrink: 0;
+}
+#swedish-resources .resource-tip .tip-icon.aljohn-tip-icon { /* Aljohn avatar image */
+    width: calc(var(--sw-spacing-unit) * 5); /* 40px */
+    height: calc(var(--sw-spacing-unit) * 5);
+    object-fit: cover;
+    border-radius: var(--sw-radius-round);
+    border: 2px solid var(--sw-flag-blue);
+    padding: 2px;
+    background-color: var(--sw-bg-secondary);
+}
+#swedish-resources .resource-tip .tip-content {
+    flex-grow: 1;
+}
+#swedish-resources .resource-tip .tip-content strong:first-child { /* Persona name */
+    color: var(--sw-flag-blue);
+    font-weight: 600;
+    display: block;
+    margin-bottom: calc(var(--sw-spacing-unit) * 0.5);
+    font-size: 1.05em;
+}
+#swedish-resources .resource-tip .tip-content strong { /* Other strong tags */
+    font-weight: 500;
+    color: var(--sw-text-primary);
+}
+
+/* 4.7 Specific "Topp-Poddar" Section Styling */
+#swedish-resources #top-podcasts-section.resource-category-wrapper { /* ID takes precedence */
+    background-color: var(--sw-bg-tertiary); /* Dark background for this section block */
+    border: 1px solid var(--sw-border-color);
+    border-radius: var(--sw-radius-lg);
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
+    box-shadow: var(--sw-shadow-md);
+    border-left: 5px solid var(--sw-flag-yellow); /* Yellow accent border for this section */
+    position: relative;
+}
+#top-podcasts-section .subsection-title { /* Targets the H3 */
+    color: var(--sw-text-primary);
+    border-bottom: 1px solid var(--sw-border-color-light); /* Consistent with other categories */
+    padding-bottom: calc(var(--sw-spacing-unit) * 1);
+    margin-top: 0; /* Let parent padding control space above */
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space to description */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; /* IF info icon is direct child */
+    text-align: left; /* CHANGE: Align title to the left */
+    font-size: clamp(1.3rem, 3.8vw, 1.75rem); /* Match other category titles */
+    /* REMOVE: justify-content: center; if previously set */
+}
+#top-podcasts-section .subsection-title .title-text-main {
+    flex-grow: 1; /* Allows text to take available space */
+    margin-right: calc(var(--sw-spacing-unit) * 0.5); /* Space before info icon */
+}
+/* If you want "Mina Lyssningsstips" to remain yellow and part of the main text */
+#top-podcasts-section .subsection-title .title-text-main .title-highlight-yellow {
+    color: var(--sw-flag-yellow); 
+    /* margin-left: calc(var(--sw-spacing-unit) * 0.5); /* No longer needed if part of the span */
+}
+#top-podcasts-section .subsection-title > i.fa-headphones-alt { /* Target direct child icon */
+    color: var(--sw-flag-yellow); 
+    font-size: 0.9em;
+    margin-right: calc(var(--sw-spacing-unit) * 1); /* Space after icon */
+    flex-shrink: 0;
+}
+#swedish-resources #top-podcasts-section .subsection-title .title-highlight-yellow {
+    color: var(--sw-flag-yellow); /* "Mina Lyssningsstips" is yellow */
+    margin-left: calc(var(--sw-spacing-unit) * 0.5);
+}
+#swedish-resources #top-podcasts-section #top-podcasts-desc { /* Description paragraph */
+    color: var(--sw-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: calc(var(--sw-spacing-unit) * 3);
+    line-height: 1.65;
+    text-align: left; /* Sub-description can be left-aligned */
+}
+/* Podcast Cards (Yellow Theme) within "Topp-Poddar" section */
+#swedish-resources #top-podcasts-grid { /* Grid container for podcast cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: calc(var(--sw-spacing-unit) * 2.5);
+}
+#swedish-resources .swedish-podcast-card { /* Yellow cards */
+    background-color: var(--sw-flag-yellow);
+    color: var(--sw-text-on-yellow);
+    padding: calc(var(--sw-spacing-unit) * 2);
+    border-radius: var(--sw-radius-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--sw-shadow-md);
+    transition: transform var(--sw-transition-speed) ease, box-shadow var(--sw-transition-speed) ease;
+    border: 2px solid var(--sw-accent-yellow-darker); /* Darker yellow border */
+}
+#swedish-resources .swedish-podcast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 20px rgba(var(--sw-flag-yellow-rgb), 0.35);
+}
+#swedish-resources .swedish-podcast-card .podcast-card-image-new {
+    width: 85px;
+    height: 85px;
+    border-radius: var(--sw-radius-md);
+    object-fit: cover;
+    margin-bottom: var(--sw-spacing-unit);
+    border: 2px solid rgba(var(--sw-text-on-yellow-rgb), 0.5); /* Dark border on image */
+}
+#swedish-resources .swedish-podcast-card .podcast-card-name-new {
+    font-family: var(--sw-font-display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: calc(var(--sw-spacing-unit)*0.5);
+    color: var(--sw-text-on-yellow);
+    line-height: 1.25;
+}
+#swedish-resources .swedish-podcast-card .podcast-card-shortdesc-new {
+    font-family: var(--sw-font-secondary);
+    font-size: 0.825rem;
+    color: var(--sw-text-on-yellow);
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: calc(var(--sw-spacing-unit)*1.5);
+    flex-grow: 1; /* Allows short desc to take space */
+    min-height: 3em; /* Approx 2 lines of text for consistent card height */
+}
+#swedish-resources .swedish-podcast-card .podcast-card-button-new { /* Blue button on yellow card */
+    background-color: var(--sw-flag-blue);
+    color: var(--sw-text-on-blue);
+    border: none;
+    padding: calc(var(--sw-spacing-unit)*0.7) calc(var(--sw-spacing-unit)*1.6);
+    border-radius: var(--sw-radius-xl); /* Very round */
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--sw-font-primary);
+    font-size: 0.8rem;
+    margin-top: auto; /* Pushes button to bottom */
+    transition: background-color var(--sw-transition-speed) ease, transform var(--sw-transition-speed) ease;
+}
+#swedish-resources .swedish-podcast-card .podcast-card-button-new:hover {
+    background-color: var(--sw-accent-blue-darker);
+    transform: scale(1.03);
+}
+
+/* 4.8 Horizontal Scroll & General Resource Cards (Dark Theme) */
+#swedish-resources .horizontal-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap; /* Essential for horizontal layout of inline-flex items */
+    padding: calc(var(--sw-spacing-unit) * 0.5) calc(var(--sw-spacing-unit) * 0.25) calc(var(--sw-spacing-unit) * 1.5) calc(var(--sw-spacing-unit) * 0.25);
+    margin: 0 calc(-1 * var(--sw-spacing-unit) * 0.25); /* Absorb padding if parent has it */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin;
+    scrollbar-color: var(--sw-flag-blue) var(--sw-bg-secondary);
+    display: block; /* Default state */
+    min-height: 50px; /* Minimum height to ensure scrollbar area is visible */
+}
+#swedish-resources .horizontal-scroll-wrapper.empty-grid {
+    display: none !important; /* Hide if JS determines it's empty */
+}
+#swedish-resources .horizontal-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+#swedish-resources .horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: var(--sw-flag-blue);
+    border-radius: 4px;
+    border: 2px solid var(--sw-bg-secondary);
+}
+#swedish-resources .horizontal-scroll-wrapper::-webkit-scrollbar-track {
+    background: var(--sw-bg-secondary);
+    border-radius: 4px;
+}
+#swedish-resources .swedish-item-grid { /* Direct child of scroll wrapper */
+    display: inline-flex; /* Key for horizontal item layout */
+    gap: calc(var(--sw-spacing-unit) * 2); /* 16px gap */
+    padding-bottom: calc(var(--sw-spacing-unit) * 0.5); /* Space for scrollbar without cutting shadow */
+}
+#swedish-resources .resource-item-card { /* General dark theme resource cards */
+    background-color: var(--sw-bg-tertiary);
+    border-radius: var(--sw-radius-md);
+    box-shadow: var(--sw-shadow-sm);
+    display: inline-flex; /* For horizontal scroll context */
+    flex-direction: column;
+    width: 200px; /* Consistent width */
+    min-height: 280px; /* Consistent min-height, can expand on hover */
+    vertical-align: top; /* Align cards to top if heights differ */
+    white-space: normal; /* Allow text inside to wrap */
+    justify-content: flex-start; /* Align items to the start vertically */
+    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    border: 1px solid var(--sw-border-color);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* For image zoom and shortDesc reveal */
+    padding: 0; /* Content area will handle padding */
+}
+#swedish-resources .resource-item-card:hover {
+    transform: translateY(-7px) scale(1.04);
+    box-shadow: var(--sw-shadow-lg);
+    border-color: var(--sw-flag-yellow); /* Yellow highlight on hover */
+    z-index: 10; /* Bring to front on hover */
+    min-height: 300px; /* Allow expansion for description */
+}
+#swedish-resources .resource-item-card .card-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Square images */
+    overflow: hidden;
+    background-color: var(--sw-bg-secondary); /* Fallback */
+    border-top-left-radius: var(--sw-radius-md);
+    border-top-right-radius: var(--sw-radius-md);
+}
+#swedish-resources .resource-item-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.35s var(--sw-transition-easing), filter 0.35s var(--sw-transition-easing);
+}
+#swedish-resources .resource-item-card:hover img {
+    transform: scale(1.05);
+}
+#swedish-resources .resource-item-card .card-content-area {
+    padding: calc(var(--sw-spacing-unit)*1.25);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content area to take remaining space */
+    text-align: center;
+}
+#swedish-resources .resource-item-card h4 { /* Card title */
+    font-family: var(--sw-font-primary);
+    font-weight: 500;
+    color: var(--sw-text-primary);
+    font-size: 0.9rem;
+    margin-bottom: calc(var(--sw-spacing-unit)*0.5);
+    line-height: 1.3;
+    min-height: 2.6em; /* Approx 2 lines for title */
+}
+#swedish-resources .resource-item-card .card-short-desc { /* Hover-to-reveal description */
+    font-size: 0.75rem;
+    color: var(--sw-text-secondary);
+    line-height: 1.4;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.25s ease-out 0.05s, margin-bottom 0.3s ease-out;
+    margin-bottom: 0; /* No margin when hidden */
+    text-align: center;
+}
+#swedish-resources .resource-item-card:hover .card-short-desc {
+    max-height: 70px; /* Allow space for ~3-4 lines */
+    opacity: 1;
+    margin-bottom: calc(var(--sw-spacing-unit)*1.25); /* Space below revealed desc */
+}
+#swedish-resources .resource-item-card .btn-group { /* Container for icon buttons */
+    margin-top: auto; /* Push to bottom of card */
+    padding-top: calc(var(--sw-spacing-unit)*0.75);
+    border-top: 1px solid var(--sw-border-color-light);
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--sw-spacing-unit)*0.75);
+}
+
+/* Snabb Fakta Highlight (if used - HTML not present for this version, but styles included for completeness) */
+#snabbfakta-highlight-container {
+    background-color: var(--sw-bg-tertiary);
+    padding: calc(var(--sw-spacing-unit)*2.5);
+    border-radius: var(--sw-radius-md);
+    margin-top: calc(var(--sw-spacing-unit)*3);
+    border: 1px solid var(--sw-border-color);
+}
+/* ... Assuming .snabbfakta-card structure and styles would follow patterns from resource-tip or similar if fully fleshed out ... */
+
+/*=========================================================================
+   SECTION: Scandinavian Encounters - Inline Flags with Title (Corrected)
+   ========================================================================== */
+
+#scandinavian-encounters-section {
+    background-color: var(--sw-flag-blue);
+    background-image: linear-gradient(170deg, var(--sw-flag-blue) 0%, var(--sw-accent-blue-darker) 90%);
+    color: var(--sw-text-on-blue);
+    padding-top: 0; /* Header inside now has its own top padding */
+    padding-bottom: calc(var(--sw-spacing-unit) * 7);
+    position: relative;
+    overflow: hidden;
+    z-index: 4; /* Adjust as needed for page stacking */
+}
+
+/* Optional: Map Texture */
+#scandinavian-encounters-section::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../images/languages/swedish/scandinavian_map_idea.png');
+    background-repeat: no-repeat; background-position: center center;
+    background-size: contain; 
+    z-index: 0; /* Behind section's blue color */
+    /* EXPERIMENT with filter and opacity for desired subtlety */
+    filter: grayscale(100%) contrast(220%) brightness(190%); 
+    mix-blend-mode: screen; /* 'screen' or 'lighten' often work well */
+    opacity: 0.07; 
+    pointer-events: none;
+}
+
+#scandinavian-encounters-section .container {
+    position: relative;
+    z-index: 1; /* Content above ::before */
+}
+
+/* Section Header for "Skandinaviska Äventyr" */
+.section-header-scandinavian {
+    text-align: center;
+    margin-bottom: calc(var(--sw-spacing-unit) * 5);
+    padding-top: calc(var(--sw-spacing-unit) * 6); /* Space above the title */
+}
+#scandinavian-encounters-section .section-title { 
+    color: var(--sw-flag-yellow);
+    font-family: var(--sw-font-hero-highlight); /* Or your preferred display font */
+    font-size: clamp(2.4rem, 7vw, 4rem); /* Impactful size */
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto calc(var(--sw-spacing-unit) * 1.5) auto;
+    padding-bottom: calc(var(--sw-spacing-unit) * 2);
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+#scandinavian-encounters-section .section-title::after { 
+    background-color: var(--sw-flag-yellow);
+    width: 120px; /* Wider underline */
+    height: 4px;
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+    box-shadow: 0 0 8px rgba(var(--sw-flag-yellow-rgb), 0.4);
+}
+#scandinavian-encounters-section .section-subtitle { 
+    color: rgba(255,255,255,0.9);
+    font-size: clamp(0.95rem, 2.3vw, 1.15rem);
+    max-width: 750px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.7;
+}
+
+/* Encounter Cards Grid */
+.scandinavian-encounter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--sw-spacing-unit) * 3.5); 
+    margin-bottom: calc(var(--sw-spacing-unit) * 5);
+}
+@media (min-width: 600px) { 
+    .scandinavian-encounter-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) { 
+    .scandinavian-encounter-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Individual Encounter Card Styling */
+.scandinavian-encounter-card {
+    background-color: var(--sw-bg-tertiary);
+    color: var(--sw-text-primary);
+    border-radius: var(--sw-radius-lg);
+    box-shadow: 0 5px 15px rgba(var(--sw-bg-primary-rgb), 0.4), 0 2px 8px rgba(var(--sw-bg-primary-rgb),0.3);
+    display: flex; flex-direction: column;
+    overflow: hidden; position: relative;
+    transition: transform 0.3s var(--sw-transition-easing), box-shadow 0.3s var(--sw-transition-easing), border-color 0.3s var(--sw-transition-easing);
+    border: 2px solid transparent; 
+    min-height: 340px; 
+    cursor: pointer;
+}
+.scandinavian-encounter-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(var(--sw-bg-primary-rgb), 0.5), 0 6px 15px rgba(var(--sw-bg-primary-rgb),0.35);
+}
+.norway-theme-card:hover { border-color: var(--norway-accent); }
+.denmark-ehef-theme-card:hover { border-color: var(--denmark-accent); }
+.finland-theme-card:hover { border-color: var(--finland-accent); }
+
+.card-image-clipper {
+    width: 100%;
+    aspect-ratio: 16 / 10; 
+    overflow: hidden;
+    background-color: var(--sw-bg-secondary);
+}
+.card-image {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s var(--sw-transition-easing);
+}
+.scandinavian-encounter-card:hover .card-image { transform: scale(1.08); }
+
+.card-content { 
+    padding: calc(var(--sw-spacing-unit) * 1.75) calc(var(--sw-spacing-unit) * 2.25); /* Slightly adjusted padding */
+    flex-grow: 1; display: flex; flex-direction: column;
+    position: relative; z-index: 1; 
+    transition: opacity 0.25s ease-out;
+}
+.scandinavian-encounter-card:hover .card-content {
+    opacity: 0.15; /* Dim default content more on hover */
+    pointer-events: none;
+}
+
+.card-title { /* The H3 title element */
+    font-family: var(--sw-font-display);
+    font-size: clamp(1.05rem, 2.4vw, 1.2rem); 
+    font-weight: 600;
+    line-height: 1.4; 
+    margin: 0 0 calc(var(--sw-spacing-unit) * 1.5) 0; /* Space AFTER title line */
+    color: var(--sw-text-primary); 
+    display: flex; 
+    align-items: center; 
+    flex-wrap: nowrap; /* Important to keep flags and text together */
+    gap: calc(var(--sw-spacing-unit) * 0.75); /* Gap between items in the title (flags, text) */
+}
+/* Themed title text (now applied to the span inside h3) */
+.norway-theme-card .card-title-text { color: var(--norway-accent); }
+.denmark-ehef-theme-card .card-title-text { color: var(--denmark-accent); }
+.finland-theme-card .card-title-text { color: var(--finland-accent); }
+
+/* Styling for Inline Flag Images WITHIN the title */
+.title-inline-flag-img {
+    height: 1.1em; /* Slightly larger relative to font-size for prominence */
+    width: auto;  
+    border-radius: 2px; 
+    /* box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Softer shadow */
+    object-fit: contain;
+    flex-shrink: 0; 
+    /* No margin-right needed here, gap on .card-title handles it */
+}
+
+/* Span wrapping the actual text of the title */
+.card-title-text {
+    line-height: 1.3; /* Ensure text aligns well with flags */
+}
+
+.card-teaser {
+    font-family: var(--sw-font-secondary);
+    font-size: 0.85rem;
+    color: var(--sw-text-secondary);
+    line-height: 1.55;
+    margin-top: 0; 
+    flex-grow: 1; 
+    display: -webkit-box; -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Card Overlay Details (Hover Effect) */
+.card-overlay-details {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent 15%, rgba(var(--sw-bg-tertiary-rgb), 0.9) 55%, var(--sw-bg-tertiary) 95%);
+    padding: calc(var(--sw-spacing-unit) * 2.5);
+    color: var(--sw-text-on-blue);
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly lower */
+    transition: opacity 0.3s var(--sw-transition-easing) 0.05s, transform 0.3s var(--sw-transition-easing) 0.05s;
+    pointer-events: none;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; 
+    z-index: 2;
+    text-align: left;
+}
+.scandinavian-encounter-card:hover .card-overlay-details {
+    opacity: 1; transform: translateY(0); pointer-events: auto; 
+}
+.card-overlay-details h4 { /* Title in overlay */
+    font-family: var(--sw-font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 600;
+    color: var(--sw-flag-yellow); 
+    margin: 0 0 calc(var(--sw-spacing-unit) * 1) 0;
+    display: flex; align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 0.75);
+}
+.card-overlay-details h4 .title-inline-flag-img { /* Flags in overlay */
+    height: 0.95em; /* Consistent with card title flags */
+}
+.card-overlay-details p { /* Description in overlay */
+    font-size: 0.85rem; line-height: 1.6;
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.75); color: #E8F1FA; 
+    display: -webkit-box; -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
+}
+/* Card CTA Chip (e.g., "Utforska Möte") in Overlay */
+.card-cta-chip {
+    display: inline-block;
+    background-color: var(--sw-flag-yellow); /* Default: Standard yellow accent */
+    /* If using dynamic accent from card's theme:
+       background-color: var(--dynamic-accent-color, var(--sw-flag-yellow)); 
+    */
+    color: var(--sw-text-on-yellow); /* Text color for on yellow */
+    font-size: 0.8rem; 
+    font-weight: 700; /* Bolder for CTA */
+    padding: calc(var(--sw-spacing-unit) * 0.85) calc(var(--sw-spacing-unit) * 2); /* Adjusted padding */
+    border-radius: var(--sw-radius-xl); /* Very rounded */
+    text-transform: uppercase;
+    letter-spacing: 0.75px; /* More spacing for emphasis */
+    align-self: flex-start; /* Align to the left of the overlay content */
+    transition: background-color 0.25s var(--sw-transition-easing), 
+                transform 0.2s var(--sw-transition-easing),
+                box-shadow 0.25s var(--sw-transition-easing);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Subtle shadow */
+    cursor: pointer; /* Ensure it looks clickable */
+}
+
+/* Hover effect for the CTA Chip */
+.scandinavian-encounter-card .card-cta-chip:hover {
+    /* If using dynamic accent, you might want to darken it:
+       filter: brightness(0.9); 
+       Or if using static yellow:
+    */
+    background-color: var(--sw-accent-yellow-darker);
+    transform: scale(1.03) translateY(-1px); /* Slight lift and scale */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+/* If you decide to use the --dynamic-accent-color for the chip:
+   (This requires the JS to set --dynamic-accent-color on the .scandinavian-encounter-card)
+
+.scandinavian-encounter-card {
+    --dynamic-accent-color: var(--sw-flag-yellow); // Default fallback
+}
+.norway-theme-card { --dynamic-accent-color: var(--norway-accent); }
+.denmark-ehef-theme-card { --dynamic-accent-color: var(--denmark-accent); }
+.finland-theme-card { --dynamic-accent-color: var(--finland-accent); }
+
+.card-cta-chip {
+    background-color: var(--dynamic-accent-color);
+    // You'd need to ensure text contrast for all possible accent colors.
+    // For example, if accents can be light, text might need to be dark.
+    // color: var(--sw-text-on-blue); // Assuming most accents are dark enough for white text
+}
+.scandinavian-encounter-card .card-cta-chip:hover {
+    filter: brightness(0.9); // Simple way to darken any accent color
+    transform: scale(1.03) translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+*/
+
+/* Magnus Tip Box (used in Scandinavian Encounters and potentially elsewhere) */
+.encounter-tip-box-magnus,
+.large-image-tip-box { /* General class for similar tip boxes */
+    background-color: rgba(var(--sw-bg-primary-rgb), 0.3); /* Semi-transparent dark on blue section */
+    border: 1px solid var(--sw-border-color-light);
+    border-left-width: 5px; /* Accent border */
+    border-radius: var(--sw-radius-lg);
+    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
+    display: flex;
+    align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 2.5);
+    color: var(--sw-text-on-blue); /* Text on blue section */
+    max-width: auto;
+    margin: calc(var(--sw-spacing-unit) * 4) auto 0 auto; /* Spacing for tip box */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+/* In your .encounter-tip-box-magnus styles or where .tip-box-icon-area is defined */
+
+.encounter-tip-box-magnus .tip-box-icon-area {
+    flex-shrink: 0; /* Prevent it from shrinking */
+    width: 90px;  /* Or your desired avatar size (e.g., var(--sw-spacing-unit) * 11) */
+    height: 90px; /* Make it square */
+    display: flex; /* To center the image inside if needed */
+    align-items: center;
+    justify-content: center;
+    /* background-color: var(--sw-bg-tertiary); /* If avatar image has transparency */
+    /* border-radius: var(--sw-radius-round); /* If the container itself should be round */
+}
+
+.encounter-tip-box-magnus .tip-box-icon-area .tip-box-avatar {
+    width: 100%; /* Fill the square container */
+    height: 100%; /* Fill the square container */
+    object-fit: cover; /* Ensure image covers, might crop slightly */
+    border-radius: var(--sw-radius-round); /* This makes the image itself circular */
+    border: 3px solid var(--sw-flag-yellow); 
+}
+.error-card {
+    padding: var(--sw-spacing-unit); text-align: center; color: var(--sw-danger-red);
+    background-color: rgba(var(--sw-danger-red-rgb, 209, 44, 44), 0.1); /* Add --sw-danger-red-rgb */
+    border: 1px solid var(--sw-danger-red); border-radius: var(--sw-radius-md);
+}
+/* Specific accent colors */
+.encounter-tip-box-magnus { /* Styles from previous good version, ensure BG/text contrast */
+    background-color: rgba(var(--sw-bg-tertiary-rgb), 0.9);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(var(--sw-border-color-light-rgb), 0.4);
+    border-left: 5px solid var(--sw-flag-yellow);
+    /* ... (rest of your .encounter-tip-box-magnus styles are good) ... */
+}
+.music-theme .large-image-tip-box { border-left-color: var(--sw-resource-spotify-green); } /* Example */
+
+.encounter-tip-box-magnus .tip-box-icon-area .tip-box-avatar,
+.large-image-tip-box .tip-image-container img.tip-image {
+    width: clamp(70px, 8vw, 90px);
+    height: clamp(70px, 8vw, 90px); /* Ensure avatar is square */
+    object-fit: cover;
+    border-radius: var(--sw-radius-round); /* Round avatar */
+    border: 3px solid var(--sw-flag-yellow); /* Default avatar border */
+    background-color: var(--sw-bg-tertiary); /* Fallback if avatar transparent */
+    flex-shrink: 0;
+}
+.music-theme .large-image-tip-box .tip-image-container img.tip-image { /* Larger for music tip */
+    border-color: var(--sw-resource-spotify-green);
+    width: clamp(90px, 12vw, 130px);
+    height: clamp(90px, 12vw, 130px);
+}
+.encounter-tip-box-magnus .tip-box-content-area h4, /* Magnus's name */
+.large-image-tip-box .tip-content strong:first-child { /* General persona name */
+    font-family: var(--sw-font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--sw-flag-yellow); /* Default persona name color */
+    margin: 0 0 calc(var(--sw-spacing-unit) * 0.75) 0;
+    display: block; /* Ensure it takes its own line */
+}
+.music-theme .large-image-tip-box .tip-content strong:first-child {
+    color: var(--sw-resource-spotify-green);
+}
+.encounter-tip-box-magnus .tip-box-content-area p,
+.large-image-tip-box .tip-content p,
+.large-image-tip-box .tip-content span { /* Tip text */
+    font-size: 0.9rem;
+    line-height: 1.65;
+    opacity: 0.9;
+}
+
+/*=========================================================================
+   SECTION 6: Swedish Restaurants in PH (#swedish-restaurants-ph-section)
+   ========================================================================== */
+#swedish-restaurants-ph-section {
+    background-color: var(--sw-yellow-theme-bg-start);
+    background-image: linear-gradient(150deg, var(--sw-yellow-theme-bg-start) 0%, var(--sw-yellow-theme-bg-end) 100%);
+    color: var(--sw-yellow-theme-text-primary); /* Dark text on yellow section */
+    padding-top: calc(var(--sw-spacing-unit) * 5);
+    padding-bottom: calc(var(--sw-spacing-unit) * 5);
+    border-top: 3px solid var(--sw-yellow-theme-border);
+    border-bottom: 3px solid var(--sw-yellow-theme-border);
+}
+/* Title and Subtitle for this yellow section */
+#swedish-restaurants-ph-section .section-title {
+    color: var(--sw-yellow-theme-text-primary); /* Dark title */
+}
+#swedish-restaurants-ph-section .section-title::after {
+    background-color: var(--sw-yellow-theme-accent); /* Dark blue underline */
+}
+#swedish-restaurants-ph-section .section-subtitle {
+    color: var(--sw-yellow-theme-text-secondary); /* Slightly lighter dark text */
+    max-width: 780px;
+    text-align: center; /* Ensure subtitle is centered */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Restaurant Card Grid (Flexbox for centering) */
+.restaurant-ph-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards horizontally */
+    gap: calc(var(--sw-spacing-unit) * 2.5); /* 20px gap */
+    margin-top: calc(var(--sw-spacing-unit) * 3);
+    padding-left: calc(var(--sw-spacing-unit) * 1); /* Prevent cards touching edge */
+    padding-right: calc(var(--sw-spacing-unit) * 1);
+}
+/* Restaurant Card (Dark cards on yellow section) */
+.restaurant-ph-card {
+    background-color: var(--sw-bg-tertiary); /* Dark card background */
+    color: var(--sw-text-primary); /* Light text on dark card */
+    border-radius: var(--sw-radius-md);
+    box-shadow: var(--sw-shadow-on-yellow); /* Shadow designed for yellow background */
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--sw-transition-speed) ease, box-shadow var(--sw-transition-speed) ease;
+    cursor: pointer;
+    border: 1px solid var(--sw-border-color); /* Dark border */
+    overflow: hidden; /* For image zoom and teaser reveal */
+    position: relative;
+    flex: 0 1 calc(33.333% - calc(var(--sw-spacing-unit) * 2.5 * 2 / 3)); /* 3 cards per row, accounting for gap */
+    min-width: 270px;
+    max-width: 320px;
+    box-sizing: border-box;
+}
+.restaurant-ph-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(var(--sw-text-on-yellow-rgb), 0.22); /* Darker shadow on hover */
+    border-color: var(--sw-flag-yellow); /* Yellow highlight border on hover */
+}
+.restaurant-ph-card .restaurant-ph-card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Landscape image */
+    overflow: hidden;
+    background-color: var(--sw-bg-secondary); /* Fallback for image area */
+    position: relative; /* For teaser positioning */
+}
+.restaurant-ph-card .restaurant-ph-card-image {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.35s ease;
+}
+.restaurant-ph-card:hover .restaurant-ph-card-image {
+    transform: scale(1.05); /* Zoom image on hover */
+}
+.restaurant-ph-card .restaurant-ph-card-teaser { /* Hover-reveal teaser */
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background-color: rgba(var(--sw-bg-primary-rgb), 0.85); /* Dark, semi-opaque background */
+    color: var(--sw-text-on-blue); /* Light text on dark teaser bg */
+    padding: calc(var(--sw-spacing-unit) * 1.25) calc(var(--sw-spacing-unit) * 1.5);
+    font-size: 0.825rem;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(100%); /* Start off-screen */
+    transition: opacity var(--sw-transition-speed) var(--sw-transition-easing) 0.05s,
+                transform var(--sw-transition-speed) var(--sw-transition-easing) 0.05s;
+    text-align: left;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+.restaurant-ph-card:hover .restaurant-ph-card-teaser {
+    opacity: 1;
+    transform: translateY(0); /* Reveal teaser */
+}
+.restaurant-ph-card .restaurant-ph-card-content {
+    padding: calc(var(--sw-spacing-unit)*1.5) calc(var(--sw-spacing-unit)*1.75);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.restaurant-ph-card .restaurant-ph-card-content h4 { /* Restaurant Name */
+    font-family: var(--sw-font-display);
+    font-size: 1.05rem;
+    color: var(--sw-flag-yellow); /* Yellow name on dark card */
+    margin: 0 0 calc(var(--sw-spacing-unit)*0.5) 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+.restaurant-ph-card .restaurant-ph-card-location {
+    font-size: 0.8rem;
+    color: var(--sw-text-secondary); /* Light gray location text */
+    margin-bottom: calc(var(--sw-spacing-unit)*1);
+    display: flex;
+    align-items: center;
+}
+.restaurant-ph-card .restaurant-ph-card-location i.fa-map-marker-alt {
+    margin-right: calc(var(--sw-spacing-unit)*0.5);
+    color: var(--sw-flag-blue); /* Blue location icon */
+    font-size: 0.9em;
+}
+.restaurant-ph-card .restaurant-ph-card-links {
+    display: flex;
+    justify-content: flex-start; /* Align icons to left */
+    gap: calc(var(--sw-spacing-unit)*0.75);
+    margin-top: auto; /* Push to bottom */
+    padding-top: calc(var(--sw-spacing-unit)*1);
+    border-top: 1px solid var(--sw-border-color-light);
+}
+/* .btn-icon for Facebook, etc. will use global styles */
+
+/*=========================================================================
+   SECTION 7: Final "Kör Hårt..." Section (#final-thoughts-swedish-section-container)
+   ========================================================================== */
+/*=========================================================================
+   FINAL ENCOURAGEMENT SECTION - REDESIGNED
+   ========================================================================== */
+/*=========================================================================
+   SECTION: Din Svenska Horisont (Final Encouragement - Redesigned)
+   ========================================================================== */
+
+/*=========================================================================
+   FINAL ENCOURAGEMENT SECTION - Polished Redesign
+   ========================================================================== */
+
+.final-thoughts-swedish { /* The <section> element */
+    background-color: var(--sw-flag-blue); 
+    background-image: linear-gradient(165deg, var(--sw-flag-blue) 10%, var(--sw-accent-blue-darker) 100%);
+    color: var(--sw-text-on-blue);
+    padding: calc(var(--sw-spacing-unit) * 6) 0 calc(var(--sw-spacing-unit) * 7) 0; /* Adjusted padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For any ::before or ::after pseudo-elements */
+}
+
+/* Optional: Subtle pattern or glow from behind the content box */
+/*
+.final-thoughts-swedish::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; height: 80%;
+    background: radial-gradient(circle, rgba(var(--sw-flag-yellow-rgb), 0.08) 0%, transparent 70%);
+    z-index: 0;
+    border-radius: 50%;
+}
+*/
+
+.final-thoughts-swedish .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* NEW: Inner content box for styling */
+.final-thoughts-swedish .final-thoughts-content-box {
+    background-color: rgba(var(--sw-bg-primary-rgb), 0.2); /* Darker, semi-transparent panel */
+    border-radius: var(--sw-radius-lg);
+    padding: calc(var(--sw-spacing-unit) * 4) calc(var(--sw-spacing-unit) * 3.5);
+    max-width: 800px; /* Control width of the content box */
+    margin: 0 auto; /* Center the box */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25), 
+                inset 0 0 15px rgba(var(--sw-bg-primary-rgb), 0.3);
+    border: 1px solid rgba(var(--sw-border-color-light-rgb), 0.2);
+}
+
+
+.final-thoughts-swedish .section-title-final { 
+    font-family: var(--sw-font-display); 
+    font-weight: 700; 
+    font-size: clamp(1.8rem, 5.5vw, 2.8rem); /* Adjusted for balance in the box */
+    color: var(--sw-text-on-blue);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+    line-height: 1.25;
+    margin-bottom: calc(var(--sw-spacing-unit) * 2); /* Space to paragraph */
+    padding-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space for underline */
+    border-bottom: none; 
+    position: relative;
+}
+.final-thoughts-swedish .section-title-final::after { /* The yellow dash underline */
+    width: 80px; 
+    height: 4px; 
+    background-color: var(--sw-flag-yellow);
+    /* margin-top: calc(var(--sw-spacing-unit) * 1); /* Adjusted if needed */
+    /* Using absolute positioning for more control */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.final-thoughts-swedish .final-message-text { 
+    color: #E8F1FA; 
+    font-family: var(--sw-font-primary); 
+    font-weight: 400;
+    font-size: clamp(0.9rem, 2.2vw, 1.05rem); 
+    line-height: 1.7; 
+    max-width: 700px; /* Control width of paragraph */
+    margin: 0 auto calc(var(--sw-spacing-unit) * 3.5) auto; /* Space before button */
+    opacity: 0.93;
+}
+.final-thoughts-swedish .final-message-text .text-highlight-yellow {
+    color: var(--sw-flag-yellow);
+    font-weight: 600; 
+}
+
+.final-thoughts-swedish .final-cta-button-wrapper { /* Wrapper for the button */
+    margin-top: calc(var(--sw-spacing-unit) * 1); 
+}
+
+.final-thoughts-swedish .btn-final-cta { 
+    background-color: var(--sw-danger-red); 
+    color: var(--sw-text-on-blue);
+    border: 2px solid var(--sw-danger-red);
+    font-family: var(--sw-font-display); 
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem); 
+    text-transform: uppercase; 
+    letter-spacing: 0.7px; 
+    padding: calc(var(--sw-spacing-unit)*1.4) calc(var(--sw-spacing-unit)*3.5); 
+    border-radius: var(--sw-radius-lg); 
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3), inset 0 -2px 0px rgba(0,0,0,0.1);
+    display: inline-flex; 
+    align-items: center;
+    gap: calc(var(--sw-spacing-unit) * 0.75);
+    transition: all 0.25s var(--sw-transition-easing);
+}
+.final-thoughts-swedish .btn-final-cta .fab.fa-youtube {
+    font-size: 1.15em; /* Relative to button font size */
+}
+.final-thoughts-swedish .btn-final-cta:hover,
+.final-thoughts-swedish .btn-final-cta:focus {
+    background-color: #B82424; 
+    border-color: #a01e1e; 
+    transform: translateY(-2px) scale(1.01); 
+    box-shadow: 0 5px 14px rgba(0,0,0,0.35), inset 0 -1px 0 rgba(0,0,0,0.1);
+}
+/*=========================================================================
+   8. Modal Styles (ALL Components - Unified & Comprehensive)
+   ========================================================================== */
+/*=========================================================================
+   8. Modal Styles (Unified & Comprehensive - Simplified Content Flow)
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(var(--sw-bg-primary-rgb), 0.88); /* Darker, more opaque overlay */
+    backdrop-filter: blur(8px); /* Increased blur for depth */
+    display: flex;
+    align-items: center; /* Vertically center modal */
+    justify-content: center; /* Horizontally center modal */
+    z-index: 5000; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--sw-transition-speed) var(--sw-transition-easing), visibility 0s linear var(--sw-transition-speed);
+    padding: calc(var(--sw-spacing-unit) * 2); /* Consistent padding around modal for small screens */
+}
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.modal-content {
+    background-color: var(--sw-bg-tertiary); 
+    padding: calc(var(--sw-spacing-unit) * 3) calc(var(--sw-spacing-unit) * 3.5); /* Internal padding */
+    border-radius: var(--sw-radius-lg);
+    width: 90%; 
+    max-width: 720px; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    position: relative; 
+    box-shadow: var(--sw-shadow-lg);
+    border: 1px solid var(--sw-border-color-light);
+    transform: translateY(20px) scale(0.97); 
+    opacity: 0;
+    transition: transform 0.35s var(--sw-transition-easing) 0.05s,
+                opacity 0.35s var(--sw-transition-easing) 0.05s;
+}
+.modal-overlay.visible .modal-content {
+    transform: translateY(0) scale(1); 
+    opacity: 1;
+}
+/* Custom Scrollbar for Modal Content */
+/* Custom Scrollbar for Modal Content */
+.modal-content::-webkit-scrollbar { width: 8px; }
+.modal-content::-webkit-scrollbar-track { background: var(--sw-border-color); border-radius: var(--sw-radius-sm); }
+.modal-content::-webkit-scrollbar-thumb { background-color: var(--sw-flag-blue); border-radius: var(--sw-radius-sm); border: 2px solid var(--sw-border-color); }
+.modal-content { scrollbar-width: thin; scrollbar-color: var(--sw-flag-blue) var(--sw-border-color); }
+
+.modal-close-btn {
+    position: absolute;
+    top: calc(var(--sw-spacing-unit)*1.5); 
+    right: calc(var(--sw-spacing-unit)*1.5);
+    background: transparent;
+    border: none;
+    color: var(--sw-text-tertiary); 
+    font-size: 1.8rem; 
+    cursor: pointer;
+    padding: calc(var(--sw-spacing-unit)*0.5);
+    line-height: 1;
+    transition: all var(--sw-transition-speed) ease;
+    z-index: 10; /* Above other modal content */
+}
+.modal-close-btn:hover, .modal-close-btn:focus {
+    color: var(--sw-flag-yellow); 
+    transform: rotate(90deg) scale(1.1); 
+}
+
+/* Generic Modal Header (Shared by all modal types) */
+.modal-header {
+    text-align: center;
+    margin-bottom: calc(var(--sw-spacing-unit) * 2.5);
+    padding-bottom: calc(var(--sw-spacing-unit) * 2);
+    border-bottom: 1px solid var(--sw-border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-header .modal-image { /* Profile/Channel image */
+    width: 80px; /* Slightly smaller for a cleaner header */
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--sw-radius-round); 
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); 
+    border: 3px solid var(--sw-flag-blue); 
+    box-shadow: 0 2px 8px rgba(var(--sw-flag-blue-rgb), 0.3);
+    background-color: var(--sw-bg-secondary);
+}
+.modal-header .modal-image.channel-logo { /* Specific for channel logos if they should be square/rectangular */
+    border-radius: var(--sw-radius-md); 
+}
+.modal-header h2 { /* General modal title */
+    color: var(--sw-flag-yellow); 
+    font-family: var(--sw-font-display);
+    font-size: clamp(1.4rem, 4vw, 2rem); 
+    margin: 0;
+    line-height: 1.25;
+    display: flex; /* For aligning inline flags if any */
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--sw-spacing-unit) * 0.75);
+}
+/* Inline flags within modal titles (e.g., encounter modal) */
+/* Inline flags within modal titles (e.g., for encounter modal header) */
+.modal-header h2 .title-inline-flag-img {
+    height: 1em; /* Relative to h2 font size */
+    width: auto;
+    border-radius: 2px;
+    vertical-align: baseline; /* Better alignment with text */
+}
+
+
+/* Main Content Area for Modals (No Tabs for Core Info) */
+/* Main Content Area for Modals */
+.modal-main-content-area {
+    padding-top: calc(var(--sw-spacing-unit) * 1.5); /* Space after header */
+}
+.modal-main-content-area > *:last-child {
+    margin-bottom: 0; 
+}
+/* Sections within the main content area */
+.modal-video-embed-area,
+.modal-long-description-area,
+.modal-cefr-details-area,
+.modal-aljohns-take-container, /* Wrapper for Magnus's comment */
+.modal-external-links-area {
+    margin-bottom: calc(var(--sw-spacing-unit) * 3); /* Increased default spacing between blocks */
+}
+/* Video Embed in Modals */
+.modal-video-embed-area .video-embed-container { 
+    position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+    border-radius: var(--sw-radius-md);
+    background-color: #000; 
+    margin-top: 0; /* Remove top margin if it's the first element in main content */
+}
+.modal-video-embed-area iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;
+}
+/* Long Description Styling */
+
+/* Subheadings like "Om Resursen", "Rekommenderad Nivå", "Magnus Kommentar" */
+.modal-long-description-area h4,
+.modal-cefr-details-area h4,
+.modal-aljohns-take-container h4, /* Target h4 if Magnus comment has one */
+.modal-external-links-area h4 { /* If you add a title for links */
+    /* ADJUSTED: Improve readability of these subheadings */
+    color: var(--sw-text-secondary); /* Lighter gray, better than blue on dark */
+    /* OR use yellow accent: color: var(--sw-flag-yellow); */
+    font-family: var(--sw-font-primary); /* More standard font for subheadings */
+    font-size: 0.9rem; /* Smaller, more like a label */
+    font-weight: 600; /* Semibold */
+    text-transform: uppercase; /* ALL CAPS for label style */
+    letter-spacing: 0.5px;
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.25); /* More space after subheading */
+    padding-bottom: calc(var(--sw-spacing-unit) * 0.75);
+    border-bottom: 1px solid var(--sw-border-color); /* Solid, less distracting than dashed */
+    text-align: left; 
+}
+
+.modal-long-description-area p {
+    color: var(--sw-text-secondary);
+    line-height: 1.7; 
+    font-size: 0.875rem; /* Slightly smaller than main page text */
+    margin-bottom: calc(var(--sw-spacing-unit) * 1);
+}
+.modal-long-description-area p:last-child { margin-bottom: 0; }
+
+/* CEFR Details in Modals */
+.modal-cefr-details-area .cefr-dots-container {
+    margin-top: calc(var(--sw-spacing-unit) * 0.75); 
+    padding-top: 0; 
+    border-top: none;
+    text-align: left; /* Or 'center' if you prefer the whole block centered */
+    /* ADDED: Ensure it allows inline flow for its children */
+    line-height: 1.8; /* Give a bit more line height for wrapped dots */
+}
+/* The <p> tag that wraps "Rekommenderad Nivå:" and the dots */
+.modal-cefr-details-area .cefr-dots-container p {
+    font-size: 0.82rem; 
+    color: var(--sw-text-secondary);
+    margin-bottom: 0 !important; /* Remove bottom margin if it's the only p */
+    /* display: flex; */ /* Option 1: Make the <p> a flex container */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */ /* Allow dots to wrap if many */
+    /* gap: calc(var(--sw-spacing-unit) * 0.25) calc(var(--sw-spacing-unit) * 0.5); */
+}
+.modal-cefr-details-area .cefr-dots-container p strong { 
+    font-weight: 600; /* Make "Rekommenderad Nivå:" slightly bolder */
+    color: var(--sw-text-primary);
+    margin-right: calc(var(--sw-spacing-unit) * 1); /* Space after the label */
+    /* display: block; */ /* Option 2a: If keeping <p> as block, make strong block */
+    /* margin-bottom: calc(var(--sw-spacing-unit) * 0.5); */ /* Option 2a: Space after label */
+}
+/* CEFR Level Dots themselves */
+/* CEFR Level Dots */
+.cefr-level-dot {
+    display: inline-flex; /* To center text within dot */
+    align-items: center;
+    justify-content: center;
+    padding: 0.2em 0.7em; /* Adjusted padding for better circle/pill */
+    border-radius: var(--sw-radius-xl); 
+    font-size: 0.75rem; /* Slightly larger dots */
+    font-weight: 700; /* Bolder text in dot */
+    color: var(--sw-text-on-yellow);
+    text-transform: uppercase;
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle border on dot */
+    background-color: var(--sw-flag-yellow); 
+    line-height: 1.3; 
+    min-width: 2.8em; /* Ensure a nice shape even for "A1" */
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
+}
+.cefr-level-dot.not-present {
+    background-color: var(--sw-border-color); 
+    color: var(--sw-text-tertiary);
+    /* filter: saturate(0.2) brightness(0.85); /* Adjusted filter */
+    opacity: 0.7;
+}
+/* Keep .low, .high styles for dots */
+.cefr-level-dot.low { background-color: #E0B000; /* Darker Yellow */ }
+.cefr-level-dot.high { background-color: #FFD700; /* Brighter Gold/Yellow */ }
+/* External Links in Modals */
+
+/* .modal-links a styles are kept as they were globally */
+/* External Links Area */
+/* External Links in Modals */
+.modal-external-links-area { /* This is the wrapper for the links section */
+    /* The H4 for "Externa Länkar" (if you have one) is styled by the shared h4 rule */
+}
+
+.modal-external-links-area .modal-links { 
+    display: flex; /* IMPORTANT: Make sure it's a flex container */
+    flex-wrap: wrap; /* Allow buttons to wrap if many */
+    justify-content: center; /* <<< THIS CENTERS THE BUTTONS HORIZONTALLY */
+    gap: calc(var(--sw-spacing-unit) * 1.5); /* Space between buttons */
+    margin-top: calc(var(--sw-spacing-unit) * 1.5); /* Space above the buttons, after the h4 if any */
+    padding-top: 0; /* No extra padding if margin is used */
+    border-top: none; /* No border if it's part of the main flow */
+}
+
+/* Styling for the individual link buttons within this area */
+.modal-external-links-area .modal-links a.btn-outline { /* Using .btn-outline for these links */
+    border-color: var(--sw-border-color-light);
+    color: var(--sw-text-secondary);
+    /* padding, font-size etc. will come from .btn and .btn-small if used */
+}
+.modal-external-links-area .modal-links a.btn-outline:hover {
+    border-color: var(--sw-flag-yellow);
+    background-color: rgba(var(--sw-flag-yellow-rgb), 0.1);
+    color: var(--sw-flag-yellow);
+}
+/* Styling for the SINGLE "Magnus Kommentar" TAB (if still used as a tab) */
+
+
+/* Aljohn's Take / Magnus Kommentar section in modals */
+.modal-aljohns-take { 
+    background-color: rgba(var(--sw-flag-blue-rgb), 0.07); 
+    padding: calc(var(--sw-spacing-unit)*1.75) calc(var(--sw-spacing-unit)*2); /* More padding */
+    border-left: 4px solid var(--sw-flag-blue); 
+    border-radius: var(--sw-radius-md); 
+    font-style: normal; 
+    font-size: 0.875rem; 
+    color: var(--sw-text-secondary);
+    line-height: 1.65;
+    margin-top: 0; /* Reset margin if it's directly inside tab wrapper */
+}
+.modal-aljohns-take strong { 
+    color: var(--sw-flag-blue);
+    font-weight: 600; 
+    display: block; 
+    margin-bottom: calc(var(--sw-spacing-unit) * 0.75);
+}
+
+/* Specific Modal Types (Header adjustments mostly) */
+
+/* Swedish Resource Modal (General for YouTube, Music etc.) */
+.swedish-resource-modal .modal-header img.modal-image {
+    width: 90px; height: 90px; /* Slightly larger */
+    object-fit: cover;
+    border-radius: var(--sw-radius-round); 
+    margin-bottom: calc(var(--sw-spacing-unit)*1.5); /* More space after image */
+    border: 3px solid var(--sw-flag-blue); 
+    box-shadow: 0 2px 8px rgba(var(--sw-flag-blue-rgb), 0.3); /* Softer shadow */
+}
+.swedish-resource-modal .modal-header img.modal-image.channel-logo {
+    border-radius: var(--sw-radius-md); 
+}
+/* Title for resource modal already covered by .modal-header h2 */
+
+/* Scandinavian Encounter Modal */
+.scandinavian-encounter-modal .modal-header h2 { /* Title includes flags */
+    color: var(--sw-flag-yellow);
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    display: flex; /* Align flags and text */
+    align-items: center;
+    justify-content: center;
+}
+.scandinavian-encounter-modal .modal-header h2 .flag-icon {
+    font-size: 1.1em; /* Relative to h2 size */
+    margin-right: calc(var(--sw-spacing-unit)*0.65);
+    line-height: 1; /* Prevent extra space due to flag characters */
+}
+/* encounter-modal-video-area already styled above */
+
+/* Swedish Restaurant PH Modal */
+.swedish-restaurant-ph-modal .modal-header.restaurant-ph-modal-header {
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+    align-items: center;
+    gap: var(--sw-spacing-unit);
+    text-align: center;
+}
+.swedish-restaurant-ph-modal .modal-image.restaurant-modal-image {
+    width: 100%;
+    max-width: 220px; /* Control image size */
+    height: auto;
+    aspect-ratio: 16/10; /* Landscape image */
+    object-fit: cover;
+    border-radius: var(--sw-radius-md); /* Rounded rectangle */
+    border: 1px solid var(--sw-border-color);
+}
+.swedish-restaurant-ph-modal .restaurant-ph-modal-header-text h2 { /* Restaurant name */
+    color: var(--sw-flag-yellow);
+    font-size: clamp(1.25rem, 3vw, 1.6rem);
+}
+.swedish-restaurant-ph-modal p.restaurant-modal-address {
+    font-size: 0.82rem;
+    color: var(--sw-text-secondary);
+    margin-top: calc(var(--sw-spacing-unit)*0.25);
+}
+.swedish-restaurant-ph-modal p.restaurant-modal-address i {
+    color: var(--sw-flag-blue); /* Blue map icon */
+    margin-right: calc(var(--sw-spacing-unit)*0.5);
+}
+
+
+/*=========================================================================
+   9. Responsive Overrides (ALL SECTIONS - Comprehensive)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    #language-page-swedish .container {
+        width: 94%; /* Slightly wider container for large screens */
+    }
+}
+
+@media (max-width: 991px) { /* Tablet */
+    html { font-size: 15.5px; } /* Slightly smaller base font */
+
+    /* Fragmenterad Verklighet: ensure stacking if not already default */
+    #fragmenterad-verklighet-section .essay-portrait-wrapper.layout-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+    #fragmenterad-verklighet-section .portrait-column-essay,
+    #fragmenterad-verklighet-section .narrative-column-essay {
+        flex-basis: 100%; /* Full width when stacked */
+        text-align: center; /* Center content in columns when stacked */
+    }
+    #fragmenterad-verklighet-section .narrative-column-essay .narrative-text-blocks-container p.narrative-text-block,
+    #fragmenterad-verklighet-section #read-more-narrative-btn.btn.btn-secondary-yellow-theme {
+        text-align: left; /* Keep text left-aligned within its block */
+        align-self: flex-start; /* Button aligns left */
+    }
+     #fragmenterad-verklighet-section .subsection-title.centered-subsection-title {
+        text-align: center; /* Ensure title remains centered */
+    }
+
+    /* Horizontal scroll cards */
+    #swedish-resources .resource-item-card {
+        width: 180px;
+        min-height: 260px;
+    }
+
+    /* Grid layouts becoming 2 columns or 1 */
+    .scandinavian-encounter-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Allow more flexible sizing */
+        gap: calc(var(--sw-spacing-unit) * 2.5);
+    }
+    .restaurant-ph-grid {
+        flex: 0 1 calc(50% - calc(var(--sw-spacing-unit) * 2.5 / 2)); /* Aim for 2 cards */
+    }
+    #swedish-resources #top-podcasts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    }
+}
+
+@media (max-width: 767px) { /* Large Mobile / Small Tablet */
+    html { font-size: 15px; }
+
+    #language-page-swedish .content-section,
+    #language-page-swedish .custom-hero-section#swedish-custom-hero { /* Padding adjustment for sections */
+        padding-top: calc(var(--sw-spacing-unit) * 3.5);
+        padding-bottom: calc(var(--sw-spacing-unit) * 3.5);
+    }
+    #language-page-swedish .container { /* Reduce container padding */
+        padding-left: var(--sw-spacing-unit);
+        padding-right: var(--sw-spacing-unit);
+    }
+
+    /* Hero Section */
+    .custom-hero-section#swedish-custom-hero .hero-text-overlay {
+        padding-top: calc(var(--sw-spacing-unit) * 5); /* Adjust hero text padding */
+    }
+    @media (max-height: 700px) { /* Further adjust for short screens */
+        .custom-hero-section#swedish-custom-hero .hero-text-overlay { padding-top: calc(var(--sw-spacing-unit)*6); }
+    }
+    .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 { font-size: clamp(1.6rem, 5.5vw, 2.6rem); }
+    .custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow { font-size: clamp(2.1rem, 7vw, 3.6rem); }
+    .custom-hero-section#swedish-custom-hero .hero-intro-text { font-size: clamp(0.78rem, 2.2vw, 0.9rem); }
+
+    /* General Titles */
+    #language-page-swedish .section-title { font-size: clamp(1.5rem, 4.5vw, 2.2rem); }
+    #language-page-swedish .subsection-title,
+    #swedish-resources .resource-category-swedish .subsection-title { font-size: clamp(1.2rem, 3.8vw, 1.6rem); }
+    #swedish-resources .resources-section-header .main-section-title .title-line-1 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); }
+    #swedish-resources .resources-section-header .main-section-title .title-line-2 { font-size: clamp(2.0rem, 6.5vw, 3.2rem); }
+
+
+    /* Resources Section - Horizontal Scroll to Grid */
+    #swedish-resources .horizontal-scroll-wrapper {
+        overflow-x: hidden; /* No horizontal scroll */
+        white-space: normal;
+        margin: 0;
+        padding: calc(var(--sw-spacing-unit)*0.5) 0;
+    }
+    #swedish-resources .swedish-item-grid {
+        display: grid; /* Switch to grid layout */
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: calc(var(--sw-spacing-unit) * 1.5);
+    }
+    #swedish-resources .resource-item-card {
+        width: 100%; /* Full width in grid cell */
+        min-height: auto; /* Let content define height */
+    }
+
+    /* Other Grids to Single Column */
+    .scandinavian-encounter-grid,
+    .restaurant-ph-grid,
+    #swedish-resources #top-podcasts-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: calc(var(--sw-spacing-unit) * 2);
+    }
+     .restaurant-ph-grid .restaurant-ph-card {
+        flex-basis: 100%; /* Single column for flex items */
+        max-width: 350px; /* Allow single card to be a bit wider */
+    }
+
+    /* Modals */
+    .modal-content {
+        padding: calc(var(--sw-spacing-unit) * 2);
+        max-width: 95%; /* More screen width for modal */
+    }
+    .swedish-resource-modal .modal-header h2,
+    .scandinavian-encounter-modal .modal-header h2,
+    .swedish-restaurant-ph-modal .restaurant-ph-modal-header-text h2 {
+        font-size: clamp(1.2rem, 3.8vw, 1.6rem); /* Smaller modal titles */
+    }
+
+    /* Final Thoughts Section */
+    #final-thoughts-swedish-section-container .section-title.section-title-final { font-size: clamp(1.8rem, 5.5vw, 2.8rem); }
+    
+    /* Grand YouTube Tip Box Responsive */
+    #swedish-resources .modern-tip-box.grand-youtube-tip {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #swedish-resources .grand-youtube-tip .tip-accent-bar {
+        width: 100%;
+        height: calc(var(--sw-spacing-unit) * 0.75); /* 6px horizontal bar */
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    }
+    #swedish-resources .grand-youtube-tip .tip-icon-area {
+        padding: calc(var(--sw-spacing-unit) * 1.5) calc(var(--sw-spacing-unit) * 2);
+        justify-content: flex-start; /* Align icon left */
+    }
+    #swedish-resources .grand-youtube-tip .tip-icon-area .tip-icon.fa-youtube {
+        font-size: 2.5em !important; /* Slightly smaller icon */
+    }
+    #swedish-resources .grand-youtube-tip .tip-content {
+        padding: calc(var(--sw-spacing-unit) * 2) calc(var(--sw-spacing-unit) * 2.5);
+        text-align: left;
+    }
+    #swedish-resources .grand-youtube-tip .tip-content h3 {
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
+        text-align: left;
+    }
+     /* Magnus Tip Box in Encounters */
+    .encounter-tip-box-magnus, .large-image-tip-box {
+        flex-direction: column;
+        text-align: center;
+        padding: calc(var(--sw-spacing-unit) * 2);
+    }
+    .encounter-tip-box-magnus .tip-box-icon-area,
+    .large-image-tip-box .tip-image-container {
+        margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    }
+    .scandinavian-encounter-card .card-overlay-details p {
+        -webkit-line-clamp: 3; /* Less text in overlay on mobile */
+    }
+}
+
+@media (max-width: 480px) { /* Mobile Portrait */
+    html { font-size: 14.5px; }
+
+    /* Hero Section */
+    .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 { font-size: clamp(1.4rem, 6vw, 2rem); }
+    .custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow { font-size: clamp(1.8rem, 7.5vw, 2.8rem); }
+    .custom-hero-section#swedish-custom-hero .hero-cta-buttons {
+        flex-direction: column;
+        width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .custom-hero-section#swedish-custom-hero .hero-cta-buttons .btn {
+        width: 100%;
+        margin-bottom: var(--sw-spacing-unit);
+        font-size: 0.82rem;
+    }
+
+    /* General Titles */
+    #language-page-swedish .section-title { font-size: clamp(1.4rem, 5vw, 1.9rem); }
+    #language-page-swedish .subsection-title,
+    #swedish-resources .resource-category-swedish .subsection-title { font-size: clamp(1.1rem, 4vw, 1.4rem); }
+    #swedish-resources .resources-section-header .main-section-title .title-line-1 { font-size: clamp(1.5rem, 4vw, 2rem); }
+    #swedish-resources .resources-section-header .main-section-title .title-line-2 { font-size: clamp(1.9rem, 6vw, 2.8rem); }
+
+
+    /* Resource Cards (Grid) */
+    #swedish-resources .swedish-item-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Smaller cards */
+        gap: var(--sw-spacing-unit);
+    }
+    #swedish-resources .resource-item-card h4 { font-size: 0.8rem; }
+    #swedish-resources .resource-item-card .card-short-desc { font-size: 0.7rem; }
+
+    /* Modals */
+    .modal-content { padding: calc(var(--sw-spacing-unit)*1.5); }
+    .modal-tabs .tab-link {
+        padding: calc(var(--sw-spacing-unit)*0.75) var(--sw-spacing-unit);
+        font-size: 0.75rem;
+    }
+
+    /* CEFR Filter Buttons */
+    #cefr-filter-controls-container .cefr-filter-buttons {
+        gap: calc(var(--sw-spacing-unit)*0.5);
+    }
+    #cefr-filter-controls-container .btn-filter-cefr,
+    #cefr-filter-controls-container .btn-filter-cefr-clear {
+        padding: calc(var(--sw-spacing-unit)*0.5) calc(var(--sw-spacing-unit)*0.85);
+        font-size: 0.7rem;
+    }
+     #cefr-filter-controls-container.is-sticky .cefr-panel-header {
+        display: none; /* Hide entire header when sticky and screen is very small */
+    }
+    #cefr-filter-controls-container.is-sticky .cefr-panel-content-wrapper {
+        padding-left: var(--sw-spacing-unit);
+        padding-right: var(--sw-spacing-unit);
+    }
+
+    /* Final Thoughts Section */
+    #final-thoughts-swedish-section-container .section-title.section-title-final { font-size: clamp(1.6rem, 5.5vw, 2.4rem); }
+    #final-thoughts-swedish-section-container .text-center { font-size: clamp(0.82rem, 2.5vw, 1rem); }
+    #final-thoughts-swedish-section-container .btn-final-cta { font-size: clamp(0.78rem, 2.5vw, 0.9rem); }
+}

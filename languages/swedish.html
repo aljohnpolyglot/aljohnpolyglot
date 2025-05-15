@@ -1,434 +1,471 @@
+<!-- D:\website\languages\swedish.html - REVISED STRUCTURE FOR V9 CSS -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
+    <title>Aljohn "Magnus Mjölkson" Polyglot - Min Svenska Värld!</title>
+
+    <!-- Global CSS -->
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <!-- Page-Specific CSS (will be V9) -->
+    <link rel="stylesheet" href="css/page-language-swedish.css">
+
+    <!-- Font Awesome & Google Fonts (Ensure these are up-to-date with chosen fonts) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-red: #C8102E;
-            --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27);
-            --dark-text: #2c3e50;
-            --light-text: #ffffff;
-            --light-bg: #f8f9fa;
-            --border-color: #e0e0e0;
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Open Sans', sans-serif;
-            --font-mono: 'Roboto Mono', monospace;
-            --tech-cyan: #00A9FF;
-            --deep-space-blue: #0a0f1a;
-            --maintenance-page-bg: #0d1424;
-            --maintenance-panel-bg: rgba(10, 25, 47, 0.9);
-            --maintenance-border: rgba(0, 169, 255, 0.25);
-            --maintenance-text-light: #e0f2f7;
-            --maintenance-text-secondary: #a8c0d8;
-        }
-        html { scroll-behavior: smooth; }
-        body.maintenance-page-active {
-            font-family: var(--font-secondary);
-            background-color: var(--maintenance-page-bg);
-            color: var(--maintenance-text-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-            background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
-            padding-top: 70px;
-        }
-        header {
-            width: 100%; position: fixed; top: 0; left: 0; z-index: 1000;
-            background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom: 1px solid var(--border-color);
-        }
-        header nav.container {
-            width: 90%; max-width: 1100px; margin: 0 auto; display: flex;
-            justify-content: space-between; align-items: center; height: 70px;
-        }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
-        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
-        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-        .nav-links li.dropdown { position: relative; }
-        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; }
-        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
-        .dropdown-content {
-            display: none; position: absolute; background-color: var(--light-bg);
-            min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-            z-index: 1001; border-radius: 0 0 6px 6px; top: 100%; left: 0;
-            padding: 8px 0; border: 1px solid var(--border-color); border-top: none;
-            text-align: left;
-        }
-        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
-        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
-        .nav-links li.dropdown.open .dropdown-content { display: block; }
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
-        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
-        .nav-cta:hover::after { width: 0 !important; }
-        .menu-toggle { display: none; }
-        main.main-maintenance {
-            flex-grow: 1; display: flex; align-items: center; justify-content: center;
-            width: 100%; padding: 40px 20px; text-align: center;
-        }
-        .container-maintenance {
-            background-color: var(--maintenance-panel-bg); padding: 35px 40px 45px;
-            border-radius: 12px; box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
-            border: 1px solid var(--maintenance-border); max-width: 750px; width: 100%;
-        }
-        .maintenance-icon-area { margin-bottom: 1.8rem; }
-        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .maintenance-icon-area .fa-tools { display: none; font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .maintenance-message h1 {
-            font-family: var(--font-primary); font-size: clamp(1.8rem, 5vw, 2.6rem);
-            color: var(--accent-yellow); margin-top: 0; margin-bottom: 0.8rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-        .maintenance-message .subtitle {
-            font-family: var(--font-secondary); font-size: 1.15rem; color: var(--tech-cyan);
-            margin-bottom: 1.8rem; font-weight: 600;
-        }
-        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
-        .maintenance-description strong { color: var(--maintenance-text-light); }
-        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
-        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
-        .mini-challenge .challenge-word-display {
-            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
-            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
-            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
-            font-weight: 500; letter-spacing: 1.5px;
-        }
-        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
-        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
-        .clue strong { color: var(--maintenance-text-light); }
-        .guess-input-area { margin-bottom: 1.8rem; }
-        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
-        #languageGuess {
-            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
-            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
-            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
-        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
-        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
-        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
-        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
-        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
-        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
-        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
-        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
-        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
-        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
-        footer {
-            background-color: var(--deep-space-blue); color: var(--maintenance-text-secondary);
-            padding: 50px 0 30px; font-size: 0.9rem; border-top: 2px solid var(--tech-cyan);
-            width:100%; margin-top: auto;
-        }
-        footer .footer-content {
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
-            max-width: 1100px; margin-left:auto; margin-right:auto; width:90%;
-        }
-        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
-        footer .footer-logo .logo-img { border-color: var(--accent-yellow); }
-        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
-        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
-        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
-        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
-        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
-        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
-        @media (max-width: 768px) {
-            body.maintenance-page-active { padding-top: 60px; }
-            header nav.container { height: 60px; }
-            .nav-links {
-                display: none; flex-direction: column; position: absolute;
-                top: 100%; left: 0; width: 100%; background-color: var(--light-bg);
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); padding: 10px 0;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
-            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
-            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; }
-            .menu-toggle { display: block; cursor:pointer; }
-            .container-maintenance { padding: 25px 20px 30px; }
-            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
-            .maintenance-message .subtitle { font-size: 1rem; }
-            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
-            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
 </head>
-<body class="maintenance-page-active">
-    <header>
-        <nav class="container">
-            <a href="../index.html" class="logo-link">
-                <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
-                <span class="logo-text">Aljohn Polyglot</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html#about">About</a></li>
-                <li class="dropdown">
-                    <a href="../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="tagalog.html">Tagalog</a>
-                        <a href="cebuano.html">Cebuano</a>
-                        <a href="english.html">English</a>
-                        <a href="spanish.html">Spanish</a>
-                        <a href="french.html">French</a>
-                        <a href="indonesian.html">Indonesian</a>
-                        <a href="italian.html">Italian</a>
-                        <a href="portuguese.html">Portuguese</a>
-                        <a href="russian.html">Russian</a>
-                        <a href="swedish.html">Swedish</a>
-                        <a href="german.html">German</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="../index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
-                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="../index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../blog.html">Polyglot Papers Blog</a>
-                        <a href="../pathway.html">Pathway</a>
-                        <a href="../apps.html">Essential Apps & Tools</a>
-                        <a href="../routine.html">Daily Routine</a>
-                        <a href="../library.html">My Library</a>
-                        <a href="../groups.html">Study Groups & Communities</a>
-                        <a href="../languagecenters.html">Language & Culture Centers</a>
-                        <a href="../FAQ.html">FAQ</a>
-                      
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../coaching.html">Language Coaching</a>
-                        <a href="../translation.html">Translation</a>
-                    </div>
-                </li>
-                <li><a href="../shop.html">Shop</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <div class="hamburger"></div>
-            </div>
-        </nav>
-    </header>
+<body class="swedish-page-active">
 
-    <main class="main-maintenance">
-        <div class="container-maintenance">
-            <div class="maintenance-icon-area">
-                <img src="../images/aljohn_coding_maintenance.png" alt="Aljohn working on updates">
-                <i class="fas fa-tools"></i>
-            </div>
-            <div class="maintenance-message">
-                <h1>System Upgrade in Progress!</h1>
-                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
-            </div>
-            <div class="maintenance-description">
-                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
-                <p>In the meantime, why not take a quick linguistic challenge?</p>
-            </div>
+    <header id="main-header-placeholder"></header>
 
-            <div class="mini-challenge">
-                <h2>Linguistic Puzzle Break!</h2>
-                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
-                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
+    <main id="language-page-swedish">
 
-                <div class="clues-container">
-                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
-                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
-                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
-                </div>
+ <!-- SECTION 1: Custom Swedish Hero Header - PARALLAX REDESIGN V2 -->
+<section id="swedish-custom-hero" class="custom-hero-section">
+    <!-- Parallax Background Layers -->
+    <div class="hero-parallax-layer hero-parallax-bg"></div> 
+    <div class="hero-parallax-layer hero-parallax-fg"></div> 
 
-                <div class="guess-input-area">
-                    <label for="languageGuess">Your guessed language:</label>
-                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
-                </div>
-                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
-                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
-                <div id="feedbackMessage"></div>
+    <!-- Frosted Glass / Subtle Overlay for Text Readability -->
+    <div class="hero-content-scrim"></div>
+
+    <div class="hero-text-overlay">
+        <div class="container hero-content-container">
+           <div class="hero-main-title-box">
+                <!-- Optional: Subtle flag icon integrated with title -->
+               <img src="../images/languages/swedish/sweden_flag_just_add_light_shadow_.png" alt="Svensk flagga" class="hero-flag">
+                <h1>
+                    <span class="hero-title-line-1">Välkommen till</span>
+                    <span class="hero-title-line-2">
+                        Min Svenska
+                        <span class="highlight-yellow">Värld</span>
+                    </span>
+                </h1>
             </div>
-
-            <div class="navigation-links">
-                <p>While this section is being polished, feel free to explore other parts of my world:</p>
-                <a href="../index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
-                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
+            <p class="hero-intro-text">
+    <span class="intro-text-highlight">Allt började med en fråga. Och sen fanns det ingen väg tillbaka.</span>
+    
+                När folk frågar varför jag började lära mig svenska... jag brukar bara säga sanningen: svenska kvinnor är vackra. Och ja – publiken skrattade när jag sa det live på Kada Umaga. Men det var inte ett skämt. Det är något med dem. Blonda, välutbildade, artiga men självständiga. De är som ett helt universum jag ville förstå – inte bara ytligt, utan på riktigt. Jag ville höra hur de pratar, hur de tänker, vad de skrattar åt, vad de känner. Språket var min biljett in. Det var där det började. Inte med grammatik, inte med ambitioner. Bara med ren fascination. Resten – kulturen, humorn, immersionen – kom efteråt.
+            </p>
+            <div class="hero-cta-buttons">
+                <a href="#swedish-resources" class="btn btn-hero-primary">Utforska Resurser</a>
+                <a href="#fragmenterad-verklighet-section" class="btn btn-hero-outline">Min Berättelse</a>
             </div>
         </div>
+    </div>
+</section>
+
+   <!-- NEW SECTION 2: Fragmenterad Verklighet (Essay & Portrait) - YELLOW THEME with "Read More" -->
+<!-- REVISED HTML for SECTION 2: Fragmenterad Verklighet (Essay & Portrait) -->
+<section id="fragmenterad-verklighet-section" class="content-section"> <!-- Removed alt-bg if this section is themed yellow -->
+    <div class="container">
+        <!-- Title is now INSIDE the text column for left alignment with text block -->
+        <div class="essay-portrait-wrapper layout-columns">
+
+            <div class="portrait-column-essay"> <!-- Portrait Column (Now on the Left) -->
+                <aside class="journey-portrait-container-inline circular-portrait">
+                    <img src="../images/languages/swedish/aljohn_swedish_portrait_jersey_fragmenterad_verklighet.png" alt="Aljohn som 'Magnus Mjölkson' i svensk landslagströja" class="journey-portrait-img-inline">
+                </aside>
+            </div>
+
+           <div class="narrative-column-essay"> <!-- Text Column (Now on the Right) -->
+    <h2 class="subsection-title centered-subsection-title">Fragmenterad Verklighet som "Magnus Mjölkson"</h2>
+    <article class="journey-narrative-content">
+                    <div class="narrative-text-blocks-container" id="narrative-text-full">
+                        <p class="narrative-text-block narrative-visible">Min svenska identitet, "Magnus Mjölkson", föddes helt random. Allt började med schack – jag kollade på Magnus Carlsen, sen snubblade jag över en intervju med Anna Cramling. Hon pratade svenska. Jag fattade ingenting, men något i språket, rytmen, tonen… det väckte något. Jag blev nyfiken. Sen blev det ett hål jag aldrig tog mig ur.</p>
+                        <p class="narrative-text-block narrative-visible">Namnet? Magnus för Carlsen, Mjölk från mitt efternamn Mogatas (för att det låter kul och nordiskt), och -son för att det bara skriker Sverige. Och Anna? Hon råkade bli min väg in. Det var aldrig planen – men det blev så.</p>
+                        <!-- Hidden by default, shown by "Read More" -->
+                        <div id="narrative-hidden-content" class="narrative-hidden">
+                            <p class="narrative-text-block">Från den intervjun gick det snabbt: Jag ville förstå allt. Först bara orden, men sen också känslan. Humorn. Kulturen. Varför svenskar älskar "lagom". Varför de säger "nja" med tre olika toner. Hur IJustWantToBeCool lyckas vara roliga utan att skrika. Hur hela landet stannar för Melodifestivalen. Varför Zlatan fortfarande är ett samtalsämne oavsett var han spelar. Och varför svenska memes är så torra men så brutalt träffsäkra.</p>
+                            <p class="narrative-text-block">Jag satt där i Filippinerna, men kände att jag började leva i två världar. Språket blev ett sätt att kliva in i den andra. Inte som turist, utan som någon som faktiskt fattar. Damlandslagets matcher i VM gav mig puls. Jag hörde skämt och visste varför de var roliga. Jag märkte hur mitt sätt att tänka förändrades, hur min hjärna började tänka på svenska.</p>
+                            <p class="narrative-text-block">Den här sidan är ingen guide. Det är ett fönster. In i min version av Sverige. En rörig, ärlig, personlig immersion – byggd på timmar av lyssning, läsning och att bara vara i språket. Välkommen in i mitt huvud. Välkommen till Magnus Mjölkson.</p>
+                        </div>
+                    </div>
+                    <button id="read-more-narrative-btn" class="btn btn-secondary-yellow-theme">Läs mer...</button>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- NEW SECTION 3: Videohöjdpunkt (Video Highlight) -->
+<section id="video-highlight-main-section" class="content-section video-highlight-theme">
+    <div class="container">
+        <article class="highlighted-video-feature interactive-card" tabindex="0">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3 class="video-highlight-title"><i class="fas fa-star"></i> Videohöjdpunkt: <span class="video-title-text">Chockar Svenska Expats!</span></h3>
+                    <div class="video-embed-container">
+                        <iframe src="https://www.youtube.com/embed/xmwa5qkAqJU" title="Filipino Surprises Swedish Expats with his Fluency in Swedish" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description-front">Den här videon är speciell. Att resa runt och prata med svenskar på platser som Johansson's Restaurant, Fika Manila och Harley's Pub var en otrolig upplevelse. <span class="flip-prompt">(Klicka för reflektioner!)</span></p>
+                </div>
+                <div class="card-back">
+                    <h3 class="video-highlight-title"><i class="fas fa-history"></i> Reflektioner från Resan</h3>
+                    <p>Det är lite bitterljuvt att höra mitt gamla uttal nu, med tanke på hur mycket fokus som lagts på andra språk sedan dess, men det visar verkligen resans gång! Varje interaktion var en lärdom och ett steg framåt. Att se tillbaka på detta påminner mig om varför jag började och hur långt jag har kommit, inte bara i svenska, utan i min hela språkresa.</p>
+                    <button class="btn btn-small flip-back-btn" aria-label="Visa videon igen">Tillbaka till Videon</button>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+        <!-- SECTION 3: Swedish Immersion Resources -->
+      
+            <section id="swedish-resources" class="content-section">
+    <div class="container">
+        <!-- NEW Resources Section Header Design - NOW USING DIV -->
+     <!-- In your #swedish-resources section -->
+<div class="resources-section-header">
+    <h2 class="main-section-title">
+        <span class="title-line-1">Magnus Mjölksons</span>
+        <span class="title-line-2">Svenska <span class="title-highlight-yellow">Resurskista</span></span>
+    </h2>
+    <p class="main-section-subtitle intro-subtitle">
+        Dyk ner i verktygen som formade min svenska. Inga dammiga böcker – bara äkta immersion. Utforska!
+    </p>
+    
+    <div class="magnus-info-icon-container">
+        <!-- Image for normal state -->
+        <img src="../images/languages/swedish/swedish_info_aljohn_icon_black.png" 
+             alt="Magnus Mjölkson med informationsskylt" 
+             class="magnus-header-icon-img normal-state">
+        <!-- Image for hover state (initially hidden) -->
+        <img src="../images/languages/swedish/swedish_info_aljohn_icon_black_bright_info.png" 
+             alt="Magnus Mjölkson med lysande informationsskylt" 
+             class="magnus-header-icon-img hover-state">
+    </div>
+    
+    <p class="main-section-subtitle action-subtitle-line1">
+        Magnus har fler tips!
+    </p>
+    <p class="main-section-subtitle action-subtitle-line2">
+        Klicka på <i class="fas fa-info-circle" style="color: var(--sw-flag-yellow); font-size: 0.9em; vertical-align: -0.05em;"></i> bredvid varje kategori för personliga insikter.
+    </p>
+</div>
+        <div id="cefr-filter-sticky-wrapper">
+            <div id="cefr-filter-controls-container" class="cefr-filter-panel elevated-panel"> <!-- ADDED .elevated-panel -->
+                <div class="cefr-panel-content-wrapper">
+                    <div class="cefr-panel-header">
+                        <h3><i class="fas fa-road"></i> Välj Din Nivåstig</h3> <!-- Changed icon & text slightly -->
+                        <p class="cefr-panel-intro">
+                            Hitta resurser anpassade för din svenska nivå. För djupare insikt, se Aljohns <a href="../pathway.html" class="inline-link">Roadmap to Fluency</a>.
+                        </p>
+                    </div>
+                    <div class="cefr-panel-buttons-area">
+                        <div class="cefr-filter-buttons">
+                            <button class="btn-filter-cefr" data-cefr="A1" title="Nybörjare: Förstå och använda mycket grundläggande fraser.">
+                                <span class="cefr-level-tag">A1</span> <span class="cefr-level-desc">Nybörjare</span>
+                            </button>
+                            <button class="btn-filter-cefr" data-cefr="A2" title="Grundläggande: Kommunicera i enkla vardagssituationer.">
+                                <span class="cefr-level-tag">A2</span> <span class="cefr-level-desc">Grund</span>
+                            </button>
+                            <button class="btn-filter-cefr" data-cefr="B1" title="Medelnivå: Hantera de flesta situationer som kan uppstå under resor; beskriva upplevelser.">
+                                <span class="cefr-level-tag">B1</span> <span class="cefr-level-desc">Medel</span>
+                            </button>
+                            <button class="btn-filter-cefr" data-cefr="B2" title="Övre medelnivå: Förstå huvuddragen i komplexa texter; interagera med viss grad av flyt.">
+                                <span class="cefr-level-tag">B2</span> <span class="cefr-level-desc">Övre Medel</span>
+                            </button>
+                            <button class="btn-filter-cefr" data-cefr="C1" title="Avancerad: Uttrycka sig flytande och spontant; använda språket flexibelt för sociala, akademiska och yrkesmässiga ändamål.">
+                                <span class="cefr-level-tag">C1</span> <span class="cefr-level-desc">Avancerad</span>
+                            </button>
+                            <button class="btn-filter-cefr" data-cefr="C2" title="Mycket avancerad (Närmast modersmål): Förstå praktiskt taget allt som hörs eller läses med lätthet.">
+                                <span class="cefr-level-tag">C2</span> <span class="cefr-level-desc">Expert</span>
+                            </button>
+                       
+                        <button class="btn-filter-cefr-clear" id="clear-cefr-filters" title="Rensa alla nivåfilter och visa samtliga resurser.">
+                            <i class="fas fa-infinity"></i> Visa Alla Resurser <!-- Changed icon -->
+                        </button>
+                    </div>
+                    <div id="active-filters-display-container">
+                        <p id="active-filters-display" style="display: none;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>      
+
+               <!-- 1. Språkinlärningskanaler -->
+        <article id="learning-channels-section" class="resource-category-swedish learning-theme resource-category-wrapper" data-category-id="learning-channels">
+            <h3 class="subsection-title">
+                <i class="fas fa-graduation-cap"></i> Språkinlärningskanaler: <span class="title-text-main">När Det Behövs Lite Extra</span>
+                <span class="info-icon-wrapper" id="learning-channels-info-trigger" tabindex="0" role="button" aria-label="Tips om språkinlärningskanaler" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="learning-channels-desc">Dessa kanaler erbjuder strukturerade lektioner för grammatik, uttal och praktiska fraser.</p>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="learning-channels-grid"></div></div>
+        </article>
+
+        <!-- 2. Barninnehåll -->
+        <article id="kids-content-section" class="resource-category-swedish kids-theme resource-category-wrapper" data-category-id="kids-content">
+            <h3 class="subsection-title">
+                <i class="fas fa-child"></i> Barninnehåll: <span class="title-text-main">Underskatta Inte Kraften!</span>
+                <span class="info-icon-wrapper" id="kids-content-info-trigger" tabindex="0" role="button" aria-label="Tips om barninnehåll" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="kids-content-desc">Enkelt språk och tydligt uttal gör barnprogram till en förvånansvärt effektiv start.</p>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="kids-content-grid"></div></div>
+        </article>
+
+        <!-- 3. Topp-Poddar -->
+        <article id="top-podcasts-section" class="top-podcast-spotlight-section resource-category-wrapper" data-category-id="top-podcasts">
+            <h3 class="subsection-title">
+                <i class="fas fa-headphones-alt"></i> 
+                Topp-Poddar: <span class="title-text-main"> <!-- NEW SPAN WRAPPER -->
+            Topp-Poddar: <span class="title-highlight-yellow">Mina Lyssningsstips</span>
+        </span>
+        <span class="info-icon-wrapper" id="top-podcasts-info-trigger" tabindex="0" role="button" aria-label="Tips om topp-poddar" aria-haspopup="dialog">
+            <i class="fas fa-info-circle"></i>
+        </span>
+            </h3>
+            <p class="section-subtitle-narrow" id="top-podcasts-desc">Dessa poddar är fundamentala för hörförståelse och insikt i svenskt vardagsspråk.</p>
+            <div class="top-podcast-grid-new" id="top-podcasts-grid"></div>
+        </article>
+
+        <!-- 4. Svensk Musik -->
+        <article id="music-artists-section" class="resource-category-swedish music-theme resource-category-wrapper" data-category-id="music-artists">
+            <h3 class="subsection-title">
+                <i class="fab fa-spotify"></i> Svensk Musik: <span class="title-text-main">Mitt Immersion-Soundtrack</span>
+                <span class="info-icon-wrapper" id="music-artists-info-trigger" tabindex="0" role="button" aria-label="Tips om svensk musik" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="music-artists-desc">Svensk musik är soundtracket till min svenska resa; att sjunga med är toppen för uttal och fraser!</p>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="music-artists-grid"></div></div>
+        </article>
+
+        <!-- 5. Svenska Musikprogram -->
+        <article id="music-programs-section" class="resource-category-swedish tv-theme resource-category-wrapper" data-category-id="music-programs">
+            <h3 class="subsection-title">
+                <i class="fas fa-tv"></i> <span class="title-text-wrapper">Svenska <span class="title-highlight-red-underline">Musikprogram:</span> Där Jag Upptäcker Nytt</span>
+                <span class="info-icon-wrapper" id="music-programs-info-trigger" tabindex="0" role="button" aria-label="Tips om svenska musikprogram" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="music-programs-desc">Program som "Idol" och "Så Mycket Bättre" är fönster till svensk musikkultur och vardagligt tal.</p>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="music-programs-grid"></div></div>
+        </article>
+
+        <!-- 6. YouTube-Sverige -->
+        <article id="youtube-main-section" class="resource-category-swedish youtube-theme resource-category-wrapper" data-category-id="youtube-main">
+            <h3 class="subsection-title">
+                <i class="fab fa-youtube"></i> YouTube-Sverige: <span class="title-text-main">Humor, Kunskap & Vardagsliv</span>
+                <span class="info-icon-wrapper" id="youtube-main-info-trigger" tabindex="0" role="button" aria-label="Tips om YouTube-Sverige" aria-haspopup="dialog" style="color: var(--sw-resource-youtube-red);"> <!-- Special color for YouTube -->
+                    <i class="fas fa-lightbulb"></i> <!-- Different icon for general tip -->
+                </span>
+                <span class="info-icon-wrapper" id="youtube-subs-info-trigger" tabindex="0" role="button" aria-label="Information om YouTube-undertexter" aria-haspopup="dialog"> <!-- Keep your specific subs tip trigger -->
+                    <i class="fas fa-closed-captioning"></i>
+                </span>
+            </h3>
+           <p id="youtube-main-desc">YouTube är min primära källa för slang, modernt talspråk och vad som är aktuellt i Sverige.</p>
+           <!--   <h4 class="resource-subcategory-title"><i class="fas fa-film"></i> Allmänna Favoritkanaler</h4>-->
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="youtube-channels-grid"></div></div>
+            <!-- Snabb Fakta Highlight if relevant to general YouTube -->
+          <!--   <div id="snabbfakta-highlight-container" class="snabbfakta-wrapper" style="display:none;"></div> -->
+        </article>
+
+        <!-- 7. Personligheter -->
+        <article id="personalities-all-section" class="resource-category-swedish personalities-interests-theme resource-category-wrapper" data-category-id="personalities-all">
+            <h3 class="subsection-title">
+                <i class="fas fa-users"></i> Personligheter: <span class="title-text-main">Människorna som Formar Min Svenska Värld</span>
+                <span class="info-icon-wrapper" id="personalities-info-trigger" tabindex="0" role="button" aria-label="Tips om att följa personligheter" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="personalities-all-desc">Att följa personer med passion är ett fantastiskt sätt att lära sig vardagsspråk och kultur.</p> <!-- This can be the dynamic one -->
+            <h4 class="resource-subcategory-title"><i class="fas fa-id-card"></i> Profiler Jag Följer (Sport, Media, m.m.)</h4>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="all-personalities-grid"></div></div>
+        </article>
+
+        <!-- 8. SVT Play Serier -->
+        <article id="svt-series-section" class="resource-category-swedish tv-theme resource-category-wrapper" data-category-id="svt-series">
+            <h3 class="subsection-title">
+                <i class="fas fa-tv"></i> SVT Play Serier: <span class="title-text-main">Djupdykning i Svensk Kultur</span>
+                <span class="info-icon-wrapper" id="svt-series-info-trigger" tabindex="0" role="button" aria-label="Tips om SVT Play serier" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="svt-series-desc">SVT Play är en guldgruva för kvalitetsserier som ger djupa insikter i svensk historia och kultur.</p>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="svt-series-grid"></div></div>
+        </article>
+
+        <!-- 9. Nyheter & Aktuellt -->
+        <article id="news-sources-section" class="resource-category-swedish news-theme resource-category-wrapper" data-category-id="news-sources">
+            <h3 class="subsection-title">
+                <i class="fas fa-newspaper"></i> Nyheter & Aktuellt: <span class="title-text-main">Hålla Sig Uppdaterad</span>
+                <span class="info-icon-wrapper" id="news-sources-info-trigger" tabindex="0" role="button" aria-label="Tips om nyheter och aktuellt" aria-haspopup="dialog">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </h3>
+            <p id="news-sources-desc">För att förstå samtiden och svenskarnas tankesätt är nyheter och aktuella händelser viktiga.</p>
+            <div class="horizontal-scroll-wrapper"><div class="swedish-item-grid" id="news-sources-grid"></div></div>
+        </article>
+            </div>
+        
+        </section>
+
+    <!-- SECTION 4: Scandinavian Encounters - Grid & CDN Flags -->
+<section id="scandinavian-encounters-section" class="content-section">
+    <div class="container">
+        <div class="section-header-scandinavian">
+            <h2 class="section-title">Skandinaviska Äventyr</h2>
+            <p class="section-subtitle">
+                Från Norges fjordar till Finlands skogar – att lära sig svenska öppnade dörrar till hela Norden.
+                Här är några minnesvärda möten och kulturkrockar från mina resor. Klicka för att utforska!
+            </p>
+        </div>
+
+  <div class="scandinavian-encounter-grid" id="scandinavian-encounters-grid-container">
+            
+            <!-- Card 1: Norway -->
+           <!-- Card 1: Norway -->
+            <article class="scandinavian-encounter-card norway-theme-card" 
+                     onclick="openEncounterModalById('norway-embassy')" 
+                     onkeydown="if(event.key==='Enter'||event.key===' ') openEncounterModalById('norway-embassy')"
+                     tabindex="0" role="button" aria-label="Utforska möte: Norge: Språktest hos Ambassaden">
+                <div class="card-image-clipper">
+                    <img src="../images/languages/swedish/norwegian_ambassador_christian_lyster.png" alt="Möte med Norges Ambassadör" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <img src="https://flagcdn.com/h20/no.png" alt="Norsk flagga" class="title-inline-flag-img">
+                        <span class="card-title-text">Språktest hos Ambassaden</span>
+                    </h3>
+                    <p class="card-teaser">Samtal med Ambassadör Lyster och norska på språkcafé.</p>
+                </div>
+                <div class="card-overlay-details" aria-hidden="true">
+                    <h4>
+                        <img src="https://flagcdn.com/h20/no.png" alt="Norsk flagga" class="title-inline-flag-img">
+                        <span class="card-title-text">Språktest hos Ambassaden</span>
+                    </h4>
+                    <p>På Norska Ambassadens språkcafé (arrangerat med CGI Phils på The Astbury i Makati) fick jag den unika chansen att testa min svenska mot norska...</p>
+                    <span class="card-cta-chip">Utforska Möte</span>
+                </div>
+            </article>
+
+            <!-- Card 2: Denmark & Uppsala -->
+            <article class="scandinavian-encounter-card denmark-ehef-theme-card" 
+                     onclick="openEncounterModalById('ehef-denmark-sweden')"
+                     onkeydown="if(event.key==='Enter'||event.key===' ') openEncounterModalById('ehef-denmark-sweden')"
+                     tabindex="0" role="button" aria-label="Utforska möte: Danmark & Uppsala: Möten på EHEF">
+                <div class="card-image-clipper">
+                    <img src="../images/languages/swedish/ehef_danish_girl.png" alt="Möte på EHEF" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <img src="https://flagcdn.com/h20/dk.png" alt="Dansk flagga" class="title-inline-flag-img">
+                        <img src="https://flagcdn.com/h20/se.png" alt="Svensk flagga" class="title-inline-flag-img">
+                        <img src="https://flagcdn.com/h20/eu.png" alt="EU flagga" class="title-inline-flag-img">
+                        <span class="card-title-text">Möten på EHEF</span>
+                    </h3>
+                    <p class="card-teaser">Videodebut på svenska och "svorsk/danska" utmaningar.</p>
+                </div>
+                <div class="card-overlay-details" aria-hidden="true">
+                    <h4>
+                        <img src="https://flagcdn.com/h20/dk.png" alt="Dansk flagga" class="title-inline-flag-img">
+                        <img src="https://flagcdn.com/h20/se.png" alt="Svensk flagga" class="title-inline-flag-img">
+                        <img src="https://flagcdn.com/h20/eu.png" alt="EU flagga" class="title-inline-flag-img">
+                        <span class="card-title-text">Möten på EHEF</span>
+                    </h4>
+                    <p>European Higher Education Fair (EHEF) i Shangri-La Plaza bjöd på många intressanta möten...</p>
+                    <span class="card-cta-chip">Utforska Möte</span>
+                </div>
+            </article>
+
+            <!-- Card 3: Finland -->
+            <article class="scandinavian-encounter-card finland-theme-card" 
+                     onclick="openEncounterModalById('finland-bazaar')"
+                     onkeydown="if(event.key==='Enter'||event.key===' ') openEncounterModalById('finland-bazaar')"
+                     tabindex="0" role="button" aria-label="Utforska möte: Finland: Svenska på Internationella Basaren">
+                <div class="card-image-clipper">
+                    <img src="../images/languages/swedish/finnish_ambassador_bazaar.png" alt="Möte på Finska Basaren" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <img src="https://flagcdn.com/h20/fi.png" alt="Finsk flagga" class="title-inline-flag-img">
+                        <span class="card-title-text">Finlandssvenska</span>
+                    </h3>
+                    <p class="card-teaser">Diskussion om finlandssvenskar och tvåspråkighet.</p>
+                </div>
+                <div class="card-overlay-details" aria-hidden="true">
+                    <h4>
+                        <img src="https://flagcdn.com/h20/fi.png" alt="Finsk flagga" class="title-inline-flag-img">
+                        <span class="card-title-text">Finlandssvenska</span>
+                    </h4>
+                    <p>På The International Bazaar 2023 vid PICC fick jag tillfälle att prata med Finlands ambassadör...</p>
+                    <span class="card-cta-chip">Utforska Möte</span>
+                </div>
+            </article>
+
+        </div>
+        <aside class="encounter-tip-box-magnus">
+            <div class="tip-box-icon-area">
+                <img src="../images/icon_aljohn_tips.png" alt="Magnus Mjölkson" class="tip-box-avatar">
+            </div>
+            <div class="tip-box-content-area">
+                <h4>Tips från Magnus Mjölkson:</h4>
+                <p>Våga prata, var nyfiken! Varje konversation, oavsett språk eller dialekt, är en chans att lära sig något nytt om både språket och människorna. Dessa möten har varit ovärderliga för min egen förståelse och utveckling. Heja dig!</p>
+            </div>
+        </aside>
+    </div>
+</section>
+        <!-- SECTION 5: Swedish Restaurants in the Philippines -->
+        <section id="swedish-restaurants-ph-section" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Svenska Smaker i Filippinerna</h2>
+                <p class="section-subtitle">Man behöver inte alltid resa till Sverige för att få en dos av svensk mat och fika! Här är några ställen i Filippinerna där jag har stött på svensk matkultur och, viktigast av allt, fått chansen att prata en hel del svenska med ägare och gäster. Klicka på ett ställe för mer!</p>
+                <div class="restaurant-ph-grid" id="swedish-restaurants-ph-grid-container">
+                    <!-- Restaurant cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+       <!-- SECTION: Final Encouragement - Based on Your Original Structure -->
+<section id="final-thoughts-swedish-section-container" class="content-section final-thoughts-swedish">
+    <div class="container"> <!-- Standard container for centering content -->
+        <div class="final-thoughts-content-box"> <!-- NEW: Inner box for styling -->
+            <h2 class="section-title section-title-final">Kör Hårt & Ha Kul Med Svenskan, Heja Magnus!</h2>
+            <p class="text-center final-message-text">
+                Att lära sig svenska har varit en otrolig, och ibland identitetsformande, resa. Det handlar om att hitta din egen <strong class="text-highlight-yellow">djupa immersion</strong> och njuta av varje Mello-låt, varje fotbollsmatch, varje IJustWantToBeCool-skratt. Min svenska persona "Magnus Mjölkson" är ett bevis på hur djupt ett språk kan forma en. Hoppas den här sidan ger dig inspiration och verktyg för din egen resa. Kom ihåg, det viktigaste är att ha kul och vara konsekvent. Och du, glöm inte att kolla in alla resurser – det finns mycket guld att hämta! Lycka till!
+            </p>
+            <div class="cta-center final-cta-button-wrapper">
+                 <a href="https://www.youtube.com/@aljohnpolyglot?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-final-cta">
+                    <i class="fab fa-youtube"></i> Följ Aljohn (och Magnus!) på YouTube!
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Modal Placeholder -->
+        <div id="resource-modal-placeholder"></div>
+
     </main>
 
-   <footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
-                <span>Aljohn Polyglot</span>
-            </div>
-            <nav class="footer-links">
-                <a href="../index.html#about">About</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../shop.html">Shop</a>
-                <a href="../contact.html">Contact</a>
-            </nav>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            </div>
-        </div>
-        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
-    </div>
-</footer>
+    <footer id="main-footer-placeholder"></footer>
 
-    <script>
-        const maintenanceWords = [
-            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
-            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
-            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
-            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
-            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
-            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
-            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
-            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
-            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
-            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
-        ];
-        let currentChallenge;
-        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
-        const cluesContainer = document.querySelector('.clues-container');
-        const languageGuessInput = document.getElementById('languageGuess');
-        const submitGuessBtn = document.getElementById('submitGuessBtn');
-        const newWordBtn = document.getElementById('newWordBtn');
-        const feedbackMessage = document.getElementById('feedbackMessage');
+    <!-- JavaScript Files -->
+      <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script src="../js/navbar-loader.js" defer></script>
+<script src="../js/footer-loader.js" defer></script>
 
-        function setupNewMaintenanceChallenge() {
-            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
-            challengeWordDisplay.textContent = currentChallenge.word;
-            cluesContainer.innerHTML = '';
-            currentChallenge.clues.forEach((clueText, index) => {
-                const clueDiv = document.createElement('div');
-                clueDiv.classList.add('clue');
-                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
-                cluesContainer.appendChild(clueDiv);
-            });
-            feedbackMessage.textContent = ''; languageGuessInput.value = '';
-            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
-            languageGuessInput.focus(); newWordBtn.style.display = 'none';
-        }
-        if (submitGuessBtn) {
-            submitGuessBtn.addEventListener('click', function() {
-                const userGuess = languageGuessInput.value.trim().toLowerCase();
-                const correctAnswer = currentChallenge.language.toLowerCase();
-                if (!userGuess) {
-                    feedbackMessage.textContent = "Please enter your language guess!";
-                    feedbackMessage.className = 'feedback-incorrect'; return;
-                }
-                if (userGuess === correctAnswer) {
-                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
-                    feedbackMessage.className = 'feedback-correct';
-                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
-                    newWordBtn.style.display = 'inline-block';
-                } else {
-                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
-                    feedbackMessage.className = 'feedback-incorrect';
-                    newWordBtn.style.display = 'inline-block';
-                }
-            });
-            languageGuessInput.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
-            });
-            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
-            setupNewMaintenanceChallenge();
-        }
+    <script src="../js/script.js" defer></script>
+    <script src="js/data/swedish-page-data.js" defer></script>
+    <script src="js/renderers/swedish-page-resources-renderer.js" defer></script>
+    <script src="js/renderers/swedish-page-renderer.js" defer></script>
 
-        const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
-
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-            });
-        }
-
-        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
-        desktopDropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('a.dropbtn');
-            if (button) {
-                button.setAttribute('aria-haspopup', 'true');
-                button.setAttribute('aria-expanded', 'false');
-                button.addEventListener('click', function(event) {
-                    let shouldPreventDefault = true;
-                    const href = button.getAttribute('href');
-                    if (href && (href.startsWith('../index.html#') || !href.startsWith('javascript:void(0)')) ) {
-                        // Allow navigation if it's a link to a section on another page (index.html#)
-                        // Or if it's a link to a full page (e.g. ../blog.html from a dropdown item, not a dropbtn itself)
-                        // For dropbtns, we usually want to prevent default unless it's explicitly linking to index.html#section
-                        if (!href.startsWith('../index.html#')) { // If it's not linking to index.html#section, always prevent for dropbtn
-                           // For pure toggles or links to same-page sections that we might handle via JS later.
-                        } else {
-                            // For index.html#section links from a dropbtn, we can let them navigate after opening.
-                            // However, for simplicity of the toggle, we'll still preventDefault on click and let items inside navigate.
-                            // If you specifically want the dropbtn for "Languages" (href="../index.html#languages") to navigate,
-                            // you'd need more complex logic or to handle it differently.
-                        }
-                    }
-                     event.preventDefault(); // Keep this to ensure toggle behavior is primary
-
-                    const isCurrentlyOpen = dropdown.classList.contains('open');
-                    desktopDropdowns.forEach(otherDd => {
-                        if (otherDd !== dropdown) {
-                            otherDd.classList.remove('open');
-                            const otherButton = otherDd.querySelector('a.dropbtn');
-                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    if (isCurrentlyOpen) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        dropdown.classList.add('open');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                    event.stopPropagation();
-                });
-            }
-        });
-        document.addEventListener('click', function(event) {
-            desktopDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove('open');
-                    const button = dropdown.querySelector('a.dropbtn');
-                    if (button) button.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
