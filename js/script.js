@@ -185,7 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("script.js: Institute card toggle logic initialized.");
     }
     // --- End of Cultural Institute Card Video Toggle ---
-
+    // 
+    document.querySelectorAll('a.btn[href^="#"]').forEach(link => {
+    console.log("Checking link: ", link.outerHTML); // See which link is being processed
+    if (link.closest('header#main-header-placeholder') || link.closest('header')) {
+        console.log("Skipping (in header): ", link.outerHTML); // Check if your button gets logged here
+        return;
+    }
+    console.log("Attaching smooth scroll to: ", link.outerHTML); // Check if your button gets logged here by mistake
+    // ... rest of the event listener code
+});
 
     // --- Toggle App Details Functionality (If .app-grid is in main HTML) ---
     if (appGrids.length > 0) {
