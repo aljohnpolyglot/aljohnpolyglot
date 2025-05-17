@@ -1,0 +1,385 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_final_cta.css
+==========================================================================
+   FINAL CTA SECTION STYLES
+   ========================================================================== */
+
+.final-cta-section {
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--deep-space-blue); /* Dark fallback */
+    /* Creative Background Idea: Animated subtle gradient or particle effect */
+    background-image: linear-gradient(135deg, var(--primary-blue) 0%, var(--midnight-blue) 50%, var(--primary-red) 100%);
+    /* Or a static image:
+    background-image: url('path/to/your/cool-background.jpg');
+    background-size: cover;
+    background-position: center;
+    */
+    color: var(--light-text);
+}
+
+.final-cta-section .cta-background-overlay { /* Optional overlay for texture/dimming image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 15, 30, 0.6); /* Dark semi-transparent overlay */
+    z-index: 0;
+}
+
+.final-cta-section .cta-content-container {
+    position: relative; /* To sit above the overlay */
+    z-index: 1;
+}
+
+.cta-icon-top {
+    font-size: 3.5rem; /* Large icon */
+    color: var(--accent-yellow, var(--accent-yellow-fallback));
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite; /* Subtle floating animation */
+}
+/* Ensure float animation is defined in your global styles if not already */
+@keyframes float { /* If not defined globally, add it */
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+
+.final-cta-section .cta-title {
+    font-size: clamp(2rem, 5vw, 2.8rem); /* Prominent title */
+    color: var(--light-text); /* Ensure override if section-title-dark is different */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    margin-bottom: 1rem;
+}
+.final-cta-section .cta-title::after { /* Customizing the underline for this title */
+    background-color: var(--accent-yellow, var(--accent-yellow-fallback));
+    height: 3px;
+    width: 80px;
+    box-shadow: 0 0 8px var(--accent-yellow, var(--accent-yellow-fallback));
+}
+
+/* In your CSS for the Final CTA Section */
+
+.final-cta-section .cta-subtitle {
+    font-size: 1.15rem;
+    color: #e0e7ff; 
+    margin-bottom: 2.5rem;
+    max-width: 750px; /* This constrains its width */
+    line-height: 1.7;
+    /* --- ENSURE THESE ARE PRESENT AND EFFECTIVE --- */
+    margin-left: auto;   /* For centering block-level elements with a max-width */
+    margin-right: auto;  /* For centering block-level elements with a max-width */
+    text-align: center; /* For centering inline or inline-block content within it */
+}
+
+.final-cta-section .highlight-accent { /* For highlighting in subtitle */
+    color: var(--accent-yellow, var(--accent-yellow-fallback));
+    font-weight: 600;
+}
+
+.cta-main-actions {
+    margin-bottom: 2.5rem;
+}
+
+.cta-main-actions .btn {
+    padding: 0.9rem 2.2rem; /* Larger buttons */
+    font-size: 1.05rem;
+    margin: 0.5rem; /* Adjust margins for spacing */
+    min-width: 280px; /* Give buttons a good minimum width */
+}
+.cta-main-actions .btn i {
+    margin-right: 0.75rem;
+}
+
+/* Primary CTA Button - override for prominence */
+.btn-cta-main.btn-primary {
+    background-color: var(--accent-yellow, var(--accent-yellow-fallback));
+    color: var(--deep-space-blue); /* Dark text on yellow */
+    border-color: var(--accent-yellow, var(--accent-yellow-fallback));
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 10px var(--accent-yellow, var(--accent-yellow-fallback));
+}
+.btn-cta-main.btn-primary:hover {
+    background-color: #e9c400; /* Darker yellow */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 15px var(--accent-yellow, var(--accent-yellow-fallback));
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Secondary CTA Button - using outline style but ensuring visibility */
+.btn-cta-secondary.btn-outline {
+    color: var(--light-text);
+    border-color: var(--light-text);
+    background-color: rgba(255,255,255,0.1); /* Subtle background for better visibility */
+}
+.btn-cta-secondary.btn-outline:hover {
+    background-color: var(--light-text);
+    color: var(--primary-blue); /* Text color changes to blue on hover */
+    border-color: var(--light-text);
+}
+
+
+.cta-or-separator {
+    display: block;
+    margin: 1.5rem auto;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    position: relative;
+    max-width: 200px;
+}
+.cta-or-separator::before,
+.cta-or-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%; /* Adjust width of lines */
+    height: 1px;
+    background-color: rgba(255,255,255,0.3);
+}
+.cta-or-separator::before {
+    left: 0;
+}
+.cta-or-separator::after {
+    right: 0;
+}
+
+.cta-final-encouragement {
+    font-size: 1rem;
+    color: #bac8ff; /* Softer light blue */
+    font-style: italic;
+}
+
+/* Responsive for Final CTA */
+@media (max-width: 768px) {
+    .final-cta-section {
+        padding: 60px 0;
+    }
+    .cta-icon-top {
+        font-size: 3rem;
+    }
+    .final-cta-section .cta-title {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+    }
+    .final-cta-section .cta-subtitle {
+        font-size: 1.05rem;
+    }
+    .cta-main-actions .btn {
+        display: block; /* Stack buttons on mobile */
+        width: 100%;
+        max-width: 320px; /* Max width for stacked buttons */
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem; /* Space between stacked buttons */
+    }
+    .cta-main-actions .btn:last-child {
+        margin-bottom: 0;
+    }
+    .cta-or-separator {
+        margin: 1.25rem auto;
+    }
+}
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_final_cta.css */
+/* Themed Styles for the Final CTA Section */
+
+/* ==========================================================================
+   FINAL CTA SECTION STYLES (POLYGLOT PAPERS THEME)
+   ========================================================================== */
+
+.final-cta-section {
+    padding: 80px 0 90px 0; /* Increased bottom padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--theme-deepest-bg-contrast); /* Use the deepest dark for strong contrast */
+    /* Or a more dynamic gradient ending in biotech green */
+    /* background-image: linear-gradient(135deg, var(--theme-dark-bg-mid) 0%, var(--theme-deepest-bg-contrast) 60%, var(--theme-biotech-green) 100%); */
+    color: var(--theme-light-mint-text);
+    border-top: 3px solid var(--theme-biotech-green); /* Strong top border */
+}
+
+.final-cta-section .cta-background-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Subtle hexagonal pattern from the main theme */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232dce89' fill-opacity='0.025' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.7; /* Adjust opacity of pattern */
+    z-index: 0;
+}
+
+.final-cta-section .cta-content-container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-icon-top {
+    font-size: 3.8rem; /* Slightly larger icon */
+    color: var(--accent-yellow); /* Keep yellow for this prominent icon */
+    margin-bottom: 1.5rem;
+    animation: float 3.5s ease-in-out infinite; /* Slightly adjusted animation */
+    text-shadow: 0 0 15px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.5); /* Yellow glow */
+}
+
+@keyframes float { /* Ensure this is defined if not global */
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); } /* More pronounced float */
+    100% { transform: translateY(0px); }
+}
+
+.final-cta-section .cta-title { /* This is effectively a .section-title */
+    font-family: var(--theme-font-primary);
+    font-size: clamp(2.2rem, 5.5vw, 3rem); /* Adjusted size */
+    color: var(--theme-brighter-mint-text); /* Bright title */
+    text-shadow: 0 0 15px rgba(45, 206, 137, 0.4), 0 0 6px rgba(45, 206, 137, 0.2); /* Green glow */
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+.final-cta-section .cta-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-yellow); /* Yellow underline for CTA title */
+    height: 3px;
+    width: 80px;
+    box-shadow: 0 0 10px var(--accent-yellow);
+    border-radius: 1.5px;
+}
+
+.final-cta-section .cta-subtitle {
+    font-size: 1.1rem; /* Adjusted size */
+    color: var(--theme-soft-mint-text); /* Soft mint for subtitle */
+    margin-bottom: 3rem; /* More space before buttons */
+    max-width: 700px; /* Adjusted width */
+    line-height: 1.75;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.final-cta-section .highlight-accent { /* For "deliberate effort" and "relentless mindset" */
+    color: var(--theme-biotech-green); /* Biotech Green for these key phrases */
+    font-weight: 600;
+    background-color: rgba(45, 206, 137, 0.1); /* Subtle green highlight */
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+}
+
+.cta-main-actions {
+    margin-bottom: 2.5rem;
+    display: flex; /* For side-by-side buttons on larger screens */
+    flex-direction: column; /* Stack by default for mobile-first */
+    align-items: center; /* Center buttons when stacked */
+    gap: 1rem; /* Gap between buttons when stacked */
+}
+
+.cta-main-actions .btn {
+    padding: 0.9rem 2.2rem;
+    font-size: 1rem; /* Adjusted size */
+    margin: 0; /* Remove individual margins, use gap from flex container */
+    min-width: 300px; /* Wider buttons */
+    width: auto; /* Allow button to size to content up to max-width */
+    max-width: 100%; /* Ensure it's responsive */
+    display: inline-flex; /* For icon and text alignment */
+    align-items: center;
+    justify-content: center;
+}
+.cta-main-actions .btn i {
+    margin-right: 0.85rem; /* More space for icon */
+    font-size: 1.1em; /* Slightly larger icon */
+}
+
+/* Primary CTA Button (Yellow) */
+.btn-cta-main.btn-primary { /* This should use .btn-accent from global for yellow */
+    background-color: var(--accent-yellow);
+    color: var(--theme-deepest-bg-contrast);
+    border-color: var(--accent-yellow);
+    box-shadow: 0 5px 18px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.3), 0 0 12px var(--accent-yellow);
+}
+.btn-cta-main.btn-primary:hover {
+    background-color: #f0c000; /* Darker yellow */
+    box-shadow: 0 7px 22px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.4), 0 0 18px var(--accent-yellow);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Secondary CTA Button (Green Outline) */
+.btn-cta-secondary.btn-outline { /* This should use .btn-outline from global (green outline) */
+    color: var(--theme-biotech-green);
+    border-color: var(--theme-biotech-green);
+    background-color: rgba(45, 206, 137, 0.05); /* Very subtle green fill */
+}
+.btn-cta-secondary.btn-outline:hover {
+    background-color: var(--theme-biotech-green);
+    color: var(--theme-deepest-bg-contrast);
+    box-shadow: 0 0 15px rgba(45, 206, 137, 0.4);
+}
+
+.cta-or-separator {
+    display: block;
+    margin: 1.25rem auto; /* Adjusted margin */
+    font-size: 0.85rem; /* Smaller */
+    text-transform: uppercase;
+    color: var(--theme-muted-mint-text); /* Muted color */
+    letter-spacing: 1.5px; /* More spacing */
+    position: relative;
+    max-width: 180px; /* Adjusted */
+}
+.cta-or-separator::before,
+.cta-or-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%; /* Adjusted width */
+    height: 1px;
+    background-color: var(--theme-card-border); /* Themed border color */
+}
+.cta-or-separator::before { left: 0; }
+.cta-or-separator::after { right: 0; }
+
+.cta-final-encouragement {
+    font-size: 0.95rem; /* Slightly smaller */
+    color: var(--theme-soft-mint-text); /* Soft mint */
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Responsive for Final CTA */
+@media (min-width: 600px) { /* Side-by-side buttons on screens wider than 600px */
+    .cta-main-actions {
+        flex-direction: row; /* Buttons side-by-side */
+        justify-content: center; /* Center the group of buttons */
+        gap: 1.5rem; /* Gap between side-by-side buttons */
+    }
+    .cta-main-actions .btn {
+        width: auto; /* Allow buttons to size to content */
+    }
+    .cta-or-separator {
+        display: none; /* Hide -OR- when buttons are side-by-side */
+    }
+}
+
+@media (max-width: 768px) { /* Inherited from your file, adjust as needed */
+    .final-cta-section {
+        padding: 60px 0 70px 0;
+    }
+    .cta-icon-top {
+        font-size: 3rem;
+    }
+    .final-cta-section .cta-title {
+        font-size: clamp(2rem, 6vw, 2.6rem); /* Adjusted clamp */
+    }
+    .final-cta-section .cta-subtitle {
+        font-size: 1.05rem;
+        max-width: 90%; /* Allow more width for subtitle */
+    }
+    .cta-main-actions .btn {
+        min-width: 260px; /* Adjust min-width for stacked buttons */
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}
+

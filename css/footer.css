@@ -124,13 +124,13 @@ footer, .site-footer {
 .footer-bottom {
     width: 100%;
     clear: both;
-    border-top: 1px solid var(--footer-border-color, var(--fallback-border-color));
+    /* border-top: 1px solid var(--footer-border-color, var(--fallback-border-color)); */ /* REMOVE OR COMMENT OUT */
+    border-top: none; /* Explicitly remove it */
     padding-top: 1.5rem;
     margin-top: 1.5rem;
     font-size: 0.85em;
     color: var(--footer-copyright-color, #aaa);
 }
-
 /* --- Explicitly center the paragraph inside footer-bottom --- */
 .footer-bottom p {
     text-align: center;

@@ -1,0 +1,1225 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_themed.css */
+/* Main Themed Styles for the ENTIRE Learn in 3 Months Page */
+
+/* ==========================================================================
+   0. THEME VARIABLES (POLYGLOT PAPERS INSPIRED)
+   ========================================================================== */
+:root {
+    /* Core Aljohn Colors (Original - Kept for reference) */
+    --aljohn-original-primary-red: #C8102E;
+    --aljohn-original-primary-blue: #003087;
+    --aljohn-original-accent-yellow-lch: lch(86.93% 87.16 91.27);
+    --aljohn-original-accent-yellow-fallback: #FFD700;
+    --aljohn-original-light-bg: #f8f9fa;
+    --aljohn-original-dark-text: #2c3e50;
+    --aljohn-original-light-text: #ffffff;
+    --aljohn-original-border-color: #e0e0e0;
+    --aljohn-original-midnight-blue: #182848;
+    --aljohn-original-deep-space-blue: #0a0f1a;
+
+
+    /* Polyglot Papers Theme Palette - Primary Definitions */
+    --theme-biotech-green: #2dce89;
+    --theme-dark-bg-base: #040f0a;       /* Base dark background */
+    --theme-dark-bg-gradient-start: #040f0a;
+    --theme-dark-bg-gradient-mid: #0a2e1a;
+    --theme-dark-bg-gradient-end: #104527;
+    --theme-deepest-bg-contrast: #020805; /* For text on light accents */
+
+    --theme-light-mint-text: #c8f7e0;
+    --theme-brighter-mint-text: #e0f9ee;
+    --theme-soft-mint-text: #a0d8c0;
+    --theme-muted-mint-text: rgba(190, 230, 210, 0.75);
+
+    --theme-card-bg: rgba(10, 38, 25, 0.75); /* Slightly more opaque cards */
+    --theme-card-bg-hover: rgba(15, 48, 30, 0.85);
+    --theme-card-border: rgba(45, 206, 137, 0.35); /* Slightly more visible */
+    --theme-card-border-hover: rgba(45, 206, 137, 0.6);
+    --theme-card-shadow: 0 4px 25px rgba(0, 50, 30, 0.3), inset 0 0 12px rgba(0,30,15,0.3);
+
+    --theme-font-primary: 'Montserrat', sans-serif;
+    --theme-font-secondary: 'Open Sans', sans-serif;
+    --theme-font-tech: 'Roboto Mono', monospace;
+
+    /* Re-mapping Aljohn's original global names for this page's theme */
+    --primary-red: var(--theme-biotech-green);
+    --primary-blue: var(--theme-biotech-green); /* Can be a different shade of green or blue-green if needed */
+    --accent-yellow: var(--aljohn-original-accent-yellow-fallback); /* Keep distinct yellow */
+    
+    --light-bg: var(--theme-card-bg); /* "Light" BGs are now dark themed cards */
+    --dark-text: var(--theme-brighter-mint-text); /* "Dark" text is now bright */
+    --light-text: var(--theme-deepest-bg-contrast); /* "Light" text (e.g., on yellow buttons) is very dark */
+    --border-color: var(--theme-card-border); /* Default border is themed */
+    --card-shadow: var(--theme-card-shadow); /* Default card shadow is themed */
+
+    /* Specific fallbacks for this theme */
+    --fallback-dark-text: var(--theme-brighter-mint-text);
+    --fallback-light-text: var(--theme-deepest-bg-contrast);
+}
+
+/* ==========================================================================
+   1. GLOBAL STYLES (THEMED)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--theme-font-secondary);
+    color: var(--theme-light-mint-text);
+    line-height: 1.75;
+    background-color: var(--theme-dark-bg-base);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232dce89' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(140deg,
+            var(--theme-dark-bg-gradient-start) 0%,
+            var(--theme-dark-bg-gradient-mid) 45%,
+            var(--theme-dark-bg-gradient-end) 100%
+        );
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Links */
+a {
+    color: var(--theme-biotech-green);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+a:hover {
+    color: var(--accent-yellow);
+    opacity: 0.9;
+}
+.inline-link {
+    text-decoration: underline;
+    font-weight: 600;
+}
+.inline-link:hover {
+    text-decoration: none;
+}
+
+/* Headings & Text */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--theme-font-primary);
+    color: var(--theme-brighter-mint-text);
+    line-height: 1.3;
+}
+
+.section-title {
+    font-family: var(--theme-font-primary);
+    font-size: clamp(2.2rem, 6vw, 3.2rem); /* Made slightly larger for main section titles */
+    text-align: center; /* Ensure this is always applied */
+    margin-bottom: 1rem; /* Space before subtitle */
+    color: var(--theme-brighter-mint-text);
+    text-shadow: 0 0 15px rgba(45, 206, 137, 0.5), 0 0 8px rgba(45, 206, 137, 0.3);
+    position: relative;
+    padding-bottom: 0.85rem;
+    line-height: 1.2; /* Ensure tight line height for multi-line titles */
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Crucial for centering the underline */
+    width: 80px;
+    height: 4px;
+    background-color: var(--theme-biotech-green);
+    box-shadow: 0 0 10px rgba(45, 206, 137, 0.7);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem; /* Slightly larger subtitle */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 3.5rem;
+    max-width: 800px; /* Wider max-width */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Themed Quote Style */
+.quote {
+    font-style: italic;
+    color: var(--theme-soft-mint-text);
+    border-left: 4px solid var(--theme-biotech-green);
+    padding: 1.25rem 1.75rem;
+    margin: 2rem 0; /* More vertical margin */
+    font-size: 1.1rem;
+    background-color: rgba(4, 15, 10, 0.6); /* Darker transparent bg for quote */
+    border-radius: 0 8px 8px 0; /* Themed radius */
+    box-shadow: inset 2px 0 8px rgba(0,0,0,0.2);
+}
+.quote strong {
+    color: var(--theme-brighter-mint-text);
+    font-style: normal;
+}
+.quote small {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--theme-muted-mint-text);
+}
+.quote small a {
+    color: var(--theme-biotech-green);
+    opacity: 0.8;
+}
+.quote small a:hover {
+    opacity: 1;
+}
+
+/* Highlight Focus Themed */
+/* --- Global Themed .highlight-focus (if you use this class often) --- */
+.highlight-focus { /* Let's make the default highlight focus biotech green */
+    font-weight: bold;
+    color: var(--theme-biotech-green); /* Default highlight is now green */
+    font-style: normal;
+}
+/* We can create a specific class for yellow highlights if needed */
+.highlight-yellow-accent {
+    font-weight: bold;
+    color: var(--accent-yellow);
+}
+/* Buttons (Themed) */
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2rem; /* Slightly larger padding */
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
+    margin: 0.75rem 0.5rem 0.75rem 0;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.8px; /* More letter spacing */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Base shadow for all buttons */
+}
+.btn-primary { /* Main CTA button - Green */
+    background: linear-gradient(135deg, var(--theme-biotech-green), #23a870); /* Adjusted gradient */
+    color: var(--theme-deepest-bg-contrast);
+    border: none;
+    box-shadow: 0 0 18px rgba(45, 206, 137, 0.45), 0 0 7px rgba(45, 206, 137, 0.35), 0 2px 5px rgba(0,0,0,0.2);
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #38e09b, var(--theme-biotech-green));
+    box-shadow: 0 0 28px rgba(45, 206, 137, 0.65), 0 0 12px rgba(45, 206, 137, 0.55), 0 4px 8px rgba(0,0,0,0.25);
+    transform: translateY(-3px) scale(1.03);
+    color: #000;
+}
+.btn-outline { /* Secondary/Outline button - Green Outline */
+    background-color: transparent;
+    color: var(--theme-biotech-green);
+    border-color: var(--theme-biotech-green);
+}
+.btn-outline:hover {
+    background-color: var(--theme-biotech-green);
+    color: var(--theme-deepest-bg-contrast);
+    box-shadow: 0 0 15px rgba(45, 206, 137, 0.4);
+}
+.btn-accent { /* Yellow Accent Button */
+    background-color: var(--accent-yellow);
+    color: var(--theme-deepest-bg-contrast);
+    border-color: var(--accent-yellow);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1), 0 0 12px var(--accent-yellow);
+}
+.btn-accent:hover {
+    background-color: #f0c000; /* Darker yellow */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 18px var(--accent-yellow);
+    transform: translateY(-3px) scale(1.03);
+}
+.btn-small {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
+}
+
+/* Content Section Base */
+.content-section {
+    padding: 70px 0;
+    position: relative;
+}
+/* .alt-bg can be used for sections that need a slightly different dark background within the page */
+.alt-bg {
+    background-color: rgba(0,0,0,0.1); /* Subtle overlay on main dark bg */
+    border-top: 1px solid var(--theme-card-border);
+    border-bottom: 1px solid var(--theme-card-border);
+}
+
+/* General Themed Card Style (to be inherited or applied) */
+.themed-card-style { /* Base style for various cards */
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px; /* Slightly more rounded */
+    padding: 2rem;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    margin-bottom: 2.5rem;
+    color: var(--theme-light-mint-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.themed-card-style:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 70, 40, 0.35), inset 0 0 18px rgba(0,40,20,0.4);
+    border-color: var(--theme-card-border-hover);
+}
+.themed-card-style h3, 
+.themed-card-style h4 {
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.75rem;
+}
+.themed-card-style p {
+    color: var(--theme-light-mint-text);
+    line-height: 1.7;
+}
+.themed-card-style p strong, /* General strong text in themed cards */
+.content-section p strong:not(.highlight-focus):not([class*="fallacy-quote"] strong) /* General strong text on page */ {
+    color: var(--theme-biotech-green); /* Default strong emphasis to green */
+    font-weight: 600; /* Ensure it's visually distinct from normal text if color is similar */
+}
+
+/* --- Hero Section (learn_in_3_months.html) --- */
+/* (Copied from previous themed version, ensures it's covered here) */
+/* In css/learn_in_3_months_themed.css */
+
+/* ... (Keep :root variables and other global styles) ... */
+
+/* --- Hero Section (learn_in_3_months.html - REIMAGINED WITH YOUR IMAGE) --- */
+.hero-section.page-hero {
+    padding-top: 140px; /* Increased to ensure content is well below navbar */
+    padding-bottom: 100px; /* Ample bottom padding */
+    min-height: 75vh; /* Make it taller, adjust as needed, 75-85vh can look good */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* For pseudo-element overlay and background image */
+    overflow: hidden; /* Prevent image bleed */
+    color: var(--theme-brighter-mint-text); /* Ensure high contrast text */
+    
+    /* Your New Background Image */
+    background-image: url('../../images/blog/aljohn_3_months.png'); /* << UPDATE THIS PATH */
+    background-size: cover; /* Cover the entire area */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Parallax-like effect on scroll */
+                                  /* Remove if it causes performance issues or looks odd */
+}
+
+/* Overlay to ensure text readability over the image */
+.hero-section.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Darker, slightly greener overlay */
+    background: linear-gradient(135deg, 
+        rgba(var(--theme-dark-bg-gradient-mid-rgb, 10, 46, 26), 0.75) 0%, 
+        rgba(var(--theme-deepest-bg-contrast-rgb, 2, 8, 5), 0.85) 60%,
+        rgba(var(--theme-deepest-bg-contrast-rgb, 2, 8, 5), 0.95) 100%
+    );
+    /* Or a simpler one:
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2, 8, 5), 0.7); /* Adjust opacity (0.6 to 0.8 is good) */
+    z-index: 1; /* Overlay sits between background image and content */
+}
+
+/* Ensure .container content is above the overlay */
+.hero-section.page-hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Constrain content width for better readability */
+}
+
+.hero-section.page-hero h1 {
+    font-family: var(--theme-font-primary);
+    font-size: clamp(2.8rem, 7vw, 4.5rem); /* Make title very prominent */
+    margin-bottom: 0.5rem; /* Tighter margin */
+    color: #FFFFFF; /* Pure white for max contrast */
+    text-shadow: 
+        0 0 25px rgba(var(--theme-biotech-green-rgb), 0.7),
+        0 0 15px rgba(var(--theme-biotech-green-rgb), 0.5),
+        0 2px 4px rgba(0,0,0,0.5); /* Stronger biotech green glow + subtle drop shadow */
+    line-height: 1.15;
+}
+
+.hero-section.page-hero .secret-emoji {
+    font-size: 1.3em; /* Relative to h1 */
+    display: inline-block;
+    transform: rotate(-12deg) translateY(-5px);
+    margin-left: 10px;
+    opacity: 0.9;
+    /* text-shadow: 0 0 10px var(--theme-accent-yellow); Optional yellow glow for emoji */
+}
+
+.hero-section.page-hero .subtitle {
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem); 
+    font-weight: 400; /* Lighter weight for subtitle */
+    margin-bottom: 2.5rem;
+    color: var(--theme-brighter-mint-text); /* Brighter mint for subtitle */
+    opacity: 0.95;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-section.page-hero .btn-primary { /* "Jump to Calculator" button */
+    background-color: var(--theme-biotech-green); /* Main theme green for this button */
+    color: var(--theme-deepest-bg-contrast);
+    border: 2px solid var(--theme-biotech-green);
+    font-size: 1.1rem; /* Slightly larger */
+    padding: 0.9rem 2.2rem; /* More padding */
+    border-radius: 8px; /* Sharper radius */
+    box-shadow: 0 0 20px rgba(var(--theme-biotech-green-rgb), 0.5), 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.25s ease-in-out;
+}
+.hero-section.page-hero .btn-primary:hover {
+    background-color: #38e09b; /* Lighter green */
+    border-color: #38e09b;
+    color: var(--theme-deepest-bg-contrast);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(var(--theme-biotech-green-rgb), 0.7), 0 6px 15px rgba(0,0,0,0.35);
+}
+
+/* Remove the old solid blue background and border from .hero-section.page-hero if they were overriding */
+.hero-section.page-hero {
+    background: transparent; /* Let the background-image rule take over */
+    border-bottom: none; /* Remove the previous green border if it conflicts with full bg image */
+    /* Re-apply the new background image and other properties */
+    background-image: url('../../../images/blog/aljohn_3_months_header.png'); /* << YOUR IMAGE PATH */
+    background-size: cover;
+    background-position: center top; /* Adjust to 'center center' or 'center 30%' etc. to position Aljohn nicely */
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; /* Keep or remove based on preference */
+}
+
+/* Add RGB versions to :root if not already there for the overlay */
+:root {
+    /* ... your existing theme variables ... */
+    --theme-dark-bg-gradient-mid-rgb: 10, 46, 26;
+    --theme-deepest-bg-contrast-rgb: 2, 8, 5;
+    --theme-biotech-green-rgb: 45, 206, 137; /* Already there */
+    --accent-yellow-rgb-equivalent: 255, 215, 0; /* Already there */
+}
+/* --- Original .author-intro and .key-point-card from your old CSS --- */
+/* We will now theme these using the .themed-card-style or specific overrides */
+
+/* Removing old light-theme styles for these as they are handled by themed intro section */
+/*
+.author-intro { ... }
+.author-intro img { ... }
+.key-point-card { ... }
+.key-point-card h3 { ... }
+*/
+
+/* --- Original .language-hours-grid and .language-card from your old CSS --- */
+/* These are now themed by learn_in_3_months_language_hours.css (which will be provided next) */
+/*
+.language-hours-grid { ... }
+.language-card { ... }
+etc.
+*/
+
+/* --- Original .calculation-highlight from your old CSS --- */
+.calculation-highlight { /* Themed version */
+    background-color: var(--accent-yellow);
+    color: var(--theme-deepest-bg-contrast);
+    padding: 2.5rem; /* More padding */
+    border-radius: 10px;
+    text-align: center;
+    margin: 2.5rem auto;
+    max-width: 550px; /* Slightly wider */
+    box-shadow: 0 0 20px var(--accent-yellow), 0 4px 10px rgba(0,0,0,0.2);
+}
+.calculation-highlight .result {
+    font-size: 3rem; /* Larger result */
+    font-weight: 800; /* Bolder */
+    font-family: var(--theme-font-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.calculation-highlight .label {
+    font-size: 1.2rem; /* Larger label */
+    opacity: 0.9;
+}
+
+
+/* --- Original .lyrics-section from your old CSS --- */
+/* This is now themed by learn_in_3_months_own_pace.css (to be provided) */
+
+/* --- Original .calculator-section from your old CSS --- */
+/* This is now themed by general .themed-card-style and specific input styles in its own section */
+.calculator-section {
+    /* This outer section doesn't need card styling if the inner div gets it */
+    /* background-color: transparent; */
+    /* box-shadow: none; */
+}
+.calculator-section > div { /* The inner div containing form elements */
+    /* This will inherit .themed-card-style or have it applied */
+    /* Make sure it does, or copy .themed-card-style properties here */
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 2.5rem; /* More padding */
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+}
+.calculator-section label {
+    display: block;
+    margin-bottom: 0.6rem; /* Adjusted */
+    font-weight: 600;
+    color: var(--theme-biotech-green); /* Themed label color */
+}
+.calculator-section input,
+.calculator-section select {
+    width: 100%;
+    padding: 0.85rem; /* Adjusted */
+    margin-bottom: 1.25rem; /* Adjusted */
+    border: 1px solid var(--theme-card-border);
+    background-color: rgba(4, 15, 10, 0.8); /* Darker input bg */
+    color: var(--theme-light-mint-text);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.calculator-section input:focus,
+.calculator-section select:focus {
+    outline: none;
+    border-color: var(--theme-biotech-green);
+    box-shadow: 0 0 8px rgba(45, 206, 137, 0.5);
+}
+.calculator-section .btn { /* Button inside calculator */
+    margin-top: 1.5rem;
+    width: 100%;
+    /* Will use global themed .btn-primary (green) by default */
+}
+#calculatorResult { /* Themed result box */
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background-color: rgba(45, 206, 137, 0.15); /* Subtle green bg */
+    border-left: 5px solid var(--theme-biotech-green);
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600; /* Bolder result text */
+    color: var(--theme-brighter-mint-text);
+    text-align: left; /* Align result text left */
+}
+#calculatorResult.error {
+    background-color: rgba(200, 26, 46, 0.1); /* Using Aljohn's original red as error warning */
+    border-left-color: var(--aljohn-original-primary-red);
+    color: #ffced4; /* Light red text for error */
+}
+
+
+/* --- Original footer styling from your learn_in_3_months.css --- */
+/* This should be handled by your global ../../css/footer.css.
+   If you want to THEME the global footer specifically for THIS PAGE,
+   you would add overriding styles here targeting `body.learn-in-3-months-page footer` or similar.
+   For now, assuming global footer.css handles it.
+*/
+/*
+footer { ... }
+footer a { ... }
+*/
+
+
+/* --- Ericsson Insight Card Theming (from #timeInvestment) --- */
+/* This was moved from its own file into the main themed CSS as it's a general card style now */
+#timeInvestment .ericsson-insight-card {
+    /* Uses .themed-card-style */
+    display: flex;
+    align-items: stretch; /* Keep this */
+    gap: 2rem; /* Adjust gap */
+    padding: 2 rem;
+}
+#timeInvestment .insight-icon { /* Container for the image */
+    flex: 0 0 180px; /* Max width for image container */
+    min-width: 150px;
+}
+#timeInvestment .insight-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px; /* Rounded image */
+  border: 2px solid var(--theme-card-border-hover);/* Subtle border around image */
+}
+#timeInvestment .insight-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+#timeInvestment .insight-content h3 {
+    color: var(--theme-brighter-mint-text);
+    font-size: 1.6rem; /* Make title pop more */
+    margin-bottom: 1rem;
+}
+#timeInvestment .insight-content p {
+    color: var(--theme-light-mint-text); /* Ensure good contrast */
+    font-size: 1.05rem; /* Slightly larger text */
+    margin-bottom: 1rem;
+}
+#timeInvestment .insight-content small {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--theme-card-border);
+    color: var(--theme-muted-mint-text);
+    font-size: 0.8rem;
+}
+#timeInvestment .insight-content p strong.highlight-focus {
+    color: #2dce89; /* CHANGE TO YELLOW for high contrast on dark green card */
+    background-color: rgba(var(--accent-yellow-rgb-equivalent, 255, 215, 0), 0.1); /* Subtle yellow bg */
+    padding: 0.1em 0.25em;
+    border-radius: 3px;
+}
+#timeInvestment .themed-card-style p strong,
+#timeInvestment .ericsson-insight-card p strong,
+#timeInvestment .person-card p strong {
+    color: var(--theme-biotech-green); /* Default strong to green */
+}
+#timeInvestment .insight-content small {
+    color: var(--theme-muted-mint-text);
+    border-top: 1px solid var(--theme-card-border);
+}
+#timeInvestment .insight-content small a {
+    color: var(--theme-biotech-green); /* Link color */
+}
+/* Responsive for Ericsson Card */
+@media (max-width: 768px) {
+    #timeInvestment .ericsson-insight-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #timeInvestment .insight-icon {
+        margin-bottom: 1.5rem;
+        width: 70%;
+        max-width: 200px;
+    }
+    #timeInvestment .insight-icon img {
+        border-radius: 50%; /* Make it circular on mobile for a different look */
+        width: 150px; /* Fixed size for circular */
+        height: 150px;
+    }
+    #timeInvestment .insight-content ul {
+        text-align: left;
+        display: inline-block;
+    }
+}
+
+/* Fallback for LCH color if not supported (already defined, just ensure it's here) */
+@supports not (color: lch(0 0 0)) {
+    :root {
+        --accent-yellow: var(--aljohn-original-accent-yellow-fallback);
+    }
+}
+/* PREVIOUSLY PROVIDED CSS FOR learn_in_3_months_themed.css ENDS HERE */
+/* ... (all the styles from :root down to responsive adjustments for general theme) ... */
+
+/* ==========================================================================
+   SPECIFIC SECTION STYLING (THEMED) - CONTINUED
+   ========================================================================== */
+
+/* --- Introduction / Meet Aljohn Section (POLYGLOT PAPERS THEME) --- */
+/* This ensures the styles from your `_aljohn_bio.css` are correctly themed and included */
+.introduction-aljohn.polyglot-papers-theme {
+    background-color: var(--theme-dark-bg-base); /* Fallback, gradient is primary */
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232dce89' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(140deg,
+            var(--theme-dark-bg-gradient-start) 0%,
+            var(--theme-dark-bg-gradient-mid) 40%,
+            var(--theme-dark-bg-gradient-end) 100%
+        );
+    color: var(--theme-light-mint-text);
+    padding-top: 70px; /* Adjusted from 80px if hero has more */
+    padding-bottom: 70px;
+    border-top: 1px solid var(--theme-card-border); /* Subtle top/bottom border for section */
+    border-bottom: 1px solid var(--theme-card-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.introduction-aljohn.polyglot-papers-theme .introduction-eyebrow {
+    display: block; 
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--theme-biotech-green);
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin: 0 auto 1.5rem auto; 
+    padding: 0.4rem 1rem;
+    background-color: rgba(45, 206, 137, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(45, 206, 137, 0.3);
+    font-family: var(--theme-font-tech);
+    max-width: fit-content; 
+}
+
+.introduction-aljohn.polyglot-papers-theme .author-intro-enhanced {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 2.5rem; 
+    margin-bottom: 3rem; 
+    background-color: transparent; /* Let section background show */
+    box-shadow: none;
+    border: none;
+    padding: 0; /* Remove padding from this inner div if section has it */
+}
+.introduction-aljohn.polyglot-papers-theme .author-image-container {
+    flex: 0 0 auto; 
+    margin-right: 2rem; 
+    text-align: center; 
+}
+.introduction-aljohn.polyglot-papers-theme .author-image-frame {
+    display: inline-block; 
+    padding: 6px; /* Slightly thicker frame */
+    background-color: var(--theme-biotech-green); 
+    border-radius: 50%; 
+    box-shadow: 0 0 15px rgba(45, 206, 137, 0.4); 
+}
+.introduction-aljohn.polyglot-papers-theme .author-portrait {
+    width: 200px;  /* Adjusted size from screenshot */
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--theme-dark-bg-mid); /* Dark border inside frame */
+    display: block; 
+}
+.introduction-aljohn.polyglot-papers-theme .author-text-content {
+    flex: 1; 
+    min-width: 300px; 
+}
+.introduction-aljohn.polyglot-papers-theme .author-title {
+    color: var(--theme-brighter-mint-text); 
+    text-shadow: 0 0 10px rgba(45, 206, 137, 0.4); 
+    font-size: clamp(2rem, 4.5vw, 2.8rem); 
+    text-align: left; 
+    margin-bottom: 0.75rem; 
+    font-family: var(--theme-font-primary); /* Explicitly set font */
+    position: relative; /* For ::after */
+    padding-bottom: 0.5rem; /* Space for underline */
+}
+.introduction-aljohn.polyglot-papers-theme .author-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Align to left for left-aligned title */
+    width: 70px;
+    height: 3px;
+    background-color: var(--theme-biotech-green);
+    box-shadow: 0 0 6px rgba(45, 206, 137, 0.6);
+    border-radius: 1px;
+}
+.introduction-aljohn.polyglot-papers-theme .author-tagline {
+    color: var(--theme-biotech-green); 
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.introduction-aljohn.polyglot-papers-theme .author-bio {
+    color: var(--theme-light-mint-text); 
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* Key Point Card Themed for Introduction Section */
+.introduction-aljohn.polyglot-papers-theme .key-point-card-enhanced {
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(4px); 
+    border-radius: 8px; 
+    padding: 2rem 1.8rem;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    color: var(--theme-light-mint-text);
+    margin-top: 1rem; /* Reduced top margin slightly */
+}
+.introduction-aljohn.polyglot-papers-theme .key-point-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.introduction-aljohn.polyglot-papers-theme .key-point-card-header .key-point-icon {
+    font-size: 1.8rem; /* For Font Awesome icon */
+    color: var(--theme-biotech-green);
+    text-shadow: 0 0 8px rgba(45, 206, 137, 0.5);
+}
+.introduction-aljohn.polyglot-papers-theme .key-point-card-enhanced h3 {
+    color: var(--theme-brighter-mint-text);
+    font-size: 1.4rem;
+    font-family: var(--theme-font-primary);
+    margin-bottom: 0;
+}
+.introduction-aljohn.polyglot-papers-theme .key-point-card-body p {
+    color: var(--theme-soft-mint-text);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.introduction-aljohn.polyglot-papers-theme .key-point-card-body p strong {
+    color: var(--accent-yellow); /* Yellow for strong emphasis here */
+}
+.introduction-aljohn.polyglot-papers-theme .key-point-cta {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--theme-biotech-green);
+    margin-top: 1.25rem; /* Adjusted margin */
+}
+
+/* Responsive for Themed Introduction */
+@media (max-width: 768px) {
+    .introduction-aljohn.polyglot-papers-theme .author-intro-enhanced {
+        flex-direction: column;
+        text-align: center;
+    }
+    .introduction-aljohn.polyglot-papers-theme .author-image-container {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    .introduction-aljohn.polyglot-papers-theme .author-title {
+        text-align: center;
+    }
+    .introduction-aljohn.polyglot-papers-theme .author-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* --- Aljohn's Rule of Thumb (Includes Duolingo Fallacy Card Theming) --- */
+#aljohnsRule {
+    /* This section uses the global dark page background */
+}
+#aljohnsRule .section-title { /* Uses global themed .section-title */ }
+#aljohnsRule .section-subtitle { /* Uses global themed .section-subtitle */ }
+
+/* Duolingo Fallacy Card Theming (from your css/learn_in_3_months.css, now themed) */
+.fallacy-card.duolingo-themed {
+    margin-top: 3rem;
+    padding: 0; 
+    background-color: #78c800; /* Duolingo Green */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 5px rgba(255,255,255,0.25);
+    color: #1e2b00; 
+    overflow: hidden;
+    border: none;
+}
+.fallacy-card-content { /* This should already be display:flex from previous CSS */
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+}
+.fallacy-icon-area {
+    flex: 0 0 150px; /* Adjust width of icon area */
+    padding: 1.5rem 1rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch; 
+    background-color: #58a700; 
+}
+.duolingo-owl-icon {
+    width: 100px; 
+    height: 100px; 
+}
+.duolingo-owl-icon {
+    width: 100px; 
+    height: 100px; 
+    object-fit: contain; 
+}
+.fallacy-text-area {
+    flex: 1;
+    padding: 1.75rem; 
+}
+.fallacy-card.duolingo-themed h3 {
+    font-family: var(--theme-font-primary);
+    font-size: 1.5rem; 
+    color: #ffffff; 
+    margin-bottom: 0.75rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.fallacy-card.duolingo-themed p {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    color: #2a3f00; 
+}
+.fallacy-quote { 
+    background-color: rgba(255, 255, 255, 0.9) !important; 
+    border-left: 5px solid var(--accent-yellow) !important; 
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    color: var(--aljohn-original-dark-text); 
+    margin: 1.25rem 0 !important;
+    font-style: normal; 
+}
+.fallacy-quote .highlight-focus{ 
+    color: #325b04
+}
+/* NEW for the red warning text */
+.fallacy-quote strong.highlight-focus.warning-red { 
+    color: var(--aljohn-original-primary-red) !important; /* Original ALJOHN RED */
+    font-weight: 700; 
+    background-color: rgba(200, 26, 46, 0.1) !important; /* Light red highlight bg */
+    padding: 0.15em 0.4em; 
+    border-radius: 4px; 
+}
+.fallacy-conclusion .highlight-focus { /* For "(Deliberate Practice!)" */
+    color: var(--theme-biotech-green); 
+    font-style: italic;
+}
+.fallacy-conclusion {
+    font-weight: 600;
+    color: #1a2400 !important; 
+}
+.fallacy-conclusion .highlight-focus { 
+    color: #325b04; /* Green highlight for (Deliberate Practice!) */
+    font-style: italic;
+}
+/* Responsive for Duolingo Card */
+@media (max-width: 600px) { /* Adjust breakpoint if icon area becomes too small */
+    .fallacy-card-content {
+        flex-direction: column;
+    }
+    .fallacy-icon-area {
+        flex-basis: auto;
+        width: 100%;
+        padding: 1rem;
+        border-bottom: 3px solid #4a8c00; /* Darker green separator */
+    }
+    .duolingo-owl-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .fallacy-text-area {
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+    }
+}
+
+/* --- The 3-Month Plan Section (#threeMonthPlan) --- */
+#threeMonthPlan {
+    /* Uses global dark page background */
+}
+#threeMonthPlan .section-title { /* Uses global themed .section-title */ }
+#threeMonthPlan .section-subtitle { /* Uses global themed .section-subtitle */ }
+
+#threeMonthPlan .calculation-highlight { /* This uses the .calculation-highlight from global themed styles */
+    /* The global themed .calculation-highlight already uses accent-yellow background */
+}
+#threeMonthPlan .text-center strong.highlight-focus { /* Target the strong tag in the conclusion */
+    color: var(--theme-biotech-green); /* CHANGE: Make this key takeaway green */
+    background-color: rgba(45, 206, 137, 0.1); /* Subtle green highlight */
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+/* In learn_in_3_months_themed.css */
+
+/* "Aljohn's Experience" card (which is a .key-point-card within #threeMonthPlan) */
+#threeMonthPlan .key-point-card {
+    background-color: var(--theme-card-bg); /* Already set */
+    border-left: 5px solid var(--accent-yellow); /* Changed to yellow for pop */
+    padding: 1.75rem; /* Slightly more padding */
+}
+#threeMonthPlan .key-point-card h3 {
+    color: var(--theme-brighter-mint-text); /* Bright title */
+    font-size: 1.3rem; /* Ensure it's a good size */
+}
+#threeMonthPlan .key-point-card p {
+    color: var(--theme-light-mint-text); /* Ensure paragraph text is light enough */
+    font-size: 1rem; /* Ensure readable size */
+    line-height: 1.7;
+}
+#threeMonthPlan .key-point-card p strong { /* For "8-12 hours" */
+    color: var(--accent-yellow);
+    font-weight: 700; /* Ensure it's bold */
+    background-color: rgba(var(--accent-yellow-rgb-equivalent, 255, 215, 0), 0.15); /* Subtle yellow bg */
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* --- Own Pace Section (Bini Lyrics) --- */
+/* Styles from `learn_in_3_months_own_pace.css` should be themed like this: */
+.own-pace-section {
+    background-color: var(--theme-deepest-bg-contrast); /* Very dark, intimate feel */
+    color: var(--theme-light-mint-text);
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--theme-card-border);
+    align-items: center;
+}
+.own-pace-section::before { /* Subtle pattern for this very dark section */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232dce89' fill-opacity='0.02'%3E%3Cpath d='M0 50V0h50v50H0zm25-48.5L1.5 25 25 48.5 48.5 25 25 1.5z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.7;
+    z-index: 0;
+}
+.own-pace-header .section-title-dark { /* Assuming this class is used for the h2 */
+    font-size: clamp(1.8rem, 5vw, 2.4rem); /* Adjusted */
+    color: var(--theme-soft-mint-text);
+    text-shadow: 5px 5px 5px  (--theme-soft-mint-text)
+    margin-bottom: 2rem;
+    
+}
+.own-pace-header .section-title-dark::after { display: none; }
+.own-pace-header .section-subtitle-dark { /* For "My answer is simple..." */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem;
+}
+.bini-video-container { /* Keep existing responsive video styles, adjust theme */
+    border-color: rgba(45, 206, 137, 0.15); /* Subtle green border for video */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow on dark */
+    max-width: auto;
+   
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.lyrics-intro-text p {
+    color: var(--theme-muted-mint-text);
+    margin-bottom: 1.25rem;
+}
+.lyrics-block {
+    background-color: rgba(45, 206, 137, 0.05); 
+    border-left: 4px solid var(--theme-soft-mint-text);
+    padding: 1.5rem;
+    color: var(--theme-soft-mint-text);
+}
+.lyrics-block .lyrics-emphasis {
+    color: var(--theme-soft-mint-text);
+    font-size: 1.2 rem; 
+    font-weight: bolder;
+}
+.aljohn-final-message-ownpace { /* The final ALL CAPS message */
+    background-color: rgba(var(--theme-soft-mint-text, 255, 215, 0), 0.1);
+    border: 1px solid rgba(var(--theme-soft-mint-text, 255, 215, 0), 0.3);
+    padding: 1.75rem; /* More padding */
+}
+.aljohn-final-message-ownpace p {
+    color: var(--theme-soft-mint-text);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+
+/* --- Responsive Fallbacks from your original learn_in_3_months.css --- */
+/* These general responsive rules might still be useful but check for conflicts */
+@media (max-width: 768px) {
+    /* .author-intro { flex-direction: column; text-align: center; } */ /* Handled by themed intro */
+    /* .author-intro img { margin-bottom: 1rem; } */
+
+    .language-hours-grid {
+        grid-template-columns: 1fr; /* Stack language hour cards */
+    }
+    .calculation-highlight .result { font-size: 2rem; }
+    .calculation-highlight .label { font-size: 1rem; }
+
+    /* .lyrics-section p { font-size: 1.1rem; } */ /* Handled by themed own-pace */
+    /* .lyrics-section .final-message { font-size: 1.2rem; } */
+}
+
+/* Make sure to define --accent-yellow-rgb-equivalent if using rgba() with it */
+/* Example: --accent-yellow-rgb-equivalent: 255, 215, 0; */
+/* This title and its subtitle are within .practice-graphs-section */
+/* In learn_in_3_months_themed.css */
+
+/* ... (other styles) ... */
+
+/* For "The Path to Mastery: Visualized" (Title for Violinists chart) */
+/* This title and its subtitle are within .practice-graphs-section */
+.practice-graphs-section > .subsection-title-center { /* Title for "Path to Mastery" */
+    color: var(--theme-brighter-mint-text) !important;
+    font-size: 2rem !important; 
+    text-shadow: 0 0 12px rgba(45, 206, 137, 0.4);
+    margin-bottom: 0.75rem !important;
+    text-align: center; /* Explicitly center title (should be inherited if .subsection-title-center is always centered) */
+}
+.practice-graphs-section > .subsection-title-center::after {
+    background-color: var(--theme-biotech-green) !important;
+    height: 3px;
+    width: 70px;
+    box-shadow: 0 0 6px rgba(45, 206, 137, 0.5);
+    /* ::after is already centered by parent's text-align:center if title is block/inline-block,
+       OR by left:50%; transform:translateX(-50%) if parent isn't text-align:center.
+       Let's assume the global .subsection-title-center handles its ::after centering. */
+}
+
+.practice-graphs-section > .text-center { /* Subtitle "Ericsson's studies..." */
+    color: var(--theme-soft-mint-text) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2.5rem !important;
+    max-width: 750px; /* Existing max-width */
+    margin-left: auto;   /* << ADD FOR CENTERING */
+    margin-right: auto;  /* << ADD FOR CENTERING */
+    text-align: center; /* << ADD FOR CENTERING TEXT WITHIN THE BLOCK */
+    line-height: 1.7;   /* Ensure good line height */
+}
+
+
+/* --- Voices of Mastery Section --- */
+/* Title "Echoes of Effort: The Paths Taken by Masters" */
+.voices-of-mastery > .subsection-title-center { 
+    color: var(--theme-brighter-mint-text) !important;
+    font-size: 2rem !important; 
+    text-shadow: 0 0 12px rgba(45, 206, 137, 0.4);
+    margin-bottom: 0.75rem !important;
+    text-align: center; /* Explicitly center title */
+}
+.voices-of-mastery > .subsection-title-center::after {
+    background-color: var(--theme-biotech-green) !important;
+    height: 3px;
+    width: 70px;
+    /* Ensure ::after is centered if not already handled globally */
+    /* left: 50%; transform: translateX(-50%); */
+}
+
+.voices-of-mastery > .text-center { /* Subtitle "Mastery isn't born..." */
+    color: var(--theme-soft-mint-text) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2.5rem !important;
+    max-width: 800px; /* Existing max-width */
+    margin-left: auto;   /* << ADD FOR CENTERING */
+    margin-right: auto;  /* << ADD FOR CENTERING */
+    text-align: center; /* << ADD FOR CENTERING TEXT WITHIN THE BLOCK */
+    line-height: 1.7;   /* Ensure good line height */
+}
+
+/* Takeaway text at the end of #timeInvestment section */
+.takeaway-block.dark-theme-takeaway p, 
+#timeInvestment > .container > p:last-of-type:not(.section-subtitle):not(.comparison-intro-subtitle):not(.comparison-question) {
+    text-align: center; /* << ENSURE THIS IS APPLIED */
+    margin-top: 3rem; 
+    margin-bottom: 1rem; 
+    font-size: 1.2rem; 
+    color: var(--theme-brighter-mint-text); 
+    line-height: 1.8;
+    max-width: 850px;
+    margin-left: auto;   /* For centering the block if max-width is applied */
+    margin-right: auto;  /* For centering the block if max-width is applied */
+    padding: 1rem 0; 
+}
+.takeaway-block.dark-theme-takeaway p strong.highlight-focus,
+#timeInvestment > .container > p:last-of-type strong.highlight-focus {
+    color: var(--theme-biotech-green);
+    background-color: rgba(45, 206, 137, 0.15);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-weight: 600;
+}
+/* In css/learn_in_3_months_own_pace.css */
+
+/* ... (Keep existing desktop and themed styles) ... */
+
+@media (max-width: 768px) {
+    .own-pace-section {
+        padding: 60px 1rem; /* Add horizontal padding */
+    }
+    .own-pace-header .section-title-dark {
+        font-size: clamp(1.6rem, 4.5vw, 2.2rem); /* Adjust title */
+    }
+    .own-pace-header .section-subtitle-dark {
+        font-size: 1rem; /* Adjust subtitle */
+        max-width: 90%;
+    }
+   .bini-video-container {
+        max-width: 100%; /* << CHANGE: Allow it to take full width of its parent on mobile */
+        /* Remove fixed max-width like 95% if its parent .container handles overall page padding */
+        margin-left: auto;  /* Ensure centering if not already */
+        margin-right: auto; /* Ensure centering if not already */
+        border-radius: 8px;
+        margin-bottom: 2rem; 
+    }
+    
+    .lyrics-intro-text p {
+        font-size: 1rem;
+    }
+    .lyrics-block {
+        padding: 1.25rem;
+    }
+    .lyrics-block p {
+        font-size: 0.95rem; /* Slightly smaller lyrics */
+        line-height: 1.7;
+    }
+    .aljohn-final-message-ownpace {
+        padding: 1.25rem;
+    }
+    .aljohn-final-message-ownpace p {
+        font-size: clamp(0.95rem, 2.8vw, 1.15rem); /* Adjust final message */
+    }
+}
+@media (max-width: 480px) {
+    /* ... (other fine-tuning) ... */
+    .bini-video-container {
+        /* No need for specific max-width here if 100% from above is fine */
+        /* If you want slightly more padding on very small screens: */
+        /* margin-left: 10px; */
+        /* margin-right: 10px; */
+        /* width: calc(100% - 20px); */ /* Example */
+    }
+@media (max-width: 480px) {
+    .own-pace-header .section-title-dark { font-size: clamp(1.5rem, 5vw, 2rem); }
+    .lyrics-block p { font-size: 0.9rem; }
+    .aljohn-final-message-ownpace p { font-size: clamp(0.9rem, 3vw, 1.1rem); }
+}
+/* In learn_in_3_months_themed.css (or wherever calculator styles are) */
+
+/* ... (Keep existing desktop and themed styles for .calculator-section) ... */
+
+@media (max-width: 768px) {
+    .calculator-section > div { /* The inner themed card for the calculator */
+        padding: 2rem 1.5rem; /* Adjust padding */
+    }
+    .calculator-section label {
+        font-size: 0.9rem; /* Smaller labels */
+    }
+    .calculator-section input,
+    .calculator-section select {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    .calculator-section .btn { /* Calculate and Reset buttons */
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%; /* Make buttons full width and stack them */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .calculator-section .btn:first-of-type { /* Calculate button */
+        margin-bottom: 0.75rem; /* Space between stacked buttons */
+    }
+    #calculatorResult {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-section > div { padding: 1.5rem 1rem; }
+    .calculator-section label { font-size: 0.85rem; }
+    .calculator-section input, .calculator-section select { font-size: 0.9rem; }
+    #calculatorResult { font-size: 0.95rem; }
+}
+/* ... (Rest of your learn_in_3_months_themed.css) ... */}

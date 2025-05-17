@@ -127,46 +127,41 @@
             </div>
         </section>
 <!-- The Polyglot Papers - Blog Preview Section -->
-        <section id="polyglot-papers-preview" class="polyglot-papers-preview content-section">
-            <div class="container">
-                <span class="papers-eyebrow">Declassified Intel</span>
-                <h2 class="section-title">The Polyglot Papers</h2>
-                <p class="section-subtitle">
-                    Groundbreaking research, field-tested methodologies, and critical analyses from the frontiers of accelerated language acquisition. 
-                    Enter the lab and dissect the science behind fluency.
-                </p>
+<section id="polyglot-papers-preview" class="polyglot-papers-preview content-section">
+    <div class="container">
+        <span class="papers-eyebrow">Declassified Intel</span>
+        <h2 class="section-title">The Polyglot Papers</h2>
+        <p class="section-subtitle">
+            Groundbreaking research, field-tested methodologies, and critical analyses from the frontiers of accelerated language acquisition. 
+            Explore my latest dispatches.
+        </p>
 
-                <div class="papers-teasers-grid">
-                    <div class="paper-teaser-card">
-                        <div class="paper-icon"><i class="fas fa-cogs"></i></div>
-                        <h3>Immersion Systems & Hacks</h3>
-                        <p>In-depth analysis of effective language acquisition frameworks, daily routines, and unconventional shortcuts to accelerate your learning.</p>
-                         <a href="blog.html#category-systems" class="paper-link">Explore Systems »</a> 
-                    </div>
+        <!-- Featured Article Slot -->
+        <div id="featuredPostSlot" class="featured-post-slot">
+            <!-- "Learn in 3 Months" article will be injected here by JS -->
+        </div>
 
-                    <div class="paper-teaser-card">
-                        <div class="paper-icon"><i class="fas fa-brain"></i></div> 
-                        <h3>The Polyglot Mindset</h3>
-                        <p>Delving into the crucial mental frameworks, motivation strategies, and psychological aspects of mastering multiple languages and overcoming learning plateaus.</p>
-                         <a href="blog.html#category-mindset" class="paper-link">Cultivate the Mindset »</a> 
-                    </div>
-
-                    <div class="paper-teaser-card">
-                        <div class="paper-icon"><i class="fas fa-feather-alt"></i></div> 
-                        <h3>Unfiltered Journey & Insights</h3>
-                        <p>Personal reflections, cultural discoveries, the raw realities of deep immersion, and lessons learned from the front lines of language acquisition.</p>
-                         <a href="blog.html#category-journey" class="paper-link">Read My Dispatches »</a> 
-                    </div>
-                </div>
-
-                <div class="cta-center" style="margin-top: 3rem;">
-                    <a href="blog.html" class="btn btn-primary btn-papers-cta">
-                        <i class="fas fa-folder-open"></i> Access Full Research Archive
-                    </a>
-                </div>
+        <!-- Grid for Other Recent Posts -->
+        <div id="recentPostsGrid" class="papers-teasers-grid recent-posts-grid">
+            <!-- Other recent blog post cards will be injected here by JS -->
+            <!-- Fallback static content if JS fails or for initial render (optional) -->
+            <!-- 
+            <div class="paper-teaser-card static-fallback">
+                <div class="paper-icon"><i class="fas fa-spinner fa-spin"></i></div>
+                <h3>Loading Latest Dispatches...</h3>
+                <p>Fetching the newest intel from the Polyglot Papers archive.</p>
             </div>
-        </section>
-     <!--End of Polyglot Papers Preview-->
+            -->
+        </div>
+
+        <div class="cta-center" style="margin-top: 3.5rem;"> 
+            <a href="blog.html" class="btn btn-primary btn-papers-cta"> 
+                <i class="fas fa-archive"></i> Access Full Research Archive 
+            </a>
+        </div>
+    </div>
+</section>
+<!--End of Polyglot Papers Preview-->
 <section id="pathway" class="pathway-section-preview content-section"> 
     <div class="container">
         <h2 class="section-title">Your <span class="highlight-text-alt">Roadmap</span> to Legendary Fluency</h2>
@@ -454,9 +449,12 @@
       console.log("Global siteBasePath dynamically set in body to:", siteBasePath);
   </script>
 <script src="js/navbar-loader.js" defer></script>
+
     <script src="js/footer-loader.js" defer></script>
    <script src="js/languagecenters-data.js"></script> <!-- Was already correct -->
     <script src="js/languagecenters-index-preview.js"></script> <!-- Was already correct -->
+    <script src="js/blog_data.js"></script>
+    <script src="js/homepage_blog_preview.js" defer></script> 
     <script src="js/script.js"></script> <!-- Was already correct -->
 </body>
 </html>

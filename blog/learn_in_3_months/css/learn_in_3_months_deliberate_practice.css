@@ -1,0 +1,777 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_deliberate_practice.css */
+/* Themed Styles for the Deliberate Practice Section */
+
+/* ==========================================================================
+   DELIBERATE PRACTICE SECTION - MAIN CONTAINER THEME
+   ========================================================================== */
+
+#deliberatePractice { /* The main section wrapper */
+    background-color: var(--theme-deepest-bg-contrast); /* VERY DARK background for standout */
+    /* Or a very dark gradient if you prefer:
+    background-image: linear-gradient(to bottom, #020604, #010302); */
+    color: var(--theme-light-mint-text); /* Default text color for this dark section */
+    padding-top: 70px; /* Keep original padding */
+    padding-bottom: 70px;
+    border-top: 2px solid var(--theme-biotech-green); /* Accent border for section */
+    border-bottom: 2px solid var(--theme-biotech-green);
+}
+
+/* General Sub-section Titles within Deliberate Practice (Themed) */
+.dp-subsection-title {
+    font-size: 1.8rem !important; /* Make titles stand out */
+    color: var(--theme-brighter-mint-text) !important; /* Bright mint title */
+    text-shadow: 0 0 10px rgba(45, 206, 137, 0.4);
+    margin-bottom: 1.25rem !important;
+    font-family: var(--theme-font-primary);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.6rem;
+}
+.dp-subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--theme-biotech-green) !important; /* Green underline */
+    width: 60px;
+    height: 3px;
+    border-radius: 1px;
+    box-shadow: 0 0 6px var(--theme-biotech-green);
+}
+
+/* ==========================================================================
+   PART 1: Litmus Test Styling (Themed)
+   ========================================================================== */
+.dp-litmus-test-container {
+    background-color: var(--theme-card-bg); /* Themed card background */
+    backdrop-filter: blur(5px);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    margin-bottom: 3.5rem;
+    color: var(--theme-light-mint-text);
+}
+.dp-litmus-test-container .text-center { /* For intro "Let's see if..." */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem;
+}
+
+.litmus-test-form .litmus-question {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px dashed var(--theme-card-border);
+}
+.litmus-test-form .litmus-question:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2rem; /* Original margin */
+}
+
+.litmus-test-form .litmus-question p { /* Question text */
+    font-weight: 600;
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.litmus-test-form .litmus-question p em { /* For (Aljohn's Anki method!) */
+    color: var(--theme-biotech-green);
+    font-style: normal;
+}
+
+.litmus-test-form .litmus-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.litmus-test-form .litmus-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent;
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2, 8, 5), 0.5); /* Darker option bg */
+    color: var(--theme-light-mint-text);
+}
+.litmus-test-form .litmus-options label:hover {
+    background-color: rgba(45, 206, 137, 0.15); /* Subtle green hover */
+    border-color: var(--theme-biotech-green);
+}
+.litmus-test-form .litmus-options input[type="radio"] {
+    accent-color: var(--theme-biotech-green); /* Green radio */
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+#litmusTestButton { /* Original #submitLitmusTest in your HTML */
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    /* This will use the .btn .btn-primary style from main themed CSS (Green button) */
+}
+
+.litmus-test-result {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2, 8, 5), 0.7); /* Even darker result box */
+    border: 1px solid var(--theme-card-border-hover);
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+    color: var(--theme-light-mint-text);
+}
+
+.litmus-test-result #litmusResultText strong { /* For "Reality Check!", etc. */
+    color: var(--theme-biotech-green);
+    font-size: 1.1em;
+}
+.litmus-test-result #litmusResultText p { /* The actual result paragraph */
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--theme-light-mint-text); /* Ensure text is light */
+}
+.litmus-test-result #litmusResultText p strong { /* For "DELIBERATE PRACTICE" */
+    color: var(--accent-yellow); /* Keep this yellow as it's a key term highlight */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: rgba(var(--accent-yellow-rgb-equivalent, 255, 215, 0), 0.1);
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+}
+
+
+/* ==========================================================================
+   PART 2: Deliberate Practice Definition (Themed)
+   ========================================================================== */
+.deliberate-practice-main-definition {
+    margin-top: 3.5rem; /* More space above this core definition part */
+}
+.deliberate-practice-main-definition > .text-center { /* "So, this 'Deliberate Practice' sounds serious..." */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem !important;
+}
+
+/* James Clear Quote Block (Themed) */
+.james-clear-quote-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--theme-card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    margin-bottom: 3rem;
+}
+.james-clear-image-container {
+    flex: 0 0 180px; /* Keep fixed width for the container */
+    /* Removed text-align: center; as we'll use flex for image centering */
+    display: flex; /* << ADD: Use flex to center the image within this container */
+    align-items: center; /* << ADD: Vertically center image */
+    justify-content: center; /* << ADD: Horizontally center image */
+    align-self: stretch; /* << ADD: Make this container stretch to height of quote content if quote is taller */
+                         /* OR align-self: center; if you want this block itself centered if shorter */
+}
+.james-clear-img {
+    max-width: 160px; 
+    width: 100%; /* Allow it to shrink if container is narrower */
+    height: auto;
+    aspect-ratio: 2 / 3; 
+    object-fit: cover;
+    border-radius: 6px;
+    border: 3px solid var(--theme-biotech-green); 
+    box-shadow: 0 0 12px rgba(45, 206, 137, 0.3);
+    display: block; /* Good for images within flex items */
+}
+.james-clear-quote-content {
+    flex: 1;
+    min-width: 280px;
+}
+.james-clear-quote-content > p:first-child { /* Targets "Author James Clear puts it succinctly:" */
+    color: var(--theme-soft-mint-text); /* Light color for readability */
+    font-size: 1rem; /* Original size */
+    margin-bottom: 0.5rem; /* Original margin */
+    font-style: italic; /* Optional: make this intro italic */
+}
+.james-clear-quote-content > p { /* "Author James Clear puts it succinctly:" */
+    color: var(--theme-soft-mint-text);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.james-clear-quote-content .quote { /* Actual quote block */
+    /* Inherits themed .quote style */
+    font-size: 1.1rem; /* Ensure readable size */
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+.james-clear-quote-content .quote strong { 
+    color: var(--theme-biotech-green); 
+}
+/* Aljohn's Adobo Analogy Block (Themed) */
+/* Aljohn's Adobo Analogy Block (Themed & Refined Proportions) */
+.aljohn-adobo-analogy-section {
+    background-color: var(--theme-card-bg); 
+    padding: 2rem 2.5rem 2.5rem 2.5rem; /* Adjusted padding: T R B L */
+    border-radius: 10px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    margin-top: 3rem; 
+    margin-bottom: 3.5rem;
+}
+
+.aljohn-analogy-main-title { /* "Aljohn's Translation..." (is a .dp-subsection-title) */
+    color: var(--theme-brighter-mint-text) !important; /* Brighter title to pop */
+    font-size: 1.7rem !important; 
+    margin-bottom: 1.5rem !important; /* Reduced margin below title */
+    text-align: center; /* Ensure it's centered */
+}
+.aljohn-analogy-main-title::after {
+    background-color: var(--theme-biotech-green) !important; /* Green underline */
+    box-shadow: 0 0 5px var(--theme-biotech-green);
+    width: 80px; /* Slightly wider underline */
+    height: 3px;
+}
+.aljohn-analogy-main-title .emoji {
+    font-size: 1em; /* Adjust emoji size to match text better */
+    vertical-align: baseline; /* Better alignment with text */
+}
+
+.adobo-analogy-text-content {
+    max-width: 750px; /* Slightly narrower max-width for better line length */
+    margin: 0 auto 2rem auto; 
+    text-align: left; /* << CHANGE: Left-align text for better readability of paragraphs */
+    color: var(--theme-light-mint-text);
+    font-size: 1.05rem; /* Slightly smaller for better fit */
+    line-height: 1.75; /* Good line height */
+}
+.adobo-analogy-text-content p {
+    margin-bottom: 1.25rem; /* Consistent paragraph spacing */
+}
+.adobo-analogy-text-content p:last-of-type {
+    margin-bottom: 0;
+}
+.adobo-analogy-text-content strong { 
+    color: var(--theme-biotech-green); /* Green for core skills (READING, LISTENING) */
+    font-weight: 600;
+}
+.adobo-analogy-text-content em { /* For "(that's passive learning)" */
+    color: var(--theme-soft-mint-text);
+    font-style: italic;
+}
+
+
+.adobo-analogy-horizontal-image-container {
+    width: 100%;
+    margin-top: 1rem; /* Reduced space above image, text above is now primary */
+    text-align: center; 
+}
+
+.adobo-horizontal-img {
+    width: 100%; 
+    max-width: 800px;  /* Max width for the image itself */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;    
+    margin: 0 auto;    
+    border-radius: 8px;
+    border: 1px solid var(--theme-card-border);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.3); /* Slightly stronger shadow */
+    background-color: #f0f0f0; /* Add a light fallback BG for the image if it has transparency */
+}
+
+/* Responsive adjustments for Adobo block proportions */
+@media (max-width: 768px) {
+    .aljohn-adobo-analogy-section {
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+    }
+    .aljohn-analogy-main-title {
+        font-size: 1.5rem !important; /* Smaller title on mobile */
+        margin-bottom: 1.25rem !important;
+    }
+    .adobo-analogy-text-content {
+        font-size: 1rem; /* Slightly smaller text on mobile */
+        text-align: center; /* Center text on mobile for this block if desired */
+    }
+    .adobo-analogy-horizontal-image-container {
+        margin-top: 1.5rem; /* Ensure decent space above image on mobile */
+    }
+}/* James Clear & Adobo Responsive (ensure these specific rules are present/adjusted) */
+    .james-clear-quote-block { /* This is already flex-direction: column on mobile */
+        gap: 1.5rem; 
+        align-items: center; /* << ADD THIS to center flex items horizontally */
+    }
+    .james-clear-image-container { 
+        flex-basis: auto; /* From previous */
+        margin-right: auto; /* From previous */
+        margin-left: auto;
+        margin-bottom: 1rem; /* From previous */
+        text-align: center; /* Ensures image inside is centered if it's inline-block */
+        width: auto; /* Allow it to shrink to image size */
+    }
+    .james-clear-img { 
+        max-width: 130px; /* From previous, or adjust as needed */
+        /* margin: 0 auto; /* Alternative centering if image-container is full width */
+    }
+    .james-clear-quote-content {
+        text-align: center; /* Center the intro text and the blockquote itself */
+    }
+    .james-clear-quote-content .quote {
+        text-align: left; /* Keep actual quote text left-aligned for readability */
+        display: inline-block; /* Allows centering of the blockquote if parent is text-align:center */
+        max-width: 100%; /* Ensure it doesn't overflow */
+    }
+/* ==========================================================================
+   PART 3: Anatomy of Deliberate Practice - Flippable Cards (Themed)
+   ========================================================================== */
+.deliberate-practice-defined-card {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    color: var(--theme-light-mint-text); /* Default text for this sub-section */
+}
+.deliberate-practice-defined-card .insight-content > .text-center { /* "To truly engage..." */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem; /* Original margin */
+}
+
+.flippable-cards-container {
+    display: flex;         /* << CHANGED TO FLEX */
+    flex-wrap: wrap;       /* << ADDED to allow items to wrap to the next line */
+    justify-content: center; /* << ADDED - This will center items horizontally, including the last row */
+    gap: 2.5rem;           /* Your existing gap */
+    margin-top: 1rem;      /* Your existing margin */
+}
+ /* A common trick is to make the 4th item span to create an offset */
+
+.flippable-card {
+    background-color: transparent;
+    min-height: 380px; 
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative; 
+    
+    /* Flex item sizing for responsiveness */
+    flex-grow: 0; /* Don't allow cards to grow to fill extra space in a row */
+    flex-shrink: 0; /* Don't allow cards to shrink too much if space is tight */
+    /* To aim for roughly 3 cards per row before wrapping: */
+    flex-basis: calc(33.333% - (2.5rem * 2 / 3)); /* (100% / 3) - (gap * (items_per_row - 1) / items_per_row) */
+                                                 /* For 2.5rem gap: calc(33.333% - 1.666rem) */
+    min-width: 280px; /* Minimum width before it tries to wrap or get too small */
+    max-width: 340px; /* Optional: prevent cards from getting too wide if only 1 or 2 per row */
+    box-sizing: border-box; /* Crucial for calc() with padding/borders if card itself has them */
+
+    /* The rest of your .flippable-card styles (perspective, cursor, radius, etc.) remain the same */
+}
+.flippable-card .card-face {
+    position: absolute; /* Keep absolute for stacking & flipping */
+    width: 100%;
+    height: 100%; /* << MAKE FACES FILL THE PARENT'S FIXED HEIGHT */
+    backface-visibility: hidden;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 12px;
+    padding: 1.5rem; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--theme-card-border);
+    overflow-y: auto; /* Add scroll if content STILL overflows fixed height */
+}
+.flippable-card .card-front {
+    background-color: var(--theme-deepest-bg-contrast); /* Very dark front for good contrast */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    z-index: 2;
+    transform: rotateY(0deg);
+    justify-content: flex-start;
+}
+.flippable-card .card-back {
+    background-color: var(--theme-card-bg); /* Dark green for back, consistent with other card elements */
+    color: var(--theme-light-mint-text); /* Default light text for back */
+    transform: rotateY(180deg);
+    z-index: 1;
+    justify-content: center;
+    align-items: center; /* Ensure content is centered */
+    padding: 1.75rem; /* Consistent padding */
+    border: 1px solid var(--theme-card-border-hover); /* Slightly brighter border for flipped state */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Shadow for depth */
+}
+
+.dp-card-icon-back img { 
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+    /* To make the original blueish icons8 icon appear biotech green: */
+    filter: invert(16%) sepia(87%) saturate(4758%) hue-rotate(107deg) brightness(95%) contrast(101%); 
+    /* If the source icon was already green, you might just need brightness/contrast, or no filter: */
+    /* filter: brightness(1.1); */
+}
+.flippable-card.is-flipped .card-front { transform: rotateY(-180deg); }
+.flippable-card.is-flipped .card-back { transform: rotateY(0deg); z-index: 3; }
+
+.dp-card-icon, .dp-card-icon-back { /* Icon containers */
+    width: 48px; height: 48px;
+    margin-top: 0; margin-bottom: 1rem;
+    line-height: 1; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.dp-card-icon img { /* Front icon - use biotech green */
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    /* Filter to make it biotech green if source is not already green */
+    /* Example: if source is blueish like var(--aljohn-original-primary-blue) #003087 */
+    filter: invert(16%) sepia(87%) saturate(4758%) hue-rotate(107deg) brightness(95%) contrast(101%); /* This makes #003087 into approx #2dce89 */
+}
+.dp-card-icon-back img { /* Back icon - make it yellow */
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    color: white;
+}
+
+.dp-card-title { /* Front card title */
+    font-family: var(--theme-font-primary);
+    font-size: 1.25rem;
+    color: var(--theme-brighter-mint-text); /* Bright title on dark front */
+    margin-bottom: 0.6rem;
+}
+.dp-card-description { /* Front card description */
+    font-size: 0.9rem; /* Original size */
+    color: var(--theme-soft-mint-text); /* Softer text on dark front */
+    line-height: 1.6; flex-grow: 1; margin-bottom: 0.75rem; 
+}
+.flip-indicator { /* "(Click to see...)" */
+    font-size: 0.8rem; /* Original size */
+    color: var(--theme-biotech-green); /* Green indicator */
+    margin-top: auto; font-style: italic; opacity: 0.8; padding-top: 0.5rem;
+}
+.card-back .flip-indicator {
+    color: var(--accent-yellow); /* Yellow indicator on back */
+}
+.dp-card-title-back { 
+    font-family: var(--theme-font-primary);
+    font-size: 1.2rem; 
+    color: var(--theme-biotech-green); /* << CHANGED TO BIOTECH GREEN */
+    margin-top: 0; 
+    margin-bottom: 1rem; 
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(45, 206, 137, 0.3); /* Subtle green glow */
+}
+
+.card-back p { /* Text content on the back of the card */
+    font-size: 0.7rem; 
+    line-height: 1.65;
+    margin-bottom: 0.85rem; 
+    max-width: 100%;
+    color: var(--theme-light-mint-text); 
+}
+.card-back p:last-of-type {
+    margin-bottom: 1.25rem; 
+}
+.card-back p em { /* For emphasized text like "That's purposeful." */
+    color: var(--theme-brighter-mint-text); /* Brighter mint for this emphasis */
+    font-style: normal; 
+    font-weight: 600;
+}
+.card-back p strong { /* If you use generic strong tags on the back */
+    color: var(--theme-brighter-mint-text); 
+    font-weight: 600; /* Ensure it's distinguishable */
+}
+
+/* Flip indicator on the back - NOW BIOTECH GREEN */
+.card-back .flip-indicator { 
+    font-size: 0.8rem;
+    color: var(--theme-biotech-green); /* << CHANGED TO BIOTECH GREEN */
+    opacity: 0.8;
+    margin-top: auto; 
+    padding-top: 0.5rem;
+}
+/* ==========================================================================
+   PART 4: Duolingo Math Fallacy (Themed)
+   ========================================================================== */
+.dp-hours-fallacy {
+    background-color: var(--theme-card-bg);
+    padding: 2rem 2.5rem; /* Adjusted padding: Top/Bottom Right/Left */
+    border-radius: 10px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    margin-top: 3.5rem; 
+    text-align: center; 
+    color: var(--theme-light-mint-text);
+}
+.dp-hours-fallacy .dp-subsection-title { /* "The 500 *DELIBERATE* Hours..." */
+    color: var(--theme-brighter-mint-text) !important;
+    margin-bottom: 0.75rem !important; /* << REDUCED margin below title */
+}
+.dp-hours-fallacy .dp-subsection-title::after {
+    background-color: var(--theme-biotech-green) !important;
+}
+.dp-hours-fallacy > p:first-of-type { /* "Remember that '5 minutes a day'..." */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 1.25rem; /* << REDUCED margin below this paragraph, before image */
+    font-size: 1rem; /* Adjusted font size */
+    line-height: 1.6; /* Ensure good line height */
+    max-width: 90%; /* Prevent it from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+.dp-hours-fallacy > p:first-of-type strong.highlight-yellow-accent {
+    color: var(--theme-biotech-green);
+    background-color: rgba(var(--theme-biotech-green, 255, 215, 0), 0.1);
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.dp-hours-fallacy img { /* The Duolingo vs Aljohn image */
+    border: 1px solid var(--theme-card-border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.35); /* Slightly stronger shadow for image */
+    opacity: 0.95;
+    border-radius: 8px; 
+    max-width: 100%; 
+    width: 100%; /* Let it try to fill container width up to max-width */
+    max-height: 350px; /* << ADDED: Constrain the max height of the image */
+    object-fit: contain; /* << ADDED: Ensure image scales down correctly within bounds */
+    display: block; /* To enable margin auto */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem; /* Space below image before conclusion callout */
+}
+.dp-hours-fallacy .conclusion-callout { /* "The '500 hours' I talk about..." */
+    color: var(--theme-brighter-mint-text);
+    font-size: 1.15rem; /* Adjusted from 1.2rem for better fit */
+    line-height: 1.7; 
+    margin-top: 0; /* Remove top margin as image above provides spacing */
+    padding: 0.5rem; /* Add some padding around the text */
+}
+.dp-hours-fallacy strong.highlight-focus { /* "The '500 hours' I talk about..." */
+    color: var(--theme-brighter-mint-text);
+    font-size: 1.2rem; 
+    line-height: 1.7; 
+    margin-top: 1.5rem; 
+}
+/* MODIFIED/ADDED rule for the highlighted strong text */
+.dp-hours-fallacy .conclusion-callout strong.highlight-focus { 
+    color: var(--theme-deepest-bg-contrast); /* << DARK TEXT for on-green highlight */
+    font-weight: 700; 
+    background-color: var(--theme-biotech-green) !important; /* << BIOTECH GREEN HIGHLIGHTER */
+    padding: 0.2em 0.4em; /* More noticeable padding for highlighter effect */
+    border-radius: 4px;
+    font-size: 1em; /* Keep same size as surrounding text or slightly larger */
+    /* text-shadow: none; /* Remove any inherited yellow text shadow */
+    display: inline; /* Or inline-block if you want it to have more distinct block properties */
+    line-height: 1.5; /* Adjust if it causes weird line spacing */
+    box-decoration-break: clone; /* Ensures background extends across line breaks nicely */
+    -webkit-box-decoration-break: clone; /* For Safari */
+}
+
+/* ==========================================================================
+   PART 5: Fluency Milestones (Themed)
+   ========================================================================== */
+.dp-fluency-milestones-container {
+    margin-top: 4rem; /* Original margin */
+}
+
+.dp-fluency-milestones-container > .text-center { /* "This isn't about distant dreams..." */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem; /* Original margin */
+}
+.milestones-grid {
+    display: flex; /* << CHANGE TO FLEX */
+    flex-wrap: wrap; /* << ADD */
+    justify-content: center; /* << ADD - This will center the items, including the last row */
+    gap: 2rem; /* Keep or adjust gap */
+    /* Remove grid-template-columns if switching to flex */
+}
+.milestone-card {
+    background-color: var(--theme-card-bg);
+    padding: 2rem; /* More padding */
+    border-radius: 10px; /* More rounded */
+    text-align: center;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    border-top: 4px solid var(--theme-biotech-green); /* Green top accent */
+    color: var(--theme-light-mint-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex; /* For centering content vertically */
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to top */
+    flex-grow: 0; /* Don't allow to grow */
+    flex-shrink: 0; /* Don't allow to shrink excessively */
+    flex-basis: calc(33.333% - 2rem); /* Aim for 3 cards per row, accounting for gap */
+    min-width: 260px; /* Minimum width before wrapping or becoming too small */
+    max-width: 320px; /* Max width for a card */
+}
+.milestone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 70, 40, 0.35), inset 0 0 18px rgba(0,40,20,0.4);
+    border-color: var(--theme-card-border-hover);
+    border-top-color: var(--accent-yellow);
+}
+.milestone-icon { /* The img.icons8.com images */
+    width: 65px; /* Adjusted size */
+    height: 65px;
+    margin: 0 auto 1.25rem auto; /* Adjusted margin */
+    /* Ensure icons are visible on dark background - original icons8 links often have white elements */
+    /* If specific icons are dark, you might need: filter: invert(1) brightness(1.5); */
+    opacity: 0.7; /* Make white icon slightly transparent */
+     background-color: var(--theme-biotech-green);
+}
+.milestone-card h4 { /* Title of milestone */
+    font-family: var(--theme-font-primary);
+    font-size: 1.2rem;
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.75rem; /* More space */
+}
+.milestone-card p { /* Description of milestone */
+    font-size: 0.9rem;
+    color: var(--theme-soft-mint-text);
+    line-height: 1.65;
+    flex-grow: 1; /* Push to bottom if content varies */
+}
+
+/* ==========================================================================
+   RESPONSIVE (Maintain original structure, ensure themed elements adapt)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .dp-subsection-title {
+        font-size: 1.6rem !important; /* Adjusted */
+    }
+    .dp-litmus-test-container,
+    .james-clear-quote-block,
+    .aljohn-adobo-analogy-section,
+    .deliberate-practice-defined-card .flippable-card .card-face,
+    .dp-hours-fallacy,
+    .milestone-card {
+        padding: 1.75rem; /* Consistent smaller padding */
+    }
+    .litmus-test-form .litmus-question p {
+        font-size: 1rem;
+    }
+    .flippable-cards-container,
+    .milestones-grid {
+        grid-template-columns: 1fr; 
+        gap: 2rem; /* Consistent gap when stacked */
+    }
+  .flippable-card {
+        /* THIS IS THE KEY: Set a min-height that can accommodate your mobile content.
+           You'll need to adjust this value based on your actual text length
+           AFTER reducing font sizes and paddings for mobile. Start with a value and test. */
+        min-height: 320px; /* EXAMPLE VALUE - Adjust this! */
+        /* If all cards have very similar content length, you could use fixed 'height' */
+        /* height: 320px; */
+        perspective: 1000px; /* Keep for 3D effect */
+        cursor: pointer;
+        border-radius: 12px;
+        position: relative; /* Parent for absolute faces */
+        margin-bottom: 1.5rem; 
+    }
+     .flippable-card:last-child {
+        margin-bottom: 0;
+        
+    }.flippable-card .card-face {
+        padding: 1.25rem 1rem; 
+        position: absolute;   /* << CRITICAL: Revert to absolute for flip */
+        width: 100%;          /* << CRITICAL: Fill parent */
+        height: 100%;         /* << CRITICAL: Fill parent */
+        backface-visibility: hidden; /* << CRITICAL: Keep for flip */
+        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Keep transition */
+        transform-style: preserve-3d; /* Keep for smoother 3D on some browsers */
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between; /* Distribute content top to bottom */
+        border-radius: 12px; /* Match parent */
+        border: 1px solid var(--theme-card-border); /* From desktop theme */
+        overflow: hidden; /* Hide overflow if content is STILL too big for fixed height */
+    }
+
+    .flippable-card .card-front {
+        background-color: var(--theme-deepest-bg-contrast);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    .fliable-card .card-back {
+        background-color: var(--theme-card-bg); 
+        color: var(--theme-light-mint-text); 
+        transform: rotateY(180deg);
+        z-index: 1;
+        border-color: var(--theme-card-border-hover); 
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4); 
+    }
+    /* .is-flipped styles remain the same to trigger the actual flip */
+    .flippable-card.is-flipped .card-front { transform: rotateY(-180deg); }
+    .flippable-card.is-flipped .card-back { transform: rotateY(0deg); z-index: 3; }
+
+
+    /* Reduce content sizes for mobile to fit the min-height */
+    .dp-card-icon, .dp-card-icon-back {
+        width: 36px; height: 36px; 
+        margin-bottom: 0.5rem; /* Less margin */
+    }
+    .dp-card-title { 
+        font-size: 1rem; /* Further reduce */
+        margin-bottom: 0.3rem;
+    }
+    .dp-card-description { 
+        font-size: 0.75rem; /* Further reduce */
+        line-height: 1.45;
+        margin-bottom: 0.4rem;
+        flex-grow: 1; /* Allow description to take available space */
+    }
+    .dp-card-title-back { 
+        font-size: 0.95rem; /* Further reduce */
+        margin-bottom: 0.3rem;
+    }
+    .card-back p { 
+        font-size: 0.75rem; /* Further reduce */
+        line-height: 1.5;
+        margin-bottom: 0.4rem;
+        flex-grow: 1; /* Allow paragraph to take available space */
+    }
+    .flip-indicator, .card-back .flip-indicator {
+        font-size: 0.65rem; 
+        padding-top: 0.25rem;
+        flex-shrink: 0; /* Ensure it's visible */
+    }
+
+    /* ... (Other responsive styles) ... */
+}
+
+/* You might need an even smaller breakpoint for very narrow phones */
+@media (max-width: 400px) { /* Example for very narrow screens */
+    .flippable-card {
+        min-height: 280px; /* Example */
+    }
+    .dp-card-title { font-size: 0.9rem; }
+    .dp-card-description, .card-back p { font-size: 0.7rem; line-height: 1.4; }
+    .dp-card-title-back { font-size: 0.85rem; }
+}
+.james-clear-quote-content .james-clear-intro-text { /* Assumes you added this class in HTML */
+    color: var(--theme-soft-mint-text); 
+    font-size: 1rem; 
+    margin-bottom: 0.5rem; /* Space before the blockquote */
+    font-style: italic; 
+    line-height: 1.5; 
+    text-align: left; /* << ENSURE LEFT ALIGNMENT */
+    width: 100%; /* Allow it to take full width of its container for left alignment */
+}
+@media (max-width: 900px) { /* When 3 cards might be too wide */
+    .milestone-card {
+        flex-basis: calc(50% - 1.5rem); /* Aim for 2 cards per row */
+        min-width: 250px;
+    }
+}
+@media (max-width: 600px) { /* Stack to 1 card per row */
+    .milestone-card {
+        flex-basis: 100%;
+        max-width: 400px; /* Max width when single column */
+    }
+}

@@ -1,0 +1,816 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_ocean_of_immersion.css */
+/* Themed Styles for Native Immersion Deep Dive & Interactive Graph */
+
+/* ==========================================================================
+   Native Speaker Immersion Deep Dive Section (#nativeImmersionDeepDive)
+   ========================================================================== */
+#nativeImmersionDeepDive {
+    background-color: var(--theme-dark-bg-mid); /* A distinct dark green, slightly different from page default */
+    /* Optional: Add a subtle pattern or very dark gradient if desired */
+    /* background-image: linear-gradient(to bottom, var(--theme-dark-bg-mid), var(--theme-dark-bg-end)); */
+    border-top: 2px solid var(--theme-biotech-green); /* Accent border */
+    border-bottom: 2px solid var(--theme-biotech-green);
+    padding-top: 70px; /* Consistent padding */
+    padding-bottom: 70px;
+    color: var(--theme-light-mint-text); /* Default text color for this section */
+}
+
+#nativeImmersionDeepDive .section-title {
+    color: var(--theme-brighter-mint-text); /* Brighter title */
+    text-shadow: 0 0 10px rgba(45, 206, 137, 0.4);
+}
+#nativeImmersionDeepDive .section-title::after {
+    background-color: var(--theme-biotech-green); /* Green underline */
+    box-shadow: 0 0 6px rgba(45, 206, 137, 0.5);
+}
+
+#nativeImmersionDeepDive .section-subtitle { /* For "My hour estimates are for focused..." */
+    font-size: 1.15rem;
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem; /* More space */
+}
+#nativeImmersionDeepDive .section-subtitle .highlight-focus { /* "vast ocean..." */
+    color: var(--theme-biotech-green); /* Green highlight */
+    background-color: rgba(45, 206, 137, 0.1);
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+}
+.interactive-controls-sidebar {
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.5); /* Darker, distinct panel */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--theme-card-border);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    color: var(--theme-light-mint-text); /* Default text for controls sidebar */
+}
+.interactive-controls-sidebar .sidebar-title { /* "Controls" */
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--theme-biotech-green);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--theme-card-border);
+    margin-bottom: 1.5rem;
+}
+.interactive-controls-sidebar .control-group-label { /* "Native Age Range:", "Your L2 Study Plan:" */
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.75rem;
+}
+/* Native Immersion Summary Card (Themed) */
+.native-immersion-summary-card {
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px; /* More rounded */
+    padding: 2.5rem; /* More padding */
+    margin: 2.5rem auto; /* More vertical margin */
+    max-width: 850px; /* Slightly wider */
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    text-align: center;
+    color: var(--theme-light-mint-text);
+}
+.native-immersion-summary-card:hover { /* Subtle hover for the whole card */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0, 70, 40, 0.4), inset 0 0 18px rgba(0,40,20,0.45);
+    border-color: var(--theme-card-border-hover);
+}
+
+.immersion-figure-highlight {
+    margin-bottom: 2rem; /* More space below numbers */
+}
+
+.immersion-hours { /* "74,000 to 166,000+" */
+    display: block;
+    font-size: clamp(3rem, 8vw, 5rem); /* Even larger numbers */
+    font-weight: 700; /* Bold Montserrat */
+    font-family: var(--theme-font-primary);
+    color: var(--accent-yellow); /* YELLOW for these huge numbers */
+    line-height: 1.05; /* Tighten line height */
+    margin-bottom: 0.35rem;
+    text-shadow: 0 0 15px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.4); /* Yellow glow */
+}
+
+.immersion-hours-label { /* "Total Language Exposure Hours..." */
+    display: block;
+    font-size: 1.15rem; /* Larger label */
+    font-weight: 600;
+    color: var(--theme-biotech-green); /* Biotech green label */
+    text-transform: uppercase;
+    letter-spacing: 1.2px; /* More spacing */
+}
+
+.immersion-explanation {
+    font-size: 1.05rem; /* Slightly larger */
+    line-height: 1.75;
+    color: var(--theme-light-mint-text);
+    margin-bottom: 2.5rem;
+    max-width: 700px; /* Wider text block */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.immersion-cta-buttons { /* Buttons for PDF/Blog */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* More gap */
+    flex-wrap: wrap;
+}
+/* Buttons will use global .btn-outline (green) and .btn-primary (green) from main themed CSS */
+/* If specific overrides needed: */
+.immersion-cta-buttons .btn-outline {
+    /* color: var(--theme-biotech-green); border-color: var(--theme-biotech-green); */
+}
+.immersion-cta-buttons .btn-primary { /* For "Read Aljohn's Analysis" */
+    /* background: linear-gradient(135deg, var(--theme-biotech-green), #27b376); */
+    /* color: var(--theme-deepest-bg-contrast); */
+    /* Use accent yellow for one of the CTAs if desired */
+    background-color: var(--accent-yellow);
+    color: var(--theme-deepest-bg-contrast);
+    border-color: var(--accent-yellow);
+}
+.immersion-cta-buttons .btn-primary:hover {
+    background-color: #e9c400;
+}
+
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_ocean_of_immersion.css */
+/* Themed Styles for Native Immersion Deep Dive & Injected Interactive Graph */
+
+/* ==========================================================================
+   1. NATIVE IMMERSION DEEP DIVE SECTION (#nativeImmersionDeepDive)
+   ========================================================================== */
+#nativeImmersionDeepDive {
+    background-color: var(--theme-dark-bg-mid);
+    border-top: 2px solid var(--theme-biotech-green);
+    border-bottom: 2px solid var(--theme-biotech-green);
+    padding-top: 70px;
+    padding-bottom: 70px;
+    color: var(--theme-light-mint-text);
+}
+
+#nativeImmersionDeepDive .section-title { /* "The Native Speaker's Unseen Ocean..." */
+    color: var(--theme-brighter-mint-text);
+    text-shadow: 0 0 10px rgba(45, 206, 137, 0.4);
+}
+#nativeImmersionDeepDive .section-title::after {
+    background-color: var(--theme-biotech-green);
+    box-shadow: 0 0 6px rgba(45, 206, 137, 0.5);
+}
+
+#nativeImmersionDeepDive .section-subtitle { /* "My hour estimates are for focused..." */
+    font-size: 1.15rem;
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 2.5rem;
+}
+#nativeImmersionDeepDive .section-subtitle .highlight-focus { /* "vast ocean..." */
+    color: var(--theme-biotech-green);
+    background-color: rgba(45, 206, 137, 0.1);
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+}
+
+/* Native Immersion Summary Card */
+.native-immersion-summary-card {
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin: 2.5rem auto;
+    max-width: 850px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    text-align: center;
+    color: var(--theme-light-mint-text);
+}
+.native-immersion-summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0, 70, 40, 0.4), inset 0 0 18px rgba(0,40,20,0.45);
+    border-color: var(--theme-card-border-hover);
+}
+.immersion-figure-highlight { margin-bottom: 2rem; }
+.immersion-hours { /* "74,000 to 166,000+" */
+    display: block;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    font-family: var(--theme-font-primary);
+    color: var(--accent-yellow);
+    line-height: 1.05;
+    margin-bottom: 0.35rem;
+    text-shadow: 0 0 15px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.4);
+}
+.immersion-hours-label {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--theme-biotech-green);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+.immersion-explanation {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--theme-light-mint-text);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.immersion-cta-buttons .btn-outline { /* Will use global themed .btn-outline (green) */ }
+.immersion-cta-buttons .btn-primary { /* Will use global themed .btn-primary (green) */
+    /* If you want one button to be specifically yellow */
+    /* background-color: var(--accent-yellow); */
+    /* color: var(--theme-deepest-bg-contrast); */
+    /* border-color: var(--accent-yellow); */
+}
+/* .immersion-cta-buttons .btn-primary:hover { background-color: #e9c400; } */
+
+/* In learn_in_3_months_ocean_of_immersion.css */
+
+/* Final Conclusion Callout in #nativeImmersionDeepDive section (Themed) */
+#nativeImmersionDeepDive .section-subtitle.conclusion-callout { 
+    font-weight: 600; 
+    color: var(--accent-yellow); /* <<< CHANGED TO ACCENT YELLOW */
+    font-size: 1.25rem; 
+    margin-top: 3rem; 
+    line-height: 1.7; 
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5); /* Softer shadow for yellow on dark */
+    padding: 0.75rem;
+    max-width: 800px;
+    margin-left: auto; /* For centering */
+    margin-right: auto; /* For centering */
+    text-align: center; /* Ensure text itself is centered */
+    /* Optional subtle background if desired: */
+    /* background-color: rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.05); */
+    /* border-top: 1px solid rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.2); */
+    /* border-bottom: 1px solid rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.2); */
+    /* border-radius: 4px; */
+}
+
+/* Highlight within the "colossal difference" text, e.g., "learning a few words a day" */
+#nativeImmersionDeepDive .section-subtitle.conclusion-callout .highlight-focus { 
+    color: var(--theme-biotech-green); /* Biotech Green for this specific inner highlight */
+    background-color: rgba(45, 206, 137, 0.15); /* Subtle green background */
+    font-size: 1em; /* Keep it same size as surrounding text or slightly larger */
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-weight: 600; /* Ensure it's distinguishable */
+}
+
+/* ==========================================================================
+   2. THEMING FOR INJECTED INTERACTIVE GRAPH
+      (Content from native-comparison.html within #nativeComparisonGraphPlaceholder)
+   ========================================================================== */
+
+/* Placeholder text before graph loads */
+#nativeComparisonGraphPlaceholder > p {
+    color: var(--theme-soft-mint-text);
+    font-style: italic;
+    text-align: center; /* Ensure placeholder text is centered */
+    padding: 2rem 0;
+}
+
+/* Main container for the entire injected graph component */
+.immersion-comparison-graph-container {
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 2rem 1.5rem; /* Adjusted padding */
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    margin-top: 0; /* Reset margin if placeholder text handles it */
+    color: var(--theme-light-mint-text); /* Default text within this container */
+}
+
+/* Main title: "Visualizing the Immense Gap..." */
+.immersion-comparison-graph-container .subsection-title-center {
+    margin-top: 0;
+    font-size: 1.8rem; 
+    color: var(--theme-brighter-mint-text);
+    text-shadow: 0 0 8px rgba(45, 206, 137, 0.3);
+    text-align: center; /* <<< ENSURE THIS IS APPLIED */
+    position: relative; /* Needed for ::after positioning */
+    padding-bottom: 0.6rem; /* Space for the underline */
+}
+.immersion-comparison-graph-container .subsection-title-center::after {
+    content: ''; /* Ensure content is present for pseudo-elements */
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Center the underline */
+    transform: translateX(-50%); /* Precisely center the underline */
+    width: 70px; /* Adjust width as desired */
+    height: 3px; /* Adjust thickness */
+    background-color: var(--theme-biotech-green);
+    border-radius: 1px; /* Optional rounding for underline */
+}
+/* Subtitle: "Select a native speaker age range..." */
+.immersion-comparison-graph-container > .text-center { 
+    color: var(--theme-soft-mint-text);
+    font-size: 0.9rem; 
+    margin-bottom: 2rem; 
+    max-width: 550px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* <<< ENSURE THIS IS CENTERED */
+}
+
+
+/* Layout Wrapper for Controls and Graph */
+.interactive-layout-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrap on smaller screens */
+    gap: 2rem; /* Adjusted gap */
+    margin-top: 1.5rem;
+}
+
+/* Controls Sidebar (Left Panel) */
+.interactive-controls-sidebar {
+    flex: 1 1 280px; /* Allow flex grow/shrink, base width 280px */
+    min-width: 260px; /* Ensure it doesn't get too small */
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.55); /* Darker, distinct panel */
+    padding: 1.75rem; /* Adjusted padding */
+    border-radius: 8px;
+    border: 1px solid var(--theme-card-border);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.25);
+    color: var(--theme-light-mint-text);
+    height: fit-content; /* From original template */
+    display: flex; /* From original template */
+    flex-direction: column; /* From original template */
+    gap: 1.75rem; /* Increased gap between control groups */
+}
+.interactive-controls-sidebar .sidebar-title { /* "Controls" */
+    font-size: 1.25rem; /* Adjusted */
+    font-weight: 600;
+    color: var(--theme-biotech-green);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--theme-card-border);
+    margin-bottom: 0; /* Rely on flex-gap from parent */
+    margin-top: 0;
+    text-align: center; /* Center "Controls" title */
+}
+.interactive-controls-sidebar .control-group-label { /* "Native Age Range:", etc. */
+    font-size: 0.9rem; /* Adjusted */
+    font-weight: 500; /* Slightly less bold */
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.5rem; /* Less margin */
+    display: block;
+}
+
+/* Age Range Buttons */
+.age-range-selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Tighter gap */
+    /* margin-bottom: 0; /* Rely on parent flex-gap */
+}
+.btn-age-range {
+    padding: 0.65rem 1rem; 
+    font-size: 0.85rem; /* Adjusted back from 0.9rem if too large with icon */
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.75); 
+    color: var(--theme-soft-mint-text);
+    border: 1px solid var(--theme-card-border);
+    border-radius: 6px; 
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    text-align: left; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.btn-age-range img.button-icon {
+    width: 18px; height: 18px; /* Keeping original size */
+    object-fit: contain; /* Important for icons */
+    flex-shrink: 0;
+    opacity: 0.8; /* Slightly more visible for white icons */
+    /* No filter needed if source icon is already white and target background is dark */
+    /* If icons are white and you want them slightly minty: */
+    /* filter: sepia(30%) hue-rotate(80deg) saturate(300%) brightness(1.1); */
+}
+.btn-age-range:hover {
+    background-color: rgba(45, 206, 137, 0.1); 
+    border-color: var(--theme-biotech-green);
+    color: var(--theme-brighter-mint-text);
+}
+.btn-age-range:hover img.button-icon {
+    opacity: 1;
+}
+
+.btn-age-range.active {
+    background-color: var(--theme-biotech-green);
+    color: var(--theme-deepest-bg-contrast); /* Dark text on active green button */
+    border-color: var(--theme-biotech-green);
+    font-weight: 600; 
+    box-shadow: 0 0 10px rgba(45, 206, 137, 0.3); /* Adjusted shadow */
+}
+.btn-age-range.active img.button-icon {
+    opacity: 1;
+    filter: brightness(0) invert(12%) sepia(20%) saturate(0%) hue-rotate(140deg) brightness(0.9) contrast(1.1); /* Dark icon on green */
+}
+
+/* L2 Study Input Section */
+.l2-study-input-section label {
+    color: var(--theme-soft-mint-text);
+    font-size: 0.85rem; /* Original size */
+}
+#l2StudyHoursPerDay {
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.75);
+    border: 1px solid var(--theme-card-border);
+    color: var(--theme-brighter-mint-text);
+    border-radius: 4px;
+    padding: 0.5rem 0.7rem; /* Original padding */
+    font-size: 0.9rem; /* Original size */
+}
+#l2StudyHoursPerDay:focus {
+    border-color: var(--theme-biotech-green);
+    box-shadow: 0 0 0 3px rgba(45, 206, 137, 0.3);
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.85);
+}
+#l2StudyMessage.l2-study-message {
+    color: var(--theme-biotech-green);
+    font-size: 0.8rem;
+}
+#l2StudyMessage.l2-study-message.warning {
+    color: var(--accent-yellow); /* Yellow for warnings */
+    font-weight: 500;
+}
+
+/* Graph Content Area (Right Panel) */
+/* Graph Content Area (Right Panel) */
+.graph-content-area {
+    flex: 1.5; /* Allow graph area to be wider */
+    min-width: 300px; /* Or adjust based on typical graph width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ADD THIS LINE to center graph title, graph area, legend, etc. */
+}
+/* Dynamic Graph Title */
+.immersion-graph.interactive-graph .graph-title-dynamic {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Interactive Graph Area */
+.interactive-graph .graph-area {
+    width: 100%;
+    max-width: 100%; /* Allow it to fill .graph-content-area */
+    height: 380px;
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.35); /* Darker graph bg */
+    border: 1px solid var(--theme-card-border);
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    gap:clamp(30px, 5vw, 60px); /* Responsive gap between bars */
+    align-items: flex-end;
+    padding: 30px 15px 0px 15px; /* Adjusted padding */
+}
+
+/* Bar Top Values */
+.bar-top-value {
+    color: var(--theme-brighter-mint-text);
+    font-size: 0.75rem; /* Original size */
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Graph Bars Themed */
+#nativeExposureBar.graph-bar.native-bar {
+    background: linear-gradient(to top, var(--accent-yellow), #fff2b2); /* YELLOW gradient for Native bar */
+    box-shadow: 0 -2px 10px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.35), 
+                inset 0 0 5px rgba(0,0,0,0.1); 
+}
+#l2LearnerBar.graph-bar.l2-learner-bar {
+    background: linear-gradient(to top, var(--theme-biotech-green), #6efacd); /* BIOTECH GREEN gradient for L2 bar */
+    box-shadow: 0 -2px 10px rgba(45, 206, 137, 0.35), 
+                inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Bar Icons Themed */
+#nativeIcon.bar-icon.native-icon {
+    filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4)); /* Make white icon pop on yellow */
+}
+#l2Icon.bar-icon.l2-icon {
+    filter: brightness(0) invert(10%) contrast(1.2) drop-shadow(0px 1px 1px rgba(0,0,0,0.6)); /* Dark silhouette on green */
+}
+
+/* Graph Legend */
+.graph-legend-interactive {
+    margin-top: 1.75rem; /* Adjusted */
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--theme-soft-mint-text);
+}
+.legend-color { border-color: rgba(45, 206, 137, 0.3); }
+.native-color { background-color: var(--accent-yellow); }
+.l2-color { background-color: var(--theme-biotech-green); }
+
+/* Graph Takeaway Text within this component */
+.graph-content-area .graph-takeaway { /* More specific selector */
+    font-size: 0.95rem; /* Adjusted */
+    margin-top: 2rem;
+    color: var(--theme-light-mint-text);
+    line-height: 1.65;
+    max-width: 100%; /* Let it fill */
+}
+.graph-content-area .graph-takeaway strong.highlight-focus { /* "reframe expectations" */
+    color: var(--theme-biotech-green);
+    background-color: rgba(45, 206, 137, 0.1);
+    padding: 0.1em 0.2em;
+}
+
+
+
+     
+
+      
+
+       
+       
+        .graph-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%; /* Wrappers will be full height of graph-area content box */
+            justify-content: flex-end; /* Bar grows from bottom, text is at top of wrapper */
+            position: relative;
+            /* width: auto; /* Let it be determined by content or bar width */
+        }
+
+       
+       
+       
+
+
+        .graph-bar {
+            width: 65px; /* Maintained width */
+            min-height: 3px; /* Absolute minimum visible height */
+            border-radius: 6px 6px 0 0;
+            position: relative;
+            transition: height 0.6s cubic-bezier(0.65, 0, 0.35, 1), background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: help;
+        }
+        
+        .bar-icon {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            opacity: 0; /* Default to hidden, JS or hover/focus will show */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+        }
+         .graph-bar:hover .bar-icon, 
+         .graph-bar:focus .bar-icon,
+         .graph-bar.show-icon .bar-icon { /* New class to force show icon */
+            opacity: 0.7; /* Default visible opacity */
+            transform: translateX(-50%) scale(1);
+        }
+        .graph-bar.active-icon .bar-icon { /* When its particularly relevant */
+             opacity: 1;
+        }
+        .native-icon {}
+        .l2-icon { filter: brightness(0) invert(1); }
+
+        
+        .legend-item { display: flex; align-items: center; }
+        .legend-color { width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; border: 1px solid rgba(0,0,0,0.1); }
+        .native-color { background-color: var(--primary-red); }
+        .l2-color { background-color: var(--primary-blue); }
+
+    
+/* In learn_in_3_months_ocean_of_immersion.css */
+
+/* ... (Keep all existing desktop and themed styles) ... */
+
+/* ==========================================================================
+   RESPONSIVE STYLES for Injected Interactive Graph
+   ========================================================================== */
+
+/* Responsive Adjustments */
+@media (max-width: 900px) { /* When sidebar stacks on top of graph */
+    .interactive-layout-wrapper {
+        flex-direction: column;
+        align-items: center; 
+        gap: 2rem;
+    }
+    .interactive-controls-sidebar {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 500px; /* Original max-width */
+        margin-bottom: 1rem;
+    }
+    .graph-content-area {
+        width: 100%;
+        max-width: 600px; /* Allow graph area to be wider if sidebar is stacked */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (max-width: 900px) { /* When sidebar stacks on top of graph */
+    .interactive-layout-wrapper {
+        flex-direction: column;
+        align-items: center; 
+        gap: 2rem;
+    }
+  .interactive-controls-sidebar {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 500px; /* << REDUCED from 500px (or original value) */
+    margin-bottom: 1.5rem; /* Keep existing margin or adjust if needed */
+    /* margin-left: auto; /* Ensure this and next line are present if not already */
+    /* margin-right: auto; /* For centering the block itself */
+}
+  .graph-content-area {
+    width: 100%;
+    max-width: 500px; /* << REDUCED from 600px (or original value) */
+    /* The align-items: center from the base rule will handle internal centering */
+    /* Ensure margin-left/right auto are present if they were for centering the block */
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+@media (max-width: 768px) {
+    /* Main container for injected graph */
+    .immersion-comparison-graph-container {
+        padding: 1.5rem; /* Less padding on mobile */
+    }
+    .immersion-comparison-graph-container .subsection-title-center {
+        font-size: 1.6rem; /* Adjust title */
+    }
+    .immersion-comparison-graph-container > .text-center {
+        font-size: 0.85rem; /* Adjust subtitle */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Controls Sidebar */
+    .interactive-controls-sidebar { 
+        padding: 1.25rem; 
+        gap: 1.5rem; /* Adjust gap in sidebar */
+    }
+    .interactive-controls-sidebar .sidebar-title { font-size: 1.15rem; }
+    .interactive-controls-sidebar .control-group-label { font-size: 0.9rem; }
+
+    .btn-age-range { 
+        padding: 0.6rem 0.9rem; 
+        font-size: 0.8rem; /* Smaller button text */
+        gap: 8px; /* Less gap in button */
+    }
+    .btn-age-range img.button-icon {
+        width: 16px; height: 16px;
+    }
+    .l2-study-input-section label { font-size: 0.85rem; }
+    #l2StudyHoursPerDay { font-size: 0.9rem; padding: 0.5rem; }
+    #l2StudyMessage.l2-study-message { font-size: 0.75rem; }
+
+    /* Graph Area & Content */
+    .graph-title-dynamic {
+        font-size: 1rem; /* Adjust graph title */
+        margin-bottom: 1.25rem;
+    }
+    .interactive-graph .graph-area {
+        height: 340px; 
+        padding: 25px 10px 0px 10px; /* Adjust padding */
+        gap: 30px; 
+    }
+    .graph-bar { /* This is #nativeExposureBar, #l2LearnerBar */
+        width: 55px; /* Narrower bars */
+    }
+    .bar-top-value {
+        font-size: 0.7rem; /* Smaller text above bars */
+        margin-bottom: 2px;
+    }
+    .bar-icon { /* Icons inside bars */
+        width: 24px; height: 24px; /* Smaller icons */
+        bottom: 8px; /* Adjust position */
+    }
+    .graph-legend-interactive {
+        font-size: 0.8rem; /* Smaller legend */
+        gap: 15px;
+        flex-wrap: wrap; /* Allow legend to wrap */
+        justify-content: center;
+    }
+    .legend-item { margin-bottom: 5px; }
+    .graph-content-area .graph-takeaway { /* Takeaway text */
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+    }
+}
+@media (max-width: 480px) {
+    /* Main container for the whole interactive graph component */
+    .immersion-comparison-graph-container {
+        padding-left: 10px; /* Give a little breathing room on the sides */
+        padding-right: 10px;
+    }
+    .immersion-comparison-graph-container .subsection-title-center {
+        font-size: 1.3rem; /* Slightly reduce main title if needed */
+        line-height: 1.3;
+    }
+    /* Subtitle above controls: "Select a native speaker age range..." */
+    .immersion-comparison-graph-container > .text-center {
+        font-size: 0.8rem;
+        margin-bottom: 1rem; /* Less space */
+    }
+
+    /* Layout Wrapper (ensure it centers children if not done at a higher breakpoint) */
+    .interactive-layout-wrapper {
+        /* display: flex; /* This should be inherited */
+        /* flex-direction: column; /* This should be inherited */
+        /* align-items: center; /* CRUCIAL for centering sidebar and graph area */
+        gap: 1.5rem; /* Space between sidebar and graph area */
+    }
+
+    /* Controls Sidebar - THIS IS A KEY FIX */
+    .interactive-controls-sidebar {
+        width: 95%;         /* Allow it to use most of the screen width */
+        max-width: 340px;   /* But cap it, e.g., at 340px. Adjust as needed. REMOVED 100px. */
+        padding: 1rem;      /* Adjust padding for smaller size */
+        /* margin-left: auto;  /* Add if align-items on parent isn't enough */
+        /* margin-right: auto; /* Add if align-items on parent isn't enough */
+    }
+    .interactive-controls-sidebar .sidebar-title { /* "Controls" */
+        font-size: 1.1rem; /* Slightly larger than 1.05rem for emphasis */
+    }
+    .interactive-controls-sidebar .control-group-label { /* "Native Age Range:", "Your L2 Study Plan:" */
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem; /* Consistent margin */
+    }
+    .btn-age-range {
+        font-size: 0.8rem; /* Slightly larger than 0.75rem for readability */
+        padding: 0.6rem 0.8rem;
+        gap: 6px; /* Space between icon and text */
+    }
+    .btn-age-range img.button-icon {
+        width: 16px; /* Ensure icons aren't too large */
+        height: 16px;
+    }
+
+    /* L2 Study Message styling */
+    #l2StudyMessage.l2-study-message { /* Corrected selector, assuming ID and class */
+        width: 100%; /* Let it take the width of its container (the sidebar) */
+        max-width: none; /* Remove the 200px restriction if sidebar is wider */
+        font-size: 0.75rem; /* Keep font size small */
+        text-align: center;
+        margin-top: 0.5rem; /* Space above the message */
+    }
+
+    /* Graph Content Area - ensure it's also centered if not already */
+    .graph-content-area {
+        width: 100%; /* Take full width of its container in stacked layout */
+        /* align-items: center; /* This should be on the base .graph-content-area style */
+    }
+
+    .graph-title-dynamic { /* "Native Exposure by 3 Months vs. ..." */
+        font-size: 0.95rem; /* Adjusted from 0.9rem */
+        text-align: center; /* Ensure it's centered */
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .interactive-graph .graph-area {
+        width: 100%;        /* Let it use the space provided by .graph-content-area */
+        max-width: 270px;   /* Max width for the graph itself, adjust as needed */
+        height: 280px;      /* Reduced height */
+        gap: 20px;
+        padding: 20px 10px 0px 10px; /* Adjust padding */
+    }
+    .graph-bar {
+        width: 50px; /* Slightly wider bars if graph area is wider */
+    }
+    .bar-icon {
+        width: 18px; /* Adjusted icon size */
+        height: 18px;
+        bottom: 8px; /* Adjust position */
+    }
+    .bar-top-value {
+        font-size: 0.7rem; /* Slightly larger for readability */
+    }
+
+    .graph-legend-interactive {
+        font-size: 0.8rem; /* Adjusted for readability */
+        gap: 10px;
+        flex-direction: column; /* Good for stacking legend items */
+        align-items: center;  /* Center the legend items */
+        margin-top: 1rem;
+    }
+
+    .graph-content-area .graph-takeaway {
+        font-size: 0.85rem;
+        text-align: center; /* Center takeaway text */
+        padding-left: 5px;  /* Prevent text from touching screen edges */
+        padding-right: 5px;
+        line-height: 1.5;
+        margin-top: 1.25rem;
+    }
+}
