@@ -462,3 +462,61 @@ body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-bottom p {
     }
    
 }
+
+/* Container for centering content */
+.footer-content .container,
+.footer-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Flex container for footer sections */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer Sections */
+.footer-content > div,
+.footer-content > nav { /* Include nav if links are in nav */
+    flex: 1 1 auto; /* Allow shrinking/growing, basis auto */
+    /* min-width: 150px; /* Adjust as needed */
+    padding: 0 10px; /* Add padding to prevent touching */
+}
+/* Ensure logo/social don't take excessive space if middle links wrap */
+.footer-logo { flex-grow: 0; }
+.social-links { flex-grow: 0; text-align: right;} /* Align social icons right */
+
+
+/* Footer Logo Styling */
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    color: var(--light-text, var(--fallback-light-text));
+    font-weight: 600;
+    text-decoration: none;
+    /* margin-bottom: 10px; /* Removed, rely on flex gap */
+}
+
+.footer-logo .logo-img {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid var(--accent-yellow, var(--fallback-accent-yellow));
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.footer-logo span {
+    font-family: var(--font-primary, var(--fallback-font-primary));
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
