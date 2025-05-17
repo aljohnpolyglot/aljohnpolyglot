@@ -3,1008 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Language Learning Command Center: Tech & Tools | Aljohn Polyglot</title>
-      <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <!-- <link rel="stylesheet" href="../css/styles.css"> Ensure this is the correct path to your MAIN, GLOBAL styles -->
-    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Global Styles & Variables (Copied from your main CSS for this standalone example) */
-        :root {
-            --primary-red: #C8102E;
-            --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27);
-            --light-bg: #f8f9fa;
-            --dark-text: #2c3e50; /* Used for text on light backgrounds */
-            --light-text: #ffffff; /* Used for text on dark backgrounds */
-            --border-color: #e0e0e0;
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Open Sans', sans-serif;
-            /* Tech Theme Specific Colors (from previous CSS) */
-            --deep-space-blue: #0a0f1a;
-            --midnight-blue: #182848;
-            --cerulean-blue: #33658A;
-            --tech-cyan: #00A9FF;
-            --tech-light-text: #e0f2f7;
-            --tech-secondary-text: #a8c0d8;
-            --tech-panel-bg: rgba(10, 25, 47, 0.85);
-            --tech-border-light: rgba(0, 169, 255, 0.2);
-            --tech-border-strong: rgba(0, 169, 255, 0.4);
-        }
+    <title>Aljohn's Polyglot Arsenal: Navigator</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-secondary); color: var(--dark-text); line-height: 1.7; background-color: #fff; }
-        html { scroll-behavior: smooth; }
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-        main { padding-top: 70px; /* Account for fixed header */ }
-        .content-section { padding: 60px 0; }
-        .section-title { font-family: var(--font-primary); font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; margin-bottom: 1rem; color: var(--primary-blue); position: relative; padding-bottom: 0.5rem; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--primary-red); }
-        .section-subtitle { text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; margin-right: 1rem; margin-top: 0.5rem; font-size: 0.95rem; border: 2px solid transparent; cursor: pointer; }
-        .btn-outline { background-color: transparent; color: var(--primary-blue); border: 2px solid var(--primary-blue); }
-        .btn-outline:hover { background-color: var(--primary-blue); color: var(--light-text); }
-        .btn-small { padding: .25rem .5rem; font-size: .8rem; line-height: 1.5; border-radius: .2rem; }
-        
-        /* --- Header & Nav (Basic - use your full header CSS from styles.css) --- */
-        header { background-color: var(--light-text); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; height: 70px; }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
-        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-        .nav-links { list-style: none; display: flex; } .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); } .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-        .nav-links li.dropdown { position: relative; } .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 1001; border-radius: 0 0 4px 4px; top: 100%; left: 0; padding: 5px 0; }
-        .dropdown-content a { color: var(--dark-text); padding: 10px 16px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 600; transition: background-color 0.3s ease, color 0.3s ease; }
-        .dropdown-content a:hover { background-color: var(--light-bg); color: var(--primary-red); } .nav-links li.dropdown:hover .dropdown-content { display: block; }
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; } .nav-cta:hover { background-color: #A8001D; }
-        .menu-toggle { display: none; } /* Add full mobile nav styles from main CSS if needed */
+    <!-- CSS for this specific page (Arsenal Navigator) -->
+    
 
-        /* ===================================================== */
-        /* === TECH THEME FOR APPS.HTML (Scoped with body class) === */
-        /* ===================================================== */
-
-        body.apps-tech-theme {
-            background-color: #07101f; /* Darkest blue base for the whole page */
-            color: var(--tech-light-text); /* Default text color for the page */
-        }
-
-        /* --- Tech Hero for Apps Page --- */
-        body.apps-tech-theme .apps-hero.tech-theme {
-            padding: 100px 0 70px;
-            background-color: #0a192f; 
-            background-image: 
-                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300A9FF' fill-opacity='0.06'%3E%3Cpath d='M50 0H30L0 30v20h20l30-30V0zM0 50h20v30H0V50zm70 30H50V50h20v30zM50 0h20v20H50V0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-                linear-gradient(160deg, 
-                    #0d1b2a 0%, #122a4c 40%, #004AAD 75%, #00337C 100%);
-            color: var(--tech-light-text); text-align: center; position: relative;
-            border-bottom: 2px solid rgba(0, 169, 255, 0.2);
-        }
-        body.apps-tech-theme .apps-hero.tech-theme::before {
-            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 60%, rgba(0, 0, 0, 0.2) 60%), linear-gradient(90deg, rgba(0, 169, 255, 0.02), rgba(0, 169, 255, 0.01), rgba(0, 169, 255, 0.02));
-            background-size: 100% 4px, 3px 100%; opacity: 0.7; z-index: 1; pointer-events: none;
-        }
-        body.apps-tech-theme .apps-hero.tech-theme .container { position: relative; z-index: 2; }
-        body.apps-tech-theme .apps-eyebrow.tech-theme {
-            color: var(--tech-cyan); text-transform: uppercase; letter-spacing: 2px;
-            margin-bottom: 1rem; padding: 0.4rem 1rem;
-            background-color: rgba(0, 169, 255, 0.1);
-            border: 1px solid rgba(0, 169, 255, 0.3);
-            border-radius: 20px; display: inline-block;
-        }
-        body.apps-tech-theme .apps-hero.tech-theme h1 {
-            font-family: var(--font-primary); /* Ensure consistency */
-            font-size: clamp(2.4rem, 5.5vw, 3.6rem);
-            text-shadow: 0 0 15px rgba(0, 169, 255, 0.6), 0 0 8px rgba(0, 169, 255, 0.4);
-            margin-bottom: 1rem; color: var(--tech-light-text);
-        }
-        body.apps-tech-theme .apps-hero p.subtitle.tech-theme {
-            font-family: var(--font-secondary); /* Ensure consistency */
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            color: var(--tech-secondary-text);
-            max-width: 800px; margin: 0 auto; opacity: 0.9;
-        }
-
-        body.apps-tech-theme .tech-theme-content {
-            background-color: #0a1220; padding-top: 1px; 
-        }
-        body.apps-tech-theme .tech-theme-content .content-section { /* Override generic .content-section padding if needed for this page */
-            padding: 40px 0; /* Reduced padding for tighter feel */
-        }
+    <!-- Global CSS for Navbar and Footer (paths corrected) -->
+<!-- 1. Global Base Styles for Navbar and Footer -->
+ 
 
 
-        body.apps-tech-theme .pathway-visualizer.tech-theme {
-            background-color: rgba(13, 27, 42, 0.9); padding: 2.5rem 2rem; border-radius: 10px;
-            margin: 3rem auto; box-shadow: 0 0 25px rgba(0, 169, 255, 0.1), inset 0 0 15px rgba(0,100,150,0.2);
-            border: 1px solid var(--tech-border-strong);
-        }
-        body.apps-tech-theme .pathway-visualizer.tech-theme > h2 {
-            color: var(--accent-yellow); font-size: 2rem; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-            margin-bottom: 1rem; font-family: var(--font-primary);
-        }
-        body.apps-tech-theme .pathway-visualizer.tech-theme > h2 i { color: var(--accent-yellow); margin-right: 10px;}
-        body.apps-tech-theme .pathway-visualizer .visualizer-intro.tech-theme { color: var(--tech-secondary-text); margin-bottom: 2.5rem; font-size: 1.05rem; }
-        body.apps-tech-theme .level-selector.tech-theme .level-btn.tech-theme {
-            background-color: rgba(0, 169, 255, 0.1); color: #ADEBFF; border: 2px solid var(--tech-border-strong);
-            padding: 0.7rem 1.5rem; border-radius: 5px; font-weight: 500; cursor: pointer;
-            font-family: var(--font-secondary);
-        }
-        body.apps-tech-theme .level-selector.tech-theme .level-btn.tech-theme:hover,
-        body.apps-tech-theme .level-selector.tech-theme .level-btn.tech-theme.active {
-            background-color: var(--tech-cyan); color: var(--deep-space-blue); border-color: var(--tech-cyan);
-            box-shadow: 0 0 15px rgba(0, 169, 255, 0.5);
-        }
-        body.apps-tech-theme .pathway-details.tech-theme { background-color: rgba(0, 10, 25, 0.85); padding: 2rem; border-radius: 8px; border: 1px solid var(--tech-border-light); }
-        body.apps-tech-theme .pathway-details.tech-theme.hidden { display: none; }
-        body.apps-tech-theme .pathway-details.tech-theme h3 { color: var(--accent-yellow); font-size: 1.7rem; border-bottom-color: var(--tech-border-light); font-family: var(--font-primary);}
-        body.apps-tech-theme .pathway-details.tech-theme h4 { color: var(--tech-cyan); font-size: 1.25rem; font-family: var(--font-primary);}
-        body.apps-tech-theme .pathway-details.tech-theme p,
-        body.apps-tech-theme .pathway-details.tech-theme ul li { color: var(--tech-secondary-text); font-size: 1rem; }
-        body.apps-tech-theme .pathway-details.tech-theme ul { list-style: none; padding-left:0;}
-        body.apps-tech-theme .pathway-details.tech-theme ul li { padding-left: 1.8em; position: relative; margin-bottom: 0.5rem;}
-        body.apps-tech-theme .pathway-details.tech-theme ul li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--tech-cyan); position: absolute; left:0; top: 3px;}
-        body.apps-tech-theme .pathway-details.tech-theme .app-link {
-            background-color: rgba(0, 169, 255, 0.1); color: #ADEBFF; padding: 0.5rem 1rem;
-            border-radius: 4px; border: 1px solid var(--tech-border-light); text-decoration: none; display: inline-flex; align-items: center;
-        }
-        body.apps-tech-theme .pathway-details.tech-theme .app-link img.app-icon-small { width: 20px; height: 20px; margin-right: 6px; border-radius: 3px;}
-        body.apps-tech-theme .pathway-details.tech-theme .app-link:hover { background-color: var(--tech-cyan); color: var(--deep-space-blue); }
+    <!-- 3. Styles for the main content of THIS page -->
+    <link rel="stylesheet" href="apps/css/apps_navigator.css">
+        <!-- 2. Specific Overrides for Header/Footer on THIS page -->
+    <link rel="stylesheet" href="apps/css/apps_header_footer_overrides.css"> 
 
-        body.apps-tech-theme .resource-category { border-bottom: 1px solid var(--tech-border-light); margin-bottom: 3rem; padding-bottom: 3rem; }
-        body.apps-tech-theme .resource-category:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
-        body.apps-tech-theme .resource-category > h2 { /* For the language specific section title if not in details/summary */
-            font-family: var(--font-primary); font-size: clamp(1.8rem, 4vw, 2.2rem); text-align: center; margin-bottom: 1rem; color: var(--accent-yellow); position: relative; padding-bottom: 0.5rem; text-shadow: 0 0 8px rgba(255,215,0,0.4);
-        }
-        body.apps-tech-theme .resource-category > h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--tech-cyan); box-shadow: 0 0 8px rgba(0, 169, 255, 0.7); }
+    <!-- Favicon (path corrected - assuming 'images' is in the root) -->
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (only need one link) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        body.apps-tech-theme details.skill-details { background-color: transparent; border: 1px solid var(--tech-border-light); border-radius: 8px; margin-bottom: 1.5rem; box-shadow: 0 0 15px rgba(0, 50, 100, 0.1); }
-        body.apps-tech-theme details.skill-details summary { background-color: rgba(13, 27, 42, 0.85); padding: 1.3rem 2rem; font-size: 1.6rem; color: var(--tech-light-text); border-bottom: 1px solid var(--tech-border-light); transition: background-color 0.3s ease; font-family: var(--font-primary); font-weight: 700; cursor: pointer; outline: none; display: flex; align-items: center; justify-content: space-between; list-style: none;}
-        body.apps-tech-theme details.skill-details summary::-webkit-details-marker { display:none; }
-        body.apps-tech-theme details.skill-details summary:hover { background-color: rgba(20, 40, 65, 0.9); }
-        body.apps-tech-theme details.skill-details summary span i { color: var(--tech-cyan); font-size: 1.2em; margin-right: 15px; }
-        body.apps-tech-theme details[open].skill-details summary { background-color: rgba(0, 169, 255, 0.1); color: #ADEBFF; border-bottom-color: var(--tech-border-strong); }
-        body.apps-tech-theme details.skill-details summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--tech-cyan); font-size: 1em; margin-left: 1rem; transition: transform 0.3s ease; flex-shrink: 0;}
-        body.apps-tech-theme details[open].skill-details summary::after { transform: rotate(-180deg); }
-        body.apps-tech-theme .skill-content { padding: 2rem 1.8rem; background-color: rgba(4, 12, 24, 0.9); border-top: none; }
-        body.apps-tech-theme .category-description { font-size: 1.1rem; color: var(--tech-secondary-text); text-align: center; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.75; }
-
-        body.apps-tech-theme .app-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media (min-width: 992px) { body.apps-tech-theme .app-grid { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); } }
-
-        body.apps-tech-theme .app-card-container {
-            background-color: var(--tech-panel-bg); backdrop-filter: blur(6px); border-radius: 6px; padding: 1.8rem;
-            box-shadow: 0 0 15px rgba(0, 169, 255, 0.1), 0 0 3px rgba(0, 169, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            display: flex; flex-direction: column; border: 1px solid var(--tech-border-light);
-        }
-        body.apps-tech-theme .app-card-container:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(0, 169, 255, 0.2), 0 0 8px rgba(0, 169, 255, 0.15); border-color: var(--tech-border-strong); }
-        body.apps-tech-theme .app-card-container.rating-high { border-top: 4px solid #00FF7F; }
-        body.apps-tech-theme .app-card-container.rating-mid { border-top: 4px solid var(--accent-yellow); }
-        body.apps-tech-theme .app-card-container.rating-low { border-top: 4px solid #FF6347; }
-
-        body.apps-tech-theme .app-summary { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        body.apps-tech-theme .app-summary-info { display: flex; flex-direction: column; }
-        body.apps-tech-theme .app-summary .app-logo { width: 50px; height: 50px; object-fit: contain; flex-shrink: 0; border-radius: 6px; }
-        body.apps-tech-theme .app-summary h3 { font-family: var(--font-primary); font-size: 1.4rem; color: var(--tech-light-text); margin: 0 0 4px 0; font-weight: 700;}
-        body.apps-tech-theme .app-summary .rating-stars { font-size: 0.95rem; color: #f1c40f; margin-bottom: 6px;} .app-summary .rating-stars .muted-star { color: #607D8B; }
-        body.apps-tech-theme .app-summary .app-tagline { color: #9FB6D4; font-size: 0.9rem; font-family: 'Roboto Mono', monospace; }
-        body.apps-tech-theme .toggle-details-btn { color: #ADEBFF; border-color: var(--tech-border-strong); background-color: rgba(0, 169, 255, 0.1); border-radius: 4px; padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
-        body.apps-tech-theme .toggle-details-btn:hover { background-color: var(--tech-cyan); color: var(--deep-space-blue); border-color: var(--tech-cyan); }
-        body.apps-tech-theme .toggle-details-btn .fa-chevron-down, body.apps-tech-theme .toggle-details-btn .fa-chevron-up { margin-left: 5px; }
-
-        body.apps-tech-theme .app-details { display: none; border-top: 1px dashed var(--tech-border-light); padding-top: 1.5rem; margin-top: 1rem; animation: fadeIn 0.5s ease; flex-grow: 1; }
-        body.apps-tech-theme .app-details.details-visible { display: flex; flex-direction: column; }
-        body.apps-tech-theme .app-review h4 { color: var(--accent-yellow); font-size: 1.2rem; font-family: var(--font-primary); margin-bottom: 0.8rem;}
-        body.apps-tech-theme .app-review p { color: var(--tech-secondary-text); font-size: 1rem; line-height: 1.7;}
-        body.apps-tech-theme .pros-cons-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; }
-        @media (min-width: 500px) { body.apps-tech-theme .pros-cons-container { grid-template-columns: 1fr 1fr; } }
-        body.apps-tech-theme .pros ul, body.apps-tech-theme .cons ul { list-style: none; padding-left: 0; margin: 0; }
-        body.apps-tech-theme .pros li, body.apps-tech-theme .cons li { margin-bottom: 0.5rem; line-height: 1.6; padding-left: 1.8em; position: relative; color: var(--tech-secondary-text); }
-        body.apps-tech-theme .pros li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #00FF7F; position: absolute; left: 0; top: 0.1em; }
-        body.apps-tech-theme .cons li::before { content: '\f00d'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #FF6347; position: absolute; left: 0; top: 0.1em; }
-        body.apps-tech-theme .pros h4, body.apps-tech-theme .cons h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--tech-light-text); font-family: var(--font-primary);}
-        body.apps-tech-theme .app-links { margin-top: auto; padding-top: 1.5rem; text-align: left; border-top: 1px dashed rgba(0,169,255,0.1); }
-        body.apps-tech-theme .app-links .btn.btn-outline.btn-small { color: var(--accent-yellow); border-color: var(--accent-yellow); border-radius: 4px; font-weight: 600;}
-        body.apps-tech-theme .app-links .btn.btn-outline.btn-small:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); }
-
-        body.apps-tech-theme .cefr-recommendations { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--tech-border-light); }
-        body.apps-tech-theme .cefr-recommendations h4 { color: var(--tech-light-text); font-size: 1.1rem; font-family: var(--font-primary); margin-bottom: 1rem;}
-        body.apps-tech-theme .cefr-levels { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-        body.apps-tech-theme .cefr-level-dot { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; color: var(--deep-space-blue); box-shadow: 0 0 8px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); transition: transform 0.2s ease; }
-        body.apps-tech-theme .cefr-level-dot:hover { transform: scale(1.1); }
-        body.apps-tech-theme .cefr-level-dot.high { background-color: #00D16A; } body.apps-tech-theme .cefr-level-dot.medium { background-color: var(--tech-cyan); }
-        body.apps-tech-theme .cefr-level-dot.low { background-color: #507DBC; color: var(--tech-light-text); } body.apps-tech-theme .cefr-level-dot.not-recommended { background-color: #607D8B; color: #B0BEC5; }
-
-        body.apps-tech-theme #language-specific-tools > h2 { color: var(--accent-yellow); text-shadow: 0 0 8px rgba(255,215,0,0.4); }
-        body.apps-tech-theme #language-specific-tools > h2::after { background-color: var(--tech-cyan); }
-        body.apps-tech-theme #language-specific-tools .category-description.tech-theme { color: var(--tech-secondary-text); }
-        body.apps-tech-theme .language-specific-list.tech-theme details { background-color: rgba(13, 27, 42, 0.8); border-color: var(--tech-border-light); box-shadow: 0 0 10px rgba(0,50,80,0.1); }
-        body.apps-tech-theme .language-specific-list.tech-theme summary { color: var(--tech-light-text); font-size: 1.25rem; padding: 1.1rem 1.5rem; font-family: var(--font-primary); font-weight: 700;}
-        body.apps-tech-theme .language-specific-list.tech-theme details[open] summary { background-color: rgba(0, 169, 255, 0.05); color: #ADEBFF; border-bottom-color: rgba(0,169,255,0.1); }
-        body.apps-tech-theme .language-specific-list.tech-theme summary img.lang-flag { border: 1px solid var(--tech-border-light); box-shadow: 0 0 5px rgba(0,169,255,0.1); width: 30px; height: auto; aspect-ratio: 3/2; margin-right: 10px; border-radius: 3px; object-fit: cover;}
-        body.apps-tech-theme .language-specific-list.tech-theme summary::after { color: var(--tech-cyan); }
-        body.apps-tech-theme .language-resources { background-color: rgba(4, 12, 24, 0.85); border-top-color: rgba(0,169,255,0.1); padding: 1rem 1.5rem 1.5rem;}
-        body.apps-tech-theme .language-resources h4 { color: var(--accent-yellow); font-size: 1.1rem; border-bottom-color: rgba(0,169,255,0.1); font-family: var(--font-primary); display: flex; align-items:center; margin-bottom: 1rem; padding-bottom: 0.4rem;}
-        body.apps-tech-theme .language-resources h4 i { color: var(--accent-yellow); opacity: 0.9; margin-right: 6px; }
-        body.apps-tech-theme .language-resources ul { list-style:none; padding-left:0; margin:0 0 1rem 0;} body.apps-tech-theme .language-resources ul:last-of-type { margin-bottom:0;}
-        body.apps-tech-theme .language-resources li { color: var(--tech-secondary-text); font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center; gap: 8px; }
-        body.apps-tech-theme .language-resources li img.site-logo {width: 18px; height: 18px; object-fit: contain; flex-shrink:0; border-radius: 3px; vertical-align: middle;}
-        body.apps-tech-theme .language-resources li i.fab, body.apps-tech-theme .language-resources li i.fas { color: #88a0b8; font-size: 1em; width: 18px; text-align: center; flex-shrink:0;}
-        body.apps-tech-theme .language-resources li a { color: #ADEBFF; text-decoration: none; font-weight: 500;}
-        body.apps-tech-theme .language-resources li a:hover { color: var(--accent-yellow); text-decoration: underline; text-shadow: 0 0 5px var(--accent-yellow); }
-        body.apps-tech-theme .language-resources p.no-resources { font-style: italic; color: #777; font-size: 0.9rem;}
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
-      /* ===================================================== */
-/* === TECH THEME FOOTER (Scoped with body.apps-tech-theme) === */
-/* ===================================================== */
-
-body.apps-tech-theme footer {
-    background-color: var(--deep-space-blue, #0a0f1a); /* Very dark blue, consistent with tech theme */
-    color: var(--tech-secondary-text, #a8c0d8);     /* Lighter grey/blue for general text */
-    padding: 50px 0 30px; /* Generous padding */
-    font-size: 0.9rem;
-    border-top: 2px solid var(--tech-cyan, #00A9FF); /* Cyan accent border at the top */
-    box-shadow: 0 -5px 20px rgba(0, 169, 255, 0.1); /* Subtle upward glow */
-}
-
-body.apps-tech-theme footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 1.5rem;     /* Space between items when they wrap */
-    margin-bottom: 2rem; /* Space before copyright */
-}
-
-body.apps-tech-theme footer .footer-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-body.apps-tech-theme footer .footer-logo .logo-img {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    margin-right: 12px;
-    border: 2px solid var(--tech-cyan, #00A9FF); /* Cyan border for logo */
-    box-shadow: 0 0 8px rgba(0, 169, 255, 0.3);
-}
-
-body.apps-tech-theme footer .footer-logo span {
-    font-family: var(--font-primary, 'Montserrat', sans-serif);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--tech-light-text, #e0f2f7); /* Bright white/light blue for logo text */
-    text-shadow: 0 0 5px rgba(0, 169, 255, 0.2);
-}
-
-body.apps-tech-theme footer .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center links if they wrap */
-    gap: 15px 25px; /* vertical and horizontal gap */
-    list-style: none;
-    padding: 0;
-    margin: 0; /* Reset margin for nav */
-}
-
-body.apps-tech-theme footer .footer-links a {
-    color: var(--tech-secondary-text, #a8c0d8);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    position: relative;
-    padding-bottom: 3px;
-}
-
-body.apps-tech-theme footer .footer-links a::after { /* Subtle underline effect */
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--accent-yellow, #FFD700); /* Yellow accent for hover underline */
-    transition: width 0.3s ease;
-}
-
-body.apps-tech-theme footer .footer-links a:hover {
-    color: var(--accent-yellow, #FFD700); /* Bright yellow hover */
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-}
-body.apps-tech-theme footer .footer-links a:hover::after {
-    width: 100%;
-}
-
-
-body.apps-tech-theme footer .social-links {
-    display: flex;
-    align-items: center;
-    gap: 18px; /* Space between social icons */
-}
-
-body.apps-tech-theme footer .social-links a {
-    color: var(--tech-secondary-text, #a8c0d8);
-    font-size: 1.6rem; /* Slightly larger social icons */
-    transition: color 0.3s ease, transform 0.3s ease;
-    line-height: 1; /* Ensure icons align well if they have weird default line-height */
-}
-body.apps-tech-theme footer .social-links a:hover {
-    color: var(--accent-yellow, #FFD700);
-    transform: scale(1.15) translateY(-2px); /* More dynamic hover */
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-}
-
-body.apps-tech-theme footer .copyright {
-    text-align: center;
-    border-top: 1px solid rgba(0, 169, 255, 0.15); /* Very subtle tech border */
-    padding-top: 1.8rem;
-    margin-top: 1.8rem;
-    font-size: 0.85rem;
-    color: rgba(168, 192, 216, 0.6); /* Dimmer copyright text */
-    letter-spacing: 0.5px;
-}
-body.apps-tech-theme footer .copyright #current-year {
-    /* Inherits color, no specific style needed unless you want to highlight it */
-}
-
-/* Responsive adjustments for footer on tech theme page */
-@media (max-width: 768px) {
-    body.apps-tech-theme footer .footer-content {
-        flex-direction: column; /* Stack items vertically */
-        text-align: center;
-        gap: 2rem; /* Increase gap when stacked */
-    }
-    body.apps-tech-theme footer .footer-logo {
-        margin-bottom: 0.5rem; /* Space below logo when stacked */
-    }
-    body.apps-tech-theme footer .footer-links {
-        justify-content: center; /* Ensure links are centered */
-        gap: 10px 20px; /* Adjust gap for stacked links */
-    }
-    body.apps-tech-theme footer .social-links {
-        justify-content: center; /* Center social icons */
-        margin-top: 0.5rem; /* Add some space above social icons when stacked */
-    }
-}
-    </style>
 </head>
+  
 <body class="apps-tech-theme">
-     <header id="main-header-placeholder"></header>
-    <main>
-        <section class="apps-hero tech-theme" id="top">
-            <div class="container">
-                <span class="apps-eyebrow tech-theme">My Digital Command Center</span>
-                <h1>Aljohn's Language Learning Arsenal</h1>
-                <p class="subtitle tech-theme">
-                    The right tools are mission-critical. This is my complete, battle-hardened toolkit. 
-                    No more guessing – find precisely what you need for your current level and learning style, with honest reviews and usage strategies.
-                </p>
+    <header id="main-header-placeholder" class="tech-theme-header-placeholder"></header>
+
+    <div class="arsenal-container">
+        <aside class="arsenal-sidebar">
+            <h2><i class="fas fa-filter"></i> Filter Arsenal</h2>
+            <div class="filter-group">
+                <label for="search-keyword">Keyword Search</label>
+                <div class="search-input-wrapper">  
+                    <i class="fas fa-search"></i>     
+                    <input type="text" id="search-keyword" placeholder="Search by name or tag...">
+                </div>
             </div>
-        </section>
-
-        <section class="content-section tech-theme-content">
-            <div class="container">
-                <!-- Pathway Visualizer Section - Enhanced for Tech Theme -->
-                <section class="pathway-visualizer tech-theme">
-                    <h2><i class="fas fa-project-diagram"></i> Your Personalized Toolkit Roadmap</h2>
-                    <p class="visualizer-intro tech-theme">
-                        Select your current CEFR level. I'll highlight the most effective tools and strategies from my arsenal to accelerate your progress at this specific stage.
-                    </p>
-                    <div class="level-selector tech-theme">
-                        <button class="level-btn tech-theme" data-level="a1a2">A1 - A2 (Foundation)</button>
-                        <button class="level-btn tech-theme" data-level="b1b2">B1 - B2 (Immersion)</button>
-                        <button class="level-btn tech-theme" data-level="c1c2">C1 - C2 (Mastery)</button>
-                    </div>
-                    <div class="pathway-details hidden tech-theme" id="pathwayDetailsOutput">
-                        <h3><i class="fas fa-map-signs"></i> Activate Roadmap: Select Your Level Above.</h3>
-                    </div>
-                </section>
-                <!-- End Pathway Visualizer Section -->
-
-                <!-- General Utilities & Core Platforms Category -->
-                <section class="resource-category">
-                    <details class="skill-details" open>
-                         <summary><span><i class="fas fa-cogs"></i> Core Utilities & Learning Platforms</span></summary>
-                         <div class="skill-content">
-                              <p class="category-description">The foundational software for memory enhancement, grammar understanding, translation, structured lessons, and accessing global content.</p>
-                              <div class="app-grid">
-                                
-                                  <div class="app-card-container rating-high" id="app-anki">
-                                      <div class="app-summary">
-                                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/2048px-Anki-icon.svg.png" alt="Anki Logo" class="app-logo">
-                                          <div class="app-summary-info">
-                                              <h3>Anki / AnkiDroid</h3>
-                                              <div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                              <p class="app-tagline">The Flashcard app to never forget what you learned.</p>
-                                          </div>
-                                          <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                      </div>
-                                      <div class="app-details">
-                                          <div class="app-review"><h4>My Take:</h4><p>Do you always forget what you've studied? It's probably because you're not using this app. Anki is a flashcard app, and everything you learn should be put here so you never forget it. It's not just a normal flashcard app; it follows an algorithm called "spaced repetition," which is scientifically proven. It helps solidify our learnings from short-term to long-term memory. It's hard to explain in just one post, so research "spaced repetition." Based on my experience, it's very effective. This is the #1 app I can't live without.</p></div>
-                                          <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>User-friendly interface for efficient study sessions</li><li>Proven spaced repetition system for optimal learning</li><li>Cross-platform compatibility for on-the-go studying</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Requires a learning curve for advanced customization</li><li>Steep learning curve for new users unfamiliar with flashcards</li></ul></div></div>
-                                          <div class="app-links"><a href="https://apps.ankiweb.net/" target="_blank" class="btn btn-outline btn-small">Website</a><a href="https://play.google.com/store/apps/details?id=com.ichi2.anki" target="_blank" class="btn btn-outline btn-small">Android</a></div>
-                                          <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 high" title="A2: High">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 low" title="B2: Low">B2</span><span class="cefr-level-dot level-c1 low" title="C1: Low">C1</span><span class="cefr-level-dot level-c2 low" title="C2: Low">C2</span></div></div>
-                                      </div>
-                                  </div>
-                                
-                                  <div class="app-card-container rating-high" id="app-chatgpt">
-                                      <div class="app-summary"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" alt="ChatGPT Logo" class="app-logo"><div class="app-summary-info"><h3>ChatGPT</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your versatile AI language-learning tool.</p></div><button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button></div>
-                                      <div class="app-details">
-                                            <div class="app-review"><h4>My Take:</h4> <p>If I could give more than 10 stars, this would be it. You can use it at any level. If you're a beginner, you can ask it to write reading materials. If intermediate, you can use it as a speaking partner. If advanced, you can ask it to give you Miss Universe-style questions to really hone your command of the language. I use this every day, and it's indispensable in my routine. You can use it in all imaginable ways. The best part is the voice feature; just imagine it's your teacher. It's like having a real person to call. My progress skyrocketed when I discovered the voice feature because I no longer needed to talk to real people (for initial practice).</p></div>
-                                            <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Real-time feedback and corrections</li><li>Endless conversation practice</li><li>Access to information and explanations</li><li>Role-playing and simulated scenarios</li><li>Voice feature for conversation</li><li>Supports almost all languages</li><li>Translates colloquially</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>May provide incorrect information (especially for non-major languages)</li><li>Misinterpreting prompts can lead to confusion</li><li>Voice feature may not capture human nuances</li></ul></div></div>
-                                            <div class="app-links"><a href="https://chatgpt.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                            <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 low" title="A1: Low">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 medium" title="B2: Medium">B2</span><span class="cefr-level-dot level-c1 medium" title="C1: Medium">C1</span><span class="cefr-level-dot level-c2 medium" title="C2: Medium">C2</span></div></div>
-                                        </div>
-                                  </div>
-                                
-                                  <div class="app-card-container rating-high" id="app-youtube">
-                                      <div class="app-summary">
-                                          <img src="https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png" alt="YouTube Logo" class="app-logo">
-                                          <div class="app-summary-info"><h3>YouTube</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your free ticket to language immersion.</p></div>
-                                          <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                      </div>
-                                      <div class="app-details">
-                                          <div class="app-review"><h4>My Take:</h4><p>This is another app I'd give more than 10 stars. I don't know why others complicate finding materials. The truth is, everything is already here. Beginner? Watch lectures and tutorials. Intermediate? Then watch native content. You can also choose videos based on your interests so you won't get bored or forced to watch something you don't like. Spending time on this platform alone will take you places. The auto-subtitles are also great for following along, available in major languages. And best of all, it's FREE!</p></div>
-                                          <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Endless content for language exposure</li><li>Automatic subtitles for many languages</li><li>Extensive language learning tutorials</li><li>Accessible across various devices</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Limited automatic subtitle availability for certain languages</li><li>Can be distracting</li></ul></div></div>
-                                          <div class="app-links"><a href="https://www.youtube.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                          <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 low" title="A1: Low">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                      </div>
-                                  </div>
-                                
-                                  <div class="app-card-container rating-high" id="app-readera">
-                                    <div class="app-summary">
-                                        <img src="https://play-lh.googleusercontent.com/qw8lAHXaZodAE4c3D1Jkia3V8Np-PxTnyQpUIx439ibABba0L50TVKI4jfY4N4QwzAA" alt="ReadEra Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>ReadEra</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your all-in-one reading companion.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>Actually, any ebook reader is fine, but this is what I personally use. And if there are words I don't know, it has a built-in translator (I don't know if it only works on Android). You can also highlight phrases or words depending on how you use it. Its interface is easy and intuitive. And if you like audio while reading, it also has a voice feature so you can hear the language while reading it.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Intuitive and user-friendly interface</li><li>Built-in dictionary/translator</li><li>Text-to-speech function</li><li>Highlighting feature</li><li>Suitable for all levels</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Requires manual book downloads</li></ul></div></div>
-                                        <div class="app-links"><a href="https://readera.org/" target="_blank" class="btn btn-outline btn-small">Website</a><a href="https://play.google.com/store/apps/details?id=org.readera" target="_blank" class="btn btn-outline btn-small">Android</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 medium" title="A1: Medium">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                 
-                                  <div class="app-card-container rating-high" id="app-pocketcasts">
-                                    <div class="app-summary">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pocket_Casts_icon.svg/2048px-Pocket_Casts_icon.svg.png" alt="Pocket Casts Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Pocket Casts</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your go-to app for multilingual podcast listening.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>This is my personal podcast player. Its competitors are Spotify and YouTube Music, but Spotify needs internet and doesn't allow downloads (for free tier). YouTube Music has a difficult interface. But Pocket Casts is very intuitive to use. It also tracks your listening hours so you have data on how long your immersion has been so far. Almost all podcasts available on other platforms are here too. I discovered this recently since Google Podcasts was discontinued, and I'm glad I found it. You can also play it in the background if you want to do laundry or cook while studying.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Offline listening capabilities</li><li>Vast podcast library</li><li>Adjustable playback speed</li><li>Tracks listening hours</li><li>Background playback</li><li>Free to use</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Can be overwhelming for users new to podcasts</li></ul></div></div>
-                                        <div class="app-links"><a href="https://pocketcasts.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                 
-                                  <div class="app-card-container rating-high" id="app-deepl">
-                                    <div class="app-summary"><img src="https://cdn.worldvectorlogo.com/logos/deepl-1.svg" alt="DeepL Logo" class="app-logo"><div class="app-summary-info"><h3>DeepL</h3><div class="rating-stars" aria-label="Rating: 9/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your ultimate translation companion.</p></div><button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button></div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>For me, this is the best translator because it's incredibly accurate, and its translations don't look awkward. The only disadvantage is that it has fewer languages (though they add more with every update), and it needs Wi-Fi because you can't download language files like Google Translate. But overall, this is where I get the sentences I imitate. It's 9 stars because ChatGPT is still different for translating informal language. DeepL is very formal, same as Google Translate. So if you want street language, this isn't perfect.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Exceptional translation accuracy</li><li>User-friendly interface</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Limited language options</li><li>Doesn't capture nuances in informal/colloquial language</li><li>Requires internet connection</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.deepl.com/en/translator" target="_blank" class="btn btn-outline btn-small">Website</a><a href="https://play.google.com/store/apps/details?id=com.deepl.mobiletranslator" target="_blank" class="btn btn-outline btn-small">Android</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 high" title="A2: High">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 medium" title="B2: Medium">B2</span><span class="cefr-level-dot level-c1 low" title="C1: Low">C1</span><span class="cefr-level-dot level-c2 low" title="C2: Low">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                  
-                                  <div class="app-card-container rating-high" id="app-languagetransfer">
-                                      <div class="app-summary"><img src="https://play-lh.googleusercontent.com/upG4JV3kjl9LDKjhgONsmboRlAnsfJJsuMc_XeUm_q7ft6erVMfIWyunNfoLjMqB93I" alt="Language Transfer Logo" class="app-logo"><div class="app-summary-info"><h3>Language Transfer</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">The best free language lessons out there!</p></div><button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button></div>
-                                      <div class="app-details">
-                                          <div class="app-review"><h4>My Take:</h4><p>This is the perfect app for beginners. It's like having a one-on-one teacher who teaches you the basics of a language. It explains the root of each word and how grammar works. You'll also learn cultural insights about the language you're studying, so it's perfect. If you're a beginner, you can do this while multitasking to save time. The only downside is it covers few languages. But since most of you are learning French or Spanish, this is just right.</p></div>
-                                          <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Comprehensive grammar explanations</li><li>Interactive exercises</li><li>Includes cultural insights</li><li>Background playback</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Limited language options</li><li>Lack of progress tracking</li><li>Course duration not for short attention spans</li></ul></div></div>
-                                          <div class="app-links"><a href="https://www.languagetransfer.org/" target="_blank" class="btn btn-outline btn-small">Website</a><a href="https://play.google.com/store/apps/details?id=org.languagetransfer" target="_blank" class="btn btn-outline btn-small">Android</a></div>
-                                          <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 not-recommended" title="B1: Not Recommended">B1</span><span class="cefr-level-dot level-b2 not-recommended" title="B2: Not Recommended">B2</span><span class="cefr-level-dot level-c1 not-recommended" title="C1: Not Recommended">C1</span><span class="cefr-level-dot level-c2 not-recommended" title="C2: Not Recommended">C2</span></div></div>
-                                      </div>
-                                  </div>
-                                 
-                                  <div class="app-card-container rating-high" id="app-urbanvpn">
-                                    <div class="app-summary">
-                                        <img src="https://appteka.store/api/1/icon/get?hash=TPZUwy3ibxCBwnP7i2PfRbtKOgAWeRa2813msljIixgwTq0elKPFKyZrnujcxd%2BP" alt="UrbanVPN Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>UrbanVPN</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your Language Immersion Gateway.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>I'm just inserting this app, especially for PC users. I've tried many VPN services, but this is the only one that's truly free. With this VPN, I can access other sites to get more resources. For example, if it's Spanish, you can watch RTVE, which is like Netflix but Spanish. In the Philippines, it's equivalent to IwantTFC or Vivamax. It's not required, but if you're bored with YouTube and want different content or to access content you can't easily find, you need this.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Accesses geo-restricted content</li><li>Enhances immersion with native content</li><li>Relatively user-friendly</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Connection speed fluctuations</li><li>Effectiveness depends on content in target region</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.urban-vpn.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 low" title="A1: Low">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                  </div>
-                              
-                                  <div class="app-card-container rating-high" id="app-linguno">
-                                    <div class="app-summary">
-                                        <img src="images/logo_linguno.png" alt="Linguno Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Linguno</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your ultimate conjugation coach.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>Most underrated app ever! Perfect for those who struggle to memorize conjugations! If you use it, you'll master them quickly. Why? Unlike Duolingo, this actually targets your weaknesses. So if you make a mistake, it will repeat until you get it right. It's frustrating at first, but that's how it is in the beginning. Once you rank high here, conjugating becomes very easy for you, almost without thinking.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>User-friendly interface</li><li>Efficient spaced repetition</li><li>Personalized learning (targets weaknesses)</li><li>Engaging vocabulary and listening exercises</li><li>Free access</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Challenging for new language learners</li><li>Limited language options</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.linguno.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 low" title="A1: Low">A1</span><span class="cefr-level-dot level-a2 high" title="A2: High">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 low" title="B2: Low">B2</span><span class="cefr-level-dot level-c1 low" title="C1: Low">C1</span><span class="cefr-level-dot level-c2 low" title="C2: Low">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                 
-                                  <div class="app-card-container rating-high" id="app-reversocontext">
-                                    <div class="app-summary">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Reverso_logo.jpg/1200px-Reverso_logo.jpg" alt="Reverso Context Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Reverso Context</h3><div class="rating-stars" aria-label="Rating: 9/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your all-in-one language learning toolkit.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>If you're studying a language, you probably need a grammar resource. For me, this is truly the best app. It's perfect for conjugation lists, vocabulary, synonyms, grammar checker, translator, or anything you can think of. Once you get the hang of it, you won't switch to another source because it's truly complete. It's 9 stars because there are some paid features, but they aren't necessary or a hindrance to your learning. Everything you need is already free here.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Comprehensive language resources</li><li>Extensive translation database</li><li>Verb conjugation and grammar tools</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Some premium features (e.g., AI Rephraser) require payment</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.reverso.net/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 high" title="A2: High">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 medium" title="B2: Medium">B2</span><span class="cefr-level-dot level-c1 low" title="C1: Low">C1</span><span class="cefr-level-dot level-c2 low" title="C2: Low">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                
-                                  <div class="app-card-container rating-mid" id="app-googletranslate">
-                                    <div class="app-summary">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Google_Translate_logo.svg/1024px-Google_Translate_logo.svg.png" alt="Google Translate Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Google Translate</h3><div class="rating-stars" aria-label="Rating: 8/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your versatile language companion.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>This is probably the most famous translator in the world. Its biggest advantage is that you can download language files to use it offline. That's good for people like me who don't buy mobile data. However, the translations here are very program-based and not human-based, so the translations aren't really great, especially for little nuances. I rarely use it because DeepL is much better. But if a language isn't on DeepL, I go straight to Google Translate.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Supports a vast number of languages</li><li>Offline translation for specific languages</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Translation quality is not that great</li><li>May struggle with complex or nuanced text</li></ul></div></div>
-                                        <div class="app-links"><a href="https://translate.google.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 high" title="A2: High">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 medium" title="B2: Medium">B2</span><span class="cefr-level-dot level-c1 low" title="C1: Low">C1</span><span class="cefr-level-dot level-c2 low" title="C2: Low">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                 
-                                  <div class="app-card-container rating-low" id="app-memrise">
-                                    <div class="app-summary">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Memrise-new-logo.png" alt="Memrise Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Memrise</h3><div class="rating-stars" aria-label="Rating: 5/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your vocabulary building companion.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>It's okay for learning vocabulary. The good thing here is it uses spaced-repetition, which is a good algorithm for maintaining vocabulary. And it's not as complicated as Duolingo. But there's a lot of inaccessible content, such as paid lessons, so that's also a downside.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Focus on vocabulary acquisition</li><li>User-generated content</li><li>Some courses incorporate native speaker audio</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Limited grammar and conversation practice</li><li>Relies heavily on memorization</li><li>Free version has limitations and ads</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.memrise.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 low" title="A2: Low">A2</span><span class="cefr-level-dot level-b1 not-recommended" title="B1: Not Recommended">B1</span><span class="cefr-level-dot level-b2 not-recommended" title="B2: Not Recommended">B2</span><span class="cefr-level-dot level-c1 not-recommended" title="C1: Not Recommended">C1</span><span class="cefr-level-dot level-c2 not-recommended" title="C2: Not Recommended">C2</span></div></div>
-                                    </div>
-                                  </div>
-                               
-                                  <div class="app-card-container rating-low" id="app-duolingo">
-                                    <div class="app-summary">
-                                        <img src="https://cdn.jim-nielsen.com/ios/512/duolingo-2019-01-02.png?rf=1024" alt="Duolingo Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Duolingo</h3><div class="rating-stars" aria-label="Rating: 4/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your casual language introduction.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>It's okay for beginners and its game structure is good. But it has too many unnecessary things that aren't needed to learn a language. And words you already know well, you still have to repeat instead of progressing to the next level. So it's slow for progress. It's like it's babying the learner. It also lacks real-world context, which is necessary for language learning.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>User-friendly for beginners</li><li>Covers language fundamentals</li><li>Compatible with various devices</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Slow learning pace</li><li>Repetitive exercises with limited progress</li><li>Lack of real-world language application</li><li>Excessive in-app purchases</li></ul></div></div>
-                                        <div class="app-links"><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzf0-PoWEKubzf94NhBAHKdMNHUTu1uaDFxA&s" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 low" title="A2: Low">A2</span><span class="cefr-level-dot level-b1 not-recommended" title="B1: Not Recommended">B1</span><span class="cefr-level-dot level-b2 not-recommended" title="B2: Not Recommended">B2</span><span class="cefr-level-dot level-c1 not-recommended" title="C1: Not Recommended">C1</span><span class="cefr-level-dot level-c2 not-recommended" title="C2: Not Recommended">C2</span></div></div>
-                                    </div>
-                                  </div>
-                              </div>
-                         </div>
-                     </details>
-                 </section>
-
-                <section class="resource-category">
-                    <details class="skill-details">
-                         <summary><span><i class="fas fa-book-reader"></i> Reading Comprehension Augmenters</span></summary>
-                         <div class="skill-content">
-                              <p class="category-description">Tools to transform texts and videos into interactive reading experiences, boosting vocabulary and comprehension.</p>
-                              <div class="app-grid">
-                                 
-                                  <div class="app-card-container rating-high" id="app-languagereactor">
-                                    <div class="app-summary">
-                                        <img src="https://lh3.googleusercontent.com/aPSUr3UYCdrkrGEIJu_5RubORwHcRiQEaiRKAPx68BeJ7963d31hIzZamn8HninChHNh-CIFWuRFj2cocG-2ojxl7oE=s120" alt="Language Reactor Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Language Reactor</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your immersive language learning companion.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>Speaking of YouTube, when you use subtitles, you often need to go to Google Translate to find the meaning of a word. With Language Reactor, you just hover your mouse over a word, and the translation appears. This saves a lot of time switching from one app to another. If you're a beginner, you can also see the translation of the whole phrase below to compare and contrast. But if you're a bit advanced, you can also blur it to make it more challenging. Then, if you don't understand the context, you can look at the translation. Aside from YouTube, it also works on Netflix and other streaming platforms.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Enhances video with interactive learning</li><li>Dual-language subtitles</li><li>On-demand definitions</li><li>Customizable experience</li><li>Integrates with streaming platforms</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Currently limited to desktop use</li><li>Subscription for premium features</li><li>Not for complete beginners</li><li>Relies on available subtitles</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.languagereactor.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 high" title="A1: High">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 low" title="B1: Low">B1</span><span class="cefr-level-dot level-b2 not-recommended" title="B2: Not Recommended">B2</span><span class="cefr-level-dot level-c1 not-recommended" title="C1: Not Recommended">C1</span><span class="cefr-level-dot level-c2 not-recommended" title="C2: Not Recommended">C2</span></div></div>
-                                    </div>
-                                  </div>
-                                
-                                  <div class="app-card-container rating-mid" id="app-clozemaster">
-                                    <div class="app-summary">
-                                        <img src="https://play-lh.googleusercontent.com/OnFqiujFXmyzOvkmaCzPDPHPnN9-mcM9hBwQPLAXy3lESDbkHqXQTRRzfJvchwDkNds=w240-h480-rw" alt="ClozeMaster Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>ClozeMaster</h3><div class="rating-stars" aria-label="Rating: 6/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your Contextual Vocabulary Builder.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>This used to be one of my favorite apps. This is where I first truly exposed myself to context because you fill in the blanks for the word that fits the sentence. So you really need to have an idea of what the words mean. It has two modes: multiple choice or you type the word yourself. When you're a bit more advanced, just use the typing mode. It's incredibly good. But I stopped using it when they imposed a limit of 30 exercises a day and then required payment. That's why it's only 6 stars now. It used to be a solid 10 stars for me; I used it all the time.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Learning vocabulary through context</li><li>Fill-in-the-blanks exercises</li><li>Multiple choice and typing modes</li><li>Exposure to full sentences</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Free version limited to 30 exercises/day</li><li>Requires payment for unlimited access</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.clozemaster.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 low" title="A1: Low">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 medium" title="B2: Medium">B2</span><span class="cefr-level-dot level-c1 low" title="C1: Low">C1</span><span class="cefr-level-dot level-c2 not-recommended" title="C2: Not Recommended">C2</span></div></div>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
-                     </details>
-                 </section>
-
-                <section class="resource-category">
-                    <details class="skill-details">
-                        <summary><span><i class="fas fa-keyboard"></i> Writing & Output Refinement</span></summary>
-                         <div class="skill-content">
-                            <p class="category-description">Platforms for practicing written expression, receiving corrections, and structuring your thoughts effectively in the target language. (Many core tools like ChatGPT also excel here!)</p>
-                            <div class="app-grid">
-                              
-                                <div class="app-card-container rating-high" id="app-chatgpt-writing">
-                                    <div class="app-summary"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" alt="ChatGPT Logo" class="app-logo"><div class="app-summary-info"><h3>ChatGPT (for Writing)</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">AI for Corrections, Ideas & Text Generation.</p></div><button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button></div>
-                                    <div class="app-details">
-                                          <div class="app-review"><h4>My Take (Writing Focus):</h4> <p>Indispensable for my daily diary writing. When I can't figure out how to say something, I ask ChatGPT for phrasing ideas or check my grammar. It helps bridge the gap between passive knowledge and active production. You can ask it to generate prompts, rephrase your sentences, or explain complex grammatical structures you want to use in your writing.</p></div>
-                                          <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Feedback & corrections on written text</li><li>Helps formulate thoughts and sentences</li><li>Generates writing prompts and examples</li><li>Explains grammar for writing</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Can make errors; always double-check</li><li>Might not catch subtle stylistic issues</li></ul></div></div>
-                                          <div class="app-links"><a href="https://chatgpt.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                          <div class="cefr-recommendations"><h4>Recommended For (Writing):</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 low" title="A1: Low">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                      </div>
-                                </div>
-                            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-layer-group"></i> CEFR Level</h3>
+                <div id="cefr-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="cefr" value="A1"> A1</label>
+                    <label><input type="checkbox" name="cefr" value="A2"> A2</label>
+                    <label><input type="checkbox" name="cefr" value="B1"> B1</label>
+                    <label><input type="checkbox" name="cefr" value="B2"> B2</label>
+                    <label><input type="checkbox" name="cefr" value="C1"> C1</label>
+                    <label><input type="checkbox" name="cefr" value="C2"> C2</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-bullseye"></i> Immersion Strategy</h3>
+                <div id="immersion-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="immersion" value="Reading"> <i class="fas fa-book-open"></i> Reading</label>
+                    <label><input type="checkbox" name="immersion" value="Writing"> <i class="fas fa-pencil-alt"></i> Writing</label>
+                    <label><input type="checkbox" name="immersion" value="Listening"> <i class="fas fa-headphones"></i> Listening</label>
+                    <label><input type="checkbox" name="immersion" value="Speaking"> <i class="fas fa-comments"></i> Speaking</label>
+                    <label><input type="checkbox" name="immersion" value="Watching"> <i class="fas fa-tv"></i> Watching</label>
+                    <label><input type="checkbox" name="immersion" value="Vocabulary Building"> <i class="fas fa-brain"></i> Vocabulary</label>
+                    <label><input type="checkbox" name="immersion" value="Grammar Focus"> <i class="fas fa-spell-check"></i> Grammar</label>
+                </div>
+            </div>
+            <div class="filter-group custom-dropdown-filter">
+                <h3><i class="fas fa-tools"></i> Tool Type</h3>
+                <div class="dropdown-container" id="tool-type-dropdown-container">
+                    <button type="button" class="dropdown-toggle-btn" aria-expanded="false" aria-controls="tool-type-options-panel">
+                        <span class="dropdown-btn-text">Select Tool Types</span>
+                        <span class="dropdown-btn-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="dropdown-options-panel" id="tool-type-options-panel" role="listbox" aria-multiselectable="true" style="display: none;">
+                        <div id="category-filter-options" class="filter-options-list">
+                            <label><input type="checkbox" name="category" value="SRS"> SRS</label>
+                            <label><input type="checkbox" name="category" value="Dictionary"> Dictionary</label>
+                            <label><input type="checkbox" name="category" value="Translation Tool"> Translation Tool</label>
+                            <label><input type="checkbox" name="category" value="AI Tutor"> AI Tutor</label>
+                            <label><input type="checkbox" name="category" value="Language Exchange"> Language Exchange</label>
+                            <label><input type="checkbox" name="category" value="Content Platform"> Content Platform</label>
+                            <label><input type="checkbox" name="category" value="Reading Assistant"> Reading Assistant</label>
+                            <label><input type="checkbox" name="category" value="Utility"> Utility</label>
+                            <label><input type="checkbox" name="category" value="Media Player"> Media Player</label>
+                            <label><input type="checkbox" name="category" value="Interactive Exercises"> Interactive Exercises</label>
+                            <label><input type="checkbox" name="category" value="Community"> Community</label>
+                            <label><input type="checkbox" name="category" value="Course Platform"> Course Platform</label>
                         </div>
-                    </details>
-                </section>
-
-                <section class="resource-category">
-                     <details class="skill-details">
-                         <summary><span><i class="fas fa-assistive-listening-systems"></i> Auditory Immersion Gateways</span></summary>
-                         <div class="skill-content">
-                              <p class="category-description">Dive into the soundscape of your target language. These tools help train your ear and understand authentic spoken content.</p>
-                             <div class="app-grid">
-                            
-                                <div class="app-card-container rating-mid" id="app-radiogarden">
-                                    <div class="app-summary">
-                                        <img src="https://play-lh.googleusercontent.com/07lewhVI4GklVBi_ehhOXxmB_bPaWWTiyqHAlQP6VsYD7h9R4d8hskNAy4SCOx0leNx-" alt="Radio Garden Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Radio Garden</h3><div class="rating-stars" aria-label="Rating: 8/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your global radio tuner.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>If you want to practice listening, you can access almost all radio stations in the world here. All you need is Wi-Fi, and you're good to go. But the hard part is finding a radio station that's just right. Often, you can't fully immerse because some stations also play American music. So, that can also slow down your progress instead of listening to your full target language.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Vast collection of radio stations</li><li>Interactive map interface</li><li>Exposure to authentic accents/shows</li><li>Free to use</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Limited control over station selection</li><li>Content availability varies</li><li>Potential audio quality issues</li><li>Can have non-target language content</li></ul></div></div>
-                                        <div class="app-links"><a href="https://radio.garden/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 medium" title="A2: Medium">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                     </details>
-                 </section>
-
-                <section class="resource-category">
-                     <details class="skill-details">
-                        <summary><span><i class="fas fa-satellite-dish"></i> Speaking & Conversation Interfaces</span></summary>
-                         <div class="skill-content">
-                              <p class="category-description">Engage in active speaking practice. Connect with native speakers, AI partners, and tutors to build fluency and real-world communication confidence.</p>
-                             <div class="app-grid">
-                              
-                                <div class="app-card-container rating-high" id="app-italki">
-                                    <div class="app-summary">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Italki-logo-2023.png" alt="iTalki Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>iTalki</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Find your perfect language tutor.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>For me, iTalki is truly the best. The people you talk to here are real teachers trained to teach languages. From beginner to advanced, you will be guided. The methods vary based on your level. The only catch is you have to pay. But it's cheap, only about 250 pesos per 30 minutes. And the great thing is, it's anytime you want! Just book a schedule that fits you. Your payment is really worth it here, especially if you find the perfect teacher for you. The only hard part is that the quality of your learning really depends on the teacher, so it's trial and error. It's also available in most languages you can think of. <br><em>P.S. I have a promo code for you to get a discount! I'm sponsored by them, but this 10-star rating is genuine. Buy $10, get $5 for free. Promo Code: ALJOHN</em></p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>One-on-one tutoring with qualified experts</li><li>Real-time feedback and personalized instruction</li><li>Flexible scheduling</li><li>Access to native speakers worldwide</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Requires financial investment</li><li>Tutor quality can vary (trial and error)</li></ul></div></div>
-                                        <div class="app-links"><a href="https://go.italki.com/aljohnpolyglot" target="_blank" class="btn btn-outline btn-small">Website (Promo: ALJOHN)</a><a href="https://italki.app.link/aljohnpolyglot" target="_blank" class="btn btn-outline btn-small">App Link</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                </div>
-                              
-                                <div class="app-card-container rating-high" id="app-tandem">
-                                    <div class="app-summary">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ-w0GNMvwhnXn9oHi0j8RKlt_vq6-DMeGqw&s" alt="Tandem Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Tandem</h3><div class="rating-stars" aria-label="Rating: 10/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="app-tagline">Your global language exchange partner.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>For me, this is also where my speaking skills were really honed. Unlike Discord, there are unlimited servers you can join here. In fact, you can also create your own server if others are full. That's what's great about it because you can jump straight into conversations. Most of the people I became close to here, I met in parties through voice calls. That's its difference from HelloTalk, where you have to approach through chat, which is a bit awkward.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Connects with native speakers worldwide</li><li>Text, voice, and video chat</li><li>Real-world language practice</li><li>Encourages mutual learning</li><li>"Parties" feature for group calls</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Exchange quality varies by partner</li><li>Limited partner availability in some languages/time zones</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.tandem.net/" target="_blank" class="btn btn-outline btn-small">Website</a><a href="https://play.google.com/store/apps/details?id=net.tandem" target="_blank" class="btn btn-outline btn-small">Android</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                </div>
-                             
-                                <div class="app-card-container rating-high" id="app-languagesloth">
-                                    <div class="app-summary">
-                                        <img src="https://styles.redditmedia.com/t5_5gtap7/styles/communityIcon_mx50us3tmet91.png" alt="Discord Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Language Sloth Discord Server</h3><div class="rating-stars" aria-label="Rating: 9/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your vibrant language learning community.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>This is truly my happy place when I practice languages. You just need to know what timezone your target language is active in. And people are very friendly. Just enter the room for the language you want to practice, and then, just talk. I spent hundreds of hours on this server, and this is where I really honed my speaking skills. But it's 9 stars because sometimes the server is full, and you might feel out of place (OP - out of place/overpowered) because you're new.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Immersive practice with native speakers</li><li>Variety of language channels/interest groups</li><li>Cultural exchange and friendship</li><li>Free</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Relies on active member participation</li><li>Partner matching can be inconsistent</li><li>Interaction quality varies</li></ul></div></div>
-                                        <div class="app-links"><a href="https://discord.com/invite/languages" target="_blank" class="btn btn-outline btn-small">Join Server</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                </div>
-                              
-                                <div class="app-card-container rating-mid" id="app-gliglish">
-                                    <div class="app-summary">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_EG7va_DHNEdjYthmQY520wIEiWO1fdqAeg&s" alt="Gliglish Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>Gliglish</h3><div class="rating-stars" aria-label="Rating: 8/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your AI conversation partner for scenarios.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>This is good if you don't have money for a teacher to practice your language. You can practice in various situations here, like in a cafe, school, library, etc. It also has a voice feature you can use with your mic if you're lazy to type. The best part is, it's really for language learners, and the virtual teacher will correct your grammar mistakes. However, we need to remember this is just AI, and it's still different if a real person is teaching you. But I really recommend using this before you try to speak with real native speakers.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Immersive conversational learning</li><li>Real-time grammar feedback</li><li>Variety of conversation topics</li><li>Convenient and accessible</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Potential for technical glitches</li><li>May not capture nuances of human conversation</li><li>Subscription-based for full access</li></ul></div></div>
-                                        <div class="app-links"><a href="https://gliglish.com/" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 high" title="B1: High">B1</span><span class="cefr-level-dot level-b2 medium" title="B2: Medium">B2</span><span class="cefr-level-dot level-c1 medium" title="C1: Medium">C1</span><span class="cefr-level-dot level-c2 medium" title="C2: Medium">C2</span></div></div>
-                                    </div>
-                                </div>
-                             
-                                <div class="app-card-container rating-mid" id="app-polyai">
-                                    <div class="app-summary">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNgr2cyzDsrVIPn_-ul9FzrWecnzNXfK8s0w&s" alt="PolyAI Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>PolyAI (SpeakMaster)</h3><div class="rating-stars" aria-label="Rating: 7/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your AI conversation partner with characters.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>If you want to practice your language skills, this is okay! You can chat with your favorite characters, from cartoons like Spongebob to your favorite movie characters or even celebrities. This app is available in major Romance and Asian languages. There's even Tagalog! Your conversational skills will surely be honed here. But I only give it 7 stars because you're just talking to AI, and human interaction is still better. Also, this app isn't really for language learning, so it won't correct your mistakes.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Engaging AI with diverse characters</li><li>Potential for immersive practice</li><li>Variety of conversation topics</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Primarily for entertainment, not learning</li><li>Limited language options/customization</li><li>No structured lessons or corrections</li></ul></div></div>
-                                        <div class="app-links"><a href="https://play.google.com/store/apps/details?id=ai.socialapps.speakmaster&hl=en" target="_blank" class="btn btn-outline btn-small">Android</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                </div>
-                           
-                                <div class="app-card-container rating-mid" id="app-hellotalk">
-                                    <div class="app-summary">
-                                        <img src="https://play-lh.googleusercontent.com/_n5qVwKyfl5QiJjyZiTvTM8z4WN63Da8EAhRUkKtLMjIZ3aHNkAXlvF89V_uzYMQxg" alt="HelloTalk Logo" class="app-logo">
-                                        <div class="app-summary-info"><h3>HelloTalk</h3><div class="rating-stars" aria-label="Rating: 6/10"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i><i class="far fa-star muted-star"></i></div><p class="app-tagline">Your social language practice platform.</p></div>
-                                        <button class="toggle-details-btn">View Details <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                    <div class="app-details">
-                                        <div class="app-review"><h4>My Take:</h4><p>This is good for those looking for language partners. It's really like social media disguised as a language app where you can see their posts and message them. This app is really okay, but there are too many flirty people, so it's only 6 stars.</p></div>
-                                        <div class="pros-cons-container"><div class="pros"><h4>Pros</h4><ul><li>Connects learners with native speakers</li><li>Various communication tools (text, voice, video)</li><li>Opportunities for cultural exchange</li><li>Free to use</li></ul></div><div class="cons"><h4>Cons</h4><ul><li>Focus shifted from learning to flirting</li><li>Increased inappropriate content/spam</li><li>Difficulty finding genuine partners</li></ul></div></div>
-                                        <div class="app-links"><a href="https://www.hellotalk.com/?lang=en" target="_blank" class="btn btn-outline btn-small">Website</a></div>
-                                        <div class="cefr-recommendations"><h4>Recommended For:</h4><div class="cefr-levels"><span class="cefr-level-dot level-a1 not-recommended" title="A1: Not Recommended">A1</span><span class="cefr-level-dot level-a2 not-recommended" title="A2: Not Recommended">A2</span><span class="cefr-level-dot level-b1 medium" title="B1: Medium">B1</span><span class="cefr-level-dot level-b2 high" title="B2: High">B2</span><span class="cefr-level-dot level-c1 high" title="C1: High">C1</span><span class="cefr-level-dot level-c2 high" title="C2: High">C2</span></div></div>
-                                    </div>
-                                </div>
-                             </div>
-                          </div>
-                     </details>
-                 </section>
-
-                <!-- Language Specific Section -->
-                <section class="resource-category" id="language-specific-tools">
-                    <h2><i class="fas fa-globe-americas"></i> Language-Specific Data Hubs & Resources</h2>
-                     <p class="category-description tech-theme">Access native data streams, content platforms, and unique modules for your target languages. VPN (like UrbanVPN) often required to establish secure connections.</p>
-                    <div class="language-specific-list tech-theme">
-                         <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/es.png" srcset="https://flagcdn.com/w80/es.png 2x" alt="Spanish Flag" class="lang-flag"><span>Spanish</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><img src="../images/logo-rtve.png" alt="RTVE Logo" class="site-logo"><a href="https://www.rtve.es/play/internacional/portada/" target="_blank">RTVE Play</a> (Spain TV/Docs)</li><li><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/results?search_query=vloggers+espa%C3%B1ol" target="_blank">YouTube Vloggers</a> (e.g., Luisito Comunica, Lethal Crysis)</li></ul><h4><i class="fas fa-cogs"></i> Other Tools</h4><ul><li><i class="fas fa-code"></i> <a href="https://melodic-starlight-327ed4.netlify.app/" target="_blank">Generador de Palabras</a> (My custom tool!)</li><li><i class="fas fa-book"></i> <a href="https://dle.rae.es/" target="_blank">RAE Dictionary</a> (Official Spanish Dictionary)</li></ul></div></details></div>
-                         <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/fr.png" srcset="https://flagcdn.com/w80/fr.png 2x" alt="French Flag" class="lang-flag"><span>French</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><img src="../images/logo-francetv.png" alt="FranceTV Logo" class="site-logo"><a href="https://www.france.tv/" target="_blank">France.TV</a> (News, Shows, Docs)</li><li><img src="../images/logo-tf1.png" alt="TF1 Logo" class="site-logo"><a href="https://www.tf1.fr/" target="_blank">TF1+</a> (Popular shows like Star Academy)</li><li><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@innerfrench" target="_blank">InnerFrench Podcast & YouTube</a></li><li><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@HugoDecrypte" target="_blank">HugoDécrypte (News for youth)</a></li></ul></div></details></div>
-                         <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/id.png" srcset="https://flagcdn.com/w80/id.png 2x" alt="Indonesian Flag" class="lang-flag"><span>Indonesian</span></summary><div class="language-resources"><h4><i class="fas fa-film"></i> Streaming & Content</h4><ul><li><i class="fas fa-link"></i> GarasiFilm21 / Rebahin (Movie sites - use with caution/VPN)</li><li><i class="fas fa-tv"></i> <a href="https://www.vidio.com/" target="_blank">Vidio</a> (Local streaming platform)</li><li><i class="fab fa-youtube"></i> YouTube: Kompas TV (News), Deddy Corbuzier (Podcast), Raditya Dika (Comedy/Vlogs).</li></ul></div></details></div>
-                          <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/ru.png" srcset="https://flagcdn.com/w80/ru.png 2x" alt="Russian Flag" class="lang-flag"><span>Russian</span></summary><div class="language-resources"><h4><i class="fas fa-film"></i> Streaming & Content</h4><ul><li><i class="fas fa-link"></i> KinoStar / Kinogo (Movie sites - use with caution/VPN)</li><li><i class="fab fa-telegram-plane"></i> Telegram Channels: Взял Мяч, AANBA (NBA news)</li><li><i class="fab fa-vk"></i> <a href="https://vk.com" target="_blank">VKontakte</a> (Social Media & Content)</li><li><i class="fab fa-youtube"></i> YouTube: Russian Progress, BeFluent Russian.</li></ul></div></details></div>
-                          <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/it.png" srcset="https://flagcdn.com/w80/it.png 2x" alt="Italian Flag" class="lang-flag"><span>Italian</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><img src="../images/logo-raiplay.png" alt="RaiPlay Logo" class="site-logo"><a href="https://www.raiplay.it/" target="_blank">RaiPlay</a> (National Broadcaster)</li><li><i class="fab fa-youtube"></i> YouTube: Learn Italian with Lucrezia, ItalianPod101.</li></ul></div></details></div>
-                          <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/br.png" srcset="https://flagcdn.com/w80/br.png 2x" alt="Brazilian Flag for Portuguese" class="lang-flag"><span>Portuguese</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><img src="../images/logo-rtp.png" alt="RTP Logo" class="site-logo"><a href="https://www.rtp.pt/play/" target="_blank">RTP Play</a> (Portugal)</li><li><img src="../images/logo-globoplay.png" alt="Globoplay Logo" class="site-logo"><a href="https://globoplay.globo.com/" target="_blank">Globoplay</a> (Brazil - requires Brazilian payment/VPN)</li><li><i class="fab fa-youtube"></i> YouTube: Porta dos Fundos (Comedy - Brazil), Speaking Brazilian.</li></ul></div></details></div>
-                           <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/se.png" srcset="https://flagcdn.com/w80/se.png 2x" alt="Swedish Flag" class="lang-flag"><span>Swedish</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><img src="../images/logo-svtplay.png" alt="SVT Play Logo" class="site-logo"><a href="https://www.svtplay.se/" target="_blank">SVT Play</a> (National Broadcaster)</li><li><i class="fab fa-youtube"></i> YouTube: SVT Nyheter (News), Fun Swedish.</li></ul></div></details></div>
-                           <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="German Flag" class="lang-flag"><span>German</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><img src="../images/logo-zdf.png" alt="ZDF Logo" class="site-logo"><a href="https://www.zdf.de/sendung-verpasst" target="_blank">ZDF Mediathek</a></li><li><img src="../images/logo-ard.png" alt="ARD Logo" class="site-logo"><a href="https://www.ardmediathek.de/video/sendung-verpasst/" target="_blank">ARD Mediathek</a></li><li><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@EasyGerman" target="_blank">Easy German YouTube</a> (Street interviews)</li></ul></div></details></div>
-                             <div class="language-entry"><details><summary><img src="https://flagcdn.com/w40/ph.png" srcset="https://flagcdn.com/w80/ph.png 2x" alt="Philippines Flag" class="lang-flag"><span>Tagalog / Cebuano</span></summary><div class="language-resources"><h4><i class="fas fa-tv"></i> Streaming & Content</h4><ul><li><i class="fas fa-link"></i> <a href="https://beta.iwanttfc.com/" target="_blank">iWantTFC</a> (ABS-CBN Content)</li><li><i class="fas fa-link"></i> Vivamax (Movies - Subscription)</li><li><i class="fab fa-youtube"></i> YouTube: ABS-CBN Entertainment, GMA Network, local vloggers.</li></ul><h4><i class="fas fa-book"></i> Other Resources</h4><ul><li><i class="fas fa-link"></i> <a href="https://www.tagalog.com/" target="_blank">Tagalog.com Dictionary & Resources</a></li><li><i class="fas fa-link"></i> <a href="http://www.cebuanodictionary.com/" target="_blank">CebuanoDictionary.com</a></li></ul></div></details></div>
                     </div>
-                 </section>
+                </div>
             </div>
-        </section>
-    </main>
- <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
- <script>
-    let siteBasePath;
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-        siteBasePath = '/';
-    } else {
-        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
-    }
-    console.log("Global siteBasePath dynamically set to:", siteBasePath);
-</script>
-<script src="js/navbar-loader.js" defer></script>
-<script src="js/footer-loader.js" defer></script>
+            <div class="filter-group">
+                <h3><i class="fas fa-dollar-sign"></i> Cost</h3>
+                <div id="cost-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="cost" value="Free"> Free</label>
+                    <label><input type="checkbox" name="cost" value="Freemium"> Freemium</label>
+                    <label><input type="checkbox" name="cost" value="Paid"> Paid</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-desktop"></i> Platform</h3>
+                <div id="platform-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="platform" value="Web"> Web</label>
+                    <label><input type="checkbox" name="platform" value="Android"> Android</label>
+                    <label><input type="checkbox" name="platform" value="iOS"> iOS</label>
+                    <label><input type="checkbox" name="platform" value="Windows"> Windows</label>
+                </div>
+            </div>
+            <button id="reset-filters-btn"><i class="fas fa-undo"></i> Reset Filters</button>
+        </aside>
 
-<script src="js/script.js"></script>
-<script>
-    // --- EMBEDDED SCRIPT FOR APPS.HTML (Pathway Visualizer & App Card Interactions) ---
-    document.addEventListener('DOMContentLoaded', function() {
+        <main class="arsenal-main-content">
+            <div class="arsenal-header">
+                <h1>Aljohn's Polyglot Arsenal</h1>
+                <p>Your Precision Language Navigator – Unlock Your Perfect Toolkit!</p>
+            </div>
 
-       // --- Data for the Pathway Visualizer ---
-        const pathwayData = {
-            "a1a2": {
-                title: "A1 - A2: The Beginner Stage – Laying the Foundation",
-                goal: "Build the absolute basics — like constructing the frame of a house. The key here is exposure and comprehension, not immediate output.",
-                mindset: "Assume you know nothing. Focus on absorbing input, understanding core structures, and building initial vocabulary. Don't rush to speak.",
-                actions: [
-                    "Familiarize yourself with the sounds & basic sentence structure of the language (e.g., via intro courses).",
-                    "Grasp the fundamental 'logic' and core grammar patterns.",
-                    "Start building a core vocabulary of 500-1000 high-frequency words using a Spaced Repetition System (SRS).",
-                    "Begin reading very simple, adapted texts or children's stories with assistance (e.g., dual-language readers, translation tools).",
-                    "Focus on understanding the general idea (gist) without translating every single word."
-                ],
-                apps: [
-                    { name: "Language Transfer", id: "app-languagetransfer", logo: "https://play-lh.googleusercontent.com/upG4JV3kjl9LDKjhgONsmboRlAnsfJJsuMc_XeUm_q7ft6erVMfIWyunNfoLjMqB93I" },
-                    { name: "Anki / AnkiDroid", id: "app-anki", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/2048px-Anki-icon.svg.png" },
-                    { name: "Language Reactor", id: "app-languagereactor", logo: "https://lh3.googleusercontent.com/aPSUr3UYCdrkrGEIJu_5RubORwHcRiQEaiRKAPx68BeJ7963d31hIzZamn8HninChHNh-CIFWuRFj2cocG-2ojxl7oE=s120" },
-                    { name: "DeepL/ChatGPT (for lookups)", id: "app-deepl", logo: "https://cdn.worldvectorlogo.com/logos/deepl-1.svg" }, // Using DeepL as primary for this entry
-                    { name: "Duolingo (use very sparingly, for initial exposure)", id: "app-duolingo", logo: "https://cdn.jim-nielsen.com/ios/512/duolingo-2019-01-02.png?rf=1024" }
-                ],
-                milestone: "You can read very simple texts and understand the general idea with some support. You have a core vocabulary of ~1000 words in your SRS that you review regularly. You recognize common sentence patterns."
-            },
-            "b1b2": {
-                title: "B1 - B2: The Intermediate Stage – Building Intuition & Immersion",
-                goal: "Transition from conscious, rule-based learning to subconscious acquisition and intuitive understanding. The aim is to *feel* the language and start thinking in it.",
-                mindset: "You understand a good portion but still frequently translate in your head. It’s time to bridge that gap with massive comprehensible input and begin more active, albeit gentle, output.",
-                actions: [ /* ... your actions ... */ ],
-                apps: [
-                    { name: "YouTube", id: "app-youtube", logo: "https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png" },
-                    { name: "Pocket Casts", id: "app-pocketcasts", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pocket_Casts_icon.svg/2048px-Pocket_Casts_icon.svg.png" },
-                    { name: "ReadEra", id: "app-readera", logo: "https://play-lh.googleusercontent.com/qw8lAHXaZodAE4c3D1Jkia3V8Np-PxTnyQpUIx439ibABba0L50TVKI4jfY4N4QwzAA" },
-                    { name: "Anki / AnkiDroid", id: "app-anki", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/2048px-Anki-icon.svg.png" },
-                    { name: "ChatGPT", id: "app-chatgpt", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" },
-                    { name: "Gliglish", id: "app-gliglish", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_EG7va_DHNEdjYthmQY520wIEiWO1fdqAeg&s" },
-                    { name: "Tandem", id: "app-tandem", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ-w0GNMvwhnXn9oHi0j8RKlt_vq6-DMeGqw&s" },
-                    { name: "Language Sloth Discord", id: "app-languagesloth", logo: "https://styles.redditmedia.com/t5_5gtap7/styles/communityIcon_mx50us3tmet91.png" },
-                    { name: "DeepL", id: "app-deepl", logo: "https://cdn.worldvectorlogo.com/logos/deepl-1.svg" },
-                    { name: "ClozeMaster (if budget allows for Pro)", id: "app-clozemaster", logo: "https://play-lh.googleusercontent.com/OnFqiujFXmyzOvkmaCzPDPHPnN9-mcM9hBwQPLAXy3lESDbkHqXQTRRzfJvchwDkNds=w240-h480-rw"},
-                    { name: "Reverso Context", id: "app-reversocontext", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Reverso_logo.jpg/1200px-Reverso_logo.jpg" }
-                ],
-                milestone: "You can understand the main ideas of most native content on familiar topics without needing subtitles constantly. You can hold conversations, express opinions, and narrate events, albeit with some hesitation and errors."
-            },
-            "c1c2": {
-                title: "C1 - C2: The Advanced Stage – Polishing, Nuance & Native-Like Fluency",
-                goal: "Achieve a high degree of fluency, articulate complex thoughts with precision, understand subtle nuances, and sound more natural.",
-                mindset: "You're already highly functional. Now, focus on refining details: tone, register, idioms, cultural references, and accent reduction/modification if desired. This is about deep mastery.",
-                actions: [ /* ... your actions ... */ ],
-                apps: [
-                    { name: "iTalki", id: "app-italki", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Italki-logo-2023.png" },
-                    { name: "Tandem", id: "app-tandem", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ-w0GNMvwhnXn9oHi0j8RKlt_vq6-DMeGqw&s" },
-                    { name: "Language Sloth Discord", id: "app-languagesloth", logo: "https://styles.redditmedia.com/t5_5gtap7/styles/communityIcon_mx50us3tmet91.png" },
-                    { name: "ChatGPT (for advanced prompts/analysis)", id: "app-chatgpt", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" }, // Assuming this is the one linked to app-chatgpt-writing if you have it
-                    { name: "Reverso Context (for nuance/synonyms)", id: "app-reversocontext", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Reverso_logo.jpg/1200px-Reverso_logo.jpg" },
-                    { name: "YouTube (advanced content)", id: "app-youtube", logo: "https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png" },
-                    { name: "Pocket Casts (native podcasts)", id: "app-pocketcasts", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pocket_Casts_icon.svg/2048px-Pocket_Casts_icon.svg.png" }
-                ],
-                milestone: "You can understand virtually everything heard or read with ease. You can express yourself fluently, spontaneously, and precisely, differentiating finer shades of meaning even in more complex situations. This stage is an ongoing process of refinement and maintaining high-level fluency."
-            }
-        };
+            <div id="dynamic-guidance-panel" class="guidance-panel-container">
+                <p>Select filters to see Aljohn's tailored advice and app recommendations.</p>
+            </div>
 
-        // Also, ensure that the 'logo' for Linguno uses the local path if it's the only local one.
-        // Find Linguno in the 'apps' array and set its logo path if it's defined (it wasn't in your provided snippet).
-        // Example: If Linguno is in B1B2
-        const b1b2Apps = pathwayData.b1b2.apps;
-        const lingunoApp = b1b2Apps.find(app => app.id === 'app-linguno');
-        if (lingunoApp) {
-            lingunoApp.logo = "images/logo_linguno.png"; // Assuming apps.html is root
+            <div class="arsenal-controls">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="rating_desc">Aljohn's Rating (High to Low)</option>
+                    <option value="rating_asc">Aljohn's Rating (Low to High)</option>
+                    <option value="name_asc">Name (A-Z)</option>
+                    <option value="name_desc">Name (Z-A)</option>
+                    <option value="cefr_asc">CEFR Suitability (A1 Recommended First)</option>
+                    <option value="cefr_desc">CEFR Suitability (C2 Recommended First)</option>
+                </select>
+                <span id="results-count" class="results-count-display"></span>
+            </div>
+
+            <div id="app-grid" class="app-grid-container">
+                <!-- App cards will be rendered here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Structure (content omitted for brevity but assumed present) -->
+    <div id="app-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn" aria-label="Close modal">×</span>
+            <div class="modal-header">
+                <img id="modal-app-logo" src="" alt="App Logo" class="modal-app-logo-img">
+                <div class="modal-title-group">
+                    <h2 id="modal-app-name"></h2>
+                    <p id="modal-app-tagline" class="app-tagline-modal"></p>
+                    <div id="modal-app-rating" class="rating-stars-modal"></div>
+                    <div class="modal-eyebrow-info">
+                        <span id="modal-eyebrow-categories" class="eyebrow-tag"></span>
+                        <span id="modal-eyebrow-immersion" class="eyebrow-tag"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3><i class="fas fa-user-astronaut"></i> Aljohn's Take:</h3>
+                <div id="modal-app-mytake" class="prose-style"></div>
+                <div class="pros-cons-container">
+                    <div class="pros"><h4><i class="fas fa-plus-circle"></i> Pros</h4><ul id="modal-app-pros"></ul></div>
+                    <div class="cons"><h4><i class="fas fa-minus-circle"></i> Cons</h4><ul id="modal-app-cons"></ul></div>
+                </div>
+                <div class="modal-section-horizontal-pair">
+                    <div class="cefr-suitability-container">
+                        <h3 class="no-bottom-border"><i class="fas fa-layer-group"></i> CEFR Suitability:</h3>
+                        <div id="modal-app-cefr" class="cefr-suitability-display"></div>
+                    </div>
+                    <div class="cost-container">
+                        <h3 class="no-bottom-border"><i class="fas fa-dollar-sign"></i> Cost:</h3>
+                        <p id="modal-app-cost"></p>
+                    </div>
+                </div>
+                <div class="modal-links" id="modal-app-links"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer >
+      
+    </footer>
+  <div id="main-footer-placeholder" class="tech-theme-footer-placeholder" ></div>
+    <script>
+        let siteBasePath;
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+            siteBasePath = '/'; 
+        } else {
+            // IMPORTANT: Adjust if your GitHub Pages site is NOT at the root of your username.github.io
+            // If your repo is 'aljohnpolyglot' and site is 'username.github.io/aljohnpolyglot/', then:
+            siteBasePath = '/aljohnpolyglot/'; // Example, adjust to your actual deployed base path on GitHub Pages
         }
-        // Do this for other levels if Linguno appears there too.
-        // OR, if Linguno is already in your HTML with its local path, and you implemented the DYNAMIC fetching I suggested before,
-        // then you don't even need the logo property in pathwayData at all.
-        // But since you re-sent the pathwayData WITH the logo property, I'm assuming you want to define them here explicitly.
-        const levelSelectorButtons = document.querySelectorAll('.level-selector .level-btn');
-        const pathwayDetailsOutput = document.getElementById('pathwayDetailsOutput');
+        console.log("apps.html - Global siteBasePath dynamically set to:", siteBasePath);
+    </script>
 
-        // --- Pathway Visualizer Level Selection Logic ---
-        if (pathwayDetailsOutput && levelSelectorButtons.length > 0) {
-            levelSelectorButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    levelSelectorButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    const level = button.dataset.level;
-                    const data = pathwayData[level];
-                    if (data) {
-                        let appsHtml = data.apps.map(app =>
-                            `<a href="#${app.id}" class="app-link">
-                               ${app.logo ? `<img src="${app.logo}" alt="${app.name} logo" class="app-icon-small">` : ''}
-                               ${app.name}
-                             </a>`
-                        ).join('');
-                        pathwayDetailsOutput.innerHTML = `
-                            <h3>${data.title}</h3>
-                            <h4>Your Goal:</h4>
-                            <p>${data.goal}</p>
-                            <h4>Your Mindset:</h4>
-                            <p>${data.mindset}</p>
-                            <h4>Key Actions & Focus:</h4>
-                            <ul>${data.actions.map(action => `<li>${action}</li>`).join('')}</ul>
-                            <h4>Recommended Tools for this Stage:</h4>
-                            <div class="recommended-apps-list">${appsHtml}</div>
-                            <h4>Milestone to Aim For:</h4>
-                            <p>${data.milestone}</p>
-                        `;
-                        pathwayDetailsOutput.classList.remove('hidden');
-                        pathwayDetailsOutput.classList.add('visible'); // For fade-in if you add CSS animation
-                        
-                        // Smooth scroll to the details if it's not fully visible
-                        const detailsRect = pathwayDetailsOutput.getBoundingClientRect();
-                        const headerOffset = document.querySelector('header')?.offsetHeight || 70; // Get header height or default
-                        if (detailsRect.top < headerOffset || detailsRect.bottom > window.innerHeight) {
-                             pathwayDetailsOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                             // Adjust for fixed header after scroll
-                             setTimeout(() => {
-                                if (pathwayDetailsOutput.getBoundingClientRect().top < headerOffset) {
-                                   window.scrollBy(0, -headerOffset - 20); // 20px buffer
-                                }
-                             }, 350); // Delay to allow scroll to finish
-                        }
+    <!-- JS for this specific page (Arsenal Navigator) -->
+    <script src="apps/js/apps_data.js"></script>
+    <script src="apps/js/filter_sort_logic.js"></script> 
+    <script src="apps/js/guidance_logic.js"></script>
+    <script src="apps/js/ui_renderer.js"></script>
+    <script src="apps/js/modal_handler.js"></script>
+    <script src="apps/js/arsenal_main.js"></script>
 
-                    } else {
-                        pathwayDetailsOutput.innerHTML = `<p>Information for this level is not available yet.</p>`;
-                        pathwayDetailsOutput.classList.remove('hidden');
-                        pathwayDetailsOutput.classList.add('visible');
-                    }
-                });
-            });
-        }
-
-        // --- Function to Open Category <details>, App Card Details, and Scroll ---
-        function openAndScrollToApp(targetAppCardElement) {
-            if (!targetAppCardElement) return;
-
-            const parentCategoryDetails = targetAppCardElement.closest('details.skill-details');
-            if (parentCategoryDetails && !parentCategoryDetails.open) {
-                parentCategoryDetails.open = true;
-            }
-
-            const detailsDiv = targetAppCardElement.querySelector('.app-details');
-            const toggleButton = targetAppCardElement.querySelector('.toggle-details-btn');
-
-            if (detailsDiv && !detailsDiv.classList.contains('details-visible') && toggleButton) {
-                // This part is now handled by the main script.js toggle functionality.
-                // We just ensure the parent category is open.
-            }
-
-            // Wait for details to potentially open/render then scroll
-            setTimeout(() => {
-                targetAppCardElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center' // Try 'center' for better visibility
-                });
-                 // Further adjustment for fixed header might be needed if 'center' doesn't suffice.
-                const header = document.querySelector('header'); // Removed .scrolled to get it anytime
-                if (header) {
-                    const headerHeight = header.offsetHeight;
-                    // Check after scroll if it's under header
-                    setTimeout(() => {
-                        if (targetAppCardElement.getBoundingClientRect().top < headerHeight) {
-                            window.scrollBy(0, -headerHeight - 20); // 20px buffer
-                        }
-                    }, 350); // Animation duration of scroll
-                }
-            }, 150); // Small delay for <details> to open if it was closed
-        }
-
-        // --- Event Listener for Clicks from Pathway Visualizer's .app-link ---
-        // This event listener is delegated to the document to catch clicks on dynamically added .app-link elements
-        document.addEventListener('click', function (event) {
-            const appLinkFromVisualizer = event.target.closest('.pathway-details .app-link');
-            if (appLinkFromVisualizer && appLinkFromVisualizer.hash !== "") {
-                event.preventDefault(); // Prevent default anchor jump
-                const hash = appLinkFromVisualizer.hash; // e.g., "#app-anki"
-                const targetAppCard = document.querySelector(hash); // Find the app card by its ID
-
-                if (targetAppCard) {
-                    openAndScrollToApp(targetAppCard);
-                }
-            }
-        });
-
-        // The individual app card toggle functionality (View Details/Hide Details)
-        // should be handled by your main script.js, as it's a general UI pattern.
-        // This embedded script focuses on the Pathway Visualizer and its interactions.
-    });
-</script>
+    <!-- Global JS for Navbar and Footer (paths corrected) -->
+    <script src="apps/js/apps_navbar.js" defer></script>  
+    <script src="apps/js/apps_footer.js" defer></script>  
+   
 </body>
 </html>
-```
