@@ -11,7 +11,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* --- Shop Page Styles --- */
+       
+      /* Development Pop-up Styles */
+#dev-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    z-index: 9998; /* Below the modal, above everything else */
+    display: none; /* Hidden by default */
+}
+
+#dev-popup-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 25px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    z-index: 9999; /* On top of everything */
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    display: none; /* Hidden by default */
+    color: #333; /* Dark text for readability */
+    font-family: 'Open Sans', sans-serif; /* Match your site's font if possible */
+}
+
+#dev-popup-modal h2 {
+    font-family: 'Montserrat', sans-serif; /* Match your site's font if possible */
+    color: var(--primary-red, #C8102E); /* Use your site's red or a fallback */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+#dev-popup-modal p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+#dev-popup-close {
+    background-color: var(--primary-blue, #003087); /* Use your site's blue or a fallback */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px; /* Rounded like your other buttons */
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#dev-popup-close:hover {
+    background-color: #002366; /* Darker shade of blue */
+} /* --- Shop Page Styles --- */
 
         /* NEW Integrated Shop Welcome & Spotlight Section */
         /* --- Shop Page Styles --- */
@@ -573,7 +634,15 @@ footer .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0
                 </div>
             </div>
         </section>
-        
+        <div id="dev-popup-overlay"></div>
+<div id="dev-popup-modal">
+    <h2><i class="fas fa-tools" style="margin-right: 8px;"></i>Under Construction</h2>
+    <p>
+        This page is currently under development and some features might not be fully functional yet.
+        Thanks for your understanding!
+    </p>
+    <button id="dev-popup-close">Got It!</button>
+</div>
     </main>
 
    <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
@@ -585,6 +654,41 @@ footer .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0
         siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
     }
     console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('dev-popup-overlay');
+    const modal = document.getElementById('dev-popup-modal');
+    const closeButton = document.getElementById('dev-popup-close');
+
+    // Function to show the pop-up
+    function showDevPopup() {
+        if (overlay && modal) {
+            overlay.style.display = 'block';
+            modal.style.display = 'block';
+        }
+    }
+
+    // Function to hide the pop-up
+    function hideDevPopup() {
+        if (overlay && modal) {
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+        }
+    }
+
+    // Show the pop-up when the page loads
+    showDevPopup();
+
+    // Event listeners to close the pop-up
+    if (closeButton) {
+        closeButton.addEventListener('click', hideDevPopup);
+    }
+    if (overlay) {
+        // Optional: close if user clicks on the overlay
+        // overlay.addEventListener('click', hideDevPopup);
+    }
+});
 </script>
 <script src="js/navbar-loader.js" defer></script>
 <script src="js/footer-loader.js" defer></script>
