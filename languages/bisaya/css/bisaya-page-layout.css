@@ -1,0 +1,216 @@
+/* css/bisaya-page-layout.css - General Layout for Sections & Carousels */
+
+/* ... (General .section-padding, .section-title-bisaya styles remain) ... */
+
+/* === Carousel Container General Styles === */
+.carousel-container-bisaya {
+    margin-bottom: 3.5rem;
+    width: 100%; /* Ensure it tries to use the full width of its parent (.container) */
+    box-sizing: border-box;
+}
+.carousel-container-bisaya:last-child {
+    margin-bottom: 0;
+}
+
+.carousel-container-bisaya h3 { /* Section sub-heading */
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    margin-bottom: 0.5rem; /* Tighter margin to paragraph */
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.6rem;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    /* Max width removed - let it be as wide as .container allows */
+}
+
+.carousel-container-bisaya h3 i {
+    margin-right: 0.8rem;
+    font-size: 1.1em;
+}
+
+/* Specifics for K-Drama Carousel Title */
+.carousel-container-bisaya#kdrama-carousel-container h3 {
+    color: var(--sinulog-magenta);
+    border-bottom-color: var(--sinulog-magenta);
+}
+.carousel-container-bisaya#kdrama-carousel-container h3 i {
+    color: var(--sinulog-magenta);
+}
+
+/* Specifics for Podcast Carousel Title */
+.carousel-container-bisaya#podcast-carousel-container h3 {
+    color: var(--sinulog-teal);
+    border-bottom-color: var(--sinulog-teal);
+}
+.carousel-container-bisaya#podcast-carousel-container h3 i.fa-spotify {
+    color: #1DB954;
+    font-size: 1.3em;
+}
+.carousel-container-bisaya#podcast-carousel-container h3 i:not(.fa-spotify) {
+    color: var(--sinulog-teal);
+}
+
+.carousel-container-bisaya > p { /* Intro paragraph for each carousel */
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Slightly smaller intro text */
+    color: var(--sinulog-light-gray);
+    margin-bottom: 1.5rem; /* Reduced margin before cards */
+    max-width: none; /* Allow paragraph to take full width of .carousel-container-bisaya */
+    line-height: 1.6;
+}
+
+/* Horizontal Scroll Wrapper */
+.horizontal-scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem 0 1.5rem 0; /* Remove side padding if cards have their own margins or if edge snapping is desired */
+                                 /* The parent .container provides overall side padding for the section */
+    gap: 1.2rem; /* Default gap, can be overridden */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%; /* Explicitly set to 100% of its parent (.carousel-container-bisaya) */
+    box-sizing: border-box;
+    /* Custom scrollbar for dark theme */
+    scrollbar-width: thin;
+    scrollbar-color: var(--sinulog-mid-gray) rgba(var(--sinulog-black-rgb), 0.3);
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar { height: 8px; }
+.horizontal-scroll-wrapper::-webkit-scrollbar-track { background: rgba(var(--sinulog-black-rgb), 0.3); border-radius: 4px;}
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--sinulog-mid-gray); border-radius: 4px;}
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: var(--sinulog-light-gray); }
+
+
+/* ... (Placeholder text, Responsive adjustments for h3, i, p remain) ... */
+@media (max-width: 768px) {
+    .carousel-container-bisaya h3 {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+    }
+    .carousel-container-bisaya h3 i {
+        font-size: 1em;
+    }
+     .carousel-container-bisaya > p {
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+        margin-bottom: 1.2rem;
+    }
+    .horizontal-scroll-wrapper {
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+/* css/bisaya-decorations.css (or in bisaya-page-layout.css) */
+.section-with-decorative-corners {
+    position: relative; /* Essential for absolute positioning of children */
+    overflow: hidden; /* Important to clip content that might extend due to transforms */
+}
+
+.corner-decoration {
+    position: absolute;
+    width: clamp(70px, 10vw, 120px); /* LARGER SIZE: More prominent and responsive */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Should generally be above section background, below content */
+    pointer-events: none; /* Allows clicks to pass through */
+    opacity: 0.85; /* Slightly less than full opacity for subtle effect */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Add animation */
+}
+.corner-decoration img {
+    display: block;
+    width: 300%;
+    height: 300%;
+    object-fit: contain; /* Ensures the whole image is visible within its div */
+    /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Optional subtle shadow for the PNG */
+}
+.top-picks-section-bisaya .corner-decoration img {
+    display: block;
+    width: 220%;
+    height: 220%;
+    object-fit: contain; /* Ensures the whole image is visible within its div */
+    /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Optional subtle shadow for the PNG */
+}
+.creator-community-section-bisaya .corner-decoration.top-left { 
+    top: 0.1rem; 
+    left: -0.2rem; 
+    transform: rotate(0deg); /* No initial flip, just optional rotation later */
+    transform-origin: top left;
+}
+.creator-community-section-bisaya  .corner-decoration.top-right { 
+    top: 0rem; 
+    right: 15rem; 
+    transform: rotateY(0deg) rotate(0deg); /* Flip horizontally (Y-axis), then apply rotation */
+    transform-origin: top right;
+}
+/* Positioning and Orientation for Each Corner */
+.corner-decoration.top-left { 
+    top: -1rem; 
+    left: 0rem; 
+    transform: rotate(0deg); /* No initial flip, just optional rotation later */
+    transform-origin: top left;
+}
+.corner-decoration.top-right { 
+    top: -1rem; 
+    right: 8rem; 
+    transform: rotateY(0deg) rotate(0deg); /* Flip horizontally (Y-axis), then apply rotation */
+    transform-origin: top right;
+}
+
+/* Example for a subtle background pattern on a section */
+.section-with-abstract-pattern {
+    position: relative;
+    /* background-color: var(--sinulog-dark-gray); /* Or other dark color */
+}
+.section-with-abstract-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../images/assets/sinulog_abstract_pattern.png'); /* Choose your pattern */
+    background-repeat: no-repeat; /* Or 'repeat' if it's a tileable pattern */
+    background-position: center center;
+    background-size: cover; /* Or a fixed size like '500px' */
+    opacity: 0.05; /* Very subtle */
+    z-index: -1; /* Behind the content */
+}
+/* Ensure content within this section has a higher z-index or no background itself if pattern is for the section bg */
+.section-with-abstract-pattern > .container {
+    position: relative; /* If ::before is on the section itself */
+    z-index: 1;
+}
+.top-picks-section-bisaya .container {
+    padding-top: -10rem;
+    display: block;
+}
+/* --- Banderitas Dividers (Repeating Background) --- */
+.banderitas-divider-repeating {
+    width: 100%;
+    height: 50px; /* Adjust to match your PNG's height */
+    background-image: url('../images/assets/banderitas_tileable_pattern.png'); /* Replace with your actual tileable PNG path */
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: auto 100%; /* Ensure the image fills the height of the div */
+    margin: 3rem 0; /* Vertical space */
+    padding: 0 1.5rem; /* Ensure it doesn't hit screen edges */
+    box-sizing: border-box; /* Include padding in width */
+    line-height: 0; /* Remove extra space below image */
+    overflow: hidden; /* Prevent background from bleeding out */
+    /* Optional: subtle shadow for depth */
+    /* box-shadow: 0 2px 5px rgba(var(--sinulog-black-rgb, 17, 17, 17), 0.2); */
+}
+
+/* Specific styling for transition between light (AFC) and dark (Final CTA) */
+.banderitas-divider-repeating.afc-to-dark-transition {
+    /* This divider is special. It sits between a light section and a dark one. */
+    /* The banderitas image should ideally have a transparent background for smooth transition. */
+    /* If you want a background, ensure it fades or changes color. */
+    background-color: var(--sinulog-off-white); /* Match AFC background */
+    margin-top: 0; /* Adjust if directly adjacent to AFC section with no bottom padding */
+    padding-top: 2rem; /* Add top padding if needed */
+    padding-bottom: 2rem; /* Add bottom padding if needed */
+    /* A subtle gradient might be effective here if the image blends */
+    background-image: linear-gradient(to bottom, var(--sinulog-off-white) 0%, var(--sinulog-black) 100%); /* Fades from light to dark */
+    background-size: cover; /* Cover the whole area for the gradient */
+    background-repeat: no-repeat;
+    /* The banderitas pattern can be overlaid on top of this gradient */
+    /* background-image: url('../images/assets/banderitas_tileable_pattern.png'), linear-gradient(...); */
+    /* background-blend-mode: multiply; */ /* Experiment with blend modes for pattern */
+}

@@ -1,0 +1,214 @@
+/* css/bisaya-podcast-cards.css */
+
+/* Specific gap for podcast cards if different from K-Drama */
+
+/* === Podcast Section Spotify Theme === */
+.podcast-section-spotify-theme {
+    /* background-color: #121212; */ /* Optional: Spotify-like dark background for the section */
+}
+.podcast-section-spotify-theme h3 {
+    color: #1DB954; /* Spotify Green */
+    border-bottom-color: #1DB954;
+}
+.podcast-section-spotify-theme h3 .podcast-spotify-icon { /* Ensure .podcast-spotify-icon is on the <i> tag */
+    color: #1DB954;
+    font-size: 2rem;
+}
+.podcast-section-spotify-theme > p {
+    /* color: #b3b3b3; */ /* If section bg is dark */
+}
+
+#podcast-carousel-container .horizontal-scroll-wrapper {
+    gap: 1.2rem;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+}
+
+.podcast-card-spotify {
+    flex: 0 0 180px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #282828;
+}
+.podcast-card-spotify:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.podcast-card-spotify-art {
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center; position: relative;
+}
+.podcast-card-spotify-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Slightly stronger overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 1rem; box-sizing: border-box;
+}
+.podcast-card-spotify:hover .podcast-card-spotify-overlay { opacity: 1; }
+
+.podcast-card-spotify-actions {
+    display: flex; flex-direction: column; gap: 0.8rem; align-items: center;
+}
+.btn-spotify-action {
+    padding: 0.6em 1.2em; border-radius: 500px; text-decoration: none;
+    font-weight: 700; font-size: 0.8rem; /* Smaller buttons on card */
+    cursor: pointer; border: none; display: inline-flex;
+    align-items: center; justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    min-width: 120px; /* Slightly smaller min-width */
+}
+.btn-spotify-action i { margin-right: 0.5em; font-size: 0.9rem; }
+
+.btn-spotify-action.listen { /* This button on card hover */
+    background-color: #1DB954; /* Spotify Green */
+    color: white;
+}
+.btn-spotify-action.listen:hover { transform: scale(1.05); background-color: #1ed760; }
+
+.btn-spotify-action.details { /* This button on card hover opens modal */
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+}
+.btn-spotify-action.details:hover { transform: scale(1.05); background-color: rgba(255,255,255,0.25); }
+
+.podcast-card-spotify-info {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 15%, transparent 100%);
+    box-sizing: border-box; pointer-events: none; transition: opacity 0.3s ease;
+}
+.podcast-card-spotify:hover .podcast-card-spotify-info { opacity: 0; }
+.podcast-card-spotify-info h4 {
+    color: white; font-size: 0.9rem; font-weight: 600; margin: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+#podcast-carousel-container .horizontal-scroll-wrapper {
+    gap: 1.8rem;
+}
+
+/* Base Card for Podcasts (and Creators if they share this style) */
+.content-card-bisaya.podcast-card { /* Be specific for podcasts */
+    flex: 0 0 280px;
+    min-width: 240px;
+    background-color: var(--modern-dark-charcoal);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--box-shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.content-card-bisaya.podcast-card:hover {
+    transform: scale(1.04) translateY(-3px);
+    box-shadow: var(--box-shadow-strong);
+}
+
+.content-card-bisaya.podcast-card .content-card-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Podcasts are often square, adjust if 3/4 */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    background-size: cover; /* If using background-image */
+    background-position: center; /* If using background-image */
+}
+
+.content-card-bisaya.podcast-card:hover .content-card-img {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.content-card-bisaya.podcast-card .content-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem;
+    background: linear-gradient(to top, rgba(var(--modern-dark-charcoal-rgb, 43, 45, 66), 0.95) 20%, rgba(var(--modern-dark-charcoal-rgb, 43, 45, 66), 0) 100%);
+    color: var(--modern-white);
+    transition: opacity 0.3s ease;
+}
+
+.content-card-bisaya.podcast-card .content-card-overlay h4 {
+    font-family: var(--font-secondary-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    line-height: 1.3;
+    color: var(--modern-white);
+}
+
+.content-card-bisaya.podcast-card .content-card-overlay p {
+    font-size: 0.85rem;
+    margin: 0 0 1rem 0;
+    color: var(--modern-light-gray);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: calc(0.85rem * 1.5 * 3);
+}
+
+.content-card-bisaya.podcast-card .btn-view-more {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+    background-color: var(--sinulog-mango-yellow);
+    color: var(--modern-dark-charcoal);
+    border-radius: var(--button-border-radius);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.content-card-bisaya.podcast-card .btn-view-more:hover {
+    background-color: #e6ac00; /* Darker mango */
+}
+
+@media (max-width: 768px) {
+    .content-card-bisaya.podcast-card {
+        flex: 0 0 220px;
+    }
+}
+/* For WebKit browsers (Chrome, Safari, Edge) */
+#podcast-carousel-container .horizontal-scroll-wrapper::-webkit-scrollbar {
+    height: 10px; /* Slightly thicker for a more prominent colored scrollbar */
+}
+#podcast-carousel-container .horizontal-scroll-wrapper::-webkit-scrollbar-track {
+    background: rgba(var(--sinulog-black-rgb), 0.5); /* Dark track, slightly translucent */
+    border-radius: 5px;
+}
+#podcast-carousel-container .horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+    background-color: #1DB954; /* Spotify Green thumb */
+    border-radius: 5px;
+    border: 2px solid rgba(var(--sinulog-black-rgb), 0.5); /* Border matching the track for a "cutout" look */
+}
+#podcast-carousel-container .horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #1ed760; /* Lighter green on hover */
+}
+/* In css/bisaya-podcast-cards.css */
+#podcast-carousel-container .horizontal-scroll-wrapper {
+    /* ... other styles ... */
+    scrollbar-color: var(--sinulog-teal) rgba(var(--sinulog-black-rgb), 0.5); /* Teal thumb for Firefox */
+}
+
+#podcast-carousel-container .horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--sinulog-teal); /* Teal thumb for WebKit */
+    /* ... other thumb styles ... */
+}
+#podcast-carousel-container .horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #0DAAA6; /* A slightly lighter/different teal for hover */
+}
+/* End of Custom Scrollbar Styles for Podcast Section */
