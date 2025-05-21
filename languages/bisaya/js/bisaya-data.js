@@ -786,9 +786,9 @@ const bisayaMusicArtists = [
             { title: 'Pero Atik Ra (Official Music Video)', videoId: 'GNqlmRFsq-o' }
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@jackychang6969', // Verified YT Channel
-            facebook: 'https://www.facebook.com/JackyChangOfficial',
-            instagram: 'https://www.instagram.com/jacky_chang_/' // Verified IG
+            youtube: 'https://www.youtube.com/channel/UC0siL8DaeDm9XXe6aQUyt9g', // Verified YT Channel
+            facebook: 'https://www.facebook.com/TheRealJackyChang/',
+            instagram: 'https://www.instagram.com/jackychanged/?hl=en' // Verified IG
         }
     },
     {
@@ -797,13 +797,13 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab67616d0000b273c7b784a2f533b334b0bf90b8',
         spotifyLink: 'https://open.spotify.com/artist/2tEFDBihLXytoPl4xdResl',
         location: 'Zamboanga del Sur',
-        longDesc: "Si FELIP, o Ken sa SB19, usa ka multi-talented Filipino artist. Siya ang main dancer, lead rapper, ug producer sa SB19. Sa iyang solo projects, nirelease siya'g 'Palayo', 'Bulan', ug ang iyahang debut solo EP 'Complex'. Unique iyang deep voice ug hip hop artistry, Bisaya pride gyud ni!",
+        longDesc: "Si FELIP, o Ken sa SB19, usa ka multi-talented Filipino artist. Siya ang main dancer, lead rapper, ug producer sa SB19. Sa iyang solo projects, nagrelease siya'g 'Palayo', 'Bulan', ug ang iyahang debut solo EP 'Complex'. Unique iyang deep voice ug hip hop artistry, Bisaya pride gyud ni! Gento! Gento!",
         bisayaSongs: [
             { title: 'Kanako (Band Version Official Music Video)', videoId: 'd5mnBBP2w4U' }
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@FELIP_Official',
-            instagram: 'https://www.instagram.com/felipsuperior/'
+            youtube: 'https://www.youtube.com/@FELIPsuperior',
+            instagram: 'https://www.instagram.com/felipsuperior/?hl=en'
         }
     },
     {
@@ -817,8 +817,8 @@ const bisayaMusicArtists = [
             { title: 'My Morena Girl (Official Music Video)', videoId: 'rMePbAhBOd8' }
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@HeyJoeShow',
-            facebook: 'https://www.facebook.com/HeyJoeShowOfficial', // Verified FB
+            youtube: 'https://www.youtube.com/user/heyjoeshow',
+            instagram: 'https://www.instagram.com/heyjoeshow/?hl=en', // Verified FB
         }
     },
     {
@@ -827,12 +827,12 @@ const bisayaMusicArtists = [
         coverArt: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfr6SuQN_ZIWjzj6nCNmbtShFx0KrmUZ0NQ&s',
         spotifyLink: 'https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga', // BINI's spotify
         location: 'Tagbilaran, Bohol',
-        longDesc: "Si Ma. Nicolette Florenosos Vergara, o Colet sa BINI, usa ka multi-talented artist gikan sa Bohol. Siya ang main vocalist, dancer, ug rapper sa P-pop girl group BINI. Gisuwat pud niya ang lyrics sa ilang single nga '8'. Bright ug versatile, garbo sa Bohol ug sa Pilipinas!",
+        longDesc: "Si Ma. Nicolette Florenosos Vergara, o Colet sa BINI, usa ka multi-talented artist gikan sa Bohol. Siya ang main vocalist, dancer, ug rapper sa P-pop girl group BINI. Gisuwat pud niya ang lyrics sa ilang single sa BINI. Bright ug versatile, garbo sa Bohol ug sa Pilipinas!",
         bisayaSongs: [
             { title: 'Padayon Lyrics (Unreleased Bisaya Song)', videoId: 'ls9IpcUZ0Fk' }
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@BINI_ph', // BINI's official channel
+            youtube: 'https://www.youtube.com/@BINIPH', // BINI's official channel
             instagram: 'https://www.instagram.com/bini_colet/' 
         }
     },
@@ -847,7 +847,7 @@ const bisayaMusicArtists = [
              // Found video for Karera BINI
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@BINI_ph',
+            youtube: 'https://www.youtube.com/@BINIPH',
             instagram: 'https://www.instagram.com/bini_aiah/'
         }
     },
@@ -862,8 +862,8 @@ const bisayaMusicArtists = [
             { title: 'Kasing Kasing (Live Performance) ft. juan karlos', videoId: 'PVgH0K9J6eg' }
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@KyleEcharriOfficial',
-            instagram: 'https://www.instagram.com/kyleecharri/'
+            youtube: 'https://www.youtube.com/@KyleEcharri',
+            instagram: 'https://www.instagram.com/kyleecharri/?hl=en'
         }
     },
     {
@@ -877,8 +877,8 @@ const bisayaMusicArtists = [
             { title: 'Bulalakaw (Music Video) feat. Joanna Ang', videoId: 'YI3c8bOQ46Q' }
         ],
         socialLinks: {
-            youtube: 'https://www.youtube.com/@JanineBerdinOfficial',
-            instagram: 'https://www.instagram.com/janineberdin/'
+            youtube: 'https://www.youtube.com/channel/UCqGuQ9pT5428XwYYvf16uPQ',
+            instagram: 'https://www.instagram.com/janineberdin/?hl=en'
         }
     }
 ];
