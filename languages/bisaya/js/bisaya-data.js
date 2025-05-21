@@ -735,7 +735,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://cdn-images.dzcdn.net/images/cover/871a4489a8f5307e8e40eab0eb57f0cd/0x1900-000000-80-0-0.jpg',
         spotifyLink: 'https://open.spotify.com/artist/0a4r2EnsevvHCukoJ1xFwJ',
         location: 'Consolacion, Cebu',
-        longDesc: "Si Juan Karlos Labajo, garbo sa Consolacion, Cebu, usa sa mga stars sa OPM. Sumikat isip The Voice Kids alumnus, karon frontman sa bandang Juan Karlos. Bisag sikat na sa mainstream, active gihapon siya sa paghimo og Bisaya songs nga maka-touch sa kasingkasing. Iyahang mga kanta, gikan sa kalalim sa kasingkasing!",
+        longDesc: "Si Juan Karlos Labajo, gikan sa Consolacion, Cebu, usa sa mga stars sa OPM. Sumikat tungod sa The Voice Kids, karon frontman sa bandang Juan Karlos. Bisag sikat na sa mainstream Manila, active gihapon siya sa paghimo'g Bisaya songs nga maka-touch sa kasingkasing.",
         bisayaSongs: [ // Only include their Bisaya songs here
             { title: 'Kasing Kasing (Official Live Performance) ft. Kyle Echarri', videoId: 'PVgH0K9J6eg' },
         ],
@@ -750,7 +750,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab6761610000e5eb80272b2bfc4ada39a96f984a',
         spotifyLink: 'https://open.spotify.com/artist/7LvDTuFCBv08xm6u1pOMK0',
         location: 'Cagayan de Oro',
-        longDesc: "Si TJ Monterde, lumad taga Cagayan de Oro, sikat sa iyang viral YouTube videos ug orihinal nga kanta. Bisag paborito sa love songs, active gihapon siya sa paghimo og Bisaya tracks nga maka-relate kaayo. Iyahang 'Puhon', solid gyud! Isa sa mga pioneer sa Bisaya mainstream sa YouTube.",
+        longDesc: "Si TJ Monterde, taga Cagayan de Oro, sikat sa iyang viral YouTube videos ug orihinal nga kanta sa Tagalog. Pero active gihapon siya sa paghimo og Bisaya tracks nga maka-relate kaayo. Iyahang 'Puhon', solid gyud! Isa sa mga pioneer sa mainstream music sa Manila!",
         bisayaSongs: [
             { title: 'Puhon', videoId: 'GcgPbu5CxX8' }
         ],
@@ -765,7 +765,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab6761610000e5eb2664bb2b894edf003aa133f4',
         spotifyLink: 'https://open.spotify.com/artist/5owmqj7huSBTrfT3vCwtuG',
         location: 'Cebu City',
-        longDesc: "Si Kurt Fick, gi-dub nga Vispop Superstar, duna'y hits sama sa 'HAHAHAHasula' ug 'DI NA'. Kanunay siyang mo-break og boundaries ug mo-establish og bag-ong tunog sa Bisaya music. Gikan sa melancholic acoustic ballads ngadto sa groovy, funky earworms, si Kurt Fick, tatak Bisdak!",
+        longDesc: "Si Kurt Fick, gi-dub nga Vispop Superstar, tungod sa iyang hits nga 'HAHAHAHasula' ug 'DI NA'. Gibreak niya ang boundaries ug nag-establish og bag-ong tunog sa Bisaya music. Gikan sa melancholic acoustic ballads ngadto sa groovy, funky earworms, si Kurt Fick, tatak Bisdak!",
         bisayaSongs: [
             { title: 'HAHAHAHasula (Official Music Video)', videoId: 'eTXN9CyPPF4' }
         ],
@@ -781,7 +781,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab676161000051744d62d4945b79303edb4f416b',
         spotifyLink: 'https://open.spotify.com/artist/4H5Wsa3sUVdJfjk5JI7TFl',
         location: 'Cebu City',
-        longDesc: "Si Jacky Chang, ang Sinulog Idol Grand Winner, nailhan isip 'Maoy Diva of Cebu' sa iyang mga kanta sama sa 'Pero Atik Ra'. Kanunay siya mo-embrace og pop girl status, ug i-combine iyang Cebuano ug Korean roots sa iyang empowering lyrics. Ready for new territories, Bisaya pop star gyud ni!",
+        longDesc: "Si Jacky Chang, ang Sinulog Idol Grand Winner, nailhan as 'Maoy Diva of Cebu' sa iyang mga kanta 'Pero Atik Ra'. Kanunay siya mo-embrace og pop girl status, ug i-combine iyang Cebuano ug Korean roots sa iyang empowering lyrics. Bisaya pop star gyud ni!",
         bisayaSongs: [
             { title: 'Pero Atik Ra (Official Music Video)', videoId: 'GNqlmRFsq-o' }
         ],
@@ -812,7 +812,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab67616d0000b2735d09f0b21c5cac869ecec4a0',
         spotifyLink: 'https://open.spotify.com/artist/1vvD9XGQVmNtKsyPW7TFcZ',
         location: 'USA (Bisaya Content)',
-        longDesc: "Ang Hey Joe Show, grupo sa mga Amerikano, dedicated sa pag-celebrate ug pag-expose sa Filipino culture sa global audience. Sikat sila sa mga American take sa Filipino customs ug sa mga popular songs nga gi-translate sa Bisaya. Kanunay silang maka-pahiyom sa mga Pinoy. Bisdak kaayo sila mo-Binisaya!",
+        longDesc: "Ang Hey Joe Show, grupo sa mga Amerikano, dedicated sa pag-celebrate ug pag-expose sa Filipino culture sa global audience. Sikat sila sa mga American take sa Filipino customs ug sa mga popular songs nga gi-translate sa Bisaya. Bisdak kaayo sila mag-Binisaya!",
         bisayaSongs: [
             { title: 'My Morena Girl (Official Music Video)', videoId: 'rMePbAhBOd8' }
         ],
@@ -827,7 +827,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfr6SuQN_ZIWjzj6nCNmbtShFx0KrmUZ0NQ&s',
         spotifyLink: 'https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga', // BINI's spotify
         location: 'Tagbilaran, Bohol',
-        longDesc: "Si Ma. Nicolette Florenosos Vergara, o Colet sa BINI, usa ka multi-talented artist gikan sa Bohol. Siya ang main vocalist, dancer, ug rapper sa P-pop girl group BINI. Gisuwat pud niya ang lyrics sa ilang single sa BINI. Bright ug versatile, garbo sa Bohol ug sa Pilipinas!",
+        longDesc: "Si Ma. Nicolette Vergara, o Colet sa BINI, usa ka multi-talented artist gikan sa Bohol. Siya ang main vocalist, dancer, ug rapper sa P-pop girl group BINI. Gisulat pud niya ang lyrics sa ilang single sa BINI. Bright ug versatile, usahay mogawas sa iyaha si Anger."
         bisayaSongs: [
             { title: 'Padayon Lyrics (Unreleased Bisaya Song)', videoId: 'ls9IpcUZ0Fk' }
         ],
@@ -842,7 +842,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3uqM7Lkm7aIGjglEDqDrnPgsRBZBeGEwxw&s',
         spotifyLink: 'https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga', // BINI's spotify
         location: 'Lapu-Lapu City, Cebu',
-        longDesc: "Si Maraiah Queen Arceta, o Aiah sa BINI, usa ka singer, rapper, dancer, ug model gikan sa Lapu-Lapu City, Cebu. Nahimo siyang Miss Silka Philippines 2018. Gisuwat pud niya ang rap verse sa ilang single nga 'Kapit Lang'. Active gihapon sa modeling, ug supporter sa komunidad pinaagi sa iyahang Aiahdvocacy. Multi-talented Bisdak!",
+        longDesc: "Si Maraiah Queen Arceta, o Aiah sa BINI, usa ka singer, rapper, dancer, ug model gikan sa Lapu-Lapu City, Cebu. Nahimo siyang Miss Silka Philippines 2018. Gisuwat pud niya ang rap verse sa ilang single nga 'Kapit Lang'. Active gihapon sa modeling, ug supporter sa komunidad pinaagi sa iyahang Aiahdvocacy. Multi-talented Bisdak! Dream girl material",
         bisayaSongs: [
              // Found video for Karera BINI
         ],
@@ -857,7 +857,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab6761610000e5eb933a75fcd5931fef4d84008b',
         spotifyLink: 'https://open.spotify.com/artist/53qa1XIZ6pZuhrGDetCGew',
         location: 'Cebu (based)',
-        longDesc: "Si Kyle Echarri, sikat nga singer ug aktor nga mi-gain og recognition isip semi-finalist sa The Voice Kids. Nirelease siya'g debut album ug nidaog sa Box Office Entertainment Award. Active gihapon sa TV series. Bisag American-Filipino, duna siyay koneksyon sa Bisaya music, sama sa 'Kasing Kasing' kauban si Juan Karlos.",
+        longDesc: "Si Kyle Echarri, sikat nga singer ug aktor nga nag-gain og recognition sa The Voice Kids. Nagrelease siya'g debut album ug nidaog sa Box Office Entertainment Award. Active gihapon sa TV series. Bisag American-Filipino, aduna siyay koneksyon sa Bisaya music.",
         bisayaSongs: [
             { title: 'Kasing Kasing (Live Performance) ft. juan karlos', videoId: 'PVgH0K9J6eg' }
         ],
@@ -872,7 +872,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://i.scdn.co/image/ab6761610000e5ebcb00f94051db52a48179a88c',
         spotifyLink: 'https://open.spotify.com/artist/4qPhnQfRgdgcZEdXgENOnr',
         location: 'Lapu-Lapu City, Cebu',
-        longDesc: "Si Janine Berdin, garbo sa Lapu-Lapu City, Cebu, Grand Champion sa Tawag ng Tanghalan. Iyahang single nga 'Mahika' with Adie ni-reach sa No. 1 sa Billboard Philippines Songs chart. Human sa hiatus, nirelease siya'g 'Sitwasyonship' ug 'Alas Dos Na!!!' isip independent artist. Iyahang mga kanta, puno sa 'feels' ug garbo sa Bisaya!",
+        longDesc: "Si Janine Berdin, gikan sa Lapu-Lapu City, Cebu, Grand Champion sa Tawag ng Tanghalan. Iyahang single nga 'Mahika' with Adie ni-reach sa No. 1 sa Billboard Philippines Songs chart. Nagrelease pud siya'g 'Sitwasyonship' ug 'Alas Dos Na!!!' isip as independent artist. Iyahang mga kanta, puno sa 'feels' kay Bisaya!",
         bisayaSongs: [
             { title: 'Bulalakaw (Music Video) feat. Joanna Ang', videoId: 'YI3c8bOQ46Q' }
         ],
