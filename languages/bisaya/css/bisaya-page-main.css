@@ -1,0 +1,147 @@
+/* css/bisaya-page-main.css - REVAMPED */
+
+#aljohn-bisaya-world { /* Your main content wrapper */
+    padding-top: 70px; /* Assuming navbar handles its own spacing or is fixed */
+}
+
+.container { /* Standard centered container */
+    width: 90%;
+    max-width: 1200px; /* Common max-width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* Gutters */
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.container-fluid-bisaya { /* Full-width container with padding */
+    width: 100%;
+    padding-left: 1.5rem; /* Default padding for full-width sections */
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+    padding-top: 4.6rem;
+}.container-fluid-bisaya { /* Full-width container with padding */
+    width: 100%;
+    padding-left: 1.5rem; /* Default padding for full-width sections */
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+    padding-top: 4.6rem;
+}
+/* --- Default Section Styling --- */
+.section-padding {
+    padding-top: var(--section-padding-normal, 3rem);
+    padding-bottom: var(--section-padding-normal, 3rem);
+}
+.section-padding-compact {
+    padding-top: var(--section-padding-compact, 2.5rem);
+    padding-bottom: var(--section-padding-compact, 2.5rem);
+}
+
+/* Specific section backgrounds for visual rhythm (examples) */
+/* Default is dark from body.bisaya-page */
+
+#bisaya-hero {
+    /* Hero will have its own specific background, often an image/gradient */
+    /* No default background needed here if hero section CSS handles it */
+}
+
+
+/* Override text colors if needed for this specific bg */
+#aljohn-cebu-adventure-video .section-title-bisaya .highlight-sinulog-orange {
+    color: var(--sinulog-white); /* Ensure highlight text is visible */
+}
+
+
+#bisaya-top-picks {
+    background-color: var(--sinulog-black); /* Keep dark for focus on content */
+    margin-top: 14px;
+    padding-bottom: 6 rem;
+    padding-top: 6rem;
+}
+
+#bisaya-creator-community {
+    
+    /* Another slightly lighter dark section */
+    margin-bottom: 10px;
+    padding-top: -2rem;
+}
+#bisaya-creator-community .section-title-bisaya .highlight-blue {
+    /* This was from old theme, let's use new palette */
+    background-color: var(--sinulog-teal); /* Example */
+    color: var(--sinulog-white);
+}
+
+
+#bisaya-shows-podcasts {
+  /* Back to darker for K-Drama/Podcast focus */
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+}
+/* Titles within this section will get specific colors in their own CSS */
+
+
+#alliance-francaise-cebu-feature {
+    background-color: var(--sinulog-off-white); /* LIGHT SECTION for contrast */
+    color: var(--sinulog-black); /* Text needs to be dark on light bg */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#alliance-francaise-cebu-feature .section-title-bisaya {
+    color: var(--sinulog-deep-blue); /* Dark blue title on light background */
+}
+#alliance-francaise-cebu-feature .section-title-bisaya .highlight-blue {
+    /* Re-purpose or create new highlight for light theme */
+    background-color: var(--sinulog-deep-blue);
+    color: var(--sinulog-yellow);
+}
+#alliance-francaise-cebu-feature p {
+    color: var(--sinulog-dark-gray); /* Darker paragraph text for readability */
+}
+/* Ensure AFC button style contrasts well on light bg */
+#alliance-francaise-cebu-feature .btn-secondary-sinulog {
+    background-color: var(--sinulog-deep-blue);
+    color: var(--sinulog-white);
+}
+#alliance-francaise-cebu-feature .btn-secondary-sinulog:hover {
+    background-color: var(--sinulog-purple);
+}
+
+
+#final-cta-bisaya { /* This already had a gradient, let's use new palette */
+    background: linear-gradient(135deg, var(--sinulog-purple) 0%, var(--sinulog-magenta) 100%);
+    color: var(--sinulog-white);
+    text-align: center;
+}
+#final-cta-bisaya .section-title-bisaya, 
+#final-cta-bisaya .final-message-bisaya {
+    color: var(--sinulog-white); /* Ensure text is white */
+}
+#final-cta-bisaya .section-title-bisaya .highlight-mango {
+    /* This was var(--sinulog-mango-yellow) with dark text. Let's make it pop. */
+    background-color: var(--sinulog-yellow);
+    color: var(--sinulog-black); /* Good contrast */
+}
+
+
+/* Utility Classes (can also live in global-styles.css if shared across pages) */
+.text-center { text-align: center; }
+
+.full-width-btn { /* This might be too generic, consider more specific button classes */
+    display: block;
+    width: calc(100% - 2rem); /* Account for padding */
+    max-width: 380px; /* Max width for a prominent button */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem; /* Default top margin */
+    text-align: center;
+}
+
+/* Placeholder for empty sections/grids */
+.text-center.full-width-message {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color: var(--sinulog-mid-gray); /* Readable on dark or light gray backgrounds */
+    font-style: italic;
+}
