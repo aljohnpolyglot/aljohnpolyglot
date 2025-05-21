@@ -827,7 +827,7 @@ const bisayaMusicArtists = [
         coverArt: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfr6SuQN_ZIWjzj6nCNmbtShFx0KrmUZ0NQ&s',
         spotifyLink: 'https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga', // BINI's spotify
         location: 'Tagbilaran, Bohol',
-        longDesc: "Si Ma. Nicolette Vergara, o Colet sa BINI, usa ka multi-talented artist gikan sa Bohol. Siya ang main vocalist, dancer, ug rapper sa P-pop girl group BINI. Gisulat pud niya ang lyrics sa ilang single sa BINI. Bright ug versatile, usahay mogawas sa iyaha si Anger."
+        longDesc: "Si Ma. Nicolette Vergara, o Colet sa BINI, usa ka multi-talented artist gikan sa Bohol. Siya ang main vocalist, dancer, ug rapper sa P-pop girl group BINI. Gisulat pud niya ang lyrics sa ilang single sa BINI. Bright ug versatile, usahay mogawas sa iyaha si Anger.",
         bisayaSongs: [
             { title: 'Padayon Lyrics (Unreleased Bisaya Song)', videoId: 'ls9IpcUZ0Fk' }
         ],
