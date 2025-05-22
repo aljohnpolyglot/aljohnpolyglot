@@ -423,9 +423,11 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
         </div>
     </div>
 
-    <div class="immersive-content-area">
+   <div class="immersive-content-area">
+    <!-- NEW WRAPPER for scrollable content -->
+    <div class="immersive-content-scrollable-inner">
         <h2 id="kdrama-detail-title" class="immersive-title">Show Title</h2>
-        
+
         <div class="immersive-meta-info">
             <span id="kdrama-detail-platform-tag" class="meta-tag platform-tag" style="display: none;">
                 <i class="fas fa-tv"></i> <span class="platform-name-text">Platform</span>
@@ -434,24 +436,26 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
                 <!-- Genres will be populated by JS -->
             </span>
         </div>
-        
+
         <div class="immersive-synopsis-section">
             <h4>Mahitungod sa Show:</h4>
             <p id="kdrama-detail-synopsis">Full synopsis...</p>
         </div>
-    
+
         <div class="immersive-starring-section" id="kdrama-starring-info" style="display:none;">
              <h4>Mga Bida:</h4>
              <p id="kdrama-starring-text"></p>
         </div>
-
-        <div class="immersive-actions">
-            <a id="kdrama-detail-viu-link" href="#" target="_blank" class="btn-watch-viu-immersive">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Viu_logo.svg/2560px-Viu_logo.svg.png" alt="Watch on Viu" class="viu-logo-immersive">
-                <span>Tan-awa Karon sa Viu</span>
-            </a>
-        </div>
     </div>
+    <!-- END NEW WRAPPER -->
+
+    <div class="immersive-actions"> <!-- CTA is now a direct child of immersive-content-area, sibling to the scrollable part -->
+        <a id="kdrama-detail-viu-link" href="#" target="_blank" class="btn-watch-viu-immersive">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Viu_logo.svg/2560px-Viu_logo.svg.png" alt="Watch on Viu" class="viu-logo-immersive">
+            <span>Tan-awa Karon sa Viu</span>
+        </a>
+    </div>
+</div>
 </div>
         <!-- SECTION V: Alliance Française de Cebu (Placeholder) -->
        <!-- SECTION V: Alliance Française de Cebu Feature -->
