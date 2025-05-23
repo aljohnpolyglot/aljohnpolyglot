@@ -1,0 +1,371 @@
+/* css/theme_overrides.css OR at the top of learn_in_3_months_themed.css */
+
+/* ==========================================================================
+   NAVBAR THEME OVERRIDES (for .page-theme-biotech-dark)
+   ========================================================================== */
+   ========================================================================== */
+:root {
+    /* Core Aljohn Colors (Original - Kept for reference) */
+    --aljohn-original-primary-red: #C8102E;
+    --aljohn-original-primary-blue: #003087;
+    --aljohn-original-accent-yellow-lch: lch(86.93% 87.16 91.27);
+    --aljohn-original-accent-yellow-fallback: #FFD700;
+    --aljohn-original-light-bg: #f8f9fa;
+    --aljohn-original-dark-text: #2c3e50;
+    --aljohn-original-light-text: #ffffff;
+    --aljohn-original-border-color: #e0e0e0;
+    --aljohn-original-midnight-blue: #182848;
+    --aljohn-original-deep-space-blue: #0a0f1a;
+
+
+    /* Polyglot Papers Theme Palette - Primary Definitions */
+    --theme-biotech-green: #2dce89;
+    --theme-dark-bg-base: #040f0a;       /* Base dark background */
+    --theme-dark-bg-gradient-start: #040f0a;
+    --theme-dark-bg-gradient-mid: #0a2e1a;
+    --theme-dark-bg-gradient-end: #104527;
+    --theme-deepest-bg-contrast: #020805; /* For text on light accents */
+
+    --theme-light-mint-text: #c8f7e0;
+    --theme-brighter-mint-text: #e0f9ee;
+    --theme-soft-mint-text: #a0d8c0;
+    --theme-muted-mint-text: rgba(190, 230, 210, 0.75);
+
+    --theme-card-bg: rgba(10, 38, 25, 0.75); /* Slightly more opaque cards */
+    --theme-card-bg-hover: rgba(15, 48, 30, 0.85);
+    --theme-card-border: rgba(45, 206, 137, 0.35); /* Slightly more visible */
+    --theme-card-border-hover: rgba(45, 206, 137, 0.6);
+    --theme-card-shadow: 0 4px 25px rgba(0, 50, 30, 0.3), inset 0 0 12px rgba(0,30,15,0.3);
+
+    --theme-font-primary: 'Montserrat', sans-serif;
+    --theme-font-secondary: 'Open Sans', sans-serif;
+    --theme-font-tech: 'Roboto Mono', monospace;
+
+    /* Re-mapping Aljohn's original global names for this page's theme */
+    --primary-red: var(--theme-biotech-green);
+    --primary-blue: var(--theme-biotech-green); /* Can be a different shade of green or blue-green if needed */
+    --accent-yellow: var(--aljohn-original-accent-yellow-fallback); /* Keep distinct yellow */
+    
+    --light-bg: var(--theme-card-bg); /* "Light" BGs are now dark themed cards */
+    --dark-text: var(--theme-brighter-mint-text); /* "Dark" text is now bright */
+    --light-text: var(--theme-deepest-bg-contrast); /* "Light" text (e.g., on yellow buttons) is very dark */
+    --border-color: var(--theme-card-border); /* Default border is themed */
+    --card-shadow: var(--theme-card-shadow); /* Default card shadow is themed */
+
+    /* Specific fallbacks for this theme */
+    --fallback-dark-text: var(--theme-brighter-mint-text);
+    --fallback-light-text: var(--theme-deepest-bg-contrast);
+}
+
+.page-theme-biotech-dark header,
+.page-theme-biotech-dark header.scrolled {
+    background-color: var(--theme-dark-bg-mid); /* Dark background for navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 1px var(--theme-biotech-green); /* Darker shadow, green hint */
+    border-bottom: 1px solid var(--theme-card-border); /* Subtle border */
+}
+
+.page-theme-biotech-dark header.scrolled {
+    background-color: rgba(var(--theme-dark-bg-mid-rgb, 10, 46, 26), 0.95); /* Slightly transparent dark */
+    backdrop-filter: blur(5px);
+}
+
+.page-theme-biotech-dark .logo-text {
+    color: var(--theme-brighter-mint-text); /* Light logo text */
+}
+.page-theme-biotech-dark .logo-img {
+    border-color: var(--theme-biotech-green); /* Green border for logo image */
+    background-color: var(--theme-dark-bg-mid); /* Dark bg if image has transparency */
+}
+
+.page-theme-biotech-dark ul.nav-links a,
+.page-theme-biotech-dark ul.nav-links .dropbtn {
+    color: var(--theme-soft-mint-text); /* Light link text */
+}
+
+.page-theme-biotech-dark ul.nav-links a::after,
+.page-theme-biotech-dark ul.nav-links .dropbtn::after {
+    background-color: var(--theme-biotech-green); /* Green underline */
+}
+
+.page-theme-biotech-dark ul.nav-links a:hover,
+.page-theme-biotech-dark ul.nav-links a.active-link,
+.page-theme-biotech-dark ul.nav-links li.dropdown:hover .dropbtn,
+.page-theme-biotech-dark ul.nav-links .dropbtn:focus,
+.page-theme-biotech-dark ul.nav-links .dropbtn.active-link {
+    color: var(--theme-biotech-green); /* Green hover/active text */
+}
+
+.page-theme-biotech-dark .nav-cta { /* YouTube Channel button */
+    background-color: #FFD700; /* Keep yellow for high-contrast CTA */
+    color: var(--theme-deepest-bg-contrast) !important; /* Dark text on yellow */
+    box-shadow: 0 0 10px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.4);
+}
+.page-theme-biotech-dark .nav-cta:hover {
+    background-color: #f0c000; /* Darker yellow */
+    box-shadow: 0 0 15px rgba(var(--accent-yellow-rgb-equivalent, 255,215,0), 0.6);
+}
+
+.page-theme-biotech-dark .hamburger,
+.page-theme-biotech-dark .hamburger::before,
+.page-theme-biotech-dark .hamburger::after {
+    background-color: var(--theme-light-mint-text); /* Light hamburger lines */
+}
+
+/* Mobile Nav Theming */
+@media (max-width: 768px) {
+    .page-theme-biotech-dark ul.nav-links { /* Mobile dropdown background */
+        background-color: var(--theme-dark-bg-mid);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .page-theme-biotech-dark ul.nav-links a { /* Mobile link text */
+        border-bottom-color: var(--theme-card-border);
+        color: var(--theme-soft-mint-text);
+    }
+    .page-theme-biotech-dark ul.nav-links li:last-child a {
+        border-bottom: none;
+    }
+    .page-theme-biotech-dark ul.nav-links a:hover::after,
+    .page-theme-biotech-dark ul.nav-links a.active-link::after {
+        background-color: var(--theme-biotech-green); /* Ensure underline is green */
+    }
+    .page-theme-biotech-dark .dropdown-content { /* Mobile dropdown content area */
+        background-color: transparent; /* Inherits from .nav-links */
+    }
+    .page-theme-biotech-dark .dropdown-content a {
+        color: var(--theme-soft-mint-text);
+        border-bottom-color: var(--theme-card-border);
+    }
+    .page-theme-biotech-dark .dropdown-content a:hover {
+        background-color: rgba(45, 206, 137, 0.1); /* Subtle green hover for dropdown items */
+        color: var(--theme-biotech-green);
+    }
+    .page-theme-biotech-dark .dropdown-content a.active-link {
+        color: var(--theme-biotech-green);
+        background-color: rgba(45, 206, 137, 0.15);
+    }
+}
+
+/* Dropdown Content on Desktop */
+.page-theme-biotech-dark .dropdown-content {
+    background-color: var(--theme-dark-bg-mid); /* Dark dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    border: 1px solid var(--theme-card-border);
+    border-top: none; /* Usually connects to navbar */
+}
+.page-theme-biotech-dark .dropdown-content a {
+    color: var(--theme-soft-mint-text);
+    padding-bottom: 10px;
+}
+.page-theme-biotech-dark .dropdown-content a::after {
+    background-color: var(--theme-biotech-green);
+    left: 16px; /* Original offset */
+}
+.page-theme-biotech-dark .dropdown-content a:hover {
+    background-color: rgba(45, 206, 137, 0.1);
+    color: var(--theme-biotech-green);
+}
+.page-theme-biotech-dark .dropdown-content a:hover::after {
+    width: calc(100% - 32px); /* Original width */
+}
+.page-theme-biotech-dark .dropdown-content a.active-link {
+    color: var(--theme-biotech-green);
+    font-weight: 700;
+    background-color: rgba(45, 206, 137, 0.15);
+}
+.page-theme-biotech-dark .dropdown-content a.active-link::after {
+    width: calc(100% - 32px);
+}
+
+
+/* ==========================================================================
+   FOOTER THEME OVERRIDES (for .page-theme-biotech-dark)
+   ========================================================================== */
+
+.page-theme-biotech-dark footer,
+.page-theme-biotech-dark .site-footer {
+    background-color: var(--theme-deepest-bg-contrast); /* Very dark footer background */
+    color: var(--theme-muted-mint-text); /* Muted light text for footer */
+    border-top: 2px solid var(--theme-biotech-green); /* Green top border */
+    padding: 50px 0 25px; /* Adjusted padding */
+}
+
+/* Footer Logo */
+.page-theme-biotech-dark .footer-logo {
+    color: var(--theme-brighter-mint-text); /* Brighter logo text */
+}
+.page-theme-biotech-dark .footer-logo .logo-img {
+    border-color: var(--theme-biotech-green); /* Green border for logo image */
+    background-color: var(--theme-dark-bg-mid); /* Dark BG for logo if it has transparency */
+}
+.page-theme-biotech-dark .footer-logo span {
+    font-size: 1.25rem; /* Slightly larger */
+}
+
+/* Footer Links */
+.page-theme-biotech-dark .footer-links a {
+    color: var(--theme-soft-mint-text); /* Softer mint for links */
+}
+.page-theme-biotech-dark .footer-links a:hover {
+    color: var(--theme-biotech-green); /* Green hover */
+}
+
+/* Social Links */
+.page-theme-biotech-dark .social-links a {
+    color: var(--theme-soft-mint-text);
+}
+.page-theme-biotech-dark .social-links a:hover {
+    color: var(--theme-biotech-green); /* Green hover for social icons */
+    transform: scale(1.15) translateY(-1px); /* Enhanced hover */
+}
+
+/* Footer Bottom (Copyright) */
+.page-theme-biotech-dark .footer-bottom {
+    border-top: 1px solid var(--theme-card-border); /* Themed border */
+    color: var(--theme-muted-mint-text); /* Muted copyright text */
+    padding-top: 1.8rem; /* More space */
+    margin-top: 1.8rem;
+}
+.page-theme-biotech-dark .footer-bottom p a { /* Links in copyright if any */
+    color: var(--theme-soft-mint-text); /* Make them slightly brighter than copyright text */
+}
+.page-theme-biotech-dark .footer-bottom p a:hover {
+    color: var(--theme-biotech-green);
+}
+
+/* Add RGB equivalents for variables used in rgba(), if not already in main :root */
+/*
+:root {
+    --theme-dark-bg-mid-rgb: 10, 46, 26;
+    --accent-yellow-rgb-equivalent: 255, 215, 0;
+}
+*/
+/* css/theme_overrides.css OR at the top of learn_in_3_months_themed.css */
+
+/* css/theme_overrides.css OR at the top of learn_in_3_months_themed.css */
+
+/* ==========================================================================
+   FOOTER THEME OVERRIDES (for .page-theme-biotech-dark)
+   ========================================================================== */
+/* css/theme_overrides.css OR at the top of learn_in_3_months_themed.css */
+
+/* ==========================================================================
+   FOOTER THEME OVERRIDES (for .page-theme-biotech-dark)
+   ========================================================================== */
+
+/* General styling for the <footer> tag when .page-theme-biotech-dark is on body */
+.page-theme-biotech-dark footer {
+    background-color: var(--theme-deepest-bg-contrast); 
+    color: var(--theme-muted-mint-text); 
+    border-top: 2px solid var(--theme-biotech-green); 
+    padding: 30px 0 15px 0; /* Adjusted padding */
+    font-size: 0.9rem;
+    font-family: var(--theme-font-primary);
+    line-height: 1.6;
+    /* text-align: center; /* Set overall text-align for the footer */
+}
+
+/* Styling for the .container directly inside this page's <footer> */
+.page-theme-biotech-dark footer > .container {
+    /* This container holds your copyright and "Find reliable sources" <p> tags,
+       AND the #main-footer-placeholder for the global footer. */
+    display: flex;
+    flex-direction: column; /* Stack local paragraphs and global footer placeholder */
+    align-items: center; /* Center all items within this container */
+    gap: 0.5rem; /* Space between paragraphs and placeholder */
+}
+
+/* Styling for the local <p> tags in this page's footer */
+.page-theme-biotech-dark footer > .container > p {
+    text-align: center; /* Center the text within each paragraph */
+    margin: 0; /* Reset default paragraph margins */
+    padding: 0.25rem 0; /* Add a little vertical padding */
+    color: var(--theme-muted-mint-text); /* Use a slightly more visible mint */
+    font-size: 0.85rem; /* Consistent font size */
+    width: 100%; /* Allow text-align to work effectively */
+    max-width: 800px; /* Prevent lines from being too wide */
+}
+
+.page-theme-biotech-dark footer > .container > p a {
+    color: var(--theme-soft-mint-text); /* Slightly brighter links */
+    text-decoration: none; /* Remove underline by default if preferred */
+}
+.page-theme-biotech-dark footer > .container > p a:hover {
+    color: var(--theme-biotech-green);
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Styles for the content injected into #main-footer-placeholder
+   (This assumes your global footer has .footer-content and .footer-bottom) */
+
+.page-theme-biotech-dark #main-footer-placeholder .footer-content {
+    /* Styles for the main flex container of the global footer */
+    /* Your existing global footer.css should handle its internal layout */
+    margin-bottom: 1rem; /* Space before global .footer-bottom */
+    width: 100%; /* Ensure it takes width within the flex column */
+}
+
+.page-theme-biotech-dark #main-footer-placeholder .footer-logo {
+    color: var(--theme-brighter-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-logo .logo-img {
+    border-color: var(--theme-biotech-green);
+    background-color: var(--theme-dark-bg-mid);
+}
+
+.page-theme-biotech-dark #main-footer-placeholder .footer-links a {
+    color: var(--theme-soft-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-links a:hover {
+    color: var(--theme-biotech-green);
+}
+
+.page-theme-biotech-dark #main-footer-placeholder .social-links a {
+    color: var(--theme-soft-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .social-links a:hover {
+    color: var(--theme-biotech-green);
+}
+
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom {
+    width: 100%; /* Ensure it takes full width */
+    border-top: 1px solid var(--theme-card-border);
+    color: var(--theme-muted-mint-text);
+    padding-top: 1.25rem; /* Adjusted */
+    margin-top: 1.25rem; /* Adjusted */
+    text-align: center; /* Center the .footer-bottom block */
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom p {
+    text-align: center; /* Center text within paragraphs */
+    margin: 0 auto 0.5rem auto;
+    max-width: 100%; /* Allow it to fill the .footer-bottom */
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom p:last-child {
+    margin-bottom: 0;
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom a {
+    color: var(--theme-soft-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom a:hover {
+    color: var(--theme-biotech-green);
+}
+
+/* Responsive for footer elements if needed */
+@media (max-width: 768px) {
+    .page-theme-biotech-dark footer {
+        padding: 25px 0 15px 0;
+    }
+    .page-theme-biotech-dark footer > .container > p {
+        font-size: 0.8rem;
+    }
+}
+/* In css/theme_overrides.css */
+
+/* In css/theme_overrides.css */
+@media (max-width: 768px) {
+    .page-theme-biotech-dark header nav.container ul.nav-links.active { /* More specific */
+        background-color: var(--theme-dark-bg-mid) !important; /* Dark, opaque background */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* Stronger shadow for definition */
+        border-top: 1px solid var(--theme-card-border); /* Optional top border */
+    }
+}
+
