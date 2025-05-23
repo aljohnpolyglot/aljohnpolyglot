@@ -1,0 +1,177 @@
+/* --- css/guild-strategy-map-panel-MOCKUP.css --- */
+.nav-panel-MOCKUP .nav-panel-header {
+    text-align: left;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(var(--guild-gold-accent-rgb), 0.2);
+}
+.nav-panel-MOCKUP .panel-main-title-img {
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 0px;
+    display: block;
+      margin-left: auto;
+    margin-right: auto;
+}
+.nav-panel-MOCKUP .panel-intro-text {
+    font-size: 0.5rem;
+    line-height: 1.25;
+    color: var(--guild-text-on-dark);
+    margin-bottom: 0;
+    text-align: center;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- ADJUSTMENTS FOR MAP DISPLAY TO BE SQUARE --- */
+.nav-panel-MOCKUP .nav-panel-map-display {
+    margin: 9px auto 9px auto;
+    width: 100%;
+    max-width: 170px; /* Controls the size of the square. Adjust as needed. */
+    /* REMOVED max-height, aspect-ratio will handle height */
+    border: 2px solid var(--guild-gold-deep);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(var(--guild-gold-accent-rgb), 0.2);
+    background-color: rgba(var(--guild-black-rgb), 0.2);
+    padding: 5px;
+    /* --- ADDED aspect-ratio to make it square --- */
+    aspect-ratio: 1 / 1; /* This makes the height equal to the width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.nav-panel-MOCKUP .progression-map-bg { /* The <img> */
+    display: block;
+    max-width: 100%; /* Image will not exceed the container's width */
+    max-height: 100%; /* Image will not exceed the container's height (which is now set by aspect-ratio) */
+    object-fit: contain; /* Ensures the whole map image is visible and fits within the square, letterboxing if necessary */
+    border-radius: 3px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-panel-MOCKUP .map-region-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    min-height: 50px;
+}
+.map-region-button-MOCKUP {
+    width: 100%;
+    padding: 7px 10px;
+    background-color: transparent;
+    color: var(--guild-text-on-dark);
+    border: 1px solid var(--guild-panel-border);
+    border-radius: 5px;
+    font-family: var(--font-guild-button-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 8px;
+}
+.map-region-button-MOCKUP:hover {
+    background-color: rgba(var(--guild-gold-accent-rgb), 0.15);
+    border-color: var(--guild-gold-accent);
+}
+.map-region-button-MOCKUP.active {
+    background-color: var(--guild-gold-accent);
+    color: var(--guild-bg-dark) !important;
+    border-color: var(--guild-gold-deep);
+    box-shadow: inset 0 0 5px rgba(var(--guild-black-rgb), 0.2);
+}
+.map-region-button-MOCKUP .button-icon {
+    width: 20px; height: 20px; object-fit: contain; flex-shrink: 0;
+}
+.map-region-button-MOCKUP .button-text-wrapper { flex-grow: 1; }
+.map-region-button-MOCKUP small { font-size: 0.8em; opacity: 0.7; display: block; }
+.map-region-button-MOCKUP .button-requirement-img {
+    max-height: 16px; width: auto; opacity: 0.7; margin-left: auto; flex-shrink: 0;
+}
+.map-region-button-MOCKUP.active .button-icon,
+.map-region-button-MOCKUP.active .button-requirement-img {
+    filter: brightness(0.8);
+}
+
+
+.nav-panel-MOCKUP .nav-panel-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(var(--guild-gold-accent-rgb), 0.2);
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+.phase-nav-button-MOCKUP {
+    font-family: var(--font-guild-button-text);
+    background-color: transparent;
+    border: 1px solid var(--guild-gold-accent);
+    color: var(--guild-gold-accent);
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    flex-grow: 1;
+}
+.phase-nav-button-MOCKUP:first-child { margin-right: 5px; }
+.phase-nav-button-MOCKUP:last-child { margin-left: 5px; }
+
+.phase-nav-button-MOCKUP:hover:not(:disabled) {
+    background-color: var(--guild-gold-accent);
+    color: var(--guild-bg-dark);
+}
+.phase-nav-button-MOCKUP:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: var(--guild-text-subtle);
+    color: var(--guild-text-subtle);
+}
+.phase-nav-button-MOCKUP i.fas { margin: 0 4px; }
+@media (max-width: 1024px) { /* When stacked */
+    .nav-panel-MOCKUP .map-region-nav {
+        /* On tablet, if nav-panel itself has a max-height, this will scroll within it */
+        /* min-height might not be needed if nav-panel has enough height */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .nav-panel-MOCKUP .panel-main-title-img {
+        max-width: 220px; /* Smaller title on mobile */
+    }
+    .nav-panel-MOCKUP .panel-intro-text {
+        font-size: 0.7rem;
+    }
+    .nav-panel-MOCKUP .nav-panel-map-display {
+        max-width: 150px; /* Smaller map on mobile */
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .nav-panel-MOCKUP .map-region-nav {
+        gap: 5px;
+        margin-top: 8px;
+    }
+    .map-region-button-MOCKUP {
+        padding: 7px 8px;
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+    .map-region-button-MOCKUP .button-icon {
+        width: 18px; height: 18px;
+    }
+    .map-region-button-MOCKUP .button-requirement-img {
+        max-height: 14px;
+    }
+    .phase-nav-button-MOCKUP {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}

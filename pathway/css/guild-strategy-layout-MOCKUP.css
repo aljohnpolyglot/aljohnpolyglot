@@ -1,0 +1,109 @@
+/* --- css/guild-strategy-layout-MOCKUP.css --- */
+
+#guild-strategy-table-main-MOCKUP {
+    padding-top: 100px; /* Assuming header#main-header-placeholder height + some space */
+    padding-bottom: 30px; /* Space for potential footer or just bottom margin */
+    box-sizing: border-box; /* Ensure padding is included in height considerations if any */
+    min-height: 100vh; /* Ensure it tries to take full viewport height */
+    display: flex; /* Added to help manage overall page structure with fixed header */
+    flex-direction: column;
+}
+
+#guild-strategy-table-main-MOCKUP .strategy-table-grid-MOCKUP {
+    display: grid;
+    /* Desktop: Left panel constrained, Right panel fixed width based on your preferred value */
+    grid-template-columns: clamp(280px, 22vw, 320px) 480px; /* Example: Right panel fixed at 480px */
+                                                        /* IMPORTANT: Replace 480px with the computed width
+                                                           of your .quest-display-panel-MOCKUP when the
+                                                           Beginner's phase looks good to you. */
+    gap: 20px;
+    /* Height: let flex-grow on this element (if #guild-strategy-table-main-MOCKUP is its parent)
+       or direct height calculation manage this.
+       For unscrollable page, this needs to fit within viewport minus header. */
+    height: calc(100vh - 100px - 30px); /* (Viewport) - (main padding-top) - (main padding-bottom) */
+                                       /* This assumes main-header-placeholder is 60px and main has 40px top padding */
+    width: 100%; /* Takes full width of its parent container */
+    max-width: 1600px; /* Overall constraint for very wide screens */
+    margin: 0 auto; /* Centers the grid if screen is wider than max-width + padding */
+    padding: 0 15px; /* Side padding for the grid itself */
+    box-sizing: border-box;
+    justify-content: center; /* Centers the two columns if their combined fixed width is less than available space */
+    flex-grow: 1; /* Allow this grid to take up space within the main flex container */
+}
+
+.strategy-panel-MOCKUP {
+    background-color: var(--guild-panel-bg);
+    border: 1px solid var(--guild-panel-border);
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(var(--guild-black-rgb), 0.3);
+    padding: 15px; /* Default padding for panels */
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; /* Removing this allows children to control their own scroll */
+    height: 100%; /* Panels take full height of their grid row */
+    box-sizing: border-box;
+}
+
+.nav-panel-MOCKUP {
+    overflow-y: auto; /* Allow left panel to scroll if its content is too tall */
+}
+
+.quest-display-panel-MOCKUP {
+    background-color: var(--guild-content-bg);
+    color: var(--guild-text-on-light);
+    padding: 0; /* No padding on the panel itself; content inside manages padding */
+    overflow: hidden; /* Let its child .quest-phase-content-MOCKUP handle scrolling */
+}
+
+/* --- Responsive Adjustments for Layout --- */
+@media (max-width: 1024px) { /* Tablet breakpoint */
+    #guild-strategy-table-main-MOCKUP {
+        padding-top: 80px; /* Adjust if mobile header is shorter */
+        padding-bottom: 20px;
+    }
+
+    #guild-strategy-table-main-MOCKUP .strategy-table-grid-MOCKUP {
+        grid-template-columns: 1fr; /* Stack panels: single column */
+        height: auto; /* Allow height to adjust to content */
+        padding: 0 10px; /* Reduced side padding for the grid */
+        gap: 15px;
+        justify-content: stretch; /* Let items take full width */
+    }
+
+    .strategy-panel-MOCKUP {
+        height: auto; /* Allow panel height to adjust to content */
+        margin-bottom: 15px; /* Space between stacked panels */
+    }
+    .strategy-panel-MOCKUP:last-child {
+        margin-bottom: 0;
+    }
+
+    .nav-panel-MOCKUP {
+        min-height: auto; /* Remove any desktop min-height */
+        max-height: none; /* Remove desktop max-height constraint if any, or set a mobile specific one e.g. 50vh */
+        /* overflow-y: auto; /* Already set */
+        padding: 12px;
+    }
+
+    .quest-display-panel-MOCKUP {
+        min-height: 60vh; /* Ensure it has some decent height when stacked */
+        overflow: visible; /* Allow its content to determine its height */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile breakpoint */
+    #guild-strategy-table-main-MOCKUP {
+        padding-top: 70px; /* Adjust if mobile header is shorter */
+    }
+    #guild-strategy-table-main-MOCKUP .strategy-table-grid-MOCKUP {
+        padding: 0 5px; /* Even less side padding */
+        gap: 10px;
+    }
+     .strategy-panel-MOCKUP {
+        padding: 10px;
+        border-radius: 6px;
+    }
+    .nav-panel-MOCKUP {
+        padding: 10px;
+    }
+}
