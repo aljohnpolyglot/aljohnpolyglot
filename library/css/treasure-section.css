@@ -1,0 +1,213 @@
+/* =============================================== */
+/* === Captain Aljohn's Cove Section - Stacked === */
+/* =============================================== */
+
+#aljohns-cove-section {
+    background-image: url('../images/assets/ocean_horizon_loop.gif'); /* Ensure path is correct */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: clamp(30px, 6vh, 50px) var(--page-padding, 20px);
+   
+    border-top: 4px solid var(--gold-trim, #c89b3c);
+    border-bottom: 4px solid var(--gold-trim, #c89b3c);
+    position: relative;
+    color: var(--text-color-on-dark-bg, #fff);
+    overflow: hidden;
+    /* Optional: Set a min-height for the whole section if you want to guarantee
+       a certain amount of the background image is always visible,
+       especially if Aljohn + bubble are sometimes very short. */
+     min-height: 80vh; 
+}
+#aljohns-cove-section::before { /* Readability overlay */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 20, 40, 0.45); 
+    z-index: 0;
+}
+
+#aljohns-cove-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Title and Subtitle Area --- */
+#aljohns-cove-section .section-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: clamp(20px, 3vh, 30px); /* Slightly reduced bottom margin */
+    text-align: center;
+}
+
+#aljohns-cove-section .section-title {
+    font-family: var(--title-font-pirate, 'Pirata One', cursive);
+    color: var(--gold-text-highlight, #f0e68c);
+    font-size: clamp(2rem, 5.5vw, 3rem); /* Slightly smaller max */
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    letter-spacing: 1px;
+}
+
+#aljohns-cove-section .section-subtitle {
+    font-family: var(--body-font, 'Merriweather', serif);
+    color: var(--light-parchment-text, #e0d6c2);
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    font-style: italic;
+    margin-top: 5px;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* --- Main Interaction Area (Stacked Layout) --- */
+/* This is #aljohn-interaction-area in your HTML, now with .cove-stacked-layout */
+.cove-stacked-layout {
+    display: flex;
+    flex-direction: column; /* This is the key for stacking Aljohn and dialogue */
+    align-items: center;    /* Center Aljohn's image and the dialogue block */
+    gap: 15px;              /* Space between Aljohn and his speech bubble */
+    max-width: 650px;       /* Max width of the entire interaction block */
+    margin: 0 auto;         /* Center the block on the page */
+}
+
+/* Container for Captain Aljohn's Image */
+/* Container for Captain Aljohn's Image */
+#aljohn-visual-container {
+    width: auto; /* Allow image to dictate its width based on its content */
+    display: flex; /* For centering if needed, but image will likely be width of its content */
+    justify-content: center;
+    position: relative; /* For z-index to ensure Aljohn is on top */
+    z-index: 10;        /* Aljohn image above speech bubble */
+    margin-bottom: -42px; /* <<<< KEY CHANGE: Pull Aljohn DOWN to overlap the bubble. Adjust this value! */
+                           /* This value depends on Aljohn's image height and how much overlap you want. */
+                           /* Positive value pushes bubble down, negative pulls Aljohn down. */
+}
+
+#aljohn-main-character-image {
+    max-width: 100%;
+    width: clamp(180px, 45vw, 320px); /* Adjust size - might be slightly smaller to look good with overlap */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(3px 5px 8px rgba(0,0,0,0.4));
+}
+
+/* Container for Dialogue and Actions */
+#aljohn-dialogue-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 28px; /* <<<< KEY CHANGE: Add padding to top of dialogue container */
+                        /* This creates space for Aljohn's overlapping bottom part. */
+                        /* Adjust this value along with margin-bottom on #aljohn-visual-container */
+    position: relative;
+    z-index: 5; /* Speech bubble below Aljohn */
+}
+/* Speech Bubble Styling */
+#aljohn-speech-bubble-area {
+    background-color: var(--parchment-bg-translucent, rgba(255, 250, 240, 0.93));
+    padding: 20px; 
+    /* Top padding will be effectively managed by the #aljohn-dialogue-text min-height 
+       and its own padding, plus the overlap.
+       If Aljohn's image significantly dips into the bubble, this might need adjusting:
+       padding-top: 12px; (your previous value)
+    */
+    border-radius: 18px; 
+    border: 3px solid var(--weathered-wood-dark, #5d4037);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    color: var(--text-color-darker, #263238);
+    margin: 0 auto;
+    text-align: center;
+    display: flex; /* Use flex to help manage internal heights */
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space if content is short */
+    min-height: 150px; /* <<< KEY CHANGE: Minimum height for the speech bubble area */
+                       /* Adjust this value based on your average/longest dialogue + hint/answer. */
+                       /* This helps prevent the bubble from shrinking too much for short texts. */
+}
+
+/* Speech bubble tail pointing UP towards Aljohn */
+#aljohn-speech-bubble-area::before,
+#aljohn-speech-bubble-area::after {
+    content: none; /* This removes the CSS triangle tails */
+}
+
+#aljohn-dialogue-text {
+    font-family: var(--body-font-pirate, 'IM Fell English SC', serif);
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    line-height: 1.55;
+    margin: 10px 0 10px 0; /* Add some bottom margin before hint/answer/actions */
+    color: var(--ink-black, #1a2327);
+    flex-grow: 1; /* Allow text to take up space if bubble is taller due to min-height */
+    /* To ensure text doesn't push things down too much with very long dialogues,
+       you might consider a max-height and overflow-y: auto here, but that
+       can look odd in a speech bubble. Better to keep dialogues concise. */
+}
+
+.cove-hint, .cove-answer {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    padding: 8px 12px; /* Consistent padding */
+    border-radius: var(--border-radius-small);
+    font-size: clamp(0.85em, 2vw, 0.95em); /* Consistent font size */
+    margin-top: 10px; /* Space above hint/answer */
+}
+#aljohn-cove-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto; /* Push actions to the bottom if bubble has extra space due to min-height */
+    padding-top: 15px; /* Space above buttons if dialogue is short */
+}
+/* .cove-button styles can remain largely the same as your previous version */
+.cove-button {
+    background-color: var(--pirate-red-button, #b71c1c);
+    color: var(--button-text-light, #fffde7);
+    font-family: var(--title-font-pirate, 'Pirata One', cursive);
+    font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+    padding: 10px 20px; /* Adjusted padding */
+    border: 2px solid var(--button-border-dark, #7f0000);
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.2px; /* Slightly less spacing */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 -2px 0px rgba(0,0,0,0.2);
+    transition: all 0.15s ease-out;
+}
+/* ... (hover, active, disabled styles for .cove-button as before) ... */
+
+
+/* --- Responsive Adjustments for Aljohn's Cove (Now less critical for stacking) --- */
+/* The layout is already stacked, so media queries are for fine-tuning sizes */
+@media (max-width: 600px) { /* Smaller mobile tweaks */
+  #aljohn-main-character-image {
+        width: clamp(160px, 55vw, 260px);
+    }
+    #aljohn-visual-container {
+        margin-bottom: -40px; /* Adjust overlap for smaller Aljohn */
+    }
+    #aljohn-dialogue-container {
+        padding-top: 20px; /* Adjust space for smaller Aljohn */
+    }
+    #aljohn-speech-bubble-area {
+        padding: 15px;
+        padding-top: 30px; /* Top padding inside bubble */
+    }
+    #aljohn-dialogue-text {
+        font-size: 0.9rem;
+    }
+    .cove-button {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+}

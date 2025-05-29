@@ -1,0 +1,204 @@
+/* =============================================== */
+/* === Story Learning Launchpad Section Styles === */
+/*           (Sunrise Over Azure Seas)             */
+/* =============================================== */
+
+#story-launchpad-section {
+    background-image: linear-gradient(
+        to bottom, 
+        var(--sunrise-gold-soft, #FFEBAD) 0%, 
+        var(--dawn-sky-blue, #ADD8E6) 60%, 
+        var(--morning-sea-blue, #6CA8D2) 100%
+    );
+    padding: clamp(30px, 6vh, 50px) var(--page-padding, 20px);
+    margin-top: 35px;
+    border-top: 3px solid var(--sunrise-orange-glow, #FFCC5C);
+    border-bottom: 3px solid var(--sunrise-orange-glow, #FFCC5C);
+    text-align: center;
+    position: relative; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Soft shadow for the section */
+}
+
+#story-launchpad-section .launchpad-title-container {
+    margin-bottom: clamp(25px, 4vh, 40px);
+}
+
+#story-launchpad-section .section-title { /* "Captain Aljohn's First Mates" */
+    color: var(--launchpad-text-dark, #2c506e);
+    font-family: var(--font-pirate-display, 'Pirata One', cursive);
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.6); /* Subtle light shadow */
+}
+
+#story-launchpad-section .launchpad-subtitle { /* Your anecdote */
+    color: var(--launchpad-text-dark, #3a698a); /* Slightly lighter than title */
+    font-family: var(--font-pirate-serif, 'IM Fell English SC', serif);
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    line-height: 1.65;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: var(--translucent-scroll-bg, rgba(240, 248, 255, 0.7)); /* Alice blue based, semi-transparent */
+    border-radius: var(--border-radius-main);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.story-carousel-wrapper {
+    position: relative;
+    max-width: 1100px; /* Max width for the carousel area */
+    margin: 20px auto 0; /* Top margin, centered */
+}
+
+.story-carousel-container { /* #olly-stories-carousel */
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: clamp(15px, 2.5vw, 25px); /* Responsive gap between books */
+    padding: 20px 10px; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    /* Give it some horizontal padding if arrows are outside, or rely on wrapper padding */
+    /* padding-left: 40px; */
+    /* padding-right: 40px; */
+}
+.story-carousel-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.story-book-item { 
+    flex: 0 0 auto; 
+    width: 120px; /* Slightly smaller for more to fit, adjust as needed */
+    text-align: center;
+    text-decoration: none; 
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+    scroll-snap-align: center; 
+    display: flex; /* To stack cover and language info */
+    flex-direction: column;
+    align-items: center;
+}
+.story-book-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(44, 80, 110, 0.2); /* Shadow using a palette color */
+}
+
+.story-book-item .story-cover-img {
+    width: 100%; 
+    height: 180px; /* For a ~2:3 aspect ratio with 120px width */
+    object-fit: cover; 
+    border-radius: var(--border-radius-main);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+    margin-bottom: 10px; /* Space between cover and lang info */
+    border: 2px solid var(--pirate-text-light, #fff); /* White frame */
+}
+
+.story-book-item .story-language-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--launchpad-text-dark, #2c506e);
+    font-family: var(--font-pirate-sans);
+    padding: 3px 6px;
+    background-color: rgba(var(--sunrise-gold-soft-rgb), 0.4); /* Subtle gold backing */
+    border-radius: 3px;
+}
+.story-book-item .story-language-info .flag-icon { 
+    width: 16px; 
+    height: auto;
+    border-radius: 2px;
+}
+
+/* Carousel Navigation Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%; /* Center vertically relative to carousel items */
+    transform: translateY(-100%); /* Adjust based on button and item height - this centers on the item row */
+    background-color: var(--sunrise-orange-glow, #FFCC5C);
+    color: var(--launchpad-text-dark, #2c506e);
+    border: 2px solid var(--launchpad-text-dark, #2c506e);
+    font-size: 1.5rem; /* Size of arrow icon */
+    width: 40px; /* Button width */
+    height: 40px; /* Button height */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    display: flex; /* For centering icon inside button */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.carousel-arrow:hover {
+    background-color: var(--launchpad-text-dark, #2c506e);
+    color: var(--sunrise-orange-glow, #FFCC5C);
+    transform: translateY(-100%) scale(1.1);
+}
+.carousel-arrow.prev {
+    left: -15px; /* Position slightly outside/overlapping the wrapper */
+}
+.carousel-arrow.next {
+    right: -15px; /* Position slightly outside/overlapping the wrapper */
+}
+.carousel-arrow:disabled { 
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-100%); /* Keep transform for alignment */
+}
+
+/* Responsive for Story Launchpad */
+@media (max-width: 767px) {
+    #story-launchpad-section .section-title {
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    }
+    #story-launchpad-section .launchpad-subtitle {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        padding: 10px;
+    }
+    .story-carousel-wrapper {
+        /* Allow arrows to be closer or on top on mobile */
+    }
+    .story-carousel-container {
+        padding: 15px 5px; /* Less padding inside scroll */
+        gap: 12px;
+    }
+    .story-book-item {
+        width: 100px; 
+    }
+    .story-book-item .story-cover-img {
+        height: 150px; 
+    }
+    .story-book-item .story-language-info {
+        font-size: 0.7rem;
+    }
+    .carousel-arrow {
+        font-size: 1.3rem;
+        width: 35px;
+        height: 35px;
+        /* Bring arrows more onto the content area on mobile */
+        transform: translateY(-80%); /* Re-adjust vertical centering for smaller items */
+    }
+    .carousel-arrow.prev { left: 5px; }
+    .carousel-arrow.next { right: 5px; }
+}
+
+@media (max-width: 480px) {
+    .story-carousel-container {
+        gap: 10px;
+    }
+    .story-book-item {
+        width: 90px;
+    }
+    .story-book-item .story-cover-img {
+        height: 135px;
+    }
+     .carousel-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+}

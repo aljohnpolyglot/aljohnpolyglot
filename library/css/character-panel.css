@@ -1,0 +1,251 @@
+/* Character Panel Sidebar Styles */
+#character-info {
+    display: flex;
+    flex-direction: column; /* Stack portrait and name-line vertically */
+    align-items: center;    /* Center items horizontally */
+    margin-bottom: 15px;
+    text-align: center;     /* Center text within this block */
+}
+
+#character-portrait-img {
+    width: 200px; /* Make portrait larger */
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-accent-color); /* Thicker border */
+    object-fit: cover;
+    margin-bottom: 10px; /* Space between portrait and name line */
+    cursor: pointer; /* For modal click */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a subtle shadow */
+}
+#character-portrait-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+#character-name-line {
+    display: flex;        /* Align flag and name in a row */
+    align-items: center;  /* Vertically center flag and name */
+    justify-content: center; /* Horizontally center the flag+name group if needed */
+    gap: 8px;             /* Space between flag and name */
+}
+
+/* Style for the flag in the sidebar, prepended to #character-name-line */
+#character-name-line > .character-flag-icon { 
+    width: 24px; 
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    /* No 'order' needed here as it's naturally first due to prepend */
+}
+
+#character-name-display { /* The H3 for the name */
+    font-size: 1.4em; /* Adjust size as needed */
+    color: var(--primary-accent-color);
+    margin: 0; /* Remove default margins */
+    font-weight: bold;
+    font-family: var(--title-font); /* Use title font for name */
+}
+#chatbot-interface {
+    /* Styles for the chat area */
+}
+
+#chat-log-display {
+    height: 250px; /* Or make it expandable */
+    overflow-y: auto;
+    border: 1px solid var(--weathered-wood-light);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255,255,255,0.7); /* Slightly see-through */
+    font-size: 0.9rem;
+}
+
+.chat-message {
+    padding: 8px 10px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.chat-message.character {
+    background-color: var(--ocean-blue-medium);
+    color: var(--highlight-text);
+    align-self: flex-start; /* Not strictly needed in block display but good for concept */
+    margin-right: auto; /* Push to left */
+    border-bottom-left-radius: 3px;
+}
+
+.chat-message.user {
+    background-color: var(--weathered-wood-light);
+    color: var(--highlight-text);
+    align-self: flex-end;
+    margin-left: auto; /* Push to right */
+    border-bottom-right-radius: 3px;
+}
+
+#chat-input-container {
+    display: flex;
+    gap: 8px;
+}
+
+#user-chat-input-field {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--weathered-wood-light);
+    border-radius: 20px; /* Pill shape input */
+    font-size: 0.9rem;
+}
+#user-chat-input-field:focus {
+    outline: none;
+    border-color: var(--gold-trim);
+}
+
+#send-chat-message-btn {
+    padding: 10px 15px; /* Adjust for icon button */
+    border-radius: 50%; /* Circular button */
+    font-size: 1rem;
+}
+
+.api-note {
+    font-size: 0.8rem;
+    color: var(--weathered-wood-dark);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* css/character-panel.css or similar */
+
+/* ... existing character panel styles ... */
+
+#character-info {
+    display: flex; /* For flag and name alignment */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Space between flag, image, and name */
+    margin-bottom: 15px;
+    text-align: left; /* Align text to the left for the block */
+}
+
+#character-portrait-img {
+    width: 80px; /* Adjust as needed */
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-accent-color);
+    object-fit: cover;
+    cursor: pointer; /* Indicate it's clickable for modal */
+    transition: transform 0.2s ease-in-out;
+}
+#character-portrait-img:hover {
+    transform: scale(1.1);
+}
+
+
+#character-name-container { /* New container for flag and name */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between flag and name */
+}
+
+#character-name-display {
+    font-size: 1.4em;
+    color: var(--primary-accent-color);
+    margin: 0; /* Remove default margins if any */
+}
+
+.character-flag-icon { /* Style for the flag next to the name */
+    width: 24px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+
+/* Character Bio Modal Styles */
+.character-modal-content {
+    max-width: 1200px; /* Slightly wider for bigger image */
+    min-height: 300px;
+}
+
+.modal-character-layout {
+    display: flex;
+    gap: 20px;
+    padding: 0px;
+}
+
+.modal-character-portrait-container {
+    flex-shrink: 0;
+}
+
+#modal-character-full-img {
+    width: 250px; /* Made image bigger */
+    height: auto;
+    max-height: 350px; /* Adjust max height */
+    object-fit: contain; /* Or cover, depending on image aspect ratios */
+    border: 3px solid var(--secondary-color);
+    border-radius: 5px;
+}
+.modal-character-details-container {
+    flex-grow: 1;
+    text-align: left;
+    
+}
+
+#modal-character-name-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between flag and name */
+    margin-bottom: 5px; /* Space below name block */
+    
+}
+#modal-character-name { /* The H2 for the name itself */
+    font-family: var(--title-font);
+    color: var(--primary-accent-color);
+    font-size: 2.2em; /* Slightly larger */
+    margin-top: 0;
+    margin-bottom: 0; /* Handled by container gap */
+}
+.character-modal-flag-icon { /* Style for the flag in the modal */
+    width: 28px; /* Slightly larger flag in modal */
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.modal-character-title-text {
+    font-style: italic;
+    color: var(--text-color-dark);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.modal-bio-scroll {
+    max-height: 150px; /* Adjust */
+    overflow-y: auto;
+    padding-right: 10px; /* For scrollbar */
+    margin-bottom: 20px;
+    border-left: 2px solid var(--secondary-accent-color-translucent);
+    padding-left: 0px;
+    
+}
+
+#modal-character-bio-long {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--text-color-medium);
+    text-align: justify;
+}
+#modal-character-quotes-section {
+    display: none !important; /* Ensure it's hidden */
+}
+
+/* Ensure modal overlay styles from modal.css are generic enough */
+/* If not, you might need to copy/adjust them or make them more general */
+.modal-overlay {
+    /* ... (ensure position, display, background etc. are set from your modal.css) ... */
+}
+.modal-content-box {
+    /* ... (ensure position, background, padding, border-radius etc. are set from your modal.css) ... */
+}
+.close-modal-button {
+    /* ... (ensure styling from your modal.css) ... */
+}

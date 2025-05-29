@@ -1,0 +1,57 @@
+/* Filters Sidebar Styles */
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--weathered-wood-dark);
+    margin-bottom: 8px;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 1px solid var(--weathered-wood-light);
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--ink-black);
+    cursor: pointer;
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8860B'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1.2em;
+}
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--gold-trim);
+    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.3);
+}
+
+#reset-filters-btn {
+    width: 100%;
+    margin-top: 15px;
+    background-color: var(--danger-red);
+    border-color: var(--weathered-wood-dark);
+}
+#reset-filters-btn:hover {
+    background-color: var(--weathered-wood-dark);
+    border-color: var(--danger-red);
+}
+
+/* Styling for language options with flags (requires JS to add spans/imgs) */
+.language-option-with-flag {
+    display: flex;
+    align-items: center;
+}
+.language-option-with-flag img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+}

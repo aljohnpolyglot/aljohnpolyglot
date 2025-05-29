@@ -1,0 +1,112 @@
+/* Book Card Styles ("The Cargo") */
+.book-card {
+    background-color: #fff;
+    border: 2px solid var(--weathered-wood-light);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    cursor: pointer; /* Indicates it's clickable for modal */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes buttons to bottom */
+    min-height: 320px; /* Ensure a consistent minimum height */
+}
+
+.book-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 5px 8px 15px rgba(0,0,0,0.25);
+    border-color: var(--gold-trim);
+}
+
+.book-cover-container {
+    width: 100%;
+    height: 200px; /* Fixed height for cover images */
+    margin-bottom: 10px;
+    overflow: hidden; /* Ensure images don't break layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Fallback for missing images */
+}
+
+.book-cover-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Scales image while maintaining aspect ratio */
+    border: 1px solid #eee;
+}
+
+.book-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--ocean-blue-deep);
+    margin-bottom: 5px;
+    min-height: 40px; /* Space for two lines of title */
+    display: -webkit-box; /* For ellipsis */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-language-display {
+    font-size: 0.9rem;
+    color: var(--ocean-blue-medium);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book-language-display img.flag-icon {
+    width: 20px;
+    height: auto;
+    margin-right: 6px;
+    border: 1px solid #ddd;
+}
+
+.book-genre-eyebrow {
+    font-size: 0.8rem;
+    color: var(--weathered-wood-dark);
+    background-color: rgba(184, 134, 11, 0.15); /* Faded gold */
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.book-actions {
+    margin-top: auto; /* Pushes to the bottom */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.book-actions .download-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    border-width: 2px;
+}
+.book-actions .download-btn i { margin-right: 5px; }
+/* css/book-card.css */
+.book-cefr-level {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border-radius: var(--border-radius-small);
+    margin-top: 5px;
+    text-transform: uppercase;
+    color: white; /* Default text color */
+}
+
+/* Example CEFR colors - customize as you like */
+.cefr-a1 { background-color: #4CAF50; /* Green */ }
+.cefr-a2 { background-color: #8BC34A; /* Light Green */ }
+.cefr-b1 { background-color: #FFC107; /* Amber */ }
+.cefr-b2 { background-color: #FF9800; /* Orange */ }
+.cefr-c1 { background-color: #F44336; /* Red */ }
+.cefr-c2 { background-color: #B71C1C; /* Dark Red */ }

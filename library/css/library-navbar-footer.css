@@ -1,0 +1,484 @@
+/* =============================================== */
+/* === Aljohn Polyglot Library - Navbar & Footer === */
+/* =============================================== */
+
+/* --- CSS Variables (Aljohn Polyglot Library Theme) --- */
+:root {
+    /* Core Palette - Pirate/Nautical */
+    --pirate-deep-sea-blue: #1a2b3c; /* Dark, rich blue for navbar/footer BG */
+    --pirate-deep-sea-blue-rgb: 26, 43, 60;
+    --pirate-navbar-bg-scrolled: rgba(26, 43, 60, 0.95); /* Slightly transparent on scroll */
+    
+    --pirate-text-light: #e8e8e0; /* Off-white, like aged sailcloth or light parchment */
+    --pirate-text-light-rgb: 232, 232, 224;
+
+    --pirate-gold-accent: #f1c40f;  /* Bright, distinct gold */
+    --pirate-gold-accent-rgb: 241, 196, 15;
+    --pirate-gold-darker: #c09808; /* Aged/tarnished gold */
+    
+    --pirate-red-highlight: #e74c3c; /* A classic pirate red for CTAs or accents */
+    --pirate-red-deep: #c0392b;
+
+    --pirate-wood-medium: #6d4c41; /* Weathered wood brown for accents */
+    --pirate-wood-dark: #3e2723;
+
+    /* Surfaces */
+    --parchment-dropdown-bg: #fdf5e6; /* Light parchment for dropdowns */
+    --ink-on-parchment: #4a3b30;     /* Dark brown text for use on parchment */
+
+    /* Typography */
+    --font-pirate-display: 'Pirata One', cursive; /* Main thematic display font */
+    --font-pirate-serif: 'IM Fell English SC', serif; /* Thematic serif for some text */
+    --font-pirate-sans: 'Merriweather Sans', sans-serif; /* Readable sans-serif for body/nav */
+
+    /* UI Elements */
+    --page-padding: clamp(15px, 3vw, 25px); /* Responsive page padding */
+    --border-radius-main: 5px; /* Consistent border radius */
+    --navbar-height: 65px; /* Standard navbar height */
+}
+
+/* --- General Body Preparation (if not in global.css) --- */
+body {
+    padding-top: var(--navbar-height); /* Prevent content from hiding behind fixed navbar */
+}
+
+/* --- Header & Navigation (Fixed Navbar) --- */
+/* Targeting the header from navbar.html, assuming it's injected into #main-header-placeholder or similar */
+header#page-header, /* If your loader puts it into an element with this ID */
+body > header:first-of-type { /* More general: targets the first header direct child of body */
+    background-color: var(--pirate-deep-sea-blue);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Stronger, thematic shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 2px solid var(--pirate-gold-darker);
+}
+
+header#page-header.scrolled,
+body > header:first-of-type.scrolled {
+    background-color: var(--pirate-navbar-bg-scrolled);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+header#page-header nav.container,
+body > header:first-of-type nav.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--page-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--navbar-height);
+    box-sizing: border-box;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img { /* From navbar.html and footer.html */
+    height: 42px; /* Slightly larger */
+    width: 42px;
+    border-radius: 50%; /* Circular for a "coin" or "medallion" feel */
+    margin-right: 12px;
+    border: 2px solid var(--pirate-gold-accent);
+    background-color: var(--pirate-deep-sea-blue); /* Ensure contrast if image is transparent */
+    padding: 2px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.4), 0 1px 2px rgba(var(--pirate-gold-accent-rgb),0.3);
+    object-fit: cover; 
+}
+
+header#page-header .logo-text, /* From navbar.html */
+body > header:first-of-type .logo-text {
+    font-family: var(--font-pirate-display);
+    font-size: 25px; /* Responsive */
+    font-weight: 400; /* Pirata One handles its own weight */
+    color: var(--pirate-gold-accent);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.7), /* Sharper shadow */
+                 0 0 8px rgba(var(--pirate-gold-accent-rgb),0.4); /* Gold glow */
+    letter-spacing: 0.5px;
+}
+
+ul.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: clamp(18px, 2.2vw, 28px);
+}
+
+ul.nav-links a,
+ul.nav-links .dropbtn {
+    text-decoration: none;
+    color: var(--pirate-text-light);
+    font-family: var(--font-pirate-sans);
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.7vw, 0.9rem);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    position: relative;
+    padding: 6px 4px 8px 4px; /* Adjust padding for underline */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px; /* Slightly more spacing for uppercase */
+}
+ul.nav-links .dropbtn i.fas.fa-caret-down {
+    font-size: 0.75em;
+    margin-left: 5px;
+    transition: transform 0.25s ease-out;
+}
+
+/* Underline effect */
+ul.nav-links a::after,
+ul.nav-links .dropbtn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--pirate-gold-accent);
+    transition: width 0.25s ease-out;
+    box-shadow: 0 0 4px rgba(var(--pirate-gold-accent-rgb), 0.5);
+}
+
+ul.nav-links a:hover,
+ul.nav-links a.active-link, /* Add .active-link class via JS for current page */
+ul.nav-links li.dropdown:hover .dropbtn,
+ul.nav-links .dropbtn:focus {
+    color: var(--pirate-gold-accent);
+    text-shadow: 0 0 6px rgba(var(--pirate-gold-accent-rgb), 0.7);
+}
+
+ul.nav-links a:hover::after,
+ul.nav-links a.active-link::after,
+ul.nav-links li.dropdown:hover .dropbtn::after,
+ul.nav-links .dropbtn:focus::after {
+    width: 100%;
+}
+
+/* CTA Button "YouTube Channel" */
+.nav-cta {
+    background-color: var(--pirate-red-highlight);
+    color: var(--pirate-text-light) !important;
+    padding: 8px 18px !important;
+    border-radius: var(--border-radius-main);
+    font-family: var(--font-pirate-display);
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 -2px 1px rgba(0,0,0,0.25);
+    border: 1px solid var(--pirate-red-deep);
+    line-height: normal;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.nav-cta:hover {
+    background-color: var(--pirate-red-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.35), inset 0 -1px 1px rgba(0,0,0,0.2);
+    color: var(--pirate-text-light) !important;
+}
+.nav-cta::after { display: none !important; }
+
+/* Hamburger Menu Toggle */
+.menu-toggle { display: none; cursor: pointer; background: none; border: none; padding: 10px; }
+.hamburger { width: 28px; height: 3px; background-color: var(--pirate-text-light); position: relative; transition: all 0.3s ease-in-out; border-radius: 1px; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 28px; height: 3px; background-color: var(--pirate-text-light); transition: all 0.3s ease-in-out; border-radius: 1px; left: 0; }
+.hamburger::before { transform: translateY(-8px); } /* Adjusted spacing */
+.hamburger::after { transform: translateY(8px); }
+
+/* --- Dropdown Menu Styling --- */
+ul.nav-links li.dropdown { position: relative; }
+ul.nav-links li.dropdown:hover .dropbtn i.fas.fa-caret-down,
+ul.nav-links li.dropdown .dropbtn.active-dropdown i.fas.fa-caret-down {
+    transform: rotate(180deg); 
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: var(--parchment-dropdown-bg); 
+    min-width: 190px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+    z-index: 1001; 
+    border-radius: 0 0 var(--border-radius-main) var(--border-radius-main);
+    border: 1px solid var(--pirate-gold-darker);
+    border-top: 3px solid var(--pirate-gold-accent); /* Gold accent on top of dropdown */
+    top: 100%; /* Align with bottom of parent */
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px); 
+    transform-origin: top center;
+    animation: slideDownFadeInDropdown 0.25s ease-out forwards;
+    padding: 8px 0;
+}
+/* Keep your @keyframes fadeInDropdown or use this one: */
+@keyframes slideDownFadeInDropdown { 
+    from { opacity: 0; transform: translateX(-50%) translateY(0px); } /* Start from slight offset */
+    to { opacity: 1; transform: translateX(-50%) translateY(0); } 
+}
+
+ul.nav-links li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--ink-on-parchment);
+    padding: 9px 16px; 
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+    font-family: var(--font-pirate-sans);
+    font-weight: 500;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+    width: 100%;
+    text-transform: none; 
+    letter-spacing: normal;
+}
+.dropdown-content a::after { display:none; }
+.dropdown-content a:hover { 
+    color: var(--pirate-red-accent); 
+    background-color: rgba(var(--pirate-gold-accent-rgb), 0.08);
+}
+.dropdown-content a.active-link { /* Style for active link within dropdown */
+    color: var(--pirate-red-accent); 
+    font-weight: 700; 
+    background-color: rgba(var(--pirate-gold-accent-rgb), 0.12); 
+}
+
+/* --- Responsive Navbar (Mobile) --- */
+@media (max-width: 992px) { /* Wider breakpoint for navbar switch for more complex navs */
+    header#page-header nav.container { height: 60px; padding: 0 15px; }
+    ul.nav-links {
+        display: none; flex-direction: column; width: 100%;
+        position: absolute; top: 60px; left: 0;
+        background-color: var(--pirate-deep-sea-blue); /* Match header */
+        box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+        padding-bottom: 1rem;
+        border-top: 2px solid var(--pirate-gold-darker);
+        gap: 0; 
+    }
+    ul.nav-links.active { display: flex; }
+    ul.nav-links li { margin: 0; width: 100%; text-align: left; }
+    ul.nav-links a, ul.nav-links .dropbtn { 
+        display: flex; 
+        justify-content: space-between;
+        padding: 0.9rem 1.5rem; 
+        border-bottom: 1px solid rgba(var(--pirate-text-light-rgb), 0.1);
+        color: var(--pirate-text-light); 
+        font-size: 0.95rem; 
+    }
+    ul.nav-links li:last-child > a, /* Target direct link or dropbtn in last li */
+    ul.nav-links li:last-child > .dropbtn { 
+        border-bottom: none; 
+    }
+    ul.nav-links a:hover::after, ul.nav-links a.active-link::after,
+    ul.nav-links .dropbtn:hover::after, ul.nav-links .dropbtn.active-link::after { width: 0; }
+    
+    ul.nav-links a:hover, ul.nav-links .dropbtn:hover { 
+        background-color: rgba(var(--pirate-gold-accent-rgb), 0.08); 
+        color: var(--pirate-gold-accent); 
+    }
+    .nav-cta { margin: 1rem 1.5rem; display: block; text-align: center; padding: 10px 18px !important; }
+    .menu-toggle { display: flex; align-items: center; justify-content: center; }
+    
+    .menu-toggle.active .hamburger { background-color: transparent; }
+    .menu-toggle.active .hamburger::before { transform: rotate(45deg) translateY(0px) translateX(0px); }
+    .menu-toggle.active .hamburger::after { transform: rotate(-45deg) translateY(0px) translateX(0px); }
+
+    .dropdown-content {
+        position: static; 
+        box-shadow: none; 
+        border-radius: 0;
+        background-color: rgba(0,0,0,0.25); /* Slightly darker indent */
+        border: none;
+        border-top: 1px solid rgba(var(--pirate-text-light-rgb), 0.1);
+        padding: 0; 
+        min-width: 100%;
+        transform: none; 
+        animation: none; 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out; opacity: 0;
+    }
+    .dropdown-content.show-mobile { opacity: 1; /* max-height set by JS */ }
+    .dropdown-content a { 
+        padding: 0.8rem 2.2rem; /* Further indent */
+        text-align: left; 
+        border-bottom: 1px solid rgba(var(--pirate-text-light-rgb), 0.08); 
+        color: var(--pirate-text-light); 
+        font-size: 0.85rem;
+    }
+    .dropdown-content a:hover { background-color: rgba(var(--pirate-gold-accent-rgb), 0.1); }
+    .dropdown-content a:last-child { border-bottom: none; }
+    ul.nav-links li.dropdown.mobile-dropdown-open .dropbtn i.fas.fa-caret-down { transform: rotate(-180deg); }
+}
+
+
+/* --- Footer Styling (Aljohn Polyglot Library Theme) --- */
+
+/* Target the footer element that is INSIDE #main-footer-placeholder */
+/* --- Footer Styling (Aljohn Polyglot Library Theme) --- */
+/* --- Footer Styling (Aljohn Polyglot Library Theme) --- */
+/* --- Footer Styling --- */
+/* Targeting the OUTER footer from index.html to set up the space */
+footer#page-footer {
+    /* This outer footer doesn't need much styling itself if the inner one has it all,
+       but it's good to ensure it behaves as a block. */
+    display: block; 
+}
+
+/* Targeting the INJECTED footer (the one with actual content) */
+footer#page-footer > footer {
+  background-color: var(--pirate-footer-bg, #1c2833);
+    color: var(--pirate-footer-text, #a3b1bd);
+    padding: clamp(35px, 5vh, 50px) 0 clamp(18px, 2.5vh, 25px); 
+    font-size: 0.8rem; 
+    font-family: var(--font-pirate-sans, 'Merriweather Sans', sans-serif);
+    line-height: 1.6; 
+    border-top: 4px solid var(--pirate-gold-darker, #c07900);
+    box-shadow: inset 0 6px 12px rgba(0,0,0,0.35);
+}
+
+footer#page-footer > footer .container {
+ max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--page-padding, 20px);
+    padding-right: var(--page-padding, 20px);
+    /* Ensure container itself doesn't have flex properties interfering with children's text-align */
+}
+
+footer#page-footer > footer .footer-content {
+   display: flex;
+    justify-content: space-between; /* This distributes space between logo, nav, social */
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px 15px; 
+    margin-bottom: 25px; /* Space before footer-bottom */
+}
+
+footer#page-footer > footer .footer-logo {
+ display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--pirate-gold-accent, #f1c40f);
+    margin-bottom: 0; 
+    /* flex-grow: 1; /* Optional: allow logo block to take some space */
+    /* min-width: 180px; /* Ensure it doesn't get too squished *//
+}
+
+footer#page-footer > footer .footer-logo .logo-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--pirate-gold-accent, #f1c40f);
+    padding: 1px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+    /* object-fit: cover; /* Already in your global .logo-img presumably */
+}
+
+footer#page-footer > footer .footer-logo span {
+    font-family: var(--font-pirate-display, 'Pirata One', cursive);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-left: 8px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+footer#page-footer > footer nav.footer-links {
+  list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the links themselves if they wrap */
+    gap: 6px 18px;
+}
+
+footer#page-footer > footer nav.footer-links a {
+    color: var(--pirate-footer-text, #a3b1bd);
+    text-decoration: none;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+    padding: 2px 0;
+    font-size: 0.75rem;
+}
+
+footer#page-footer > footer nav.footer-links a:hover {
+    color: var(--pirate-footer-link-hover, var(--pirate-gold-accent, #f1c40f));
+    text-shadow: 0 0 3px rgba(var(--pirate-gold-accent-rgb, 241, 196, 15), 0.4);
+}
+
+footer#page-footer > footer .social-links {
+   display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align social links to the right by default */
+    /* flex-grow: 1; /* Optional: allow social links block to take some space */
+    /* min-width: 130px; */ 
+}
+
+footer#page-footer > footer .social-links a {
+    display: inline-block;
+    color: var(--pirate-footer-text, #a3b1bd);
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-left: 12px;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+footer#page-footer > footer .social-links a:first-child { margin-left: 0; }
+
+footer#page-footer > footer .social-links a:hover {
+    color: var(--pirate-footer-link-hover, var(--pirate-gold-accent, #f1c40f));
+    transform: translateY(-1px) scale(1.05);
+}
+
+footer#page-footer > footer .footer-bottom {
+  width: 100%; /* Ensure it takes full width of its parent (.container) */
+    text-align: center; /* Center the text within this block */
+    padding-top: 20px;
+    margin-top: 20px; 
+    border-top: 1px solid rgba(var(--pirate-gold-accent-rgb, 241, 196, 15), 0.15); 
+    font-size: 0.75em; /* Slightly larger for readability */
+    color: var(--pirate-footer-text, #a3b1bd);
+    opacity: 0.8; /* Slightly more visible */
+}
+
+footer#page-footer > footer .footer-bottom p { margin: 3px 0 0; }
+
+
+/* Responsive Footer */
+@media (max-width: 800px) {
+    footer#page-footer > footer .footer-content {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        gap: 15px;
+    }
+
+    footer#page-footer > footer .footer-logo,
+    footer#page-footer > footer nav.footer-links,
+    footer#page-footer > footer .social-links {
+        justify-content: center;
+        width: 100%; 
+        margin-bottom: 15px; 
+    }
+
+    footer#page-footer > footer nav.footer-links {
+        gap: 5px 10px; 
+    }
+
+    footer#page-footer > footer .social-links a { margin: 0 10px; }
+}

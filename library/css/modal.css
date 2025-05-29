@@ -1,0 +1,172 @@
+/* Book Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Dark semi-transparent overlay */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content-box {
+    background-color: var(--parchment-bg);
+    /* background-image: var(--texture-parchment); Optional */
+    padding: 30px;
+    border-radius: 10px;
+    border: 5px solid var(--gold-trim);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 900px;
+    width: 90%;
+    position: relative; /* For close button positioning */
+    max-height: 90vh; /* Limit height */
+    display: flex; /* To allow modal-book-layout to control internal layout */
+    flex-direction: column; /* Stacks header, content, footer if any */
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--weathered-wood-dark);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+.close-modal-button:hover {
+    color: var(--danger-red);
+}
+
+.modal-book-layout {
+    display: flex;
+    gap: 30px;
+    overflow-y: auto; /* Scroll internal content if it overflows the modal box */
+    flex-grow: 1; /* Allows this section to take available space */
+}
+
+.modal-cover-container {
+    flex: 0 0 250px; /* Fixed width for cover */
+    text-align: center;
+}
+#modal-book-cover-img {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    border: 2px solid var(--weathered-wood-light);
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.modal-details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-book-title-text {
+    font-family: var(--font-headings);
+    font-size: 2.2rem;
+    color: var(--ocean-blue-deep);
+    margin-bottom: 5px;
+}
+
+.modal-genre-eyebrow-text {
+    font-size: 0.9rem;
+    color: var(--weathered-wood-dark);
+    background-color: rgba(184, 134, 11, 0.15);
+    padding: 3px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#modal-book-language-display {
+    font-size: 1rem;
+    color: var(--ocean-blue-medium);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+#modal-book-language-display img.flag-icon {
+    width: 22px;
+    height: auto;
+    margin-right: 8px;
+    border: 1px solid #ddd;
+}
+
+.modal-description-scroll {
+    max-height: 200px; /* Limit description height, make it scrollable */
+    overflow-y: auto;
+    padding-right: 10px; /* For scrollbar */
+    margin-bottom: 15px;
+    border: 1px solid rgba(160, 82, 45, 0.2); /* Faint border */
+    padding: 10px;
+    border-radius: 4px;
+}
+#modal-book-description-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ink-black);
+}
+
+#aljohns-notes-modal-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed var(--weathered-wood-light);
+}
+#aljohns-notes-modal-section h4 {
+    font-family: var(--font-display);
+    color: var(--ocean-blue-deep);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+#modal-aljohns-notes-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--weathered-wood-dark);
+    background-color: rgba(253, 245, 230, 0.4); /* Faint parchment */
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 50px; /* Space for notes */
+}
+
+.modal-download-actions {
+    margin-top: auto; /* Pushes buttons to bottom of details container */
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.modal-download-actions .download-btn {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .modal-book-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-cover-container {
+        flex-basis: auto; /* Reset flex basis */
+        margin-bottom: 20px;
+    }
+    #modal-book-cover-img {
+        max-height: 280px;
+    }
+    .modal-description-scroll {
+        max-height: 150px;
+    }
+}
