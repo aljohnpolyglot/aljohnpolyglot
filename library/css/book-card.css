@@ -1,112 +1,173 @@
-/* Book Card Styles ("The Cargo") */
+/* =============================================== */
+/* === Book Card Styles (Main Library Grid)    === */
+/* =============================================== */
+
 .book-card {
-    background-color: #fff;
-    border: 2px solid var(--weathered-wood-light);
-    border-radius: 6px;
+    background-color: var(--parchment-bg, #fdf5e6);
+    border: 1px solid var(--gold-trim, #B8860B);
+    border-radius: var(--border-radius-main, 6px);
     padding: 15px;
-    text-align: center;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-    cursor: pointer; /* Indicates it's clickable for modal */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes buttons to bottom */
-    min-height: 320px; /* Ensure a consistent minimum height */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    min-height: 360px; /* Adjust to fit content without CEFR */
+    cursor: pointer;
+    position: relative; /* Keep for any general card-level absolute elements if needed */
 }
 
 .book-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 5px 8px 15px rgba(0,0,0,0.25);
-    border-color: var(--gold-trim);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .book-cover-container {
     width: 100%;
-    height: 200px; /* Fixed height for cover images */
-    margin-bottom: 10px;
-    overflow: hidden; /* Ensure images don't break layout */
+    /* Height should be proportional to typical book covers, e.g., 3:2 or 4:3 with width */
+    /* Let's try a fixed height and object-fit on the image */
+    height: 200px; /* Adjust this based on your cover image aspect ratios */
+    margin-bottom: 12px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Fallback for missing images */
+    justify-content: center;
+    overflow: hidden; /* In case object-fit:cover crops */
+    background-color: var(--weathered-wood-light, #f0f0f0); /* Fallback if image is transparent or fails */
+    position: relative; /* <<<< ESSENTIAL for positioning the flag INSIDE it */
+    border-radius: 2px; /* Optional slight rounding for the container */
+}
+
+/* --- NEW: Flag Icon ON THE BOOK COVER --- */
+.card-cover-flag-icon {
+    position: absolute;
+    top: 5px;    /* Position from the top edge of the cover-container */
+    left: 5px;   /* Position from the left edge of the cover-container */
+    width: 24px; /* Slightly larger than w20 for better visibility */
+    height: auto;
+    z-index: 10; /* Ensure it's on top of the book-cover-img */
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5); /* Crisper shadow */
+    border: 1px solid rgba(255,255,255,0.5); /* Optional light border for definition */
 }
 
 .book-cover-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Scales image while maintaining aspect ratio */
-    border: 1px solid #eee;
+    width: auto;   /* Let height control and maintain aspect ratio */
+    height: 100%;  /* Fill the container's height */
+    max-width: 100%; /* Don't overflow if image is wider than container */
+    object-fit: contain; /* Ensures entire cover is visible, letterboxed if needed */
+    display: block;
 }
 
 .book-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    color: var(--ocean-blue-deep);
-    margin-bottom: 5px;
-    min-height: 40px; /* Space for two lines of title */
-    display: -webkit-box; /* For ellipsis */
-    -webkit-line-clamp: 2;
+    font-family: var(--font-headings, 'Pirata One', cursive);
+    font-size: 1.1rem; /* Adjust as needed */
+    color: var(--ocean-blue-deep, #00425A);
+    margin: 8px 0 4px 0;
+    line-height: 1.25;
+    /* Allow for multiple lines, but not too many */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.5em; /* Reserve space for up to 2 lines */
 }
 
-.book-language-display {
-    font-size: 0.9rem;
-    color: var(--ocean-blue-medium);
+.book-author-card {
+    font-family: var(--font-body, 'Merriweather', serif);
+    font-size: 0.8rem;
+    color: var(--ink-black, #2c2c2c);
     margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.book-language-display img.flag-icon {
-    width: 20px;
-    height: auto;
-    margin-right: 6px;
-    border: 1px solid #ddd;
+    line-height: 1.3;
+    opacity: 0.8;
 }
 
 .book-genre-eyebrow {
-    font-size: 0.8rem;
-    color: var(--weathered-wood-dark);
-    background-color: rgba(184, 134, 11, 0.15); /* Faded gold */
-    padding: 3px 8px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-bottom: 10px;
+    font-size: 0.7rem;
+    font-family: var(--font-display, 'IM Fell English SC', serif);
+    color: var(--ocean-blue-medium, #1F8A70);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    padding: 3px 6px;
+    background-color: rgba(var(--ocean-blue-medium-rgb, 31, 138, 112), 0.1); /* Use RGB variable if defined */
+    border-radius: var(--border-radius-main);
+    margin-bottom: 10px;
+    display: inline-block; /* So background only covers text */
 }
 
+/* CEFR level display is REMOVED from card CSS */
+/* .book-cefr-level { ... } */
+
 .book-actions {
-    margin-top: auto; /* Pushes to the bottom */
+    margin-top: auto; /* Pushes download buttons to the bottom of the card */
+    padding-top: 10px; /* Space above the buttons */
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap; /* Allow buttons to wrap if card is narrow */
 }
 
-.book-actions .download-btn {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    border-radius: 20px;
-    border-width: 2px;
+.download-btn {
+    /* ... (your existing .download-btn styles should largely work) ... */
+    padding: 6px 12px; /* Adjust size for card */
+    font-size: 0.8rem;
+    /* Ensure they don't have excessive margins that break layout */
 }
-.book-actions .download-btn i { margin-right: 5px; }
-/* css/book-card.css */
-.book-cefr-level {
-    display: inline-block;
-    padding: 3px 8px;
-    font-size: 0.75em;
-    font-weight: bold;
-    border-radius: var(--border-radius-small);
-    margin-top: 5px;
-    text-transform: uppercase;
-    color: white; /* Default text color */
+.download-btn i {
+    margin-right: 5px;
+}
+.no-downloads-text {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-color-medium, #777);
 }
 
-/* Example CEFR colors - customize as you like */
-.cefr-a1 { background-color: #4CAF50; /* Green */ }
-.cefr-a2 { background-color: #8BC34A; /* Light Green */ }
-.cefr-b1 { background-color: #FFC107; /* Amber */ }
-.cefr-b2 { background-color: #FF9800; /* Orange */ }
-.cefr-c1 { background-color: #F44336; /* Red */ }
-.cefr-c2 { background-color: #B71C1C; /* Dark Red */ }
+
+/* --- Responsive Book Card Styles --- */
+@media (max-width: 767px) {
+    .book-card {
+        min-height: 320px; /* Adjust for mobile */
+        padding: 10px;
+    }
+    .book-cover-container {
+        height: 160px; /* Smaller cover on mobile */
+    }
+    .card-cover-flag-icon {
+        width: 20px; /* Slightly smaller flag */
+        top: 4px;
+        left: 4px;
+    }
+    .book-title {
+        font-size: 0.9rem;
+        min-height: 2.4em; /* Ensure space for 2 lines */
+    }
+    .book-author-card {
+        font-size: 0.7rem;
+    }
+    .book-genre-eyebrow {
+        font-size: 0.65rem;
+        padding: 2px 5px;
+    }
+    .download-btn {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        min-height: auto; /* Allow card to shrink more on very small screens */
+        /* Consider a single column layout for card content here if too cramped */
+    }
+    .book-cover-container {
+        height: 140px;
+    }
+     .card-cover-flag-icon {
+        width: 18px;
+    }
+    .book-title {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2; /* Still 2 lines */
+        min-height: 2.3em;
+    }
+}

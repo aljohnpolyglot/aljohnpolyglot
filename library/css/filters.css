@@ -55,3 +55,62 @@
     margin-right: 8px;
     border: 1px solid #ccc;
 }
+#search-filter-group {
+    /*margin-bottom: 15px; /* Already handled by .filter-group */
+}
+
+#search-filter-group label {
+    /* display: block; /* Already handled by .filter-group label styles */
+    /* margin-bottom: 6px; */
+    /* font-weight: 600; */
+    /* color: var(--ink-on-parchment); */
+}
+
+.search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#search-bar-input {
+    flex-grow: 1; /* Input takes most of the space */
+    padding: 8px 10px;
+    border: 1px solid var(--gold-trim, #B8860B);
+    border-right: none; /* Button will form the right border */
+    border-radius: var(--border-radius-main, 5px) 0 0 var(--border-radius-main, 5px); /* Rounded left corners */
+    font-family: var(--font-body, 'Merriweather', serif);
+    font-size: 0.9rem;
+    background-color: var(--parchment-bg-input, #fffaf0); /* Light parchment for input */
+    color: var(--ink-black, #2c2c2c);
+    outline: none;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+#search-bar-input:focus {
+    border-color: var(--ocean-blue-medium, #1F8A70);
+    box-shadow: 0 0 0 2px rgba(var(--ocean-blue-medium-rgb, 31, 138, 112), 0.2);
+}
+
+#search-bar-btn {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    padding: 8px 12px;
+    background-color: var(--ocean-blue-medium, #1F8A70);
+    color: var(--highlight-text, #FFF8DC);
+    border: 1px solid var(--ocean-blue-medium, #1F8A70);
+    border-left: none; /* Input forms left border */
+    border-radius: 0 var(--border-radius-main, 5px) var(--border-radius-main, 5px) 0; /* Rounded right corners */
+    cursor: pointer;
+    font-size: 0.9rem; /* Match input */
+    transition: background-color 0.2s ease;
+    display: flex; /* For centering icon */
+    align-items: center;
+    justify-content: center;
+}
+#search-bar-btn i.fas {
+    margin-right: 0; /* Remove default icon margin if any */
+    color: inherit; /* Inherit color from button */
+}
+
+#search-bar-btn:hover {
+    background-color: var(--ocean-blue-deep, #00425A);
+    border-color: var(--ocean-blue-deep, #00425A);
+}

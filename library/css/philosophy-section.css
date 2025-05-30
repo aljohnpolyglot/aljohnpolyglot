@@ -2,44 +2,38 @@
 /* === Captain Aljohn's Navigational Aids - Bookshelf === */
 /* ======================================================== */
 #navigational-aids-section {
-    /* The actual background color will now be effectively set by the ::after pseudo-element
-       or by an element behind this section if ::after is semi-transparent.
-       We can keep a fallback here in case pseudo-elements aren't supported or the image fails. */
-    background-color: var(--section-bg-deep-wood, #3e2723); 
-    padding: clamp(35px, 5vh, 50px) 0; 
-   
+    background-color: var(--section-bg-deep-wood, #3e2723);
+    padding: clamp(35px, 5vh, 50px) 0;
     text-align: center;
     border-top: 4px dotted var(--gold-trim-ornate, #c8a460);
     border-bottom: 4px dotted var(--gold-trim-ornate, #c8a460);
     box-shadow: inset 0 0 25px rgba(0,0,0,0.4);
-    position: relative; /* ESSENTIAL for pseudo-element positioning */
-    overflow: hidden; 
-    /* z-index: 0; /* Not strictly needed here if children are managed */
+    position: relative;
+    overflow: hidden; /* Prevents unexpected overflow from children or pseudo-elements */
 }
-
-#navigational-aids-section::after { /* Wood texture overlay */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+#navigational-aids-section::after { /* Wood texture overlay for the whole section */
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('http://www.transparenttextures.com/patterns/wood-pattern.png'); /* YOUR TEXTURE */
-    /* OR local path: url('../images/assets/wood-pattern.png'); */
-    background-color: var(--section-bg-deep-wood, #3e2723); /* Base color FOR the texture overlay itself */
+    background-image: url('http://www.transparenttextures.com/patterns/wood-pattern.png');
+    background-color: var(--section-bg-deep-wood, #3e2723);
     background-repeat: repeat;
-    opacity: 1; /* Texture itself is opaque or semi-opaque */
-    /* The visual strength of the texture comes from the texture image itself and mix-blend-mode */
-    mix-blend-mode: multiply; /* Or overlay, soft-light, etc. */
-                               /* Multiply will make the texture darken the --section-bg-deep-wood color */
-    z-index: 0; /* Sits at the base stacking level OF THIS ELEMENT, behind its children */
+    opacity: 1;
+    mix-blend-mode: multiply;
+    z-index: 0; /* Behind the content */
 }
 
-/* All direct children of #navigational-aids-section need to be above the ::after */
-#navigational-aids-section > * {
-    position: relative; 
-    z-index: 1; /* Ensures title, subtitle, wrapper are above the texture overlay */
+#navigational-aids-section > * { /* Ensures all direct children are above the ::after overlay */
+    position: relative;
+    z-index: 1;
 }
+
 /* --- Title and Subtitle Area --- */
 #navigational-aids-section .section-title-container {
     margin-bottom: clamp(25px, 4vh, 35px);
@@ -50,18 +44,18 @@
 
 #navigational-aids-section .section-title {
     font-family: var(--title-font-decorative-pirate, 'Uncial Antiqua', cursive);
-    color: var(--gold-leaf-text, #f5e6a8); 
-    font-size: clamp(2rem, 5vw, 3rem); /* Slightly smaller title */
+    color: var(--gold-leaf-text, #f5e6a8);
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 8px;
     text-shadow: 0 0 4px var(--gold-leaf-text),
                  0 0 8px var(--gold-leaf-text),
-                 2px 2px 2px rgba(0,0,0,0.8); 
-    letter-spacing: 0.5px; /* Less spacing */
+                 2px 2px 2px rgba(0,0,0,0.8);
+    letter-spacing: 0.5px;
     line-height: 1.15;
 }
 
 #navigational-aids-section .section-subtitle {
-    color: var(--parchment-text-on-dark, #d7ccc8); /* Lighter subtitle */
+    color: var(--parchment-text-on-dark, #d7ccc8);
     max-width: 700px;
     margin: 0 auto;
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
@@ -71,15 +65,17 @@
     line-height: 1.5;
 }
 
-/* --- Bookshelf Wrapper (Handles horizontal scrolling AND centering of shelf) --- */
+/* --- Bookshelf Wrapper (Handles horizontal scrolling) --- */
 .bookshelf-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 15px 0 25px; /* Minimal vertical padding, horizontal will be on shelf itself */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden; /* Prevents vertical scrolling within the wrapper */
+    padding-top: 15px;  /* Space above shelf content */
+    padding-bottom: 25px; /* Space below shelf content, includes room for scrollbar */
+    padding-left: 20px; /* Ensures first book isn't cut off by viewport edge */
+    padding-right: 20px; /* Ensures last book has space when scrolled fully */
     margin-top: 20px;
-    /* For centering the .bookshelf-container if its max-width is hit */
-    display: flex;
-    justify-content: center; /* This centers the shelf if it's narrower than wrapper */
+    display: flex; /* Aligns the .bookshelf-container within */
+    justify-content: flex-start; /* Aligns shelf to the left for scrolling */
     scrollbar-width: thin;
     scrollbar-color: var(--scroll-thumb-dark-wood, #5d4037) var(--scroll-track-light-wood, #8d6e63);
 }
@@ -89,7 +85,7 @@
 .bookshelf-wrapper::-webkit-scrollbar-track {
     background: var(--scroll-track-light-wood, #8d6e63);
     border-radius: 6px;
-    margin: 0 var(--page-padding, 20px); /* Scrollbar track within page padding */
+    /* Margin removed; wrapper padding handles edge spacing */
 }
 .bookshelf-wrapper::-webkit-scrollbar-thumb {
     background-color: var(--scroll-thumb-dark-wood, #5d4037);
@@ -98,133 +94,116 @@
 }
 
 /* --- Bookshelf Container (The actual shelf visual) --- */
-.bookshelf-container { /* This is #navigational-aids-shelf in JS */
-    display: flex; /* Essential for arranging books */
-    justify-content: flex-start; /* Align books to the start */
-    /* To center books if there are few:
-       justify-content: center; 
-       But this might look odd if it then becomes scrollable.
-       'flex-start' is usually better for scrollable content.
-    */
-    gap: clamp(18px, 2vw, 30px); /* Space between books */
-    padding: 20px clamp(15px, 2vw, 25px) 20px; /* Top, LR, Bottom padding for books FROM shelf edges */
+.bookshelf-container {
+    display: flex; /* Keeps books in a row */
+    justify-content: flex-start; /* Aligns books to the start of the very wide shelf */
+    gap: clamp(18px, 2vw, 25px); /* Space between books */
     
-    width: fit-content; /* Let it size to its content for scrolling */
-    max-width: 100%; /* Don't exceed wrapper if not scrolling */
-   
-       max-width: 1400px; 
-       margin-left: auto; 
-       margin-right: auto; 
-     
- 
-    
-    background-image: url('../images/assets/empty_bookshelf_tile.png'); /* YOUR SHELF IMAGE */
-    background-repeat: repeat-x;
-    /* Your shelf image is 1600x400. Let's say the actual wooden shelf part is 350px high. */
-    background-size: auto 400px;  /* <<< ADJUST 350px to actual shelf graphic height in your tile */
-    background-position: bottom left; 
-    
-    background-color: var(--shelf-back-panel-color, #5D4037); /* Dark wood color for the back of the shelf */
-    
-    /* Height of the books (240px) + top/bottom padding (20px*2=40px) + shelf visual (e.g., 20px) */
-    min-height: 400px; 
-    min-width: 1600px;
-    
-    /* Simulate top and bottom planks of the bookshelf unit itself, distinct from tile */
-    border-top: 0 px solid var(--bookshelf-frame-wood, #4e342e);
-    border-bottom: 0px solid var(--bookshelf-frame-wood, #4e342e); 
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.3); /* Inner shadow for the unit */
-}
+    padding-top: 20px; /* Space above books */
+    padding-bottom: 10px; /* Consistent small padding at the very bottom of the container */
+    /* padding-left is handled by the first book's margin or general book margin if you prefer */
+    /* padding-right: clamp(15px, 2vw, 20px); /* Optional: space after the last book if it doesn't fill the shelf */
 
+    /* === YOUR SINGLE LONG SHELF IMAGE SETTINGS === */
+    /* IMPORTANT: Replace with the actual width of YOUR long shelf image */
+    width: 7200px; /* e.g., 5000px */
+    
+    background-image: url('../images/assets/empty_bookshelf_tile.png'); /* <-- YOUR NEW IMAGE PATH */
+    background-repeat: no-repeat; /* DO NOT REPEAT THE BACKGROUND */
+    background-size: auto;        /* Use native image dimensions. Assumes container width/height match image aspect. */
+                                  /* OR use: background-size: 100% auto; if you want it to always fill the container width and adjust height proportionally,
+                                     but ensure min-height is set to the image's native height for no vertical squishing.
+                                     For a single image matching container dimensions, 'auto' is fine. */
+    background-position: top left; /* Or 'bottom left' depending on your image content */
+    background-color: var(--shelf-back-panel-color, #5D4037); /* Fallback */
+    
+    /* === THIS IS CRITICAL for image height === */
+    min-height: 400px; /* e.g., 300px - REPLACE WITH YOUR IMAGE'S ACTUAL HEIGHT */
+    
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    /* margin-left: 0; /* Reset from previous attempts, not strictly needed here */
+}
 /* --- Individual "Book" Card on the Shelf --- */
 .nav-aid-book-card {
-    background-color: transparent; /* Make card background transparent initially */
-    border: none; /* Remove card border, cover will be the visual */
-    padding: 0; /* Remove card padding */
-    width: 200px; /* Adjust width to match cover aspect, or let cover define it */
-    height: 300px; /* Fixed height for consistent alignment on shelf */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 190px; /* Desktop book width */
+    height: 285px; /* Desktop book height */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the cover container vertically */
+    justify-content: center;
     align-items: center;
-    box-shadow: none; /* Remove card shadow, rely on cover shadow or shelf shadow */
-    transition: transform 0.2s ease-out; /* Simpler hover */
+    box-shadow: none;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     cursor: pointer;
-    flex-shrink: 0; 
-    overflow: visible; /* Allow cover shadow to spill if needed */
-    margin-right: auto;
-    margin-left: auto;
+    flex-shrink: 0; /* Important so books don't shrink */
+    overflow: visible;
     margin-top: auto;
-    margin-bottom: 30px;
+    /* margin-left will be handled by :first-child or default gap */
+    /* margin-right will be handled by default gap */
+    
+    /* === THIS IS CRITICAL for book placement ===
+       Calculate: YOUR_PLANK_VISUAL_OFFSET_FROM_BOTTOM_OF_IMAGE_IN_PX - .bookshelf-container's padding-bottom
+       Example: If plank is 50px from image bottom, and container padding-bottom is 10px, then 50 - 10 = 40px. */
+    margin-bottom: 40px; /* e.g., (50px - 10px) REPLACE WITH YOUR CALCULATED VALUE */
+}
+
+/* === Add margin-left to the VERY FIRST book on the shelf === */
+.bookshelf-container .nav-aid-book-card:first-child {
+    /* This adds to any intrinsic spacing from the container's edge or parent padding */
+    margin-left: 60px; /* Pushes the first book 50px to the right from the container's start */
 }
 .nav-aid-book-card:hover {
     transform: translateY(-8px) rotate(-1.5deg) scale(1.02);
     box-shadow: 4px 8px 15px rgba(0,0,0,0.35),
-                inset 1px 1px 3px rgba(0,0,0,0.1);
+                inset 1px 1px 3px rgba(0,0,0,0.1); /* Adds a slight inner highlight on hover */
 }
 
-.nav-aid-book-card .book-cover-container {
-    width: 100%; /* Cover container takes full width of card */
-    height: 100%; /* Cover container takes full height of card */
+.nav-aid-book-card .book-cover-container { /* Wraps the actual image for perspective effects */
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Add subtle perspective for book effect */
-    perspective: 1000px;
+    perspective: 1000px; /* For 3D hover effect on image */
 }
 .nav-aid-book-card .book-cover-img {
-    width: auto;  
-    height: 100%; 
-    max-width: 100%; 
-    object-fit: contain; 
-    border-radius: 2px 4px 4px 2px; /* Book-like rounding on the cover itself */
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.3), /* Shadow for the cover */
-                inset 1px 1px 2px rgba(255,255,255,0.1); /* Slight highlight on cover */
+    width: auto;  /* Let height dictate width to maintain aspect ratio */
+    height: 100%; /* Fills the card height */
+    max-width: 100%; /* Ensures it doesn't overflow card width */
+    object-fit: contain; /* Scales image to fit within bounds while preserving aspect ratio */
+    border-radius: 2px 4px 4px 2px; /* Slight rounding for book cover corners */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3), /* Book cover shadow */
+                inset 1px 1px 2px rgba(255,255,255,0.1); /* Subtle highlight on cover */
     transition: transform 0.3s ease;
 }
 .nav-aid-book-card:hover .book-cover-img {
     transform: rotateY(-5deg) translateZ(5px); /* Slight 3D tilt on hover */
 }
-/* .nav-aid-book-card .book-title {
-    font-family: var(--book-title-font, 'Georgia', serif);
-    font-size: 0.8rem; 
-    color: var(--ink-black, #263238);
-    margin: 2px 0;
-    line-height: 1.15;
-    font-weight: 600; 
-    max-height: 2.3em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-}
-.nav-aid-book-card .philosophy-book-author {
-    font-size: 0.65rem; 
-    color: var(--text-color-medium-dark, #424242);
-    margin-top: 1px;
-    width: 100%;
-} */
+
+/* Titles and authors are hidden on the shelf cards, shown in modal */
 .nav-aid-book-card .book-title,
 .nav-aid-book-card .philosophy-book-author {
-    display: none; /* This hides them from the card display */
+    display: none;
 }
-/* --- Modal Specific Styling (Content Info Modal) --- */
-.wide-modal-content { 
-    max-width: 750px; /* Screenshot looked good */
-    background-color: var(--modal-parchment-bg, #f4ead6); /* Parchment for modal */
+
+/* --- Modal Styles (Content Info Modal) --- */
+.wide-modal-content {
+    max-width: 750px;
+    background-color: var(--modal-parchment-bg, #f4ead6);
     border: 4px solid var(--gold-trim-ornate, #b28a30);
     box-shadow: 0 5px 25px rgba(0,0,0,0.3);
 }
-
-.philosophy-modal-layout .modal-book-layout { /* The direct child of modal-body */
+.philosophy-modal-layout .modal-book-layout {
     display: flex;
     gap: 25px;
 }
-
 .philosophy-modal-layout .modal-cover-container {
-    flex-basis: 33%; 
+    flex-basis: 33%;
     min-width: 160px;
     display: flex;
-    align-items: center; /* Vertically center cover */
+    align-items: center;
     justify-content: center;
 }
 .philosophy-modal-layout #modal-content-cover-img {
@@ -237,20 +216,17 @@
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     border-radius: 2px;
 }
-
 .philosophy-modal-layout .modal-details-container {
     flex-basis: 67%;
-    text-align: left; /* Ensure text in details is left-aligned */
+    text-align: left;
 }
-
-.philosophy-modal-layout #modal-content-title-text { /* Modal title */
+.philosophy-modal-layout #modal-content-title-text {
     font-family: var(--title-font-decorative-pirate, 'Uncial Antiqua', cursive);
     color: var(--weathered-wood-darker, #3e2723);
-    font-size: 1.7rem; /* Prominent modal title */
+    font-size: 1.7rem;
     margin-bottom: 5px;
     line-height: 1.2;
 }
-
 .philosophy-modal-layout .modal-author-text {
     font-size: 1rem;
     color: var(--text-color-medium-dark, #545454);
@@ -267,7 +243,7 @@
     padding-bottom: 6px;
 }
 .philosophy-modal-layout .modal-description-scroll {
-    max-height: 150px; /* Keep scroll height manageable */
+    max-height: 150px;
     overflow-y: auto;
     padding: 8px 10px 8px 5px;
     border: 1px solid var(--secondary-accent-color-translucent, rgba(178, 138, 48, 0.3));
@@ -281,19 +257,17 @@
 .philosophy-modal-layout .aljohns-notes-scroll {
     border-left: 4px solid var(--primary-accent-color);
 }
-
-.modal-external-actions { 
+.modal-external-actions {
     margin-top: 25px;
     text-align: center;
 }
 .modal-external-actions .amazon-link {
-    /* ... (styles for Amazon link button as before) ... */
     display: inline-block;
-    padding: 12px 25px; /* Larger button */
+    padding: 12px 25px;
     background-color: var(--amazon-orange, #FF9900);
     color: white;
     font-family: var(--title-font-pirate, 'Pirata One', sans-serif);
-    font-size: 1.1rem; /* Larger font */
+    font-size: 1.1rem;
     text-decoration: none;
     border: 2px solid var(--amazon-orange-dark, #cc7a00);
     border-radius: 25px;
@@ -311,67 +285,112 @@
 
 
 /* --- Responsive for Bookshelf Section --- */
-/* --- Responsive for Bookshelf Section --- */
 
-@media (max-width: 767px) { /* Mobile general */
+/* Tablet - Large to Medium (e.g., iPad Portrait/Landscape, smaller laptops) */
+@media (max-width: 1024px) {
     #navigational-aids-section .section-title {
-        font-size: clamp(1.6rem, 6vw, 2rem); 
+        font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+    }
+    #navigational-aids-section .section-subtitle {
+        font-size: clamp(0.9rem, 2.3vw, 1rem);
+    }
+
+    .bookshelf-wrapper {
+        padding-left: 15px; /* Adjusted side padding for tablet */
+        padding-right: 15px;
+    }
+
+    .bookshelf-container {
+        gap: clamp(15px, 1.8vw, 20px); /* Slightly smaller gap between books */
+        padding-top: 15px;    /* Reduced internal padding */
+        padding-bottom: 15px;
+        padding-left: clamp(10px, 1.5vw, 15px);
+        padding-right: clamp(10px, 1.5vw, 15px);
+        
+        /* Scale shelf visual height (e.g., 80% of desktop 400px) */
+        background-size: auto 320px;
+        min-height: 320px;
+    }
+
+    .nav-aid-book-card {
+        width: 140px; /* Smaller books for tablet */
+        height: 210px;
+        /* Recalculate margin-bottom:
+           Shelf visual height: 320px. Original plank proportion: 50px/400px = 12.5%.
+           New plank visual height: 320px * 0.125 = 40px.
+           Container padding-bottom: 15px.
+           margin-bottom = 40px (plank) - 15px (padding) = 25px. */
+        margin-bottom: 25px;
+    }
+    .bookshelf-container .nav-aid-book-card:first-child {
+        margin-left: 70px; /* Optionally reduce first-child margin on smaller screens */
+    }
+}
+
+/* Mobile - General (e.g., larger phones in portrait/landscape, small tablets in portrait) */
+@media (max-width: 767px) {
+    #navigational-aids-section .section-title {
+        font-size: clamp(1.6rem, 6vw, 2rem);
     }
     #navigational-aids-section .section-subtitle {
         font-size: clamp(0.8rem, 2.5vw, 0.9rem);
     }
+
     .bookshelf-wrapper {
-        padding-left: var(--page-padding-mobile, 10px); /* Ensure some padding for start of scroll */
-        padding-right: var(--page-padding-mobile, 10px);
-        justify-content: flex-start; /* Ensure scroll starts from left */
+        padding-left: 10px; /* Further reduced side padding for mobile */
+        padding-right: 10px;
     }
+
     .bookshelf-container {
-        gap: 12px; /* Tighter gap on mobile */
-        padding: 10px 10px 10px 10px; 
-        margin-left: -60px;
-        min-height: 230px; /* Adjusted min height for smaller cards */
-        background-size: auto 200px; /* Smaller shelf visual on mobile, ADJUST TO YOUR IMAGE */
-     
+        gap: 12px; /* Tighter gap */
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        /* Scale shelf visual height (e.g., 60% of desktop 400px) */
+        background-size: auto 240px;
+        min-height: 240px;
     }
+
     .nav-aid-book-card {
-
-        width: 100px; /* Narrower books to fit more or for small screens */
-        height: 150px; /* Shorter books */
-        margin: 12px;
-        /* padding: 4px; /* Minimal padding if needed */
+        width: 100px; /* Even smaller books */
+        height: 150px;
+        /* Recalculate margin-bottom:
+           New plank visual height: 240px * 0.125 = 30px.
+           Container padding-bottom: 10px.
+           margin-bottom = 30px (plank) - 10px (padding) = 20px. */
+        margin-bottom: 20px;
     }
-    .nav-aid-book-card .book-cover-container {
-        margin-left: 100px;
-        /* height: 100%; Height will be defined by card's height */
+  
+.bookshelf-container .nav-aid-book-card:first-child {
+        margin-left: 100px; /* Optionally reduce further */
     }
-    /* Title and Author are hidden, so no need to style them for mobile card view */
-
     /* Modal adjustments on mobile */
     .philosophy-modal-layout .modal-book-layout {
-        flex-direction: column; 
-        gap: 15px; /* Reduced gap in modal stack */
+        flex-direction: column; /* Stack modal content vertically */
+        gap: 15px;
     }
     .philosophy-modal-layout .modal-cover-container {
-        padding-right: 0;
-        margin-bottom: 10px; /* Space below cover */
-        align-self: center; 
+        margin-bottom: 10px;
+        align-self: center; /* Center cover image when stacked */
     }
     .philosophy-modal-layout #modal-content-cover-img {
-        max-height: 200px; /* Smaller cover in modal on mobile */
+        max-height: 200px; /* Smaller cover in modal */
     }
     .philosophy-modal-layout .modal-details-container {
-        flex-basis: auto; 
+        flex-basis: auto; /* Allow details to take full width */
     }
      .philosophy-modal-layout #modal-content-title-text {
         font-size: 1.3rem;
-        text-align: center;
+        text-align: center; /* Center title in stacked layout */
     }
      .philosophy-modal-layout .modal-author-text {
-        text-align: center;
+        text-align: center; /* Center author in stacked layout */
         font-size: 0.9rem;
         margin-bottom: 15px;
     }
-    .philosophy-modal-layout h4 { 
+    .philosophy-modal-layout h4 {
         font-size: 1rem;
     }
     .philosophy-modal-layout .modal-description-scroll {
@@ -380,19 +399,32 @@
     }
 }
 
-@media (max-width: 480px) { /* Very small mobile tweaks */
+/* Very Small Mobile Tweaks (e.g., iPhone SE in portrait) */
+@media (max-width: 480px) {
+    .bookshelf-wrapper {
+        padding-left: 5px; /* Minimal side padding */
+        padding-right: 5px;
+    }
     .bookshelf-container {
-        gap: 10px;
-        background-size: auto 200px; /* Even smaller shelf graphic part */
+        gap: 10px; /* Tightest gap */
+        padding-left: 5px;
+        padding-right: 5px;
+        /* padding-top/bottom inherited from 767px if not overridden (currently 10px) */
+        
+        /* Scale shelf visual height (e.g., 50% of desktop 400px) */
+        background-size: auto 200px;
         min-height: 200px;
-        padding-left: 5px; padding-right: 5px;
     }
     .nav-aid-book-card {
-        width: 85px; /* Tiny books */
+        width: 80px; /* Tiny books */
         height: 130px;
-        margin-top: auto;
-        margin-bottom: auto;
-       
+        /* Recalculate margin-bottom:
+           New plank visual height: 200px * 0.125 = 25px.
+           Container padding-bottom: 10px (inherited).
+           margin-bottom = 25px (plank) - 10px (padding) = 15px. */
+        margin-bottom: 15px;
     }
-    /* Cover container takes 100% height of card now */
+    .bookshelf-container .nav-aid-book-card:first-child {
+        margin-left: 50px; /* Optionally reduce further */
+    }
 }

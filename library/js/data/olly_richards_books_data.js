@@ -43,6 +43,13 @@ const ollyRichardsBeginnerStories = [
         coverImg: "https://m.media-amazon.com/images/I/81dZ3R5+tVL._AC_UF1000,1000_QL80_.jpg",
         amazonLink: "https://www.amazon.com/Short-Stories-Brazilian-Portuguese-Beginners/dp/1529302803/"
     },
+       {
+        id: "olly_swedish_stories_beg",
+        languageCode: "sv",
+        languageName: "Swedish",
+        coverImg: "https://m.media-amazon.com/images/I/71fxs51-aKL._SL1500_.jpg",
+        amazonLink: "https://www.amazon.com/Short-Stories-Swedish-Beginners-Richards/dp/1529302749"
+    },
     // Add Swedish if Olly Richards has a "Short Stories in Swedish for Beginners"
     // {
     //     id: "olly_swedish_stories_beg",

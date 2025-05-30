@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aljohn Polyglot Library - High Seas Edition</title>
     <!-- Global Styles -->
+       <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link rel="stylesheet" href="css/global.css">
     <!-- Section Specific Styles -->
     <link rel="stylesheet" href="css/hero.css">
@@ -86,7 +87,8 @@
      <!-- 3. Main Library and Filters -->
         <main id="library-main-section">
             <aside id="filters-sidebar">
-                <h2>Navigate the Archives</h2>
+                <h2>Adjust Your Spyglass</h2> <!-- Or your chosen title -->
+
                 <div class="filter-group">
                     <label for="language-filter"> <i class="fas fa-flag"></i> Select Language:</label>
                     <select id="language-filter" name="language">
@@ -94,6 +96,17 @@
                         <!-- Options populated by JS -->
                     </select>
                 </div>
+
+                <!-- NEW: Search Bar -->
+                <div class="filter-group" id="search-filter-group">
+                    <label for="search-bar-input"><i class="fas fa-search"></i> Search Titles/Authors:</label>
+                    <div class="search-bar-wrapper">
+                        <input type="search" id="search-bar-input" placeholder="e.g., Don Quijote, Cervantes">
+                        <button id="search-bar-btn" aria-label="Search"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- END NEW: Search Bar -->
+
                 <div class="filter-group">
                     <label for="genre-filter"><i class="fas fa-scroll"></i> Filter by Genre:</label>
                     <select id="genre-filter" name="genre">
@@ -101,6 +114,7 @@
                         <!-- Options populated by JS -->
                     </select>
                 </div>
+
                 <div class="filter-group">
                     <label for="filetype-filter"><i class="fas fa-file-alt"></i> Manuscript Type:</label>
                     <select id="filetype-filter" name="filetype">
@@ -109,7 +123,7 @@
                         <option value="epub">EPUB Codices</option>
                     </select>
                 </div>
-                <!-- ADDED: CEFR Filter Group (make sure it's here if you're using it) -->
+                
                 <div class="filter-group">
                     <label for="cefr-filter"><i class="fas fa-layer-group"></i> CEFR Level:</label>
                     <select id="cefr-filter" name="cefr">
@@ -156,26 +170,41 @@
             </aside>
         </main>
 
-      
-<!-- 4. Captain Aljohn's First Mates: Story Graded Readers (Olly Richards section) -->
-        <section id="story-launchpad-section">
-            <div class="section-title-container launchpad-title-container">
-                <h2 class="section-title">Captain Aljohn's First Mates</h2> 
-                <p class="section-subtitle launchpad-subtitle">
-                    "Avast, ye aspiring polyglots! When I first set sail into the waters of a new tongue,
-                    these be the charts I always consult first. Graded stories, they call 'em. 
-                    They make the journey less about battling krakens of grammar and more about the thrill of discovery. 
-                    Simple tales, familiar words – they're the best way to catch the wind in your learning sails!" - Captain Aljohn
+<!-- Captain Aljohn's Treasure Isles: Your First Story Adventures! -->
+<section id="treasure-isles-stories-section"> 
+    <!-- Background applied via CSS -->
+
+    <!-- THIS WRAPPER REMAINS THE MAIN FLEX CONTAINER FOR THE TWO COLUMNS -->
+    <div class="treasure-isles-layout-wrapper"> 
+
+        <!-- Left Column: NOW INCLUDES Title, Subtitle, AND Carousel -->
+        <div class="treasure-isles-content-column">
+            <div class="section-title-container treasure-isles-title-container"> <!-- MOVED HERE -->
+                <h2 class="section-title">Captain Aljohn's Treasure Isles</h2> 
+                <p class="section-subtitle treasure-isles-subtitle">
+                   "When first exploring a new tongue, I always look for graded stories like these," notes Captain Aljohn. "They're like finding the first clues on a treasure map – simple, engaging, and the perfect way to start your linguistic adventure with a rewarding discovery."
                 </p>
             </div>
-            <div class="story-carousel-wrapper">
+
+            <div class="story-carousel-wrapper"> 
                 <div id="olly-stories-carousel" class="story-carousel-container">
-                    <!-- Book "cards" (cover + lang) populated by JS -->
+                    <!-- Book "cards" (cover + lang) will be populated here by JS -->
                 </div>
-                <button class="carousel-arrow prev" id="olly-carousel-prev" aria-label="Previous Story"><</button>
-                <button class="carousel-arrow next" id="olly-carousel-next" aria-label="Next Story">></button>
+                <button class="carousel-arrow prev" id="olly-carousel-prev" aria-label="Previous Story">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-arrow next" id="olly-carousel-next" aria-label="Next Story">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-        </section>
+        </div>
+
+        <!-- Right Column: Treasure Chest Visual (Stays the same) -->
+        <div class="treasure-isles-visual-column">
+            <img src="images/assets/your_large_treasure_chest.png" alt="A chest overflowing with story books!" id="main-treasure-chest-image"> 
+        </div>
+    </div>
+</section>
         <!-- === END NEW SECTION PLACEMENT === -->
         <!-- Hidden Treasure Section -->
       <!-- Captain Aljohn's Cove - Revamped Hidden Treasure Section -->
