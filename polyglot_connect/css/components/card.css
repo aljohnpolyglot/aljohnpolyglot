@@ -1,0 +1,198 @@
+/* css/components/card.css */
+/* Card container */
+.connector-card {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    position: relative; /* For status dot */
+    width: 300px; /* Fixed width for rectangle shape */
+    height: 400px; /* Fixed height for rectangle shape */
+    margin: 0 auto; /* Center the card horizontally */
+}
+
+/* Hover effect */
+.connector-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Card background */
+.connector-card-bg {
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color-lighter) 0%, var(--accent-color-2) 100%);
+    border-bottom: 1px solid var(--border-color-light);
+}
+
+/* Avatar styling */
+.connector-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: var(--border-radius-circle);
+    border: 3px solid var(--bg-white);
+    margin: -45px auto 0 auto; /* Overlap onto card-bg */
+    display: block;
+    position: relative;
+    z-index: 1;
+    background-color: var(--secondary-color-lighter); /* Fallback bg */
+    box-shadow: var(--shadow-sm);
+    object-fit: cover; /* Ensure avatar image covers the area nicely */
+}
+
+/* Status dot */
+.connector-status {
+    width: 14px;
+    height: 14px;
+    border-radius: var(--border-radius-circle);
+    background-color: var(--secondary-color); /* Default inactive/grey */
+    border: 2px solid var(--bg-white);
+    position: absolute;
+    top: 55px; /* Adjust based on avatar size and desired position */
+    left: calc(50% + 25px); /* Position relative to avatar */
+    z-index: 2; /* Above avatar border */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: background-color var(--transition-fast);
+}
+
+.connector-status.active {
+    background-color: var(--success-color);
+}
+
+/* Connector name */
+.connector-name {
+    font-family: var(--font-secondary);
+    font-size: 1.3em;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin: var(--spacing-md) var(--spacing-md) var(--spacing-xs) var(--spacing-md);
+    color: var(--text-color-dark);
+}
+
+/* Connector bio */
+.connector-bio {
+    font-size: 0.85em;
+    text-align: center;
+    color: var(--text-color-muted);
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1; /* Allows bio to take up space */
+    line-height: 1.5;
+}
+
+/* Actions section */
+.connector-actions {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-color-light);
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-light);
+}
+
+/* View Profile button */
+.connector-actions .view-profile-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9em;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.connector-actions .view-profile-btn:hover {
+    background-color: var(--primary-color-darker);
+}
+
+/* Language tags container */
+.connector-languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center tags horizontally */
+    align-items: center; /* Center tags vertically */
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+}
+
+/* Native languages section */
+.native-languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center tags horizontally */
+    align-items: center; /* Center tags vertically */
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Practice languages section */
+.practice-languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center tags horizontally */
+    align-items: center; /* Center tags vertically */
+    gap: var(--spacing-xs);
+}
+
+/* Language tag styling */
+.language-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: 0.2rem 0.6rem; /* Smaller padding for eyebrow-like appearance */
+    border-radius: 12px; /* Rounded corners for pill shape */
+    font-size: 0.75em; /* Smaller font size */
+    font-weight: 600; /* Bold text for emphasis */
+    text-transform: uppercase; /* Eyebrow-like uppercase text */
+    letter-spacing: 0.4px; /* Slightly spaced letters */
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+/* Native language tag */
+.language-tag.native {
+    background-color: var(--primary-color-lighter);
+    color: var(--text-color-dark);
+    border: 1px solid var(--primary-color-dark); /* Border for definition */
+}
+
+/* Practice language tag */
+.language-tag.practice {
+    background-color: var(--secondary-color-lighter);
+    color: var(--text-color-dark);
+    border: 1px solid var(--secondary-color-dark); /* Border for definition */
+}
+
+/* Flag styling within tags */
+.language-tag .lang-flag {
+    width: 16px; /* Smaller flag size */
+    height: auto;
+    border-radius: 2px; /* Rounded corners for flags */
+    border: 1px solid var(--border-color-light);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle shadow for flags */
+    vertical-align: middle;
+}
+
+/* Level indicator styling */
+.language-tag .level-indicator {
+    font-size: 0.7em; /* Smaller text for level indicator */
+    font-weight: 500; /* Medium weight for emphasis */
+    opacity: 0.8;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .language-tag.native {
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-light);
+    border-color: var(--primary-color-lighter);
+}
+
+body.dark-mode .language-tag.practice {
+    background-color: var(--secondary-color-dark);
+    color: var(--text-color-light);
+    border-color: var(--secondary-color-lighter);
+}
+
+body.dark-mode .language-tag .lang-flag {
+    border-color: var(--border-color-dark);
+}

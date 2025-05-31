@@ -1,0 +1,150 @@
+/* css/components/chat_bubbles.css */
+
+.chat-log-area { /* Common container for chat messages */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm); /* Space between messages */
+    padding: var(--spacing-md); /* Padding inside the log area */
+}
+
+.chat-message-ui {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-lg); /* More rounded bubbles */
+    max-width: 75%; /* Max width of a bubble */
+    word-wrap: break-word;
+    line-height: 1.45;
+    font-size: 0.95em;
+    box-shadow: var(--shadow-sm);
+    position: relative; /* For potential timestamp or tail */
+}
+
+/* User's messages */
+.chat-message-ui.user,
+.chat-message-ui.user-audio {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-bottom-right-radius: var(--border-radius-sm); /* "Tail" effect */
+    align-self: flex-end; /* Align to the right */
+    margin-left: auto; /* Push to right */
+}
+
+/* Connector/AI's messages */
+.chat-message-ui.connector,
+.chat-message-ui.tutor, /* Specific style for tutor if needed */
+.chat-message-ui.connector-thinking {
+    background-color: var(--bg-light); /* Lighter grey for AI */
+    color: var(--text-color-dark);
+    border-bottom-left-radius: var(--border-radius-sm); /* "Tail" effect */
+    align-self: flex-start; /* Align to the left */
+    margin-right: auto; /* Push to left */
+    border: 1px solid var(--border-color-light);
+}
+.chat-message-ui.tutor { /* Example differentiation for tutor */
+    /* border-left: 3px solid var(--accent-color-1); */ /* Or a different background */
+    /* background-color: #e6ffed; */
+}
+
+
+.chat-message-ui strong { font-weight: var(--font-weight-medium); }
+.chat-message-ui em { font-style: italic; }
+
+/* Specific states */
+.chat-message-ui.user-audio {
+    font-style: italic;
+    background-color: var(--primary-color-lighter); /* Lighter blue for user audio log */
+    color: var(--primary-color-darker);
+}
+
+.chat-message-ui.user-audio-error,
+.chat-message-ui.connector-error { /* For error messages from AI or system */
+    font-style: italic;
+    background-color: #ffebee; /* Light red */
+    color: var(--danger-color);
+    border-color: #ffcdd2;
+}
+
+.chat-message-ui.connector-thinking {
+    font-style: italic;
+    background-color: var(--secondary-color-lighter);
+    color: var(--text-color-muted);
+}
+.chat-message-ui.connector-thinking::after { /* Animated dots */
+    content: '.';
+    display: inline-block;
+    animation: thinking-dots 1.5s infinite steps(3, end);
+    vertical-align: bottom;
+}
+@keyframes thinking-dots {
+  0%  { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+}
+
+/* Group chat message styling within the log */
+/* Can reuse .chat-message-ui or have specific styles if needed */
+#group-chat-log .chat-message-ui {
+    max-width: 85%; /* Group messages can be a bit wider */
+}
+#group-chat-log .chat-message-ui strong { /* For sender name in group */
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-color); /* Or a different color for sender name */
+    font-weight: var(--font-weight-bold);
+}
+#group-chat-log .chat-message-ui.user strong {
+    color: var(--text-color-light); /* Or keep it themed */
+}
+#group-chat-log .chat-message-ui.tutor strong {
+    color: var(--accent-color-1); /* Tutor name distinct color */
+}
+
+
+/* Dark Mode for Chat Bubbles */
+body.dark-mode .chat-log-area {
+    /* Background is handled by the container (.call-chat-log, .message-chat-log, etc.) */
+}
+body.dark-mode .chat-message-ui.user,
+body.dark-mode .chat-message-ui.user-audio {
+    background-color: var(--primary-color); /* Keep primary for user, or use a dark-mode primary */
+    /* color: var(--text-color-light); /* Already light */
+}
+body.dark-mode .chat-message-ui.connector,
+body.dark-mode .chat-message-ui.tutor,
+body.dark-mode .chat-message-ui.connector-thinking {
+    background-color: var(--bg-dark-tertiary);
+    color: var(--text-color-light);
+    border-color: #555; /* Darker border */
+}
+body.dark-mode .chat-message-ui.user-audio {
+    background-color: #004a7c; /* Darker blue for user audio */
+    color: var(--primary-color-lighter);
+}
+body.dark-mode .chat-message-ui.user-audio-error,
+body.dark-mode .chat-message-ui.connector-error {
+    background-color: #5e2d30;
+    color: #ffc1c1;
+    border-color: #7a3b3f;
+}
+body.dark-mode .chat-message-ui.connector-thinking {
+    background-color: #4a4b4d;
+    color: #a0a3a8;
+}
+
+body.dark-mode #group-chat-log .chat-message-ui strong {
+    color: var(--primary-color-lighter);
+}
+body.dark-mode #group-chat-log .chat-message-ui.tutor strong {
+    color: #4caf50; /* Brighter green for dark mode tutor name */
+}
+
+/* Image in chat (applies to embedded-message-activity-area img and voice-chat-activity-area img) */
+.activity-area-style img {
+    border: 1px solid var(--border-color-light);
+    padding: var(--spacing-xs);
+    background-color: var(--bg-white);
+}
+body.dark-mode .activity-area-style img {
+    border-color: var(--border-color-dark);
+    background-color: var(--bg-dark-tertiary);
+}

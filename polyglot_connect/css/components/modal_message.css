@@ -1,0 +1,32 @@
+/* css/components/modal_message.css */
+
+/* Uses .modal-overlay and .modal-content from modal_call.css or global modal styles */
+
+.messaging-interface-modal { /* Content box for messaging-interface modal */
+    max-width: 600px; /* Good width for text chat */
+    height: clamp(400px, 75vh, 650px);
+    padding: 0; /* Header/footer/body have padding */
+}
+
+.messaging-interface-header .modal-title-inline { /* For #message-active-name */
+    /* Uses .modal-title-inline */
+}
+/* .back-btn was replaced by .close-messaging-modal-btn which uses .modal-btn */
+
+.message-chat-log { /* For #message-chat-log in MODAL */
+    /* This will also use .chat-log-area general styles if applied */
+    background-color: var(--bg-white); /* Ensures white bg inside modal */
+    padding: var(--spacing-md); /* Override if .modal-body has different padding */
+}
+
+.messaging-interface-footer .chat-input-field { /* For #message-text-input */
+    flex-grow: 1; margin-right: var(--spacing-sm);
+}
+
+/* Dark Mode Adjustments for Message Modal */
+body.dark-mode .messaging-interface-modal {
+    /* Base dark mode for .modal-content applies */
+}
+body.dark-mode .message-chat-log {
+    background-color: var(--bg-dark-primary);
+}
