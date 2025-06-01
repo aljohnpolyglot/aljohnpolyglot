@@ -40,21 +40,41 @@ window.domElements = {
     filterGroupLanguageSelect: document.getElementById('filter-group-language'),
     applyGroupFiltersBtn: document.getElementById('apply-group-filters-btn'),
 
-    // Messages View (for 1-on-1 Embedded Chat)
+    // Messages View (Embedded Chat)
     messagesView: document.getElementById('messages-view'),
-    messagesTabHeader: document.getElementById('active-chat-partner-name'),
+    embeddedChatHeaderAvatar: document.getElementById('embedded-chat-header-avatar'), // NEW
+    embeddedChatHeaderName: document.getElementById('embedded-chat-header-name'),     // NEW
+    embeddedChatHeaderDetails: document.getElementById('embedded-chat-header-details'),// NEW
+    embeddedChatCallBtn: document.getElementById('embedded-chat-call-btn'),           // NEW
+    embeddedChatInfoBtn: document.getElementById('embedded-chat-info-btn'),           // NEW
     messagesPlaceholder: document.getElementById('messages-placeholder'),
     embeddedChatContainer: document.getElementById('embedded-chat-container'),
     embeddedChatLog: document.getElementById('embedded-chat-log'),
-    embeddedMessageActivityArea: document.getElementById('embedded-message-activity-area'),
-    embeddedMessageActivityImage: document.getElementById('embedded-message-activity-image-display'),
     embeddedMessageAttachBtn: document.getElementById('embedded-message-attach-btn'),
     embeddedMessageImageUpload: document.getElementById('embedded-message-image-upload'),
     embeddedMessageTextInput: document.getElementById('embedded-message-text-input'),
     embeddedMessageSendBtn: document.getElementById('embedded-message-send-btn'),
+    embeddedMessageMicBtn: document.getElementById('embedded-message-mic-btn'),
+
     messagesChatListPanel: document.getElementById('messages-chat-list'),
     chatListUl: document.getElementById('chat-list-ul'),
     emptyChatListMsg: document.getElementById('empty-chat-list-msg'),
+
+    // Messaging Modal
+    messagingInterface: document.getElementById('messaging-interface'),
+    messageModalHeaderAvatar: document.getElementById('message-modal-header-avatar'), // NEW
+    messageModalHeaderName: document.getElementById('message-modal-header-name'),     // NEW
+    messageModalHeaderDetails: document.getElementById('message-modal-header-details'),// NEW
+    messageModalCallBtn: document.getElementById('message-modal-call-btn'),           // NEW
+    messageModalInfoBtn: document.getElementById('message-modal-info-btn'),           // NEW
+    messageChatLog: document.getElementById('message-chat-log'),
+    messageModalAttachBtn: document.getElementById('message-modal-attach-btn'),       // NEW
+    messageModalImageUpload: document.getElementById('message-modal-image-upload'),   // NEW
+    messageModalMicBtn: document.getElementById('message-modal-mic-btn'),             // ADDED
+    messageTextInput: document.getElementById('message-text-input'),
+    messageSendBtn: document.getElementById('message-send-btn'),
+    messageModalMicBtn: document.getElementById('message-modal-mic-btn'),
+    closeMessagingModalBtn: document.getElementById('close-messaging-modal-btn'),
 
     // Summary View
     summaryView: document.getElementById('summary-view'),
@@ -73,11 +93,10 @@ window.domElements = {
     personaModalLocationAge: document.getElementById('persona-modal-location-age'),
     personaModalActiveStatus: document.getElementById('persona-modal-active-status'),
     personaModalBio: document.getElementById('persona-modal-bio'),
-    personaModalLanguagesUl: document.getElementById('persona-modal-languages'), // This is now a div in HTML for grid
+    personaModalLanguagesUl: document.getElementById('persona-modal-languages'),
     personaModalInterestsUl: document.getElementById('persona-modal-interests'),
     personaModalGallery: document.getElementById('persona-modal-gallery'),
     personaModalMessageBtn: document.getElementById('persona-modal-start-message-btn'),
-    personaModalVoiceChatBtn: document.getElementById('persona-modal-start-voicechat-btn'),
     personaModalDirectCallBtn: document.getElementById('persona-modal-start-directcall-btn'),
 
     // Virtual Calling Screen Modal
@@ -87,19 +106,6 @@ window.domElements = {
     callingStatus: document.getElementById('calling-status'),
     cancelCallBtn: document.getElementById('cancel-call-btn'),
 
-    // Voice-Enabled Chat Modal
-    voiceEnabledChatInterface: document.getElementById('voice-enabled-chat-interface'),
-    voiceChatActiveAvatar: document.getElementById('voice-chat-active-avatar'),
-    voiceChatActiveName: document.getElementById('voice-chat-active-name'),
-    voiceChatLog: document.getElementById('voice-chat-log'),
-    voiceChatActivityArea: document.getElementById('voice-chat-activity-area'),
-    voiceChatActivityImageDisplay: document.getElementById('voice-chat-activity-image-display'),
-    voiceChatTextInput: document.getElementById('voice-chat-text-input'),
-    voiceChatTapToSpeakBtn: document.getElementById('voice-chat-tap-to-speak-btn'),
-    voiceChatSendTextBtn: document.getElementById('voice-chat-send-text-btn'),
-    endVoiceChatBtn: document.getElementById('end-voice-chat-btn'),
-    toggleVoiceChatTTSBtn: document.getElementById('toggle-voice-chat-tts-btn'),
-
     // Direct Call Modal
     directCallInterface: document.getElementById('direct-call-interface'),
     directCallActiveAvatar: document.getElementById('direct-call-active-avatar'),
@@ -107,23 +113,9 @@ window.domElements = {
     directCallStatusIndicator: document.getElementById('direct-call-status-indicator'),
     directCallMuteBtn: document.getElementById('direct-call-mute-btn'),
     directCallEndBtn: document.getElementById('direct-call-end-btn'),
-    directCallActivityArea: document.getElementById('direct-call-activity-area'),
-    directCallActivityImageDisplay: document.getElementById('direct-call-activity-image-display'),
     directCallSpeakerToggleBtn: document.getElementById('direct-call-speaker-toggle-btn'),
     directCallActivityBtn: document.getElementById('direct-call-activity-btn'),
-    directCallMainContent: document.querySelector('#direct-call-interface .direct-call-main-content'), // For scrolling image into view
-
-    // Messaging Modal
-    messagingInterface: document.getElementById('messaging-interface'),
-    messageActiveAvatar: document.getElementById('message-active-avatar'),
-    messageActiveName: document.getElementById('message-active-name'),
-    messageChatLog: document.getElementById('message-chat-log'),
-    messageActivityArea: document.getElementById('message-activity-area'),
-    messageActivityImageDisplay: document.getElementById('message-activity-image-display'),
-    messageTextInput: document.getElementById('message-text-input'),
-    messageSendBtn: document.getElementById('message-send-btn'),
-    closeMessagingModalBtn: document.getElementById('close-messaging-modal-btn'),
-    toggleMessageTTSBtn: document.getElementById('toggle-message-tts-btn'),
+    directCallMainContent: document.querySelector('#direct-call-interface .direct-call-main-content'),
 
     // Session Recap Modal
     sessionRecapScreen: document.getElementById('session-recap-screen'),
@@ -137,4 +129,4 @@ window.domElements = {
     downloadTranscriptBtn: document.getElementById('recap-download-transcript-btn'),
 };
 
-// console.log('ui/dom_elements.js loaded. window.domElements object defined.'); // From your paste
+console.log('ui/dom_elements.js loaded and updated for removed elements.');

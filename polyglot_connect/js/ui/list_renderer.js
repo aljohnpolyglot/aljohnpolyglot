@@ -1,106 +1,176 @@
 // js/ui/list_renderer.js
+
 window.listRenderer = (() => {
     const getDeps = () => ({
         domElements: window.domElements,
         polyglotHelpers: window.polyglotHelpers,
         activityManager: window.activityManager,
         flagLoader: window.flagLoader,
-        shellController: window.shellController
+        viewManager: window.viewManager
     });
 
-    function createListItemHTML(itemData, type) {
-        const { polyglotHelpers, activityManager, flagLoader } = getDeps();
+    function createListItemHTML(itemData, itemTypeContext) {
+        // ... (keep existing initial checks and variable declarations) ...
+        const { polyglotHelpers, activityManager, flagLoader } = getDeps(); // Ensure deps are fetched
         if (!itemData || !polyglotHelpers || !activityManager || !flagLoader) {
-            console.warn(`createListItemHTML: Missing itemData or dependencies for type '${type}'.`);
-            return '<div class="list-item-base error-item">Error rendering item</div>';
+            console.warn(`createListItemHTML: Missing itemData or dependencies for context '${itemTypeContext}'. Data:`, itemData);
+            return '<div class="list-item-base error-item">Error rendering item (missing deps or data)</div>';
         }
+        // ... other initial checks ...
 
-        const connector = type === 'group' ? null : (itemData.connector || itemData);
-        const name = type === 'group' ? (itemData.name || "Unnamed Group") : (connector?.profileName || connector?.name || "Unknown Contact");
-        const avatar = type === 'group' ? null : (connector?.avatarModern || 'images/placeholder_avatar.png');
-
-        let flagImageHtml = '';
-        let langForFlag = type === 'group' ? itemData.language : null;
-        if (!langForFlag && connector) {
-            langForFlag = connector.language; // Primary language of the connector
-        }
-
-        if (langForFlag) {
-            let flagCodeToUse = connector?.flagCode; // Use the top-level processed flagCode
-
-            if (!flagCodeToUse) { // Fallback if top-level wasn't set or item is a group without direct connector
-                 const langDef = (window.polyglotFilterLanguages || []).find(l => l.name === langForFlag || l.value === langForFlag);
-                 if (langDef && langDef.flagCode) flagCodeToUse = langDef.flagCode;
-            }
-            if (!flagCodeToUse && langForFlag.length >= 2) {
-                flagCodeToUse = langForFlag.substring(0,2).toLowerCase();
-            }
-             if (!flagCodeToUse) flagCodeToUse = 'xx';
-
-
-            if (flagCodeToUse && flagCodeToUse !== 'xx') {
-                const flagUrl = flagLoader.getFlagUrl(flagCodeToUse);
-                flagImageHtml = `<img src="${flagUrl}" alt="${polyglotHelpers.sanitizeTextForDisplay(langForFlag)} flag" class="lang-flag lang-flag-sm" onerror="this.src='${flagLoader.getFlagUrl('')}'">`;
-            }
-        }
-
-
-        let subText = '';
-        if (type === 'chat') {
-            const lastMsg = itemData.messages?.[itemData.messages.length - 1];
-            if (lastMsg) {
-                let textPreview = lastMsg.text || (lastMsg.type === 'image' ? '[Image Sent]' : '[Interaction]');
-                if (lastMsg.sender?.startsWith('user')) textPreview = `You: ${textPreview}`;
-                subText = textPreview.length > 30 ? `${textPreview.substring(0, 27)}...` : textPreview;
-            } else subText = 'No messages yet';
-        } else if (type === 'summary') {
-            subText = `Session on ${itemData.date || 'Unknown Date'}`;
-            if (itemData.duration) subText += ` (${itemData.duration})`;
-        } else if (type === 'group') {
-            subText = `${itemData.language || 'N/A'} - ${itemData.description ? itemData.description.substring(0,30)+'...' : 'Join the discussion!'}`;
-        }
-
-        let statusDotHtml = '';
-        if (type === 'chat' && connector) {
-            const isActive = activityManager.isConnectorActive(connector);
-            statusDotHtml = `<span class="chat-list-item-status ${isActive ? 'active' : ''}" title="${isActive ? 'Active' : 'Inactive'}"></span>`;
-        }
-
+        let name, avatarHtml = '', statusOrActionHtml = '';
         let itemClass = 'list-item-base';
         let dataIdAttr = '';
-        if (type === 'chat' && connector?.id) { itemClass = 'chat-list-item'; dataIdAttr = `data-connector-id="${polyglotHelpers.sanitizeTextForDisplay(connector.id)}"`; }
-        else if (type === 'summary' && itemData?.sessionId) { itemClass = 'summary-list-item'; dataIdAttr = `data-session-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.sessionId)}"`; }
-        else if (type === 'group' && itemData?.id) { itemClass = 'group-list-item'; dataIdAttr = `data-group-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.id)}"`; }
+        let subTextOutput = '';
+
+        try {
+            if (itemTypeContext === 'activeChat' && itemData.isGroup) {
+                // ... (no changes to this block based on image path issue) ...
+                name = itemData.name || "Unnamed Group";
+                avatarHtml = `<div class="list-item-avatar group-avatar-icon"><i class="fas fa-users"></i></div>`;
+                const lastMsg = itemData.messages?.[itemData.messages.length - 1];
+                let plainPreview = "";
+                if (lastMsg) {
+                    let speakerName = lastMsg.speakerName || "Partner";
+                    if (lastMsg.speakerId === "user_player") speakerName = "You";
+                    let textPreview = lastMsg.text || "[Media message]";
+                    plainPreview = `${speakerName}: ${textPreview}`;
+                    plainPreview = plainPreview.length > 25 ? `${plainPreview.substring(0, 22)}...` : plainPreview;
+                } else {
+                    plainPreview = "No messages yet in group.";
+                }
+
+                if (itemData.lastActivity) {
+                    subTextOutput = `<span class="list-item-subtext-preview">${polyglotHelpers.sanitizeTextForDisplay(plainPreview)}</span> <span class="list-item-timestamp">${polyglotHelpers.formatRelativeTimestamp(itemData.lastActivity)}</span>`;
+                } else {
+                    subTextOutput = polyglotHelpers.sanitizeTextForDisplay(plainPreview);
+                }
+                itemClass = 'chat-list-item group-chat-list-item';
+                if (itemData.id) dataIdAttr = `data-group-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.id)}"`;
+
+
+            } else if (itemTypeContext === 'activeChat' && !itemData.isGroup) {
+                const connector = itemData.connector || itemData;
+                if (!connector || !connector.id) {
+                     console.warn(`createListItemHTML: 1-on-1 activeChat item missing connector or connector.id. Data:`, itemData);
+                     return '<div class="list-item-base error-item">Error: Chat item data invalid</div>';
+                }
+                name = connector.profileName || connector.name || "Unknown Contact";
+                // CORRECTED PATH: connector.avatarModern is already relative to root.
+                // Fallback also relative to root.
+                avatarHtml = `<img src="${connector.avatarModern || 'images/placeholder_avatar.png'}" alt="${polyglotHelpers.sanitizeTextForDisplay(name)}" class="list-item-avatar" onerror="this.src='images/placeholder_avatar.png'">`;
+                const lastMsg = itemData.messages?.[itemData.messages.length - 1];
+                let plainPreview = "";
+                if (lastMsg) {
+                    let textPreview = lastMsg.text || "[Media message]";
+                    plainPreview = lastMsg.sender?.startsWith('user') ? `You: ${textPreview}` : textPreview;
+                    plainPreview = plainPreview.length > 25 ? `${plainPreview.substring(0, 22)}...` : plainPreview;
+                } else {
+                    plainPreview = 'No messages yet';
+                }
+
+                if (itemData.lastActivity) {
+                    subTextOutput = `<span class="list-item-subtext-preview">${polyglotHelpers.sanitizeTextForDisplay(plainPreview)}</span> <span class="list-item-timestamp">${polyglotHelpers.formatRelativeTimestamp(itemData.lastActivity)}</span>`;
+                } else {
+                    subTextOutput = polyglotHelpers.sanitizeTextForDisplay(plainPreview);
+                }
+                const isActive = activityManager.isConnectorActive(connector);
+                statusOrActionHtml = `<span class="chat-list-item-status ${isActive ? 'active' : ''}" title="${isActive ? 'Active' : 'Inactive'}"></span>`;
+                itemClass = 'chat-list-item';
+                dataIdAttr = `data-connector-id="${polyglotHelpers.sanitizeTextForDisplay(connector.id)}"`;
+
+            } else if (itemTypeContext === 'summary') {
+                name = itemData.connectorName || "Session";
+
+                let connectorAvatar = 'images/placeholder_avatar.png'; // Default
+                // Logic to fetch connector avatar using connectorId
+                if (itemData.connectorId && window.polyglotConnectors) {
+                    const connector = window.polyglotConnectors.find(c => c.id === itemData.connectorId);
+                    if (connector && connector.avatarModern) {
+                        connectorAvatar = connector.avatarModern; // Use modern avatar path
+                    } else if (connector) {
+                        console.warn(`ListRenderer: Connector ${itemData.connectorId} found but missing avatarModern.`);
+                    } else {
+                        console.warn(`ListRenderer: Connector not found for ID ${itemData.connectorId} in summary list.`);
+                    }
+                } else if (!itemData.connectorId) {
+                    console.warn("ListRenderer: itemData for summary missing connectorId.");
+                }
+
+                avatarHtml = `<img src="${connectorAvatar}" alt="${polyglotHelpers.sanitizeTextForDisplay(name)}" class="list-item-avatar" onerror="this.src='images/placeholder_avatar.png'">`;
+                let summaryDetails = `Date: ${itemData.date || 'N/A'}`;
+                if (itemData.duration) summaryDetails += `, ${itemData.duration}`;
+                subTextOutput = polyglotHelpers.sanitizeTextForDisplay(summaryDetails.substring(0, 40) + (summaryDetails.length > 40 ? '...' : ''));
+                itemClass = 'summary-list-item';
+                if (itemData.sessionId) dataIdAttr = `data-session-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.sessionId)}"`;
+
+
+            } else if (itemTypeContext === 'groupDiscovery') {
+                // ... (paths here 'images/groups/...' and 'images/placeholder_group_avatar.png' need to be correct) ...
+                // ... (flagLoader.getFlagUrl() relies on flagcdn.js and 'images/flags/unknown.png') ...
+                name = itemData.name || "Unnamed Group";
+                if (itemData.groupPhotoUrl) { // e.g., "images/groups/french_club.png"
+                    avatarHtml = `<img src="${polyglotHelpers.sanitizeTextForDisplay(itemData.groupPhotoUrl)}" alt="${polyglotHelpers.sanitizeTextForDisplay(name)}" class="list-item-avatar group-photo large-group-photo" onerror="this.src='images/placeholder_group_avatar.png'">`;
+                } else if (itemData.language) {
+                    const langDef = (window.polyglotFilterLanguages || []).find(l => l.name === itemData.language || l.value === itemData.language);
+                    const flagCodeToUse = langDef?.flagCode || itemData.language.substring(0, 2).toLowerCase() || 'xx';
+                    if (flagCodeToUse !== 'xx') {
+                        // flagLoader.getFlagUrl('globe') should use FALLBACK_FLAG_URL from flagcdn.js which is 'images/flags/unknown.png'
+                        avatarHtml = `<img src="${flagLoader.getFlagUrl(flagCodeToUse)}" alt="${polyglotHelpers.sanitizeTextForDisplay(itemData.language)} flag" class="lang-flag lang-flag-lg" onerror="this.src='${flagLoader.getFlagUrl('globe')}'">`;
+                    } else {
+                        avatarHtml = `<div class="list-item-avatar group-avatar-icon large-group-icon"><i class="fas fa-users"></i></div>`;
+                    }
+                } else {
+                    avatarHtml = `<div class="list-item-avatar group-avatar-icon large-group-icon"><i class="fas fa-users"></i></div>`;
+                }
+
+                let plainDescription = `${itemData.language || 'N/A'} - ${itemData.description ? itemData.description.substring(0, 70) + (itemData.description.length > 70 ? '...' : '') : 'Chat about various topics!'}`;
+                subTextOutput = polyglotHelpers.sanitizeTextForDisplay(plainDescription);
+                itemClass = 'group-discovery-list-item';
+                if (itemData.id) dataIdAttr = `data-group-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.id)}"`;
+
+                if (itemData.isJoined) {
+                    statusOrActionHtml = `<button class="view-group-chat-btn-list action-btn-sm secondary-btn" data-group-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.id)}"><i class="fas fa-comment-dots"></i> View Chat</button>`;
+                } else {
+                    statusOrActionHtml = `<button class="join-group-btn-list action-btn-sm primary-btn" data-group-id="${polyglotHelpers.sanitizeTextForDisplay(itemData.id)}"><i class="fas fa-plus-circle"></i> Join Group</button>`;
+                }
+
+            } else {
+                 console.warn(`createListItemHTML: Unknown itemTypeContext: '${itemTypeContext}'. Data:`, itemData);
+                return `<div class="list-item-base error-item">Unknown item type: ${polyglotHelpers.sanitizeTextForDisplay(String(itemTypeContext))}</div>`;
+            }
+        } catch (error) {
+            console.error(`createListItemHTML: Error during HTML creation for context '${itemTypeContext}', item:`, itemData, error);
+            return `<div class="list-item-base error-item">Render error: ${polyglotHelpers.sanitizeTextForDisplay(error.message)}</div>`;
+        }
 
         return `
             <div class="${itemClass}" ${dataIdAttr}>
-                ${(type !== 'group' && avatar) ? `<img src="${polyglotHelpers.sanitizeTextForDisplay(avatar)}" alt="${polyglotHelpers.sanitizeTextForDisplay(name)}" class="list-item-avatar" onerror="this.src='images/placeholder_avatar.png'">` : (type === 'group' ? flagImageHtml : '')}
+                ${avatarHtml}
                 <div class="list-item-info">
                     <span class="list-item-name">${polyglotHelpers.sanitizeTextForDisplay(name)}</span>
-                    ${subText ? `<span class="list-item-subtext">${polyglotHelpers.sanitizeTextForDisplay(subText)}</span>` : ''}
+                    ${subTextOutput ? `<span class="list-item-subtext">${subTextOutput}</span>` : ''}
                 </div>
-                ${statusDotHtml}
-                ${type === 'group' ? `<span class="list-item-action-indicator"><i class="fas fa-chevron-right"></i></span>` : ''}
+                ${statusOrActionHtml}
             </div>`;
     }
 
-    function itemClassFromType(type) {
-        if (type === 'chat') return 'chat-list-item';
-        if (type === 'summary') return 'summary-list-item';
-        if (type === 'group') return 'group-list-item';
-        return 'list-item-base';
-    }
-
-    function renderList(ulElement, emptyMsgElement, items, itemType, itemClickHandler) {
-        const { shellController } = getDeps();
+    // ... (rest of renderList and public methods remain the same as the previous version you approved)
+    function renderList(ulElement, emptyMsgElement, items, itemTypeContext, itemClickHandler) {
+        const { viewManager } = getDeps();
         if (!ulElement) {
-            console.warn(`ListRenderer: renderList - UL element not found for type: ${itemType}`);
+            console.warn(`ListRenderer: renderList - UL element not found for context: ${itemTypeContext}`);
             return;
         }
-        ulElement.innerHTML = '';
-        if (!items?.length) {
+        if ((itemTypeContext === 'activeChat' || itemTypeContext === 'summary' || itemTypeContext === 'groupDiscovery') && typeof itemClickHandler !== 'function') {
+            console.error(`ListRenderer: itemClickHandler is NOT a function for context '${itemTypeContext}'. Items will not be clickable.`);
+        }
+
+        ulElement.innerHTML = ''; 
+
+        if (!items || items.length === 0) {
             if (emptyMsgElement) emptyMsgElement.style.display = 'block';
-            if (shellController?.updateEmptyListMessages) shellController.updateEmptyListMessages();
+            if (viewManager?.updateEmptyListMessages) viewManager.updateEmptyListMessages();
             return;
         }
         if (emptyMsgElement) emptyMsgElement.style.display = 'none';
@@ -108,55 +178,87 @@ window.listRenderer = (() => {
         const fragment = document.createDocumentFragment();
         items.forEach(item => {
             if (!item) {
-                console.warn("ListRenderer: renderList - Skipping null/undefined item in items array for type:", itemType);
+                console.warn("ListRenderer: renderList - Skipping null/undefined item in items array for context:", itemTypeContext);
                 return;
             }
             const li = document.createElement('li');
-            const itemHTML = createListItemHTML(item, itemType);
-            if (itemHTML.includes('error-item')) {
-                console.warn("ListRenderer: renderList - Error rendering list item HTML for item:", item, "Type:", itemType);
-                return;
-            }
-            li.innerHTML = itemHTML;
-            const clickableDiv = li.querySelector(`.${itemClassFromType(itemType)}`); // Uses the helper
-            if (clickableDiv && itemClickHandler) {
-                clickableDiv.addEventListener('click', () => {
-                    const clickParam = (itemType === 'chat' && item.connector) ? item.connector : item;
-                    console.log("%cListRenderer: Clicked Item", "color: purple; font-weight: bold;", "itemType:", itemType, "Raw item data:", JSON.parse(JSON.stringify(item)), "Resolved clickParam:", JSON.parse(JSON.stringify(clickParam)));
-                    itemClickHandler(clickParam);
-                });
-            } else if (!clickableDiv) {
-                console.warn("ListRenderer: renderList - Could not find clickable div with class", itemClassFromType(itemType), "for item:", item);
+            li.innerHTML = createListItemHTML(item, itemTypeContext);
+
+            const clickableItemContainer = li.firstElementChild;
+
+            if (clickableItemContainer && clickableItemContainer.nodeType === Node.ELEMENT_NODE && !clickableItemContainer.classList.contains('error-item')) {
+                if (itemTypeContext === 'groupDiscovery') {
+                    const actionButton = clickableItemContainer.querySelector('.join-group-btn-list, .view-group-chat-btn-list');
+                    if (actionButton) {
+                        actionButton.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            if (typeof itemClickHandler === 'function') {
+                                itemClickHandler(item);
+                            } else {
+                                console.error("ListRenderer: itemClickHandler is not a function for groupDiscovery button.");
+                            }
+                        });
+                    } else {
+                        clickableItemContainer.addEventListener('click', () => {
+                            if (typeof itemClickHandler === 'function') {
+                                itemClickHandler(item);
+                            }
+                        });
+                    }
+                } else { 
+                    clickableItemContainer.addEventListener('click', () => {
+                        if (typeof itemClickHandler === 'function') {
+                            itemClickHandler(item);
+                        } else {
+                            console.error(`ListRenderer: itemClickHandler is NOT a function during click for context '${itemTypeContext}'.`);
+                        }
+                    });
+                }
+            } else if (clickableItemContainer && clickableItemContainer.classList.contains('error-item')) {
+                // console.warn("ListRenderer: Skipping event listener for an error item in context:", itemTypeContext, "Original item data:", item);
+            } else {
+                // console.warn("ListRenderer: Could not find valid clickable div container for item in context:", itemTypeContext, "Item data:", item, "HTML:", li.innerHTML);
             }
             fragment.appendChild(li);
         });
         ulElement.appendChild(fragment);
-        if (shellController?.updateEmptyListMessages) shellController.updateEmptyListMessages();
+
+        if (viewManager?.updateEmptyListMessages) viewManager.updateEmptyListMessages();
     }
-    // console.log("ui/list_renderer.js loaded."); // From your paste
+
     return {
-        renderActiveChatList: (conversationsObject, onChatClick) => {
+        renderActiveChatList: (combinedChatsArray, onCombinedItemClick) => {
             const { domElements } = getDeps();
-            const conversationsArray = Object.values(conversationsObject || {})
-                .filter(convo => convo?.connector && convo.messages?.length > 0)
-                .sort((a, b) => (b.lastActivity || 0) - (a.lastActivity || 0));
-            renderList(domElements?.chatListUl, domElements?.emptyChatListMsg, conversationsArray, 'chat', onChatClick);
+            if (typeof onCombinedItemClick !== 'function') {
+                console.error("ListRenderer (renderActiveChatList): onCombinedItemClick is not a function! Chat items will not be clickable.");
+            }
+            renderList(domElements?.chatListUl, domElements?.emptyChatListMsg, combinedChatsArray, 'activeChat', onCombinedItemClick);
         },
         renderSummaryList: (sessionsArray, onSummaryClick) => {
             const { domElements } = getDeps();
-            const sortedSessions = [...(sessionsArray || [])].sort((a, b) => {
-                const timeA = a.rawTranscript?.[0] ? new Date(a.rawTranscript[0].timestamp).getTime() : 0;
-                const timeB = b.rawTranscript?.[0] ? new Date(b.rawTranscript[0].timestamp).getTime() : 0;
-                const dateA = new Date(a.date || "1970-01-01").setHours(0,0,0,0) + timeA;
-                const dateB = new Date(b.date || "1970-01-01").setHours(0,0,0,0) + timeB;
+             if (typeof onSummaryClick !== 'function') {
+                console.error("ListRenderer (renderSummaryList): onSummaryClick is not a function! Summary items will not be clickable.");
+            }
+            const validSessionsArray = Array.isArray(sessionsArray) ? sessionsArray : [];
+            const sortedSessions = [...validSessionsArray].sort((a, b) => {
+                const timeA = a?.rawTranscript?.[0] ? new Date(a.rawTranscript[0].timestamp).getTime() : 0;
+                const timeB = b?.rawTranscript?.[0] ? new Date(b.rawTranscript[0].timestamp).getTime() : 0;
+                const dateAValid = a && a.date && !isNaN(new Date(a.date));
+                const dateBValid = b && b.date && !isNaN(new Date(b.date));
+                const dateA = (dateAValid ? new Date(a.date) : new Date("1970-01-01")).setHours(0, 0, 0, 0) + timeA;
+                const dateB = (dateBValid ? new Date(b.date) : new Date("1970-01-01")).setHours(0, 0, 0, 0) + timeB;
                 return dateB - dateA;
             });
             renderList(domElements?.summaryListUl, domElements?.emptySummaryListMsg, sortedSessions, 'summary', onSummaryClick);
         },
         renderAvailableGroupsList: (groupsArray, onGroupClick) => {
             const { domElements } = getDeps();
-            const sortedGroups = [...(groupsArray || [])].sort((a,b) => (a.name || "").localeCompare(b.name || ""));
-            renderList(domElements?.availableGroupsUl, domElements?.groupLoadingMessage, sortedGroups, 'group', onGroupClick);
+            if (typeof onGroupClick !== 'function') {
+                console.error("ListRenderer (renderAvailableGroupsList): onGroupClick is not a function! Group items/buttons will not be clickable.");
+            }
+            const validGroupsArray = Array.isArray(groupsArray) ? groupsArray : [];
+            const sortedGroups = [...validGroupsArray].sort((a, b) => (a?.name || "").localeCompare(b?.name || ""));
+            renderList(domElements?.availableGroupsUl, domElements?.groupLoadingMessage, sortedGroups, 'groupDiscovery', onGroupClick);
         }
     };
 })();

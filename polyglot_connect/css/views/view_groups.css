@@ -16,9 +16,9 @@
 /* Styles for .available-groups-list and .group-list-item are in components/lists.css */
 
 .group-chat-container { /* Container for the active group chat UI */
-    display: flex; /* Managed by JS, default none */
+    display: flex;
     flex-direction: column;
-    height: 100%; /* Fill available space when active */
+    height: 100%;
     border: 1px solid var(--border-color-light);
     border-radius: var(--border-radius-md);
     background-color: var(--bg-white);
@@ -78,6 +78,8 @@
 #group-chat-log { /* This is a .chat-log-area */
     /* Base styles from components/chat_bubbles.css and global.css apply */
     flex-grow: 1;
+    overflow-y: auto; /* Add vertical scrolling for long chats */
+    max-height: calc(100% - var(--group-chat-header-height) - var(--group-chat-footer-height)); /* Ensure it doesn't exceed container height */
 }
 
 .group-chat-footer {
@@ -87,6 +89,8 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    position: sticky; /* Keep footer visible */
+    bottom: 0; /* Stick to the bottom of the container */
 }
 .typing-indicator { /* For #group-typing-indicator */
     font-size: 0.8em;
@@ -130,3 +134,39 @@ body.dark-mode .group-chat-footer {
     border-top-color: var(--border-color-dark);
 }
 body.dark-mode .typing-indicator { color: #a0a3a8; }
+/* For group discovery list items */
+.group-discovery-list-item .lang-flag-lg { /* If using flags and want them larger */
+    width: 40px;
+    height: 30px;
+    margin-right: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.group-discovery-list-item .group-avatar-icon.large-group-icon { /* If using generic icon */
+    width: 48px; height: 48px; font-size: 1.5em;
+    /* ... other styles from .group-avatar-icon ... */
+}
+.group-discovery-list-item .list-item-subtext {
+    white-space: normal; /* Allow description to wrap */
+    overflow: visible;
+    text-overflow: clip;
+    display: -webkit-box; /* For multi-line ellipsis (optional) */
+    -webkit-line-clamp: 2; /* Max 2 lines for description */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3; /* Adjust line height */
+    max-height: calc(1.3em * 2); /* Max height for 2 lines */
+}
+
+.join-group-btn-list, .view-group-chat-btn-list {
+    /* Uses .action-btn-sm from buttons.css */
+    /* Ensure it aligns well with flex */
+    margin-left: var(--spacing-md);
+    flex-shrink: 0;
+}
+.view-group-chat-btn-list { /* Style for "View Chat" button */
+    /* Uses .secondary-btn from buttons.css or create new style */
+    /* background-color: var(--info-color); */
+}

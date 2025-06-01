@@ -76,7 +76,19 @@ body.dark-mode .list-item-subtext {
     color: #a0a3a8;
 }
 
-
+/* For chat list item timestamp */
+.list-item-name-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.list-item-timestamp {
+    font-size: 0.75em;
+    color: var(--text-color-secondary);
+    margin-left: var(--spacing-sm);
+    white-space: nowrap;
+}
 /* Chat List Specific */
 .chat-list-item .list-item-name { /* Already general enough */ }
 .chat-list-item-status { /* Green dot for active */
@@ -281,4 +293,141 @@ body.dark-mode .group-list-item .list-item-action-indicator {
 
 body.dark-mode .lang-flag {
     border-color: var(--border-color-dark);
+}
+
+/* For message modal header text */
+#message-modal-header-name {
+    font-size: 1.1em; /* Adjust as needed from .modal-title-inline */
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.chat-header-sub-details {
+    font-size: 0.8em;
+    color: var(--text-color-secondary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.chat-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+.chat-header-actions .control-btn { /* Style for Call and Info buttons */
+    padding: var(--spacing-xs);
+    font-size: 1.1em; /* Adjust icon size */
+    background-color: transparent;
+    border: none;
+    color: var(--text-color-primary);
+}
+.chat-header-actions .control-btn:hover {
+    background-color: var(--bg-hover-light);
+    color: var(--primary-color);
+}
+.list-item-timestamp {
+    font-size: 0.75em;
+    color: var(--text-color-secondary);
+    margin-left: auto; /* Pushes it to the right if .list-item-name-line is flex */
+    padding-left: var(--spacing-sm); /* Some space from the name/subtext */
+    white-space: nowrap;
+    flex-shrink: 0; /* Prevent shrinking if name is long */
+}
+.list-item-name-line { /* The container for name and timestamp */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.list-item-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Keep name from pushing timestamp too far */
+    flex-grow: 1;
+}
+.list-item-subtext { /* This already exists, ensure it handles overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.85em;
+    color: var(--text-color-secondary);
+    padding-right: var(--spacing-sm); /* Space if timestamp is below */
+}
+.group-discovery-list-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color-light);
+    cursor: default; /* The button is clickable, not the whole item */
+    transition: background-color var(--transition-fast);
+}
+
+.group-discovery-list-item:hover {
+    background-color: var(--bg-hover-light);
+}
+
+.group-discovery-list-item .lang-flag-sm { /* If using flags for groups */
+    width: 32px; /* Adjust size */
+    height: 24px;
+    margin-right: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+ /* If using a generic group icon instead of flag:
+ .group-discovery-list-item .group-avatar-icon {
+     width: 40px; height: 40px;
+     background-color: var(--secondary-color-lighter);
+     color: var(--secondary-color);
+     border-radius: var(--border-radius-circle);
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1.2em;
+     margin-right: var(--spacing-md);
+     flex-shrink: 0;
+ }
+ */
+
+.group-discovery-list-item .list-item-info {
+    flex-grow: 1;
+    min-width: 0; /* Allow text to truncate */
+}
+
+.group-discovery-list-item .list-item-name {
+    font-weight: var(--font-weight-medium);
+    display: block; /* Ensure it takes full width for potential ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: var(--spacing-xxs);
+}
+
+.group-discovery-list-item .list-item-subtext {
+    font-size: 0.85em;
+    color: var(--text-color-secondary);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.join-group-btn-list {
+    /* Uses .action-btn-sm from buttons.css */
+    margin-left: var(--spacing-md);
+    flex-shrink: 0;
+    padding: var(--spacing-xs) var(--spacing-sm); /* Adjust padding if needed */
+}
+
+/* Dark Mode for group discovery items */
+body.dark-mode .group-discovery-list-item {
+    border-bottom-color: var(--border-color-dark);
+}
+body.dark-mode .group-discovery-list-item:hover {
+    background-color: var(--bg-hover-dark);
+}
+body.dark-mode .group-discovery-list-item .group-avatar-icon {
+     background-color: var(--bg-dark-tertiary);
+     color: var(--primary-color-lighter);
 }

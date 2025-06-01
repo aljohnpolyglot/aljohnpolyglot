@@ -2,13 +2,14 @@
 // Manages view switching, navigation, and view-specific initializations.
 
 window.viewManager = (() => {
+    'use strict';
     const getDeps = () => ({
         domElements: window.domElements,
         polyglotHelpers: window.polyglotHelpers,
         uiUpdater: window.uiUpdater,
-        chatManager: window.chatManager,
+        chatManager: window.chatOrchestrator, // This is chatOrchestrator
         groupManager: window.groupManager,
-        sessionManager: window.sessionManager,
+        sessionHistoryManager: window.sessionHistoryManager,
         listRenderer: window.listRenderer,
         filterController: window.filterController,
         chatUiManager: window.chatUiManager,
@@ -16,26 +17,27 @@ window.viewManager = (() => {
     });
 
     let currentActiveTab = 'home';
+    const getCurrentActiveTab = () => currentActiveTab;
 
     function initializeAndSwitchToInitialView() {
         const { polyglotHelpers } = getDeps();
         console.log("viewManager: initializeAndSwitchToInitialView - Starting.");
         currentActiveTab = polyglotHelpers?.loadFromLocalStorage('polyglotLastActiveTab') || 'home';
-        console.log("viewManager: Initial activeTab from localStorage (or default):", currentActiveTab);
+        console.log("viewManager: Initial activeTab:", currentActiveTab);
         setupNavigationEventListeners();
-        switchView(currentActiveTab, true);
+        switchView(currentActiveTab, true); // Pass isInitialLoad = true
         console.log("viewManager: initializeAndSwitchToInitialView - Complete.");
     }
 
     function setupNavigationEventListeners() {
         const { domElements } = getDeps();
-        if (domElements?.mainNavItems) {
+        if (domElements?.mainNavItems && domElements.mainNavItems.length > 0) {
             domElements.mainNavItems.forEach(item => {
                 item.addEventListener('click', handleTabSwitchEvent);
             });
-            console.log("viewManager: Main navigation event listeners attached.");
+            console.log("viewManager: Main navigation event listeners attached to", domElements.mainNavItems.length, "items.");
         } else {
-            console.warn("viewManager: Main navigation items (domElements.mainNavItems) not found.");
+            console.warn("viewManager: Main navigation items (domElements.mainNavItems) not found or empty.");
         }
     }
 
@@ -47,84 +49,120 @@ window.viewManager = (() => {
         }
     }
 
-    function switchView(targetTab, isInitialLoad = false) {
-        const {
-            domElements, listRenderer, uiUpdater, chatManager, groupManager,
-            sessionManager, polyglotHelpers, filterController, chatUiManager
-        } = getDeps();
-
-        console.log(`viewManager: switchView - Attempting to switch to tab: '${targetTab}', current: '${currentActiveTab}', initial: ${isInitialLoad}`);
-
-        if (!targetTab || !domElements?.mainNavItems || !domElements.mainViews || !domElements.rightSidebarPanels) {
-            console.error("viewManager: switchView - CRITICAL: Missing DOM elements for tab switching. Aborting.");
+    function setActiveRightSidebarPanel(panelIdToShow) {
+        const { domElements } = getDeps();
+        if (!domElements?.rightSidebarPanels) {
+            console.error("ViewManager: setActiveRightSidebarPanel - domElements.rightSidebarPanels NodeList is MISSING.");
+            return;
+        }
+        if (domElements.rightSidebarPanels.length === 0) {
+            console.warn("ViewManager: setActiveRightSidebarPanel - domElements.rightSidebarPanels is EMPTY. No panels to manage.");
             return;
         }
 
+        let panelFoundAndActivated = false;
+        // console.log("ViewManager: setActiveRightSidebarPanel - Available panels:", Array.from(domElements.rightSidebarPanels).map(p => p.id));
+
+        domElements.rightSidebarPanels.forEach(panel => {
+            if (panel.id === panelIdToShow) {
+                panel.classList.add('active-panel');
+                panelFoundAndActivated = true;
+                // console.log(`ViewManager: Activated panel '${panel.id}'`);
+            } else {
+                panel.classList.remove('active-panel');
+            }
+        });
+
+        if (panelIdToShow && !panelFoundAndActivated) {
+            console.error(`ViewManager: setActiveRightSidebarPanel - TARGET Panel with ID '${panelIdToShow}' was NOT FOUND among domElements.rightSidebarPanels.`);
+        } else if (!panelIdToShow) {
+            // console.log("ViewManager: setActiveRightSidebarPanel - No panelIdToShow provided, all panels deactivated (hidden).");
+        }
+    }
+
+
+    function switchView(targetTab, isInitialLoad = false) {
+        const { domElements, listRenderer, uiUpdater, chatManager, groupManager, sessionHistoryManager, polyglotHelpers, filterController, chatUiManager } = getDeps();
+        console.log(`viewManager: switchView - To: '${targetTab}', Current: '${currentActiveTab}', Initial: ${isInitialLoad}`);
+
+        if (!targetTab || !domElements?.mainNavItems || !domElements.mainViews) {
+            console.error("viewManager: switchView - Missing critical DOM elements for tab switching. Aborting.");
+            return;
+        }
+
+        const previousTab = currentActiveTab;
         currentActiveTab = targetTab;
         polyglotHelpers?.saveToLocalStorage('polyglotLastActiveTab', currentActiveTab);
+
         domElements.mainNavItems.forEach(i => i.classList.toggle('active', i.dataset.tab === targetTab));
         domElements.mainViews.forEach(view => {
             view.classList.toggle('active-view', view.id === `${targetTab}-view`);
         });
-        domElements.rightSidebarPanels.forEach(panel => panel.classList.remove('active-panel'));
-        const rightPanelMap = {
-            'home': null,
-            'find': 'findFiltersPanel',
-            'groups': 'groupsFiltersPanel',
-            'messages': 'messagesChatListPanel',
-            'summary': 'summaryChatListPanel'
-        };
-        const targetRightPanelKey = rightPanelMap[targetTab];
-        if (targetRightPanelKey && domElements[targetRightPanelKey]) {
-            domElements[targetRightPanelKey].classList.add('active-panel');
-        } else if (targetRightPanelKey) {
-            console.warn(`viewManager: Right sidebar panel DOM element '${targetRightPanelKey}' not found for tab '${targetTab}'.`);
-        }
 
+        let rightPanelIdToShow = null;
+        if (targetTab === 'find') {
+            rightPanelIdToShow = 'findFiltersPanel';
+        } else if (targetTab === 'groups') {
+            if (groupManager?.getCurrentGroupData()) {
+                rightPanelIdToShow = 'messagesChatListPanel'; // Show active chats if in a group
+            } else {
+                rightPanelIdToShow = 'groupsFiltersPanel'; // Default to group filters
+            }
+        } else if (targetTab === 'messages') {
+            rightPanelIdToShow = 'messagesChatListPanel';
+        } else if (targetTab === 'summary') {
+            rightPanelIdToShow = 'summaryChatListPanel';
+        } else if (targetTab === 'home') {
+            rightPanelIdToShow = null; // No right sidebar panel for home
+        }
+        // console.log(`ViewManager: switchView for tab '${targetTab}', determined rightPanelIdToShow: '${rightPanelIdToShow}'`);
+        setActiveRightSidebarPanel(rightPanelIdToShow);
+
+
+        // Tab-Specific Actions
         if (targetTab === 'home') {
-            console.log("viewManager: Activating 'home' view.");
             populateHomepageTips();
         } else if (targetTab === 'find') {
-            console.log("viewManager: Activating 'find' view.");
-            filterController?.applyFindConnectorsFilters();
+            filterController?.applyFindConnectorsFilters(); // This should render the cards
         } else if (targetTab === 'groups') {
-            console.log("viewManager: Activating 'groups' view.");
-            if (chatUiManager?.hideGroupChatView) { // CORRECTED FUNCTION NAME HERE
-                chatUiManager.hideGroupChatView();
+            if (groupManager?.getCurrentGroupData()) {
+                // If already in a group (e.g., tab switch away and back), ensure chat UI is visible
+                chatUiManager?.showGroupChatView(groupManager.getCurrentGroupData().name, window.groupManager.currentGroupMembers); // Ensure currentGroupMembers is accessible or passed
+                chatManager?.renderCombinedActiveChatsList(); // Refresh active chats list in sidebar
             } else {
-                console.warn("viewManager: chatUiManager.hideGroupChatView is not available for 'groups' tab.");
+                // If not in a group, show the group list
+                chatUiManager?.hideGroupChatView();
+                groupManager?.loadAvailableGroups(); // This renders the list of available groups
             }
-            groupManager?.loadAvailableGroups();
         } else if (targetTab === 'messages') {
-            console.log("viewManager: Activating 'messages' view. Calling chatManager.handleMessagesTabActive()");
+            // chatManager.handleMessagesTabActive typically renders the combined list
+            // and might open the first/last active chat.
             chatManager?.handleMessagesTabActive();
         } else if (targetTab === 'summary') {
-            console.log("viewManager: Activating 'summary' view.");
-            if (sessionManager && listRenderer) {
-                listRenderer.renderSummaryList(sessionManager.getCompletedSessions(), sessionManager.showSessionRecapInView);
-            }
-            uiUpdater?.displaySummaryInView(null);
+            if (sessionHistoryManager) sessionHistoryManager.updateSummaryListUI(); // Renders summary list
+            uiUpdater?.displaySummaryInView(null); // Show placeholder initially
         }
 
-        updateEmptyListMessages();
+        updateEmptyListMessages(); // Call this after content might have changed
         console.log(`viewManager: switchView - Successfully switched to tab: '${targetTab}'`);
     }
 
+
     function populateHomepageTips() {
         const { domElements, polyglotHelpers, polyglotSharedContent } = getDeps();
-        console.log("viewManager: populateHomepageTips - Called.");
+        // console.log("viewManager: populateHomepageTips - Called.");
 
         if (!domElements?.homepageTipsList) {
-            console.error("viewManager: populateHomepageTips - domElements.homepageTipsList is missing!");
+            // console.error("viewManager: populateHomepageTips - domElements.homepageTipsList is missing!");
             return;
         }
         if (!polyglotSharedContent?.homepageTips) {
-            console.error("viewManager: populateHomepageTips - polyglotSharedContent.homepageTips is missing or undefined!");
+            // console.error("viewManager: populateHomepageTips - polyglotSharedContent.homepageTips is missing or undefined!");
             if (domElements.homepageTipsList) domElements.homepageTipsList.innerHTML = "<li>No tips available.</li>";
             return;
         }
         if (!polyglotHelpers) {
-            console.error("viewManager: populateHomepageTips - polyglotHelpers is missing!");
+            // console.error("viewManager: populateHomepageTips - polyglotHelpers is missing!");
             return;
         }
 
@@ -133,34 +171,90 @@ window.viewManager = (() => {
             domElements.homepageTipsList.innerHTML = tips.map(tip =>
                 `<li><i class="fas fa-check-circle tip-icon"></i> ${polyglotHelpers.sanitizeTextForDisplay(tip)}</li>`
             ).join('');
-            console.log("viewManager: Homepage tips populated.");
+            // console.log("viewManager: Homepage tips populated.");
         } else {
-            console.warn("viewManager: populateHomepageTips - homepageTips is not a non-empty array. Content:", tips);
+            // console.warn("viewManager: populateHomepageTips - homepageTips is not a non-empty array. Content:", tips);
             domElements.homepageTipsList.innerHTML = "<li>Tips are loading or unavailable.</li>";
         }
     }
 
     function updateEmptyListMessages() {
-        const { domElements } = getDeps();
+        const { domElements, filterController } = getDeps(); // Added filterController
         if (!domElements) {
-            console.warn("viewManager: updateEmptyListMessages - domElements not available.");
+            // console.warn("viewManager: updateEmptyListMessages - domElements not available.");
             return;
         }
+
+        // Active Chats List (Messages Tab, Groups Tab when in a group)
         if (domElements.chatListUl && domElements.emptyChatListMsg) {
-            domElements.emptyChatListMsg.style.display = domElements.chatListUl.children.length === 0 ? 'block' : 'none';
+            const hasItems = domElements.chatListUl.children.length > 0;
+            domElements.emptyChatListMsg.style.display = hasItems ? 'none' : 'block';
+            domElements.emptyChatListMsg.textContent = "No active chats."; // Default message
         }
+
+        // Session History List (Summary Tab)
         if (domElements.summaryListUl && domElements.emptySummaryListMsg) {
-            domElements.emptySummaryListMsg.style.display = domElements.summaryListUl.children.length === 0 ? 'block' : 'none';
+            const hasItems = domElements.summaryListUl.children.length > 0;
+            domElements.emptySummaryListMsg.style.display = hasItems ? 'none' : 'block';
+            domElements.emptySummaryListMsg.textContent = "No session history."; // Default message
         }
+
+        // Available Groups List (Groups Tab when not in a group)
         if (domElements.availableGroupsUl && domElements.groupLoadingMessage) {
-            const hasGroups = domElements.availableGroupsUl.children.length > 0;
+            const hasItems = domElements.availableGroupsUl.children.length > 0;
             let message = '';
-            if (!hasGroups) {
-                const currentFilterValue = domElements.filterGroupLanguageSelect?.value || 'all';
-                message = currentFilterValue !== 'all' ? 'No groups match your current filter.' : 'No groups available at the moment.';
+            if (!hasItems) {
+                // Check if filters are applied from filterController or domElements
+                const groupLangFilterValue = domElements.filterGroupLanguageSelect?.value;
+                if (groupLangFilterValue && groupLangFilterValue !== 'all') {
+                    message = 'No groups match your current filter.';
+                } else {
+                    message = 'No groups available at the moment. Check back later!';
+                }
             }
             domElements.groupLoadingMessage.textContent = message;
-            domElements.groupLoadingMessage.style.display = message ? 'block' : 'none';
+            domElements.groupLoadingMessage.style.display = message ? 'block' : 'none'; // Show if message is not empty
+        }
+
+        // Connector Hub (Find Tab) - Assuming a similar pattern
+        if (domElements.connectorHub && domElements.connectorHub.querySelector('.loading-message')) {
+            const loadingMsgEl = domElements.connectorHub.querySelector('.loading-message');
+            const hasCards = domElements.connectorHub.querySelectorAll('.connector-card').length > 0;
+            if (hasCards) {
+                loadingMsgEl.style.display = 'none';
+            } else {
+                // Message could depend on whether filters are active
+                const langFilterValue = domElements.filterLanguageSelect?.value;
+                const roleFilterValue = domElements.filterRoleSelect?.value;
+                if ((langFilterValue && langFilterValue !== 'all') || (roleFilterValue && roleFilterValue !== 'all')) {
+                    loadingMsgEl.textContent = 'No connectors match your current filters.';
+                } else {
+                    loadingMsgEl.textContent = 'No connectors available. Try adjusting filters or check back later.';
+                }
+                loadingMsgEl.style.display = 'block';
+            }
+        }
+    }
+
+
+    function displaySessionSummaryInView(sessionDataOrId) {
+        // console.log("viewManager: displaySessionSummaryInView called with:", sessionDataOrId);
+        const { uiUpdater, sessionHistoryManager } = getDeps();
+        let sessionData = sessionDataOrId;
+
+        if (typeof sessionDataOrId === 'string') { // If only ID is passed
+            sessionData = sessionHistoryManager?.getSessionById(sessionDataOrId);
+        }
+
+        if (uiUpdater?.displaySummaryInView) {
+            if (sessionData) {
+                uiUpdater.displaySummaryInView(sessionData);
+            } else {
+                // console.warn("viewManager: No session data found for summary display:", sessionDataOrId);
+                uiUpdater.displaySummaryInView(null); // Show placeholder if no data
+            }
+        } else {
+            console.error("viewManager: uiUpdater.displaySummaryInView is not available.");
         }
     }
 
@@ -168,6 +262,9 @@ window.viewManager = (() => {
     return {
         initializeAndSwitchToInitialView,
         switchView,
-        updateEmptyListMessages
+        updateEmptyListMessages,
+        displaySessionSummaryInView,
+        setActiveRightSidebarPanel,
+        getCurrentActiveTab
     };
 })();

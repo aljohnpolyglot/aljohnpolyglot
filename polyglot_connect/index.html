@@ -106,20 +106,35 @@
 
         <!-- Messages View (for 1-on-1 Embedded Chat) -->
         <div id="messages-view" class="view">
-            <header class="view-header"><h1 id="active-chat-partner-name">Your Conversations</h1></header>
+        <!-- Inside #messages-view -->
+<header class="view-header embedded-chat-main-header"> <!-- New class for styling -->
+    <div class="partner-info">
+        <img src="images/placeholder_avatar.png" alt="Partner" id="embedded-chat-header-avatar" class="chat-header-avatar">
+        <div>
+            <h1 id="embedded-chat-header-name">Partner Name</h1>
+            <p id="embedded-chat-header-details" class="chat-header-sub-details">Location | Age</p>
+        </div>
+    </div>
+    <div class="chat-header-actions">
+        <button id="embedded-chat-call-btn" class="control-btn" title="Start Direct Call"><i class="fas fa-phone-alt"></i></button>
+        <button id="embedded-chat-info-btn" class="control-btn" title="View Profile"><i class="fas fa-info-circle"></i></button>
+    </div>
+</header>
             <div class="view-content messages-view-flex-container">
                 <p id="messages-placeholder" class="loading-message">Select a conversation from the right, or find someone new to start chatting!</p>
                  <div id="embedded-chat-container" style="display:none;" class="embedded-chat-ui">
                     <div id="embedded-chat-log" class="chat-log-area styled-scrollbar"></div>
-                    <div id="embedded-message-activity-area" class="activity-area-style" style="display:none;">
+                    <!-- <div id="embedded-message-activity-area" class="activity-area-style" style="display:none;">
                         <img src="" id="embedded-message-activity-image-display" alt="Activity Image">
-                    </div>
-                    <footer class="embedded-chat-footer">
-                        <button id="embedded-message-attach-btn" class="control-btn attach-btn" title="Send Image (Tutor Chat Only)" style="display:none;"><i class="fas fa-paperclip"></i></button>
-                        <input type="file" id="embedded-message-image-upload" accept="image/*" style="display:none;">
-                        <input type="text" id="embedded-message-text-input" placeholder="Type your message..." class="chat-input-field">
-                        <button id="embedded-message-send-btn" class="send-btn primary-btn"><i class="fas fa-paper-plane"></i></button>
-                    </footer>
+                    </div> -->
+                  <!-- Inside #messages-view -> #embedded-chat-container -> .embedded-chat-footer -->
+<footer class="embedded-chat-footer">
+  <button id="embedded-message-attach-btn" class="control-btn attach-btn" title="Send Image (Tutor Chat Only)"><i class="fas fa-paperclip"></i></button>
+    <input type="file" id="embedded-message-image-upload" accept="image/*" style="display:none;">
+    <button id="embedded-message-mic-btn" class="control-btn mic-btn" title="Send Voice Message"><i class="fas fa-microphone"></i></button> <!-- ADDED -->
+    <input type="text" id="embedded-message-text-input" placeholder="Type or use microphone..." class="chat-input-field">
+    <button id="embedded-message-send-btn" class="send-btn primary-btn"><i class="fas fa-paper-plane"></i></button>
+</footer>
                 </div>
             </div>
         </div>
@@ -137,23 +152,29 @@
     <!-- ===== RIGHT SIDEBAR (Contextual Filters/Lists) ===== -->
     <aside id="right-sidebar" class="styled-scrollbar">
         <!-- Find Filters -->
-        <div id="find-filters" class="sidebar-panel">
-            <h4><i class="fas fa-filter"></i> Filters</h4>
-            <div class="filter-group"><label for="filter-language">Language:</label><select id="filter-language" class="styled-select"></select></div>
+        <div id="findFiltersPanel" class="sidebar-panel"> <!-- Matches 'findFiltersPanel' -->
+        <h4><i class="fas fa-filter"></i> Filters</h4>
+        <div class="filter-group"><label for="filter-language">Language:</label><select id="filter-language" class="styled-select"></select></div>
             <div class="filter-group"><label for="filter-role">Role:</label><select id="filter-role" class="styled-select"><option value="all">Any Role</option><option value="tutor">Tutor</option><option value="native">Native Partner</option><option value="learner">Learner</option></select></div>
             <!-- <div class="filter-group"><label for="filter-level-tag">Partner's Level:</label><select id="filter-level-tag" class="styled-select"><option value="all">Any Level</option><option value="beginner">Beginner</option><option value="learning">Learning</option><option value="fluent">Fluent</option></select></div> -->
             <button id="apply-filters-btn" class="sidebar-action-btn primary-btn"><i class="fas fa-check"></i> Apply Filters</button>
         </div>
         <!-- Group Filters -->
-        <div id="groups-filters" class="sidebar-panel">
-            <h4><i class="fas fa-filter"></i> Group Filters</h4>
-            <div class="filter-group"><label for="filter-group-language">Language:</label><select id="filter-group-language" class="styled-select"></select></div>
+        <div id="groupsFiltersPanel" class="sidebar-panel"> <!-- Matches 'groupsFiltersPanel' -->
+        <h4><i class="fas fa-filter"></i> Group Filters</h4>
+        <div class="filter-group"><label for="filter-group-language">Language:</label><select id="filter-group-language" class="styled-select"></select></div>
             <button id="apply-group-filters-btn" class="sidebar-action-btn primary-btn"><i class="fas fa-search"></i> Find Groups</button>
         </div>
         <!-- Messages Chat List -->
-        <div id="messages-chat-list" class="sidebar-panel"><h4><i class="fas fa-inbox"></i> Active Chats</h4><ul id="chat-list-ul" class="sidebar-list"></ul><p class="empty-list-msg" id="empty-chat-list-msg" style="display:none;">No active chats.</p></div>
+        <div id="messagesChatListPanel" class="sidebar-panel"> <!-- Matches 'messagesChatListPanel' -->
+        <h4><i class="fas fa-inbox"></i> Active Chats</h4>
+        <ul id="chat-list-ul" class="sidebar-list"></ul><p class="empty-list-msg" id="empty-chat-list-msg" style="display:none;">No active chats.</p>
+        </div>
         <!-- Summary List -->
-        <div id="summary-chat-list" class="sidebar-panel"><h4><i class="fas fa-history"></i> Session History</h4><ul id="summary-list-ul" class="sidebar-list"></ul><p class="empty-list-msg" id="empty-summary-list-msg" style="display:none;">No session history.</p></div>
+        <div id="summaryChatListPanel" class="sidebar-panel"> <!-- Matches 'summaryChatListPanel' -->
+        <h4><i class="fas fa-history"></i> Session History</h4>
+        <ul id="summary-list-ul" class="sidebar-list"></ul><p class="empty-list-msg" id="empty-summary-list-msg" style="display:none;">No session history.</p>
+        </div>
     </aside>
 
     <!-- MODALS -->
@@ -167,25 +188,7 @@
         </div>
     </div>
 
-    <div id="voice-enabled-chat-interface" class="modal-overlay" style="display: none;">
-        <div class="modal-content call-interface-modal">
-            <header class="modal-header call-interface-header">
-                <img src="images/placeholder_avatar.png" alt="Connector Avatar" id="voice-chat-active-avatar" class="modal-avatar-small">
-                <h3 id="voice-chat-active-name" class="modal-title-inline">Voice Chat</h3>
-                <div class="modal-controls">
-                    <button id="toggle-voice-chat-tts-btn" class="control-btn tts-toggle-btn" title="Toggle Voice"><i class="fas fa-volume-up"></i></button>
-                    <button id="end-voice-chat-btn" class="modal-btn end-call-button"><i class="fas fa-times"></i> End Chat</button>
-                </div>
-            </header>
-            <div id="voice-chat-log" class="modal-body call-chat-log styled-scrollbar"></div>
-            <div id="voice-chat-activity-area" class="activity-area-style" style="display:none;"><img src="" id="voice-chat-activity-image-display" alt="Activity Image"></div>
-            <footer class="modal-footer call-interface-footer">
-                <input type="text" id="voice-chat-text-input" placeholder="Type or use microphone..." class="chat-input-field">
-                <button id="voice-chat-tap-to-speak-btn" class="control-btn tap-to-speak-btn" title="Tap to Speak"><i class="fas fa-microphone"></i></button>
-                <button id="voice-chat-send-text-btn" class="send-btn primary-btn" style="display:none;"><i class="fas fa-paper-plane"></i></button>
-            </footer>
-        </div>
-    </div>
+    
 
     <div id="direct-call-interface" class="modal-overlay" style="display: none;">
         <div class="modal-content direct-call-modal">
@@ -196,7 +199,7 @@
             </header>
             <main class="modal-body direct-call-main-content"></main>
             <footer class="modal-footer direct-call-footer">
-                <button id="direct-call-activity-btn" class="control-btn direct-call-action-btn" title="Activity" style="display: none;"><i class="fas fa-image"></i></button>
+                <!-- <button id="direct-call-activity-btn" class="control-btn direct-call-action-btn" title="Activity" style="display: none;"><i class="fas fa-image"></i></button> -->
                 <button id="direct-call-mute-btn" class="control-btn direct-call-action-btn active" title="Microphone On / Off"><i class="fas fa-microphone"></i></button>
                 <button id="direct-call-end-btn" class="modal-btn direct-call-end-button"><i class="fas fa-phone-slash"></i></button>
                 <button id="direct-call-speaker-toggle-btn" class="control-btn direct-call-action-btn active" title="Voice On / Off"><i class="fas fa-volume-up"></i></button>
@@ -205,24 +208,37 @@
         </div>
     </div>
 
-    <div id="messaging-interface" class="modal-overlay" style="display: none;"> <!-- For MODAL messaging if still used -->
-        <div class="modal-content messaging-interface-modal">
-            <header class="modal-header messaging-interface-header">
-                <img src="images/placeholder_avatar.png" alt="Connector Avatar" id="message-active-avatar" class="modal-avatar-small">
-                <h3 id="message-active-name" class="modal-title-inline">Chat</h3>
-                 <div class="modal-controls">
-                    <button id="toggle-message-tts-btn" class="control-btn tts-toggle-btn" title="Toggle Voice"><i class="fas fa-volume-up"></i></button>
-                    <button id="close-messaging-modal-btn" class="modal-btn end-call-button"><i class="fas fa-times"></i> Close</button>
+    <div id="messaging-interface" class="modal-overlay" style="display: none;"> <!-- For MODAL messaging -->
+    <div class="modal-content messaging-interface-modal">
+        <!-- Messaging Modal Header -->
+        <header class="modal-header messaging-interface-header">
+            <div class="partner-info">
+                <img src="images/placeholder_avatar.png" alt="Partner" id="message-modal-header-avatar" class="chat-header-avatar">
+                <div>
+                    <h3 id="message-modal-header-name">Chat with Partner</h3>
+                    <p id="message-modal-header-details" class="chat-header-sub-details">Location | Age</p>
                 </div>
-            </header>
-            <div id="message-chat-log" class="modal-body message-chat-log styled-scrollbar"></div>
-            <div id="message-activity-area" class="activity-area-style" style="display:none;"><img src="" id="message-activity-image-display" alt="Activity Image"></div>
-            <footer class="modal-footer messaging-interface-footer">
-                <input type="text" id="message-text-input" placeholder="Type your message..." class="chat-input-field">
-                <button id="message-send-btn" class="send-btn primary-btn"><i class="fas fa-paper-plane"></i> Send</button>
-            </footer>
-        </div>
+            </div>
+            <div class="modal-controls chat-header-actions">
+                <button id="message-modal-call-btn" class="control-btn" title="Start Direct Call"><i class="fas fa-phone-alt"></i></button>
+                <button id="message-modal-info-btn" class="control-btn" title="View Profile"><i class="fas fa-info-circle"></i></button>
+                <button id="close-messaging-modal-btn" class="modal-btn end-call-button"><i class="fas fa-times"></i></button>
+            </div>
+        </header>
+
+        <!-- Messaging Modal Body -->
+        <div id="message-chat-log" class="modal-body message-chat-log styled-scrollbar"></div>
+
+        <!-- Messaging Modal Footer -->
+        <footer class="modal-footer messaging-interface-footer">
+            <button id="message-modal-attach-btn" class="control-btn attach-btn" title="Send Photo"><i class="fas fa-paperclip"></i></button> <!-- NEW -->
+            <input type="file" id="message-modal-image-upload" accept="image/*" style="display:none;"> <!-- NEW -->
+            <button id="message-modal-mic-btn" class="control-btn mic-btn" title="Send Voice Message"><i class="fas fa-microphone"></i></button>
+            <input type="text" id="message-text-input" placeholder="Type or use microphone..." class="chat-input-field">
+            <button id="message-send-btn" class="send-btn primary-btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </footer>
     </div>
+</div>
 
     <div id="session-recap-screen" class="modal-overlay" style="display: none;">
         <div class="modal-content recap-modal">
@@ -231,10 +247,46 @@
             <h3 id="recap-connector-name" class="modal-subtitle">With [Connector Name]</h3>
             <div class="modal-body recap-body-content styled-scrollbar">
                 <p><strong>Date:</strong> <span id="recap-date"></span></p>
-                <p><strong>Duration:</strong> <span id="recap-duration"></span></p>
-                <div class="recap-section"><h4><i class="fas fa-list-alt"></i> Topics Discussed:</h4><ul id="recap-topics"></ul></div>
-                <div class="recap-section"><h4><i class="fas fa-book-open"></i> Key Vocabulary/Phrases:</h4><ul id="recap-vocabulary"></ul></div>
-                <div class="recap-section"><h4><i class="fas fa-bullseye"></i> Areas for Your Focus:</h4><ul id="recap-focus-areas"></ul></div>
+<p><strong>Duration:</strong> <span id="recap-duration"></span></p>
+
+<!-- NEW: Conversation Summary -->
+<div class="recap-section">
+    <h4><i class="fas fa-info-circle"></i> Conversation Overview:</h4>
+    <p id="recap-conversation-summary-text" class="recap-text-block"></p>
+</div>
+
+<div class="recap-section">
+    <h4><i class="fas fa-list-alt"></i> Key Topics Discussed:</h4>
+    <ul id="recap-topics"></ul> <!-- Was recapTopicsList, ensure consistency -->
+</div>
+
+<!-- NEW: Good Usage Highlights -->
+<div class="recap-section">
+    <h4><i class="fas fa-thumbs-up"></i> Well Done! (Highlights):</h4>
+    <ul id="recap-good-usage-list"></ul>
+</div>
+
+<div class="recap-section">
+    <h4><i class="fas fa-book-open"></i> New Vocabulary/Phrases:</h4>
+    <ul id="recap-vocabulary"></ul> <!-- Was recapVocabularyList -->
+</div>
+
+<div class="recap-section">
+    <h4><i class="fas fa-pencil-ruler"></i> Areas for Improvement:</h4>
+    <ul id="recap-focus-areas"></ul> <!-- Was recapFocusAreasList -->
+</div>
+
+<!-- NEW: Suggested Practice Activities -->
+<div class="recap-section">
+    <h4><i class="fas fa-dumbbell"></i> Suggested Practice:</h4>
+    <ul id="recap-practice-activities-list"></ul>
+</div>
+
+<!-- NEW: Overall Encouragement -->
+<div class="recap-section">
+    <h4><i class="fas fa-comment-dots"></i> Coach's Note:</h4>
+    <p id="recap-overall-encouragement-text" class="recap-text-block"></p>
+</div>
             </div>
             <div class="modal-footer recap-actions">
                 <button id="recap-download-transcript-btn" class="modal-btn primary-btn"><i class="fas fa-download"></i> Download Transcript</button>
@@ -267,7 +319,7 @@
             </div>
             <div class="modal-footer persona-modal-actions">
                 <button id="persona-modal-start-message-btn" class="action-btn primary-btn"><i class="fas fa-comments"></i> Message</button>
-                <button id="persona-modal-start-voicechat-btn" class="action-btn accent-btn-1"><i class="fas fa-headset"></i> Voice Chat</button>
+              
                 <button id="persona-modal-start-directcall-btn" class="action-btn accent-btn-2"><i class="fas fa-phone-alt"></i> Direct Call</button>
             </div>
         </div>
@@ -277,6 +329,45 @@
 
   <!-- Configuration -->
 <!-- Configuration -->
+<script type="module">
+  async function loadAndAssignSdk() {
+    try {
+      console.log("Attempting to import @google/genai SDK from CDN...");
+      const genaiModule = await import('https://cdn.jsdelivr.net/npm/@google/genai@1.3.0/+esm');
+      console.log("SDK Module loaded. Content of genaiModule:", genaiModule);
+      console.log("Keys in genaiModule:", Object.keys(genaiModule));
+
+      if (genaiModule.GoogleGenAI) {
+          window.GoogleGenAI = genaiModule.GoogleGenAI;
+          console.log("SUCCESS: Assigned window.GoogleGenAI from genaiModule.GoogleGenAI");
+      } else if (genaiModule.default && typeof genaiModule.default === 'function' && genaiModule.default.name && genaiModule.default.name.includes('GoogleGenAI')) {
+          window.GoogleGenAI = genaiModule.default;
+          console.log("SUCCESS: Assigned window.GoogleGenAI from genaiModule.default (it was the class itself)");
+      } else if (genaiModule.default && genaiModule.default.GoogleGenAI) {
+          window.GoogleGenAI = genaiModule.default.GoogleGenAI;
+          console.log("SUCCESS: Assigned window.GoogleGenAI from genaiModule.default.GoogleGenAI");
+      } else if (genaiModule.Ki) { // From the minified export map Ki as GoogleGenAI
+          console.warn("Found 'Ki' in genaiModule. Assuming it's an alias for GoogleGenAI based on bundle info. Assigning window.GoogleGenAI = genaiModule.Ki;");
+          window.GoogleGenAI = genaiModule.Ki;
+      }
+      else {
+          console.error("SDK LOAD FAILED: 'GoogleGenAI' (or expected alias) not found in the imported module's properties or its default export.");
+      }
+      console.log("Final check: window.GoogleGenAI is now:", window.GoogleGenAI, "(Type: " + typeof window.GoogleGenAI + ")");
+
+    } catch (e) {
+      console.error("CRITICAL SDK IMPORT SCRIPT ERROR:", e);
+      window.GoogleGenAI = undefined; // Ensure it's undefined on error
+    }
+  }
+  loadAndAssignSdk(); // Call the async function
+</script>
+  <!-- SCRIPT LOADING ORDER -->
+
+  <!-- Configuration -->
+  <!-- SCRIPT LOADING ORDER -->
+
+  <!-- Configuration -->
   <script src="js/config/api_keys.js"></script>
 
   <!-- Utilities (few dependencies) -->
@@ -289,32 +380,47 @@
   <script src="data/minigames.js"></script>
   <script src="data/shared_content.js"></script>
 
-  <!-- Services (may depend on API keys, utils) -->
-  <script src="js/services/gemini_service.js"></script>
-
-  <!-- Core Logic Managers (depend on services, data, utils) -->
-  <script src="js/core/activity_manager.js"></script>
-  <script src="js/core/session_manager.js"></script>
-  <script src="js/core/chat_manager.js"></script>
-  <script src="js/core/group_manager.js"></script>
+  <!-- Services (gemini_core_api.js first, then specialized, then facade) -->
+  <script src="js/services/gemini_core_api.js"></script>
+  <script src="js/services/gemini_tts_service.js"></script>
+  <script src="js/services/gemini_text_generation_service.js"></script>
+  <script src="js/services/gemini_multimodal_service.js"></script>
+  <script src="js/services/gemini_recap_service.js"></script>
+  <script src="js/services/gemini_live_api_service.js"></script>
+  <script src="js/services/gemini_service.js"></script>      <!-- This IS your facade -->
 
   <!-- Foundational UI Modules (depend on utils, provide building blocks) -->
   <script src="js/ui/dom_elements.js"></script>
-  <script src="js/ui/modal_handler.js"></script>       <!-- Generic modal open/close -->
-  <script src="js/ui/ui_updater.js"></script>         <!-- General UI update functions -->
-
+  <script src="js/ui/modal_handler.js"></script>
+  <script src="js/ui/ui_updater.js"></script>
   <script src="js/ui/list_renderer.js"></script>
+  <script src="js/ui/card_renderer.js"></script>
 
-  <!-- New UI Management Modules (from splitting shell_controller) -->
-  <!-- These depend on foundational UI, core logic, and utils -->
-  <script src="js/ui/shell_setup.js"></script>             <!-- NEW: Core shell theme, top-level listeners -->
-  <script src="js/ui/filter_controller.js"></script>       <!-- NEW: Manages filter UI and logic -->
-  <script src="js/ui/persona_modal_manager.js"></script>   <!-- NEW: Manages detailed persona modal -->
-   <script src="js/ui/card_renderer.js"></script>
-  <script src="js/ui/chat_ui_manager.js"></script>         <!-- NEW: Manages embedded & group chat UIs -->
-  <script src="js/ui/view_manager.js"></script>            <!-- NEW: Manages view switching and view-specific updates -->
+  <!-- Specialized UI Management Modules (depend on foundational UI, utils) -->
+  <script src="js/ui/shell_setup.js"></script>
+  <script src="js/ui/filter_controller.js"></script>
+  <script src="js/ui/persona_modal_manager.js"></script>
+  <script src="js/ui/chat_ui_manager.js"></script>         <!-- Loads before core managers that use it -->
+  <script src="js/ui/view_manager.js"></script>            <!-- view_manager uses chatUiManager -->
+
+
+  <!-- Core Logic Managers (depend on services, data, utils, and UI managers) -->
+  <script src="js/core/activity_manager.js"></script>
+  <!-- Chatting Sub-Modules -->
+  <script src="js/core/conversation_manager.js"></script>
+  <script src="js/core/text_message_handler.js"></script>
+  <script src="js/core/voice_memo_handler.js"></script>
+  <script src="js/core/chat_orchestrator.js"></script>     <!-- This becomes window.chatManager -->
+  <!-- Other Core Managers -->
+  <script src="js/core/group_manager.js"></script>       <!-- Now loads AFTER chat_ui_manager and view_manager -->
+  <!-- Session Management Modules -->
+  <script src="js/sessions/session_state_manager.js"></script>
+  <script src="js/sessions/live_call_handler.js"></script>
+  <script src="js/sessions/session_history_manager.js"></script>
+  <script src="js/core/session_manager.js"></script>     <!-- Facade for sessions -->
 
   <!-- Main Application Entry Point (depends on everything above) -->
   <script src="js/app.js"></script>
+  
 </body>
 </html>

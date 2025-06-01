@@ -132,14 +132,13 @@
 
 /* ===== RIGHT SIDEBAR ===== */
 #right-sidebar {
-    width: 280px; /* Slightly narrower */
+    width: 400px; /* Increase width */
     background-color: var(--bg-white);
     padding: var(--spacing-lg);
     border-left: 1px solid var(--border-color-light);
     overflow-y: auto;
     display: flex; /* To allow panels to stack and fill */
     flex-direction: column; /* Stack panels */
-    /* gap: var(--spacing-lg); Removed gap, panels will manage their own margin */
     flex-shrink: 0; /* Prevent shrinking */
     transition: background-color var(--transition-normal), border-color var(--transition-normal);
 }
@@ -227,7 +226,10 @@
     .main-nav .nav-item a i { margin-right: var(--spacing-sm); }
     .main-nav .nav-item a span { /* Optionally hide text */ display: none; }
     #main-container { padding: var(--spacing-md); }
-    #right-sidebar { width: 240px; padding: var(--spacing-md); }
+    #right-sidebar {
+        width: 320px; /* Adjust width for smaller screens */
+        padding: var(--spacing-md);
+    }
     .view-header h1 { font-size: 1.6em; }
 }
 
@@ -266,10 +268,11 @@
     .view-header h1 { font-size: 1.5em; }
 
     #right-sidebar {
-        width: 100%; border-left: none;
+        width: 100%; /* Full width on mobile */
+        border-left: none;
         border-top: 1px solid var(--border-color-light);
-        padding: var(--spacing-md); height: auto;
-        /* Could be a drawer on mobile, for now it stacks */
+        padding: var(--spacing-md);
+        height: auto; /* Auto height for stacking */
         order: 3; /* Ensure it comes after main content in stacked layout */
     }
 }

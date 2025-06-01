@@ -2,206 +2,239 @@
 // Manages UI aspects of embedded chat and group chat interfaces.
 
 window.chatUiManager = (() => {
+    'use strict';
+
     const getDeps = () => ({
         domElements: window.domElements,
-        uiUpdater: window.uiUpdater,         // For updating headers, clearing logs/inputs
-        chatManager: window.chatManager,     // For sending messages
-        groupManager: window.groupManager,   // For sending group messages, user typing
+        uiUpdater: window.uiUpdater,
+        personaModalManager: window.personaModalManager,
+        chatOrchestrator: window.chatOrchestrator // Main orchestrator for chat logic
     });
 
-    // Called once by app.js or self-invoked if only setting up static listeners
     function initializeChatUiControls() {
-        const { domElements, chatManager, groupManager } = getDeps();
+        const { domElements, personaModalManager, chatOrchestrator } = getDeps();
         console.log("chatUiManager: initializeChatUiControls - Setting up listeners.");
 
-        if (!domElements) {
-            console.warn("chatUiManager: initializeChatUiControls - domElements not available.");
+        if (!domElements || !chatOrchestrator) {
+            console.error("ChatUIManager: Critical dependencies (domElements or chatOrchestrator) missing.");
             return;
         }
 
+        const textMessageHandler = chatOrchestrator.getTextMessageHandler();
+        const voiceMemoHandler = chatOrchestrator.getVoiceMemoHandler();
+        const groupManager = window.groupManager;
+
         // --- Embedded Chat Listeners ---
         if (domElements.embeddedMessageSendBtn && domElements.embeddedMessageTextInput) {
-            domElements.embeddedMessageSendBtn.addEventListener('click', handleSendEmbeddedMessage);
+            domElements.embeddedMessageSendBtn.addEventListener('click', () => {
+                const targetId = chatOrchestrator.getCurrentEmbeddedChatTargetId();
+                const textValue = domElements.embeddedMessageTextInput.value; // Get value once
+                if (textMessageHandler?.sendEmbeddedTextMessage && targetId && textValue.trim() !== "") { // ADDED targetId and textValue check
+                    textMessageHandler.sendEmbeddedTextMessage(textValue, targetId);
+                } else if (!targetId) {
+                    console.warn("ChatUIManager: Click - Cannot send embedded message, no currentEmbeddedChatTargetId set.");
+                } else if (textValue.trim() === "") {
+                    console.warn("ChatUIManager: Click - Cannot send empty embedded message.");
+                }
+            });
             domElements.embeddedMessageTextInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
-                    handleSendEmbeddedMessage();
+                    const targetId = chatOrchestrator.getCurrentEmbeddedChatTargetId();
+                    const textValue = domElements.embeddedMessageTextInput.value; // Get value once
+                    if (textMessageHandler?.sendEmbeddedTextMessage && targetId && textValue.trim() !== "") { // ADDED targetId and textValue check
+                        textMessageHandler.sendEmbeddedTextMessage(textValue, targetId);
+                    } else if (!targetId) {
+                        console.warn("ChatUIManager: Enter - Cannot send embedded message, no currentEmbeddedChatTargetId set.");
+                    } else if (textValue.trim() === "") {
+                        console.warn("ChatUIManager: Enter - Cannot send empty embedded message.");
+                    }
                 }
             });
-            console.log("chatUiManager: Embedded chat input/send listeners attached.");
         } else {
-            console.warn("chatUiManager: Embedded message send button or text input not found.");
+            console.warn("ChatUIManager: embeddedMessageSendBtn or embeddedMessageTextInput not found.");
         }
 
         if (domElements.embeddedMessageAttachBtn && domElements.embeddedMessageImageUpload) {
             domElements.embeddedMessageAttachBtn.addEventListener('click', () => {
-                if (domElements.embeddedMessageImageUpload) domElements.embeddedMessageImageUpload.click();
+                // Ensure a chat is active before allowing attach click to trigger file input
+                const targetId = chatOrchestrator.getCurrentEmbeddedChatTargetId();
+                if (targetId) {
+                    domElements.embeddedMessageImageUpload.click();
+                } else {
+                    console.warn("ChatUIManager: Attach button clicked, but no currentEmbeddedChatTargetId set. File input not triggered.");
+                    // Optionally alert the user: alert("Please open a chat before attaching an image.");
+                }
             });
-            domElements.embeddedMessageImageUpload.addEventListener('change', handleEmbeddedImageUploadEvent);
-            console.log("chatUiManager: Embedded chat attach/upload listeners attached.");
+
+            domElements.embeddedMessageImageUpload.addEventListener('change', (event) => {
+                const targetId = chatOrchestrator.getCurrentEmbeddedChatTargetId();
+                if (textMessageHandler?.handleEmbeddedImageUpload && targetId) {
+                    textMessageHandler.handleEmbeddedImageUpload(event, targetId);
+                } else if (!targetId) {
+                    console.warn("ChatUIManager: Cannot upload image, no currentEmbeddedChatTargetId set by orchestrator at the time of file change.");
+                } else {
+                    console.warn("ChatUIManager: Cannot upload image, textMessageHandler or its handleEmbeddedImageUpload method is missing.");
+                }
+            });
         } else {
-            console.warn("chatUiManager: Embedded message attach button or image upload input not found.");
+            console.warn("ChatUIManager: embeddedMessageAttachBtn or embeddedMessageImageUpload not found.");
         }
+
+        if (domElements.embeddedMessageMicBtn) {
+            domElements.embeddedMessageMicBtn.addEventListener('click', () => {
+                const targetId = chatOrchestrator.getCurrentEmbeddedChatTargetId();
+                if (voiceMemoHandler?.handleNewVoiceMemoInteraction && targetId) {
+                    voiceMemoHandler.handleNewVoiceMemoInteraction('embedded', domElements.embeddedMessageMicBtn, targetId);
+                } else { console.warn("ChatUIManager: Voice memo handler or targetId missing for embedded mic."); }
+            });
+        } else { console.warn("ChatUIManager: embeddedMessageMicBtn not found."); }
+
+        // --- Message Modal Listeners ---
+        if (domElements.messageSendBtn && domElements.messageTextInput) {
+            const doSendModalText = () => {
+                const targetConnector = chatOrchestrator.getCurrentModalMessageTarget();
+                if (textMessageHandler?.sendModalTextMessage && targetConnector) {
+                    textMessageHandler.sendModalTextMessage(domElements.messageTextInput.value, targetConnector);
+                }
+            };
+            domElements.messageSendBtn.addEventListener('click', doSendModalText);
+            domElements.messageTextInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doSendModalText(); }
+            });
+        } else { console.warn("ChatUIManager: messageSendBtn or messageTextInput not found."); }
+
+        if (domElements.messageModalMicBtn) {
+             domElements.messageModalMicBtn.addEventListener('click', () => {
+                const targetConnector = chatOrchestrator.getCurrentModalMessageTarget();
+                if (voiceMemoHandler?.handleNewVoiceMemoInteraction && targetConnector?.id) {
+                    voiceMemoHandler.handleNewVoiceMemoInteraction('modal', domElements.messageModalMicBtn, targetConnector.id);
+                } else { console.warn("ChatUIManager: Voice memo handler or targetConnector missing for modal mic."); }
+            });
+        } else { console.warn("ChatUIManager: messageModalMicBtn not found."); }
+
+        if (domElements.messageModalAttachBtn && domElements.messageModalImageUpload) {
+            domElements.messageModalAttachBtn.addEventListener('click', () => domElements.messageModalImageUpload.click());
+            domElements.messageModalImageUpload.addEventListener('change', (event) => {
+                const targetConnector = chatOrchestrator.getCurrentModalMessageTarget();
+                if (textMessageHandler?.handleModalImageUpload && targetConnector) {
+                    textMessageHandler.handleModalImageUpload(event, targetConnector);
+                } else { console.warn("ChatUIManager: textMessageHandler.handleModalImageUpload or targetConnector missing.");}
+            });
+        } else { console.warn("ChatUIManager: messageModalAttachBtn or messageModalImageUpload not found."); }
+
 
         // --- Group Chat Listeners ---
         if (domElements.sendGroupMessageBtn && domElements.groupChatInput) {
-            domElements.sendGroupMessageBtn.addEventListener('click', handleSendGroupMessage);
+            domElements.sendGroupMessageBtn.addEventListener('click', () => groupManager?.handleUserMessageInGroup());
             domElements.groupChatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    handleSendGroupMessage();
-                } else if (groupManager?.userIsTyping) { // Check if groupManager and method exist
-                    groupManager.userIsTyping();
-                }
+                if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); groupManager?.handleUserMessageInGroup(); }
+                else if (groupManager?.userIsTyping) groupManager.userIsTyping();
             });
-            console.log("chatUiManager: Group chat input/send listeners attached.");
-        } else {
-            console.warn("chatUiManager: Group chat send button or input not found.");
-        }
+        } else { console.warn("ChatUIManager: sendGroupMessageBtn or groupChatInput not found."); }
 
         if (domElements.leaveGroupBtn) {
-            domElements.leaveGroupBtn.addEventListener('click', () => {
-                groupManager?.leaveCurrentGroup(); // Call groupManager to handle leave logic
-            });
-            console.log("chatUiManager: Group chat leave button listener attached.");
-        } else {
-            console.warn("chatUiManager: Group chat leave button not found.");
-        }
-        console.log("chatUiManager: Chat UI control listeners attached.");
+            domElements.leaveGroupBtn.addEventListener('click', () => groupManager?.leaveCurrentGroup());
+        } else { console.warn("ChatUIManager: leaveGroupBtn not found."); }
+
+        // --- Header Button Listeners (Call & Info for Embedded and Modal Chats) ---
+        const setupHeaderAction = (button, datasetContainer, actionType) => {
+            if (button) {
+                button.addEventListener('click', () => {
+                    const connectorId = datasetContainer?.dataset.currentConnectorId;
+                    if (connectorId && window.polyglotConnectors) {
+                        const connector = window.polyglotConnectors.find(c => c.id === connectorId);
+                        if (connector) {
+                            if (actionType === 'call' && window.polyglotApp?.initiateSession) {
+                                console.log(`ChatUIManager: ${interfaceType} chat call btn clicked for ${connectorId}`);
+                                window.polyglotApp.initiateSession(connector, 'direct_modal');
+                            } else if (actionType === 'info' && personaModalManager?.openDetailedPersonaModal) {
+                                console.log(`ChatUIManager: ${interfaceType} chat info btn clicked for ${connectorId}`);
+                                personaModalManager.openDetailedPersonaModal(connector);
+                            }
+                        } else { console.warn(`ChatUIManager: Connector not found for ID ${connectorId}`); }
+                    } else { console.warn(`ChatUIManager: Missing connectorId or core components for header action.`);}
+                });
+            } else { console.warn(`ChatUIManager: Button for header action type '${actionType}' not found.`); }
+        };
+        
+        let interfaceType = 'Embedded'; // For logging
+        setupHeaderAction(domElements.embeddedChatCallBtn, domElements.embeddedChatContainer, 'call');
+        setupHeaderAction(domElements.embeddedChatInfoBtn, domElements.embeddedChatContainer, 'info');
+        interfaceType = 'Message Modal'; // For logging
+        setupHeaderAction(domElements.messageModalCallBtn, domElements.messagingInterface, 'call');
+        setupHeaderAction(domElements.messageModalInfoBtn, domElements.messagingInterface, 'info');
+
+        console.log("chatUiManager: Chat UI control listeners setup complete.");
     }
 
-    // --- Embedded Chat UI ---
     function showEmbeddedChatInterface(connector) {
         const { domElements, uiUpdater } = getDeps();
         console.log("chatUiManager: showEmbeddedChatInterface - Called for connector:", connector?.id);
-
         if (!domElements?.embeddedChatContainer || !domElements.messagesPlaceholder || !uiUpdater || !connector) {
-            console.error("chatUiManager: showEmbeddedChatInterface - ABORTING. Missing critical elements or connector.", {
-                hasEmbContainer: !!domElements?.embeddedChatContainer,
-                hasPlaceholder: !!domElements?.messagesPlaceholder,
-                hasUiUpdater: !!uiUpdater,
-                hasConnector: !!connector
-            });
+            console.error("chatUiManager: showEmbeddedChatInterface - Missing critical elements or connector.");
             return;
         }
-
         domElements.messagesPlaceholder.style.display = 'none';
-        domElements.embeddedChatContainer.style.display = 'flex'; // Use flex for proper layout
-
-        uiUpdater.updateEmbeddedChatHeader(connector); // Sets name, attach btn visibility
-        uiUpdater.clearEmbeddedChatLog();           // Clear previous messages from UI
-        uiUpdater.clearEmbeddedChatInput();         // Clear input field
-
-        if (domElements.embeddedMessageTextInput) {
-            domElements.embeddedMessageTextInput.focus();
-        }
+        domElements.embeddedChatContainer.style.display = 'flex';
+        uiUpdater.updateEmbeddedChatHeader(connector); // uiUpdater handles setting connectorId on dataset
+        // Clearing log/input is typically done by chatOrchestrator.openConversation before populating
+        if (domElements.embeddedMessageTextInput) domElements.embeddedMessageTextInput.focus();
         console.log("chatUiManager: Embedded chat interface shown for", connector.id);
     }
 
     function hideEmbeddedChatInterface() {
         const { domElements } = getDeps();
         console.log("chatUiManager: hideEmbeddedChatInterface - Called.");
-
         if (!domElements?.embeddedChatContainer || !domElements.messagesPlaceholder) {
-            console.warn("chatUiManager: hideEmbeddedChatInterface - Missing embeddedChatContainer or messagesPlaceholder.");
+            console.warn("chatUiManager: hideEmbeddedChatInterface - Missing relevant DOM elements.");
             return;
         }
-
         domElements.embeddedChatContainer.style.display = 'none';
-        domElements.messagesPlaceholder.style.display = 'block'; // Or 'flex' if that's its default
-        if (domElements.messagesTabHeader) {
-            domElements.messagesTabHeader.textContent = "Your Conversations"; // Reset header
-        }
-        console.log("chatUiManager: Embedded chat interface hidden.");
+        domElements.messagesPlaceholder.style.display = 'block';
+        if (domElements.embeddedChatHeaderName) domElements.embeddedChatHeaderName.textContent = "Your Conversations"; // Reset generic header part
+        if (domElements.embeddedChatHeaderDetails) domElements.embeddedChatHeaderDetails.textContent = "";
     }
 
-    function handleSendEmbeddedMessage() {
-        const { domElements, chatManager } = getDeps();
-        if (!domElements?.embeddedMessageTextInput || !chatManager?.sendEmbeddedTextMessage) {
-            console.warn("chatUiManager: handleSendEmbeddedMessage - Input field or chatManager.sendEmbeddedTextMessage missing.");
-            return;
-        }
-        const text = domElements.embeddedMessageTextInput.value.trim();
-        if (text) {
-            chatManager.sendEmbeddedTextMessage(text); // chatManager clears input via uiUpdater
-        }
-    }
-
-    function handleEmbeddedImageUploadEvent(event) {
-        const { chatManager } = getDeps();
-        if (!chatManager?.handleEmbeddedImageUpload) {
-            console.warn("chatUiManager: handleEmbeddedImageUploadEvent - chatManager.handleEmbeddedImageUpload missing.");
-            return;
-        }
-        chatManager.handleEmbeddedImageUpload(event);
-    }
-
-
-    // --- Group Chat UI ---
     function showGroupChatView(groupName, members) {
         const { domElements, uiUpdater } = getDeps();
-        console.log("chatUiManager: showGroupChatView - Called for group:", groupName);
-
+        console.log("chatUiManager: showGroupChatView for group:", groupName);
         if (!domElements?.groupListContainer || !domElements.groupChatInterfaceDiv || !uiUpdater) {
-            console.error("chatUiManager: showGroupChatView - ABORTING. Missing critical elements.");
+            console.error("chatUiManager: showGroupChatView - Missing critical DOM elements.");
             return;
         }
         domElements.groupListContainer.style.display = 'none';
-        domElements.groupChatInterfaceDiv.style.display = 'flex'; // Use flex
-
+        domElements.groupChatInterfaceDiv.style.display = 'flex';
         uiUpdater.updateGroupChatHeader(groupName, members);
-        uiUpdater.clearGroupChatLog();
-        uiUpdater.clearGroupChatInput(); // Ensure input is clear
-
-        if (domElements.groupChatInput) {
-            domElements.groupChatInput.focus();
-        }
-        console.log("chatUiManager: Group chat view shown for", groupName);
+        uiUpdater.clearGroupChatLog(); // Done by uiUpdater
+        uiUpdater.clearGroupChatInput(); // Done by uiUpdater
+        if (domElements.groupChatInput) domElements.groupChatInput.focus();
     }
 
     function hideGroupChatView() {
-        const { domElements, groupManager } = getDeps(); // Added groupManager
-        console.log("chatUiManager: hideGroupChatView - Called.");
-
+        const { domElements } = getDeps(); // Removed groupManager, as it's called by viewManager or groupManager itself
+        console.log("chatUiManager: hideGroupChatView called.");
         if (!domElements?.groupListContainer || !domElements.groupChatInterfaceDiv) {
-            console.warn("chatUiManager: hideGroupChatView - Missing groupListContainer or groupChatInterfaceDiv.");
+            console.warn("chatUiManager: hideGroupChatView - Missing relevant DOM elements.");
             return;
         }
         domElements.groupChatInterfaceDiv.style.display = 'none';
         domElements.groupListContainer.style.display = 'block';
-
-        // Optional: Refresh group list when hiding the chat view
-        // This was previously in shellController.hideGroupChatInterface
-        groupManager?.loadAvailableGroups();
-        console.log("chatUiManager: Group chat view hidden.");
+        // Note: groupManager.loadAvailableGroups() is called by viewManager when switching to groups tab.
     }
 
-    function handleSendGroupMessage() {
-        const { groupManager } = getDeps();
-        if (!groupManager?.handleUserMessageInGroup) {
-            console.warn("chatUiManager: handleSendGroupMessage - groupManager.handleUserMessageInGroup missing.");
-            return;
-        }
-        groupManager.handleUserMessageInGroup(); // groupManager clears input via uiUpdater
-    }
-
-
-    // Initialize listeners when the module loads
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeChatUiControls);
     } else {
         initializeChatUiControls();
     }
 
-    console.log("js/ui/chat_ui_manager.js loaded.");
+    console.log("js/ui/chat_ui_manager.js (listeners updated).");
     return {
-        // Embedded Chat
         showEmbeddedChatInterface,
         hideEmbeddedChatInterface,
-        // Group Chat
         showGroupChatView,
         hideGroupChatView
-        // initializeChatUiControls is internal
-        // handleSend... functions are internal event handlers
+        // updateMessageModalHeader is NOT exported; uiUpdater handles that directly.
     };
 })();

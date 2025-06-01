@@ -8,25 +8,27 @@
 }
 
 .embedded-chat-ui {
-    display: flex; /* Managed by JS, default none */
+    display: flex;
     flex-direction: column;
-    height: 100%; /* Fill available space in messages-view-content */
-    /* border: 1px solid var(--border-color-light); Optional border around embedded chat */
+    height: 100%; /* Fill available space */
     border-radius: var(--border-radius-md);
-    background-color: var(--bg-white); /* Or inherit from main container */
-    overflow: hidden; /* Important for layout with fixed footer */
-    box-shadow: var(--shadow-sm); /* Subtle shadow */
+    background-color: var(--bg-white);
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: var(--shadow-sm);
+    position: relative; /* Ensure header and footer positioning works */
 }
 
-#embedded-chat-log { /* This is a .chat-log-area */
-    /* Base styles from components/chat_bubbles.css and global.css apply */
-    flex-grow: 1;
-}
-
-#embedded-message-activity-area { /* This is an .activity-area-style */
-    /* Base styles from modal_call.css apply */
-    border-top: 1px solid var(--border-color-light); /* Add borders if not part of modal */
-    border-bottom: 1px solid var(--border-color-light);
+.embedded-chat-main-header, /* For messages-view */
+.messaging-interface-header { /* For messaging-interface modal */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; /* Keep header fixed at the top */
+    top: 0;
+    z-index: 10; /* Ensure header stays above other content */
+    background-color: var(--bg-white); /* Match chat background */
 }
 
 .embedded-chat-footer {
@@ -36,29 +38,79 @@
     display: flex;
     align-items: center;
     flex-shrink: 0; /* Prevent footer from shrinking */
+    position: sticky; /* Keep footer fixed at the bottom */
+    bottom: 0;
+    z-index: 10; /* Ensure footer stays above other content */
 }
-#embedded-message-attach-btn { /* This is a .control-btn and .attach-btn */
-    /* Base styles from buttons.css */
-    margin-right: var(--spacing-xs); /* Space between attach and input */
+
+/* Chat log area styling */
+#embedded-chat-log {
+    flex-grow: 1;
+    overflow-y: auto; /* Allow scrolling for long messages */
+    padding: var(--spacing-md);
+    background-color: var(--bg-white);
 }
-#embedded-message-text-input { /* This is a .chat-input-field */
+
+/* Activity area styling */
+#embedded-message-activity-area {
+    border-top: 1px solid var(--border-color-light);
+    border-bottom: 1px solid var(--border-color-light);
+    background-color: var(--bg-light);
+}
+
+/* Input and button styling */
+#embedded-message-attach-btn {
+    margin-right: var(--spacing-xs);
+}
+
+#embedded-message-text-input {
     flex-grow: 1;
     margin-right: var(--spacing-sm);
 }
-#embedded-message-send-btn { /* This is a .send-btn and .primary-btn */
+
+#embedded-message-send-btn {
     /* Base styles from buttons.css */
 }
 
-/* Dark Mode for Messages View Embedded Chat */
+/* Dark Mode Adjustments */
 body.dark-mode .embedded-chat-ui {
     border-color: var(--border-color-dark);
-    background-color: var(--bg-dark-secondary); /* Main bg for embedded chat */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: var(--bg-dark-secondary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 body.dark-mode #embedded-message-activity-area {
     border-color: var(--border-color-dark);
 }
+
 body.dark-mode .embedded-chat-footer {
     background-color: var(--bg-dark-tertiary);
     border-top-color: var(--border-color-dark);
+}
+
+body.dark-mode .embedded-chat-main-header {
+    background-color: var(--bg-dark-secondary);
+    border-bottom-color: var(--border-color-dark);
+}
+
+/* Header avatar and text styling */
+.partner-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.chat-header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-circle);
+    object-fit: cover;
+    border: 1px solid var(--border-color-light);
+}
+
+#embedded-chat-header-name {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
 }

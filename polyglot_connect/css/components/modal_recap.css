@@ -63,9 +63,7 @@
     justify-content: center;
     padding: var(--spacing-lg);
 }
-#recap-download-transcript-btn {
-    /* Uses .modal-btn and .primary-btn from buttons.css */
-}
+/* Uses .modal-btn and .primary-btn from buttons.css for #recap-download-transcript-btn */
 
 /* Dark Mode Adjustments for Recap Modal */
 body.dark-mode .recap-modal { /* .modal-content dark mode styles apply */ }

@@ -6,6 +6,7 @@ window.geminiService = (() => {
     'use strict';
 
     // Check if the specialized service modules are loaded
+    // These checks are important because this facade depends on them.
     if (!window.geminiTtsService || typeof window.geminiTtsService.getTTSAudio !== 'function') {
         console.error("Gemini Facade: geminiTtsService not available or missing getTTSAudio.");
     }
@@ -19,11 +20,12 @@ window.geminiService = (() => {
         console.error("Gemini Facade: geminiRecapService not available or missing generateSessionRecap.");
     }
 
+    // The actual callGeminiAPIInternal is now in gemini_core_api.js and not directly exposed by this facade.
+
     const service = {
-        getTTSAudio: async (textToSpeak, languageCode, geminiVoiceName, stylePrompt = null) => {
-            console.log(`GEMINI_FACADE_GETTTSAUDIO: Lang: ${languageCode}, VoiceName: ${geminiVoiceName}, Style: ${stylePrompt}`);
+        getTTSAudio: async (textToSpeak, languageCode, geminiVoiceName) => {
             if (window.geminiTtsService?.getTTSAudio) {
-                return window.geminiTtsService.getTTSAudio(textToSpeak, languageCode, geminiVoiceName, stylePrompt);
+                return window.geminiTtsService.getTTSAudio(textToSpeak, languageCode, geminiVoiceName);
             }
             console.error("Gemini Facade: TTS service unavailable for getTTSAudio.");
             throw new Error("TTS service unavailable.");
@@ -67,14 +69,6 @@ window.geminiService = (() => {
             }
             console.error("Gemini Facade: Recap service unavailable for generateSessionRecap.");
             return { topics: ["Recap service error."], vocabulary: [], focusAreas: [] };
-        },
-
-        transcribeAudioToText: async (base64Audio, mimeType, langHint) => {
-            if (window.geminiMultimodalService?.transcribeAudioToText) {
-                return window.geminiMultimodalService.transcribeAudioToText(base64Audio, mimeType, langHint);
-            }
-            console.error("Gemini Facade: Multimodal service unavailable for transcribeAudioToText.");
-            throw new Error("Transcription service unavailable.");
         }
     };
 

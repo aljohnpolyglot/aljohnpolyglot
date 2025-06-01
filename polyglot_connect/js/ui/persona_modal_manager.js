@@ -7,14 +7,8 @@ window.personaModalManager = (() => {
         modalHandler: window.modalHandler,         // For opening/closing the generic modal
         polyglotHelpers: window.polyglotHelpers,
         activityManager: window.activityManager,   // For checking active status
-        // polyglotApp: window.polyglotApp,        // For initiating sessions
-        // We don't need viewManager here directly, app.js will handle view switches if needed.
     });
 
-    // This function is called once, perhaps by app.js or it could be self-invoked
-    // if it only sets up listeners on elements already in the HTML.
-    // For now, let's assume app.js might call an init if needed, or we set up listeners when modal is opened.
-    // Simpler: set up listeners on static modal elements when this module loads.
     function initializePersonaModalControls() {
         const { domElements, modalHandler } = getDeps();
         console.log("personaModalManager: initializePersonaModalControls - Setting up listeners.");
@@ -34,8 +28,7 @@ window.personaModalManager = (() => {
             console.warn("personaModalManager: 'closePersonaModalBtn' not found.");
         }
 
-        // Backdrop click to close (if not handled by generic modalHandler already for this specific modal)
-        // The generic modalHandler in your setup doesn't handle this for detailedPersonaModal to allow specific cleanup.
+        // Backdrop click to close
         if (domElements.detailedPersonaModal) {
             domElements.detailedPersonaModal.addEventListener('click', (event) => {
                 if (event.target === domElements.detailedPersonaModal) { // Click on overlay
@@ -52,20 +45,14 @@ window.personaModalManager = (() => {
             console.warn("personaModalManager: 'personaModalMessageBtn' not found.");
         }
 
-        if (domElements.personaModalVoiceChatBtn) {
-            domElements.personaModalVoiceChatBtn.addEventListener('click', () => handlePersonaModalAction('voiceChat_modal'));
-        } else {
-            console.warn("personaModalManager: 'personaModalVoiceChatBtn' not found.");
-        }
-
         if (domElements.personaModalDirectCallBtn) {
             domElements.personaModalDirectCallBtn.addEventListener('click', () => handlePersonaModalAction('direct_modal'));
         } else {
             console.warn("personaModalManager: 'personaModalDirectCallBtn' not found.");
         }
+
         console.log("personaModalManager: Persona modal control listeners attached.");
     }
-
 
     function openDetailedPersonaModal(connector) {
         const { domElements, modalHandler, polyglotHelpers, activityManager } = getDeps();
@@ -95,14 +82,11 @@ window.personaModalManager = (() => {
             const isActive = activityManager.isConnectorActive(connector);
             domElements.personaModalActiveStatus.classList.toggle('active', isActive);
             domElements.personaModalActiveStatus.title = isActive ? "This person is currently active" : "This person is currently inactive";
-            // If you want text with the dot:
-            // domElements.personaModalActiveStatus.innerHTML = `<span class="status-indicator-dot"></span> ${isActive ? "Active" : "Inactive"}`;
-
 
             // Populate Bio
             domElements.personaModalBio.textContent = polyglotHelpers.sanitizeTextForDisplay(connector.bioModern || "This user hasn't written a bio yet.");
 
-            // Populate Languages (delegated to modalHandler - ensure modalHandler is correctly passed)
+            // Populate Languages
             if (modalHandler.renderLanguageSection) {
                 modalHandler.renderLanguageSection(connector);
             } else {
@@ -123,7 +107,7 @@ window.personaModalManager = (() => {
                 domElements.personaModalInterestsUl.innerHTML = "<li class='interest-tag-none'>No interests listed.</li>";
             }
 
-            // Populate Gallery (placeholder)
+            // Populate Gallery
             if (connector.galleryImageFiles?.length > 0) {
                 domElements.personaModalGallery.innerHTML = `<p>${connector.galleryImageFiles.length} photos (gallery display feature coming soon).</p>`;
             } else {
@@ -149,9 +133,6 @@ window.personaModalManager = (() => {
             domElements.detailedPersonaModal.dataset.connectorId = '';
             console.log("personaModalManager: Modal data (connectorId) cleaned up.");
         }
-        // Optionally reset other fields like avatar src, text contents if they don't get overwritten on open.
-        // if (domElements?.personaModalAvatar) domElements.personaModalAvatar.src = 'images/placeholder_avatar.png';
-        // if (domElements?.personaModalName) domElements.personaModalName.textContent = 'Persona Name';
     }
 
     function handlePersonaModalAction(actionType) {
@@ -171,20 +152,14 @@ window.personaModalManager = (() => {
         const connector = (window.polyglotConnectors || []).find(c => c.id === connectorId);
         if (!connector) {
             console.error(`personaModalManager: handlePersonaModalAction - Connector with ID '${connectorId}' not found.`);
-            cleanupModalData(); // Clean up even if connector not found
+            cleanupModalData();
             modalHandler.close(domElements.detailedPersonaModal);
             return;
         }
 
-        // Close modal and cleanup data BEFORE initiating the session
         modalHandler.close(domElements.detailedPersonaModal);
         cleanupModalData();
 
-        // Log the state of window.polyglotApp and its initiateSession method
-        console.log("personaModalManager: In handlePersonaModalAction. window.polyglotApp object IS:", window.polyglotApp);
-        console.log("personaModalManager: In handlePersonaModalAction. typeof window.polyglotApp?.initiateSession IS:", typeof window.polyglotApp?.initiateSession);
-
-        // Call the global polyglotApp function to initiate the session
         if (window.polyglotApp?.initiateSession) {
             console.log("personaModalManager: Calling polyglotApp.initiateSession for", connector.id, "type:", actionType);
             window.polyglotApp.initiateSession(connector, actionType);
@@ -193,7 +168,6 @@ window.personaModalManager = (() => {
         }
     }
 
-    // Initialize listeners when the module loads, as modal elements are static in HTML
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializePersonaModalControls);
     } else {
@@ -203,7 +177,5 @@ window.personaModalManager = (() => {
     console.log("js/ui/persona_modal_manager.js loaded.");
     return {
         openDetailedPersonaModal
-        // initializePersonaModalControls is internal setup
-        // cleanupModalData and handlePersonaModalAction are internal to this manager, triggered by events.
     };
 })();

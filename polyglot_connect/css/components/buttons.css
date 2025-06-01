@@ -162,3 +162,18 @@ body.dark-mode .theme-toggle-btn:hover {
     border-color: var(--text-color-light);
     background-color: rgba(0,0,0,0.2); /* Subtle hover for light sidebar */
 }
+.mic-btn.recording {
+    background-color: var(--danger-color); /* Red to indicate recording */
+    color: white;
+}
+.mic-btn.recording:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+/* Optional: Style for user audio placeholder messages */
+.chat-message-ui.user-audio,
+.chat-message-ui.user-thinking, /* For transcribing message */
+.chat-message-ui.user-error {
+    font-style: italic;
+    opacity: 0.8;
+}

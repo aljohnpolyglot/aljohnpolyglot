@@ -6,6 +6,7 @@ window.polyglotGroupsData = [
         id: "french_learners_main_fr",
         name: "French Conversation Club",
         language: "French", // Matches connector.language NAME
+        groupPhotoUrl: "images/groups/french_club.png", // ADD THIS
         description: "Casual chat and practice for all levels of French learners. Discuss daily life, hobbies, and culture.",
         tutorId: "emile_fra_tutor",
         maxLearners: 5, // Number of AI learners excluding tutor
@@ -15,6 +16,7 @@ window.polyglotGroupsData = [
         id: "spanish_beginners_cafe_es",
         name: "Café Español - Beginners",
         language: "Spanish",
+        groupPhotoUrl: "images/groups/spanish_cafe.png", // ADD THIS
         description: "A friendly and supportive space for A1-A2 Spanish learners to build confidence in speaking. Basic topics and role-play.",
         tutorId: "sofia_spa_tutor",
         maxLearners: 4,
@@ -24,6 +26,7 @@ window.polyglotGroupsData = [
         id: "german_grammar_talk_de",
         name: "German Grammar Q&A",
         language: "German",
+        groupPhotoUrl: "images/groups/german_grammar.png", // ADD THIS
         description: "Stuck on cases or verb conjugations? Join this group to discuss German grammar with a tutor and fellow learners.",
         tutorId: "liselotte_ger_tutor",
         maxLearners: 3,
@@ -33,6 +36,7 @@ window.polyglotGroupsData = [
         id: "italian_film_buffs_it",
         name: "Italian Film & Cinema Fans",
         language: "Italian",
+        groupPhotoUrl: "images/groups/italian_cinema.png", // ADD THIS
         description: "Parliamo di cinema italiano! Discuss classic and modern Italian films, directors, and actors.",
         tutorId: "giorgio_ita_tutor",
         maxLearners: 5,
@@ -42,6 +46,7 @@ window.polyglotGroupsData = [
         id: "portuguese_travel_chat_pt",
         name: "Portuguese for Travelers",
         language: "Portuguese",
+        groupPhotoUrl: "images/groups/portuguese_travel.png", // ADD THIS
         description: "Planning a trip to a Portuguese-speaking country? Practice useful phrases and discuss travel tips.",
         tutorId: "mateus_por_tutor",
         maxLearners: 4,
@@ -51,6 +56,7 @@ window.polyglotGroupsData = [
         id: "russian_literature_circle_ru",
         name: "Russian Literature Circle",
         language: "Russian",
+        groupPhotoUrl: "images/groups/russian_literature.png", // ADD THIS
         description: "Discuss famous Russian authors, novels, and poetry. For intermediate to advanced learners.",
         tutorId: "yelena_rus_tutor",
         maxLearners: 3,
@@ -60,6 +66,7 @@ window.polyglotGroupsData = [
         id: "swedish_fika_sv",
         name: "Swedish 'Fika' Chat",
         language: "Swedish",
+        groupPhotoUrl: "images/groups/swedish_fika.png", // ADD THIS
         description: "A relaxed 'fika' (coffee break) style chat in Swedish. All topics welcome!",
         tutorId: "astrid_swe_tutor",
         maxLearners: 5,
@@ -69,6 +76,7 @@ window.polyglotGroupsData = [
         id: "indonesian_daily_life_id",
         name: "Indonesian Daily Conversations",
         language: "Indonesian",
+        groupPhotoUrl: "images/groups/indonesian_daily.png", // ADD THIS
         description: "Practice everyday Bahasa Indonesia by talking about daily routines, food, and local customs.",
         tutorId: "rizki_idn_tutor",
         maxLearners: 4,
