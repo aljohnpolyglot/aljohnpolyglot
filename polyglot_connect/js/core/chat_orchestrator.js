@@ -301,6 +301,9 @@ window.chatOrchestrator = (() => {
     };
 })();
 
+window.chatManager = window.chatOrchestrator; // <<<< ADD THIS LINE
+console.log("chat_orchestrator.js: window.chatManager assigned from window.chatOrchestrator.");
+
 // In app.js, you would then assign window.chatManager = window.chatOrchestrator;
 // or simply rename chatOrchestrator to chatManager in this file.
 // For now, let's assume you'll do: window.chatManager = window.chatOrchestrator; in app.js
