@@ -368,59 +368,69 @@
   <!-- SCRIPT LOADING ORDER -->
 
   <!-- Configuration -->
-  <script src="js/config/api_keys.js"></script>
+  <!-- CONFIGURATION -->
+          <!-- API keys and credentials -->
+<script src="js/config/api_keys.js"></script>                <!-- API keys and credentials -->
+<!-- UTILITIES -->
+<script src="js/utils/helpers.js"></script>                  <!-- Common helper functions -->
+<script src="js/utils/flagcdn.js"></script>                  <!-- Country flag loading utilities -->
 
-  <!-- Utilities (few dependencies) -->
-  <script src="js/utils/helpers.js"></script>
-  <script src="js/utils/flagcdn.js"></script>
+<!-- DATA SOURCES -->
+<script src="data/personas.js"></script>                     <!-- AI conversation partner data -->  
+<script src="data/groups.js"></script>                       <!-- Language practice group data -->
+<script src="data/minigames.js"></script>                   <!-- Language learning activity data -->
+<script src="data/shared_content.js"></script>              <!-- Reusable UI text and content -->
 
-  <!-- Data Files (processed data might use helpers) -->
-  <script src="data/personas.js"></script>
-  <script src="data/groups.js"></script>
-  <script src="data/minigames.js"></script>
-  <script src="data/shared_content.js"></script>
+<!-- AI SERVICE INFRASTRUCTURE -->
+<script src="js/services/ai_constants.js"></script>          <!-- AI model IDs and config constants -->
+<script src="js/services/gemini_api_caller.js"></script>     <!-- Core Gemini REST API caller -->
+<script src="js/services/openai_compatible_api_caller.js"></script> <!-- Groq/Together API caller -->
+<script src="js/services/groq_stt_caller.js"></script>      <!-- Groq Whisper speech-to-text -->
 
-  <!-- Services (gemini_core_api.js first, then specialized, then facade) -->
-  <script src="js/services/gemini_core_api.js"></script>
-  <script src="js/services/gemini_tts_service.js"></script>
-  <script src="js/services/gemini_text_generation_service.js"></script>
-  <script src="js/services/gemini_multimodal_service.js"></script>
-  <script src="js/services/gemini_recap_service.js"></script>
-  <script src="js/services/gemini_live_api_service.js"></script>
-  <script src="js/services/gemini_service.js"></script>      <!-- This IS your facade -->
+<!-- SPECIALIZED AI SERVICES -->
+<script src="js/services/gemini_tts_service.js"></script>    <!-- Gemini text-to-speech -->
+<script src="js/services/gemini_multimodal_service.js"></script> <!-- Gemini image/audio handling -->
+<script src="js/services/gemini_live_api_service.js"></script> <!-- Gemini real-time chat -->
+<script src="js/services/ai_text_generation_service.js"></script> <!-- Multi-provider chat with fallbacks -->
+<script src="js/services/gemini_recap_service.js"></script>  <!-- Gemini session summaries -->
+<script src="js/services/ai_recap_service.js"></script>      <!-- Groq/Together session summaries -->
 
-  <!-- Foundational UI Modules (depend on utils, provide building blocks) -->
-  <script src="js/ui/dom_elements.js"></script>
-  <script src="js/ui/modal_handler.js"></script>
-  <script src="js/ui/ui_updater.js"></script>
-  <script src="js/ui/list_renderer.js"></script>
-  <script src="js/ui/card_renderer.js"></script>
+<!-- MAIN AI SERVICE FACADE -->
+<script src="js/services/ai_service.js"></script>            <!-- Unified AI service interface -->
 
-  <!-- Specialized UI Management Modules (depend on foundational UI, utils) -->
-  <script src="js/ui/shell_setup.js"></script>
-  <script src="js/ui/filter_controller.js"></script>
-  <script src="js/ui/persona_modal_manager.js"></script>
-  <script src="js/ui/chat_ui_manager.js"></script>         <!-- Loads before core managers that use it -->
-  <script src="js/ui/view_manager.js"></script>            <!-- view_manager uses chatUiManager -->
+<!-- UI FOUNDATION -->
+<script src="js/ui/dom_elements.js"></script>               <!-- DOM element references -->
+<script src="js/ui/modal_handler.js"></script>              <!-- Modal dialog management -->
+<script src="js/ui/ui_updater.js"></script>                 <!-- Dynamic UI updates -->
+<script src="js/ui/list_renderer.js"></script>              <!-- List component rendering -->
+<script src="js/ui/card_renderer.js"></script>              <!-- Card component rendering -->
 
+<!-- UI MANAGEMENT -->
+<script src="js/ui/shell_setup.js"></script>                <!-- App shell initialization -->
+<script src="js/ui/filter_controller.js"></script>          <!-- Search/filter controls -->
+<script src="js/ui/persona_modal_manager.js"></script>      <!-- Persona detail modals -->
+<script src="js/ui/chat_ui_manager.js"></script>            <!-- Chat interface management -->
+<script src="js/ui/view_manager.js"></script>               <!-- View switching/routing -->
 
-  <!-- Core Logic Managers (depend on services, data, utils, and UI managers) -->
-  <script src="js/core/activity_manager.js"></script>
-  <!-- Chatting Sub-Modules -->
-  <script src="js/core/conversation_manager.js"></script>
-  <script src="js/core/text_message_handler.js"></script>
-  <script src="js/core/voice_memo_handler.js"></script>
-  <script src="js/core/chat_orchestrator.js"></script>     <!-- This becomes window.chatManager -->
-  <!-- Other Core Managers -->
-  <script src="js/core/group_manager.js"></script>       <!-- Now loads AFTER chat_ui_manager and view_manager -->
-  <!-- Session Management Modules -->
-  <script src="js/sessions/session_state_manager.js"></script>
-  <script src="js/sessions/live_call_handler.js"></script>
-  <script src="js/sessions/session_history_manager.js"></script>
-  <script src="js/core/session_manager.js"></script>     <!-- Facade for sessions -->
+<!-- CORE LOGIC -->
+<script src="js/core/activity_manager.js"></script>         <!-- Online status tracking -->
+<script src="js/core/conversation_manager.js"></script>     <!-- Chat state/history -->
+<script src="js/core/text_message_handler.js"></script>     <!-- Text message processing -->
+<script src="js/core/voice_memo_handler.js"></script>       <!-- Voice message processing -->
+<script src="js/core/chat_orchestrator.js"></script>        <!-- Chat flow coordination -->
+<script src="js/core/group_data_manager.js"></script>       <!-- Group data operations -->
+<script src="js/core/group_ui_handler.js"></script>         <!-- Group UI management -->
+<script src="js/core/group_interaction_logic.js"></script>  <!-- Group chat behaviors -->
+<script src="js/core/group_manager.js"></script>            <!-- Group feature facade -->
 
-  <!-- Main Application Entry Point (depends on everything above) -->
-  <script src="js/app.js"></script>
+<!-- SESSION MANAGEMENT -->
+<script src="js/sessions/session_state_manager.js"></script> <!-- Session state tracking -->
+<script src="js/sessions/live_call_handler.js"></script>    <!-- Voice call management -->
+<script src="js/sessions/session_history_manager.js"></script> <!-- Past session storage -->
+<script src="js/core/session_manager.js"></script>          <!-- Session feature facade -->
+
+<!-- APP ENTRY POINT -->
+<script src="js/app.js"></script>                           <!-- Main application bootstrap -->
   
 </body>
 </html>
