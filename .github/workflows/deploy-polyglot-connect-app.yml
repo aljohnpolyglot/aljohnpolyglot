@@ -39,6 +39,12 @@ jobs:
           echo "window.TOGETHER_API_KEY = '${{ secrets.TOGETHER_API_KEY }}';" >> "$API_KEYS_FILE_PATH"
           
           echo "$API_KEYS_FILE_PATH created successfully."
+        env: # This env block is actually not strictly needed for the echo commands above
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_ALT: ${{ secrets.GEMINI_API_KEY_ALT }}
+          GEMINI_API_KEY_ALT_2: ${{ secrets.GEMINI_API_KEY_ALT_2 }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
 
       - name: Verify API Keys File Content (Debugging) 🔍
         run: |
@@ -50,6 +56,10 @@ jobs:
             echo "--- End of file sample ---"
           else
             echo "❌ $API_KEYS_FILE_PATH NOT FOUND in workspace."
+            echo "Listing contents of ./polyglot_connect/js/ (if it exists):"
+            ls -A ./polyglot_connect/js/ || echo "./polyglot_connect/js/ directory not found."
+            echo "Listing contents of ./polyglot_connect/js/config/ (if it exists):"
+            ls -A ./polyglot_connect/js/config/ || echo "./polyglot_connect/js/config/ directory not found."
           fi
 
       - name: Deploy to gh-pages branch 🚀
@@ -59,7 +69,6 @@ jobs:
           publish_dir: ./polyglot_connect  # The entire polyglot_connect folder from workspace
           destination_dir: polyglot_connect # Puts it into 'polyglot_connect' on gh-pages
           keep_files: false 
-        force_orphan: true # <--- USE THIS INSTEAD OF 'force: true'
-          # Clean deploy: remove old files from destination_dir first
+          force_orphan: true # CORRECTLY INDENTED
           # user_name: 'github-actions[bot]' # Optional: custom committer name
           # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional: custom committer email
