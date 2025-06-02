@@ -3,87 +3,95 @@ console.log('data/groups.js loading...');
 
 window.polyglotGroupsData = [
     {
-        id: "french_learners_main_fr",
-        name: "French Conversation Club",
-        language: "French", // Matches connector.language NAME
-        groupPhotoUrl: "images/groups/french_club.png", // ADD THIS
-        description: "Casual chat and practice for all levels of French learners. Discuss daily life, hobbies, and culture.",
-        tutorId: "emile_fra_tutor",
-        maxLearners: 5, // Number of AI learners excluding tutor
-        tags: ["general practice", "casual", "culture", "all levels"]
-    },
-    {
         id: "spanish_beginners_cafe_es",
-        name: "Café Español - Beginners",
+        name: "Café Español",
         language: "Spanish",
-        groupPhotoUrl: "images/groups/spanish_cafe.png", // ADD THIS
-        description: "A friendly and supportive space for A1-A2 Spanish learners to build confidence in speaking. Basic topics and role-play.",
+        groupPhotoUrl: "images/groups/spanish_cafe.png",
+        description: "A friendly and supportive space for A1-A2 Spanish learners to build confidence in speaking. Basic topics, role-play, and a relaxed café vibe.",
         tutorId: "sofia_spa_tutor",
         maxLearners: 4,
-        tags: ["beginner friendly", "roleplay", "daily life", "A1-A2"]
+        tags: ["beginner friendly", "roleplay", "daily life", "A1-A2", "cafe style"]
     },
     {
-        id: "german_grammar_talk_de",
-        name: "German Grammar Q&A",
+        id: "french_cafe_parisien_fr",
+        name: "Café Parisien",
+        language: "French",
+        groupPhotoUrl: "images/groups/cafe_parisien.png",
+        description: "Bienvenue! Practice your French (A2-B2) in a relaxed, Parisian café atmosphere. Discuss culture, daily life, and enjoy friendly conversation.",
+        tutorId: "emile_fra_tutor",
+        maxLearners: 4,
+        tags: ["conversation", "culture", "Parisian vibe", "A2-B2", "intermediate"]
+    },
+    {
+        id: "german_grammar_police_de",
+        name: "Grammar Nazis (German Grammar Police)",
         language: "German",
-        groupPhotoUrl: "images/groups/german_grammar.png", // ADD THIS
-        description: "Stuck on cases or verb conjugations? Join this group to discuss German grammar with a tutor and fellow learners.",
+        groupPhotoUrl: "images/groups/german_grammar_police.png",
+        description: "Achtung! Your German grammar is under arrest... for improvement! Join this (mostly) serious group to tackle tricky grammar with humor and support. Q&A focused.",
         tutorId: "liselotte_ger_tutor",
         maxLearners: 3,
-        tags: ["grammar focus", "Q&A", "intermediate"]
+        tags: ["grammar focus", "Q&A", "intermediate", "advanced", "humor"]
     },
     {
-        id: "italian_film_buffs_it",
-        name: "Italian Film & Cinema Fans",
+        id: "italian_dante_circle_it",
+        name: "Circolo di Dante",
         language: "Italian",
-        groupPhotoUrl: "images/groups/italian_cinema.png", // ADD THIS
-        description: "Parliamo di cinema italiano! Discuss classic and modern Italian films, directors, and actors.",
+        groupPhotoUrl: "images/groups/circolo_dante.png",
+        description: "Inspired by the Sommo Poeta, we discuss Italian literature, art, history, and advanced language topics. For passionate learners of Italian culture.",
         tutorId: "giorgio_ita_tutor",
         maxLearners: 5,
-        tags: ["cinema", "culture", "intermediate", "advanced"]
+        tags: ["literature", "culture", "Dante", "advanced", "discussion"]
     },
     {
-        id: "portuguese_travel_chat_pt",
-        name: "Portuguese for Travelers",
-        language: "Portuguese",
-        groupPhotoUrl: "images/groups/portuguese_travel.png", // ADD THIS
-        description: "Planning a trip to a Portuguese-speaking country? Practice useful phrases and discuss travel tips.",
+        id: "portuguese_explorers_pt_eu",
+        name: "Exploradores de Portugal",
+        language: "Portuguese (Portugal)",
+        groupPhotoUrl: "images/groups/exploradores_portugal.png",
+        description: "Vamos explorar Portugal! Practice European Portuguese while discussing the rich culture, history, travel, and traditions of Portugal.",
         tutorId: "mateus_por_tutor",
         maxLearners: 4,
-        tags: ["travel", "practical phrases", "beginner", "intermediate"]
+        tags: ["European Portuguese", "culture", "travel", "intermediate", "Portugal"]
     },
     {
-        id: "russian_literature_circle_ru",
-        name: "Russian Literature Circle",
+        id: "portuguese_brazil_connect_pt_br",
+        name: "O Verdadeiro Português (Brasil Connect)",
+        language: "Portuguese (Brazil)",
+        groupPhotoUrl: "images/groups/portugues_brasil_connect.png",
+        description: "E aí, galera! Connect and chat in authentic Brazilian Portuguese. Discuss daily life, music, slang, and vibrant Brazilian culture.",
+        tutorId: "joao_bra_tutor",
+        maxLearners: 4,
+        tags: ["Brazilian Portuguese", "conversation", "culture", "slang", "intermediate"]
+    },
+    {
+        id: "russian_privet_rossii_ru",
+        name: "Привет России! (Hello Russia!)",
         language: "Russian",
-        groupPhotoUrl: "images/groups/russian_literature.png", // ADD THIS
-        description: "Discuss famous Russian authors, novels, and poetry. For intermediate to advanced learners.",
+        groupPhotoUrl: "images/groups/privet_rossii.png",
+        description: "Say 'Privet!' to Russian language and culture. A welcoming space for beginner to intermediate learners to practice speaking about everyday topics.",
         tutorId: "yelena_rus_tutor",
         maxLearners: 3,
-        tags: ["literature", "culture", "advanced", "discussion"]
+        tags: ["beginner", "intermediate", "conversation", "culture", "welcoming"]
     },
     {
         id: "swedish_fika_sv",
         name: "Swedish 'Fika' Chat",
         language: "Swedish",
-        groupPhotoUrl: "images/groups/swedish_fika.png", // ADD THIS
-        description: "A relaxed 'fika' (coffee break) style chat in Swedish. All topics welcome!",
+        groupPhotoUrl: "images/groups/swedish_fika.png",
+        description: "A relaxed 'fika' (coffee break) style chat in Swedish. All topics and levels welcome for a cozy conversation.",
         tutorId: "astrid_swe_tutor",
         maxLearners: 5,
-        tags: ["casual", "culture", "all levels", "fika"]
+        tags: ["casual", "culture", "all levels", "fika", "conversation"]
     },
     {
-        id: "indonesian_daily_life_id",
-        name: "Indonesian Daily Conversations",
+        id: "indonesian_belajar_bahasa_id",
+        name: "Belajar Bahasa Indonesia",
         language: "Indonesian",
-        groupPhotoUrl: "images/groups/indonesian_daily.png", // ADD THIS
-        description: "Practice everyday Bahasa Indonesia by talking about daily routines, food, and local customs.",
+        groupPhotoUrl: "images/groups/belajar_bahasa_indonesia.png",
+        description: "Mari kita belajar Bahasa Indonesia bersama! Practice speaking, ask questions, and learn about Indonesian culture. For beginners and intermediates.",
         tutorId: "rizki_idn_tutor",
         maxLearners: 4,
-        tags: ["daily life", "beginner", "intermediate", "culture"]
+        tags: ["beginner", "intermediate", "language learning", "conversation", "culture"]
     }
-    // Add more group definitions for each of your 8 languages,
-    // potentially offering different themes or levels per language.
 ];
 
 console.log("data/groups.js loaded.", (window.polyglotGroupsData || []).length, "group definitions.");

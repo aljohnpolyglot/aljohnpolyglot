@@ -61,7 +61,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "French": ["tutor", "native"], "Spanish": ["learner"], "English": ["fluent"] },
         languageSpecificCodes: {
             "French": { languageCode: "fr-FR", flagCode: "fr", voiceName: "Charon", liveApiVoiceName: "Orus" }
-        }
+        },
+        learningLevels: {
+            "Spanish": "B1"
+        },
     },
     {
         id: "chloe_fra_native",
@@ -105,7 +108,11 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "French": ["native"], "Spanish": ["learner"], "German": ["learner"], "English": ["fluent"] },
         languageSpecificCodes: {
             "French": { languageCode: "fr-CA", flagCode: "fr", voiceName: "Leda", liveApiVoiceName: "Leda" }
-        }
+        },
+        learningLevels: {
+            "Spanish": "A1",
+            "German": "A2"
+        },
     },
     {
         id: "luc_fra_native",
@@ -148,7 +155,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "French": ["native"], "English": ["fluent"], "Japanese": ["learner"] },
         languageSpecificCodes: {
             "French": { languageCode: "fr-FR", flagCode: "fr", voiceName: "Charon", liveApiVoiceName: "Charon" }
-        }
+        },
+        learningLevels: {
+            "Japanese": "A1"
+        },
     },
     {
         id: "manon_fra_learner_adult_local",
@@ -191,7 +201,11 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "French": ["native"], "English": ["learner"], "Italian": ["learner"] },
         languageSpecificCodes: {
             "French": { languageCode: "fr-FR", flagCode: "fr", voiceName: "Aoede", liveApiVoiceName: "Aoede" }
-        }
+        },
+        learningLevels: {
+            "English": "B1",
+            "Italian": "A1"
+        },
     },
     // --- SPANISH ---
     {
@@ -228,7 +242,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Spanish": ["tutor", "native"], "English": ["fluent"], "Portuguese": ["learner"] },
         languageSpecificCodes: {
             "Spanish": { languageCode: "es-ES", flagCode: "mx", voiceName: "Kore", liveApiVoiceName: "Kore" } // Using es-US as languageCode for broader voice compatibility
-        }
+        },
+        learningLevels: {
+            "Portuguese": "B2" // She's making good progress
+        },
     },
     {
         id: "mateo_spa_native",
@@ -247,7 +264,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Spanish": ["native"], "English": ["learner"] },
         languageSpecificCodes: {
              "Spanish": { languageCode: "es-ES", flagCode: "ar", voiceName: "Puck", liveApiVoiceName: "Puck" } // Using es-US for broader voice compatibility
-        }
+        },
+        learningLevels: {
+            "English": "A2" // Still building confidence
+        },
     },
     {
         id: "isabella_spa_native",
@@ -266,7 +286,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Spanish": ["native"], "English": ["fluent"], "French": ["learner"] },
         languageSpecificCodes: {
             "Spanish": { languageCode: "es-ES", flagCode: "es", voiceName: "Leda", liveApiVoiceName: "Leda" }
-        }
+        },
+        learningLevels: {
+            "French": "A1"
+        },
     },
     // --- GERMAN ---
     {
@@ -287,7 +310,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "German": ["tutor", "native"], "English": ["fluent"] },
         languageSpecificCodes: {
             "German": { languageCode: "de-DE", flagCode: "de", voiceName: "Kore", liveApiVoiceName: "Kore" }
-        }
+        },
+        learningLevels: {
+            "German": "B1"
+        },
     },
     // --- ITALIAN ---
     {
@@ -308,7 +334,11 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Italian": ["tutor", "native"], "English": ["learner"], "Spanish": ["learner"] },
         languageSpecificCodes: {
             "Italian": { languageCode: "it-IT", flagCode: "it", voiceName: "Charon", liveApiVoiceName: "Charon" }
-        }
+        },
+        learningLevels: {
+            "English": "B1",
+            "Spanish": "A2"
+        },
     },
     // --- PORTUGUESE ---
     {
@@ -353,7 +383,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Portuguese": ["tutor", "native"], "Spanish": ["fluent"], "English": ["learner"] },
         languageSpecificCodes: {
             "Portuguese": { languageCode: "pt-BR", flagCode: "pt", voiceName: "Orus", liveApiVoiceName: "Orus" }
-        }
+        },
+        learningLevels: {
+            "English": "B1"
+        },
     },
     // --- RUSSIAN ---
     {
@@ -395,7 +428,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Russian": ["tutor", "native"], "English": ["learner"] },
         languageSpecificCodes: {
             "Russian": { languageCode: "ru-RU", flagCode: "ru", voiceName: "Kore", liveApiVoiceName: "Kore" }
-        }
+        },
+        learningLevels: {
+            "English": "B2" // Advanced learner
+        },
     },
     // --- SWEDISH ---
     {
@@ -623,7 +659,10 @@ window.polyglotPersonasDataSource = [
         languageRoles: { "Spanish": ["native"], "English": ["fluent"], "Portuguese": ["learner"] },
         languageSpecificCodes: {
             "Spanish": { languageCode: "es-US", flagCode: "mx", voiceName: "Fenrir", liveApiVoiceName: "Orus" }
-        }
+        },
+        learningLevels: {
+            "Portuguese": "A1" // Just starting
+        },
     }
 ];
 
