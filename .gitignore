@@ -1,0 +1,66 @@
+# Node.js / npm / Vite
+node_modules/
+dist/
+.env
+.env.*
+*.local
+
+# VS Code editor
+.vscode/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# SSL Certificates (local development)
+localhost-cert.pem
+localhost-key.pem
+*.crt
+*.key
+
+# Design Files (source, not for deployment)
+*.psd
+*.ai
+*.sketch
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+build/
+develop-eggs/
+eggs/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+# If you have specific Python scripts that generate output you don't want committed:
+# *.output
+# specific_script_output_folder/
+
+# Polyglot Connect App Specific
+# This is the crucial one: ignore the api_keys.js file that contains REAL secrets.
+# The workflow will generate the version for deployment.
+polyglot_connect/js/config/api_keys.js
+
+# Netlify (even if deleted locally, good to keep if it might reappear)
+.netlify/
+polyglot_connect/.netlify/
+
+# Other temporary or sensitive files
+*.log
+*.tmp
+*.swp
+*.swo

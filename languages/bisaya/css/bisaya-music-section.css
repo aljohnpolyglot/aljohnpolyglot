@@ -1,0 +1,311 @@
+/* css/bisaya-music-section.css - New Bisaya Music Section Styles */
+
+.music-section-bisaya {
+    background-color: var(--sinulog-black); 
+    padding-top: 3.5rem; /* Adjusted top padding */
+    padding-bottom: 4rem; /* Adjusted bottom padding */
+    position: relative;
+}
+
+/* Section Title & Subtitle */
+.music-section-bisaya .section-title-bisaya.music-section-title { color: var(--sinulog-white); }
+.music-section-bisaya .section-title-bisaya .music-title-highlight { background-color: var(--sinulog-yellow); color: var(--sinulog-deep-blue); padding: 0.1em 0.3em; border-radius: 4px; box-shadow: 2px 2px 0px rgba(var(--sinulog-deep-blue-rgb, 26, 70, 137), 0.2); display: inline-block; }
+.music-section-bisaya .section-subtitle-bisaya.music-section-subtitle { 
+    color: var(--sinulog-light-gray); 
+    margin-bottom: 3rem; /* Space before featured spotlight */
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* Ensure it's readable */
+    line-height: 1.5; /* Make it more compact if it's one line */
+}
+.music-section-bisaya .music-section-subtitle .music-note { 
+    font-size: 0.75em; font-style: italic; color: var(--sinulog-mid-gray); 
+    display: block; margin-top: 0.5rem; /* Space for the note */
+    line-height: 1.4; /* Compact note line height */
+}
+/* --- Featured Song Spotlight - FINAL REVAMPED CSS --- */
+.music-featured-spotlight {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start; 
+    gap: 2.5rem; 
+    max-width: 960px; 
+    margin: 0 auto 3.5rem auto; /* Adjusted bottom margin */
+    background-color: #1A1A1A; 
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-strong); 
+    padding: 2rem;
+    border-left: 5px solid var(--sinulog-magenta); 
+}
+@media (min-width: 850px) { /* On larger screens, make it side-by-side */
+    .music-featured-spotlight {
+        flex-direction: row; 
+        align-items: center; 
+        gap: 3rem;
+        padding: 2.5rem; 
+    }
+}
+
+/* Left Column: Video Player and Song/Artist Text */
+/* Left Column: Video Player and its Text Info */
+.music-featured-player-and-info {
+    flex: 2.2; /* Give video and its direct info more prominence */
+    min-width: 0; 
+    display: flex; flex-direction: column;
+    align-items: flex-start; text-align: left;
+    color: var(--sinulog-off-white);
+}
+.featured-video-heading {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sinulog-light-gray); /* Muted heading color */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem; /* Space below heading */
+    text-align: center; /* Center the heading above the video */
+    width: 100%;
+}
+
+.music-featured-video-player-container { /* ACTUAL CONTAINER FOR LAYERED IMAGE & IFRAME */
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    background-color: #000; 
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+    margin-bottom: 0.8rem; /* Tighter space between video and text below */
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.1); 
+    position: relative; 
+    cursor: pointer; 
+}
+/* No 'active' class for iframe needed, it's always visible */
+#music-featured-video-iframe { /* The iframe itself */
+    position: absolute; 
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: none; display: block;
+    z-index: 1; /* BELOW the thumbnail by default */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+#music-featured-video-iframe.active { /* JS adds this class to show it */
+    opacity: 1; 
+    z-index: 3; /* Bring iframe to front when playing */
+}
+
+
+/* Thumbnail overlay for paused/inactive state */
+.music-featured-thumbnail { 
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    display: block; /* Should be visible */
+    z-index: 2; /* Above iframe by default */
+    opacity: 0; /* Hidden by default, JS makes it active */
+    transition: opacity 0.3s ease; 
+}
+.music-featured-thumbnail.active { /* JS adds this class to show it */
+    opacity: 1; 
+}
+/* When video is active, thumbnail is hidden */
+.music-featured-video-player-container.video-active { 
+    border-color: var(--sinulog-yellow); 
+    box-shadow: 0 0 15px rgba(var(--sinulog-yellow-rgb),0.5); 
+}
+.music-featured-video-player-container.video-active .music-featured-thumbnail {
+    opacity: 0;
+    pointer-events: none; /* Make it non-clickable when video is active */
+}
+
+.music-featured-text-info { /* Song title and artist name */
+    width: 100%; 
+}
+.music-featured-text-info #music-featured-song-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.8vw, 1.8rem); /* Slightly smaller title */
+    font-weight: 800; /* Still bold but not max */
+    color: var(--sinulog-yellow); 
+    margin-bottom: 0.2rem; 
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+}
+.music-featured-text-info #music-featured-artist-name {
+    font-family: var(--font-heading);
+    font-size: clamp(0.9rem, 2vw, 1.05rem); /* Smaller artist name */
+    color: var(--sinulog-light-gray); 
+    margin-bottom: 0; 
+}
+
+/* Right Column: Artist Visual and Spotify Button */
+.music-featured-artist-details-right {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    color: var(--sinulog-off-white);
+    max-width: 280px; /* Further constrain artist details column */
+    padding: 1rem;
+    background-color: #1A1A1A; 
+    border-radius: var(--card-border-radius);
+    /* box-shadow: var(--shadow-medium); /* Already has shadow from parent spotlight */
+}
+
+.music-featured-artist-cover { /* The image on the right side */
+    width: 100%; 
+    max-width: 200px; /* Max width for this image */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 6px; /* Less rounded than main video frame */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-bottom: 1rem; 
+    border: 2px solid var(--sinulog-yellow); 
+}
+.music-featured-tags { /* Location tag container */
+    margin-bottom: 1rem; 
+    width: 100%; 
+    display: flex; justify-content: center; 
+}
+.music-featured-tags .location-tag { /* Style for location tag */
+    font-size: 0.85rem; padding: 0.3em 0.8em; border-radius: var(--button-border-radius);
+    background-color: rgba(var(--sinulog-white-rgb), 0.1);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.2);
+    color: var(--sinulog-yellow);
+    display: inline-flex; align-items: center; gap: 0.4em;
+    font-weight: 600;
+}
+.music-featured-tags .location-tag i { color: var(--sinulog-magenta); } 
+
+
+.btn-primary-music-cta { /* Spotify Listen button */
+    background-color: #1DB954; 
+    color: var(--sinulog-white);
+    border-color: #1DB954;
+    padding: 0.8em 1.8em; font-size: 1rem;
+    border-radius: var(--button-border-radius);
+    display: inline-flex; align-items: center; gap: 0.6em;
+    box-shadow: var(--shadow-medium);
+}
+.btn-primary-music-cta:hover {
+    background-color: #1ed760; border-color: #1ed760;
+    transform: translateY(-2px); box-shadow: var(--shadow-strong);
+}
+.btn-primary-music-cta i { font-size: 1.2em; }
+
+
+/* --- Artist Carousel (Similar to Podcast Carousel) --- */
+.music-artists-carousel { margin-top: 3.5rem; }
+.music-artists-carousel h3 { /* "Uban Pang Bisaya Artists" title */
+    color: var(--sinulog-teal); 
+    border-bottom-color: var(--sinulog-teal);
+}
+.music-artists-carousel h3 i.fab.fa-spotify { color: #1DB954; font-size: 1.3em; }
+.music-artists-carousel .music-carousel-subtitle { color: var(--sinulog-light-gray); margin-bottom: 2rem; }
+#music-artists-scroll-wrapper { gap: 1.2rem; } 
+
+
+/* Music Artist Card - REVAMPED */
+.music-artist-card {
+    flex: 0 0 150px; 
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(var(--sinulog-black-rgb), 0.5);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: #282828; 
+    display: flex; flex-direction: column;
+}
+.music-artist-card:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 7px 18px rgba(var(--sinulog-black-rgb), 0.6);
+}
+
+.music-artist-card-art { 
+    width: 100%; height: 100%; 
+    background-size: cover; background-position: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.music-artist-card:hover .music-artist-card-art {
+    transform: scale(1.05);
+}
+
+.music-artist-card-info { 
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 0.6rem 0.7rem;
+    background: linear-gradient(to top, rgba(var(--sinulog-black-rgb), 0.9) 20%, transparent 100%);
+    box-sizing: border-box; pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.music-artist-card:hover .music-artist-card-info { opacity: 0; } 
+
+.music-artist-card-info h4 { 
+    color: var(--sinulog-white);
+    font-family: var(--font-heading);
+    font-size: 0.8rem; 
+    font-weight: 700; margin: 0; line-height: 1.2;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    text-shadow: 1px 1px 2px rgba(var(--sinulog-black-rgb), 0.5);
+}
+.music-artist-card-info .music-artist-location-tag { 
+    font-size: 0.7rem; color: var(--sinulog-light-gray); opacity: 0.8;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    display: block; 
+    margin-top: 0.2rem;
+}
+.music-artist-card-info .music-artist-location-tag i {
+    font-size: 0.9em; margin-right: 0.3em;
+    color: var(--sinulog-magenta); 
+}
+
+
+.music-artist-card-play-btn { 
+    position: absolute;
+    bottom: 1rem; 
+    right: 1rem;
+    background-color: #1DB954; 
+    color: var(--sinulog-white);
+    width: 45px; height: 45px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    opacity: 0; visibility: hidden;
+    transform: translateY(10px) scale(0.8);
+    transition: all 0.2s ease-in-out;
+}
+.music-artist-card:hover .music-artist-card-play-btn {
+    opacity: 1; visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 850px) { /* Tablets/Smaller desktops */
+   .music-featured-spotlight {
+        flex-direction: column; align-items: center; text-align: center;
+        padding: 1.5rem; /* Tighter padding */
+    }
+    .music-featured-player-and-info { 
+        flex-basis: 100%; max-width: 100%; /* Allow video/text to span */
+        align-items: center; text-align: center; /* Center text */
+        margin-bottom: 1.5rem;
+    }
+    .music-featured-artist-details-right {
+        flex-basis: 100%; max-width: 300px; /* Allow artist details to be wider */
+    }
+    .music-featured-text-info #music-featured-song-title { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+}
+
+@media (max-width: 576px) { /* Mobile */
+ .music-section-bisaya { padding: 2.5rem 1rem; }
+    .music-section-subtitle { margin-bottom: 1.5rem; font-size: 0.rem; }
+    .music-featured-spotlight { padding: 1rem; gap: 1.2rem; }
+    .featured-video-heading { font-size: 0.8rem; margin-bottom: 0.rem; }
+    .music-featured-video-player-container { margin-bottom: 0.6rem; }
+    .music-featured-artist-details-right { max-width: 250px; padding: 0.8rem; }
+    .music-featured-artist-cover { max-width: 180px; margin-bottom: 0.8rem; }
+    
+    .music-featured-text-info #music-featured-song-title { font-size: 1.1rem; }
+    .music-featured-text-info #music-featured-artist-name { font-size: 0.85rem; }
+    .btn-primary-music-cta { padding: 0.5em 1.2em; font-size: 0.8rem; }
+}

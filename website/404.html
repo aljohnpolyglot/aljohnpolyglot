@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - A Friendly Misdirection! | Aljohn Polyglot</title>
+    <link rel="stylesheet" href="css/styles.css"> {/* Path to main CSS from root */}
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --primary-blue: #003087;
+            --accent-yellow: lch(86.93% 87.16 91.27);
+            --dark-text: #2c3e50;
+            --light-text: #ffffff;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+            --tech-cyan: #00A9FF;
+            --deep-space-blue: #0a0f1a;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background-color: #0a1220; /* Dark tech background */
+            color: var(--light-text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow-x: hidden;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Standard Header styles from your main styles.css */
+        header { background-color: var(--light-text); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
+        header nav.container { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; height: 70px; max-width:1100px; margin: 0 auto; width:90%;}
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
+        .nav-links { list-style: none; display: flex; align-items:center; } .nav-links li { margin-left: 18px; } /* Reduced margin slightly */
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.85rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; } /* Slightly smaller nav links */
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); } .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+        .nav-links li.dropdown { position: relative; } .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; }
+        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
+        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 180px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 1001; border-radius: 0 0 4px 4px; top: 100%; left: 0; padding: 5px 0; }
+        .dropdown-content a { color: var(--dark-text); padding: 9px 15px; text-decoration: none; display: block; font-size: 0.8rem; font-weight: 500; }
+        .dropdown-content a:hover { background-color: var(--light-bg); color: var(--primary-red); } .nav-links li.dropdown:hover .dropdown-content { display: block; }
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 7px 15px !important; border-radius: 20px; font-size:0.85rem !important; } .nav-cta:hover { background-color: #A8001D; }
+        .menu-toggle { display: none; } /* Add full mobile nav later if needed */
+
+
+        main.main-404 {
+            flex-grow: 1; display: flex; align-items: center; justify-content: center;
+            padding: 100px 20px 40px; /* Account for fixed header (70px) + extra space */
+            width: 100%;
+        }
+
+        .container-404 {
+            background-color: rgba(13, 27, 42, 0.92); /* Darker panel */
+            padding: 30px 35px 40px; border-radius: 12px;
+            box-shadow: 0 0 35px rgba(0, 169, 255, 0.25), 0 0 12px rgba(0, 169, 255, 0.2);
+            border: 1px solid rgba(0, 169, 255, 0.3);
+            max-width: 700px; width: 100%;
+        }
+        .error-code { font-family: var(--font-primary); font-size: clamp(3rem, 10vw, 5rem); color: var(--primary-red); margin-bottom: 0; text-shadow: 0 0 10px rgba(200, 16, 46, 0.6); line-height: 1; }
+        .error-message h1 { font-family: var(--font-primary); font-size: clamp(1.5rem, 5vw, 2.2rem); color: var(--accent-yellow); margin-top: 0.5rem; margin-bottom: 1rem; }
+        .error-description { font-size: 1.05rem; color: #c0d6f0; margin-bottom: 2.5rem; line-height: 1.65; }
+        .mini-challenge { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px dashed rgba(0, 169, 255, 0.25); }
+        .mini-challenge h2 { font-family: var(--font-primary); color: #ADEBFF; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .mini-challenge .greeting-display {
+            font-family: var(--font-secondary); /* More readable for greetings */
+            font-size: clamp(1.8rem, 7vw, 2.8rem); /* Larger for greeting */
+            color: var(--accent-yellow);
+            background-color: rgba(0,0,0,0.25); padding: 10px 20px; border-radius: 8px;
+            margin: 0.5rem auto 1.5rem; display: inline-block;
+            border: 1px solid rgba(255,215,0,0.3); font-weight: 600;
+        }
+        .clues-container { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; text-align: left; }
+        .clue { background-color: rgba(0, 169, 255, 0.08); padding: 10px 15px; border-radius: 6px; border: 1px solid rgba(0, 169, 255, 0.15); font-size: 0.95rem; color: #d0e0f0; }
+        .clue strong { color: #ADEBFF; }
+        .guess-input-area { margin-bottom: 1.5rem; }
+        .guess-input-area label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #ADEBFF; }
+        #languageGuess { padding: 10px 15px; border-radius: 6px; border: 1px solid rgba(0, 169, 255, 0.4); background-color: rgba(0, 20, 40, 0.7); color: var(--light-text); font-size: 1rem; width: calc(100% - 32px); max-width: 300px; font-family: var(--font-secondary); }
+        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 10px rgba(255,215,0,0.3); }
+        .btn { display: inline-block; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 20px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 0.95rem; margin: 5px; }
+        .btn-primary { background-color: var(--accent-yellow); color: var(--dark-text); border: 2px solid var(--accent-yellow); }
+        .btn-primary:hover { background-color: #e6c300; transform: translateY(-2px); }
+        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border: 2px solid var(--accent-yellow); }
+        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
+        #feedbackMessage { margin-top: 1rem; font-weight: bold; min-height: 1.5em; }
+        .feedback-correct { color: #2dce89; } .feedback-incorrect { color: #FF6347; }
+        .navigation-links { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0, 169, 255, 0.2); }
+        .navigation-links p { margin-bottom: 1rem; color: #c0d6f0; }
+
+        /* Footer styles from your main styles.css (ensure they are compatible with dark bg) */
+        footer { background-color: var(--deep-space-blue); color: rgba(224, 242, 247, 0.7); padding: 40px 0 20px; font-size: 0.9rem; border-top: 1px solid var(--tech-cyan, rgba(0, 169, 255, 0.2)); width:100%;}
+        footer .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; max-width: 1100px; margin-left:auto; margin-right:auto; width:90%;}
+        footer .footer-logo { display: flex; align-items: center; color: var(--light-text); font-weight: 600; text-decoration: none; }
+        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } footer .footer-logo span { font-family: var(--font-primary); font-size: 1.2rem; }
+        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
+        footer .footer-links a { color: rgba(200, 220, 240, 0.8); text-decoration: none; transition: color 0.3s ease; padding-bottom: 3px;}
+        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline;}
+        footer .social-links a { color: rgba(200, 220, 240, 0.8); text-decoration: none; font-size: 1.5rem; margin-left: 15px; transition: color 0.3s ease, transform 0.2s ease; }
+        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        footer .copyright { text-align: center; border-top: 1px solid rgba(0, 169, 255, 0.15); padding-top: 1.5rem; margin-top: 1.5rem; color: rgba(180,200,220,0.7); }
+        @media (max-width: 768px) { /* Mobile Nav specific for 404 page if different from main */
+            .nav-links { display: none !important; /* Hide full nav on mobile for simpler 404 */ }
+            .menu-toggle { display: none !important; /* Hide hamburger too */ }
+            header nav.container { justify-content: center; /* Center logo if nav links hidden */}
+            footer .footer-content { flex-direction: column; text-align: center; gap: 1rem; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+         <nav class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="languages/tagalog.html">Tagalog</a>
+                        <a href="languages/cebuano.html">Cebuano</a>
+                        <a href="languages/english.html">English</a>
+                        <a href="languages/spanish.html">Spanish</a>
+                        <a href="languages/french.html">French</a>
+                        <a href="languages/indonesian.html">Indonesian</a>
+                        <a href="languages/italian.html">Italian</a>
+                        <a href="languages/portuguese.html">Portuguese</a>
+                        <a href="languages/russian.html">Russian</a>
+                        <a href="languages/swedish.html">Swedish</a>
+                        <a href="languages/german.html">German</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="">Polyglot Papers Blog</a>
+                        <a href="pathway.html">Pathway</a>
+                        <a href="resources/apps.html">Essential Apps & Tools</a>
+                        <a href="resources\routine.html">Daily Routine</a> 
+                        <a href="index.html#cultural-institutes">Language & Culture Centers</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="services/coaching/coaching.html">Language Coaching</a>
+                        <a href="services/translation/translation.html">Translation</a> 
+                    </div>
+                </li>
+                <li><a href="shop/shop.html">Shop</a></li>
+                 <li><a href="FAQ.html">FAQ</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-404">
+        <div class="container-404">
+            <div class="error-code">4🤔4</div>
+            <div class="error-message">
+                <h1>A Wild Greeting Appears!</h1>
+            </div>
+            <div class="error-description">
+                <p>It seems you've wandered off the beaten path... but every detour is a chance to learn!</p>
+                <p>This page doesn't exist, but let's test your linguistic intuition.</p>
+            </div>
+
+            <div class="mini-challenge">
+                <h2>Can you identify the language of this greeting?</h2>
+                <div class="greeting-display" id="greetingDisplay">BONJOUR</div>
+                <p style="font-size:0.9em; color: #a8c0d8;">(It means "Good day" or "Hello")</p>
+                
+                <div class="clues-container">
+                    <div class="clue" id="clue1"><strong>Clue 1:</strong> I am an official language in 29 countries, including one famous for its iconic tower and another for its maple syrup.</div>
+                    <div class="clue" id="clue2"><strong>Clue 2:</strong> My vocabulary has heavily influenced English, and I'm known for my romantic sound and sometimes tricky pronunciation.</div>
+                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Baguettes, croissants, and philosophers like Descartes are often associated with my primary cultural heartland.</div>
+                </div>
+
+                <div class="guess-input-area">
+                    <label for="languageGuess">Your guessed language:</label>
+                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., German, Italian...">
+                </div>
+                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
+                <button id="newGreetingBtn" class="btn btn-secondary" style="display: none;">New Greeting!</button>
+                <div id="feedbackMessage"></div>
+            </div>
+
+            <div class="navigation-links">
+                <p>Ready to get back on track?</p>
+                <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Go to Homepage</a>
+                <a href="resources/apps.html" class="btn btn-secondary"><i class="fas fa-map-signs"></i> My Learning Pathway</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-logo">
+                     <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img"> 
+                     <span>Aljohn Polyglot</span>
+                 </div>
+                <nav class="footer-links">
+                    <a href="index.html#about">About</a>
+                    <a href="pathway.html">Pathway</a> 
+                    <a href="blog.html">Blog</a> 
+                    <a href="resources/apps.html">Resources</a> 
+                    <a href="contact.html">Contact</a> 
+                </nav>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
+                    <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+        </div>
+   </footer>
+
+    <script>
+        const greetings = [
+            { greeting: "KAMUSTA", language: "Tagalog", clues: ["My speakers often say 'po' and 'opo'. I'm from an archipelago of over 7,000 islands in Southeast Asia.", "I share linguistic roots with Malay and Indonesian, but with significant Spanish influence in my vocabulary.", "Think adobo, jeepneys, and a boxing legend named Manny."] },
+            { greeting: "HOLA", language: "Spanish", clues: ["I'm spoken from Madrid to Mexico City, and across much of South America. My rhythm can be fast and passionate.", "Paella, tango, and sombreros are part of my cultural tapestry. Many famous artists like Picasso and Frida Kahlo spoke me.", "I am a Romance language, a sibling to French, Italian, and Portuguese."] },
+            { greeting: "BONJOUR", language: "French", clues: ["I am an official language in 29 countries, including one famous for its iconic tower and another for its maple syrup.", "My vocabulary has heavily influenced English, and I'm known for my romantic sound and sometimes tricky pronunciation.", "Baguettes, croissants, and philosophers like Descartes are often associated with my primary cultural heartland."] },
+            { greeting: "SALVE", language: "Italian", clues: ["Pizza, pasta, and opera are my gifts to the world. I hail from a boot-shaped peninsula.", "My words often end in vowels, giving me a musical quality. Think Roman gladiators and Renaissance art.", "Vespas whiz through my ancient streets, and 'la dolce vita' is a way of life."] },
+            { greeting: "PRIVET (Привет)", language: "Russian", clues: ["I use a Cyrillic alphabet and am spoken across the largest country on Earth by land area.", "Matryoshka dolls, ballet, and writers like Tolstoy and Dostoevsky are part of my heritage.", "Think cold winters, vast forests (taiga), and the iconic Red Square."] },
+            { greeting: "HALLO", language: "German", clues: ["I'm known for my long compound words and precise grammar. Oktoberfest and cuckoo clocks are part of my culture.", "Philosophers like Kant and Nietzsche, and composers like Bach and Beethoven, thought and wrote in me.", "Autobahns with no speed limits and a famous wall that once divided a city are in my history."] },
+            { greeting: "HEJ", language: "Swedish", clues: ["I come from a Scandinavian land of Vikings, IKEA, and ABBA. My design aesthetic is famously minimalist.", "Fika (a coffee and cake break) is a cherished tradition where I'm spoken. I share mutual intelligibility with Norwegian and Danish.", "Nobel Prizes are awarded in my capital city each year."] },
+            { greeting: "SELAMAT PAGI", language: "Indonesian", clues: ["I am the lingua franca of a vast archipelago, known for its beautiful beaches, volcanoes, and diverse cultures (Bahasa Indonesia).", "Rendang, nasi goreng, and gamelan music are some of my cultural treasures. I'm closely related to Malay.", "Think Bali, Komodo dragons, and vibrant batik textiles."] },
+            { greeting: "OLÁ", language: "Portuguese", clues: ["Spoken from Lisbon to Rio de Janeiro, I am the language of Fado music and Samba dance.", "Explorers like Vasco da Gama set sail speaking me. I share many similarities with Spanish.", "Think Carnival, a famous statue of Christ overlooking a harbor, and a love for football (soccer)."] },
+            { greeting: "MAAYONG BUNTAG", language: "Cebuano", clues: ["I am spoken in the central and southern parts of an archipelagic country in Southeast Asia, distinct from the national language.", "Sinulog festival is a major celebration where I am spoken. I belong to the Visayan language family.", "Lechon (roast pig) is a famous delicacy in regions where you'll hear me."] }
+            // English is excluded as per your request
+        ];
+
+        let currentGreetingChallenge;
+
+        const greetingDisplay = document.getElementById('greetingDisplay');
+        const cluesContainer = document.querySelector('.clues-container');
+        const languageGuessInput = document.getElementById('languageGuess');
+        const submitGuessBtn = document.getElementById('submitGuessBtn');
+        const newGreetingBtn = document.getElementById('newGreetingBtn');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+
+        function setupNewChallenge() {
+            currentGreetingChallenge = greetings[Math.floor(Math.random() * greetings.length)];
+            greetingDisplay.textContent = currentGreetingChallenge.greeting;
+            
+            cluesContainer.innerHTML = ''; // Clear previous clues
+            currentGreetingChallenge.clues.forEach((clueText, index) => {
+                const clueDiv = document.createElement('div');
+                clueDiv.classList.add('clue');
+                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
+                cluesContainer.appendChild(clueDiv);
+            });
+
+            feedbackMessage.textContent = '';
+            languageGuessInput.value = '';
+            submitGuessBtn.disabled = false;
+            languageGuessInput.disabled = false;
+            languageGuessInput.focus();
+            newGreetingBtn.style.display = 'none'; // Hide new greeting button until solved
+        }
+
+        submitGuessBtn.addEventListener('click', function() {
+            const userGuess = languageGuessInput.value.trim().toLowerCase();
+            const correctAnswer = currentGreetingChallenge.language.toLowerCase();
+
+            if (!userGuess) {
+                feedbackMessage.textContent = "Please type your language guess!";
+                feedbackMessage.className = 'feedback-incorrect';
+                return;
+            }
+
+            if (userGuess === correctAnswer) {
+                feedbackMessage.textContent = `ASTIG! Correct! "${currentGreetingChallenge.greeting}" is indeed ${currentGreetingChallenge.language}! You're a true polyglot in the making!`;
+                feedbackMessage.className = 'feedback-correct';
+                submitGuessBtn.disabled = true;
+                languageGuessInput.disabled = true;
+                newGreetingBtn.style.display = 'inline-block'; // Show new greeting button
+            } else {
+                feedbackMessage.textContent = `Not quite! "${currentGreetingChallenge.greeting}" isn't from ${languageGuessInput.value}. Check the clues and try again, or get a new greeting!`;
+                feedbackMessage.className = 'feedback-incorrect';
+                // Optional: Allow another try or just show new greeting button
+                newGreetingBtn.style.display = 'inline-block';
+            }
+        });
+        
+        languageGuessInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && !submitGuessBtn.disabled) {
+                submitGuessBtn.click();
+            }
+        });
+
+        newGreetingBtn.addEventListener('click', setupNewChallenge);
+
+        // Initialize the first challenge
+        setupNewChallenge();
+        
+        // Auto-update copyright year
+        const currentYearSpan = document.getElementById('current-year');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<div class="immersion-comparison-graph-container">
+    <h3 class="subsection-title-center" id="graphComponentTitle"> <!-- You can use this or the #graphTitle below -->
+        Visualizing the Immense Gap: Native vs. You
+    </h3>
+    <p class="text-center instruction-text"> <!-- Your CSS targets this with > .text-center -->
+        Select a native speaker age range. Then, tell us your L2 study plan to see the comparison!
+    </p>
+
+    <div class="interactive-layout-wrapper">
+        <aside class="interactive-controls-sidebar">
+            <h4 class="sidebar-title">Controls</h4>
+            
+            <div class="control-group native-age-selectors">
+                <label class="control-group-label">Native Age Range:</label>
+                <div class="age-range-selectors">
+                    <!-- Ensure data-icon-type is present for BAR icon logic -->
+                    <button class="btn-age-range active" data-age="0-3m" data-hours="630" data-label="3 Months" data-icon-type="baby">
+                        <span class="button-icon">🍼</span> 0-3 MONTHS
+                    </button>
+                    <button class="btn-age-range" data-age="4-12m" data-hours="3550" data-label="1 Year Old" data-icon-type="baby_steps">
+                        <span class="button-icon">👶</span> 4-12 MONTHS
+                    </button>
+                    <button class="btn-age-range" data-age="1-2y" data-hours="9025" data-label="2 Year Old" data-icon-type="toddler">
+                        <span class="button-icon">🧒</span> 1-2 YEARS
+                    </button>
+                    <button class="btn-age-range" data-age="3-5y" data-hours="23625" data-label="5 Year Old" data-icon-type="child_playing">
+                        <span class="button-icon">🧑</span> 3-5 YEARS
+                    </button>
+                    <button class="btn-age-range" data-age="6-12y" data-hours="76185" data-label="12 Year Old" data-icon-type="child_reading">
+                        <span class="button-icon">🧑‍🎓</span> 6-12 YEARS
+                    </button>
+                    <button class="btn-age-range" data-age="13-18y" data-hours="166185" data-label="18 Year Old" data-icon-type="teen_student">
+                        <span class="button-icon">🎓</span> 13-18 YEARS
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-group l2-study-input-section">
+                <label for="l2StudyHoursPerDay" class="control-group-label">Your L2 Study Plan:</label>
+                <label for="l2StudyHoursPerDay" style="font-size:0.8rem; color: var(--theme-soft-mint-text); margin-bottom: 0.3rem;">My L2 Study (hrs/day):</label>
+                <input type="number" id="l2StudyHoursPerDay" value="1" min="0.1" step="0.1" max="16"> <!-- max="16" from your theme -->
+                <p id="l2StudyMessage" class="l2-study-message">Enter your planned daily L2 study hours.</p> <!-- Initial message -->
+            </div>
+        </aside>
+
+        <main class="graph-content-area">
+            <div class="immersion-graph interactive-graph">
+                <!-- The JS targets #graphTitle, #nativeDynamicLabel, #l2YearlyHoursLabel -->
+                <h3 class="graph-title-dynamic" id="graphTitle">
+                    Native Exposure <span id="nativeDynamicLabel">by 3 Months</span> vs. Your L2 Study (<span id="l2YearlyHoursLabel">365</span> hrs/yr)
+                </h3>
+                <div class="graph-area" id="graphArea"> <!-- Added id="graphArea" -->
+                    <div class="graph-bar-wrapper">
+                        <!-- The JS targets #nativeExposureValue -->
+                        <span class="bar-top-value" id="nativeExposureValue">~630 hrs</span>
+                        <div class="graph-bar native-bar" id="nativeExposureBar" title="Native Speaker L1 Immersion (Cumulative)" tabindex="0">
+                            <!-- Bar icons in your snippet were <img>, matching CSS. My JS expects <span> for emoji -->
+                            <!-- For EMOJI bar icons (matching button style preference): -->
+                            <span class="bar-icon native-icon" id="nativeIcon">👤</span>
+                        </div>
+                    </div>
+                    <div class="graph-bar-wrapper">
+                         <!-- The JS targets #l2LearnerValue -->
+                        <span class="bar-top-value" id="l2LearnerValue">~365 hrs</span>
+                        <div class="graph-bar l2-learner-bar" id="l2LearnerBar" title="Your Projected L2 Study (1 Year)" tabindex="0">
+                            <!-- For EMOJI bar icons: -->
+                            <span class="bar-icon l2-icon" id="l2Icon">🚶</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="graph-legend-interactive">
+                <span class="legend-item"><span class="legend-color native-color"></span> Native L1 Immersion (Cumulative)</span>
+                <span class="legend-item"><span class="legend-color l2-color"></span> Your L2 Study (1 Yr)</span>
+            </div>
+            <p class="graph-takeaway" style="margin-top:1.5rem;">
+            This isn't to discourage, but to <strong class="highlight-focus">reframe expectations</strong> and underscore the power of consistent, varied, and massive input.
+            The native journey is a lifelong immersion, not a short course.
+            </p>
+        </main>
+    </div>
+</div>

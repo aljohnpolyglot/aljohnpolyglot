@@ -1,0 +1,269 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_mastery_interactive.css */
+/* Themed Styles for Mastery Interactive Section (Violinists) */
+
+/* Main container for the interactive chart and explanation */
+.mastery-interactive-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem; /* Space after the section title/subtitle */
+    align-items: stretch; /* Make both panels equal height by default */
+    padding: 2rem; /* Padding for the main themed card */
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px; /* Themed card radius */
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+}
+
+/* Left Panel: The Clickable Chart */
+.mastery-levels-panel {
+    flex: 1;
+    min-width: 280px; /* Min width before wrapping */
+    padding: 1.5rem; /* Inner padding */
+    background-color: rgba(4, 15, 10, 0.75); /* Slightly darker inner card */
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,20,10,0.2);
+    border: 1px solid rgba(45, 206, 137, 0.2);
+    display: flex; /* Added for full height chart */
+    flex-direction: column; /* Added for full height chart */
+}
+
+.mastery-levels-panel h4 {
+    text-align: center;
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 1.5rem;
+    font-family: var(--theme-font-primary);
+    font-size: 1.2rem; /* Adjusted size */
+}
+
+.levels-clickable-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-grow: 1; /* CRITICAL: Allows chart to take available vertical space */
+    /* min-height: 280px; -- No longer needed, bars have fixed heights */
+    padding: 1rem 0.5rem; /* Adjusted padding */
+    border-bottom: 1px solid var(--theme-card-border);
+    margin-bottom: 0.5rem;
+}
+
+.level-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    flex-basis: 30%;
+    height: 100%; /* Ensure items try to fill chart height for alignment */
+    justify-content: flex-end; /* Align bar and text to bottom */
+}
+
+.level-item:hover,
+.level-item:focus,
+.level-item.active-level {
+    background-color: rgba(45, 206, 137, 0.15); /* Biotech green subtle highlight */
+}
+.level-item:focus {
+    outline: 2px solid var(--theme-biotech-green);
+    outline-offset: 2px;
+}
+
+.bar-representation {
+    width: 45px; /* Slightly narrower bars */
+    margin-bottom: 0.75rem;
+    border-radius: 5px 5px 0 0; /* More pronounced rounding */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Added transform */
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
+    /* Heights are now set directly inline in HTML, but CSS can be a fallback or for dynamic changes */
+}
+.level-item:hover .bar-representation {
+    filter: brightness(1.1);
+    transform: scaleY(1.02); /* Subtle grow on hover */
+}
+
+/* Themed Bar Colors */
+.expert-bar { background: linear-gradient(to top, var(--theme-biotech-green), #48e0a0); } /* Green gradient */
+.good-bar { background: linear-gradient(to top, var(--accent-yellow), #ffe45e); }    /* Yellow gradient */
+.teacher-bar { background: linear-gradient(to top, var(--theme-soft-mint-text), var(--theme-brighter-mint-text)); filter:saturate(0.7) brightness(0.9); } /* Muted Mint, less saturated */
+
+
+.level-label {
+    font-weight: 600;
+    font-size: 0.85rem; /* Slightly smaller */
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.25rem;
+}
+
+.level-hours {
+    font-size: 0.75rem; /* Slightly smaller */
+    color: var(--theme-soft-mint-text);
+    opacity: 0.9;
+}
+
+.chart-caption {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem; /* Slightly smaller */
+    color: var(--theme-muted-mint-text);
+    margin-top: 1rem;
+    font-family: var(--theme-font-tech); /* Techy font for caption */
+}
+
+/* Right Panel Styling: Explanation Area */
+.mastery-explanation-panel {
+    flex: 1.5 1 340px; 
+    min-width: 300px; 
+    padding: 1.5rem;
+    background-color: rgba(4, 15, 10, 0.75); 
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,20,10,0.2);
+    border: 1px solid rgba(45, 206, 137, 0.2);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    /* justify-content: center; << REMOVE THIS if not placeholder, or handle with :has() as before */
+    /* The :has() selector for justify-content was good, let's ensure it's correctly applied */
+}
+
+.explanation-content {
+    display: none;
+    animation: fadeInPanel 0.6s ease-out; /* Renamed animation */
+    width: 100%; /* Ensure it takes full width */
+}
+.explanation-content.active {
+    display: block;
+}
+/* When a specific explanation is active, remove centering for placeholder */
+
+.mastery-explanation-panel:has(.explanation-content.active:not(#explanation-placeholder)) {
+    justify-content: flex-start;
+}
+
+/* Placeholder Styling (Themed) */
+#explanation-placeholder.explanation-content.active {
+    display: flex; /* Keep for centering its own children */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Vertically center its own content */
+    text-align: center;
+    padding: 2rem 1rem;
+    height: 100%; /* Try to take full height of panel for centering */
+}
+/* The placeholder image/icon container */
+#explanation-placeholder .placeholder-icon-container { /* You'd add this div around your icon/img */
+    margin-bottom: 1.5rem;
+}
+#explanation-placeholder .placeholder-icon { /* If using Font Awesome */
+    font-size: 4.5rem; 
+    color: var(--theme-biotech-green); 
+    opacity: 0.5; 
+}
+/* If you use an <img> for the placeholder icon/gif */
+#explanation-placeholder img.placeholder-default-image {
+    max-width: 150px; /* Adjust size */
+    opacity: 0.4;
+    margin-bottom: 1rem;
+}
+.placeholder-text { /* Text below the placeholder icon */
+    font-size: 1.05rem; /* Adjusted */
+    color: var(--theme-soft-mint-text);
+    line-height: 1.6;
+    max-width: 400px;
+}
+/* Ensuring the div with info icon and text is also centered */
+#explanation-placeholder > div:has(img.info-icon-placeholder) { /* More specific selector if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+img.info-icon-placeholder { 
+    width: 22px !important; /* Slightly larger if desired */
+    height: 22px !important;
+    opacity: 0.8; /* Make it slightly less stark if pure white */
+    /* Filter to tint white icon to biotech green */
+    /* This works by desaturating, then applying sepia, then hue-rotating to green, then boosting saturation and brightness */
+    filter: brightness(0) invert(1) sepia(100%) hue-rotate(80deg) saturate(1500%) brightness(0.8) contrast(1.5);
+
+}
+/* Active Explanation Content Styling (Themed) */
+
+/* Active Explanation Content Styling (Themed) */
+.explanation-content:not(#explanation-placeholder) .explanation-panel-image {
+    display: block;
+    width: 100%;    /* Make the image try to fill its parent's width */
+    max-width: 100%; /* CRUCIAL: Prevent image from exceeding its parent's width */
+                     /* This effectively makes its max-width dependent on the panel's content area */
+    height: auto;     /* Maintain aspect ratio */
+    margin: 0 auto 1.25rem auto; /* Center horizontally and add bottom margin */
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    border: 1px solid var(--theme-card-border);
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+}
+.explanation-content h4 { /* Titles of explanations */
+    color: var(--theme-biotech-green);
+    margin-bottom: 1rem;
+    font-family: var(--theme-font-primary);
+    text-align: center;
+    font-size: 1.5rem; /* Larger titles */
+    text-shadow: 0 0 8px rgba(45, 206, 137, 0.3);
+}
+.explanation-content p {
+    margin-bottom: 1rem;
+    line-height: 1.75; /* More line height */
+    color: var(--theme-light-mint-text);
+    font-size: 0.95rem; /* Slightly smaller text for content blocks */
+}
+.explanation-content p strong { /* Highlights within explanation text */
+    color: var(--accent-yellow); /* Yellow for these specific highlights */
+    font-weight: 600;
+}
+.explanation-content em { /* Italicized quotes/notes */
+    display: block;
+    text-align: center;
+    font-style: italic;
+    color: var(--theme-soft-mint-text);
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background-color: rgba(4,15,10,0.5); /* Subtle dark bg for emphasized italics */
+    border-radius: 4px;
+}
+
+@keyframes fadeInPanel { /* Renamed from fadeIn for clarity */
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mastery-interactive-container {
+        flex-direction: column; /* Stack panels on smaller screens */
+        align-items: stretch; /* Ensure they take full width when stacked */
+    }
+    .mastery-levels-panel,
+    .mastery-explanation-panel {
+        min-width: 100%; /* Allow full width when stacked */
+        flex-basis: auto;
+    }
+    .levels-clickable-chart {
+        /* min-height: 250px; /* Adjust if needed for mobile */
+        /* Bars have fixed height, so this might not be critical to change */
+    }
+    .bar-representation {
+        width: 40px; /* Slightly narrower bars on mobile */
+    }
+    .explanation-content img {
+        max-width: 100%; /* Allow image to be responsive within its container */
+    }
+    #explanation-placeholder.explanation-content.active {
+        min-height: 250px; /* Adjust placeholder height on mobile */
+    }
+}

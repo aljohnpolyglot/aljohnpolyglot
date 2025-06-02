@@ -1,0 +1,436 @@
+/* css/navbar.css - REVAMPED for Sinulog Dark Theme */
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--navbar-bg-default); /* Default dark navbar background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow for dark theme */
+    position: fixed;
+    width: 100%;
+    top: 0; left: 0;
+    z-index: 1000; /* Standard z-index for navbar */
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: var(--navbar-bg-scrolled); /* Slightly transparent when scrolled */
+    backdrop-filter: blur(8px); /* Stronger blur effect */
+}
+
+header nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    height: var(--navbar-height); /* Use variable for height */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px; width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--sinulog-yellow); /* Yellow border around logo */
+    box-shadow: 0 0 5px rgba(var(--sinulog-yellow-rgb), 0.5); /* Subtle glow */
+}
+
+.logo-text {
+    font-family: var(--font-heading); /* Use font-heading */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navbar-text-color); /* White text for logo */
+}
+
+ul.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0; padding: 0;
+}
+
+ul.nav-links li {
+    margin-left: 25px; /* More spacing between links */
+}
+
+ul.nav-links a {
+    text-decoration: none;
+    color: var(--navbar-text-color); /* White text for links */
+    font-weight: 600;
+    font-size: 0.95rem; /* Slightly larger font */
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px; /* Space for underline */
+}
+
+ul.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background-color: var(--navbar-highlight-color); /* Yellow underline */
+    transition: width 0.3s ease;
+}
+
+ul.nav-links a:hover,
+ul.nav-links a.active-link {
+    color: var(--navbar-highlight-color); /* Yellow text on hover/active */
+}
+
+ul.nav-links a:hover::after,
+ul.nav-links a.active-link::after {
+    width: 100%;
+}
+
+.nav-cta { /* Highlighted CTA button in navbar */
+    background-color: var(--sinulog-magenta); /* Magenta background */
+    color: var(--sinulog-white) !important; /* White text */
+    padding: 0.6em 1.5em !important; /* Adjust padding */
+    border-radius: var(--button-border-radius); /* Pill shape */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: var(--font-heading); /* Consistent font */
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-soft);
+}
+
+.nav-cta:hover {
+    background-color: #D70079; /* Darker magenta on hover */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.nav-cta::after { /* CTA doesn't need the underline */
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 28px; height: 3px;
+    background-color: var(--navbar-text-color); /* White hamburger lines */
+    position: relative;
+    transition: all 0.3s linear;
+    border-radius: 2px;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 28px; height: 3px;
+    background-color: var(--navbar-text-color); /* White hamburger lines */
+    transition: all 0.3s linear;
+    border-radius: 2px;
+}
+
+.hamburger::before { top: -9px; }
+.hamburger::after { top: 9px; }
+
+/* --- Dropdown Menu in Navbar --- */
+ul.nav-links li.dropdown {
+    position: relative;
+}
+
+ul.nav-links .dropbtn {
+    color: var(--navbar-text-color); /* White text */
+    font-weight: 600;
+    font-size: 0.95rem; /* Consistent font size */
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+    background: none; border: none; font-family: inherit;
+    display: inline-block;
+}
+
+ul.nav-links .dropbtn::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background-color: var(--navbar-highlight-color); /* Yellow underline */
+    transition: width 0.3s ease;
+}
+
+ul.nav-links li.dropdown:hover .dropbtn,
+ul.nav-links .dropbtn:focus,
+ul.nav-links .dropbtn.active-link {
+    color: var(--navbar-highlight-color); /* Yellow text */
+}
+
+ul.nav-links li.dropdown:hover .dropbtn::after,
+ul.nav-links .dropbtn:focus::after,
+ul.nav-links .dropbtn.active-link::after {
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--navbar-bg-default); /* Dark background for dropdown */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Stronger shadow */
+    z-index: 1001;
+    border-radius: 0 0 6px 6px; /* Slightly more rounded */
+    top: 100%; left: 0;
+    padding: 5px 0; /* Adjusted padding */
+}
+
+.dropdown-content a {
+    color: var(--navbar-text-color); /* White text for dropdown items */
+    padding: 10px 18px; /* Consistent padding */
+    text-decoration: none; display: block;
+    font-size: 0.85rem; font-weight: 500; /* Lighter weight for sub-items */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.dropdown-content a::after {
+    content: ''; position: absolute; bottom: 0; left: 18px; /* Adjusted left position */
+    width: 0; height: 2px;
+    background-color: var(--navbar-highlight-color); /* Yellow underline */
+    transition: width 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(var(--sinulog-white-rgb), 0.1); /* Subtle hover background */
+    color: var(--navbar-highlight-color); /* Yellow text on hover */
+}
+
+.dropdown-content a:hover::after {
+    width: calc(100% - 36px); /* Adjusted width for underline */
+}
+
+.dropdown-content a.active-link {
+    color: var(--navbar-highlight-color); /* Yellow text */
+    font-weight: 700;
+    background-color: rgba(var(--sinulog-white-rgb), 0.05); /* Very subtle active bg */
+}
+.dropdown-content a.active-link::after {
+    width: calc(100% - 36px);
+}
+
+ul.nav-links li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* --- Responsive Navbar Styles --- */
+@media (max-width: 768px) {
+    ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: var(--navbar-height); /* Align with header height */
+        left: 0;
+        background-color: var(--navbar-bg-default); /* Dark background for mobile menu */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        padding-bottom: 1rem;
+        z-index: 999; /* Ensure it's below desktop dropdowns but above page content */
+    }
+
+    ul.nav-links.active { display: flex; }
+
+    ul.nav-links li { margin: 0; width: 100%; text-align: center; }
+
+    ul.nav-links a {
+        display: block; padding: 1rem;
+        border-bottom: 1px solid rgba(var(--sinulog-white-rgb), 0.1); /* Subtle border */
+        color: var(--navbar-text-color); /* White text */
+    }
+    ul.nav-links li:last-child a { border-bottom: none; }
+
+    ul.nav-links a:hover::after,
+    ul.nav-links a.active-link::after {
+        width: 40%;
+        left: 30%;
+    }
+
+    .nav-cta {
+        margin: 1rem auto; display: inline-block; padding: 0.8em 2em !important;
+    }
+
+    .menu-toggle { display: block; }
+    .menu-toggle.active .hamburger { background-color: transparent; }
+    .menu-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
+    .menu-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* Responsive Dropdown (JS Controlled for click) */
+    .dropdown-content {
+        position: static; /* Stack content within mobile menu */
+        box-shadow: none; border-radius: 0;
+        background-color: rgba(var(--sinulog-black-rgb), 0.1); /* Slightly lighter background */
+        padding-top: 0; padding-bottom: 0; min-width: 100%;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.35s ease-out, opacity 0.3s ease-out; opacity: 0;
+    }
+    .dropdown-content.show-mobile { opacity: 1; }
+
+    .dropdown-content a {
+        padding: 0.8rem 1rem; text-align: center;
+        border-bottom: 1px solid rgba(var(--sinulog-white-rgb), 0.08); /* Subtle border */
+        color: var(--navbar-text-color);
+    }
+    .dropdown-content a:last-child { border-bottom: 1px solid rgba(var(--sinulog-white-rgb), 0.08); } /* Ensure last item has border too */
+    .dropdown-content a:hover { background-color: rgba(var(--sinulog-white-rgb), 0.05); color: var(--navbar-highlight-color); } /* Subtle hover */
+    .dropdown-content a.active-link { background-color: rgba(var(--sinulog-white-rgb), 0.03); } /* Very subtle active bg */
+
+    ul.nav-links .dropbtn i.fa-caret-down { transition: transform 0.3s ease; display: inline-block; }
+    ul.nav-links .dropbtn.mobile-dropdown-open i.fa-caret-down { transform: rotate(-180deg); }
+}
+/* css/footer.css - REVAMPED for Sinulog Dark Theme */
+
+/* Remove default root fallbacks from old file, rely on global-styles.css */
+/*
+:root {
+    --fallback-dark-text: #2d343e;
+    --fallback-light-text: #ffffff;
+    --fallback-text-muted: rgba(230, 230, 230, 0.75);
+    --fallback-accent-yellow: #f0a500;
+    --fallback-font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --fallback-border-color: rgba(255, 255, 255, 0.2);
+}
+*/
+
+footer, .site-footer {
+    background-color: var(--footer-bg); /* Use navbar/footer specific variable */
+    color: var(--footer-text-color);
+    padding: 40px 0 20px;
+    font-size: 0.9rem;
+    font-family: var(--font-body); /* Use font-body */
+    line-height: 1.6;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Subtle top shadow */
+}
+
+.footer-content .container,
+.footer-content { /* Ensures consistent container behavior */
+    max-width: 1200px;
+    margin-left: auto; margin-right: auto;
+    padding-left: 1.5rem; padding-right: 1.5rem; /* Consistent padding */
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem; /* More horizontal gap */
+    margin-bottom: 1.5rem;
+}
+
+.footer-content > div,
+.footer-content > nav { 
+    flex: 1 1 auto;
+    padding: 0 0.5rem; /* Reduced padding here, let gap handle main spacing */
+    min-width: 180px; /* Ensure sections don't get too narrow */
+}
+.footer-logo { flex-grow: 0; }
+.social-links { flex-grow: 0; text-align: right;}
+
+
+/* Footer Logo Styling */
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    color: var(--footer-text-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-logo .logo-img {
+    height: 35px; width: 35px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid var(--sinulog-yellow); /* Yellow border */
+    border-radius: 50%;
+    background-color: var(--sinulog-white); /* White background for image */
+    box-shadow: 0 0 5px rgba(var(--sinulog-yellow-rgb), 0.3);
+}
+
+.footer-logo span {
+    font-family: var(--font-heading); /* Consistent font */
+    font-size: 1.15rem;
+    white-space: nowrap;
+    color: var(--sinulog-white); /* Ensure logo text is white */
+}
+
+/* Footer Links Styling */
+.footer-links { 
+    text-align: center; /* Center the links themselves */
+    padding: 0; margin: 0;
+    display: flex; /* For wrapping/centering links if they are inline-block */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem; /* Space between links */
+}
+
+.footer-links a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* margin: 0 10px; Removed, use gap */
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--navbar-highlight-color); /* Yellow highlight on hover */
+}
+
+/* Footer Social Links Styling */
+.social-links a {
+    display: inline-block;
+    color: var(--footer-social-icon-color);
+    text-decoration: none;
+    font-size: 1.6rem; /* Slightly larger social icons */
+    margin-left: 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.social-links a:first-child { margin-left: 0; }
+
+.social-links a:hover {
+    color: var(--footer-highlight-color); /* Magenta highlight on hover */
+    transform: scale(1.1);
+}
+
+/* --- Copyright Styling --- */
+.footer-bottom {
+    width: 100%; clear: both;
+    border-top: 1px solid var(--footer-border-color); /* Subtle white border */
+    padding-top: 1rem; margin-top: 1rem;
+    font-size: 0.8rem; /* Smaller font size */
+    color: var(--footer-text-color);
+}
+.footer-bottom p {
+    text-align: center; margin: 0; padding: 0;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    footer, .site-footer { padding: 30px 0 15px; }
+    .footer-content {
+        flex-direction: column; align-items: center; text-align: center;
+        gap: 1rem;
+    }
+    .footer-content > div, .footer-content > nav { width: 100%; min-width: unset; text-align: center; padding: 0; margin-bottom: 0.5rem; }
+    .footer-links { gap: 0.5rem; } /* Tighter on mobile */
+    .footer-links a { margin: 0 8px; }
+    .social-links { text-align: center; }
+    .social-links a { margin: 0 10px; font-size: 1.4rem; }
+    .footer-bottom { margin-top: 1rem; padding-top: 0.8rem; }
+    .footer-bottom p { font-size: 0.75rem; }
+}
+@media (max-width: 992px) { /* Adjust this breakpoint if you want them to disappear earlier/later */
+    .corner-decoration {
+        display: none !important; /* Force hide them */
+    }
+}

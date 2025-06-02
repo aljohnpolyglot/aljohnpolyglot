@@ -1,0 +1,23 @@
+# Ignore local API keys file
+js/config/api_keys.js
+
+# IDE and OS specific
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json # If you prefer to only commit package.json
+
+# Logs
+*.log
+logs/
+
+# Environment variables file (if you ever use .env locally)
+.env
+.env.*
+!.env.example

@@ -1,0 +1,418 @@
+/* D:\website\css\polyglot-papers-preview.css */
+/* Styles FOR THE POLYGLOT PAPERS - BLOG PREVIEW SECTION ON INDEX.HTML ONLY */
+
+/* ==========================================================================
+   1. SECTION STYLING & SCOPED THEME VARIABLES
+   ========================================================================== */
+.polyglot-papers-preview {
+    /* Define theme variables SCOPED to this section */
+    --pp-biotech-green: #2dce89;
+    --pp-biotech-green-rgb: 45, 206, 137;
+    --pp-dark-bg-gradient-start: #040f0a;
+    --pp-dark-bg-gradient-mid: #0a2e1a;
+    --pp-dark-bg-gradient-end: #104527;
+    --pp-deepest-bg-contrast: #020805;
+    --pp-deepest-bg-contrast-rgb: 2, 8, 5;
+
+    --pp-light-mint-text: #c8f7e0;
+    --pp-brighter-mint-text: #e0f9ee;
+    --pp-soft-mint-text: #a0d8c0;
+    --pp-muted-mint-text: rgba(190, 230, 210, 0.75);
+
+    --pp-card-bg: rgba(10, 38, 25, 0.8);
+    --pp-card-bg-rgb: 10, 38, 25;
+    --pp-card-bg-hover: rgba(15, 48, 30, 0.9);
+    --pp-card-border: rgba(45, 206, 137, 0.4); /* Slightly more visible base border */
+    --pp-card-border-hover: rgba(45, 206, 137, 0.7); /* Brighter hover border */
+    --pp-card-shadow: 0 5px 20px rgba(0, 30, 15, 0.35), inset 0 0 10px rgba(0,20,10,0.3);
+
+    /* Using Aljohn's global --accent-yellow for consistency, or define a specific pp-yellow */
+    --pp-accent-yellow: var(--accent-yellow, #FFD700); /* Fallback if --accent-yellow isn't global */
+    --pp-accent-yellow-rgb: var(--accent-yellow-rgb, 255, 215, 0); /* Fallback if --accent-yellow-rgb isn't global */
+    --pp-accent-yellow-darker: var(--accent-yellow-darker, #f0c000); /* Fallback */
+
+    --pp-font-primary: var(--font-primary, 'Montserrat', sans-serif); /* Fallback to global font-primary */
+    --pp-font-secondary: var(--font-secondary, 'Open Sans', sans-serif);
+    --pp-font-tech: 'Roboto Mono', monospace; /* Specific tech font */
+
+    /* Actual section styling using the scoped variables */
+    padding: 80px 0;
+    background-color: #06140e; /* Darker fallback if gradient fails */
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='var(--pp-biotech-green)' fill-opacity='0.05' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(140deg,
+            var(--pp-dark-bg-gradient-start) 0%,
+            var(--pp-dark-bg-gradient-mid) 35%,
+            var(--pp-dark-bg-gradient-end) 70%,
+            #1c5c34 100%
+        );
+    color: var(--pp-light-mint-text);
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(var(--pp-biotech-green-rgb), 0.25);
+    border-bottom: 2px solid rgba(var(--pp-biotech-green-rgb), 0.25);
+}
+
+.papers-eyebrow {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--pp-biotech-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1rem;
+    background-color: rgba(var(--pp-biotech-green-rgb), 0.1);
+    border-radius: 25px;
+    border: 1px solid rgba(var(--pp-biotech-green-rgb), 0.35);
+    font-family: var(--pp-font-tech);
+}
+
+.polyglot-papers-preview .section-title {
+    font-family: var(--pp-font-primary);
+    font-size: clamp(2.4rem, 5.8vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: var(--pp-brighter-mint-text);
+    text-shadow: 0 0 18px rgba(var(--pp-biotech-green-rgb), 0.55);
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+.polyglot-papers-preview .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: var(--pp-biotech-green);
+    box-shadow: 0 0 10px rgba(var(--pp-biotech-green-rgb), 0.75);
+    border-radius: 1.5px;
+}
+
+.polyglot-papers-preview .section-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--pp-soft-mint-text);
+    margin: 0 auto 3rem auto;
+    max-width: 720px;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   2. FEATURED POST STYLING (#featuredPostSlot)
+   ========================================================================== */
+.featured-post-slot {
+    margin-bottom: 3.5rem;
+}
+
+.featured-post-slot .paper-teaser-card, /* Using .paper-teaser-card as base */
+.featured-post-card-item {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(var(--pp-card-bg-rgb), 0.92); /* More opaque for featured */
+    border: 1px solid var(--pp-card-border-hover); /* Brighter border */
+    border-radius: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 30px rgba(0, 20, 10, 0.4), inset 0 0 15px rgba(var(--pp-deepest-bg-contrast-rgb),0.2); /* Enhanced shadow */
+}
+
+.featured-post-slot .paper-teaser-card .card-image-link,
+.featured-post-card-item .card-image-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.featured-post-slot .paper-teaser-card .featured-image,
+.featured-post-card-item .featured-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.featured-post-slot .paper-teaser-card:hover .featured-image,
+.featured-post-card-item:hover .featured-image {
+    transform: scale(1.04); /* Slightly more zoom */
+}
+
+.featured-post-slot .paper-teaser-card .card-content-featured,
+.featured-post-card-item .card-content-featured {
+    padding: 1.75rem 2rem 2rem 2rem; /* T R B L */
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-post-slot .paper-teaser-card .card-title, /* Targets h3 */
+.featured-post-card-item .card-title {
+    font-family: var(--pp-font-primary);
+    font-size: 1.8rem;
+    color: var(--pp-brighter-mint-text);
+    margin-bottom: 0.6rem;
+    line-height: 1.3; /* Adjusted for better spacing */
+    font-weight: 700;
+}
+.featured-post-slot .paper-teaser-card .card-title a,
+.featured-post-card-item .card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+.featured-post-slot .paper-teaser-card .card-title a:hover,
+.featured-post-card-item .card-title a:hover {
+    color: var(--pp-biotech-green);
+    text-shadow: 0 0 6px rgba(var(--pp-biotech-green-rgb), 0.4);
+}
+
+.featured-post-slot .paper-teaser-card .card-meta-featured,
+.featured-post-card-item .card-meta-featured {
+    font-size: 0.78rem;
+    color: var(--pp-muted-mint-text);
+    margin-bottom: 1rem;
+    font-family: var(--pp-font-tech);
+}
+.featured-post-slot .paper-teaser-card .card-meta-featured span,
+.featured-post-card-item .card-meta-featured span { margin-right: 12px; }
+.featured-post-slot .paper-teaser-card .card-meta-featured i,
+.featured-post-card-item .card-meta-featured i { margin-right: 5px; opacity: 0.7; }
+
+.featured-post-slot .paper-teaser-card .featured-excerpt, /* Targets p */
+.featured-post-card-item .featured-excerpt {
+    font-size: 1rem;
+    color: var(--pp-soft-mint-text);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.featured-post-slot .paper-teaser-card .paper-link.btn,
+.featured-post-card-item .paper-link.btn {
+    /* Styling to make it look like a .btn-primary from the theme */
+    padding: 0.7rem 1.8rem; /* Adjusted for consistency */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--pp-biotech-green), #23a870);
+    color: var(--pp-deepest-bg-contrast);
+    border: none; /* Override potential .btn-outline if class is also present */
+    box-shadow: 0 0 12px rgba(var(--pp-biotech-green-rgb), 0.4);
+    margin-top: auto;
+    align-self: flex-start; /* Align to left as per previous iteration */
+    width: auto;
+    min-width: auto;
+    text-decoration: none; /* Ensure no underline from .paper-link */
+    border-bottom: none; /* Ensure no border-bottom from .paper-link */
+}
+.featured-post-slot .paper-teaser-card .paper-link.btn:hover,
+.featured-post-card-item .paper-link.btn:hover {
+    background: linear-gradient(135deg, #38e09b, var(--pp-biotech-green));
+    color: var(--pp-deepest-bg-contrast); /* Keep text dark */
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 18px rgba(var(--pp-biotech-green-rgb), 0.6);
+}
+.featured-post-slot .paper-teaser-card .paper-link.btn i,
+.featured-post-card-item .paper-link.btn i {
+    transition: transform 0.25s ease-in-out;
+    margin-right: 0.6em; /* Consistent icon spacing */
+}
+.featured-post-slot .paper-teaser-card .paper-link.btn:hover i,
+.featured-post-card-item .paper-link.btn:hover i {
+    transform: translateX(4px); /* More pronounced arrow movement */
+}
+
+
+/* ==========================================================================
+   3. RECENT POSTS GRID STYLING (#recentPostsGrid / .papers-teasers-grid)
+   ========================================================================== */
+.recent-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2rem;
+}
+
+/* Base styles for all teaser cards */
+.paper-teaser-card {
+    background-color: var(--pp-card-bg);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: var(--pp-card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid var(--pp-card-border);
+    overflow: hidden;
+    color: var(--pp-light-mint-text); /* Default text color for cards */
+}
+.paper-teaser-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(var(--pp-biotech-green-rgb), 0.25), inset 0 0 20px rgba(var(--pp-card-bg-rgb),0.5);
+    border-color: var(--pp-card-border-hover);
+}
+
+.paper-teaser-card .card-image-link { display: block; border-radius: 8px 8px 0 0; overflow: hidden;}
+.paper-teaser-card .card-preview-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85) brightness(0.95);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+.paper-teaser-card:hover .card-preview-image {
+    transform: scale(1.03);
+    filter: saturate(1) brightness(1);
+}
+
+.paper-teaser-card .card-content-preview {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.paper-teaser-card .card-title { /* For grid items */
+    font-family: var(--pp-font-primary);
+    font-size: 1.25rem;
+    color: var(--pp-brighter-mint-text);
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+}
+.paper-teaser-card .card-title a { color: inherit; }
+.paper-teaser-card .card-title a:hover { color: var(--pp-biotech-green); }
+
+.paper-teaser-card .card-meta-preview {
+    font-size: 0.75rem;
+    color: var(--pp-muted-mint-text);
+    margin-bottom: 0.75rem;
+    font-family: var(--pp-font-tech);
+}
+.paper-teaser-card .card-meta-preview span { margin-right: 10px; }
+.paper-teaser-card .card-meta-preview i { margin-right: 4px; opacity: 0.7;}
+
+.paper-teaser-card p.card-excerpt-preview {
+    font-size: 0.9rem;
+    color: var(--pp-soft-mint-text);
+    line-height: 1.65;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(0.9rem * 1.65 * 3); 
+}
+
+.paper-teaser-card .paper-link { /* "Read Dispatch" link for grid items */
+    font-size: 0.85rem;
+    color: var(--pp-biotech-green);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+    padding: 0.3rem 0; /* Remove side padding if it's just text */
+    border-bottom: 1px dashed rgba(var(--pp-biotech-green-rgb), 0.5);
+    align-self: flex-start;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+.paper-teaser-card .paper-link:hover {
+    color: var(--pp-accent-yellow); 
+    border-bottom-color: var(--pp-accent-yellow);
+}
+.paper-teaser-card .paper-link i {
+    margin-left: 0.3em; /* Space for arrow icon */
+    transition: transform 0.2s ease;
+}
+.paper-teaser-card .paper-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Hide old Font Awesome icons if they were part of old static HTML structure */
+.paper-teaser-card .paper-icon { display: none; }
+
+
+/* ==========================================================================
+   4. MAIN CTA BUTTON ("Access Full Research Archive")
+   ========================================================================== */
+.polyglot-papers-preview .cta-center {
+    margin-top: 3.5rem;
+}
+.btn-papers-cta.btn.btn-primary { /* This is the main green button */
+    font-size: 1.1rem; /* Original size */
+    padding: 0.9rem 2.2rem; /* Original padding */
+    /* It inherits from global .btn-primary which is themed green */
+}
+.btn-papers-cta i { margin-right: 0.75rem; }
+
+
+/* ==========================================================================
+   5. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .recent-posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+    .featured-post-slot .paper-teaser-card .featured-image,
+    .featured-post-card-item .featured-image {
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .polyglot-papers-preview { padding: 60px 0; }
+    .polyglot-papers-preview .section-title { font-size: clamp(2rem, 5vw, 2.8rem); }
+    .polyglot-papers-preview .section-subtitle { font-size: 1rem; margin-bottom: 2.5rem; }
+
+    .featured-post-slot .paper-teaser-card,
+    .featured-post-card-item {
+        max-width: 95%; /* Allow more width on mobile */
+    }
+    .featured-post-slot .paper-teaser-card h3.featured-title,
+    .featured-post-card-item h3.card-title {
+        font-size: 1.5rem;
+    }
+    .featured-post-slot .paper-teaser-card p.featured-excerpt,
+    .featured-post-card-item p.featured-excerpt {
+        font-size: 0.95rem;
+    }
+    .featured-post-slot .paper-teaser-card .featured-image,
+    .featured-post-card-item .featured-image {
+        height: 220px; 
+    }
+
+    .recent-posts-grid {
+        grid-template-columns: 1fr; 
+        gap: 1.8rem; 
+    }
+    .paper-teaser-card .card-title { font-size: 1.15rem; }
+    .paper-teaser-card p.card-excerpt-preview { font-size: 0.88rem; -webkit-line-clamp: 3; min-height: calc(0.88rem * 1.6 * 3); }
+    .paper-teaser-card .card-preview-image { height: 170px; }
+}
+
+@media (max-width: 480px) {
+    .polyglot-papers-preview { padding: 50px 0; }
+    .polyglot-papers-preview .section-title { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+    .papers-eyebrow { font-size: 0.7rem; padding: 0.3rem 0.6rem; letter-spacing: 1.5px; }
+    .polyglot-papers-preview .section-subtitle { font-size: 0.9rem; } /* Adjusted */
+    
+    .featured-post-slot .paper-teaser-card h3.featured-title,
+    .featured-post-card-item h3.card-title { font-size: 1.3rem; }
+    .featured-post-slot .paper-teaser-card p.featured-excerpt,
+    .featured-post-card-item p.featured-excerpt { font-size: 0.88rem; } /* Adjusted */
+    .featured-post-slot .paper-teaser-card .featured-image,
+    .featured-post-card-item .featured-image { height: 200px; }
+
+    .paper-teaser-card .card-title { font-size: 1.05rem; } /* Adjusted */
+    .btn-papers-cta.btn.btn-primary { font-size: 0.95rem; padding: 0.8rem 1.8rem; } /* Adjusted */
+}

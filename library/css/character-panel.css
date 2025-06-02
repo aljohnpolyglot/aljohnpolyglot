@@ -1,0 +1,385 @@
+/* =============================================== */
+/* === Character Panel & Bio Modal Styles      === */
+/* =============================================== */
+
+/* --- CSS Variables (Ensure these are defined in :root in global.css or similar) --- */
+/* :root {
+    --primary-accent-color: #A52A2A; /* Example: Pirate Red */
+/*    --secondary-accent-color: #DAA520; /* Example: Gold */
+/*    --secondary-accent-color-translucent: rgba(218, 165, 32, 0.5); */
+/*    --background-color-light: #fdf5e6; /* Parchment */
+/*    --text-color-dark: #3b2f2f; */
+/*    --text-color-medium: #5c4d4d; */
+/*    --weathered-wood-light: #D7CCC8; */
+/*    --weathered-wood-dark: #6F4E37; */
+/*    --gold-trim: #B8860B; */
+/*    --ocean-blue-medium: #1F8A70; */
+/*    --highlight-text: #FFF8DC; */
+/*    --font-display: 'Pirata One', cursive; */
+/*    --font-body: 'Merriweather', serif; */
+/*    --font-title: 'Pirata One', cursive; /* Or another title font */
+/*    --border-radius-main: 5px;
+} */
+
+
+/* --- Character Panel Sidebar (#character-panel-sidebar) --- */
+#character-panel-sidebar {
+    /* display: flex; /* If set in JS, otherwise this is needed */
+    /* flex-direction: column; */ /* If set in JS, otherwise this is needed */
+    /* background-color: var(--background-color-light); */ /* Assuming this is set in library-layout.css */
+    /* padding: 20px; */ /* Assuming this is set in library-layout.css */
+    /* border-radius: var(--border-radius-medium); */ /* Assuming this is set in library-layout.css */
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.08); */ /* Assuming this is set in library-layout.css */
+}
+
+/* Container for Portrait & Name in Sidebar */
+#character-info {
+    display: flex;
+    flex-direction: column; /* Stack Aljohn image and name-line */
+    align-items: center;
+    margin-bottom: 20px; /* More space before chat interface */
+    text-align: center;
+}
+
+#character-portrait-img { /* Image in the sidebar */
+    width: 100px; /* Larger portrait in sidebar */
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-accent-color, #DAA520); /* Use fallback if var not defined */
+    object-fit: cover;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.25);
+}
+#character-portrait-img:hover {
+    transform: scale(1.08); /* Slightly more hover effect */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+}
+
+/* Container for Flag and Name below Portrait in Sidebar */
+#character-name-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.character-flag-icon { /* Flag next to name in sidebar */
+    width: 22px; /* Adjusted size */
+    height: auto;
+    border-radius: 2px; /* Sharper radius */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle border for flag */
+}
+
+#character-name-display { /* Name text in sidebar */
+    font-family: var(--font-title, 'Pirata One', cursive);
+    font-size: 1.5em; /* Prominent name */
+    color: var(--primary-accent-color, #A52A2A);
+    margin: 0;
+    line-height: 1.1; /* Adjust for pirate fonts that can be tall */
+}
+
+/* --- Chatbot Interface (#chatbot-interface) --- */
+#chatbot-interface {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow chat interface to take remaining vertical space */
+    min-height: 0; /* For flex scrolling */
+}
+
+#chat-log-display {
+    flex-grow: 1; /* Allow log to expand */
+    min-height: 200px; /* Minimum chat area before scrolling */
+    max-height: 350px; /* Maximum chat area before scrolling */
+    overflow-y: auto;
+    border: 1px solid var(--weathered-wood-light, #D7CCC8);
+    border-radius: var(--border-radius-main, 5px);
+    padding: 12px;
+    margin-bottom: 12px;
+    background-color: rgba(255,255,255,0.8); /* Slightly more opaque for readability */
+    font-size: 0.85rem; /* Readable chat text */
+    scrollbar-width: thin;
+    scrollbar-color: var(--weathered-wood-dark) var(--weathered-wood-light);
+}
+#chat-log-display::-webkit-scrollbar { width: 6px; }
+#chat-log-display::-webkit-scrollbar-thumb { background-color: var(--weathered-wood-dark); border-radius: 3px;}
+#chat-log-display::-webkit-scrollbar-track { background-color: var(--weathered-wood-light); }
+
+
+.chat-message {
+    padding: 7px 12px; /* Slightly adjusted padding */
+    border-radius: 12px; /* More rounded messages */
+    margin-bottom: 10px;
+    max-width: 88%;
+    line-height: 1.45;
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+.chat-message.character {
+    background-color: var(--ocean-blue-medium, #1F8A70);
+    color: var(--highlight-text, #FFF8DC);
+    align-self: flex-start;
+    margin-right: auto; 
+    border-bottom-left-radius: 4px; /* Slightly different rounding for direction */
+}
+
+.chat-message.user {
+    background-color: var(--weathered-wood-light, #A0522D);
+    color: var(--highlight-text, #FFF8DC);
+    align-self: flex-end;
+    margin-left: auto; 
+    border-bottom-right-radius: 4px;
+}
+.chat-message.thinking .dot-elastic { /* Styles for thinking dots */
+    display: inline-block;
+    margin-left: 5px;
+}
+/* (Ensure .dot-elastic CSS is defined in global.css or here) */
+
+#chat-input-container {
+    display: flex;
+    gap: 8px;
+    align-items: center; /* Align input and button */
+}
+
+#user-chat-input-field {
+    flex-grow: 1;
+    padding: 9px 12px;
+    border: 1px solid var(--weathered-wood-light, #D7CCC8);
+    border-radius: 18px; /* More pill-shaped */
+    font-size: 0.9rem;
+    font-family: var(--font-body, 'Merriweather', serif);
+    background-color: #fff; /* Clear white input */
+}
+#user-chat-input-field:focus {
+    outline: none;
+    border-color: var(--gold-trim, #B8860B);
+    box-shadow: 0 0 0 2px rgba(var(--gold-trim-rgb, 184, 134, 11), 0.25);
+}
+
+#send-chat-message-btn {
+    padding: 9px; /* Square off for icon */
+    width: 38px;  /* Explicit size */
+    height: 38px; /* Explicit size */
+    border-radius: 50%; 
+    font-size: 1rem; /* Icon size */
+    background-color: var(--ocean-blue-medium, #1F8A70);
+    color: var(--highlight-text, #FFF8DC);
+    border: 1px solid var(--ocean-blue-deep, #00425A);
+    transition: background-color 0.2s, transform 0.1s;
+}
+#send-chat-message-btn:hover {
+    background-color: var(--ocean-blue-deep, #00425A);
+    transform: scale(1.05);
+}
+#send-chat-message-btn i.fas { margin-right: 0; }
+
+
+.api-note {
+    font-size: 0.75rem; /* Smaller API note */
+    color: var(--text-color-medium, #777);
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* ================================= */
+/* === Character Bio Modal Styles === */
+/* ================================= */
+
+/* Ensure general modal styles are in modal.css or global.css for
+   .modal-overlay, .modal-content-box, .close-modal-button */
+
+/* ================================= */
+/* === Character Bio Modal Styles === */
+/* ================================= */
+
+/* Ensure general modal styles are in modal.css or global.css for
+   .modal-overlay, .modal-content-box, .close-modal-button */
+
+.character-modal-content { /* Specific class for this modal's content box */
+    max-width: 750px; /* Adjusted from 700px to better fit screenshot */
+    min-height: 380px; 
+    background-color: var(--parchment-bg, #fdf5e6); 
+    border: 4px solid var(--gold-trim, #B8860B); /* Gold trim from your screenshot */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    border-radius: var(--border-radius-main, 6px); /* Consistent radius */
+}
+
+.modal-character-layout {
+    display: flex;
+    gap: 20px; 
+    padding: 20px; 
+}
+
+.modal-character-portrait-container {
+    flex: 0 0 300px; /* Fixed width for portrait area */
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+}
+
+#modal-character-full-img { /* The large portrait in modal */
+    width: 100%; /* Fill its container */
+    max-width: 400px; /* Max actual image size */
+    height: auto;
+    object-fit: contain;
+    border: 3px solid var(--pirate-gold-darker, #c09808); /* Gold frame */
+    border-radius: var(--border-radius-main, 5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.modal-character-details-container {
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;
+    text-align: left;
+    position: relative; /* For flag positioning */
+    padding-left: 4px; /* << MAKE SPACE FOR THE FLAG */
+
+}
+
+/* Flag in Modal - Top Left of Details Container */
+#modal-character-name-container {
+    display: flex;
+    align-items: center; /* Vertically align flag and name */
+    gap: 10px;        /* Space between flag and name */
+    margin-bottom: 3px; /* Space below name block before character's title */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.character-modal-flag-icon { /* Flag next to name in modal */
+    width: 24px;  /* Corresponds to w24 from createFlagImg */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 24px; /* Prevent oversized flags if source is different */
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    flex-shrink: 0; /* Prevent flag from shrinking */
+}
+
+/* Container for Name in Modal - No longer needed if flag is absolute in details-container */
+/* #modal-character-name-container { ... } */
+
+#modal-character-name { /* H2 character name in modal */
+    font-family: var(--font-pirate-display, 'Pirata One', cursive); /* Using your pirate display font */
+    color: var(--ink-black, #3a2d22); /* Dark ink color */
+    font-size: clamp(1.6em, 4vw, 2em); /* Responsive title size */
+    margin: 0; 
+    line-height: 1.1; /* Adjust for tall fonts */
+    font-weight: 600; /* Slightly less heavy than default h2 bold */
+}
+
+.modal-character-title-text { /* Character's title (e.g., "La Llama de la Imaginación") */
+    font-family: var(--font-pirate-serif, 'IM Fell English SC', serif); /* Thematic serif */
+    font-style: italic;
+    color: var(--ink-on-parchment, #5f4c3b);
+    margin-bottom: 15px;
+    font-size: clamp(1em, 2.5vw, 1.15em);
+    line-height: 1.3;
+    padding-left: 0; /* Ensure it aligns if name container has no padding */
+}
+
+.modal-bio-scroll {
+    max-height: 260px; /* Adjust as needed for content */
+    overflow-y: auto;
+    padding: 5px 10px 5px 2px; /* Right padding for scrollbar, little left padding */
+    margin-bottom: 20px;
+    border-left: 1px solid var(--gold-trim, #B8860B); /* Gold accent line */
+    font-family: var(--font-body, 'Merriweather', serif);
+    background-color: rgba(0,0,0,0.02); /* Very subtle background for scroll area */
+
+}
+
+#modal-character-bio-long { 
+    font-size: 0.9rem; /* Readable bio text */
+    line-height: 1.6;
+    color: var(--ink-on-parchment, #4a3f30);
+    text-align: justify;
+}
+
+#modal-character-quotes-section {
+    display: none !important; 
+}
+
+/* Responsive adjustments for Character Panel & Modal */
+@media (max-width: 767px) {
+    .character-modal-content {
+        max-width: 95vw; /* More screen width on mobile */
+        min-height: 300px;
+    }
+    .modal-character-layout {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 15px;
+        gap: 15px;
+    }
+    .modal-character-portrait-container {
+        margin-bottom: 10px; /* Reduced space */
+        flex-basis: auto; 
+    }
+    #modal-character-full-img {
+        width: 150px; 
+        max-width: 100%; /* Ensure it doesn't overflow its container */
+    }
+    .modal-character-details-container {
+        text-align: center; /* Center text details when stacked */
+        padding-left: 0; /* No specific padding needed for centered content */
+    }
+    #modal-character-name-container {
+        justify-content: center; /* Center flag and name */
+    }
+    #modal-character-name {
+        font-size: clamp(1.4em, 5vw, 1.8em);
+    }
+    .modal-character-title-text {
+        font-size: 1em;
+        margin-bottom: 12px;
+    }
+    #modal-character-bio-long {
+        font-size: 0.8rem;
+        text-align: left; /* Keep bio left-aligned for readability */
+    }
+    .modal-bio-scroll {
+        max-height: 120px; 
+        padding-right: 5px; /* Less padding for scrollbar */
+    }
+}
+
+@media (max-width: 480px) { /* Specific tweaks for very small phone screens */
+    .character-modal-content {
+        padding: 10px; /* Reduce modal padding further */
+    }
+    .modal-character-layout {
+        padding: 10px;
+        gap: 10px;
+    }
+    #modal-character-full-img {
+        width: 120px; /* Even smaller portrait */
+    }
+    #modal-character-name-container {
+        gap: 6px;
+    }
+    .character-modal-flag-icon {
+        width: 20px; /* Smaller flag */
+        max-height: 20px;
+    }
+    #modal-character-name {
+        font-size: 1.3em;
+    }
+    .modal-character-title-text {
+        font-size: 0.9em;
+    }
+    #modal-character-bio-long {
+        font-size: 0.75rem;
+    }
+     .modal-bio-scroll {
+        max-height: 100px; 
+    }
+}

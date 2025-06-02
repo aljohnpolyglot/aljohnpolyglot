@@ -1,0 +1,416 @@
+/* css/bisaya-kdrama-revamp.css - K-Drama Carousel Cards & Immersive Detail View Panel */
+
+/* === K-Drama Carousel Card Styles === */
+/* These cards are the clickable triggers for the immersive detail view panel. */
+.kdrama-card-revamped {
+    flex: 0 0 170px; /* Base width for cards in the carousel */
+    aspect-ratio: 2 / 3; /* Standard movie poster aspect ratio */
+    position: relative;
+    border-radius: 6px; /* Slightly rounded corners */
+    overflow: hidden; /* Important for containing image and overlay, and clipping content */
+    box-shadow: 0 3px 8px rgba(var(--sinulog-black-rgb, 17, 17, 17), 0.4); /* Subtle shadow for depth */
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: var(--sinulog-dark-gray, #22252a); /* Fallback background color for card */
+    display: block; /* Ensures it behaves as a block element for proper layout */
+    text-decoration: none; /* Removes any default link underlines if the card is an <a> tag */
+    color: inherit; /* Inherits text color from parent for consistency */
+}
+
+/* Hover/Focus States for K-Drama Cards */
+.kdrama-card-revamped:hover,
+.kdrama-card-revamped:focus-within { /* Added for keyboard navigation accessibility */
+    transform: scale(1.04); /* Slight enlargement on hover */
+    box-shadow: 0 6px 16px rgba(var(--sinulog-black-rgb, 17, 17, 17), 0.5); /* Enhanced shadow on hover */
+}
+
+/* K-Drama Poster Image */
+.card-revamped-poster {
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensures image covers the entire area */
+    background-position: center; /* Centers the image within the area */
+    position: absolute; /* Positions the poster relative to the card */
+    top: 0; left: 0;
+    z-index: 1; /* Ensures it's below the title overlay */
+    transition: transform 0.3s ease; /* Smooth transition for image zoom */
+}
+.kdrama-card-revamped:hover .card-revamped-poster {
+    transform: scale(1.05); /* Subtle zoom effect on the poster image itself on hover */
+}
+
+/* Title Overlay at the Bottom of K-Drama Cards */
+.card-revamped-title-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0; /* Positions at the bottom edge */
+    padding: 0.7rem 0.5rem; /* Padding inside the overlay */
+    /* Gradient for fade effect, covering 15% from bottom to transparent */
+    background: linear-gradient(to top, rgba(var(--sinulog-black-rgb, 17, 17, 17), 0.9) 15%, transparent 100%);
+    color: var(--sinulog-white, #FFFFFF); /* White text color */
+    text-align: center;
+    z-index: 2; /* Ensures it's above the poster */
+    pointer-events: none; /* Allows clicks to pass through to the card itself */
+}
+.card-revamped-title-overlay h4 {
+    margin: 0; /* Remove default margin */
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 0.8rem; /* Compact font size for title */
+    font-weight: 600;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides overflowing text */
+    text-overflow: ellipsis; /* Adds "..." for overflowing text */
+    text-shadow: 1px 1px 2px rgba(var(--sinulog-black-rgb, 17, 17, 17),0.7); /* Subtle text shadow for readability */
+}
+
+
+/* === K-Drama Immersive Detail View & Dimmer (Click-Activated Panel) === */
+
+/* Full-Screen Dimmer Overlay (behind the modal) */
+.kdrama-dimmer-overlay {
+    display: none; /* Hidden by default, JS toggles */
+    position: fixed; /* Fixed position relative to viewport */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(var(--sinulog-black-rgb, 17, 17, 17), 0.88); 
+    z-index: 9999; 
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Hide from screen readers when not active */
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; /* Smooth fade-in */
+}
+.kdrama-dimmer-overlay.active {
+    display: block; 
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Make visible */
+    transition-delay: 0s, 0s; /* No delay on showing */
+}
+
+/* The Immersive Detail Panel Itself (the modal content) */
+.immersive-detail-view { /* K-Drama Panel */
+    position: fixed; /* Fixed position relative to viewport */
+    top: 50%; left: 50%; /* Center initially */
+    transform: translate(-50%, -50%) scale(0.95); /* Start slightly smaller for animation */
+    width: clamp(320px, 80vw, 800px); /* Responsive width: min 320px, max 800px, responsive 80vw */
+    max-height: 85vh; /* Max height to fit in viewport, allows internal scrolling */
+    background-color: #1A1A1A; /* Dark background for the panel content */
+    color: var(--sinulog-white, #FFFFFF); /* White text color */
+    border-radius: 10px; /* Rounded corners for the panel */
+    box-shadow: 0 12px 40px rgba(0,0,0,0.65); /* Prominent shadow for depth */
+    z-index: 10000; /* HIGHER THAN DIMMER: Ensures it's on top of its dimmer */
+    opacity: 0; visibility: hidden; /* Start invisible */
+    transition: opacity 0.3s ease-in-out 0.05s, transform 0.3s ease-in-out 0.05s, visibility 0s 0.35s; /* Smooth animation */
+    display: flex; flex-direction: column; /* Stack video and content vertically */
+    overflow: hidden; /* Ensures content respects border-radius */
+}
+.immersive-detail-view.active {
+    opacity: 1; visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Animate to full size */
+    transition-delay: 0s, 0s, 0s; /* No delay on showing */
+}
+
+/* Close Button (X) */
+.kdrama-detail-close-btn {
+    color: var(--sinulog-light-gray, #adb5bd); /* Light gray color for the X */
+    position: absolute;
+    top: 12px; right: 12px; /* Positioned within the panel */
+    background: rgba(var(--sinulog-black-rgb, 17, 17, 17),0.6); /* Semi-transparent dark circle background */
+    border: none; 
+    border-radius: 50%; width: 32px; height: 32px; /* Circular button */
+    font-size: 1.6rem; line-height: 32px; /* Centers the 'x' vertically */
+    text-align: center; cursor: pointer; z-index: 10; /* Above video */
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+.kdrama-detail-close-btn:hover { 
+    background: rgba(var(--sinulog-white-rgb, 255, 255, 255),0.1); /* Lighter background on hover */
+    color: var(--sinulog-white, #FFFFFF); /* White 'x' on hover */
+    transform: scale(1.1); /* Slight enlargement */
+}
+
+/* Video Player Area */
+.immersive-video-area { 
+    width: 100%; 
+    background-color: #000; /* Black background for video player */
+    position: relative; 
+    flex-shrink: 0; /* Prevent video area from shrinking too much if content is long */
+}
+.immersive-video-player-container { /* Contains the iframe */
+    width: 100%; /* Takes full width of its parent */
+    aspect-ratio: 16 / 9; /* Maintains 16:9 aspect ratio */
+    margin: 0 auto; /* Centers the video if parent is wider */
+    overflow: hidden; /* Clips the iframe corners */
+}
+#kdrama-detail-video-iframe { 
+    width: 100%; height: 100%; display: block; border: none; /* Ensures iframe fills container */
+}
+
+/* Main Content Area (Below Video) */
+.immersive-content-area {
+    padding: 1rem 1.5rem 1.2rem 1.5rem; /* Reduced padding for compactness */
+    flex-grow: 1; /* Allows this area to take available space */
+    overflow-y: auto; /* Enables scrolling if content overflows */
+    background-color: #181818; /* Slightly lighter dark background for content */
+    display: flex; flex-direction: column; /* Stack content vertically */
+    /* Custom scrollbar styles */
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2a2a2a;
+}
+.immersive-content-area::-webkit-scrollbar { width: 6px; }
+.immersive-content-area::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 3px;}
+.immersive-content-area::-webkit-scrollbar-thumb { background-color: #555; border-radius: 3px;}
+
+
+/* Show Title (inside content area) */
+.immersive-title {
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem); /* More compact title size */
+    font-weight: 700;
+    margin: 0 0 0.5rem 0; /* Adjusted margin */
+    line-height: 1.25;
+    word-break: break-word; /* Help prevent overflow with long titles */
+}
+
+/* Meta Information (Genres, Platform) */
+.immersive-meta-info {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; /* Tighter gap */
+    margin-bottom: 0.8rem; /* Reduced margin below meta info */
+    align-items: center;
+}
+.meta-tag {
+    font-size: 0.75rem; /* Smaller meta tags */
+    padding: 0.25em 0.7em;
+    border-radius: 4px; /* Less rounded, tighter pill shape */
+    font-weight: 600; display: inline-flex; align-items: center;
+    background-color: rgba(var(--sinulog-white-rgb, 255, 255, 255), 0.1);
+    border: 1px solid rgba(var(--sinulog-white-rgb, 255, 255, 255), 0.15);
+    color: var(--sinulog-light-gray, #adb5bd);
+}
+.meta-tag i { margin-right: 0.3em; font-size:0.9em; }
+.meta-tag.platform-tag i { color: var(--sinulog-yellow, #FFF200); } /* Yellow for platform icon */
+.meta-tag.genre-tag i { color: var(--sinulog-magenta, #EC008C); } /* Magenta for genre icon */
+
+
+/* Synopsis and Starring Sections */
+.immersive-synopsis-section h4,
+.immersive-starring-section h4 {
+    font-size: 0.95rem; /* Smaller subheadings */
+    font-weight: 600;
+    margin-bottom: 0.3rem; /* Tighter to paragraph */
+    color: var(--sinulog-off-white, #f1f3f5); /* Bright text for headings */
+    border-left: 3px solid var(--sinulog-yellow, #FFF200); /* Yellow accent border */
+    padding-left: 0.5rem;
+}
+#kdrama-detail-synopsis,
+#kdrama-starring-text {
+    font-size: 0.85rem; /* More compact body text */
+    line-height: 1.55;
+    color: var(--sinulog-light-gray, #adb5bd);
+    margin-bottom: 1rem; /* Spacing after these text blocks */
+    word-break: break-word; /* Help prevent overflow */
+}
+#kdrama-detail-synopsis p:last-child, #kdrama-starring-text p:last-child { margin-bottom: 0; }
+
+
+/* Call To Action (CTA) Button Area */
+.immersive-actions {
+    margin-top: auto; /* Pushes to bottom if content is short */
+    padding-top: 1rem; /* Reduced padding above button */
+    text-align: center;
+    border-top: 1px solid rgba(var(--sinulog-white-rgb, 255, 255, 255), 0.08); /* Subtle separator */
+}
+.btn-watch-viu-immersive {
+    padding: 0.6em 1.2em; /* Compact button */
+    font-size: 0.85rem; /* Smaller font */
+    background-color: var(--sinulog-yellow, #FFF200); /* Viu Yellow */
+    color: var(--sinulog-black, #111111); /* Dark text */
+    border-radius: var(--button-border-radius, 500px); /* Pill shape */
+    text-decoration: none; font-weight: 700;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 5px rgba(var(--sinulog-yellow-rgb, 255, 242, 0), 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-watch-viu-immersive:hover {
+    background-color: #FFD700; /* Slightly different yellow on hover */
+    transform: scale(1.03);
+}
+.viu-logo-immersive {
+    height: 18px; /* Slightly smaller logo */
+    width: auto; margin-right: 0.6em; /* Adjusted margin */
+}
+
+
+/* === Responsive adjustments for K-Drama Panel === */
+
+/* For standard small to medium phones */
+@media (max-width: 600px) {
+    .immersive-detail-view { /* Full screen on mobile */
+        width: 100vw; 
+        height: 100vh; /* Ensure it takes full viewport height */
+        max-height: 100vh; /* Consistent with height */
+        top: 0; left: 0; 
+        transform: none; /* CRITICAL: For initial non-active state on mobile */
+        border-radius: 0;
+        box-sizing: border-box; /* Ensures padding/border are included in 100vw/vh */
+    }
+    .immersive-detail-view.active {
+        transform: none; /* CRITICAL FIX: Override desktop .active transform to prevent "jumping" */
+        /* Opacity and visibility transitions will still apply from the base .active rule */
+    }
+
+    .kdrama-detail-close-btn {
+        top: 10px; right: 10px; 
+        width: 30px; height: 30px;
+        font-size: 1.5rem; line-height: 30px;
+    }
+
+    .immersive-content-area { 
+        padding: 0.8rem 1rem; /* Slightly reduced padding */
+    }
+    .immersive-title { 
+        font-size: 1.3rem; /* Adjusted from 1.5rem clamp base */
+        margin-bottom: 0.4rem; 
+    }
+    .immersive-meta-info { 
+        margin-bottom: 0.6rem; 
+        gap: 0.4rem; 
+    }
+    .meta-tag { 
+        font-size: 0.7rem; 
+        padding: 0.2em 0.5em; 
+    }
+    .immersive-synopsis-section h4, .immersive-starring-section h4 { 
+        font-size: 0.85rem; 
+    }
+    #kdrama-detail-synopsis, #kdrama-starring-text { 
+        font-size: 0.78rem; 
+        line-height: 1.5; 
+        margin-bottom: 0.8rem; 
+    }
+    .immersive-actions { 
+        padding-top: 0.8rem; 
+    }
+    .btn-watch-viu-immersive { 
+        font-size: 0.8rem; 
+        padding: 0.5em 1em; 
+    }
+    .viu-logo-immersive { 
+        height: 16px; 
+        margin-right: 0.5em; 
+    }
+}
+
+/* For smaller phones (e.g., iPhone SE 1st gen width, very narrow devices) */
+@media (max-width: 420px) {
+    .kdrama-detail-close-btn {
+        top: 8px; right: 8px;
+        width: 28px; height: 28px;
+        font-size: 1.3rem; line-height: 28px;
+    }
+    .immersive-content-area {
+        padding: 0.7rem 0.8rem; /* Further reduce padding */
+    }
+    .immersive-title {
+        font-size: 1.2rem; /* Slightly smaller title */
+        line-height: 1.25;
+    }
+    .immersive-meta-info {
+        gap: 0.35rem; /* Tighter meta tags */
+        margin-bottom: 0.5rem;
+    }
+    .meta-tag {
+        font-size: 0.65rem;
+        padding: 0.15em 0.45em;
+    }
+     .meta-tag i { margin-right: 0.25em; }
+
+    .immersive-synopsis-section h4,
+    .immersive-starring-section h4 {
+        font-size: 0.8rem; /* Smaller subheadings */
+        padding-left: 0.4rem;
+    }
+    #kdrama-detail-synopsis,
+    #kdrama-starring-text {
+        font-size: 0.75rem; /* Smaller body text */
+        line-height: 1.45;
+        margin-bottom: 0.7rem;
+    }
+    .immersive-actions {
+        padding-top: 0.7rem;
+    }
+    .btn-watch-viu-immersive {
+        font-size: 0.75rem;
+        padding: 0.45em 0.9em;
+    }
+    .viu-logo-immersive {
+        height: 15px;
+    }
+}
+
+/* For very narrow phones (rare, but good for robustness) */
+@media (max-width: 360px) {
+    .immersive-content-area {
+        padding: 0.6rem 0.7rem; /* Even tighter padding */
+    }
+    .immersive-title {
+        font-size: 1.1rem; /* Further reduce title size */
+        line-height: 1.2;
+    }
+     .immersive-meta-info {
+        gap: 0.3rem;
+    }
+    .meta-tag {
+        font-size: 0.6rem;
+        padding: 0.1em 0.4em;
+    }
+    .immersive-synopsis-section h4,
+    .immersive-starring-section h4 {
+        font-size: 0.75rem;
+    }
+    #kdrama-detail-synopsis,
+    #kdrama-starring-text {
+        font-size: 0.72rem;
+        line-height: 1.4;
+    }
+    .btn-watch-viu-immersive {
+        font-size: 0.7rem;
+        padding: 0.4em 0.8em;
+    }
+    .viu-logo-immersive {
+        height: 14px;
+    }
+}
+
+.immersive-content-scrollable-inner {
+    flex-grow: 1; /* Takes up available space, pushing actions to bottom */
+    overflow-y: auto; /* Enables scrolling ONLY for this part if content overflows */
+    padding: 1rem 1.5rem; /* Apply original padding here (top, LR). Bottom padding can be less or zero. */
+     /* Custom scrollbar styles (MOVED HERE) */
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2a2a2a;
+}
+.immersive-content-scrollable-inner::-webkit-scrollbar { width: 6px; }
+.immersive-content-scrollable-inner::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 3px;}
+.immersive-content-scrollable-inner::-webkit-scrollbar-thumb { background-color: #555; border-radius: 3px;}
+@media (max-width: 600px) {
+    /* .immersive-detail-view styles remain the same */
+    /* .kdrama-detail-close-btn styles remain the same */
+
+    .immersive-content-scrollable-inner {
+        padding: 0.8rem 1rem; /* Adjust padding */
+    }
+@media (max-width: 420px) {
+    .immersive-content-scrollable-inner {
+        padding: 0.7rem 0.8rem;
+    }
+    .immersive-actions {
+        padding: 0.7rem 0.8rem;
+    }
+    /* ... other font size adjustments ... */
+}
+
+@media (max-width: 360px) {
+    .immersive-content-scrollable-inner {
+        padding: 0.6rem 0.7rem;
+    }
+    .immersive-actions {
+        padding: 0.6rem 0.7rem;
+    }
+    /* ... other font size adjustments ... */
+}

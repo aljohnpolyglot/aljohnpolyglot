@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language & Culture Centers in the Philippines | Aljohn Polyglot</title>
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/languagecenters-interactive.css">
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body class="lc-interactive-page">
+
+   <header id="main-header-placeholder"></header>
+
+    <main id="languageHubExplorer" class="container">
+      <div class="lc-persistent-header">
+            <div class="lc-hero-interactive">
+                <!-- UPDATED H1 -->
+                <h1>Explore Language & Culture Centers Across the Philippines</h1>
+            </div>
+            <div class="language-filter-grid" id="languageFilter">
+                <p class="loading-text">Loading languages...</p>
+            </div>
+            <div class="lc-initial-prompt" id="initialPromptText">
+                <p>Select a language above to discover official institutes and learning communities in the Philippines.</p>
+            </div>
+        </div>
+
+        <div class="lc-institutes-content-area">
+            <div class="institutes-screen-header" id="institutesListHeader" style="display: none;">
+                <h2 id="selectedLanguageTitle">
+                    <img src="" alt="Language Flag" class="language-title-flag" style="display: none;">
+                    Institutes for <span id="dynamicLanguageName">[Language]</span>
+                </h2>
+            </div>
+            <div class="institutes-list-interactive" id="institutesList">
+                {/* Institute previews will be dynamically generated here */}
+            </div>
+             <div class="lc-back-to-main-wrapper" id="backToMainWrapper" style="display: none;"> 
+                <a href="index.html#cultural-institutes" class="btn back-btn-main-site">
+                    <i class="fas fa-home"></i> Back to Cultural Institutes on Main Page
+                </a>
+            </div>
+        </div>
+
+        <!-- Screen 3: Institute Detail Modal (Overlay) -->
+        <div id="instituteDetailModal" class="lc-modal">
+            <!-- ... (Your existing modal HTML structure - NO CHANGES NEEDED HERE) ... -->
+            <div class="lc-modal-content-wrapper">
+                <div class="lc-modal-content">
+                    <button id="closeModalBtn" class="close-modal-btn" aria-label="Close details">×</button>
+                    <div class="lc-modal-sidebar">
+                        <div class="modal-sidebar-content-centered">
+                            <img src="" alt="Institute Flag" id="modalFlag" class="modal-flag">
+                            <img src="" alt="Institute Logo" id="modalLogo" class="modal-logo-display">
+                            <h3 id="modalInstituteName">Institute Name</h3>
+                            <div id="modalPartnershipInfo" class="modal-partnership-info"></div>
+                            <div class="modal-sidebar-links">
+                                <a href="#" id="modalWebsiteLink" target="_blank" class="btn btn-small btn-outline">Visit Website</a>
+                                <div id="modalSocialLinks" class="modal-social-icons"></div>
+                            </div>
+                        </div>
+                        <button id="backToInstitutesList" class="back-btn-modal"><i class="fas fa-chevron-left"></i> Back to List</button>
+                    </div>
+
+                    <div class="lc-modal-main">
+                        <nav class="lc-modal-tabs">
+                            <button class="lc-tab-button active" data-tab="overview">Overview</button>
+                            <button class="lc-tab-button" data-tab="offerings">Offerings & Contact</button>
+                            <button class="lc-tab-button" data-tab="location">Location</button>
+                            <button class="lc-tab-button" data-tab="media">Media</button>
+                            <button class="lc-tab-button" data-tab="community">Community</button>
+                        </nav>
+                        <div class="lc-tab-panel">
+                            <div id="tab-overview" class="lc-tab-content active">
+                                <h4><i class="fas fa-info-circle"></i> About This Center</h4>
+                                <p id="modalDescription"></p>
+                                <hr class="tab-hr">
+                                <h4><i class="fas fa-user-tie"></i> My Experience</h4>
+                                <p id="modalMyExperience"></p>
+                            </div>
+                            <div id="tab-offerings" class="lc-tab-content">
+                                <h4><i class="fas fa-graduation-cap"></i> Key Offerings</h4>
+                                <ul id="modalKeyOfferings"></ul>
+                                <hr class="tab-hr">
+                                <h4><i class="fas fa-address-book"></i> Contact & Address</h4>
+                                <p id="modalContact"></p>
+                                <div id="modalAddresses"></div>
+                            </div>
+                            <div id="tab-location" class="lc-tab-content">
+                                <h4><i class="fas fa-map-marker-alt"></i> Institute Location</h4>
+                                <div id="modalMapEmbed" class="modal-map-embed-container"></div>
+                            </div>
+                            <div id="tab-media" class="lc-tab-content">
+                                <h4><i class="fab fa-youtube"></i> Featured Video</h4>
+                                <div id="modalFeaturedVideo" class="modal-video-container"></div>
+                                <hr class="tab-hr">
+                                <h4><i class="fas fa-images"></i> Photo Gallery (My Visits & Events)</h4>
+                                <div id="modalPhotoGallery" class="modal-photo-gallery-slideshow">
+                                </div>
+                            </div>
+                            <div id="tab-community" class="lc-tab-content">
+                                <h4><i class="fas fa-bullhorn"></i> Community Buzz</h4>
+                                <div id="modalCommunityPost"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+  <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script src="js/navbar-loader.js" defer></script>
+<script src="js/footer-loader.js" defer></script>
+
+    <script src="js/languagecenters-data.js"></script>
+    <script src="js/languagecenters-interactive.js"></script>
+    <script src="js/script.js"></script> <!-- Global script for header menu, etc. -->
+</body>
+</html>

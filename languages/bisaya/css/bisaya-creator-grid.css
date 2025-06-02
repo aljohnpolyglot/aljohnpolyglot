@@ -1,0 +1,346 @@
+/* css/bisaya-creator-grid.css - REVAMPED (Focus on Fixes & Dark Theme) */
+
+/* --- Section Styling: Ang Atong Komunidad --- */
+.creator-community-section-bisaya {
+    /* Assumes var(--sinulog-dark-gray) from bisaya-page-main.css */
+    /* Or set a specific background for this section if needed:
+       background-color: var(--sinulog-dark-gray); 
+    */
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+    margin-bottom: ;
+}
+
+/* Section Title: "MGA ATONG Bisdak Creators" */
+.creator-community-section-bisaya .section-title-bisaya {
+    color: var(--sinulog-white);
+}
+.creator-community-section-bisaya .section-title-bisaya .highlight-blue { /* To be new palette */
+    background-color: var(--sinulog-teal); 
+    color: var(--sinulog-white);
+    padding: 0.15em 0.35em;
+    border-radius: 5px;
+}
+
+.creator-community-section-bisaya .section-subtitle-bisaya {
+    color: var(--sinulog-light-gray);
+    margin-bottom: 3rem;
+}
+
+/* --- Main Layout: Sidebar + Grid Container --- */
+.creator-directory-layout {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* --- Filter Sidebar --- */
+.filter-sidebar-bisaya {
+    flex: 0 0 230px; /* Fixed width for sidebar */
+    background-color: rgba(var(--sinulog-black-rgb), 0.6); /* Darker, more translucent */
+    padding: 1.5rem; /* Consistent padding */
+    border-radius: var(--card-border-radius);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.1);
+    height: fit-content;
+    position: sticky;
+    top: var(--sticky-top-offset);
+    color: var(--sinulog-off-white);
+}
+
+.filter-sidebar-bisaya h3 { /* "Filter" title */
+    font-family: var(--font-display);
+    font-size: 1.3rem; /* Adjusted size */
+    color: var(--sinulog-yellow);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--sinulog-yellow); /* Thinner border */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.filter-hub-icon {
+    width: 24px; height: 24px; margin-right: 0.6em;
+    /* Ensure SVG icon is white or themed appropriately */
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(10deg) brightness(1.2); /* Example to make it yellowish if base is black */
+}
+
+.filter-group { margin-bottom: 1.8rem; }
+.filter-group:last-of-type { margin-bottom: 1.2rem; }
+
+.filter-group h4 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--sinulog-off-white);
+    display: flex;
+    align-items: center;
+}
+.filter-group h4 i {
+    margin-right: 0.6em;
+    color: var(--sinulog-magenta);
+    font-size: 1em; width: 1.2em; text-align: center;
+}
+
+/* Category Filters - FIX for Sizing and Layout */
+.category-filter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Strict two columns */
+    gap: 0.6rem; /* Consistent gap */
+}
+
+.btn-filter { /* Category buttons */
+    display: flex; /* Use flex for alignment */
+    align-items: center;
+    justify-content: flex-start; /* Align icon and text to the start */
+    width: 100%; /* Take full width of grid cell */
+    padding: 0.6em 0.7em; /* Adjust padding for consistency */
+    background-color: rgba(var(--sinulog-white-rgb), 0.07);
+    color: var(--sinulog-light-gray);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.12);
+    border-radius: 5px; /* Slightly less rounded for filter buttons */
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.8rem; /* Consistent font size */
+    font-weight: 500; /* Normal weight for inactive */
+    line-height: 1.3;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Prevent text overflow issues */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+    white-space: nowrap; /* Keep text on one line */
+}
+.btn-filter:hover {
+    background-color: rgba(var(--sinulog-white-rgb), 0.12);
+    border-color: rgba(var(--sinulog-white-rgb), 0.25);
+}
+.btn-filter.active {
+    background-color: var(--sinulog-yellow);
+    color: var(--sinulog-black) !important;
+    border-color: var(--sinulog-yellow);
+    font-weight: 700; /* Bolder for active */
+    box-shadow: 0 0 8px rgba(var(--sinulog-yellow-rgb), 0.25);
+}
+.btn-filter i {
+    margin-right: 0.4em; /* Space between icon and text */
+    width: 1.1em; /* Consistent icon width */
+    font-size: 0.9em; 
+    text-align: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+.btn-filter.active i { color: var(--sinulog-magenta) !important; transform: scale(1.05); }
+
+
+/* Platform Filters - Compact Icon Buttons */
+.platform-buttons-compact { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.btn-filter-platform {
+    background-color: rgba(var(--sinulog-white-rgb), 0.07);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.12);
+    color: var(--sinulog-light-gray);
+    padding: 0.6em; font-size: 1rem; /* Slightly smaller icon buttons */
+    border-radius: 5px; cursor: pointer; transition: all 0.2s ease-in-out;
+    line-height: 1; width: 38px; height: 38px; /* Consistent square size */
+    display: flex; align-items: center; justify-content: center;
+}
+/* ... (hover and active states for platform buttons remain similar, ensure icon colors contrast with yellow) ... */
+.btn-filter-platform:hover { background-color: rgba(var(--sinulog-white-rgb), 0.12); border-color: rgba(var(--sinulog-white-rgb), 0.25); }
+.btn-filter-platform.active { background-color: var(--sinulog-yellow); border-color: var(--sinulog-yellow); box-shadow: 0 0 8px rgba(var(--sinulog-yellow-rgb), 0.25); }
+/* Active icon colors need to contrast with yellow background */
+.btn-filter-platform.active .fab.fa-youtube { color: #FF0000 !important; }
+.btn-filter-platform.active .fab.fa-facebook { color: #1877F2 !important; }
+.btn-filter-platform.active .fab.fa-tiktok { color: #010101 !important; }
+.btn-filter-platform.active .fab.fa-instagram { /* Ensure gradient is visible or use solid color */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #d6249f !important;
+}
+.btn-filter-platform.active .fas.fa-globe { color: var(--sinulog-magenta) !important; }
+
+
+/* Custom Select for Region - Dropdown Fix */
+.custom-select-filter {
+    width: 100%;
+    padding: 0.7em 1em;
+    background-color: rgba(var(--sinulog-dark-gray-rgb), 0.7); /* Darker background for select itself */
+    color: var(--sinulog-off-white); /* Light text */
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.2);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    cursor: pointer;
+    appearance: none; -webkit-appearance: none; -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23cccccc'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 0.7em center; background-size: 0.8em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none !important; /* Attempt to remove weird line */
+    border-bottom: 1px solid rgba(var(--sinulog-white-rgb), 0.2); /* Ensure no weird bottom border artifacts */
+}
+.custom-select-filter:focus {
+    border-color: var(--sinulog-yellow);
+    box-shadow: 0 0 0 0.15rem rgba(var(--sinulog-yellow-rgb), 0.25); /* Smaller focus ring */
+    outline: none;
+}
+/* Styling for the <option> elements - This is notoriously hard to style consistently */
+.custom-select-filter option {
+    background-color: var(--sinulog-dark-gray); /* Dark background for dropdown options */
+    color: var(--sinulog-off-white); /* Light text for options */
+    padding: 0.5em; /* Add padding to options if possible */
+}
+
+
+/* Clear All Filters Button */
+#clear-all-filters-btn {
+    background-color: transparent;
+    color: var(--sinulog-yellow);
+    border: 2px solid var(--sinulog-yellow);
+    font-size: 0.85rem; padding: 0.6em 1em; font-weight: 600;
+    width: 100%; margin-top: 1.5rem;
+}
+#clear-all-filters-btn:hover { background-color: var(--sinulog-yellow); color: var(--sinulog-black); }
+#clear-all-filters-btn i { margin-right: 0.5em; }
+
+
+/* --- Creator Grid & Sort Controls Area --- */
+.creator-grid-and-sort-container {
+    flex: 1 1 auto; min-width: 0;
+}
+
+.sort-controls-container {
+    display: flex; justify-content: flex-end; align-items: center;
+    margin-bottom: 1.5rem; gap: 0.6rem; flex-wrap: wrap;
+}
+.sort-controls-container label { font-size: 0.85rem; color: var(--sinulog-light-gray); font-weight: 600; margin-right: 0.25rem; }
+.btn-sort {
+    background-color: rgba(var(--sinulog-white-rgb), 0.08);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.15);
+    color: var(--sinulog-off-white);
+    padding: 0.45em 0.9em; font-size: 0.8rem; border-radius: 5px;
+    cursor: pointer; transition: all 0.2s ease; font-weight: 600;
+}
+.btn-sort.active, .btn-sort:hover {
+    background-color: var(--sinulog-yellow);
+    color: var(--sinulog-black);
+    border-color: var(--sinulog-yellow);
+}
+.btn-sort i { margin-right: 0.4em; }
+
+
+.creator-grid-main-bisaya {
+    display: grid;
+    /* Smaller cards: adjust minmax and number of columns if needed */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller min card width */
+    gap: 1.2rem; /* Slightly smaller gap */
+}
+
+/* Creator Card Styling - Reduced Size */
+.creator-card { 
+    background-color: var(--sinulog-dark-gray);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
+    display: flex; flex-direction: column;
+    border-top: 4px solid transparent; /* Thinner top border */
+    color: var(--sinulog-off-white);
+}
+.creator-card:hover {
+    transform: translateY(-5px); /* Less lift */
+    box-shadow: var(--shadow-strong);
+    border-top-color: var(--sinulog-yellow);
+}
+
+.creator-card-thumbnail {
+    width: 100%;
+    padding-top: 75%; /* 4:3 aspect ratio for thumbnail */
+    background-size: cover; background-position: center; position: relative;
+    border-bottom: 1px solid rgba(var(--sinulog-white-rgb), 0.08);
+}
+.creator-card-platform-icons {
+    position: absolute; top: 0.4rem; right: 0.4rem; display: flex; gap: 0.25rem;
+}
+.creator-card-platform-icons i {
+    font-size: 0.8rem; color: var(--sinulog-white);
+    background-color: rgba(var(--sinulog-black-rgb), 0.6);
+    padding: 0.25em; border-radius: 3px;
+}
+
+
+.creator-card-info {
+    padding: 0.8rem 1rem; /* Reduced padding */
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center; flex-grow: 1;
+}
+
+.creator-name {
+    font-family: var(--font-heading);
+    font-size: 1rem; /* Smaller name */
+    font-weight: 700;
+    margin: 0.4rem 0 0.5rem 0;
+    color: var(--sinulog-white);
+    line-height: 1.25;
+}
+.creator-tags {
+    margin-bottom: 0.6rem;
+    display: flex; flex-wrap: wrap; gap: 0.3rem; justify-content: center;
+}
+.creator-tags .tag-eyebrow {
+    font-size: 0.65rem; /* Smaller tags */
+    padding: 0.2em 0.6em;
+    border-radius: 10px; font-weight: 600;
+}
+/* ... (tag eyebrow colors adjusted for dark theme) ... */
+.creator-tags .tag-eyebrow.category-eyebrow { background-color: rgba(var(--sinulog-yellow-rgb), 0.15); border: 1px solid rgba(var(--sinulog-yellow-rgb), 0.3); color: var(--sinulog-yellow); }
+.creator-tags .tag-eyebrow.region-eyebrow { background-color: rgba(var(--sinulog-teal-rgb), 0.15); border: 1px solid rgba(var(--sinulog-teal-rgb), 0.3); color: var(--sinulog-teal); }
+.creator-tags .tag-eyebrow.highlighted-eyebrow-category { /* ... same highlight style ... */ }
+
+
+.creator-tagline {
+    font-size: 0.75rem; /* Smaller tagline */
+    color: var(--sinulog-light-gray);
+    margin-bottom: 0.8rem;
+    flex-grow: 1; line-height: 1.45; width: 100%;
+}
+.btn-view-more { /* "Tan-awa Pa" button */
+    background-color: transparent;
+    color: var(--sinulog-yellow);
+    border: 1px solid var(--sinulog-yellow); /* Thinner border for smaller button */
+    padding: 0.4em 1em; font-size: 0.75rem; font-weight: 600;
+    margin-top: auto; text-transform: uppercase; letter-spacing: 0.3px;
+    border-radius: var(--button-border-radius); /* Pill shape */
+}
+.btn-view-more:hover { background-color: var(--sinulog-yellow); color: var(--sinulog-black); }
+.btn-view-more i { margin-left: 0.4em; }
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .creator-directory-layout { flex-direction: column; }
+    .filter-sidebar-bisaya { position: static; width: 100%; margin-bottom: 2rem; }
+    /* ... */
+}
+@media (max-width: 576px) {
+    .filter-sidebar-bisaya { padding: 1rem; }
+    .category-filter-grid { grid-template-columns: 1fr 1fr; } /* Ensure 2 columns on small */
+    .creator-grid-main-bisaya { grid-template-columns: 1fr; } /* Single column for cards */
+    .btn-filter { font-size: 0.7rem; padding: 0.5em; } /* Adjust if too small */
+    .btn-filter i { font-size: 0.8em; }
+}
+
+/* Pagination Controls */
+#pagination-controls-bisaya { /* Unchanged structure */ }
+#pagination-controls-bisaya button {
+    background-color: rgba(var(--sinulog-white-rgb), 0.08);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.15);
+    color: var(--sinulog-off-white);
+    padding: 0.45em 0.9em; font-size: 0.8rem;
+    /* ... */
+}
+/* ... (pagination hover, active, disabled, page-info styles updated for dark theme) ... */
+#pagination-controls-bisaya button:hover,
+#pagination-controls-bisaya button.active-page-btn { /* Added .active-page-btn for current page */
+    background-color: var(--sinulog-yellow);
+    border-color: var(--sinulog-yellow);
+    color: var(--sinulog-black);
+}
+#pagination-controls-bisaya button:disabled { opacity: 0.4; cursor: not-allowed; background-color: rgba(var(--sinulog-white-rgb), 0.05); border-color: rgba(var(--sinulog-white-rgb), 0.1); }
+#pagination-page-info { color: var(--sinulog-mid-gray); font-size: 0.85rem;}

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyglot Shop - Resources by Aljohn</title>
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       
+      /* Development Pop-up Styles */
+#dev-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    z-index: 9998; /* Below the modal, above everything else */
+    display: none; /* Hidden by default */
+}
+
+#dev-popup-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 25px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    z-index: 9999; /* On top of everything */
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    display: none; /* Hidden by default */
+    color: #333; /* Dark text for readability */
+    font-family: 'Open Sans', sans-serif; /* Match your site's font if possible */
+}
+
+#dev-popup-modal h2 {
+    font-family: 'Montserrat', sans-serif; /* Match your site's font if possible */
+    color: var(--primary-red, #C8102E); /* Use your site's red or a fallback */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+#dev-popup-modal p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+#dev-popup-close {
+    background-color: var(--primary-blue, #003087); /* Use your site's blue or a fallback */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px; /* Rounded like your other buttons */
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#dev-popup-close:hover {
+    background-color: #002366; /* Darker shade of blue */
+} /* --- Shop Page Styles --- */
+
+        /* NEW Integrated Shop Welcome & Spotlight Section */
+        /* --- Shop Page Styles --- */
+/* ===================================================== */
+/* === SHOP PAGE SPECIFIC STYLES (V3 - Compact Welcome) === */
+/* ===================================================== */
+
+/* --- Integrated Shop Welcome & Spotlight Section --- */
+.shop-welcome-spotlight-section {
+    background-color: #6A0DAD; /* Deep Purple/Red Fallback (adjust to your logo's red) */
+    background-image: 
+        /* Optional subtle pattern - can remove if too busy */
+        url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.04'%3E%3Cpath d='M10 0h12v12h12v14H22V12H10V0zM20 14h12v12H20V14zM0 14h10v12H0V14z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(135deg, 
+            var(--primary-red, #C8102E) 0%, 
+            #A11E3B 35%, /* Darker shade of red */
+            var(--primary-blue, #003087) 75%, 
+            #002366 100% /* Darker shade of blue */
+        );
+    color: var(--light-text); 
+    padding: 140px 0 50px; /* Adjusted padding */
+    position: relative; 
+}
+
+.shop-welcome-spotlight-grid {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2rem; 
+}
+@media (min-width: 992px) { 
+    .shop-welcome-spotlight-grid {
+        flex-direction: row;
+        align-items: center; 
+        gap: 3rem;
+    }
+}
+/* Ensure this is applied to the logo within the compact welcome section */
+.shop-welcome-info .shop-logo-main-compact { /* Targets the specific class */
+    max-width: 160px; /* COMPACT SIZE - Adjust this value as needed */
+    height: auto;     /* Maintain aspect ratio */
+    margin-bottom: 0.75rem; /* Space below the logo */
+    display: block;   /* Ensures margin auto works if you center it further */
+    margin-left: auto; /* Centers the logo if its container is wider */
+    margin-right: auto;/* Centers the logo */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.shop-welcome-info .shop-logo-main-compact:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.shop-welcome-info {
+    flex: 1 1 35%; /* Takes less space */
+    max-width: 400px; /* Max width for this column */
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 1rem 0; /* Add some internal padding */
+}
+@media (max-width: 991px) {
+    .shop-welcome-info {
+        margin-bottom: 1.5rem;
+        padding: 0; /* No extra padding when stacked */
+        width:100%; 
+    }
+}
+
+.shop-welcome-info .shop-logo-main {
+    max-width: 160px; /* More compact logo */
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+.shop-welcome-info h1 { 
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Compact title */
+    color: var(--light-text); 
+    margin-top: 0;
+    margin-bottom: 0.5rem; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+.shop-welcome-info p.shop-tagline {
+    font-size: 0.9rem; /* Compact tagline */
+    color: rgba(255, 255, 255, 0.8); 
+    line-height: 1.5;
+    max-width: 320px;
+    margin: 0 auto;
+}
+.shop-welcome-info .btn-browse-all-compact {
+    margin-top: 1.2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: var(--accent-yellow);
+    color: var(--dark-text);
+    border-color: var(--accent-yellow);
+    border-radius: 20px; /* Softer button */
+    text-decoration: none; /* Ensure it looks like a button */
+    display: inline-block;
+}
+.shop-welcome-info .btn-browse-all-compact:hover {
+    background-color: #e6c300;
+}
+
+/* Styles for the new shop-specific button in the welcome info section */
+.shop-welcome-info .btnshop {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem; /* From your HTML */
+    /* Base styles - can be adjusted by specific classes below */
+}
+
+.shop-welcome-info .btnshop-small {
+    padding: 0.6rem 1.2rem; /* Adjust padding for "small" size */
+    font-size: 0.85rem;    /* Adjust font size for "small" */
+    border-radius: 20px;   /* Rounded corners */
+}
+
+.shop-welcome-info .btnshop-outline {
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    /* Default state for visibility on dark background */
+    color: var(--light-text);       /* White text */
+    border-color: var(--light-text); /* White border */
+}
+
+.shop-welcome-info .btnshop-outline:hover {
+    background-color: var(--accent-yellow); /* Yellow background on hover */
+    color: var(--dark-text);          /* Dark text on yellow background for contrast */
+    border-color: var(--accent-yellow); /* Yellow border on hover */
+    transform: translateY(-2px);      /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Optional subtle shadow on hover */
+}
+
+/* Ensure it fits well within the .shop-welcome-info container */
+.shop-welcome-info {
+    /* ... your existing styles for .shop-welcome-info ... */
+    display: flex; 
+    flex-direction: column;
+    align-items: center; /* This will center the button if it's a direct child */
+}
+.shop-spotlight-product {
+    flex: 1 1 65%; 
+    background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white for readability */
+    padding: 1.5rem; 
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12); /* Slightly stronger shadow */
+    color: var(--dark-text); 
+}
+.shop-spotlight-product .section-title-spotlight {
+    font-family: var(--font-primary);
+    font-size: clamp(1.3rem, 2.8vw, 1.7rem); /* More compact title */
+    color: var(--primary-red);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.4rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.shop-spotlight-product .section-title-spotlight .fa-star {
+    color: var(--accent-yellow);
+    margin-right: 0.6rem;
+    font-size: 1.1em; 
+}
+.shop-spotlight-product .section-title-spotlight::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 50px; height: 2px; 
+    background-color: var(--primary-red);
+}
+
+.featured-product-content-spotlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; 
+}
+@media (min-width: 768px) {
+    .featured-product-content-spotlight {
+        flex-direction: row;
+        align-items: flex-start; 
+        gap: 1.5rem;
+    }
+}
+.featured-product-image-spotlight {
+    flex: 0 0 200px; /* IMAGE SIZE: Further reduced for spotlight */
+    max-width: 200px;
+    align-self: center; 
+}
+.featured-product-image-spotlight img {
+    width: 100%; height: auto; border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease;
+}
+.featured-product-image-spotlight img:hover {
+    transform: scale(1.03);
+}
+.featured-product-details-spotlight {
+    flex: 1; text-align: left;
+}
+ @media (max-width: 767px) {
+     .featured-product-details-spotlight { text-align: center;}
+}
+.featured-product-details-spotlight .eyebrow {
+    font-size: 0.7rem; color: var(--primary-blue); 
+    text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+    margin-bottom: 0.25rem; display: block;
+}
+.featured-product-details-spotlight h3 { 
+    font-family: var(--font-primary); font-size: clamp(1.2rem, 2.5vw, 1.5rem); 
+    color: var(--dark-text); margin-top: 0; margin-bottom: 0.4rem; line-height: 1.25;
+}
+.featured-product-details-spotlight .product-description-long {
+    font-size: 0.8rem; color: #555; /* Darker for better readability on light bg */
+    line-height: 1.55; margin-bottom: 0.8rem;
+    display: -webkit-box; -webkit-line-clamp: 3; /* Limit description lines */
+    -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
+    min-height: calc(0.8rem * 1.55 * 3); 
+}
+.featured-product-details-spotlight .product-price {
+    font-size: 1.3rem; font-weight: 700; color: var(--primary-red);
+    margin-bottom: 0.3rem;
+}
+.featured-product-details-spotlight .product-price .digital-copy {
+    font-size: 0.75rem; font-weight: 500; color: #666; display: block; margin-top: -2px;
+}
+.featured-product-details-spotlight .product-actions {
+    margin-top: 0.7rem; 
+}
+.featured-product-details-spotlight .product-actions .btn {
+    margin-right: 0.6rem; margin-bottom: 0.5rem; padding: 0.5rem 1rem; font-size: 0.75rem;
+}
+ .featured-product-details-spotlight .product-note {
+    font-size: 0.75rem; color: #555; margin-top: 0.6rem;
+}
+
+
+/* --- Shop Main Content (Below the new top section) --- */
+.shop-main-content { 
+    padding-top: 60px; 
+    background-color: #fff; 
+}
+/* General .section-title used for "Browse the Full Collection" */
+.shop-main-content .section-title {
+    color: var(--primary-blue); /* Ensure correct color on light background */
+}
+.shop-main-content .section-title::after {
+    background-color: var(--primary-red);
+}
+
+.shop-controls-v2 {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.filter-group-v2, .sort-group-v2 {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.filter-group-v2 label, .sort-group-v2 label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+}
+.filter-group-v2 .btn-filter-v2 {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--light-bg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.filter-group-v2 .btn-filter-v2:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+.filter-group-v2 .btn-filter-v2.active {
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+    border-color: var(--primary-blue);
+}
+.sort-group-v2 select {
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+    font-size: 0.9rem;
+    min-width: 160px;
+}
+
+/* --- Product Grid & Cards v2 --- */
+.product-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.product-card-v2 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+.product-card-v2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.product-image-container-v2 {
+    width: 100%;
+    padding-top: 125%; /* Aspect ratio for book cover (e.g., 4:5) */
+    position: relative;
+    background-color: #f5f5f5; /* Neutral placeholder bg */
+}
+.product-image-container-v2 img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+.product-card-v2:hover .product-image-container-v2 img {
+    opacity: 0.9; 
+}
+.product-info-v2 {
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.product-info-v2 .product-category-tag-v2 {
+    font-size: 0.75rem;
+    color: var(--primary-red);
+    background-color: #fff2f2; 
+    padding: 0.25rem 0.7rem;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    border: 1px solid var(--primary-red);
+}
+.product-info-v2 h3 {
+    font-family: var(--font-secondary); 
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    color: var(--dark-text);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+.product-description-short-v2 {
+    font-size: 0.9rem; 
+    color: #666;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: calc(0.9rem * 1.55 * 3); /* Adjust based on font-size and line-height */
+}
+.product-price-v2 {
+    font-size: 1.25rem; 
+    font-weight: 700;
+    color: var(--primary-blue); 
+    margin-bottom: 0.75rem;
+}
+.product-price-v2 .digital-copy {
+    font-size: 0.8rem; 
+    font-weight: 500;
+    color: #777;
+    display: block;
+    margin-top: -2px;
+}
+.product-actions-v2 {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    gap: 0.6rem;
+}
+.product-actions-v2 .btn { /* Uses global .btn styles, then these specifics */
+    flex: 1; 
+    font-size: 0.85rem !important; 
+    padding: 0.6rem 0.5rem !important;
+}
+.product-note-v2 {
+    font-size: 0.8rem; 
+    color: #777;
+    margin-top: 0.8rem;
+    text-align: center;
+}
+
+.placeholder-card-v2 {
+    border: 2px dashed var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 380px; /* Should roughly match height of filled cards */
+    color: #b0b0b0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+.placeholder-card-v2 .fas {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+.placeholder-card-v2 p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+/* Footer Styles (Standard - Assumed to be globally styled) */
+footer { background-color: var(--dark-text); color: rgba(255,255,255,0.7); padding: 40px 0 20px; font-size: 0.9rem; }
+footer .container { max-width: 1100px; margin: 0 auto; width: 90%;}
+footer .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+footer .footer-logo { display: flex; align-items: center; text-decoration:none; }
+footer .footer-logo .logo-img { border-color: var(--accent-yellow); }
+footer .footer-logo span { font-family: var(--font-primary); font-size: 1.2rem; color: var(--light-text); font-weight: 600; }
+footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; list-style: none; padding: 0; margin: 0;}
+footer .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+footer .footer-links a:hover { color: var(--accent-yellow); text-decoration: underline; }
+footer .social-links { display:flex; align-items:center; gap: 15px;}
+footer .social-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 1.5rem; transition: color 0.3s ease, transform 0.2s ease; }
+footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+footer .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; margin-top: 1.5rem; }
+@media (max-width: 768px) { footer .footer-content { flex-direction: column; gap: 1rem; text-align: center; } }
+
+    </style>
+</head>
+<body>
+   <header id="main-header-placeholder"></header>
+
+    <main>
+        <section class="shop-welcome-spotlight-section">
+            <div class="container">
+                <div class="shop-welcome-spotlight-grid">
+                    <div class="shop-welcome-info">
+                        <img src="images/polyglotshop_logo_main.png" alt="Polyglot Shop Logo" class="shop-logo-main-compact">
+                        <h1>Polyglot Shop</h1>
+                        <p class="shop-tagline">Curated resources & tools to accelerate your language mastery. Made by Aljohn.</p>
+                    
+                        <a href="#shop-collection-grid" class="btnshop btnshop-small btnshop-outline" style="margin-top:1rem;">See Full Collection</a>
+                    </div>
+
+                    <div class="shop-spotlight-product">
+                        <h2 class="section-title-spotlight"><i class="fas fa-star"></i>Hot Off The Press!</h2>
+                        <div class="featured-product-content-spotlight">
+                            <div class="featured-product-image-spotlight">
+                                <a href="shop/book-cuentosb1.html">  
+                                  <img src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/491999707_122162307986370888_4793319295151680417_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGyeSrRrXeR4AaTop3SK259J3ePYY7SwqYnd49hjtLCpgiA7fJpycK2NF6J2UWqe8-7UCQzRiY-2KfgvRr-s4A2&_nc_ohc=Hw-Fxns67b8Q7kNvwEXsDme&_nc_oc=Adm8vVkil_85CTHtPzgKIwVIWwAYYbPUFFZOrML6j3KCsu1quzrfB-3I4gLH3HhNf90&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=irGW9covKbsC0kpYRjR14g&oh=00_AfI-LXH52Z6HByR1BKRKQX9zGzpuKSGts_3w6WRs70VUdg&oe=6823582D" alt="Cuentos B1: Español para Filipinos Book Cover">
+                                </a>
+                            </div>
+                            <div class="featured-product-details-spotlight">
+                                <span class="eyebrow">New Digital E-Book</span>
+                                <h3>Cuentos B1: Español para Filipinos</h3>
+                                <p class="product-description-long">
+                                    Dive into a B1-level Spanish reading adventure, uniquely crafted for Filipino learners! Follow three Pinoys through relatable and humorous experiences...
+                                </p>
+                                <p class="product-price">₱300.00 <span class="digital-copy">(Digital PDF)</span></p>
+                                <div class="product-actions">
+                                    <a href="shop\book-cuentosb1.html" class="btn btn-outline">Learn More</a>
+                                    <a href="mailto:aljohnmogatas@gmail.com?subject=Order%3A%20Cuentos%20B1%20Digital%20Copy&body=Hi%20Aljohn%2C%0A%0AI'd%20like%20to%20purchase%20the%20digital%20copy%20of%20'Cuentos%20B1%3A%20Espa%C3%B1ol%20para%20Filipinos'.%0A%0APlease%20provide%20the%20GCash%20payment%20details.%0A%0AThank%20you%21" class="btn btn-primary">Order Now <i class="fas fa-credit-card" style="margin-left: 4px;"></i></a>
+                                </div>
+                                <p class="product-note">GCash payment. Download via email. Physical copies soon!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop-collection-grid" class="content-section shop-main-content">
+            <div class="container">
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Browse the Full Collection</h2>
+                <div class="shop-controls-v2">
+                    <div class="filter-group-v2">
+                        <label for="category-filter">Filter:</label>
+                        <button class="btn-filter-v2 active" data-filter="all">All</button>
+                        <button class="btn-filter-v2" data-filter="books">Books</button>
+                        <button class="btn-filter-v2" data-filter="guides">Guides</button>
+                        <button class="btn-filter-v2" data-filter="merch">Merch</button>
+                    </div>
+                    <div class="sort-group-v2">
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by" name="sort-by">
+                            <option value="newest">Newest</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name-asc">Name: A-Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid-v2">
+                    <!-- Product Card 1: Cuentos B1 (Also in main grid) -->
+                    <div class="product-card-v2" data-category="books">
+                        <div class="product-image-container-v2">
+                             <a href="shop\book-cuentosb1.html">
+                                <img src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/491999707_122162307986370888_4793319295151680417_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGyeSrRrXeR4AaTop3SK259J3ePYY7SwqYnd49hjtLCpgiA7fJpycK2NF6J2UWqe8-7UCQzRiY-2KfgvRr-s4A2&_nc_ohc=Hw-Fxns67b8Q7kNvwEXsDme&_nc_oc=Adm8vVkil_85CTHtPzgKIwVIWwAYYbPUFFZOrML6j3KCsu1quzrfB-3I4gLH3HhNf90&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=irGW9covKbsC0kpYRjR14g&oh=00_AfI-LXH52Z6HByR1BKRKQX9zGzpuKSGts_3w6WRs70VUdg&oe=6823582D" alt="Cuentos B1: Español para Filipinos Book Cover">
+                            </a>
+                        </div>
+                        <div class="product-info-v2">
+                            <span class="product-category-tag-v2">Digital E-Book</span>
+                            <h3>Cuentos B1: Español para Filipinos</h3>
+                            <p class="product-description-short-v2">
+                                A B1-level Spanish reading immersion experience crafted 100% for Filipino learners! Engaging adventures in Spain, Mexico, and Colombia.
+                            </p>
+                            <p class="product-price-v2">₱300.00 <span class="digital-copy">(Digital PDF)</span></p>
+                            <div class="product-actions-v2">
+                                <a href="shop\book-cuentosb1.html" class="btn btn-outline">Details</a>
+                                <a href="mailto:aljohnmogatas@gmail.com?subject=Order%3A%20Cuentos%20B1%20Digital%20Copy&body=Hi%20Aljohn%2C%0A%0AI'd%20like%20to%20purchase%20the%20digital%20copy%20of%20'Cuentos%20B1%3A%20Espa%C3%B1ol%20para%20Filipinos'.%0A%0APlease%20let%20me%20know%20the%20GCash%20details.%0A%0AThank%20you%21" class="btn btn-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card-v2 placeholder-card-v2" data-category="guides">
+                        <i class="fas fa-map-signs"></i>
+                        <p>Language Pathway Guides<br>(Coming Soon)</p>
+                    </div>
+                    
+                    <div class="product-card-v2 placeholder-card-v2" data-category="books">
+                        <i class="fas fa-book-reader"></i>
+                        <p>More Immersion Readers<br>(In Development)</p>
+                    </div>
+
+                    <div class="product-card-v2 placeholder-card-v2" data-category="merch">
+                        <i class="fas fa-gem"></i>
+                        <p>Polyglot Merch & Gear<br>(Future Collection)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="dev-popup-overlay"></div>
+<div id="dev-popup-modal">
+    <h2><i class="fas fa-tools" style="margin-right: 8px;"></i>Under Construction</h2>
+    <p>
+        This page is currently under development and some features might not be fully functional yet.
+        Thanks for your understanding!
+    </p>
+    <button id="dev-popup-close">Got It!</button>
+</div>
+    </main>
+
+   <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+   <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('dev-popup-overlay');
+    const modal = document.getElementById('dev-popup-modal');
+    const closeButton = document.getElementById('dev-popup-close');
+
+    // Function to show the pop-up
+    function showDevPopup() {
+        if (overlay && modal) {
+            overlay.style.display = 'block';
+            modal.style.display = 'block';
+        }
+    }
+
+    // Function to hide the pop-up
+    function hideDevPopup() {
+        if (overlay && modal) {
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+        }
+    }
+
+    // Show the pop-up when the page loads
+    showDevPopup();
+
+    // Event listeners to close the pop-up
+    if (closeButton) {
+        closeButton.addEventListener('click', hideDevPopup);
+    }
+    if (overlay) {
+        // Optional: close if user clicks on the overlay
+        // overlay.addEventListener('click', hideDevPopup);
+    }
+});
+</script>
+<script src="js/navbar-loader.js" defer></script>
+<script src="js/footer-loader.js" defer></script>
+    <script src="js/script.js"></script>
+    <script>
+        // ... Your existing shop JS ...
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.shop-controls-v2 .btn-filter-v2');
+            const productCards = document.querySelectorAll('.product-grid-v2 .product-card-v2');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filterValue = this.dataset.filter;
+                    
+                    productCards.forEach(card => {
+                        const cardCategory = card.dataset.category;
+                        if (filterValue === 'all' || (cardCategory && cardCategory === filterValue)) {
+                            card.style.display = ''; 
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            const sortSelect = document.getElementById('sort-by');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    console.log("Sorting by:", this.value);
+                    // Add actual sorting logic here based on data attributes
+                });
+            }
+        });
+    </script>
+</body>
+</html>

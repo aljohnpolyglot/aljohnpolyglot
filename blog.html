@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="page-theme-biotech-dark"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Polyglot Papers - Aljohn's Archive</title>
+    <!-- Global Navbar & Footer CSS -->
+ 
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <!-- Main Themed CSS for this page type -->
+ 
+    <!-- Specific Blog Page CSS -->
+    <link rel="stylesheet" href="css/blog_theme.css">
+     <link rel="stylesheet" href="css/navbar.css">
+ <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/blog_theme_overrides.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+</head>
+<body class="page-theme-biotech-dark"> 
+
+    <header id="main-header-placeholder"></header>
+
+    <main>
+        <section class="blog-hero-section">
+            <div class="container">
+                <!-- Optional: Logo Image -->
+                <!-- <img src="images/polyglot-papers-logo-concept.png" alt="Polyglot Papers Archive" class="blog-hero-logo"> -->
+                <h1 class="blog-hero-title">The Polyglot Papers</h1>
+                <p class="blog-hero-tagline">Declassified Intel from the Frontiers of Accelerated Language Acquisition.</p>
+                <p class="blog-hero-intro">
+                    Welcome to the Archive. Here, I dissect the science, share field-tested methodologies, and reveal the raw truths behind mastering multiple languages. This isn't just theory; it's the anatomy of fluency.
+                </p>
+            </div>
+        </section>
+
+        <section id="blogArchive" class="blog-archive-section content-section">
+            <div class="container">
+                <div class="blog-layout-wrapper">
+                    <!-- Sidebar for Filters -->
+                    <aside class="blog-sidebar" id="blogSidebar">
+                        <h2 class="sidebar-title"><i class="fas fa-filter"></i> Filter Dispatches</h2>
+                        
+                        <div class="filter-group">
+                            <label for="sortBy" class="filter-label">Sort By:</label>
+                            <select id="sortBy" class="filter-select">
+                                <option value="date-desc">Latest First (Default)</option>
+                                <option value="date-asc">Oldest First</option>
+                                <option value="title-asc">Title (A-Z)</option>
+                                <option value="title-desc">Title (Z-A)</option>
+                                <!-- <option value="popularity">Most Popular</option> Future -->
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-label">Research Division (Category):</h3>
+                            <div id="categoryFilters" class="filter-options-list">
+                            
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-label">Language Focus:</h3>
+                            <div id="languageFilters" class="filter-options-list">
+                               
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="tagSearch" class="filter-label">Search by Tag/Keyword:</label>
+                            <input type="search" id="tagSearch" class="filter-search-input" placeholder="e.g., immersion, anki...">
+                        </div>
+
+                        <button id="resetFilters" class="btn btn-outline btn-small filter-reset-btn"><i class="fas fa-undo"></i> Reset All Filters</button>
+                    </aside>
+
+                    <!-- Main Blog Posts Area -->
+                    <div class="blog-posts-main">
+                        <div id="blogPostsGrid" class="blog-posts-grid">
+                           
+                            <p class="no-results-message" style="display:none;">No dispatches match your current filter criteria. Try broadening your search within the Archive.</p>
+                        </div>
+                        <!-- Pagination (for future) -->
+                        <!-- <div id="paginationControls" class="pagination-controls"></div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="main-footer-placeholder">
+           
+        </div>
+    </footer>
+
+    <!-- Data and Main JS for Blog Functionality -->
+    <script src="js/blog_data.js"></script>
+    <script src="js/blog_main.js"></script>
+    <!-- Global Loaders -->
+    <script src="js/navbar-loader.js" defer></script>
+    <script src="js/footer-loader.js" defer></script>
+     <script>
+        // Site Base Path (if needed by any script on this page, though blog_data uses relative paths from blog.html)
+        let siteBasePath;
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+            siteBasePath = '/'; 
+        } else {
+            siteBasePath = '/aljohnpolyglot/';
+        }
+    </script>
+</body>
+</html>

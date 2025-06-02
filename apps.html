@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn's Polyglot Arsenal: Navigator</title>
+
+    <!-- CSS for this specific page (Arsenal Navigator) -->
+    
+
+    <!-- Global CSS for Navbar and Footer (paths corrected) -->
+<!-- 1. Global Base Styles for Navbar and Footer -->
+    <link rel="stylesheet" href="css/navbar.css">   
+  
+
+
+    <!-- 3. Styles for the main content of THIS page -->
+    <link rel="stylesheet" href="apps/css/apps_navigator.css">
+        <!-- 2. Specific Overrides for Header/Footer on THIS page -->
+    <link rel="stylesheet" href="apps/css/apps_header_footer_overrides.css"> 
+
+    <!-- Favicon (path corrected - assuming 'images' is in the root) -->
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (only need one link) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+  
+<body class="apps-tech-theme">
+    <header id="main-header-placeholder" class="tech-theme-header-placeholder"></header>
+
+    <div class="arsenal-container">
+        <aside class="arsenal-sidebar">
+            <h2><i class="fas fa-filter"></i> Filter Arsenal</h2>
+            <div class="filter-group">
+                <label for="search-keyword">Keyword Search</label>
+                <div class="search-input-wrapper">  
+                    <i class="fas fa-search"></i>     
+                    <input type="text" id="search-keyword" placeholder="Search by name or tag...">
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-layer-group"></i> CEFR Level</h3>
+                <div id="cefr-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="cefr" value="A1"> A1</label>
+                    <label><input type="checkbox" name="cefr" value="A2"> A2</label>
+                    <label><input type="checkbox" name="cefr" value="B1"> B1</label>
+                    <label><input type="checkbox" name="cefr" value="B2"> B2</label>
+                    <label><input type="checkbox" name="cefr" value="C1"> C1</label>
+                    <label><input type="checkbox" name="cefr" value="C2"> C2</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-bullseye"></i> Immersion Strategy</h3>
+                <div id="immersion-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="immersion" value="Reading"> <i class="fas fa-book-open"></i> Reading</label>
+                    <label><input type="checkbox" name="immersion" value="Writing"> <i class="fas fa-pencil-alt"></i> Writing</label>
+                    <label><input type="checkbox" name="immersion" value="Listening"> <i class="fas fa-headphones"></i> Listening</label>
+                    <label><input type="checkbox" name="immersion" value="Speaking"> <i class="fas fa-comments"></i> Speaking</label>
+                    <label><input type="checkbox" name="immersion" value="Watching"> <i class="fas fa-tv"></i> Watching</label>
+                    <label><input type="checkbox" name="immersion" value="Vocabulary Building"> <i class="fas fa-brain"></i> Vocabulary</label>
+                    <label><input type="checkbox" name="immersion" value="Grammar Focus"> <i class="fas fa-spell-check"></i> Grammar</label>
+                </div>
+            </div>
+            <div class="filter-group custom-dropdown-filter">
+                <h3><i class="fas fa-tools"></i> Tool Type</h3>
+                <div class="dropdown-container" id="tool-type-dropdown-container">
+                    <button type="button" class="dropdown-toggle-btn" aria-expanded="false" aria-controls="tool-type-options-panel">
+                        <span class="dropdown-btn-text">Select Tool Types</span>
+                        <span class="dropdown-btn-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="dropdown-options-panel" id="tool-type-options-panel" role="listbox" aria-multiselectable="true" style="display: none;">
+                        <div id="category-filter-options" class="filter-options-list">
+                            <label><input type="checkbox" name="category" value="SRS"> SRS</label>
+                            <label><input type="checkbox" name="category" value="Dictionary"> Dictionary</label>
+                            <label><input type="checkbox" name="category" value="Translation Tool"> Translation Tool</label>
+                            <label><input type="checkbox" name="category" value="AI Tutor"> AI Tutor</label>
+                            <label><input type="checkbox" name="category" value="Language Exchange"> Language Exchange</label>
+                            <label><input type="checkbox" name="category" value="Content Platform"> Content Platform</label>
+                            <label><input type="checkbox" name="category" value="Reading Assistant"> Reading Assistant</label>
+                            <label><input type="checkbox" name="category" value="Utility"> Utility</label>
+                            <label><input type="checkbox" name="category" value="Media Player"> Media Player</label>
+                            <label><input type="checkbox" name="category" value="Interactive Exercises"> Interactive Exercises</label>
+                            <label><input type="checkbox" name="category" value="Community"> Community</label>
+                            <label><input type="checkbox" name="category" value="Course Platform"> Course Platform</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-dollar-sign"></i> Cost</h3>
+                <div id="cost-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="cost" value="Free"> Free</label>
+                    <label><input type="checkbox" name="cost" value="Freemium"> Freemium</label>
+                    <label><input type="checkbox" name="cost" value="Paid"> Paid</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-desktop"></i> Platform</h3>
+                <div id="platform-filter-options" class="filter-options-grid">
+                    <label><input type="checkbox" name="platform" value="Web"> Web</label>
+                    <label><input type="checkbox" name="platform" value="Android"> Android</label>
+                    <label><input type="checkbox" name="platform" value="iOS"> iOS</label>
+                    <label><input type="checkbox" name="platform" value="Windows"> Windows</label>
+                </div>
+            </div>
+            <button id="reset-filters-btn"><i class="fas fa-undo"></i> Reset Filters</button>
+        </aside>
+
+        <main class="arsenal-main-content">
+            <div class="arsenal-header">
+                <h1>Aljohn's Polyglot Arsenal</h1>
+                <p>Your Precision Language Navigator – Unlock Your Perfect Toolkit!</p>
+            </div>
+
+            <div id="dynamic-guidance-panel" class="guidance-panel-container">
+                <p>Select filters to see Aljohn's tailored advice and app recommendations.</p>
+            </div>
+
+            <div class="arsenal-controls">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="rating_desc">Aljohn's Rating (High to Low)</option>
+                    <option value="rating_asc">Aljohn's Rating (Low to High)</option>
+                    <option value="name_asc">Name (A-Z)</option>
+                    <option value="name_desc">Name (Z-A)</option>
+                    <option value="cefr_asc">CEFR Suitability (A1 Recommended First)</option>
+                    <option value="cefr_desc">CEFR Suitability (C2 Recommended First)</option>
+                </select>
+                <span id="results-count" class="results-count-display"></span>
+            </div>
+
+            <div id="app-grid" class="app-grid-container">
+                <!-- App cards will be rendered here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Structure (content omitted for brevity but assumed present) -->
+    <div id="app-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn" aria-label="Close modal">×</span>
+            <div class="modal-header">
+                <img id="modal-app-logo" src="" alt="App Logo" class="modal-app-logo-img">
+                <div class="modal-title-group">
+                    <h2 id="modal-app-name"></h2>
+                    <p id="modal-app-tagline" class="app-tagline-modal"></p>
+                    <div id="modal-app-rating" class="rating-stars-modal"></div>
+                    <div class="modal-eyebrow-info">
+                        <span id="modal-eyebrow-categories" class="eyebrow-tag"></span>
+                        <span id="modal-eyebrow-immersion" class="eyebrow-tag"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3><i class="fas fa-user-astronaut"></i> Aljohn's Take:</h3>
+                <div id="modal-app-mytake" class="prose-style"></div>
+                <div class="pros-cons-container">
+                    <div class="pros"><h4><i class="fas fa-plus-circle"></i> Pros</h4><ul id="modal-app-pros"></ul></div>
+                    <div class="cons"><h4><i class="fas fa-minus-circle"></i> Cons</h4><ul id="modal-app-cons"></ul></div>
+                </div>
+                <div class="modal-section-horizontal-pair">
+                    <div class="cefr-suitability-container">
+                        <h3 class="no-bottom-border"><i class="fas fa-layer-group"></i> CEFR Suitability:</h3>
+                        <div id="modal-app-cefr" class="cefr-suitability-display"></div>
+                    </div>
+                    <div class="cost-container">
+                        <h3 class="no-bottom-border"><i class="fas fa-dollar-sign"></i> Cost:</h3>
+                        <p id="modal-app-cost"></p>
+                    </div>
+                </div>
+                <div class="modal-links" id="modal-app-links"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer >
+      
+    </footer>
+  <div id="main-footer-placeholder" class="tech-theme-footer-placeholder" ></div>
+    <script>
+        let siteBasePath;
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+            siteBasePath = '/'; 
+        } else {
+            // IMPORTANT: Adjust if your GitHub Pages site is NOT at the root of your username.github.io
+            // If your repo is 'aljohnpolyglot' and site is 'username.github.io/aljohnpolyglot/', then:
+            siteBasePath = '/aljohnpolyglot/'; // Example, adjust to your actual deployed base path on GitHub Pages
+        }
+        console.log("apps.html - Global siteBasePath dynamically set to:", siteBasePath);
+    </script>
+
+    <!-- JS for this specific page (Arsenal Navigator) -->
+    <script src="apps/js/apps_data.js"></script>
+    <script src="apps/js/filter_sort_logic.js"></script> 
+    <script src="apps/js/guidance_logic.js"></script>
+    <script src="apps/js/ui_renderer.js"></script>
+    <script src="apps/js/modal_handler.js"></script>
+    <script src="apps/js/arsenal_main.js"></script>
+
+    <!-- Global JS for Navbar and Footer (paths corrected) -->
+    <script src="apps/js/apps_navbar.js" defer></script>  
+    <script src="apps/js/apps_footer.js" defer></script>  
+   
+</body>
+</html>

@@ -1,0 +1,545 @@
+/* D:\website\css\languagecenters-interactive.css */
+
+:root {
+    --primary-red: #C8102E;
+    --primary-blue: #003087; 
+    --accent-yellow: lch(86.93% 87.16 91.27);
+    --light-bg: #f8f9fa;
+    --dark-text-global: #2c3e50; 
+    --light-text-global: #ffffff; 
+    --border-color-global: #e0e0e0;
+    --lc-interactive-bg-dark: #0a192f;
+    --lc-interactive-bg-gradient-start: #042768;
+    --lc-interactive-bg-gradient-mid: #0a1e3c;
+    --lc-interactive-bg-gradient-accent: #102b5c;
+    --lc-interactive-bg-gradient-end: #0a0f1a;
+    --lc-text-primary-darkbg: #f0f4f8;
+    --lc-text-secondary-darkbg: #c8d2dc; /* Slightly brighter secondary text */
+    --lc-panel-bg: rgba(20, 38, 66, 0.75); /* More transparency for panels */
+    --lc-panel-border: rgba(76, 139, 245, 0.25); 
+    --lc-card-shadow-darkbg: rgba(137, 195, 243, 0.15); /* Softer shadow */
+    --lc-highlight-yellow: var(--accent-yellow);
+    --lc-tech-cyan: #00A9FF;
+}
+
+html { scroll-behavior: smooth; }
+
+body.lc-interactive-page {
+    background-color: var(--lc-interactive-bg-dark);
+    background-image:
+        linear-gradient(145deg,
+            var(--lc-interactive-bg-gradient-start) 0%,
+            var(--lc-interactive-bg-gradient-mid) 35%,
+            var(--lc-interactive-bg-gradient-accent) 70%,
+            var(--lc-interactive-bg-gradient-end) 100%),
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 38px 38px, 38px 38px; /* Slightly adjusted grid */
+    color: var(--lc-text-primary-darkbg);
+    padding-top: 70px; /* Assuming fixed navbar height */
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-secondary, 'Open Sans', sans-serif);
+}
+body.lc-interactive-page.modal-open { overflow: hidden; } /* Prevents page behind modal from scrolling */
+
+#languageHubExplorer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Persistent Header (Title, Language Filters, Initial Prompt) */
+.lc-persistent-header {
+    text-align: center;
+    margin-bottom: 2.5rem; 
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.lc-hero-interactive { margin-bottom: 1.5rem; }
+.lc-hero-interactive h1 {
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: clamp(1.9rem, 5vw, 2.7rem); 
+    color: var(--lc-text-primary-darkbg);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    margin-bottom: 0;
+    line-height: 1.3; 
+}
+.language-filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+    max-width: 750px;
+    margin: 0 auto 1.5rem auto; 
+}
+.lang-filter-button {
+    background-color: rgba(35, 58, 94, 0.6); 
+    border: 1px solid rgba(76, 139, 245, 0.25); 
+    color: var(--lc-text-secondary-darkbg);
+    padding: 0.55rem 1.1rem; 
+    border-radius: 22px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+}
+.lang-filter-button:hover {
+    background-color: rgba(45, 70, 115, 0.7);
+    transform: translateY(-2px);
+    color: var(--lc-text-primary-darkbg);
+    border-color: rgba(76, 139, 245, 0.4);
+}
+.lang-filter-button.active-filter {
+    background-color: var(--lc-highlight-yellow) !important;
+    border-color: var(--lc-highlight-yellow) !important;
+    color: var(--lc-interactive-bg-dark) !important;
+    box-shadow: 0 3px 10px rgba(255,215,0,0.35);
+    font-weight: 600;
+}
+.lang-filter-button img.lang-flag-filter {
+    width: 18px;
+    height: auto; border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.lc-initial-prompt { 
+    margin-top: 1rem; 
+    padding: 0.8rem 1rem; 
+    background-color: transparent; 
+    border-radius: 6px; 
+    max-width: 500px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: none; 
+    box-shadow: none; 
+}
+.lc-initial-prompt p {
+    font-size: 0.85rem; 
+    color: var(--lc-text-secondary-darkbg);
+    opacity: 0.7; 
+    line-height: 1.5; 
+    margin:0;
+    font-style: italic; 
+}
+
+
+/* Institutes Content Area (Header for list + List itself) */
+.lc-institutes-content-area {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    animation: fadeInContent 0.4s ease-out; 
+}
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.institutes-screen-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-top: 0;
+}
+#selectedLanguageTitle {
+    text-align: center;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--lc-text-primary-darkbg);
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img.language-title-flag {
+    width: 26px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+#selectedLanguageTitle #dynamicLanguageName {
+    color: var(--lc-highlight-yellow);
+    margin-left: 0.2em;
+}
+.institutes-list-interactive { width: 100%; }
+
+/* Institute Preview Card (Screen 2 content) - Horizontal Layout */
+.institute-preview-interactive {
+    background-color: var(--lc-panel-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--lc-card-shadow-darkbg);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1.1rem; 
+    margin-bottom: 1.3rem;
+    border: 1px solid var(--lc-panel-border);
+    color: var(--lc-text-primary-darkbg);
+    cursor: pointer;
+}
+.institute-preview-interactive:hover {
+    transform: translateY(-3px) scale(1.005); 
+    box-shadow: 0 7px 18px rgba(137, 195, 243, 0.3);
+    border-color: rgba(76, 139, 245, 0.45);
+}
+.institute-preview-interactive .preview-logo {
+    width: 50px; 
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-right: 0.9rem;
+    background-color: rgba(255,255,255,0.9);
+    padding: 4px;
+    border-radius: 5px;
+}
+.institute-preview-interactive .preview-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    text-align: left;
+}
+.institute-preview-interactive .institute-name-line {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; 
+    margin-bottom: 0.2rem;
+    width: 100%;
+}
+.institute-preview-interactive .institute-preview-flag {
+    width: 18px; min-width: 18px; height: auto; border-radius: 2px; flex-shrink: 0;
+}
+.institute-preview-interactive .institute-name-line h5 {
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    color: inherit;
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+.institute-preview-interactive p.preview-description-text {
+    font-size: 0.72rem; 
+    color: inherit;
+    opacity: 0.75; 
+    margin: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-height: calc(0.72rem * 1.4 * 2);
+}
+.institute-preview-interactive .btn-small.view-details-btn-preview {
+    background: var(--lc-highlight-yellow); 
+    border: none;
+    color: var(--lc-interactive-bg-dark); 
+    font-size: 0.65rem; 
+    font-weight: 700;
+    padding: 0.4rem 0.8rem; 
+    border-radius: 14px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    margin-left: 0.8rem;
+    flex-shrink: 0;
+    align-self: center;
+}
+.institute-preview-interactive .btn-small.view-details-btn-preview:hover {
+    filter: brightness(105%);
+    transform: scale(1.03);
+}
+
+/* "Back to Main Site" Button Wrapper & Button */
+.lc-back-to-main-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+.btn.back-btn-main-site {
+    background-color: rgba(45, 70, 115, 0.7); 
+    color: var(--lc-text-primary-darkbg);
+    border: 1px solid rgba(76, 139, 245, 0.4);
+    padding: 0.6rem 1.3rem;
+    font-size: 0.85rem;
+    border-radius: 22px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.btn.back-btn-main-site:hover {
+    background-color: rgba(55, 80, 130, 0.8);
+    border-color: rgba(76, 139, 245, 0.6);
+    transform: translateY(-2px);
+}
+.btn.back-btn-main-site i { margin-right: 7px; }
+
+.no-institutes-found {
+    text-align: center; font-style: italic; color: var(--lc-text-secondary-darkbg); opacity: 0.75;
+    padding: 2rem 1rem; background: rgba(0,0,0,0.2); border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+/* MODAL STYLES */
+.lc-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(10, 25, 47, 0.92); 
+    backdrop-filter: blur(10px);
+    display: none; align-items: center; justify-content: center;
+    z-index: 2000; opacity: 0;
+    transition: opacity 0.3s ease-out;
+    padding: 10px; 
+    box-sizing: border-box;
+}
+.lc-modal.open { display: flex; opacity: 1; }
+
+.lc-modal-content-wrapper { 
+    width: 100%; max-width: 1000px; 
+    height: 90vh; max-height: 680px; 
+    display: flex; 
+} 
+
+.lc-modal-content { /* Base style for the white box */
+    background-color: var(--light-text-global); color: var(--dark-text-global);
+    border-radius: 10px; 
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3); 
+    display: flex; /* Side-by-side layout for desktop */
+    width: 100%; height: 100%; /* Fill the wrapper */
+    overflow: hidden; /* IMPORTANT: Good for desktop, children will scroll internally */
+    position: relative;
+    transform: scale(0.97); transition: transform 0.3s ease-out;
+}
+.lc-modal.open .lc-modal-content { transform: scale(1); }
+
+.close-modal-btn {
+    position: absolute; top: 15px; right: 18px; background: none; border: none;
+    font-size: 2rem; color: #aaa;
+    cursor: pointer; line-height: 1; padding: 0;
+    transition: color 0.2s ease, transform 0.2s ease; z-index: 10;
+}
+.close-modal-btn:hover { color: var(--primary-red); transform: rotate(90deg) scale(1.1); }
+
+.lc-modal-sidebar {
+    width: 280px;
+    background-color: #f7f9fc;
+    padding: 1.8rem 1.5rem;
+    display: flex; flex-direction: column; text-align: center;
+    border-right: 1px solid #dde4ee;
+    flex-shrink: 0; height: 100%; box-sizing: border-box;
+    overflow-y: auto; /* Sidebar scrolls independently on desktop if content is too tall */
+}
+.lc-modal-sidebar::-webkit-scrollbar { width: 5px; }
+.lc-modal-sidebar::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 5px; }
+.lc-modal-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 5px; }
+
+.modal-sidebar-content-centered { /* Renamed from previous for clarity, but was effectively this */
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex-grow: 1; width: 100%; 
+    /* padding-bottom: 1rem; -- Removed, let scrollbar handle if needed */
+}
+
+.modal-flag { width: 40px; height: auto; margin-bottom: 0.8rem; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.modal-logo-display { max-width: 180px; max-height: 70px; object-fit: contain; margin-bottom: 1.2rem; }
+#modalInstituteName { font-family: var(--font-primary, 'Montserrat', sans-serif); font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1.2rem; line-height: 1.3; }
+.modal-partnership-info {
+    font-size: 0.78rem; font-style: italic; color: #505a68; margin-bottom: 1.3rem;
+    background: #edf2f7; padding: 0.7rem 0.9rem; border-radius: 5px; line-height: 1.45;
+    text-align: left; width: 100%; box-sizing: border-box; border-left: 3px solid var(--primary-blue);
+}
+.modal-partnership-info p { margin: 0; }
+.modal-sidebar-links { margin-top: 0.2rem; margin-bottom: 1.2rem; width: 100%; display: flex; flex-direction: column; align-items: center; }
+.modal-sidebar-links .btn.btn-small {
+    display: block; width: 100%; max-width: 210px; margin-bottom: 1rem; text-align: center;
+    font-size: 0.85rem; padding: 0.7rem 1.2rem; background-color: var(--primary-blue);
+    color: var(--light-text-global); border: 1px solid var(--primary-blue); border-radius: 22px;
+    text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease; font-weight: 600;
+}
+.modal-sidebar-links .btn.btn-small:hover { filter: brightness(110%); transform: translateY(-1px); }
+.modal-social-icons { display: flex; justify-content: center; gap: 1.8rem; }
+.modal-social-icons a { font-size: 1.6rem; color: #778391; transition: color 0.2s ease, transform 0.2s ease; }
+.modal-social-icons a:hover { transform: scale(1.1); }
+.back-btn-modal {
+    background: #e9ecef; border: 1px solid #d1d7de; color: var(--dark-text-global);
+    padding: 0.7rem 1.4rem; border-radius: 22px; cursor: pointer; font-size: 0.8rem;
+    font-weight: 600; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease; margin-top: auto; width: 100%; flex-shrink: 0; box-sizing: border-box;
+}
+.back-btn-modal:hover { background: #d8dde3; border-color: #c2c9d1;}
+.back-btn-modal i { margin-right: 6px; }
+
+.lc-modal-main { /* Desktop: takes remaining space, scrolls its own content (tab panel) */
+    flex-grow: 1; display: flex; flex-direction: column; 
+    overflow: hidden; /* Important for desktop: main area handles its own scroll */
+}
+.lc-modal-tabs {
+    display: flex; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; background-color: #fcfdff;
+    padding: 0 1.2rem; padding-right: 45px; /* Space for close button */
+    overflow-x: auto; position: relative;
+}
+.lc-modal-tabs::-webkit-scrollbar { height: 4px; }
+.lc-modal-tabs::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); }
+.lc-modal-tabs::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+.lc-tab-button {
+    padding: 1rem 1.2rem; border: none; background: none; cursor: pointer; font-size: 0.88rem;
+    font-weight: 600; color: #5a6778; position: relative; transition: color 0.2s ease;
+    border-bottom: 3px solid transparent; margin-bottom: -1px; white-space: nowrap;
+}
+.lc-tab-button:hover { color: var(--primary-blue); }
+.lc-tab-button.active { color: var(--primary-red); border-bottom-color: var(--primary-red); }
+
+.lc-tab-panel { /* Desktop: this is the scrollable part within lc-modal-main */
+    padding: 1.8rem 2rem; 
+    overflow-y: auto; 
+    flex-grow: 1; background-color: var(--light-text-global); 
+}
+.lc-tab-panel::-webkit-scrollbar { width: 6px; }
+.lc-tab-panel::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 6px; }
+.lc-tab-panel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.25); border-radius: 6px; }
+
+.lc-tab-content { display: none; }
+.lc-tab-content.active { display: block; animation: fadeInTab 0.3s ease-out; }
+@keyframes fadeInTab { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.lc-tab-content h4 {
+    font-family: var(--font-primary, 'Montserrat', sans-serif); font-size: 1.2rem; color: var(--primary-blue);
+    margin-top:0; margin-bottom: 1.2rem; display: flex; align-items: center; font-weight:700;
+    padding-bottom: 0.5rem; border-bottom: 1px solid #edf2f7;
+}
+.lc-tab-content h4 i { margin-right: 10px; font-size: 1em; opacity: 0.9; color: var(--primary-red); }
+.lc-tab-content p, .lc-tab-content ul { font-size: 0.92rem; line-height: 1.75; color: #404a57; margin-bottom: 1.4rem; }
+.lc-tab-content ul { list-style: none; padding-left: 0; }
+.lc-tab-content ul li { padding-left: 1.6em; position: relative; margin-bottom: 0.7rem; }
+.lc-tab-content ul li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--primary-red); position: absolute; left: 0; top: 5px; font-size:0.95em; }
+.tab-hr { border: 0; height: 1px; background-color: #e8eef3; margin: 2rem 0; }
+.video-wrapper-modal { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background-color: #000; border: 1px solid #d8e0e8; margin: 0 auto 1.2rem auto; }
+.video-wrapper-modal iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+#modalPhotoGallery.modal-photo-gallery-slideshow { position: relative; width: 100%; max-width: 600px; margin: 1.2rem auto; overflow: hidden; border-radius: 10px; background-color: #eef2f7; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
+.slideshow-container { display: flex; transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55); align-items: center; }
+.slide { min-width: 100%; max-width: 100%; box-sizing: border-box; text-align: center; }
+.slide img { width: auto; max-width: 100%; height: auto; max-height: 350px; object-fit: contain; border-radius: 8px; display: inline-block; box-shadow: 0 3px 10px rgba(0,0,0,0.18); }
+.slide-caption { text-align: center; font-size: 0.82rem; color: #444; padding: 12px 5px 0 5px; min-height: 1.3em; display: block; }
+.slideshow-controls { position: absolute; top: 50%; width: calc(100% - 36px); left: 18px; transform: translateY(-50%); display: flex; justify-content: space-between; z-index: 10; pointer-events: none; }
+.slideshow-controls button { background-color: rgba(0, 0, 0, 0.4); color: white; border: none; padding: 10px 12px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; line-height: 1; transition: background-color 0.2s ease; pointer-events: all; box-shadow: 0 2px 5px rgba(0,0,0,0.25); }
+.slideshow-controls button:hover { background-color: rgba(0, 0, 0, 0.6); }
+.no-photos-modal { font-style: italic; color: #666; text-align: center; padding: 1.2rem; }
+#modalMapEmbed.modal-map-embed-container iframe { display: block; width: 100%; height: 320px; border: 0; border-radius: 6px;}
+#modalCommunityPost .post-snippet-modal { background-color: #f0f4f9; padding: 1.2rem 1.5rem; border-radius: 8px; font-size: 0.9rem; border-left: 4px solid var(--primary-blue); box-shadow: 0 3px 7px rgba(0,0,0,0.07); }
+#modalCommunityPost .post-snippet-modal p { margin-bottom: 0.6rem; color: #38424e; }
+#modalCommunityPost .post-snippet-modal a { color: var(--primary-blue); text-decoration: none; font-weight: 600; }
+#modalCommunityPost .post-snippet-modal a:hover { text-decoration: underline; }
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) { /* Tablet */
+    #languageHubExplorer { padding: 20px 0; }
+    .lc-persistent-header { margin-bottom: 1.5rem; padding: 0 10px; }
+    .lc-hero-interactive h1 { font-size: 1.7rem; } 
+    .language-filter-grid { gap: 0.5rem; }
+    .lang-filter-button { padding: 0.45rem 0.7rem; font-size: 0.7rem; }
+    .lang-filter-button img.lang-flag-filter { width: 16px; }
+
+    .lc-institutes-content-area { padding: 0 10px; }
+    #selectedLanguageTitle { font-size: 1.4rem; margin-bottom: 1.2rem; } 
+    img.language-title-flag { width: 22px; }
+
+    .institute-preview-interactive { padding: 0.7rem; gap: 0.6rem;}
+    .institute-preview-interactive .preview-logo { width: 40px; height: 40px; margin-right: 0.7rem; }
+    .institute-preview-interactive .institute-name-line h5 { font-size: 0.85rem; }
+    .institute-preview-interactive p.preview-description-text { font-size: 0.68rem; -webkit-line-clamp: 2; min-height: calc(0.68rem * 1.4 * 2); }
+    .institute-preview-interactive .btn-small.view-details-btn-preview { padding: 0.35rem 0.7rem; font-size: 0.6rem; margin-left: 0.5rem; }
+    
+    .lc-modal-content-wrapper {
+        max-height: 95vh; 
+    }
+    .slide img { max-height: 300px; }
+}
+
+@media (max-width: 480px) { /* Phone */
+    .lc-hero-interactive h1 { font-size: 1.5rem; }
+    .language-filter-grid { flex-direction: row; justify-content: space-around; flex-wrap: wrap;} 
+    .lang-filter-button { flex-grow:1; max-width: 110px; justify-content:center; font-size:0.65rem; padding: 0.4rem 0.6rem;} 
+    .lang-filter-button img.lang-flag-filter { width: 14px; gap: 0.4rem;}
+    .lc-initial-prompt p { font-size: 0.8rem; } 
+    .btn.back-btn-main-site { padding: 0.5rem 1rem; font-size: 0.75rem; }
+    #selectedLanguageTitle { font-size: 1.2rem; } 
+
+    /* MODAL FIXES FOR MOBILE SCROLLING & LAYOUT */
+    .lc-modal-content-wrapper {
+        padding: 5px; 
+        height: 100dvh; /* Use dynamic viewport height */   
+        overflow-y: auto; /* THIS IS THE MAIN SCROLL FOR THE ENTIRE MODAL VIEW ON MOBILE */
+        box-sizing: border-box;
+    }
+    .lc-modal-content { /* The white box inside the wrapper */
+        flex-direction: column; /* Stack sidebar & main content */
+        border-radius: 0;     
+        height: auto;         /* Allow content to determine its height */
+        overflow-y: visible;  /* CRITICAL: Override desktop's overflow:hidden. Allows content to grow beyond viewport triggering wrapper scroll. */
+    }
+
+    .lc-modal-sidebar {
+        width: 100%;          
+        height: auto;         /* Let content define height */
+        padding: 1rem 0.8rem; 
+        border-bottom: 1px solid #dde4ee; 
+        border-right: none;   
+        flex-shrink: 0;       
+        overflow-y: visible; /* No independent scroll for sidebar on mobile */
+    }
+    .modal-sidebar-content-centered { /* Content within sidebar */
+        /* overflow-y: visible; -- Already covered by .lc-modal-sidebar */
+        flex-grow: 0;         
+        padding-bottom: 0.5rem; 
+    }
+    #modalInstituteName { font-size: 1.25rem; margin-bottom: 0.8rem; }
+    .modal-partnership-info { font-size: 0.75rem; padding: 0.6rem 0.8rem; margin-bottom: 1rem; }
+    .modal-sidebar-links .btn.btn-small { font-size: 0.8rem; padding: 0.6rem 1rem; }
+    .modal-social-icons { gap: 1.5rem; }
+    .modal-social-icons a { font-size: 1.4rem; }
+
+    .lc-modal-main { /* Container for tabs and tab panels */
+        flex-grow: 0;        
+        flex-shrink: 0;       
+        height: auto;        
+        overflow: visible;    /* Ensure it doesn't clip tall tab panel */
+    }
+    .lc-tab-panel { /* Individual tab content */
+        overflow-y: visible;  /* No independent scroll for tab panel on mobile */
+        flex-grow: 0;        
+        height: auto;        
+        padding: 1rem 1rem; 
+    }
+    .back-btn-modal { margin-top: 1rem; padding: 0.6rem 1.2rem; font-size: 0.75rem;}
+    .lc-modal-tabs { padding: 0 0.4rem; padding-right: 30px;} /* padding-right for close btn */
+    .lc-tab-button { font-size: 0.75rem; padding: 0.7rem 0.6rem;} 
+    .close-modal-btn { top: 10px; right: 12px; font-size: 1.8rem; } 
+
+    .lc-tab-content h4 { font-size: 1.05rem; margin-bottom: 1rem; } 
+    .lc-tab-content p, .lc-tab-content ul { font-size: 0.82rem; line-height: 1.65; } 
+    .lc-tab-content ul li { margin-bottom: 0.6rem; }
+
+    /* Gallery and Media in Modal for mobile */
+    .slide img { max-height: 220px; }
+    .slide-caption { font-size: 0.75rem; padding-top: 8px; }
+    .slideshow-controls button { padding: 8px 10px; font-size: 1rem; }
+    #modalMapEmbed.modal-map-embed-container iframe { height: 250px; }
+    #modalCommunityPost .post-snippet-modal { padding: 1rem; font-size: 0.82rem; }
+}

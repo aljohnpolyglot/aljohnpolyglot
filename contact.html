@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Aljohn Polyglot | Let's Connect</title>
+    <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- You might need to add specific CSS for contact page layout here or in styles.css -->
+    <style>
+        /* Basic styles for contact page specific layout - ideally move to styles.css */
+        .page-header-contact {
+            padding: 80px 0 40px; /* Adjust padding as hero is smaller */
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 70%);
+            color: var(--light-text);
+            text-align: center;
+            margin-top: 70px; /* Account for fixed header */
+        }
+        .page-header-contact h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+        }
+        .page-header-contact .section-subtitle { /* Override general section-subtitle color for this header */
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .contact-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        @media (min-width: 992px) {
+            .contact-layout-grid {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
+
+        .contact-form-area h2, .contact-sidebar h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .contact-form-area p, .contact-sidebar p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .contact-primary-method {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-red);
+        }
+        .contact-primary-method .fas {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+        .contact-primary-method h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.3rem;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+        .email-link {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .email-link:hover {
+            text-decoration: underline;
+            color: var(--primary-red);
+        }
+
+        .service-specific-info {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
+        }
+        .service-specific-info h4 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+        .service-specific-info ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .service-specific-info ul li a {
+            display: inline-flex; /* Align icon and text */
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-sidebar .contact-image-wrapper {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .contact-sidebar .contact-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 0.5rem;
+            background-color: #e0e0e0; /* Fallback if image doesn't load */
+        }
+        .contact-sidebar .image-caption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom:0;
+        }
+
+        .social-connect-box {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        .social-connect-box h3 {
+             color: var(--primary-red);
+        }
+        .social-links-contact {
+            display: flex;
+            flex-direction: column; /* Stack links */
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .social-icon-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--light-text);
+        }
+        .social-icon-link .fab, .social-icon-link .fas {
+            margin-right: 0.75rem;
+            font-size: 1.2em;
+        }
+        .social-icon-link.facebook { background-color: #1877F2; }
+        .social-icon-link.facebook:hover { background-color: #125aac; }
+        .social-icon-link.youtube { background-color: #FF0000; }
+        .social-icon-link.youtube:hover { background-color: #cc0000; }
+        
+        .youtube-note {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #555;
+            text-align: center;
+        }
+
+        #quick-answers-cta h2 {
+            font-size: 1.8rem; /* Slightly smaller than main section titles */
+            color: var(--primary-blue); /* Consistency */
+        }
+         #quick-answers-cta .btn-lg {
+            padding: 0.9rem 2rem;
+            font-size: 1.05rem;
+        }
+        #quick-answers-cta .btn-lg i {
+            margin-right: 0.5rem;
+        }
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+   <header id="main-header-placeholder"></header>
+
+    <main>
+        <section class="page-header-contact">
+            <div class="container">
+                <h1>Let's Connect</h1>
+                <p class="section-subtitle">Whether you're interested in collaborations, have questions, or just want to share your language journey, I'd love to hear from you!</p>
+            </div>
+        </section>
+
+        <section id="contact-main" class="content-section">
+            <div class="container">
+                <div class="contact-layout-grid">
+                    <!-- Left Column: Contact Details -->
+                    <div class="contact-form-area">
+                        <h2>Get in Touch</h2>
+                        <p>The most direct way to reach me for collaborations, media inquiries, or detailed questions is through email. I'll do my best to get back to you as soon as possible.</p>
+                        
+                        <div class="contact-primary-method">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <h3>Primary Email</h3>
+                            <a href="mailto:mogatas.princealjohn.05082003@gmail.com" class="email-link">mogatas.princealjohn.05082003@gmail.com</a>
+                        </div>
+
+                        <div class="service-specific-info">
+                            <h4>Looking for Specific Services?</h4>
+                            <p>For tailored assistance with translations or language coaching, please visit the respective pages for more details and specific contact methods:</p>
+                            <ul>
+                                <li><a href="services/coaching/coaching.html" class="btn btn-outline btn-small"><i class="fas fa-chalkboard-teacher"></i> Language Coaching</a></li>
+                                <li><a href="services/translation/translation.html" class="btn btn-outline btn-small"><i class="fas fa-language"></i> Translation Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Image & Social -->
+                    <div class="contact-sidebar">
+                        <div class="contact-image-wrapper">
+                            <!-- 
+                                Replace this src with your actual image. 
+                                A placeholder is used here. Recommended size around 500px width.
+                            -->
+                            <img src="images/contact_aljohn_placeholder.png" alt="Aljohn Polyglot - Ready to connect (Placeholder Image)">
+                            <p class="image-caption"><em>This space awaits a future pictorial! For now, picture a passionate polyglot eager to connect.</em></p>
+                        </div>
+
+                        <div class="social-connect-box">
+                            <h3>Connect on Social Media</h3>
+                            <p>You can also reach out or follow my updates on social media. For Direct Messages, especially on Facebook, please be clear and concise with your inquiry.</p>
+                            <div class="social-links-contact">
+                                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" rel="noopener noreferrer" class="social-icon-link facebook">
+                                    <i class="fab fa-facebook-f"></i> Connect on Facebook
+                                </a>
+                                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer" class="social-icon-link youtube">
+                                    <i class="fab fa-youtube"></i> Visit my YouTube
+                                </a>
+                            </div>
+                            <p class="youtube-note">(Though my YouTube channel is likely how you found this page! 😉)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quick-answers-cta" class="content-section alt-bg">
+            <div class="container text-center">
+                <h2 class="section-title">Need Quick Answers?</h2>
+                <p class="section-subtitle" style="color: #555;">Before reaching out, you might find your answer in my Frequently Asked Questions. I've covered many common topics there!</p>
+                <a href="FAQ.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-question-circle"></i> Explore the FAQ
+                </a>
+            </div>
+        </section>
+    </main>
+ <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+ <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script src="js/navbar-loader.js" defer></script>
+<script src="js/footer-loader.js" defer></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

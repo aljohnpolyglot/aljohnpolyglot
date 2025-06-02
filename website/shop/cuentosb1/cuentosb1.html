@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentos B1: Español para Filipinos - Aljohn Polyglot Shop</title>
+    <link rel="stylesheet" href="../../css/styles.css"> {/* Path to main CSS */}
+    <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .product-detail-section {
+            padding: 40px 0;
+        }
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 2.5rem;
+            align-items: flex-start; /* Align items to the top */
+        }
+        @media (min-width: 768px) {
+            .product-layout {
+                grid-template-columns: 2fr 3fr; /* Image on left, details on right */
+            }
+        }
+        @media (min-width: 992px) {
+            .product-layout {
+                grid-template-columns: 1fr 2fr; /* Smaller image column */
+            }
+        }
+
+        .product-image-main {
+            width: 100%;
+            max-width: 400px; /* Limit max width of cover */
+            margin: 0 auto; /* Center if it's narrower than column */
+            border-radius: 8px;
+            box-shadow: var(--hover-shadow); /* More prominent shadow */
+            overflow: hidden; /* For rounded corners on image */
+        }
+        .product-image-main img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-details-content h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .product-details-content .product-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .product-price-detail {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 0.25rem;
+        }
+        .product-format-detail {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .product-description-full h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+        .product-description-full p, .product-description-full ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+        .product-description-full ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .product-description-full ul li {
+            padding-left: 1.8em;
+            position: relative;
+            margin-bottom: 0.6rem;
+        }
+        .product-description-full ul li::before {
+            content: '\f058'; /* FontAwesome check-circle solid */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-red);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1em;
+        }
+        .product-cta-area {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .product-cta-area .btn {
+            padding: 0.8rem 2rem;
+            font-size: 1.05rem;
+            margin-right: 1rem;
+        }
+         .product-cta-area .btn i { margin-left: 8px; }
+        .product-availability-note {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 1rem;
+        }
+
+        .sample-pages-gallery {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .sample-pages-gallery h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+            box-shadow: var(--hover-shadow);
+        }
+        .back-to-shop-link {
+            display: inline-block;
+            margin: 3rem 0 1rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-to-shop-link i { margin-right: 6px; }
+        .back-to-shop-link:hover { text-decoration: underline; color: var(--primary-red); }
+
+    </style>
+</head>
+<body>
+
+       <header class="shop-header"> 
+        <nav class="container shop-nav-container">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            
+            <ul class="nav-links shop-page-nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li class="dropdown">
+                    <a href="../../index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../../blog.html">Blog</a>
+                        <a href="../../pathway.html">Pathway</a>
+                        <a href="../../resources/apps.html">Apps & Tools</a>
+                        <a href="../../resources/routine.html">Daily Routine</a> 
+                        <a href="../../index.html#cultural-institutes">Culture Centers</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../../services/coaching/coaching.html">Coaching</a>
+                        <a href="../../services/translation/translation.html">Translation</a> 
+                    </div>
+                </li>
+                <li><a href="../shop.html" class="active-link">Shop</a></li>
+                <li><a href="../../FAQ.html">FAQ</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="product-detail-section">
+            <div class="container">
+                <a href="../shop.html" class="back-to-shop-link"><i class="fas fa-arrow-left"></i> Back to Shop</a>
+                <div class="product-layout">
+                    <div class="product-image-main">
+                        <img src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/491999707_122162307986370888_4793319295151680417_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGyeSrRrXeR4AaTop3SK259J3ePYY7SwqYnd49hjtLCpgiA7fJpycK2NF6J2UWqe8-7UCQzRiY-2KfgvRr-s4A2&_nc_ohc=Hw-Fxns67b8Q7kNvwEXsDme&_nc_oc=Adm8vVkil_85CTHtPzgKIwVIWwAYYbPUFFZOrML6j3KCsu1quzrfB-3I4gLH3HhNf90&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=irGW9covKbsC0kpYRjR14g&oh=00_AfI-LXH52Z6HByR1BKRKQX9zGzpuKSGts_3w6WRs70VUdg&oe=6823582D" alt="Cuentos B1: Español para Filipinos - Book Cover">
+                    </div>
+                    <div class="product-details-content">
+                        <h1>Cuentos B1: Español para Filipinos</h1>
+                        <p class="product-subtitle">An Immersive Spanish Reading Adventure, Crafted by a Filipino for Filipinos.</p>
+                        
+                        <p class="product-price-detail">₱300.00</p>
+                        <span class="product-format-detail">Digital PDF Copy (Pre-Order)</span>
+
+                        <div class="product-description-full">
+                            <p><strong>¡Hola, fellow Filipino Spanish learner!</strong> Are you ready to bridge the gap from understanding basic Spanish to truly *feeling* the language? For too long, we've navigated resources that don't quite capture our unique connection to Spanish. It's time for a change.</p>
+                            
+                            <p>After countless hours of passionate work and intensive research, I'm thrilled to introduce a B1-level reading experience designed 100% with YOU in mind: <strong>"Cuentos B1: Español para Filipinos."</strong></p>
+                    
+                            <h3>Unlock a New Level of Spanish Understanding:</h3>
+                            <ul>
+                                <li><strong>Authentically Filipino:</strong> Journey with relatable Pinoy characters facing familiar triumphs and challenges in new Hispanic settings. Finally, Spanish learning that *gets* you!</li>
+                                <li><strong>Vivid Cultural Immersion:</strong> Explore Madrid, Mexico City, and Colombia like never before! Dive deep into local food, must-see spots (researched down to real Metro stations!), music, customs, and those "OMG, culture shock!" moments that make learning real.</li>
+                                <li><strong>Learn in Context, Not Lists:</strong> Naturally absorb B1-level Spanish vocabulary and grammar as they're used in compelling stories. Understand *why* a word is used, not just what it means.</li>
+                                <li><strong>Built-in Learning Support:</strong> Each chapter features curated vocabulary lists (including essential cultural terms) and comprehension questions to solidify your understanding and track your progress.</li>
+                                <li><strong>Your Bridge to Fluency:</strong> Designed for true immersion, this book helps you internalize the rhythm and flow of Spanish, making it less like study and more like an experience.</li>
+                                <li><strong>100% Spanish Immersion:</strong> Perfect for learners with a solid A2 foundation ready to confidently step into B1 material through natural, engaging content.</li>
+                            </ul>
+                            
+                            <h3>Is "Cuentos B1" Right for You?</h3>
+                            <p>This book is your perfect next step if:</p>
+                            <ul>
+                                <li>You're a Filipino learner who has mastered A2 Spanish and is eager for B1 reading material that truly connects.</li>
+                                <li>You're tired of generic textbooks and crave an authentic experience of Spanish in rich, relevant cultural contexts.</li>
+                                <li>You learn best through engaging stories with characters you can root for.</li>
+                                <li>You want to boost your reading comprehension and vocabulary in a fun, natural way.</li>
+                                <li>You're passionate about Hispanic cultures and want to explore them from a uniquely Filipino perspective.</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-cta-area">
+                            <a href="mailto:aljohnmogatas@gmail.com?subject=Pre-Order: Cuentos B1 Digital Copy&body=Hi Aljohn, I'd like to pre-order/purchase the digital copy of 'Cuentos B1: Español para Filipinos'. Please let me know the next steps for payment (GCash) and estimated delivery. Thank you!" class="btn btn-primary">Pre-Order Digital Copy (₱300) <i class="fas fa-shopping-cart"></i></a>
+                            <p class="product-availability-note">This is a pre-order for the digital PDF. Physical copies will be available on Shopee in the future (details to come!). Payment for digital pre-orders via GCash. You will be contacted with payment details after inquiry.</p>
+                        </div>
+                    </div>
+
+                <section class="sample-pages-gallery">
+                    <h2>Sneak Peek Inside!</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="../../images/sample_page_cuentos_1.jpg" alt="Sample Page 1 from Cuentos B1">
+                             {/* Replace with actual sample page image */}
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../../images/sample_page_cuentos_2.jpg" alt="Sample Page 2 from Cuentos B1">
+                             {/* Replace with actual sample page image */}
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../../images/sample_page_cuentos_3.jpg" alt="Sample Page 3 from Cuentos B1">
+                             {/* Replace with actual sample page image */}
+                        </div>
+                    </div>
+                    <p style="text-align:center; margin-top:1rem; font-style:italic;">(More sample pages will be added soon!)</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+         <div class="container">
+             <div class="footer-content">
+                  <div class="footer-logo">
+                      <img src="../../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                      <span>Aljohn Polyglot</span>
+                  </div>
+                 <nav class="footer-links">
+                     <a href="../../index.html#about">About</a>
+                     <a href="../../pathway.html">Pathway</a>
+                     <a href="../../blog.html">Blog</a>
+                     <a href="../../resources/apps.html">Resources</a>
+                     <a href="mailto:aljohnmogatas@gmail.com">Contact</a>
+                 </nav>
+                 <div class="social-links">
+                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
+                     <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 </div>
+             </div>
+             <p class="copyright">&copy; <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+         </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script>
+        // Any page-specific JavaScript for cuentosb1.html can go here
+        // For example, if you implement a lightbox for the sample page gallery.
+    </script>
+</body>
+</html>

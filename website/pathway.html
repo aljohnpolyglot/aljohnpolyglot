@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn Polyglot | The Language Learning Pathway (A1-C2)</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    /* --- Pathway Page Specific Styles --- */
+   /* --- Pathway Page Specific Styles --- */
+:root {
+    --pathway-bg: #F0EAD6; /* Parchment like - This will now be for content cards */
+    --pathway-dark-brown: #4A3B2A;
+    --pathway-medium-brown: #6B4F2E; 
+    --pathway-green: #556B2F; 
+    --pathway-gold: #B8860B; 
+    --pathway-red-accent: #800000; 
+    --pathway-text: #3D2B1F; 
+    --pathway-border: #C1A87C; 
+    --pathway-card-bg: #FAF0E6; /* Existing card background, perfect for our "scrolls" */
+    --font-themed-headings: 'MedievalSharp', cursive;
+    --font-themed-text: 'Metamorphous', cursive;
+}
+
+/* ---- NEW/MODIFIED BODY STYLING FOR BLURRED BACKGROUND ---- */
+body.pathway-page {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--pathway-text); /* Default text color for elements without specific bg */
+    padding-top: 70px; 
+    position: relative; /* For the ::before pseudo-element */
+    background-color: #4A3B2A; /* Fallback dark color if image doesn't load */
+    overflow-x: hidden; /* Prevent horizontal scroll from scaled pseudo-element */
+}
+
+body.pathway-page::before {
+    content: '';
+    position: fixed; /* Fixed position to cover the whole viewport and stay put */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/pathway_coverart.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.8); /* Adjust blur and brightness for readability */
+    transform: scale(1.05); /* Scale slightly to avoid blurred edges appearing in view */
+    z-index: -1; /* Place it behind all page content */
+    will-change: filter; /* Hint for browser optimization */
+}
+/* ---- END OF NEW/MODIFIED BODY STYLING ---- */
+
+.pathway-page .section-title {
+    font-family: var(--font-themed-headings);
+    color: var(--pathway-dark-brown);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Optional: subtle shadow for titles */
+}
+.pathway-page .section-title::after {
+    background-color: var(--pathway-gold);
+}
+.pathway-page .section-subtitle {
+    font-family: var(--font-themed-text);
+    font-size: 1.2rem;
+    color: var(--pathway-medium-brown);
+    max-width: 800px;
+    /* text-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Optional */
+}
+
+.pathway-main-container {
+    padding-top: 20px; 
+}
+
+/* --- MODIFIED: pathway-map-intro --- */
+.pathway-map-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: var(--pathway-card-bg); /* Give it a solid scroll-like background */
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid var(--pathway-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow to lift it */
+}
+/* The .intro-banner-image class is no longer needed here as the img tag will be removed */
+
+.pathway-map-intro .pathway-video-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.pathway-map-intro .video-link-card {
+    background-color: #fff9f0; /* Slightly different from main card bg for variety */
+    border: 1px solid var(--pathway-border);
+    width: 300px;
+}
+ .pathway-map-intro .video-link-card img {
+    width: 100%;
+    height: 170px; 
+    object-fit: cover;
+}
+.pathway-map-intro .video-link-card h4 {
+    font-family: var(--font-themed-text);
+    color: var(--pathway-red-accent);
+}
+
+.language-journey {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* This remains good for spacing between phase "scrolls" */
+}
+
+.journey-phase {
+    background-color: var(--pathway-card-bg); /* Existing, good for scroll effect */
+    border: 2px solid var(--pathway-border);
+    border-radius: 15px;
+    padding: 20px 30px;
+    box-shadow: 0 10px 20px rgba(74, 59, 42, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.journey-phase::before { 
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px dashed var(--pathway-gold);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.phase-banner {
+    width: 100%;
+    max-height: 300px; 
+    object-fit: contain; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--pathway-border);
+    background-color: #E0D6C3; 
+}
+
+.phase-title {
+    font-family: var(--font-themed-headings);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--pathway-dark-brown);
+    text-align: center;
+    margin-bottom: 5px;
+}
+.phase-level {
+    font-family: var(--font-themed-text);
+    font-size: 1.1rem;
+    color: var(--pathway-medium-brown);
+    text-align: center;
+    margin-bottom: 25px;
+    display: block;
+}
+.phase-level i {
+    color: var(--pathway-gold);
+    margin-right: 5px;
+}
+
+.phase-section-heading {
+    font-family: var(--font-themed-headings);
+    font-size: 1.8rem;
+    color: var(--pathway-red-accent);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--pathway-gold);
+    display: flex;
+    align-items: center;
+}
+.phase-section-heading i.heading-icon { 
+    margin-right: 10px;
+    color: var(--pathway-gold);
+}
+
+.phase-goals-list {
+    list-style: none;
+    padding-left: 0;
+}
+.phase-goals-list li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: flex-start;
+}
+.phase-goals-list li i.goal-icon { 
+    color: var(--pathway-green);
+    margin-right: 10px;
+    margin-top: 4px;
+    width: 1.2em; 
+    text-align: center;
+}
+
+.mindset-text, .milestone-text {
+    font-style: italic;
+    color: var(--pathway-medium-brown);
+    padding: 10px;
+    border-left: 3px solid var(--pathway-gold);
+    background-color: rgba(184, 134, 11, 0.05);
+    font-size: 1.05rem;
+}
+.mindset-text strong, .milestone-text strong {
+    font-style: normal;
+    color: var(--pathway-dark-brown);
+}
+
+.toolkit-category {
+    background-color: #fff9f0;
+    border: 1px solid var(--pathway-border);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.toolkit-category-header {
+    padding: 12px 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.toolkit-category-header:hover {
+    background-color: rgba(184, 134, 11, 0.1);
+}
+.toolkit-category-header h4 {
+    font-family: var(--font-themed-text);
+    font-size: 1.3rem;
+    color: var(--pathway-dark-brown);
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.toolkit-category-header h4 i.category-icon { 
+    margin-right: 10px;
+    color: var(--pathway-red-accent);
+}
+.toolkit-category-header .toggle-icon {
+    font-size: 1.2rem;
+    color: var(--pathway-gold);
+    transition: transform 0.3s ease;
+}
+.toolkit-category-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 18px;
+    border-top: 1px dashed transparent;
+}
+.toolkit-category.active .toolkit-category-content {
+    max-height: 1500px; 
+    padding: 15px 18px;
+    border-top-color: var(--pathway-border);
+}
+.toolkit-category.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.tool-item {
+    margin-bottom: 18px; 
+    padding-bottom: 18px; 
+    border-bottom: 1px dotted var(--pathway-border);
+    display: flex; 
+    flex-direction: column; 
+}
+.tool-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.tool-header { 
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.tool-icon { 
+    font-size: 1.5em; 
+    color: var(--pathway-medium-brown);
+    margin-right: 10px;
+    width: 25px; 
+    text-align: center;
+}
+
+.tool-item strong {
+    font-size: 1.1rem;
+    color: var(--pathway-green);
+}
+.tool-item strong a { 
+    color: inherit;
+    text-decoration: none;
+}
+.tool-item strong a:hover {
+    text-decoration: underline;
+    color: var(--pathway-red-accent);
+}
+.tool-item .rating {
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 8px; 
+}
+.tool-item .rating.essential { color: var(--pathway-red-accent); }
+.tool-item .rating.recommended { color: var(--pathway-green); }
+
+.tool-item ul {
+    list-style-type: disc;
+    margin-left: 35px; 
+    margin-top: 5px;
+}
+.tool-item ul li { margin-bottom: 5px; font-size: 0.95rem; }
+.tool-item ul em { font-style: normal; font-weight: bold; }
+.tool-item p { 
+    font-size: 0.95rem; 
+    margin-top: 0; 
+    padding-left: 35px; 
+}
+.tool-item > p:first-of-type { 
+    margin-top: 5px;
+}
+
+.usage-note { 
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: normal; 
+    color: var(--pathway-medium-brown);
+}
+
+.pathway-final-scroll {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--pathway-card-bg); /* Ensure this has a solid background */
+    border: 1px solid var(--pathway-border);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Lift it off the blur */
+}
+ .final-warning-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.pathway-final-scroll h2 {
+    font-family: var(--font-themed-headings);
+    color: var(--pathway-red-accent);
+}
+.pathway-final-scroll .quote {
+    font-family: var(--font-themed-text);
+    font-size: 1.2rem;
+    color: var(--pathway-medium-brown);
+    border-left-color: var(--pathway-gold);
+    background-color: rgba(184, 134, 11, 0.05);
+    max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.pathway-final-scroll .btn-outline { 
+    border-color: var(--pathway-gold);
+    color: var(--pathway-gold);
+    font-family: var(--font-themed-text);
+}
+.pathway-final-scroll .btn-outline:hover {
+    background-color: var(--pathway-gold);
+    color: var(--pathway-card-bg); /* Changed to card bg for contrast */
+}
+
+@media (max-width: 768px) {
+    .journey-phase { padding: 15px; }
+    .phase-title { font-size: 1.8rem; }
+    .phase-section-heading { font-size: 1.5rem; }
+    .toolkit-category-header h4 { font-size: 1.1rem; }
+    .pathway-map-intro .pathway-video-links { flex-direction: column; align-items: center; }
+    /* .pathway-map-intro .intro-banner-image is removed */
+    .tool-item p, .tool-item ul { padding-left: 5px; margin-left: 5px; } 
+}
+
+</style>
+</head>
+<body class="pathway-page"> 
+  <header>
+        <nav class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li class="dropdown">
+                    <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="languages/tagalog.html">Tagalog</a>
+                        <a href="languages/cebuano.html">Cebuano</a>
+                        <a href="languages/english.html">English</a>
+                        <a href="languages/spanish.html">Spanish</a>
+                        <a href="languages/french.html">French</a>
+                        <a href="languages/indonesian.html">Indonesian</a>
+                        <a href="languages/italian.html">Italian</a>
+                        <a href="languages/portuguese.html">Portuguese</a>
+                        <a href="languages/russian.html">Russian</a>
+                        <a href="languages/swedish.html">Swedish</a>
+                        <a href="languages/german.html">German</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                     <div class="dropdown-content">
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank">Collaborations</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank">Polyglot Talks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank">Learning Methods</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank">Polyglot Shocks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank">Filipinos Speak...</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#resources" class="dropbtn active-parent">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="blog.html">Polyglot Papers Blog</a>
+                        <a href="pathway.html" class="active-link">Pathway</a> 
+                        <a href="resources/apps.html">Essential Apps & Tools</a>
+                        <a href="resources/routine.html">Daily Routine</a> 
+                        <a href="index.html#cultural-institutes">Language & Culture Centers</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="services/coaching/coaching.html">Language Coaching</a>
+                        <a href="services/translation/translation.html">Translation</a> 
+                    </div>
+                </li>
+                <li><a href="shop/shop.html">Shop</a></li> 
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top" class="pathway-main-container container">
+        <section class="pathway-map-intro">
+            <h1 class="section-title">The Roadmap to Fluency</h1>
+            <img src="images/pathway_coverart.png" alt="Roadmap to Fluency - The Grand Map" class="intro-banner-image">
+            <p class="section-subtitle">This sacred map, etched from thousands of hours of linguistic adventure, guides you through the realms of language mastery. It demands courage and sacrifice, but promises treasures of fluency far swifter than conventional paths. Heed its wisdom, brave learner!</p>
+            
+            <div class="pathway-video-links">
+                 <div class="video-link-card">
+                    <a href="https://www.youtube.com/watch?v=O-C_SdCtkLg" target="_blank">
+                        <img src="https://i.ytimg.com/vi/O-C_SdCtkLg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBPmg9JuWTkHelCD415RJlTn9UVmg" alt="Method Overview Video Thumbnail">
+                        <h4>Video: Learn Languages FAST with this Method</h4>
+                        <p>The core philosophy and stage breakdown (Tagalog w/ Eng Subs).</p>
+                    </a>
+                 </div>
+                 <div class="video-link-card">
+                     <a href="https://www.youtube.com/watch?v=ht9q5ENjlV4" target="_blank">
+                         <img src="https://i.ytimg.com/vi/ht9q5ENjlV4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAT3xxaVuaB-i2gWizASSRgX3PxFQ" alt="Routine Video Thumbnail">
+                         <h4>Video: My Secret 12-Hour Daily Routine</h4>
+                         <p>A detailed look at the daily schedule, apps, and resources in action.</p>
+                     </a>
+                 </div>
+            </div>
+        </section>
+
+        <div class="language-journey">
+            <!-- Phase 1: Beginner / Foundation -->
+            <section id="phase-beginner" class="journey-phase">
+                <img src="images\pathway_a1art.png" alt="Beginner's Grove - A Peaceful Start" class="phase-banner">
+                <h2 class="phase-title">Beginner's Grove</h2>
+                <span class="phase-level"><i class="fas fa-scroll"></i>CEFR Scroll: A1 - A2</span>
+
+                <h3 class="phase-section-heading"><i class="fas fa-bullseye heading-icon"></i>Quest Objectives</h3>
+                <ul class="phase-goals-list">
+                    <li><i class="fas fa-tree goal-icon"></i> Plant the seeds of understanding & sound familiarity.</li>
+                    <li><i class="fas fa-book-open-reader goal-icon"></i> Cultivate intuitive reading (comprehend without constant translation).</li>
+                    <li><i class="fas fa-seedling goal-icon"></i> Nurture a core vocabulary (~1000 common words).</li>
+                </ul>
+
+                <h3 class="phase-section-heading"><i class="fas fa-brain heading-icon"></i>The Sacred Mindset</h3>
+                <p class="mindset-text">Enter as a humble apprentice, knowing naught. Focus thy energies on <strong>INPUT</strong> and absorption. The arts of speaking and writing (Output) are for a later quest.</p>
+                
+                <h3 class="phase-section-heading"><i class="fas fa-tools heading-icon"></i>Starter Gear (Key Methods & Tools)</h3>
+                <div class="toolkit">
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-landmark category-icon"></i>Foundational Tomes</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header">
+                                    <i class="fas fa-chalkboard-teacher tool-icon"></i>
+                                    <strong><a href="https://www.languagetransfer.org/" target="_blank">Language Transfer</a>:</strong>
+                                    <span class="rating recommended">Highly Recommended</span>
+                                </div>
+                                <p>Unravels the language's logic and grammar. An excellent starting point, especially for Romance tongues. (Use while multitasking).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-magic category-icon"></i>Mystic Anki Decks & Arcane Apps</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header">
+                                    <i class="fas fa-layer-group tool-icon"></i>
+                                    <strong><a href="https://apps.ankiweb.net/" target="_blank">Anki (Flashcards)</a>:</strong>
+                                    <span class="rating essential">ESSENTIAL!</span>
+                                </div>
+                                <p>Begin your Anki pilgrimage IMMEDIATELY. Employ Spaced Repetition (SRS) to etch vocabulary and basic sentences into thy long-term memory. Forge cards from English-to-Target Language initially. Imbue them with context (screenshots, source sentences). Quest Goal: ~1000 reviewed words.</p>
+                            </div>
+                            <div class="tool-item">
+                                 <div class="tool-header">
+                                    <i class="fas fa-kiwi-bird tool-icon"></i>
+                                    <strong><a href="https://www.duolingo.com/" target="_blank">Duolingo</a>:</strong>
+                                 </div>
+                                <p>Consult <span class="usage-note">(briefly)</span> at the very start for basic words, sentence structure, and sounds. Then, swiftly abandon once a flicker of comfort is found.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-book category-icon"></i>Scrolls of Reading (Input Focus)</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-book-sparkles tool-icon"></i><strong>Simple Texts:</strong></div>
+                                <ul><li>Start with tomes you know well (e.g., Harry Potter) in the target language (seek ePubs).</li></ul>
+                             </div>
+                             <div class="tool-item">
+                                <div class="tool-header">
+                                    <i class="fas fa-mobile-alt tool-icon"></i>
+                                    <strong><a href="https://play.google.com/store/apps/details?id=org.readera" target="_blank">ReadEra App</a>:</strong>
+                                </div>
+                                <ul><li>Use for its tap-to-translate enchantment and ease of reading.</li></ul>
+                            </div>
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-globe-americas tool-icon"></i><strong>Real-World Glyphs:</strong></div>
+                                <ul><li>Decipher simple online articles, YouTube comments – exposure to the natural, untamed language.</li></ul>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-wand-sparkles category-icon"></i>Wands of Grammar & Patterns</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fab fa-youtube tool-icon"></i><strong>YouTube/Google Oracles:</strong></div>
+                                <ul><li>Seek specific grammar tutorials ("conjugations in Spanish", "French sentence structure").</li></ul>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-header">
+                                    <i class="fas fa-dice tool-icon"></i>
+                                    <strong><a href="https://linguno.com/" target="_blank">Linguno.com</a>:</strong>
+                                </div>
+                                <ul><li>For Romance languages, practice conjugations.</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-eye category-icon"></i>First Glimpses & Whispers (Listening/Watching)</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-child tool-icon"></i><strong>Gentle Content:</strong></div>
+                                <ul><li>Watch slow narratives like children's shows (Peppa Pig, Blippi) for contextual clues and slower speech.</li><li>Employ <strong>Target Language Subtitles ONLY</strong> – train thy brain to link sound and text directly. Banish English subtitles from thy sight!</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="phase-section-heading"><i class="fas fa-key heading-icon"></i>Path Unlocked (Milestone to Advance)</h3>
+                <p class="milestone-text">Proceed to the next realm when you can decipher simple texts, grasping the general idea without translating every word in your mind, your reading feels relatively smooth, AND you have consistently reviewed ~1000 words in your Anki deck.</p>
+            </section>
+
+            <!-- Phase 2: Intermediate / Immersion -->
+            <section id="phase-intermediate" class="journey-phase">
+                <img src="images/pathway_b1art.png" alt="City of Immersion - Bustling with Language" class="phase-banner">
+                <h2 class="phase-title">City of Immersion</h2>
+                <span class="phase-level"><i class="fas fa-scroll"></i>CEFR Scroll: B1 - B2</span>
+
+                <h3 class="phase-section-heading"><i class="fas fa-bullseye heading-icon"></i>Quest Objectives</h3>
+                <ul class="phase-goals-list">
+                    <li><i class="fas fa-water goal-icon"></i> Transition from conscious learning to subconscious acquisition ('Feel' the language).</li>
+                    <li><i class="fas fa-headphones-alt goal-icon"></i> Comprehend native-speed content (videos, podcasts) without heavy reliance on subtitles.</li>
+                    <li><i class="fas fa-hourglass-half goal-icon"></i> Achieve ~300 Hours of focused immersion (reading, watching, listening).</li>
+                    <li><i class="fas fa-brain goal-icon"></i> Expand thy lexicon significantly (~2500+ words).</li>
+                </ul>
+
+                <h3 class="phase-section-heading"><i class="fas fa-brain heading-icon"></i>The Sacred Mindset</h3>
+                <p class="mindset-text"><strong>MASSIVE INPUT!</strong> Immerse thyself completely. Output remains secondary, but the preparations commence. Meticulously track thy immersion hours, for they are the currency of this realm.</p>
+
+                <h3 class="phase-section-heading"><i class="fas fa-briefcase heading-icon"></i>Immersion Kit (Key Methods & Tools)</h3>
+                <div class="toolkit">
+                     <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-book-atlas category-icon"></i>The Great Deluge (Massive Input)</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-book-reader tool-icon"></i><strong>Reading:</strong></div>
+                                <ul><li>Shift to native-level content that genuinely captivates thee (novels, news, blogs). Continue using <strong><a href="https://play.google.com/store/apps/details?id=org.readera" target="_blank">ReadEra</a></strong>.</li></ul>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-tv tool-icon"></i><strong>Watching:</strong></div>
+                                <ul><li>Dive into native YouTube, streaming services (employ <strong><a href="https://www.urban-vpn.com/" target="_blank">UrbanVPN</a></strong> to access geo-restricted portals like RTVE, France.TV, RaiPlay, SVT Play etc.). Use the <strong><a href="https://www.languagereactor.com/" target="_blank">Language Reactor</a></strong> browser extension (initially for lookup, aim for target lang subs only).</li></ul>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-headphones tool-icon"></i><strong>Listening:</strong></div>
+                                <ul><li>Fill ALL "dead time" (journeys, chores, exercise) with podcasts (<strong><a href="https://pocketcasts.com/" target="_blank">Pocket Casts</a></strong> for downloads), audiobooks, or radio (<strong><a href="http://radio.garden/" target="_blank">Radio Garden</a></strong>). Choose <em>comprehensible</em> content slightly above thy level.</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-layer-group category-icon"></i>Ever-Growing Anki Deck</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header">
+                                    <i class="fas fa-clone tool-icon"></i>
+                                    <strong><a href="https://apps.ankiweb.net/" target="_blank">Anki (Flashcards)</a>:</strong> <span class="rating essential">ESSENTIAL!</span>
+                                </div>
+                                <p>Continue adding new words AND full sentences encountered during immersion. Context is the lifeblood of memory. Aim for 2500+ reviewed words.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-stopwatch-20 category-icon"></i>The Chronometer of Immersion</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                           <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-calendar-alt tool-icon"></i><strong>Tracking Immersion Hours:</strong></div>
+                                <p>Use a spreadsheet or a physical grid (like Aljohn's sacred color-coded one) to track hours spent <strong>actively</strong> reading, watching, and listening. 300 focused hours is the target for this phase.</p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-language category-icon"></i>Lexicon Forging Tools</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-search tool-icon"></i><strong>Translation Oracles:</strong></div>
+                                <p>Use <strong><a href="https://www.deepl.com/" target="_blank">DeepL</a></strong> or <strong><a href="https://translate.google.com/" target="_blank">Google Translate</a></strong> for swift lookups during immersion. Consult <strong><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></strong> for understanding nuances or colloquialisms. Employ <strong><a href="https://context.reverso.net/" target="_blank">Reverso Context</a></strong> for example sentences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-comments category-icon"></i>Preparing the Voice (Output Groundwork)</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-pause-circle tool-icon"></i><strong>Why Tarry?:</strong></div>
+                                <p>Avoid "inventing" the language or etching errors into thy speech. First, build a mighty intuitive base through input before venturing into native conversation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="phase-section-heading"><i class="fas fa-key heading-icon"></i>Path Unlocked (Milestone to Advance)</h3>
+                <p class="milestone-text">Advance to the Citadel when you have completed ~300 hours of tracked immersion, can understand the majority of native content without subtitles, listening feels intuitive (you understand without consciously translating), AND your Anki deck holds ~2500+ reviewed words.</p>
+            </section>
+
+            <!-- Phase 3: Advanced / Polishing & Output -->
+            <section id="phase-advanced" class="journey-phase">
+                <img src="images/pathway_c1art.png" alt="C2 Citadel of Mastery - The Final Ascent" class="phase-banner">
+                <h2 class="phase-title">C2 Citadel of Mastery</h2>
+                <span class="phase-level"><i class="fas fa-scroll"></i>CEFR Scroll: C1 - C2</span>
+
+                <h3 class="phase-section-heading"><i class="fas fa-bullseye heading-icon"></i>Quest Objectives</h3>
+                <ul class="phase-goals-list">
+                    <li><i class="fas fa-gem goal-icon"></i> Achieve fluency, depth, and nuance in thine expression.</li>
+                    <li><i class="fas fa-microphone-alt goal-icon"></i> Develop natural-sounding speech and writing, like a native loremaster.</li>
+                    <li><i class="fas fa-users goal-icon"></i> Engage confidently in complex conversations with sages and commoners alike.</li>
+                    <li><i class="fas fa-globe-americas goal-icon"></i> Understand cultural subtleties and idiomatic language, the hidden treasures of speech.</li>
+                </ul>
+
+                <h3 class="phase-section-heading"><i class="fas fa-brain heading-icon"></i>The Sacred Mindset</h3>
+                <p class="mindset-text">Focus on the subtle details, refining thy output, and targeted practice. Engage actively with native speakers for correction and improvement, for even masters seek counsel.</p>
+
+                <h3 class="phase-section-heading"><i class="fas fa-shield-alt heading-icon"></i>Master's Arsenal (Key Methods & Tools)</h3>
+                 <div class="toolkit">
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-feather-alt category-icon"></i>The Art of Eloquence (Active Output)</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-pen-fancy tool-icon"></i><strong>Writing First (The Daily Chronicle):</strong></div>
+                                <ul><li>Commence a <strong>daily diary</strong> in the target language. Recount thy day, opinions, dreams. Identify thoughts thou canst not yet express. This ritual is crucial <em>before</em> speaking.</li></ul>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-video tool-icon"></i><strong>Speaking Preparation (The Video Oracle):</strong></div>
+                                <ul><li><strong>Video Journaling.</strong> Record thyself speaking for ~15 mins daily (use prompts if needed). Watch back to notice hesitation, pronunciation flaws, and gaps in thy knowledge.</li></ul>
+                            </div>
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-link tool-icon"></i><strong>Bridging Gaps (Anki for Output):</strong></div>
+                                <ul><li>Sentences you struggled to write or say? Translate them (<strong><a href="https://www.deepl.com/" target="_blank">DeepL</a></strong>/<strong><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></strong>), understand their structure, and add them as sentence/cloze cards to a new <strong><a href="https://apps.ankiweb.net/" target="_blank">Anki</a></strong> deck ('Output Armory').</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-handshake category-icon"></i>Council of Natives (Intensive Interaction)</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-hourglass-start tool-icon"></i><strong>Timing is Key:</strong></div>
+                                <ul><li>Wait until after ~30 days of consistent writing/video journaling.</li></ul>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-users-cog tool-icon"></i><strong>Seeking Allies:</strong></div>
+                                <ul><li>Find partners/tutors on <strong><a href="https://www.tandem.net/" target="_blank">Tandem</a></strong>, <strong><a href="https://www.italki.com/" target="_blank">iTalki</a></strong> (use code ALJOHN for favor!), or <strong><a href="#" target="_blank">Discord</a></strong> (Language Sloth server recommended - *user to add specific link*).</li><li>Engage regularly. Beseech corrections on pronunciation and grammar. Fear not!</li></ul>
+                            </div>
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-robot tool-icon"></i><strong>AI Sparring Partners:</strong></div>
+                                <ul><li>Use <strong><a href="https://gliglish.com/" target="_blank">Gliglish</a></strong> or <strong><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></strong> (voice feature) for low-pressure conversation practice and feedback at any hour.</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolkit-category">
+                        <div class="toolkit-category-header">
+                            <h4><i class="fas fa-signature category-icon"></i>Refining the Native Tongue</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="toolkit-category-content">
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-assistive-listening-systems tool-icon"></i><strong>Shadowing the Masters:</strong></div>
+                                <ul><li>Choose ONE native speaker as thine "accent model" and mimic their pronunciation, rhythm, and intonation with fervent dedication.</li></ul>
+                            </div>
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-scroll-old tool-icon"></i><strong>Advanced Scrolls & Spectacles:</strong></div>
+                                <ul><li>Consume complex material: debates, documentaries, lectures, dialect-heavy shows.</li></ul>
+                            </div>
+                             <div class="tool-item">
+                                <div class="tool-header"><i class="fas fa-search-plus tool-icon"></i><strong>Targeted Arcana:</strong></div>
+                                <ul><li>Focus <strong><a href="https://apps.ankiweb.net/" target="_blank">Anki</a></strong>/study only on specific grammar points or vocabulary that still vex thee. Use <strong><a href="https://context.reverso.net/" target="_blank">Reverso Context</a></strong> or monolingual dictionaries for deep dives into native usage.</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+                <h3 class="phase-section-heading"><i class="fas fa-crown heading-icon"></i>The Mark of Mastery (Milestone)</h3>
+                <p class="milestone-text">This phase is one of continuous refinement. Milestones are less defined by hours/words and more by communicative prowess: expressing complex thoughts with accuracy, understanding nuances, sounding natural, and navigating cultural contexts with the grace of a seasoned diplomat.</p>
+            </section>
+        </div>
+
+        <section class="pathway-final-scroll content-section">
+            <div class="container text-center">
+                 <img src="images/warning.png" alt="A traveler facing a challenging path" class="final-warning-image">
+                <h2>A Final Word from the Scrollkeeper</h2>
+                <p class="quote">"This knowledge, this system... Honestly, it feels like something people would pay for... because of how drastically it can change your approach and results <strong>if you commit</strong>."</p>
+                <p>This pathway demands extreme dedication (10-12+ hours/day for rapid results), consistency (daily Anki, immersion, practice), and a willingness to sacrifice other comforts of life. It is not a path for the faint of heart. Adapt the intensity to thy own goals and lifestyle, but understand that swiftness requires a significant investment of thy precious time.</p>
+                <a href="blog/sacrifice-is-everything.html" class="btn btn-outline">Read More on Mindset & Sacrifice</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+         <div class="container">
+             <div class="footer-content">
+                  <div class="footer-logo">
+                      <img src="images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                      <span>Aljohn Polyglot</span>
+                  </div>
+                 <nav class="footer-links">
+                     <a href="index.html#about">About</a>
+                     <a href="#top">Pathway</a> 
+                     <a href="blog.html">Blog</a>
+                     <a href="resources/apps.html">Resources</a>
+                     <a href="mailto:youremail@example.com">Contact</a> 
+                 </nav>
+                 <div class="social-links">
+                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
+                     <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 </div>
+             </div>
+             <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved. Language Learning, Intensified.</p>
+         </div>
+    </footer>
+
+<script>
+    // --- Pathway Page Specific JavaScript ---
+    const toolkitCategories = document.querySelectorAll('.toolkit-category-header');
+    toolkitCategories.forEach(header => {
+        header.addEventListener('click', () => {
+            const category = header.parentElement;
+            category.classList.toggle('active');
+        });
+    });
+
+    document.querySelectorAll('a[href="#top"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    }
+
+    const header = document.querySelector('header');
+    if (header) { // Ensure header exists before adding scroll listener
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, { passive: true }); // Added passive for performance
+    }
+</script>
+</body>
+</html>

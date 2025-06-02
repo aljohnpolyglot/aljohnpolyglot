@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn's Language Crafting Guild - Pathway Mockup V2</title>
+     <link rel="stylesheet" href="pathway/css/pathway_main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+<body>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="avatar-placeholder">[AP]</div>
+            <h1>Welcome, Lingua-Knight!</h1>
+            <h2>Your Epic Quest for Fluency Begins!</h2>
+            <div class="intro-text-box rpg-panel">
+                <p>Aljohn, Guildmaster of Tongues, reveals the crafting recipes and hidden biomes to forge your legendary language skills! This is the <strong>Path of the Lingua-Knight</strong> – a hardcore crafting and leveling guide. Prepare to mine for knowledge, enchant your vocabulary, and conquer new linguistic dimensions!</p>
+            </div>
+            <a href="#roadmap-full" class="pixel-button gold">View Full Quest Map!</a>
+            <div class="video-links-section">
+                {/* Video links as before */}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="character-progression-section">
+            <h2>Forge Your Legend: From Novice to Grandmaster</h2>
+            <div class="character-display-container">
+                {/* JS will manage visibility of these based on scroll/phase */}
+                <img src="../images/pathway_sidebyside_novice.png" alt="Novice Character" id="char-novice" class="character-sprite active">
+                <img src="../images/pathway_sidebyside_adept.png" alt="Adept Character" id="char-adept" class="character-sprite">
+                <img src="../images/pathway_sidebyside_master.png" alt="Master Character" id="char-master" class="character-sprite">
+            </div>
+            <div class="rpg-panel">
+                <p>Your journey: From <img src="[LOCAL PATH TO LEATHER ARMOR ICON]" alt="Leather Armor" class="item-icon">Leather to <img src="[LOCAL PATH TO IRON ARMOR ICON]" alt="Iron Armor" class="item-icon">Iron to <img src="[LOCAL PATH TO DIAMOND ARMOR ICON]" alt="Diamond Armor" class="item-icon">Diamond!</p>
+            </div>
+        </section>
+
+        <!-- Phase 1: The Novice Pastures (A1-A2) -->
+        <section id="phase-novice" class="phase-section biome-novice">
+            <img src="../images/pathway_a1art.png" alt="Beginner's Grove Art" class="phase-banner">
+            <h2 class="phase-title">Biome Unlocked: The Novice Pastures</h2>
+            <p class="phase-subtitle">LEVEL: 1-20 (Novice) | QUEST: Mine the Basics!</p>
+            <div class="progress-bar-container"><div id="progress-novice" class="progress-bar">A1-A2 Foundation</div></div>
+
+            <div class="rpg-panel quest-log">
+                <h3><img src="[LOCAL PATH TO WRITABLE BOOK ICON]" alt="Quest Icon" class="item-icon">Quest Objectives:</h3>
+                <ul class="quest-objectives">
+                    <li><img src="[LOCAL PATH TO COBBLESTONE ICON]" alt="Cobblestone Icon" class="item-icon">Gather Core Vocabulary Blocks (~1000 words). <span class="quest-status"></span></li>
+                    <li><img src="[LOCAL PATH TO ENCHANTMENT TABLE ICON]" alt="Crafting Table Icon" class="item-icon">Understand Basic Sentence Crafting Recipes. <span class="quest-status"></span></li>
+                    <li><img src="[LOCAL PATH TO CACTUS ICON]" alt="Textbook Icon" class="item-icon">Wield Simple Texts & Audio. <span class="quest-status"></span></li>
+                </ul>
+            </div>
+
+            <div class="guildmaster-advice rpg-panel">
+                <strong>Guildmaster's Advice:</strong> "Hoard INPUT XP! Don't craft output yet. Mine language ore."
+            </div>
+
+            <div class="rpg-panel toolkit-panel">
+                <h3><img src="[LOCAL PATH TO IRON SWORD ICON]" alt="Gear Icon" class="item-icon">Starter Gear (Hover/Click for Details):</h3>
+                <div class="toolkit-items">
+                    <div class="toolkit-item" data-tooltip-lore="Forge unbreakable memory! SRS is key.">
+                        <div class="tool-header">
+                            <img src="[LOCAL PATH TO ANVIL ICON]" alt="Anvil" class="item-icon gear-icon">
+                            <strong>Anvil of Memory (Anki)</strong>
+                            <img src="[LOCAL PATH TO ANKI LOGO]" alt="Anki Logo" class="app-logo-icon">
+                            <span class="tool-rating essential">ESSENTIAL!</span>
+                        </div>
+                        <div class="tool-description rpg-panel">
+                            <p>Forge unbreakable memory engrams! Every new ore (word/phrase) you mine goes straight to the Anvil. Use Spaced Repetition enchantments daily. This is your MOST IMPORTANT tool for early game. Add ~50 new cards daily if hardcore!</p>
+                        </div>
+                    </div>
+                    {/* Add more tools like this, with data-tooltip-lore and a hidden .tool-description */}
+                </div>
+            </div>
+            <div class="milestone-box">...Leather Armor Crafted!...</div>
+            <p style="text-align:center; margin-top: 20px;"><a href="#phase-intermediate" class="pixel-button green">Journey to the City of Immersion!</a></p>
+        </section>
+
+        {/* Phase 2: The City of Immersion (B1-B2) */}
+        <section id="phase-intermediate" class="phase-section biome-adept">
+            <img src="../images/pathway_b1art.png" alt="City of Immersion Art" class="phase-banner">
+            <h2 class="phase-title">Biome Unlocked: The City of Immersion</h2>
+            <p class="phase-subtitle">LEVEL: 21-60 (Adept) | QUEST: 1000+ Hours Total Immersion!</p>
+            <div class="progress-bar-container"><div id="progress-adept" class="progress-bar">B1-B2 Intuition</div></div>
+            {/* ... Content for B1-B2, similar structure for objectives, advice, toolkit ... */}
+            {/* Toolkit items should also have data-tooltip-lore and .tool-description */}
+            <div class="milestone-box">...Iron Armor Forged!...</div>
+            <p style="text-align:center; margin-top: 20px;"><a href="#phase-advanced" class="pixel-button gold">Ascend to the C2 Citadel!</a></p>
+        </section>
+
+        {/* Phase 3: The C2 Citadel (C1-C2) */}
+        <section id="phase-advanced" class="phase-section biome-master">
+             <img src="../images/pathway_c1art.png" alt="C2 Citadel Art" class="phase-banner">
+            <h2 class="phase-title">Biome Unlocked: The C2 Citadel of Mastery</h2>
+            <p class="phase-subtitle">LEVEL: 61-100+ (Grandmaster) | QUEST: Forge Linguistic Masterpiece!</p>
+            <div class="progress-bar-container"><div id="progress-master" class="progress-bar">C1-C2 Mastery</div></div>
+            {/* ... Content for C1-C2 ... */}
+            <div class="milestone-box">...Enchanted Diamond Armor Gleams!...</div>
+        </section>
+
+        <section class="final-warning-section rpg-panel">
+            <img src="../images/warning.png" alt="The perilous path to mastery">
+            {/* ... final warning content ... */}
+        </section>
+        
+        <section id="roadmap-full" style="padding-top: 50px; text-align:center;">
+            <h2>The Full Quest Map</h2>
+            <img src="../images/pathway_coverart.png" alt="Full Roadmap to Fluency">
+        </section>
+    </div>
+
+    {/* Tooltip Element (Hidden by default) */}
+    <div id="item-tooltip" class="rpg-panel" style="display:none; position:absolute; z-index:10;">Tooltip</div>
+    <script>
+       
+    </script>
+    <script src="pathway/js/pathway_main.js" defer></script>
+</body>
+</html>

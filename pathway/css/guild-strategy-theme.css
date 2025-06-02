@@ -1,0 +1,153 @@
+/* --- css/guild-strategy-theme.css --- */
+:root {
+    --guild-bg-main: #211D1A; /* Slightly darker, richer brown for overall page */
+    --guild-panel-bg: #302821; /* Dark wood/stone for panels - from your mock map panel */
+    --guild-panel-border: #4a3b2a;
+    --guild-content-bg: #f4f0e8; /* Lighter parchment for quest details - from your mock quest panel */
+    --guild-content-border: #d4c09a;
+    --guild-text-on-dark: #e8e0d0; /* Main text on dark panels */
+    --guild-text-on-light: #40362C; /* Main text on parchment */
+    --guild-header-on-dark: #f5e5c5;
+    --guild-header-on-light: #523F2E; /* Darker, richer for titles on parchment */
+    --guild-gold-accent: #D4AF37;  /* A more classic gold */
+    --guild-gold-deep: #b08d2d;
+    --guild-red-accent: #a04040; /* Slightly desaturated red */
+    --guild-green-accent: #5a793d;
+    --guild-blue-accent: #4c78a0; /* For tab highlights or info icons */
+    --guild-highlight-glow: rgba(212, 175, 55, 0.5);
+
+    --guild-black-rgb: 0,0,0;
+    --guild-panel-bg-rgb: 48, 40, 33;
+    --guild-gold-accent-rgb: 212, 175, 55;
+    --guild-content-border-rgb: 212, 192, 154; /* Parchment border for scrollbars etc. */
+    --guild-red-accent-rgb: 160,64,64;
+
+
+    --font-guild-grand-title: 'MedievalSharp', 'Times New Roman', serif;
+    --font-guild-panel-title: 'Metamorphous', 'Georgia', serif;
+    --font-guild-content-heading: 'Metamorphous', 'Georgia', serif;
+    --font-guild-button-text: 'Open Sans', sans-serif;
+    --font-guild-body: 'Open Sans', sans-serif;
+    --font-tab-button: 'Open Sans', sans-serif; /* Font for tab buttons */
+
+    --guild-content-bg-rgb: 251, 245, 230; /* RGB for --guild-content-bg if using it with alpha */
+--guild-modal-overlay: rgba(30, 25, 20, 0.75);
+}
+
+body.guild-strategy-page-mockup {
+    font-family: var(--font-guild-body);
+    background-color: var(--guild-bg-main);
+    color: var(--guild-text-on-dark);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden; /* No scroll on body */
+    display: flex;
+    flex-direction: column; /* For header, main, footer stacking */
+}
+
+#page-dynamic-background-MOCKUP {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    z-index: -1;
+    filter: brightness(0.6) saturate(0.8); /* Subdue background image */
+}
+#page-dynamic-background-MOCKUP.visible {
+    opacity: 1;
+}
+
+header#main-header-placeholder {
+    position: fixed; /* Or sticky, depending on navbar.css */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(var(--guild-panel-bg-rgb), 0.9); /* From mock-up top bar */
+    box-shadow: 0 1px 5px rgba(var(--guild-black-rgb), 0.3);
+    height: 60px; /* Example height */
+}
+
+#guild-strategy-table-main-MOCKUP {
+    flex-grow: 1; /* Takes up remaining space after header/footer */
+    display: flex; /* To allow grid to take full height */
+    padding-top: 60px; /* Space for fixed header */
+    padding-bottom: 20px; /* Space before footer */
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1800px; /* Wider for this layout */
+    margin: 0 auto;
+    padding: 0 15px; /* Minimal side padding */
+}
+
+/* General Button Style for this page */
+.guild-strategy-page-mockup .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--guild-gold-accent);
+    color: var(--guild-bg-dark) !important;
+    border: 1px solid var(--guild-gold-deep);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-guild-button-text);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 3px rgba(var(--guild-black-rgb), 0.2);
+}
+.guild-strategy-page-mockup .btn:hover {
+    background-color: var(--guild-gold-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(var(--guild-black-rgb), 0.25);
+}
+.guild-strategy-page-mockup .btn-guild-caution {
+    background-color: var(--guild-red-accent);
+    color: var(--guild-text-on-dark) !important;
+    border-color: var(--guild-red-accent);
+}
+.guild-strategy-page-mockup .btn-guild-caution:hover {
+    background-color: #b33a3a;
+}
+
+.guild-strategy-page-mockup i.fas {
+    color: var(--guild-gold-accent); /* General icon color on dark backgrounds */
+}
+
+.inline-requirement-img {
+    height: 0.8em; /* Adjust size */
+    vertical-align: baseline;
+    margin-left: 4px;
+    opacity: 0.8;
+}
+/* --- ADD RESPONSIVE OVERRIDE FOR BODY SCROLL --- */
+@media (max-width: 1024px) { /* Tablet and Mobile breakpoint */
+    body.guild-strategy-page-mockup {
+        overflow-y: auto; /* Allow vertical scroll on smaller screens */
+        overflow-x: hidden; /* Still prevent horizontal scroll */
+        min-height: 0; /* Allow body to be as tall as its content */
+    }
+
+    #guild-strategy-table-main-MOCKUP {
+        padding-top: calc(var(--global-header-height) + 10px); /* Adjust top padding if header height changes for mobile */
+        padding-bottom: 10px; /* Less bottom padding on mobile */
+        flex-grow: 0; /* Don't force it to fill viewport height if content is short */
+                       /* The content itself (stacked panels) will determine height */
+    }
+    /* Ensure the grid inside #guild-strategy-table-main-MOCKUP can also grow
+       Your layout.css handles this with grid-template-columns: 1fr; height: auto; */
+}
+
+@media (max-width: 768px) { /* Further mobile adjustments if needed */
+    #guild-strategy-table-main-MOCKUP {
+        padding-top: calc(var(--global-header-height) + 5px);
+    }
+}

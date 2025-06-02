@@ -1,0 +1,242 @@
+/* Hero Section Styles */
+#hero-section {
+    position: relative; /* For positioning child elements absolutely */
+    min-height: 75vh; /* Make it substantial */
+    display: flex; /* Use flex for the content wrapper */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: var(--highlight-text);
+    background-image: url('../images/assets/port_banner.png'); /* User's specified banner */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    overflow: hidden; /* Prevent ship/flags from spilling too much */
+    border-bottom: 5px solid var(--gold-trim);
+}
+
+/* Overlay to darken the background image for text readability */
+#hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 20, 30, 0.5); /* Dark teal overlay */
+    z-index: 1;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2; /* Above the overlay */
+    display: flex;
+    width: 100%;
+    max-width: 1400px; /* Max content width */
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-text-panel {
+    flex: 1 1 60%; /* Takes more space */
+    padding: 20px;
+    text-align: left;
+    /* Optional: subtle background for text panel if needed over the image */
+    /* background-color: rgba(10,10,10, 0.2); */
+    /* border-radius: 8px; */
+}
+
+.hero-text-panel .library-title {
+    font-size: clamp(2.8rem, 6vw, 4.5rem); /* Responsive font size */
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+    margin-bottom: 0.2em;
+}
+
+.hero-text-panel .headline {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    color: var(--highlight-text);
+    opacity: 0.9;
+    margin-bottom: 0.8em;
+    font-style: italic;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+
+.hero-text-panel .sub-headline {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    margin-bottom: 1.8em;
+    max-width: 650px; /* Constrain width for readability */
+}
+
+.hero-ship-panel {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For absolute positioning of flags container */
+}
+
+#library-ship-icon {
+    max-width: 90%;
+    max-height: 450px; /* Control ship size */
+    height: auto;
+    filter: drop-shadow(5px 10px 15px rgba(0,0,0,0.4));
+    /* Optional animation for subtle bobbing */
+    animation: shipBob 8s ease-in-out infinite;
+}
+
+@keyframes shipBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#floating-flags-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So flags don't interfere with clicks */
+}
+
+.floating-flag {
+    position: absolute; /* Positioned by JS */
+    width: clamp(25px, 4vw, 40px); /* Responsive flag size */
+    height: auto;
+    opacity: 0.9;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    animation: gentleFlutter 5s ease-in-out infinite alternate;
+}
+
+@keyframes gentleFlutter {
+    0% { transform: translate(0px, 0px) rotate(-3deg) skewX(-2deg); }
+    25% { transform: translate(3px, -2px) rotate(1deg) skewX(0deg); }
+    50% { transform: translate(1px, 2px) rotate(-1deg) skewX(2deg); }
+    75% { transform: translate(-2px, -1px) rotate(2deg) skewX(-1deg); }
+    100% { transform: translate(0px, 0px) rotate(-3deg) skewX(-2deg); }
+}
+
+
+/* Responsive adjustments for hero */
+@media (max-width: 900px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text-panel {
+        flex-basis: auto; /* Reset flex basis */
+        order: 2; /* Text below ship on small screens */
+        margin-top: 20px;
+        max-width: 100%;
+    }
+    .hero-text-panel .sub-headline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-ship-panel {
+        flex-basis: auto;
+        order: 1;
+        width: 70%; /* Ship takes more relative width */
+    }
+    #library-ship-icon {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    #hero-section {
+        min-height: 85vh;
+    }
+    .hero-text-panel .library-title { font-size: 2.2rem; }
+    .hero-text-panel .headline { font-size: 1.3rem; }
+    .hero-text-panel .sub-headline { font-size: 0.9rem; }
+    .main-cta { font-size: 1.1rem; padding: 10px 20px; }
+    #library-ship-icon { max-height: 200px; }
+}
+/* css/library-layout.css or similar */
+
+.dynamic-header-container {
+    background-color: var(--background-color-light-translucent); /* Or a specific color */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius-medium);
+    border: 2px solid var(--secondary-accent-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex; /* For image and text side-by-side */
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(-20px); /* Start slightly up for animation */
+}
+
+.dynamic-header-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#story-header-character-image-container {
+    flex-shrink: 0;
+}
+
+#story-header-character-image {
+    width: 100px; /* Adjust as needed */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-accent-color);
+}
+
+#story-header-text-content {
+    flex-grow: 1;
+}
+
+#story-header-title {
+    font-family: var(--title-font);
+    color: var(--primary-accent-color);
+    font-size: 1.8em; /* Adjust */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#story-header-narrative {
+    font-size: 1em;
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+/* Pagination Styles */
+#pagination-controls {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+#pagination-controls button {
+    background-color: var(--primary-accent-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: var(--body-font);
+    transition: background-color 0.2s ease;
+}
+
+#pagination-controls button:hover:not(:disabled) {
+    background-color: var(--primary-color);
+}
+
+#pagination-controls button:disabled {
+    background-color: var(--secondary-color-light);
+    color: var(--text-color-light);
+    cursor: not-allowed;
+}
+
+#page-info {
+    font-weight: bold;
+    color: var(--text-color-dark);
+}

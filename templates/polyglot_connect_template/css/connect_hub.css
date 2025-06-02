@@ -1,0 +1,123 @@
+/* Polyglot_Connect/css/connect_hub.css */
+
+body {
+    font-family: 'Roboto', 'Merriweather Sans', sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* Light, modern background */
+    color: #1c1e21; /* Standard dark text color */
+    line-height: 1.6;
+}
+
+#polyglot-connect-app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.connect-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%); /* Vibrant gradient */
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.connect-header h1 {
+    font-family: 'Merriweather Sans', sans-serif; /* Using this for a bit of flair */
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.connect-subtitle {
+    font-size: 1.2em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.connector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    padding: 0; /* Remove padding if cards have their own */
+}
+
+/* Basic Modal Overlay Styling (will be refined in connect_interface.css) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modals are on top */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Styling for general buttons for consistency - can be expanded */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+/* Utility class for icons in buttons */
+button i {
+    margin-right: 8px;
+}
+
+/* Add a subtle global focus style for accessibility */
+*:focus-visible {
+    outline: 2px solid #2575FC;
+    outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .connect-header h1 {
+        font-size: 2.2em;
+    }
+    .connect-subtitle {
+        font-size: 1em;
+    }
+    .connector-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #polyglot-connect-app {
+        padding: 15px;
+    }
+    .connect-header {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    .connect-header h1 {
+        font-size: 1.8em;
+    }
+    .connector-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 15px;
+    }
+}

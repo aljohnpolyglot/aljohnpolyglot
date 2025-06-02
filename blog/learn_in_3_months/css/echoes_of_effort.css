@@ -1,0 +1,266 @@
+/* D:\website\blog\learn_in_3_months\css\echoes_of_effort.css */
+/* Themed Styles for "Echoes of Effort" - Mastery Cards & Modals */
+
+/* Voices of Mastery Section Container */
+.voices-of-mastery {
+    background-color: transparent; /* Inherits dark page background */
+    padding: 70px 0; /* Uses global .content-section padding */
+    position: relative; /* For any pseudo-elements if needed later */
+}
+
+/* The .section-title and .section-subtitle for this section
+   will inherit from the global themed styles in learn_in_3_months_themed.css */
+
+.mastery-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem; /* More space between cards */
+    max-width: 1100px;
+    margin: 2rem auto 0 auto; /* Added top margin */
+    padding: 0 15px;
+}
+
+/* Responsive grid columns (copied from your original, good) */
+@media (min-width: 700px) {
+    .mastery-cards-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+    .mastery-cards-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Individual Mastery Card Theming */
+.mastery-card {
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px; /* More rounded */
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    padding: 2rem 1.5rem; /* Adjusted padding */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: var(--theme-light-mint-text); /* Default text color for card */
+}
+.mastery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 70, 40, 0.35), inset 0 0 18px rgba(0,40,20,0.4);
+    border-color: var(--theme-card-border-hover);
+}
+
+.mastery-icon { /* Profile image of the master */
+    width: 110px; /* Slightly larger */
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.25rem auto; /* Adjusted margin */
+    border: 4px solid var(--theme-biotech-green); /* Biotech green border */
+    box-shadow: 0 0 15px rgba(45, 206, 137, 0.3); /* Subtle glow */
+}
+
+.mastery-card h4 { /* Name of the master */
+    font-size: 1.3rem; /* Adjusted size */
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.6rem;
+    font-family: var(--theme-font-primary);
+}
+
+.mastery-card .mastery-known-for {
+    font-size: 0.9rem; /* Adjusted size */
+    color: var(--theme-soft-mint-text);
+    margin-bottom: 0.85rem;
+    min-height: 2.8em; /* Adjusted min-height */
+    line-height: 1.5;
+}
+
+.mastery-card .mastery-training-snapshot {
+    font-size: 0.95rem; /* Adjusted size */
+    color: var(--theme-light-mint-text);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+.mastery-card .mastery-training-snapshot strong {
+    color: var(--accent-yellow); /* Yellow for specific hour highlights */
+    font-weight: 600;
+}
+
+.mastery-card .btn-small.open-mastery-modal { /* "Read More" button */
+    padding: 0.6rem 1.2rem; /* Adjusted padding */
+    font-size: 0.9rem; /* Adjusted font size */
+    margin-top: auto;
+    /* Inherits .btn-outline styling (green outline, green text) from global theme */
+    /* If you want it to be yellow outline: */
+    /* color: var(--accent-yellow); */
+    /* border-color: var(--accent-yellow); */
+}
+/* .mastery-card .btn-small.open-mastery-modal:hover {
+    background-color: var(--accent-yellow);
+    color: var(--theme-deepest-bg-contrast);
+} */
+
+/* D:\website\blog\learn_in_3_months\css\echoes_of_effort.css */
+
+/* ... (Keep your existing themed styles for .voices-of-mastery and .mastery-card) ... */
+
+/* ==========================================================================
+   THEMED MASTERY MODALS CSS
+   ========================================================================== */
+.mastery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent main page scroll when modal is open */
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.8); /* Darker, more opaque overlay */
+    backdrop-filter: blur(4px); 
+    padding: 30px 15px; /* Padding for modal positioning */
+}
+
+.mastery-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto; /* Allow modal itself to scroll if content overflows */
+}
+
+.mastery-modal-content {
+    background-color: var(--theme-dark-bg-mid); /* Dark green modal background */
+    color: var(--theme-light-mint-text); /* Default text color */
+    margin: auto;
+    padding: 25px 30px 30px 30px; /* T R B L */
+    border-radius: 10px; 
+    width: 90%;
+    max-width: 700px; /* Keep original max-width */
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5), 0 0 0 1px var(--theme-card-border-hover); /* Shadow and border */
+    position: relative;
+    animation: zoomInModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Slightly bouncy zoom */
+    max-height: 90vh; 
+    overflow-y: auto; /* Scroll for content WITHIN the modal */
+}
+
+/* Re-define modal animation if not global, or use a distinct one */
+@keyframes zoomInModal {
+    from {transform: scale(0.85) translateY(15px); opacity: 0;}
+    to {transform: scale(1) translateY(0); opacity: 1;}
+}
+
+.mastery-modal-close {
+    color: var(--theme-muted-mint-text);
+    font-size: 28px; 
+    font-weight: bold;
+    position: absolute;
+    top: 15px; /* Adjusted */
+    right: 20px; /* Adjusted */
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px; 
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10; /* Ensure close button is above other content */
+}
+.mastery-modal-close:hover,
+.mastery-modal-close:focus {
+    color: var(--theme-brighter-mint-text);
+    transform: rotate(90deg) scale(1.1); /* Rotate on hover for a neat effect */
+}
+
+.mastery-modal-content h3 { /* Modal Title */
+    margin-top: 0.5rem; 
+    color: var(--theme-biotech-green); 
+    text-align: center;
+    margin-bottom: 1.8rem; 
+    font-size: 1.7rem; 
+    text-shadow: 0 0 10px rgba(45, 206, 137, 0.4);
+    padding-right: 30px; /* Space for close button if title is long */
+}
+
+.mastery-modal-content .modal-image {
+    display: block;
+    max-width: 250px; /* Slightly larger image */
+    height: auto;
+    margin: 0 auto 1.8rem auto;
+    border-radius: 8px; 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    border: 2px solid var(--theme-card-border);
+}
+
+.mastery-modal-content p {
+    font-size: 0.95rem; /* Base paragraph text */
+    line-height: 1.75;
+    margin-bottom: 1.1rem; /* Adjusted */
+    color: var(--theme-light-mint-text);
+}
+.mastery-modal-content p strong { /* "Accumulated Effort:", "10,000 hours" */
+    color: var(--accent-yellow); /* Yellow for key figures in modal */
+    font-weight: 600;
+}
+
+.mastery-modal-content blockquote {
+    font-style: italic;
+    margin: 1.8rem 0;
+    padding: 1.25rem 1.75rem;
+    background-color: rgba(var(--theme-deepest-bg-contrast-rgb, 2,8,5), 0.5); /* Very dark quote bg */
+    border-left: 5px solid var(--theme-biotech-green); 
+    color: var(--theme-soft-mint-text);
+    border-radius: 6px;
+}
+.mastery-modal-content blockquote strong { /* Strong text inside blockquotes */
+    color: var(--theme-biotech-green); 
+    font-style: normal;
+}
+
+.mastery-modal-content .modal-sources {
+    font-size: 0.8rem; /* Slightly smaller */
+    text-align: right;
+    color: var(--theme-muted-mint-text);
+    margin-top: 2rem;
+    border-top: 1px solid var(--theme-card-border);
+    padding-top: 0.75rem;
+}
+.mastery-modal-content .modal-sources a {
+    color: var(--theme-biotech-green);
+}
+.mastery-modal-content .modal-sources a:hover {
+    color: var(--accent-yellow);
+}
+
+/* Responsive for Modals */
+@media (max-width: 768px) {
+    .mastery-modal {
+        /* No padding-top here, allow modal to be full screen for scrolling */
+        padding: 0; /* Remove any default padding on the overlay */
+    }
+    .mastery-modal.active {
+        align-items: flex-start; /* << Align modal content to the TOP on mobile */
+        padding-top: calc(70px + 20px); /* << YOUR_NAVBAR_HEIGHT + desired_gap */
+                                     /* Example: 70px navbar + 20px gap */
+        overflow-y: auto; /* Ensure the modal overlay itself can scroll if content is huge */
+    }
+
+    .mastery-modal-content {
+        padding: 20px 15px; /* Reduced padding for smaller screens */
+        margin: 0 auto 20px auto; /* Remove top margin, add bottom margin for scroll space */
+        max-height: calc(100% - 40px); /* Max height within the padded overlay, leave some space at bottom */
+                                       /* 100% refers to height of .mastery-modal.active after its padding-top */
+        width: 95%; /* Slightly wider on mobile */
+    }
+    .mastery-modal-content h3 {
+        font-size: 1.4rem; /* Adjusted title size */
+        padding-right: 30px; 
+        margin-top: 0; /* No extra top margin for title inside */
+        margin-bottom: 1rem; /* Adjust */
+    }
+    .mastery-modal-content .modal-image {
+        max-width: 90%; /* Image responsive */
+        margin-bottom: 1rem;
+    }
+    .mastery-modal-content p {
+        font-size: 0.88rem; /* Adjusted paragraph size */
+        margin-bottom: 0.8rem;
+    }
+}
