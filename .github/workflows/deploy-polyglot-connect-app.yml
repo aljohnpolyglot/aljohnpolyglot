@@ -1,31 +1,31 @@
 # .github/workflows/deploy-polyglot-connect-app.yml
-name: Deploy Polyglot Connect App to GitHub Pages
+name: Deploy Full Site with Polyglot Connect App to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Or whatever your main development branch is named
-    paths:
-      # Trigger only if changes are in the polyglot_connect app
-      # or this workflow file itself.
-      - 'polyglot_connect/**'
-      - '.github/workflows/deploy-polyglot-connect-app.yml'
-  workflow_dispatch: # Allows manual triggering from the Actions tab
+      - main
+    # Consider removing path filters for now if this deploys the whole site,
+    # or make them very broad if you only want to trigger on relevant changes.
+    # paths:
+    #   - '**' # Trigger on any change
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required by peaceiris/actions-gh-pages to push to gh-pages
+      contents: write
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4 # Checks out your 'main' branch code
+        uses: actions/checkout@v4 # Checks out your 'main' branch code to the workspace root
 
       - name: Create API Keys file for Polyglot Connect 🔑
         run: |
-          echo "Creating directory: ./polyglot_connect/js/config"
-          mkdir -p ./polyglot_connect/js/config # Create config dir in the checked-out code
+          echo "Creating directory for API keys: ./polyglot_connect/js/config"
+          # This assumes 'polyglot_connect' folder is at the root of your checkout
+          mkdir -p ./polyglot_connect/js/config 
 
           API_KEYS_FILE_PATH="./polyglot_connect/js/config/api_keys.js"
           echo "Creating $API_KEYS_FILE_PATH with secrets..."
@@ -39,36 +39,24 @@ jobs:
           echo "window.TOGETHER_API_KEY = '${{ secrets.TOGETHER_API_KEY }}';" >> "$API_KEYS_FILE_PATH"
           
           echo "$API_KEYS_FILE_PATH created successfully."
-        env: # This env block is actually not strictly needed for the echo commands above
+        env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_ALT: ${{ secrets.GEMINI_API_KEY_ALT }}
           GEMINI_API_KEY_ALT_2: ${{ secrets.GEMINI_API_KEY_ALT_2 }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
 
-      - name: Verify API Keys File Content (Debugging) 🔍
-        run: |
-          API_KEYS_FILE_PATH="./polyglot_connect/js/config/api_keys.js"
-          if [ -f "$API_KEYS_FILE_PATH" ]; then
-            echo "✅ $API_KEYS_FILE_PATH exists in workspace."
-            echo "--- First 5 lines of $API_KEYS_FILE_PATH ---"
-            head -n 5 "$API_KEYS_FILE_PATH"
-            echo "--- End of file sample ---"
-          else
-            echo "❌ $API_KEYS_FILE_PATH NOT FOUND in workspace."
-            echo "Listing contents of ./polyglot_connect/js/ (if it exists):"
-            ls -A ./polyglot_connect/js/ || echo "./polyglot_connect/js/ directory not found."
-            echo "Listing contents of ./polyglot_connect/js/config/ (if it exists):"
-            ls -A ./polyglot_connect/js/config/ || echo "./polyglot_connect/js/config/ directory not found."
-          fi
+      # No separate verify step needed here as the publish_dir will be the whole repo content
 
-      - name: Deploy to gh-pages branch 🚀
+      - name: Deploy to root of gh-pages branch 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Uses the default token
-          publish_dir: ./polyglot_connect  # The entire polyglot_connect folder from workspace
-          destination_dir: polyglot_connect # Puts it into 'polyglot_connect' on gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # publish_dir is now the root of your checked-out main branch,
+          # which includes the polyglot_connect folder with the generated api_keys.js
+          publish_dir: .  # <--- IMPORTANT CHANGE: Deploy entire workspace root
+          # destination_dir is not needed if publishing to the root of gh-pages
           keep_files: false 
-          force_orphan: true # CORRECTLY INDENTED
-          # user_name: 'github-actions[bot]' # Optional: custom committer name
-          # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional: custom committer email
+          force_orphan: true 
+          # user_name: 'github-actions[bot]' # Optional
+          # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional
