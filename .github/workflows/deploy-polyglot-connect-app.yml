@@ -59,7 +59,7 @@ jobs:
           publish_dir: ./polyglot_connect  # The entire polyglot_connect folder from workspace
           destination_dir: polyglot_connect # Puts it into 'polyglot_connect' on gh-pages
           keep_files: false 
-          force: true
+        force_orphan: true # <--- USE THIS INSTEAD OF 'force: true'
           # Clean deploy: remove old files from destination_dir first
           # user_name: 'github-actions[bot]' # Optional: custom committer name
           # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional: custom committer email
