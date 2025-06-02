@@ -58,6 +58,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} # Uses the default token
           publish_dir: ./polyglot_connect  # The entire polyglot_connect folder from workspace
           destination_dir: polyglot_connect # Puts it into 'polyglot_connect' on gh-pages
-          keep_files: false # Clean deploy: remove old files from destination_dir first
+          keep_files: false 
+          force: true
+          # Clean deploy: remove old files from destination_dir first
           # user_name: 'github-actions[bot]' # Optional: custom committer name
           # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional: custom committer email
