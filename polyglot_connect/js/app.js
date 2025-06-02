@@ -2,12 +2,16 @@
 // Main application entry point and orchestrator.
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('app.js: DOM fully loaded. Initializing Polyglot Connect...');
+    console.log('app.js: DOM fully loaded. Initializing...');
     window.polyglotApp = {};
 
-    // --- Module Loading Checks ---
+    // Critical module checks including API keys
     const criticalModules = [
         { name: 'GEMINI_API_KEY', obj: window.GEMINI_API_KEY, isKey: true },
+        { name: 'GROQ_API_KEY', obj: window.GROQ_API_KEY, isKey: true },
+        { name: 'TOGETHER_API_KEY', obj: window.TOGETHER_API_KEY, isKey: true },
+
+        // Core Services & Utilities
         { name: 'polyglotHelpers', obj: window.polyglotHelpers },
         { name: 'flagLoader', obj: window.flagLoader },
         { name: 'polyglotConnectors', obj: window.polyglotConnectors },
@@ -16,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'polyglotFilterRoles', obj: window.polyglotFilterRoles },
         { name: 'polyglotMinigamesData', obj: window.polyglotMinigamesData },
         { name: 'polyglotSharedContent', obj: window.polyglotSharedContent },
-        { name: 'geminiService', obj: window.geminiService }, // Facade for Gemini
+        { name: 'aiService', obj: window.aiService, keyFn: 'generateTextMessage' },
         { name: 'geminiLiveApiService', obj: window.geminiLiveApiService, keyFn: 'connect' },
 
         // Core Logic Managers
@@ -49,16 +53,32 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     for (const mod of criticalModules) {
-        const isInvalidKey = mod.isKey && (!mod.obj || mod.obj === 'YOUR_ACTUAL_GEMINI_API_KEY_HERE');
-        const isInvalidObject = !mod.isKey && (!mod.obj || (mod.keyFn && typeof mod.obj[mod.keyFn] !== 'function'));
-        if (isInvalidKey || isInvalidObject) {
-            const errorMsg = `APP INIT CRITICAL ERROR: Module or Config '${mod.name}' not loaded or misconfigured. Halting.`;
-            console.error(errorMsg, mod.obj);
-            document.body.innerHTML = `<p style='padding:20px; text-align:center; font-size:1.2em; color:red;'>Application Initialization Error. Check console. Error with: ${mod.name}</p>`;
-            return;
+        if (mod.isKey) {
+            if (!mod.obj || mod.obj.includes('YOUR_') || mod.obj.includes('gsk_YOUR_')) {
+                const errorMsg = `APP INIT ERROR: API Key '${mod.name}' is missing or invalid.`;
+                console.error(errorMsg);
+                document.body.innerHTML = `<p style='padding:20px; text-align:center;'>
+                    Application Error: Required API Key (${mod.name}) is invalid. 
+                    Check console for details.</p>`;
+                return;
+            }
+        } else {
+            // Non-key module checks remain strict
+            const isInvalidModule = !mod.obj || (mod.keyFn && typeof mod.obj[mod.keyFn] !== 'function');
+            if (isInvalidModule) {
+                const errorMsg = `APP INIT ERROR: Module '${mod.name}' missing/invalid. Halting.`;
+                console.error(errorMsg, mod.obj);
+                document.body.innerHTML = `
+                    <p style='padding:20px; text-align:center; color:red;'>
+                        Application Error: Module ${mod.name} is invalid or missing.
+                        Check console for details.
+                    </p>`;
+                return;
+            }
         }
     }
-    console.log("app.js: All critical module checks passed.");
+
+    console.log(`app.js: Module checks complete.`);
 
     // Assign the orchestrator to the global chatManager name
     if (window.chatOrchestrator) {
@@ -157,12 +177,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log("app.js: Initializing core managers...");
-    if (window.conversationManager?.initialize) window.conversationManager.initialize();
-    if (window.chatManager?.initialize) window.chatManager.initialize();
-    if (window.sessionManager?.initialize) window.sessionManager.initialize();
-    if (window.groupManager?.initialize) window.groupManager.initialize();
 
-    console.log("app.js: Core managers initialization attempt complete.");
+    // Initialize core managers in dependency order
+    if (window.conversationManager?.initialize) {
+        console.log("app.js: Initializing conversationManager...");
+        window.conversationManager.initialize();
+    }
+
+    if (window.chatManager?.initialize) {
+        console.log("app.js: Initializing chatManager (chatOrchestrator)...");
+        window.chatManager.initialize();
+    }
+
+    if (window.sessionManager?.initialize) {
+        console.log("app.js: Initializing sessionManager...");
+        window.sessionManager.initialize();
+    }
+
+    if (window.groupManager?.initialize) {
+        console.log("app.js: Initializing groupManager...");
+        window.groupManager.initialize();
+    }
+
+    console.log("app.js: Core managers initialization complete.");
 
     console.log("app.js: Initializing core UI...");
     let uiCoreInitialized = false;

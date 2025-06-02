@@ -126,16 +126,50 @@ window.chatUiManager = (() => {
 
         // --- Group Chat Listeners ---
         if (domElements.sendGroupMessageBtn && domElements.groupChatInput) {
-            domElements.sendGroupMessageBtn.addEventListener('click', () => groupManager?.handleUserMessageInGroup());
-            domElements.groupChatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); groupManager?.handleUserMessageInGroup(); }
-                else if (groupManager?.userIsTyping) groupManager.userIsTyping();
+            // Listener for the send button
+            domElements.sendGroupMessageBtn.addEventListener('click', () => {
+                if (groupManager?.handleUserMessageInGroup) {
+                    groupManager.handleUserMessageInGroup();
+                } else {
+                    console.warn("ChatUIManager: groupManager.handleUserMessageInGroup is not available.");
+                }
             });
-        } else { console.warn("ChatUIManager: sendGroupMessageBtn or groupChatInput not found."); }
 
+            // Listener for the group chat input
+            domElements.groupChatInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault(); // Prevent newline in input
+                    if (groupManager?.handleUserMessageInGroup) {
+                        groupManager.handleUserMessageInGroup();
+                    } else {
+                        console.warn("ChatUIManager: groupManager.handleUserMessageInGroup is not available.");
+                    }
+                }
+            });
+
+            domElements.groupChatInput.addEventListener('input', () => {
+                if (groupManager?.userIsTyping) {
+                    groupManager.userIsTyping();
+                } else {
+                    console.warn("ChatUIManager: groupManager.userIsTyping is not available.");
+                }
+            });
+        } else {
+            console.warn("ChatUIManager: sendGroupMessageBtn or groupChatInput not found.");
+        }
+
+        // Listener for the leave group button
         if (domElements.leaveGroupBtn) {
-            domElements.leaveGroupBtn.addEventListener('click', () => groupManager?.leaveCurrentGroup());
-        } else { console.warn("ChatUIManager: leaveGroupBtn not found."); }
+            domElements.leaveGroupBtn.addEventListener('click', () => {
+                if (groupManager?.leaveCurrentGroup) {
+                    groupManager.leaveCurrentGroup();
+                } else {
+                    console.warn("ChatUIManager: groupManager.leaveCurrentGroup is not available.");
+                }
+            });
+        } else {
+            console.warn("ChatUIManager: leaveGroupBtn not found.");
+        }
 
         // --- Header Button Listeners (Call & Info for Embedded and Modal Chats) ---
         const setupHeaderAction = (button, datasetContainer, actionType) => {
@@ -199,28 +233,42 @@ window.chatUiManager = (() => {
     function showGroupChatView(groupName, members) {
         const { domElements, uiUpdater } = getDeps();
         console.log("chatUiManager: showGroupChatView for group:", groupName);
+
         if (!domElements?.groupListContainer || !domElements.groupChatInterfaceDiv || !uiUpdater) {
-            console.error("chatUiManager: showGroupChatView - Missing critical DOM elements.");
+            console.error("chatUiManager: showGroupChatView - Missing critical DOM elements or uiUpdater.");
             return;
         }
+
+        if (domElements.groupsViewHeader) {
+            // Hide the general groups header
+            domElements.groupsViewHeader.style.display = 'none';
+        }
+
         domElements.groupListContainer.style.display = 'none';
-        domElements.groupChatInterfaceDiv.style.display = 'flex';
-        uiUpdater.updateGroupChatHeader(groupName, members);
-        uiUpdater.clearGroupChatLog(); // Done by uiUpdater
-        uiUpdater.clearGroupChatInput(); // Done by uiUpdater
-        if (domElements.groupChatInput) domElements.groupChatInput.focus();
+        domElements.groupChatInterfaceDiv.style.display = 'flex'; // Adjust based on layout (e.g., 'block' or 'grid')
+        uiUpdater.updateGroupChatHeader(groupName, members); // Updates the specific group chat header
+
+        if (domElements.groupChatInput) {
+            domElements.groupChatInput.focus();
+        }
     }
 
     function hideGroupChatView() {
-        const { domElements } = getDeps(); // Removed groupManager, as it's called by viewManager or groupManager itself
+        const { domElements } = getDeps();
         console.log("chatUiManager: hideGroupChatView called.");
+
         if (!domElements?.groupListContainer || !domElements.groupChatInterfaceDiv) {
             console.warn("chatUiManager: hideGroupChatView - Missing relevant DOM elements.");
             return;
         }
+
         domElements.groupChatInterfaceDiv.style.display = 'none';
         domElements.groupListContainer.style.display = 'block';
-        // Note: groupManager.loadAvailableGroups() is called by viewManager when switching to groups tab.
+
+        if (domElements.groupsViewHeader) {
+            // Show the general groups header again
+            domElements.groupsViewHeader.style.display = ''; // Reset to default display (e.g., 'block' or 'flex')
+        }
     }
 
     if (document.readyState === 'loading') {

@@ -331,45 +331,65 @@ window.conversationManager = (() => {
 
     function ensureConversationRecord(connectorId, connectorData = null) {
         let isNew = false;
+        let conversationModified = false;
+
         if (!activeConversations[connectorId]) {
             const connector = connectorData || (window.polyglotConnectors || []).find(c => c.id === connectorId);
             if (!connector) {
-                console.error("ConversationManager: Connector not found for ID:", connectorId, "Cannot create conversation record.");
+                console.error("ConversationManager: Connector not found for ID:", connectorId);
                 return { conversation: null, isNew: false };
             }
             activeConversations[connectorId] = {
                 id: connectorId,
                 connector: { ...connector },
                 messages: [],
-                lastActivity: Date.now(),
+                lastActivity: Date.now(), // Only set for new conversations
                 geminiHistory: []
             };
             initializeGeminiHistory(activeConversations[connectorId].geminiHistory, connector);
             isNew = true;
             console.log(`ConversationManager: New conversation record CREATED for ${connectorId}.`);
-            // console.log(`ConversationManager: Convo for ${connectorId} after creation:`, JSON.parse(JSON.stringify(activeConversations[connectorId])));
             saveConversationsToStorage();
         } else {
+            const currentConvo = activeConversations[connectorId];
             const liveConnector = connectorData || (window.polyglotConnectors || []).find(c => c.id === connectorId);
+
             if (liveConnector) {
-                activeConversations[connectorId].connector = { ...liveConnector };
-                if (activeConversations[connectorId].geminiHistory.length < 2 || !activeConversations[connectorId].geminiHistory[0]?.parts[0]?.text?.includes(liveConnector.profileName)) {
-                    console.log(`ConversationManager: Re-initializing Gemini history for existing convo ${connectorId} due to connector data update or malformed history.`);
-                    initializeGeminiHistory(activeConversations[connectorId].geminiHistory, liveConnector);
+                if (JSON.stringify(currentConvo.connector) !== JSON.stringify(liveConnector)) {
+                    currentConvo.connector = { ...liveConnector };
+                    conversationModified = true;
+                    if (currentConvo.geminiHistory.length < 2 || 
+                        !currentConvo.geminiHistory[0]?.parts[0]?.text?.includes(liveConnector.profileName)) {
+                        console.log(`ConversationManager: Re-initializing Gemini history for ${connectorId}`);
+                        initializeGeminiHistory(currentConvo.geminiHistory, liveConnector);
+                    }
                 }
-            } else if (!activeConversations[connectorId].connector && connectorId) {
-                 console.warn(`ConversationManager: Existing conversation ${connectorId} has no connector data. Attempting to find one...`);
-                 const foundConnector = (window.polyglotConnectors || []).find(c => c.id === connectorId);
-                 if(foundConnector){
-                    activeConversations[connectorId].connector = {...foundConnector};
-                    initializeGeminiHistory(activeConversations[connectorId].geminiHistory, foundConnector);
-                 } else {
-                    console.error(`ConversationManager: Still no connector found for existing convo ${connectorId}. History might be problematic.`);
-                 }
+            } else if (!currentConvo.connector && connectorId) {
+                console.warn(`ConversationManager: Conversation ${connectorId} missing connector data`);
+                const foundConnector = (window.polyglotConnectors || []).find(c => c.id === connectorId);
+                if (foundConnector) {
+                    currentConvo.connector = { ...foundConnector };
+                    conversationModified = true;
+                    initializeGeminiHistory(currentConvo.geminiHistory, foundConnector);
+                }
             }
-            activeConversations[connectorId].lastActivity = Date.now();
+
+            if (conversationModified) {
+                saveConversationsToStorage();
+            }
         }
         return { conversation: activeConversations[connectorId], isNew };
+    }
+
+    function markConversationActive(connectorId) {
+        if (activeConversations[connectorId]) {
+            activeConversations[connectorId].lastActivity = Date.now();
+            saveConversationsToStorage();
+            console.log(`ConversationManager: Conversation ${connectorId} marked active`);
+            return true;
+        }
+        console.warn(`ConversationManager: Cannot mark non-existent conversation ${connectorId}`);
+        return false;
     }
 
     function getConversation(connectorId) {
@@ -447,6 +467,7 @@ window.conversationManager = (() => {
     return {
         initialize,
         ensureConversationRecord,
+        markConversationActive, // Added new function
         getConversation,
         addMessageToConversation,
         addModelResponseMessage,

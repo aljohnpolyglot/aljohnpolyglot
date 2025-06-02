@@ -5,9 +5,8 @@ window.geminiTtsService = (() => {
     'use strict';
 
     // Ensure core API utilities are loaded
-    if (!window._geminiInternalApiCaller || !window._geminiApiConstants) {
-        console.error("Gemini TTS Service: Core Gemini API utilities not found.");
-        // Return a non-functional object or throw an error to halt if critical
+    if (!window._geminiInternalApiCaller || !window._aiApiConstants) { // Use _aiApiConstants
+        console.error("Gemini TTS Service: Core Gemini API utilities (_geminiInternalApiCaller or _aiApiConstants) not found.");
         return {
             getTTSAudio: async () => {
                 throw new Error("TTS Service not initialized due to missing core API utilities.");
@@ -16,7 +15,7 @@ window.geminiTtsService = (() => {
     }
 
     const callGeminiAPIInternal = window._geminiInternalApiCaller;
-    const { MODEL_TTS_GENERATE_CONTENT } = window._geminiApiConstants;
+    const { GEMINI_MODELS } = window._aiApiConstants; // Use constants from _aiApiConstants
 
     async function getTTSAudio(textToSpeak, languageCode, geminiVoiceName = null, stylePrompt = null) {
         if (!textToSpeak) {
@@ -32,27 +31,27 @@ window.geminiTtsService = (() => {
             fullContent = `${stylePrompt.trim()} ${textToSpeak}`;
         }
 
-     const restPayload = {
-   contents: [{parts: [{text: fullContent}]}],
-   config: {
-     response_modalities: ["AUDIO"],
-     speech_config: {
-       voice_config: {
-         prebuilt_voice_config: {
-           voice_name: geminiVoiceName || 'Puck'
-         },
-         language_code: languageCode // <<<< ADD THIS LINE (use the languageCode param)
-       }
-       // audio_config: { sample_rate_hertz: 24000 }
-     }
-   }
-};
+        const restPayload = {
+            contents: [{ parts: [{ text: fullContent }] }],
+            config: {
+                response_modalities: ["AUDIO"],
+                speech_config: {
+                    voice_config: {
+                        prebuilt_voice_config: {
+                            voice_name: geminiVoiceName || 'Puck'
+                        },
+                        language_code: languageCode // Use the languageCode param
+                    }
+                }
+            }
+        };
+
         // Log the exact payload being sent to the API
         console.log("GEMINI_TTS_SERVICE: Final payload being sent to API:", JSON.stringify(restPayload, null, 2));
 
         try {
             console.log(`geminiTtsService: Requesting NEW TTS. Voice: '${geminiVoiceName || 'Puck (default)'}', Lang: '${languageCode}', Style: '${stylePrompt || 'none'}'`);
-            return await callGeminiAPIInternal(restPayload, MODEL_TTS_GENERATE_CONTENT, "generateContentAudio");
+            return await callGeminiAPIInternal(restPayload, GEMINI_MODELS.TTS_GENERATE_CONTENT, "generateContentAudio");
         } catch (error) {
             console.error(`geminiTtsService.getTTSAudio Error for lang ${languageCode}, voice ${geminiVoiceName}:`, error.message, error);
             throw error;

@@ -10,13 +10,11 @@ window.listRenderer = (() => {
     });
 
     function createListItemHTML(itemData, itemTypeContext) {
-        // ... (keep existing initial checks and variable declarations) ...
-        const { polyglotHelpers, activityManager, flagLoader } = getDeps(); // Ensure deps are fetched
+        const { polyglotHelpers, activityManager, flagLoader } = getDeps();
         if (!itemData || !polyglotHelpers || !activityManager || !flagLoader) {
             console.warn(`createListItemHTML: Missing itemData or dependencies for context '${itemTypeContext}'. Data:`, itemData);
             return '<div class="list-item-base error-item">Error rendering item (missing deps or data)</div>';
         }
-        // ... other initial checks ...
 
         let name, avatarHtml = '', statusOrActionHtml = '';
         let itemClass = 'list-item-base';
@@ -25,19 +23,20 @@ window.listRenderer = (() => {
 
         try {
             if (itemTypeContext === 'activeChat' && itemData.isGroup) {
-                // ... (no changes to this block based on image path issue) ...
                 name = itemData.name || "Unnamed Group";
                 avatarHtml = `<div class="list-item-avatar group-avatar-icon"><i class="fas fa-users"></i></div>`;
-                const lastMsg = itemData.messages?.[itemData.messages.length - 1];
+                const lastMsg = itemData.messages?.[0]; // We expect messages to be an array with one item
                 let plainPreview = "";
-                if (lastMsg) {
-                    let speakerName = lastMsg.speakerName || "Partner";
-                    if (lastMsg.speakerId === "user_player") speakerName = "You";
-                    let textPreview = lastMsg.text || "[Media message]";
-                    plainPreview = `${speakerName}: ${textPreview}`;
+                if (lastMsg && typeof lastMsg.text === 'string' && typeof lastMsg.speakerName === 'string') {
+                    let speakerNameForDisplay = lastMsg.speakerName || "System"; // Default if speakerName is empty
+                    if (lastMsg.speakerId === "user_player") speakerNameForDisplay = "You";
+
+                    let textPreview = lastMsg.text;
+                    plainPreview = `${speakerNameForDisplay}: ${textPreview}`;
                     plainPreview = plainPreview.length > 25 ? `${plainPreview.substring(0, 22)}...` : plainPreview;
                 } else {
                     plainPreview = "No messages yet in group.";
+                    console.warn("ListRenderer: Group item has no lastMsg or invalid lastMsg structure:", itemData);
                 }
 
                 if (itemData.lastActivity) {

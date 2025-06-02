@@ -127,6 +127,9 @@ window.domElements = {
     recapFocusAreasList: document.getElementById('recap-focus-areas'),
     closeRecapBtn: document.getElementById('close-recap-btn'),
     downloadTranscriptBtn: document.getElementById('recap-download-transcript-btn'),
+
+    // Additional Selectors
+    groupsViewHeader: document.querySelector('#groups-view > .view-header'), // Selects the header of the Groups view
 };
 
 console.log('ui/dom_elements.js loaded and updated for removed elements.');
