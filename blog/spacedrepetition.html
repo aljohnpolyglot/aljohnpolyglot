@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Secret to Remembering Vocabulary: Spaced Repetition - Aljohn Polyglot</title>
+    <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --primary-blue: #005A9C; /* Deeper blue for blog */
+            --primary-green: #2E8B57; /* Forest Green */
+            --accent-orange: #FF8C00; /* Dark Orange */
+            --accent-yellow: #FFD700; /* Gold */
+            --light-bg: #f9f9f9;
+            --light-bg-alt: #f0f4f8;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --font-display: 'Lobster', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--dark-text);
+            line-height: 1.7;
+            background-color: var(--light-bg);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .blog-container {
+            width: 90%;
+            max-width: 850px; /* Optimized for reading */
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        header.blog-header {
+            background-color: var(--light-text);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            position: sticky; /* Sticky for blog reading */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.7rem 0;
+        }
+        nav.blog-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1100px; /* Wider for nav if needed */
+            margin: 0 auto;
+        }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 40px; width: 40px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.3rem; font-weight: 700; color: var(--primary-blue); }
+        
+        .blog-nav-links { list-style: none; display: flex; }
+        .blog-nav-links li { margin-left: 20px; }
+        .blog-nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+        .blog-nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--accent-orange); transition: width 0.3s ease; }
+        .blog-nav-links a:hover, .blog-nav-links a.active-link { color: var(--accent-orange); }
+        .blog-nav-links a:hover::after, .blog-nav-links a.active-link::after { width: 100%; }
+        
+        .menu-toggle { display: none; cursor: pointer; } /* Mobile menu toggle */
+        .hamburger { width: 25px; height: 3px; background-color: var(--dark-text); position: relative; transition: all 0.3s linear; }
+        .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: var(--dark-text); transition: all 0.3s linear; }
+        .hamburger::before { top: -8px; }
+        .hamburger::after { top: 8px; }
+
+        /* --- Main Blog Content --- */
+        .blog-post-article {
+            padding: 40px 0;
+            background-color: var(--light-text);
+            border-radius: 8px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .blog-post-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            padding: 0 1rem;
+        }
+        .blog-post-meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .blog-section {
+            margin-bottom: 2.5rem;
+            padding: 0 1.5rem; /* Padding for content inside article */
+        }
+        .blog-section h2 {
+            font-family: var(--font-primary);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-orange);
+            display: inline-block;
+        }
+        .blog-section h3 {
+            font-family: var(--font-primary);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--primary-blue);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .blog-section p, .blog-section li {
+            margin-bottom: 1rem;
+            font-size: 1rem; /* Readable text size */
+            color: #444;
+        }
+        .blog-section ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            padding-left: 0.5rem;
+        }
+        .blog-section strong {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        .blog-section em { /* Emphasis */
+            font-style: italic;
+            color: var(--primary-green);
+        }
+        .blog-image-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--accent-orange);
+            background-color: var(--light-bg-alt);
+            font-style: italic;
+            color: #555;
+            border-radius: 0 4px 4px 0;
+        }
+        blockquote p {
+            margin-bottom: 0.5rem;
+        }
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background-color: #fffbea; /* Light yellow */
+            border: 1px solid #ffeccc; /* Lighter yellow border */
+            border-left: 5px solid var(--accent-yellow);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        .highlight-box h3 {
+            color: #cc8400; /* Darker yellow/orange for heading */
+            margin-top: 0;
+        }
+
+        /* Interactive Forgetting Curve Graph */
+        .interactive-graph-container {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+        .graph-controls {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .graph-controls button {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .graph-controls button:hover {
+            background-color: #257247;
+        }
+        #forgettingCurveSvg {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+
+        /* Interactive Calendar */
+        .interactive-calendar-container {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+        #srCalendar {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        #srCalendar th, #srCalendar td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            height: 50px; /* Fixed height for cells */
+        }
+        #srCalendar th {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        #srCalendar td {
+            cursor: pointer;
+            position: relative;
+        }
+        #srCalendar td:hover {
+            background-color: #e9e9e9;
+        }
+        .study-day { background-color: var(--accent-yellow) !important; color: var(--dark-text); font-weight: bold; }
+        .review-day { background-color: var(--accent-orange) !important; color: white; font-weight: bold; }
+        .review-needed::after { /* Indicator for review */
+            content: '📖';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 0.7em;
+        }
+        .calendar-controls button {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-right: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        #calendarInfo {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Knowledge Types Trees */
+        .knowledge-types-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        .knowledge-type-card {
+            background-color: var(--light-bg-alt);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            width: calc(33.333% - 20px);
+            min-width: 200px;
+            transition: transform 0.3s ease;
+        }
+        .knowledge-type-card:hover {
+            transform: translateY(-5px);
+        }
+        .knowledge-type-card img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .knowledge-type-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+        .knowledge-type-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+
+        /* Call to Action for Video */
+        .video-cta {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .video-cta p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+        .video-cta a.btn-cta {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--light-text);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+        .video-cta a.btn-cta:hover {
+            background-color: #e67e00; /* Darker orange */
+        }
+        
+        /* --- Footer --- */
+        footer.blog-footer {
+            background-color: var(--dark-text);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 30px 0 15px;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; width: 90%; max-width: 1100px; margin-left:auto; margin-right:auto; }
+        .footer-logo { display: flex; align-items: center; color: var(--light-text); font-weight: 600; text-decoration: none; }
+        .footer-logo .logo-img { border-color: var(--accent-yellow); height:35px; width:35px;}
+        .footer-logo span { font-family: var(--font-primary); font-size: 1.1rem; }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 15px; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--light-text); }
+        .social-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 1.3rem; margin-left: 12px; transition: color 0.3s ease, transform 0.2s ease; }
+        .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        .copyright { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 1rem; margin-top: 1rem; width: 90%; max-width: 1100px; margin-left:auto; margin-right:auto;}
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .blog-nav-links { display: none; /* Implement JS toggle for mobile */ }
+            .menu-toggle { display: block; }
+            /* Add styles for .blog-nav-links.active if using JS toggle */
+
+            .blog-post-title { font-size: 2rem; }
+            .blog-section h2 { font-size: 1.3rem; }
+            .blog-section h3 { font-size: 1.1rem; }
+            .blog-section p, .blog-section li { font-size: 0.95rem; }
+            .knowledge-type-card { width: calc(50% - 10px); }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .knowledge-type-card { width: 100%; }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+       <nav class="container">
+    <a href="../index.html" class="logo-link">
+        <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+        <span class="logo-text">Aljohn Polyglot</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li class="dropdown">
+            <a href="../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="../languages/tagalog.html">Tagalog</a>
+                <a href="../languages/cebuano.html">Cebuano</a>
+                <!-- ... other languages with ../ ... -->
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="../index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <!-- YouTube links are absolute, no change needed -->
+                <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank">OmeTV</a>
+                <!-- ... other YouTube links ... -->
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="../index.html#resources" class="dropbtn">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="../blog.html">Polyglot Papers Blog</a>
+                <a href="../pathway.html">Pathway</a>
+                <a href="../apps.html">Essential Apps & Tools</a>
+                <a href="../routine.html">Daily Routine</a>
+                <a href="../library.html">My Library</a>
+                <a href="../FAQ.html">FAQ</a>
+                <a href="../index.html#cultural-institutes">Language & Culture Centers</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="../coaching.html">Language Coaching</a>
+                <a href="../translation.html">Translation</a>
+            </div>
+        </li>
+        <li><a href="../shop.html">Shop</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
+</nav>
+    </header>
+
+    <main>
+        <article class="blog-post-article">
+            <div class="blog-container">
+                <h1 class="blog-post-title">The Secret to Remembering Vocabulary (and Never Forgetting It!)</h1>
+                <p class="blog-post-meta">Posted on <span id="postDate"></span> by Aljohn Polyglot</p>
+
+                <section class="blog-section" id="intro">
+                    <div class="blog-image-container">
+                        <img src="..\blog\images\blog_spacedrepetition_byaljohnpolyglot.png" alt="Crossword puzzle asking how to memorize vocabulary" class="blog-image">
+                    </div>
+                    <p>How to memorize vocabulary and not forget it? "I've studied this, but why do I keep forgetting?" Sounds familiar? You probably haven't used <em>this</em> technique yet!</p>
+                    
+                    <div class="highlight-box">
+                        <h3>My Achievement with This Technique:</h3>
+                        <div class="blog-image-container">
+                            <img src="blog\images\blog_spacedrepetition_20000 words.png" alt="Screenshot of Anki showing over 20,000 words learned" class="blog-image" style="max-width: 500px;">
+                        </div>
+                        <p>With this technique, I've managed to memorize over <strong>20,000 words</strong> in different foreign languages! Yes, that's right! All the words in my language learning journey are quantified using an app for accountability. And it has reached 20,000! I managed to memorize them all!</p>
+                    </div>
+
+                    <p>After you read this, I promise you'll learn new vocabulary and grammar rules in a language faster. Let me introduce you to...</p>
+                    <div class="blog-image-container">
+                        <img src="../images/blog_spacedrepetition_secret_reveal.png" alt="Graphic revealing the secret: Spaced Repetition" class="blog-image" style="max-width: 450px;">
+                    </div>
+                </section>
+
+                <section class="blog-section" id="proof">
+                    <h2>Is It Just Hype? The Science Says NO!</h2>
+                    <p>And this isn't just a gimmick; it's proven and tested by science! Look at this data:</p>
+                    <ul>
+                        <li>A study from the <em>Journal of Experimental Psychology</em> showed that participants using spaced repetition achieved an average recall accuracy of <strong>80%</strong>, compared to only 60% for those who crammed.</li>
+                        <li>Another study in <em>Memory & Cognition</em> found spaced repetition superior to reviewing multiple times in a short period. Participants using spaced repetition achieved an average recall accuracy of <strong>75%</strong>.</li>
+                    </ul>
+                    <p><small>Reference: Bazinas, E. (n.d.). Voovo AI Spaced repetition - Scan images & text to flashcards. <a href="https://www.voovostudy.com/study-blog/the-art-of-learning-the-power-of-spaced-repetition" target="_blank" rel="noopener noreferrer">voovostudy.com</a></small></p>
+                </section>
+
+                <section class="blog-section" id="what-is-sr">
+                    <h2>So, What Exactly IS Spaced Repetition?</h2>
+                    <p>Spaced repetition is a study technique where you review information at specific, increasing intervals. Instead of cramming everything at once (like we all do for exams!), it's more effective to review material gradually over longer periods to prevent forgetting.</p>
+                    <p>This way, what you learn stays in your memory longer and becomes more "mature" than if you just crammed. Yes, we learn quickly when cramming, but we only form "weak" knowledge that doesn't last and tends to be forgotten quickly.</p>
+                    <blockquote>
+                        <p>It's like with plants: they need to be watered to keep growing. They'll die if we don't water them regularly.</p>
+                    </blockquote>
+                    <p>But wait! I think I'm explaining too quickly. To make it simpler, if you still don't quite get it, let's compare it to planting a tree.</p>
+                </section>
+
+                <section class="blog-section" id="tree-analogy">
+                    <h2>The Mighty Tree Analogy</h2>
+                    <p>When you plant a tree, you need to water and care for it daily when it's new. This young tree is called a "sapling."</p>
+                    <div class="blog-image-container">
+                        <img src="../images/blog/blog_spacedrepetition_newsapling.png" alt="A healthy young sapling symbolizing new information" class="blog-image" style="max-width: 300px;">
+                        <p class="caption">A "sapling" represents new information – fresh but fragile.</p>
+                    </div>
+                    <p>In its earliest stages, a sapling can easily be damaged or wilt if it doesn't receive attention and frequent watering. Similarly, if you study something but don't review it, you'll quickly forget what you learned, just like a sapling that isn't watered often.</p>
+                    <div class="blog-image-container">
+                        <img src="../images/blog/blog_spacedrepetition_forgotten_word_withered_sapling.png" alt="A wilting sapling symbolizing forgotten information" class="blog-image" style="max-width: 300px;">
+                        <p class="caption">A neglected sapling, like unreviewed information, withers away.</p>
+                    </div>
+
+                    <p>On the other hand, if you care for the sapling and give it enough time and attention daily, it will gradually grow, and its roots will deepen and become strong. Thus, no matter what storm passes, it will not easily fall.</p>
+                    
+                    <div class="blog-image-container">
+                         <img src="../images/blog/blog_spacedrepetition_itslikethis.png" alt="Comparison of traditional study (wilting plant) vs spaced repetition (thriving plant)" class="blog-image">
+                         <p class="caption">Consistent "watering" (review) helps knowledge grow strong.</p>
+                    </div>
+
+                    <p>Even if you can no longer care for it as you once did, the tree will remain strong because of the foundations established when it was just a sapling. Its roots have formed a robust connection with the earth, enabling it to withstand the tests of time. In the same way, knowledge accumulated through spaced repetition will stay in your mind, even if you no longer continually review it.</p>
+                    <div class="blog-image-container">
+                         <img src="../images/blog/blog_spacedrepetition_plant_day1000_tree.png" alt="A mature, strong tree that no longer needs frequent watering" class="blog-image" style="max-width: 400px;">
+                         <p class="caption">Mature knowledge, like a grown tree, stands strong even without constant attention.</p>
+                    </div>
+                    <p>That's the power of spaced repetition. If you use this technique, the new vocabulary and grammar rules you learn will not only become stable in your mind but also deepen your understanding. Through regular review and repetition at the right intervals, your knowledge gradually grows and becomes more robust. As you continue to care for the "sapling" of knowledge, it will become a "tree" that can stand on its own and not easily fall to the challenges of forgetting.</p>
+                </section>
+
+                <section class="blog-section" id="why-it-works">
+                    <h2>Why Cramming Fails You (But Spaced Repetition Won't)</h2>
+                    <div class="blog-image-container">
+                        <img src="../images/blog/blog_spacedrepetition_cramming.png" alt="Stressed student cramming for an exam" class="blog-image" style="max-width: 350px;">
+                    </div>
+                    <p>But how can I be so sure? The answer is simple. Ever crammed for an exam? Do you still remember your high school exam answers? Probably not. Know why? <em>Because you didn't use spaced repetition.</em> The knowledge you formed was merely a "sapling," not yet strong enough for long-term retention.</p>
+                </section>
+
+                <section class="blog-section" id="knowledge-types">
+                    <h2>The Stages of Knowledge: From Sapling to Mighty Oak</h2>
+                    <p>In short, the types of knowledge can be visualized as:</p>
+                    <div class="knowledge-types-container">
+                        <div class="knowledge-type-card">
+                            <img src="../images/blog/blog_spacedrepetition_knowledgenew.png" alt="Sapling representing new knowledge">
+                            <h4>New (Bago)</h4>
+                            <p>Like a freshly planted sapling. Full of potential but needs lots of care (review). Easily forgotten if neglected – considered "Weak" knowledge.</p>
+                        </div>
+                        <div class="knowledge-type-card">
+                            <img src="../images/blog/blog_spacedrepetition_knowledgeyoung.png" alt="Young tree representing developing knowledge">
+                            <h4>Young (Bata)</h4>
+                            <p>The sapling is growing, roots deepening. Knowledge is becoming more stable, and its foundation is strengthening. Ideas solidify.</p>
+                        </div>
+                        <div class="knowledge-type-card">
+                            <img src="../images/blog/blog_spacedrepetition_knowledgemature.png" alt="Mature tree representing strong, ingrained knowledge">
+                            <h4>Mature (Sagana)</h4>
+                            <p>A strong, sturdy tree. Knowledge is part of you, firmly rooted. It can withstand storms (time, lack of review) without toppling.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="blog-section" id="forgetting-curve">
+                    <h2>Visualizing the Fight Against Forgetting</h2>
+                    <div class="blog-image-container">
+                        <img src="../images/blog/blog_spacedrepetition_graph_visualizer.png" alt="Ebbinghaus forgetting curve with review boosts" class="blog-image" style="display:none;"> <!-- Static image hidden, interactive below -->
+                    </div>
+                    <p>Here's a classic illustration of how our memory works – the forgetting curve. Notice how "watering our plants" (reviewing) boosts retention and flattens the curve over time.</p>
+                    
+                    <div class="interactive-graph-container">
+                        <h3>Interactive Forgetting Curve</h3>
+                        <p>Click "Review" to see how spaced repetition impacts memory retention. The blue line shows learning with spaced reviews; the gray line shows learning without reviews.</p>
+                        <svg id="forgettingCurveSvg" viewBox="0 0 600 350"></svg>
+                        <div class="graph-controls">
+                            <button id="reviewButton1">Review 1 (Day 1)</button>
+                            <button id="reviewButton2" disabled>Review 2 (Day 3)</button>
+                            <button id="reviewButton3" disabled>Review 3 (Day 7)</button>
+                            <button id="resetGraphButton">Reset</button>
+                        </div>
+                    </div>
+                     <p>So, if you want to retain your lessons better, try applying this to your daily routine! <strong>Spaced repetition!</strong></p>
+                </section>
+
+                <section class="blog-section" id="how-to-sr">
+                     <div class="blog-image-container">
+                        <img src="../images/blog/blog_spacedrepetition_title.png" alt="Title card: How to do Spaced Repetition?" class="blog-image" style="max-width: 400px;">
+                    </div>
+                    <h2>How Do You Actually DO Spaced Repetition?</h2>
+                    <p>It's commonly used with flashcard apps that have a built-in spaced repetition system (SRS) algorithm, like the popular Anki or apps like Migaku (which I personally use and has advanced features for language learners).</p>
+                    <p>Here are the general steps once you've chosen your tool:</p>
+                    <ol>
+                        <li><strong>Learn New Info:</strong> Encounter a new word, phrase, or grammar rule. Create a digital flashcard for it.</li>
+                        <li><strong>Initial Review:</strong> Review the information soon after, typically within a day. This helps solidify it.</li>
+                        <li><strong>Spaced Intervals:</strong>
+                            <ul>
+                                <li>If you recall the information correctly, the app automatically lengthens the interval before your next review (e.g., from 1 day to 3 days, then a week, then a month, and so on).</li>
+                                <li>If you forget the information, you'll return to a shorter interval. You'll review it more frequently until it sticks.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lengthening Strength:</strong> Each time you successfully recall an item, the interval for that item typically gets longer. The "tree of knowledge" for that item is getting stronger roots!</li>
+                    </ol>
+
+                    <div class="interactive-calendar-container">
+                        <h3>Interactive Spaced Repetition Calendar</h3>
+                        <p>Imagine you learned a new word today (Day 1). Click on a "Review Due" day. If you remember it, the next review will be further out. If you forget, it'll be sooner. (This is a simplified example.)</p>
+                        <table id="srCalendar">
+                            <thead>
+                                <tr><th colspan="7" id="calendarMonthYear">Month Year</th></tr>
+                                <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+                            </thead>
+                            <tbody id="calendarBody"></tbody>
+                        </table>
+                        <div class="calendar-controls">
+                           <button id="learnNewItemButton">Learn New Item</button>
+                        </div>
+                        <p id="calendarInfo">Select a "Review Due" day (orange) to mark it as reviewed.</p>
+                    </div>
+                </section>
+                
+                <section class="blog-section" id="tree-intervals-revisited">
+                    <h3>Back to Our Trees: Intervals Explained</h3>
+                    <p>Think of it this way:
+                    <ul>
+                        <li>A <strong>newly planted sapling</strong> (new information) needs daily monitoring and watering.
+                            <br><img src="../images/blog/blog_spacedrepetition_plant_day1_spaced.png" alt="Sapling at day 1" style="max-width:150px; margin-top:5px;"></li>
+                        <li>A <strong>young, more established tree</strong> (information reviewed a few times) only needs occasional revisits.
+                            <br><img src="../images/blog/blog_spacedrepetition_plant_day3_spaced.png" alt="Young tree at day 3" style="max-width:150px; margin-top:5px;"></li>
+                        <li>A <strong>fully grown, mature tree</strong> (well-learned information) can stand on its own, even if not revisited for a long time.
+                            <br><img src="../images/blog/blog_spacedrepetition_plant_day7_traditional.png" alt="More mature tree at day 7 (traditional here represents a more established item in SR)" style="max-width:150px; margin-top:5px;">
+                            <small>(Note: "Traditional" in image filename above used for visual progression context here.)</small>
+                        </li>
+                    </ul>
+                    </p>
+                </section>
+
+                <section class="blog-section" id="flashcard-apps">
+                    <h2>"But Isn't Making Flashcards a Hassle?"</h2>
+                    <p>It can be, if done manually for everything! That's why I recommend using a good flashcard app. Many, like <strong>Migaku</strong>, are designed to make creating flashcards very easy, especially for language learning from content you're already consuming (like videos or articles).</p>
+                    <p>Key benefits of such apps often include:</p>
+                    <ul>
+                        <li><strong>Automatic Spaced Repetition:</strong> The app handles the scheduling, so you don't have to worry about when to review what.</li>
+                        <li><strong>Quick Card Creation:</strong> Tools to quickly capture words or phrases, often with automatic lookup for definitions, example sentences, and audio.</li>
+                        <li><strong>Multimedia Support:</strong> Add images, audio, and even video clips to your cards for richer context.</li>
+                    </ul>
+                    <p>While I use Migaku, the core principle of spaced repetition can be applied with various tools. The key is finding one that fits your workflow and helps you stay consistent.</p>
+                </section>
+
+                <section class="blog-section" id="conclusion-cta">
+                    <h2>Ready to Transform Your Learning?</h2>
+                    <p>Spaced repetition isn't magic, but it's the closest thing to a scientifically-backed "hack" for long-term memory. Give it a try, be consistent, and watch your vocabulary (and other knowledge) grow like a mighty forest!</p>
+                    <div class="video-cta">
+                        <p>Want to see more about how I use these techniques, including Migaku, in action? Check out my videos!</p>
+                        <a href="https://www.youtube.com/@aljohnpolyglot/videos" target="_blank" class="btn-cta"><i class="fab fa-youtube"></i> Watch My Learning Methods on YouTube</a>
+                        <!-- Or the generic placeholder like image 27 -->
+                        <!-- <p>Panoorin ito para sa mas madaming impormasyon tungkol sa spaced repetition at sa paggamit ng Migaku</p> -->
+                        <!-- <a href="#" class="btn-cta">Watch Tutorial (Example)</a> -->
+                    </div>
+                </section>
+
+            </div>
+        </article>
+    </main>
+
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span>Aljohn Polyglot</span>
+            </div>
+            <nav class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../shop.html">Shop</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add other social links here if you have them -->
+            </div>
+        </div>
+        <p class="copyright">© <span id="current-year"></span> Aljohn Polyglot. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('postDate').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.blog-nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        }
+
+        // --- Interactive Forgetting Curve Graph ---
+        const svgNS = "http://www.w3.org/2000/svg";
+        const svg = document.getElementById("forgettingCurveSvg");
+        const svgWidth = 600;
+        const svgHeight = 350;
+        const margin = { top: 30, right: 30, bottom: 50, left: 50 };
+        const width = svgWidth - margin.left - margin.right;
+        const height = svgHeight - margin.top - margin.bottom;
+
+        // Scales
+        const xScale = (day) => (day / 10) * width; // Max 10 days for this visualization
+        const yScale = (retention) => height - (retention / 100) * height;
+
+        let reviewData = [
+            { day: 0, retention: 100, type: 'learn' },
+            // Initial forgetting
+            { day: 1, retention: 70, type: 'forget' },
+            { day: 3, retention: 50, type: 'forget' },
+            { day: 7, retention: 30, type: 'forget' },
+            { day: 10, retention: 20, type: 'forget' }
+        ];
+        
+        let reviewedLineData = [{ day: 0, retention: 100 }];
+        let currentReviewStep = 0;
+        const reviewPoints = [
+            { day: 1, retentionBoost: 95, nextForgetPoints: [{day: 2, retention: 80}, {day: 3, retention: 70}]},
+            { day: 3, retentionBoost: 98, nextForgetPoints: [{day: 5, retention: 85}, {day: 7, retention: 75}]},
+            { day: 7, retentionBoost: 99, nextForgetPoints: [{day: 9, retention: 90}, {day: 10, retention: 85}]}
+        ];
+
+        function drawGraph() {
+            svg.innerHTML = ''; // Clear previous graph
+
+            // Group for chart elements
+            const chartGroup = document.createElementNS(svgNS, "g");
+            chartGroup.setAttribute("transform", `translate(${margin.left},${margin.top})`);
+            svg.appendChild(chartGroup);
+
+            // Axes
+            // X Axis
+            const xAxisLine = document.createElementNS(svgNS, "line");
+            xAxisLine.setAttribute("x1", 0);
+            xAxisLine.setAttribute("y1", height);
+            xAxisLine.setAttribute("x2", width);
+            xAxisLine.setAttribute("y2", height);
+            xAxisLine.setAttribute("stroke", "#333");
+            chartGroup.appendChild(xAxisLine);
+            const xAxisLabel = document.createElementNS(svgNS, "text");
+            xAxisLabel.setAttribute("x", width / 2);
+            xAxisLabel.setAttribute("y", height + margin.bottom - 10);
+            xAxisLabel.setAttribute("text-anchor", "middle");
+            xAxisLabel.textContent = "Elapsed Time (Days)";
+            chartGroup.appendChild(xAxisLabel);
+
+            for (let i = 0; i <= 10; i += 1) {
+                const tick = document.createElementNS(svgNS, "line");
+                tick.setAttribute("x1", xScale(i));
+                tick.setAttribute("y1", height);
+                tick.setAttribute("x2", xScale(i));
+                tick.setAttribute("y2", height + 5);
+                tick.setAttribute("stroke", "#333");
+                chartGroup.appendChild(tick);
+                const tickLabel = document.createElementNS(svgNS, "text");
+                tickLabel.setAttribute("x", xScale(i));
+                tickLabel.setAttribute("y", height + 20);
+                tickLabel.setAttribute("text-anchor", "middle");
+                tickLabel.textContent = i;
+                chartGroup.appendChild(tickLabel);
+            }
+
+            // Y Axis
+            const yAxisLine = document.createElementNS(svgNS, "line");
+            yAxisLine.setAttribute("x1", 0);
+            yAxisLine.setAttribute("y1", 0);
+            yAxisLine.setAttribute("x2", 0);
+            yAxisLine.setAttribute("y2", height);
+            yAxisLine.setAttribute("stroke", "#333");
+            chartGroup.appendChild(yAxisLine);
+            const yAxisLabel = document.createElementNS(svgNS, "text");
+            yAxisLabel.setAttribute("transform", "rotate(-90)");
+            yAxisLabel.setAttribute("x", -height / 2);
+            yAxisLabel.setAttribute("y", -margin.left + 15);
+            yAxisLabel.setAttribute("text-anchor", "middle");
+            yAxisLabel.textContent = "Memory Retention (%)";
+            chartGroup.appendChild(yAxisLabel);
+
+            for (let i = 0; i <= 100; i += 20) {
+                const tick = document.createElementNS(svgNS, "line");
+                tick.setAttribute("x1", -5);
+                tick.setAttribute("y1", yScale(i));
+                tick.setAttribute("x2", 0);
+                tick.setAttribute("y2", yScale(i));
+                tick.setAttribute("stroke", "#333");
+                chartGroup.appendChild(tick);
+                const tickLabel = document.createElementNS(svgNS, "text");
+                tickLabel.setAttribute("x", -10);
+                tickLabel.setAttribute("y", yScale(i) + 5);
+                tickLabel.setAttribute("text-anchor", "end");
+                tickLabel.textContent = i;
+                chartGroup.appendChild(tickLabel);
+            }
+
+            // Forgetting line (gray)
+            const forgettingPath = document.createElementNS(svgNS, "path");
+            let dForget = `M ${xScale(reviewData[0].day)} ${yScale(reviewData[0].retention)}`;
+            for (let i = 1; i < reviewData.length; i++) {
+                 if(reviewData[i].type === 'forget') {
+                    dForget += ` L ${xScale(reviewData[i].day)} ${yScale(reviewData[i].retention)}`;
+                 }
+            }
+            forgettingPath.setAttribute("d", dForget);
+            forgettingPath.setAttribute("fill", "none");
+            forgettingPath.setAttribute("stroke", "lightgray");
+            forgettingPath.setAttribute("stroke-width", 3);
+            forgettingPath.setAttribute("stroke-dasharray", "5,5");
+            chartGroup.appendChild(forgettingPath);
+
+            // Reviewed line (blue)
+            if (reviewedLineData.length > 1) {
+                const reviewedPath = document.createElementNS(svgNS, "path");
+                let dReviewed = `M ${xScale(reviewedLineData[0].day)} ${yScale(reviewedLineData[0].retention)}`;
+                for (let i = 1; i < reviewedLineData.length; i++) {
+                    dReviewed += ` L ${xScale(reviewedLineData[i].day)} ${yScale(reviewedLineData[i].retention)}`;
+                }
+                reviewedPath.setAttribute("d", dReviewed);
+                reviewedPath.setAttribute("fill", "none");
+                reviewedPath.setAttribute("stroke", "var(--primary-blue)");
+                reviewedPath.setAttribute("stroke-width", 3);
+                chartGroup.appendChild(reviewedPath);
+            }
+
+            // Points on reviewed line
+            reviewedLineData.forEach(p => {
+                const circle = document.createElementNS(svgNS, "circle");
+                circle.setAttribute("cx", xScale(p.day));
+                circle.setAttribute("cy", yScale(p.retention));
+                circle.setAttribute("r", 5);
+                circle.setAttribute("fill", "var(--accent-orange)");
+                chartGroup.appendChild(circle);
+            });
+             // Labels for lines
+            const grayLabel = document.createElementNS(svgNS, "text");
+            grayLabel.setAttribute("x", xScale(8));
+            grayLabel.setAttribute("y", yScale(15));
+            grayLabel.textContent = "Without Review";
+            grayLabel.setAttribute("fill", "gray");
+            chartGroup.appendChild(grayLabel);
+
+            if(reviewedLineData.length > 1) {
+                const blueLabel = document.createElementNS(svgNS, "text");
+                const lastReviewedPoint = reviewedLineData[reviewedLineData.length -1];
+                blueLabel.setAttribute("x", xScale(lastReviewedPoint.day > 8 ? 6 : lastReviewedPoint.day + 0.5));
+                blueLabel.setAttribute("y", yScale(lastReviewedPoint.retention + 5 > 100 ? 95 : lastReviewedPoint.retention + 5 ));
+                blueLabel.textContent = "With Spaced Review";
+                blueLabel.setAttribute("fill", "var(--primary-blue)");
+                chartGroup.appendChild(blueLabel);
+            }
+        }
+
+        function handleReview(reviewIndex) {
+            if (reviewIndex >= reviewPoints.length || currentReviewStep !== reviewIndex) return;
+
+            const review = reviewPoints[reviewIndex];
+            // Remove future points from where current review happens
+            reviewedLineData = reviewedLineData.filter(p => p.day < review.day);
+            
+            // Add dip to review day (optional, or go straight to boost)
+            const lastPoint = reviewedLineData[reviewedLineData.length - 1];
+            // Simple forgetting slope towards review day
+            const retentionAtReviewDay = lastPoint.retention - (review.day - lastPoint.day) * 10; // Assume 10% drop per day for simplicity
+            reviewedLineData.push({ day: review.day, retention: Math.max(30, retentionAtReviewDay) }); // Don't go below 30%
+
+            // Add boost from review
+            reviewedLineData.push({ day: review.day, retention: review.retentionBoost });
+            // Add subsequent forgetting points
+            review.nextForgetPoints.forEach(p => reviewedLineData.push(p));
+            
+            currentReviewStep++;
+            updateReviewButtons();
+            drawGraph();
+        }
+        
+        function updateReviewButtons() {
+            document.getElementById('reviewButton1').disabled = currentReviewStep > 0;
+            document.getElementById('reviewButton2').disabled = currentReviewStep !== 1;
+            document.getElementById('reviewButton3').disabled = currentReviewStep !== 2;
+        }
+
+        document.getElementById('reviewButton1').addEventListener('click', () => handleReview(0));
+        document.getElementById('reviewButton2').addEventListener('click', () => handleReview(1));
+        document.getElementById('reviewButton3').addEventListener('click', () => handleReview(2));
+        
+        document.getElementById('resetGraphButton').addEventListener('click', () => {
+            reviewedLineData = [{ day: 0, retention: 100 }];
+            // Re-add initial forgetting for blue line if no reviews yet
+            reviewedLineData.push({ day: 1, retention: 70});
+            reviewedLineData.push({ day: 3, retention: 50});
+            reviewedLineData.push({ day: 7, retention: 30});
+            reviewedLineData.push({ day: 10, retention: 20 });
+
+
+            currentReviewStep = 0;
+            updateReviewButtons();
+            drawGraph();
+        });
+        
+        // Initial draw
+        // For blue line, start with some forgetting before first review
+        reviewedLineData.push({ day: 1, retention: 70});
+        reviewedLineData.push({ day: 3, retention: 50});
+        reviewedLineData.push({ day: 7, retention: 30});
+        reviewedLineData.push({ day: 10, retention: 20 });
+        drawGraph();
+
+
+        // --- Interactive Spaced Repetition Calendar ---
+        const calendarBody = document.getElementById('calendarBody');
+        const calendarMonthYear = document.getElementById('calendarMonthYear');
+        const calendarInfo = document.getElementById('calendarInfo');
+        const learnNewItemButton = document.getElementById('learnNewItemButton');
+        
+        let today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+        let learnedItems = []; // {id: number, learnedDate: Date, nextReviewDate: Date, interval: number, level: number (0=new)}
+
+        function generateCalendar(month, year) {
+            calendarBody.innerHTML = '';
+            calendarMonthYear.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
+            
+            let firstDay = (new Date(year, month)).getDay();
+            let daysInMonth = 32 - new Date(year, month, 32).getDate();
+            
+            let date = 1;
+            for (let i = 0; i < 6; i++) { // Max 6 rows
+                let row = document.createElement('tr');
+                for (let j = 0; j < 7; j++) {
+                    let cell = document.createElement('td');
+                    if (i === 0 && j < firstDay) {
+                        // Blank cell
+                    } else if (date > daysInMonth) {
+                        break;
+                    } else {
+                        cell.textContent = date;
+                        const cellDate = new Date(year, month, date);
+                        cell.dataset.date = cellDate.toISOString().split('T')[0];
+
+                        const itemToReview = learnedItems.find(item => 
+                            item.nextReviewDate && item.nextReviewDate.toDateString() === cellDate.toDateString()
+                        );
+
+                        if (itemToReview) {
+                            cell.classList.add('review-day');
+                            cell.classList.add('review-needed');
+                            cell.title = `Review item learned on ${itemToReview.learnedDate.toLocaleDateString()}`;
+                        }
+                        
+                        cell.addEventListener('click', () => handleDayClick(cell, cellDate, itemToReview));
+                        date++;
+                    }
+                    row.appendChild(cell);
+                }
+                calendarBody.appendChild(row);
+                if (date > daysInMonth) break;
+            }
+        }
+
+        function handleDayClick(cell, cellDate, itemToReview) {
+            if (!itemToReview) {
+                calendarInfo.textContent = `Nothing scheduled for ${cellDate.toLocaleDateString()}.`;
+                return;
+            }
+
+            const remembered = confirm(`Reviewing item learned on ${itemToReview.learnedDate.toLocaleDateString()}.\nDid you remember it?`);
+            
+            if (remembered) {
+                itemToReview.level++;
+                // Simplified intervals: 1, 3, 7, 14, 30 days for levels 0, 1, 2, 3, 4+
+                const intervals = [1, 3, 7, 14, 30];
+                itemToReview.interval = intervals[Math.min(itemToReview.level, intervals.length - 1)];
+                calendarInfo.textContent = `Good job! Next review in ${itemToReview.interval} days.`;
+            } else {
+                itemToReview.level = 0; // Reset level
+                itemToReview.interval = 1; // Back to 1 day
+                calendarInfo.textContent = `No worries! Review again in ${itemToReview.interval} day.`;
+            }
+            
+            itemToReview.nextReviewDate = new Date(cellDate);
+            itemToReview.nextReviewDate.setDate(cellDate.getDate() + itemToReview.interval);
+            
+            generateCalendar(currentMonth, currentYear); // Refresh calendar
+        }
+
+        learnNewItemButton.addEventListener('click', () => {
+            const newItem = {
+                id: learnedItems.length + 1,
+                learnedDate: new Date(currentYear, currentMonth, new Date().getDate()), // Assume learned today
+                nextReviewDate: new Date(currentYear, currentMonth, new Date().getDate() + 1), // Review tomorrow
+                interval: 1,
+                level: 0
+            };
+            learnedItems.push(newItem);
+            calendarInfo.textContent = `New item learned! First review scheduled for tomorrow.`;
+            generateCalendar(currentMonth, currentYear);
+        });
+
+        // Initial calendar generation
+        generateCalendar(currentMonth, currentYear);
+
+    </script>
+</body>
+</html>
