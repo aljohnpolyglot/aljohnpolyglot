@@ -1,0 +1,221 @@
+/* D:\website\css\languagecenters-index-preview.css */
+
+/* --- Section Styling --- */
+.cultural-institutes-preview-section {
+    background-color: #0a192f; /* Fallback */
+    background-image: 
+        linear-gradient(145deg, 
+            #042768 0%, 
+            #0a1e3c 40%, 
+            #102b5c 75%, 
+            #0a0f1a 100%),
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 
+        100% 100%,   /* for gradient layer */
+        40px 40px,   /* horizontal grid lines every 40px */
+        40px 40px;   /* vertical grid lines every 40px */
+    color: var(--light-text, #f0f4f8);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure title and subtitle have correct colors for dark background */
+.cultural-institutes-preview-section .section-title {
+    color: var(--light-text, #f0f4f8); /* White or light text for the main title */
+}
+.cultural-institutes-preview-section .section-title::after {
+    background-color: var(--accent-yellow); /* Yellow underline for the main title */
+}
+
+.cultural-institutes-preview-section .section-subtitle {
+    color: #d0d8e0; /* Lighter grey for subtitle on dark background */
+    /* "Not a fan of intense self-study?" should be yellow */
+}
+.cultural-institutes-preview-section .section-subtitle .highlight-text {
+    color: var(--accent-yellow, #FFD700); /* Make this part of the subtitle yellow */
+    font-weight: 600; /* Optional: make it bold */
+}
+
+
+/* --- Grid for Cards --- */
+.institute-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min width for cards */
+    gap: 1.8rem; /* Increased gap slightly */
+}
+
+/* --- Individual Card Styling --- */
+.institute-preview-card {
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 6px 18px rgba(137, 195, 243, 0.758); /* Softer, more pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, min-height 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 1.35rem; /* Adjusted padding */
+    box-sizing: border-box;
+    text-align: center;
+    min-height: 200px; /* Adjusted base height */
+    overflow: hidden; /* Prevent content spill during hover transition */
+}
+
+.institute-preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Header: Logo and Name */
+.institute-card-header-content {
+    margin-bottom: 0; 
+    flex-shrink: 0; /* Prevent this part from shrinking too much */
+}
+
+.institute-preview-logo {
+    width: 60px;  /* Slightly smaller logo */
+    height: 60px;
+    object-fit: contain;
+    margin: 0 auto 0.7rem auto; 
+    border-radius: 5px;
+}
+
+.institute-name-line {
+    display: flex;
+    align-items: center; /* Vertically center flag and text */
+    justify-content: center;
+    gap: 0.6rem; 
+    margin-bottom: 10 rem; 
+}
+
+.institute-preview-flag {
+    width: 26px; /* Slightly larger flag for better visibility */
+    min-width: 26px; /* Ensure it doesn't shrink */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle border on flag if against light card */
+    border-radius: 3px;
+    flex-shrink: 0; /* Prevent flag from shrinking */
+}
+
+.institute-name-line h3 {
+    font-size: 0.9rem; 
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    margin: 0;
+    line-height: 1.25; /* Tighter line height */
+    font-weight: 600;
+    white-space: nowrap; /* PREVENTS TEXT FROM BREAKING INTO NEW LINES */
+    overflow: hidden;     /* Hides text that overflows due to nowrap */
+    text-overflow: ellipsis; /* Adds "..." if text is too long and hidden */
+    max-width: calc(100% - 32px - 0.6rem); /* Adjust max-width to prevent overflow if flag is present, 32px approx flag width + gap */
+                                       /* This might need fine-tuning based on actual flag width and gap */
+}
+
+/* Hover Description - Hidden by default */
+.institute-card-hover-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: visible;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out, margin-bottom 0.3s ease-out;
+    font-size: 0.8rem; /* Smaller description text */
+    line-height: 1.45;
+    margin-top: 0;
+    margin-bottom: 0; 
+    text-align: left; 
+    flex-grow: 1; /* Allow it to take available space when hovered */
+}
+
+.institute-preview-card:hover .institute-card-hover-description {
+    max-height: 80px; /* Adjust max height for description content */
+    opacity: 1;
+    margin-top: 0.5rem; /* Space above description when visible */
+    margin-bottom: 0.75rem; 
+}
+.institute-card-hover-description p {
+    margin: 0;
+    padding: 0 0.15rem; 
+}
+
+
+/* Separator Line */
+.content-separator {
+    border: 0;
+    border-top: 1px solid; 
+    margin: 0.3 rem auto 0.3rem auto; 
+    width: 75%; /* Slightly narrower line */
+    opacity: 0.5; 
+    flex-shrink: 0; /* Prevent line from shrinking if card content is tight */
+}
+
+/* Actions: Buttons and Social Icons */
+.institute-card-actions {
+    margin-top: auto; /* Pushes actions to the bottom */
+    padding-top: -10 rem; /* Minimal space above actions */
+    flex-shrink: 0; /* Prevent this block from shrinking */
+}
+
+.action-items-wrapper {
+    display: flex;
+    flex-wrap: nowrap; /* Try to keep buttons and socials on one line */
+    justify-content: center; 
+    align-items: center;
+    gap: 0.8rem; 
+}
+
+.buttons-group {
+    display: flex;
+    gap: 0.6rem; 
+    align-items: center;
+    flex-shrink: 0; /* Prevent buttons from shrinking excessively */
+}
+.buttons-group .btn {
+    margin: 0; 
+    padding: 0.35rem 0.75rem; 
+    font-size: 0.7rem; /* Even smaller button text */
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 0.6rem; 
+    align-items: center;
+    flex-shrink: 0;
+}
+.social-media-icons a {
+    font-size: 1rem; 
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center;
+}
+.social-media-icons a i {
+    transition: color 0.2s ease;
+}
+
+/* Fallback for loading text */
+.loading-preview-text {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    color: #6c757d; /* This will be less visible on dark bg, but it's a fallback */
+}
+
+/* General styles for the CTA button for all centers */
+.all-centers-cta {
+    text-align: center;
+    margin-top: 3rem; /* More space above this button */
+}
+
+.all-centers-cta .btn-large { /* This button will use global styles, ensure they are suitable for dark bg */
+    padding: 0.9rem 2.2rem;
+    font-size: 1.05rem;
+    /* If global btn-primary is dark text on yellow bg, it's fine.
+       If it needs override for this section: */
+    /* background-color: var(--accent-yellow); */
+    /* color: var(--dark-text); */
+    /* border-color: var(--accent-yellow); */
+}
+.all-centers-cta .btn i {
+    margin-left: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+.all-centers-cta .btn:hover i {
+    transform: translateX(4px);
+}

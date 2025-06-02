@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn Polyglot | Guild Strategy Table</title>
+  <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link rel="stylesheet" href="css/guild-strategy-theme.css">
+    <link rel="stylesheet" href="css/guild-strategy-layout-MOCKUP.css">
+    <link rel="stylesheet" href="css/guild-strategy-map-panel-MOCKUP.css">
+    <link rel="stylesheet" href="css/guild-strategy-quest-panel-MOCKUP.css">
+    <link rel="stylesheet" href="css/guild-strategy-tool-modal.css">
+    <link rel="stylesheet" href="css/guild-strategy-final-boards.css">
+<link rel="stylesheet" href="css/guild-strategy-animations.css">
+<link rel="stylesheet" href="css/pathway-navbar-footer.css">
+
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="guild-strategy-page-mockup">
+    
+    <div id="page-dynamic-background-MOCKUP"></div>
+    <header id="main-header-placeholder">
+        <!-- Navbar loaded by js/navbar-loader.js -->
+    </header>
+
+   <main id="guild-strategy-table-main-MOCKUP">
+    <div class="strategy-table-grid-MOCKUP">
+
+        <aside id="master-nav-panel" class="strategy-panel-MOCKUP nav-panel-MOCKUP fade-in-element">
+            <div class="nav-panel-header">
+                <img src="assets/title_aligned_center.png" alt="The Roadmap to Fluency" class="panel-main-title-img">
+                <p class="panel-intro-text">
+                    Welcome, Aspirant! Before you lies the Master Progression Board. Select a region to view its quests and begin your training.
+                </p>
+            </div>
+            <div class="nav-panel-map-display">
+                <img src="assets/roadmap_map_bg_notext.png" alt="Master Progression Board" id="progression-map-image-MOCKUP" class="progression-map-bg">
+            </div>
+            <nav id="map-region-selectors-MOCKUP" class="map-region-nav">
+                <button class="map-region-button-MOCKUP" data-phase-id="phase-beginner" data-map-image="assets/roadmap_map_highlight_grove.png" data-bg-image="assets/A2_landscape_art.png">
+                    <img src="assets/a2_map_icon.png" alt="Grove Icon" class="button-icon">
+                    <span class="button-text-wrapper">Beginner's Grove <small>(A1-A2)</small></span>
+                    <img src="assets/text_requires_a1a2.png" alt="Requires A1-A2" class="button-requirement-img">
+                </button>
+                <button class="map-region-button-MOCKUP" data-phase-id="phase-intermediate" data-map-image="assets/roadmap_map_highlight_city.png" data-bg-image="assets/b2_landscape_art.png">
+                    <img src="assets/b2_map_icon.png" alt="City Icon" class="button-icon">
+                    <span class="button-text-wrapper">City of Immersion <small>(B1-B2)</small></span>
+                    <img src="assets/text_requires_b1b2.png" alt="Requires B1-B2" class="button-requirement-img">
+                </button>
+                <button class="map-region-button-MOCKUP" data-phase-id="phase-advanced" data-map-image="assets/roadmap_map_highlight_citadel.png" data-bg-image="assets/c2_landscape_art.png">
+                    <img src="assets/C2_map_icon.png" alt="Citadel Icon" class="button-icon">
+                    <span class="button-text-wrapper">C2 Citadel <small>(C1-C2)</small></span>
+                    <img src="assets/text_requires_c1c2.png" alt="Requires C1-C2" class="button-requirement-img">
+                </button>
+            </nav>
+            <div class="nav-panel-footer">
+                <button id="prev-phase-btn-MOCKUP" class="phase-nav-button-MOCKUP" title="Previous Quest"><i class="fas fa-chevron-left"></i> Prev</button>
+                <button id="next-phase-btn-MOCKUP" class="phase-nav-button-MOCKUP" title="Next Quest">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </aside>
+
+    <section id="active-quest-display-panel" class="strategy-panel-MOCKUP quest-display-panel-MOCKUP">
+    <div id="quest-content-placeholder-MOCKUP" class="panel-content-MOCKUP placeholder-active-MOCKUP">
+        <img src="assets/meeting_wise_wizard.png" alt="Select a Quest" class="placeholder-image-MOCKUP">
+        <h2>Select a Region to Begin Your Training</h2>
+        <p>The path to fluency unfolds before you.</p>
+    </div>
+
+    <!-- BEGINNER PHASE -->
+    <div id="phase-beginner-content-MOCKUP" class="quest-phase-content-MOCKUP" style="display: none;">
+        <div class="quest-visual-header-with-toolkit-MOCKUP">
+            <img src="assets/A2_art_bg_with_character.png" alt="Beginner's Grove Scene" class="quest-main-illustration-MOCKUP">
+            <div class="quest-title-banner-overlay-MOCKUP">
+                <img src="assets/begginers_grove_banner.png" class="quest-title-banner-image-MOCKUP" alt="Beginner's Grove">
+            </div>
+            <div class="toolkit-cluster-overlay-MOCKUP">
+                <div class="toolkit-title-graphic-MOCKUP">
+                    <img src="assets/banner_starter_gear.png" class="toolkit-title-banner-image-MOCKUP" alt="Starter Gear">
+                </div>
+                <div class="tools-horizontal-scroll-wrapper-MOCKUP">
+                    <div class="tools-grid-MOCKUP horizontal-layout-MOCKUP">
+                        <div class="tool-card-MOCKUP" data-tool-id="duolingo-a1"><img src="https://cdn.iconscout.com/icon/free/png-256/free-duolingo-icon-download-in-svg-png-gif-file-formats--symbol-brand-logo-world-logos-vol-2-pack-icons-282167.png?f=webp" alt="Duolingo Icon" class="tool-icon"><span class="tool-name">Duolingo <small>(Very Start)</small></span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="language-transfer-a1"><img src="assets/A2_character_langauge_transfer.png" alt="LT Icon" class="tool-icon"><span class="tool-name">Language Transfer</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="anki-a1"><img src="assets/A2_anki_gem_icon.png" alt="Anki Icon" class="tool-icon"><span class="tool-name">Anki (SRS)</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="simple-texts-a1"><img src="assets/A2_basic_text_icon.png" alt="Texts Icon" class="tool-icon"><span class="tool-name">Simple Texts</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="linguno-a1"><img src="assets/A2_linguno_penguin_character.png" alt="Linguno Icon" class="tool-icon"><span class="tool-name">Linguno (Drills)</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="youtube-grammar-a1"><img src="assets/B2_youtube_crystal_icon.png" alt="YT Icon" class="tool-icon"><span class="tool-name">YouTube/Grammar</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="grammar-tutor-a1">
+    <img src="assets/A2_tutor_character.png" alt="Grammar Support Icon" class="tool-icon">
+    <span class="tool-name">Classes</span>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quest-info-tabs-MOCKUP">
+            <div class="tab-nav-MOCKUP">
+                <button class="tab-button-MOCKUP active" data-tab="objectives-a1-content">Objectives</button>
+                <button class="tab-button-MOCKUP" data-tab="mindset-a1-content">Mindset</button>
+                <button class="tab-button-MOCKUP" data-tab="milestone-a1-content">Milestone</button>
+            </div>
+            <div id="objectives-a1-content" class="tab-content-MOCKUP active">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-bullseye"></i> Guild Objectives</h4>
+                    <ul><li>Build the absolute basics — like constructing the frame of a house.</li><li>Key: Exposure & comprehension, <strong>not output</strong>.</li></ul>
+                </div>
+            </div>
+            <div id="mindset-a1-content" class="tab-content-MOCKUP">
+                 <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-brain"></i> Guild Mindset</h4>
+                    <p>Assume you know nothing. Focus on <strong>input and absorption</strong>.</p>
+                </div>
+            </div>
+            <div id="milestone-a1-content" class="tab-content-MOCKUP">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-key"></i> Milestone</h4>
+                    <p>Understand simple text gist; ~1000 Anki words reviewed. (Requires: A1-A2 <img src="assets/text_requires_a1a2.png" alt="Req A1-A2" class="inline-requirement-img"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERMEDIATE PHASE -->
+    <div id="phase-intermediate-content-MOCKUP" class="quest-phase-content-MOCKUP" style="display: none;">
+        <div class="quest-visual-header-with-toolkit-MOCKUP">
+            <img src="assets/B2_art_bg_with_character.png" alt="City of Immersion Scene" class="quest-main-illustration-MOCKUP">
+            <div class="quest-title-banner-overlay-MOCKUP">
+                <img src="assets/city_of_immersion_banner.png" class="quest-title-banner-image-MOCKUP" alt="City of Immersion">
+            </div>
+            <div class="toolkit-cluster-overlay-MOCKUP">
+                <div class="toolkit-title-graphic-MOCKUP">
+                    <img src="assets/banner_immersion_kit.png" class="toolkit-title-banner-image-MOCKUP" alt="Immersion Kit">
+                </div>
+                <div class="tools-horizontal-scroll-wrapper-MOCKUP">
+                    <div class="tools-grid-MOCKUP horizontal-layout-MOCKUP">
+                      <div class="tool-card-MOCKUP" data-tool-id="massive-input-reading-b1">
+    <img src="assets/B2_books_icon.png" alt="Native Reading Icon" class="tool-icon">
+    <span class="tool-name">Native Reading</span>
+</div>
+
+<!-- NEW/SPLIT: Massive Input - Watching -->
+<div class="tool-card-MOCKUP" data-tool-id="massive-input-watching-b1">
+    <img src="assets/B2_youtube_crystal_icon.png" alt="Native Watching Icon" class="tool-icon"> <!-- Or use C2_advanced_content_tv_icon.png if more general -->
+    <span class="tool-name">Native Watching</span>
+</div>
+
+<!-- NEW/SPLIT: Massive Input - Podcasts -->
+<div class="tool-card-MOCKUP" data-tool-id="massive-input-podcasts-b1">
+    <img src="assets/B2_podcasts_icon.png" alt="Podcasts Icon" class="tool-icon">
+    <span class="tool-name">Podcasts</span>
+</div>
+
+<!-- NEW: Music Immersion -->
+<div class="tool-card-MOCKUP" data-tool-id="massive-input-music-b1">
+    <img src="assets/B2_Musicians_character.png" alt="Music Immersion Icon" class="tool-icon">
+    <span class="tool-name">Music Immersion</span>
+</div>
+                        <div class="tool-card-MOCKUP" data-tool-id="anki-b1"><img src="assets/A2_anki_gem_icon.png" alt="Anki B1 Icon" class="tool-icon"><span class="tool-name">Anki (Vocab Build)</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="journaling-b1"><img src="assets/B2_journal_icon.png" alt="Journal Icon" class="tool-icon"><span class="tool-name">Writing (Journal)</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="speaking-practice-b1"><img src="assets/B2_social_apps_icon.png" alt="Speak Icon" class="tool-icon"><span class="tool-name">Speaking Practice</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="immersion-tracker-b1"><img src="assets/B2_immersion_tracker_icon.png" alt="Tracker Icon" class="tool-icon"><span class="tool-name">Tracking Immersion</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="chatgpt-b1"><img src="assets/B2_ChatGPT_Companion_character.png" alt="ChatGPT B1 Icon" class="tool-icon"><span class="tool-name">ChatGPT (Assistant)</span></div>
+                <div class="tool-card-MOCKUP" data-tool-id="deepl-b1">
+    <img src="assets/B2_DeepL_floating_fairy_character.png" alt="DeepL Icon" class="tool-icon">
+    <span class="tool-name">DeepL Translator</span>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quest-info-tabs-MOCKUP">
+            <div class="tab-nav-MOCKUP">
+                <button class="tab-button-MOCKUP active" data-tab="objectives-b1-content">Objectives</button>
+                <button class="tab-button-MOCKUP" data-tab="mindset-b1-content">Mindset</button>
+                <button class="tab-button-MOCKUP" data-tab="milestone-b1-content">Milestone</button>
+            </div>
+            <div id="objectives-b1-content" class="tab-content-MOCKUP active">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-drafting-compass"></i> Guild Objectives</h4>
+                    <ul><li>Transition to subconscious acquisition.</li><li>Goal: <strong>Feel the language</strong>.</li></ul>
+                </div>
+            </div>
+            <div id="mindset-b1-content" class="tab-content-MOCKUP">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-user-astronaut"></i> Guild Mindset</h4>
+                    <p>Bridge gap with <strong>massive input</strong> & gentle output.</p>
+                </div>
+            </div>
+            <div id="milestone-b1-content" class="tab-content-MOCKUP">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-check-double"></i> Milestone</h4>
+                    <p>Skills feel natural; understand most native content without subs. (Requires: B1-B2 <img src="assets/text_requires_b1b2.png" alt="Req B1-B2" class="inline-requirement-img"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADVANCED PHASE -->
+    <div id="phase-advanced-content-MOCKUP" class="quest-phase-content-MOCKUP" style="display: none;">
+        <div class="quest-visual-header-with-toolkit-MOCKUP">
+            <img src="assets/C2_art_bg_with_character.png" alt="C2 Citadel Scene" class="quest-main-illustration-MOCKUP">
+            <div class="quest-title-banner-overlay-MOCKUP">
+                <img src="assets/c2_citadel_banner.png" class="quest-title-banner-image-MOCKUP" alt="C2 Citadel">
+            </div>
+            <div class="toolkit-cluster-overlay-MOCKUP">
+                <div class="toolkit-title-graphic-MOCKUP">
+                    <img src="assets/banner_masters_arsenal.png" class="toolkit-title-banner-image-MOCKUP" alt="Master's Arsenal">
+                </div>
+                <div class="tools-horizontal-scroll-wrapper-MOCKUP">
+                    <div class="tools-grid-MOCKUP horizontal-layout-MOCKUP">
+                        <div class="tool-card-MOCKUP" data-tool-id="native-interaction-c1"><img src="assets/C2_scholars_character.png" alt="Native Icon" class="tool-icon"><span class="tool-name">Native Interaction</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="shadowing-c1"><img src="assets/C2_shadowing_ghost_character.png" alt="Shadow Icon" class="tool-icon"><span class="tool-name">Shadowing</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="advanced-content-c1"><img src="assets/C2_advanced_content_tv_icon.png" alt="Adv Content Icon" class="tool-icon"><span class="tool-name">Advanced Content</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="refining-output-c1"><img src="assets/C2_advanced_text_icon.png" alt="Refine Output Icon" class="tool-icon"><span class="tool-name">Refining Output</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="targeted-vocab-c1"><img src="assets/C2_academic_papers_icon.png" alt="Target Vocab Icon" class="tool-icon"><span class="tool-name">Targeted Vocab/Grammar</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="chatgpt-c1-mastery"><img src="assets/C2_ChatGPT_floating_fairy_character.png" alt="ChatGPT C1 Icon" class="tool-icon"><span class="tool-name">ChatGPT (Mastery)</span></div>
+                        <div class="tool-card-MOCKUP" data-tool-id="cultural-nuance-c1"><img src="assets/C2_cultural_understanding_icon.png" alt="Culture Icon" class="tool-icon"><span class="tool-name">Cultural Nuance</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="quest-info-tabs-MOCKUP">
+            <div class="tab-nav-MOCKUP">
+                <button class="tab-button-MOCKUP active" data-tab="objectives-c1-content">Objectives</button>
+                <button class="tab-button-MOCKUP" data-tab="mindset-c1-content">Mindset</button>
+                <button class="tab-button-MOCKUP" data-tab="milestone-c1-content">Milestone</button>
+            </div>
+            <div id="objectives-c1-content" class="tab-content-MOCKUP active">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-crown"></i> Guild Objectives</h4>
+                    <ul><li><strong>Own the language completely.</strong></li><li>Sound authentic, express nuance.</li></ul>
+                </div>
+            </div>
+            <div id="mindset-c1-content" class="tab-content-MOCKUP">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-microscope"></i> Guild Mindset</h4>
+                    <p>Focus on subtle details: tone, register, idioms, culture, accent.</p>
+                </div>
+            </div>
+            <div id="milestone-c1-content" class="tab-content-MOCKUP">
+                <div class="tab-content-inner-MOCKUP">
+                    <h4 class="tab-content-title-MOCKUP"><i class="fas fa-trophy"></i> Milestone</h4>
+                    <p>Mastery of nuance, complexity, spontaneity. Specialize & create. (Requires: C1-C2 <img src="assets/text_requires_c1c2.png" alt="Req C1-C2" class="inline-requirement-img"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WISDOM PHASE -->
+    <div id="phase-wisdom-content-MOCKUP" class="quest-phase-content-MOCKUP final-board-style-MOCKUP" style="display: none;">
+        <div class="final-board-content-wrapper-MOCKUP">
+            <img src="assets/side_by_side.png" alt="Wise Guild Master" class="final-board-character-MOCKUP">
+            <div class="final-board-title-area-MOCKUP">
+                <i class="fas fa-scroll"></i> The Bottom Line
+            </div>
+            <div class="final-board-text-MOCKUP">
+                <p>This system adapts at each level:</p>
+                <ul><li><i class="fas fa-seedling"></i> <strong>Beginner (A1-A2):</strong> Absorb, read, build base vocabulary.</li><li><i class="fas fa-city"></i> <strong>Intermediate (B1-B2):</strong> Immerse fully, start using language.</li><li><i class="fas fa-chess-rook"></i> <strong>Advanced (C1-C2):</strong> Refine tone, rhythm, depth.</li></ul>
+                <p>🔥 Build around what you love. ⏱️ Track hours. Adapt. Evolve. 🚀 Go learn it.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WARNING PHASE -->
+    <div id="phase-warning-content-MOCKUP" class="quest-phase-content-MOCKUP final-board-style-MOCKUP" style="display: none;">
+        <div class="final-board-content-wrapper-MOCKUP">
+            <img src="assets/warning.png" alt="Warning" class="final-board-character-MOCKUP" style="max-width: 200px;">
+             <div class="final-board-title-area-MOCKUP">
+                <i class="fas fa-exclamation-triangle"></i> A Final Caution!
+            </div>
+            <div class="final-board-text-MOCKUP">
+                <p>🚧 Path has stages for a reason. Jumping ahead or delaying hinders progress.</p>
+                <p>🔨 Respect the process, build step-by-step, reach the Citadel when truly ready.</p>
+                <a href="https://www.facebook.com/photo/?fbid=428270590007510&set=a.119908087510430" class="btn btn-guild-caution" target="_blank">On Sacrifice & Mindset</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+ 
+</main>
+  <div id="guild-main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+    <div id="guild-tool-modal" class="tool-modal-container">
+        <div class="tool-modal-content">
+            <button class="tool-modal-close">×</button>
+            <div class="tool-modal-header">
+                <img id="tool-modal-icon" src="" alt="Tool Icon">
+                <h3 id="tool-modal-title"></h3>
+            </div>
+            <div id="tool-modal-body" class="tool-modal-body-content"></div>
+            <div id="tool-modal-aljohn-note" class="tool-modal-aljohn-note-content"></div>
+        </div>
+    </div>
+ 
+
+  <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script src="../js/navbar-loader.js" defer></script>
+<script src="../js/footer-loader.js" defer></script>
+    <script src="js/guild-strategy-config.js" defer></script>
+    <script src="js/guild-strategy-ui-MOCKUP.js" defer></script>
+    <script src="js/guild-strategy-interactions-MOCKUP.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Zero to Fluency - A Polyglot Clicker</title>
+    <link rel="stylesheet" href="css/ztf_styles.css">
+    <!-- Link to Google Fonts if not already in a global CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome if using its icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <header class="game-header">
+            <h1>From Zero to Fluency</h1>
+            <p class="subtitle">An Aljohn Polyglot Inspired Clicker Adventure</p>
+        </header>
+
+        <main class="game-main-content">
+            <!-- Left Panel: Current Language Info & Clicker -->
+            <section class="panel current-language-panel">
+                <div id="current-language-info">
+                    <div class="language-display">
+                        <img id="current-language-flag" src="" alt="Current Language Flag">
+                        <h2 id="current-language-name">No Language Selected</h2>
+                    </div>
+                    <div id="current-cefr-level-display">
+                        <img id="main-character-art" src="../assets/A2_art_bg_with_character.png" alt="Character Art">
+                        <p id="current-cefr-level">Awaiting Ascent...</p>
+                    </div>
+                    <div class="language-level-progress">
+                        <div class="progress-bar-label" id="language-progress-text">Select a language to begin</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="language-progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clicker-zone">
+                    <div class="lu-display">
+                        <span id="study-points-value">0</span> Lexical Units (LU)
+                    </div>
+                    <div class="lps-display">
+                        (<span id="sps-value">0</span> LU/sec)
+                    </div>
+                    <button id="click-learn-word-button" class="clicker-button">
+                        <img src="../assets/A2_anki_gem_icon.png" alt="Learn Word Icon">
+                        <span>Learn Word!</span>
+                    </button>
+                </div>
+                 <div class="story-log-container">
+                    <h3>Aspirant's Log:</h3>
+                    <div class="story-log-messages" id="story-log-messages">
+                        <p>Your journey to fluency starts now...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Center Panel: Upgrades (Learning Methods) -->
+            <section class="panel upgrades-panel">
+                <h2>Learning Methods Toolkit</h2>
+                <div class="upgrades-grid" id="upgrades-panel-content">
+                    <!-- Upgrades will be populated by JS -->
+                    <p class="panel-placeholder-text">Unlock methods by accumulating Lexical Units.</p>
+                </div>
+            </section>
+
+            <!-- Right Panel: Stats / Unlocked Languages / Future Features -->
+            <section class="panel stats-languages-panel">
+                <h2>Ascended Languages</h2>
+                <div id="mastered-languages-list">
+                    <!-- Mastered languages will be populated by JS -->
+                    <p class="panel-placeholder-text">Master languages to unlock global bonuses!</p>
+                </div>
+                <div class="game-stats">
+                    <h3>Game Stats</h3>
+                    <p>Total Clicks: <span id="total-clicks-stat">0</span></p>
+                    <p>Time Played: <span id="time-played-stat">0s</span></p>
+                    <button id="reset-game-button" class="control-button">Reset Progress</button>
+                     <button id="save-game-button" class="control-button">Save Manually</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modals / Overlays -->
+        <div id="language-choice-screen" class="modal-overlay">
+            <div class="modal-content language-choice-modal">
+                <h2 id="language-choice-title">Select Your First Language</h2>
+                <div class="language-options-list">
+                    <!-- Language options populated by JS -->
+                </div>
+                <p class="modal-footer-note">Choose wisely, Aspirant. Your first ascent shapes the path ahead.</p>
+            </div>
+        </div>
+
+        <div id="explainer-modal" class="modal-overlay">
+            <div class="modal-content explainer-modal-content">
+                <button class="explainer-modal-close">×</button>
+                <div class="explainer-header">
+                    <img id="explainer-icon" src="" alt="Explainer Icon">
+                    <h3 id="explainer-title">Insight Unlocked!</h3>
+                </div>
+                <div id="explainer-text" class="explainer-body">
+                    <p>Details about this method or milestone...</p>
+                </div>
+                <button id="explainer-confirm-button" class="modal-confirm-button">Understood!</button>
+            </div>
+        </div>
+    </div> <!-- .game-wrapper -->
+
+    <script src="js/ztf_game_data.js"></script>
+    <script src="js/ztf_engine.js"></script>
+    <script src="js/ztf_ui.js"></script>
+    <script src="js/ztf_features.js"></script>
+    <script src="js/ztf_main.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_person_comparison.css */
+/* Themed Styles for Person A vs Person B Comparison - STRICT GREEN THEME */
+
+/* Main container for the comparison - now a themed card */
+.person-comparison-container {
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    color: var(--theme-light-mint-text);
+    border-radius: 10px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    position: relative;
+}
+
+/* Title within the themed card */
+.person-comparison-container .subsection-title-center {
+   color: var(--theme-brighter-mint-text);
+    margin-top: 0;
+    font-size: 1.9rem;
+    text-shadow: 0 0 10px rgba(45, 206, 137, 0.3);
+    text-align: center;
+}
+.person-comparison-container .subsection-title-center::after {
+    background-color: var(--theme-biotech-green);
+    box-shadow: 0 0 6px rgba(45, 206, 137, 0.5);
+}
+
+.comparison-intro-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--theme-soft-mint-text);
+    margin: 0.5rem auto 2.5rem;
+    max-width: 750px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+/* "deliberate practice" highlight */
+.comparison-intro-subtitle .highlight-focus {
+    color: var(--theme-biotech-green); /* CHANGED TO GREEN */
+    font-weight: 600;
+    background-color: rgba(45, 206, 137, 0.1); /* Subtle green background */
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+}
+
+.comparison-split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 1.5rem;
+}
+
+/* Inner Person Cards */
+.person-card {
+    background-color: rgba(4, 15, 10, 0.75); /* Slightly more opaque inner card */
+    border: 1px solid rgba(45, 206, 137, 0.25); /* Slightly more visible border */
+    border-radius: 8px;
+    padding: 1.75rem;
+    text-align: center;
+    width: calc(50% - 1rem);
+    min-width: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25), inset 0 0 8px rgba(0,20,10,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.person-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,30,15,0.3);
+    border-color: rgba(45, 206, 137, 0.45); /* Brighter border on hover */
+}
+
+.person-flag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    opacity: 0.6; /* Slightly more subtle */
+}
+.person-flag img {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.person-card .silhouette-bg {
+    width: 100px; /* Further reduced size for a sleeker look */
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 3px solid var(--theme-card-border); /* Consistent themed border */
+}
+
+/* Silhouette Backgrounds and Image Filters */
+.person-card.person-a .silhouette-bg {
+    background-color: var(--theme-biotech-green); /* Biotech Green for Person A */
+}
+.person-card.person-b .silhouette-bg {
+     background-color: var(--theme-soft-mint-text); /* Softer Mint for Person B's background for contrast */
+}
+
+.silhouette-img { 
+    height: 70%;
+    filter: brightness(0) invert(1); /* White silhouette on green bg */
+}
+.person-card.person-b .silhouette-img.person-b-silhouette { /* Specific to person B */
+    filter: brightness(0) invert(0.1); /* Dark silhouette on light mint bg */
+}
+
+.person-card h4 { /* Person Name */
+    font-family: var(--theme-font-primary);
+    font-size: 1.25rem; /* Slightly smaller */
+    margin-bottom: 0.5rem;
+    color: var(--theme-brighter-mint-text);
+    font-weight: 600;
+}
+
+.hours-invested {
+    font-size: 2.2rem; /* Adjusted size */
+    font-family: var(--theme-font-primary);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+/* Themed Hours Colors - BOTH GREEN for thematic consistency */
+.person-card.person-a .hours-invested,
+.person-card.person-b .hours-invested {
+    color: var(--theme-biotech-green); /* CHANGED TO GREEN */
+}
+/* If you want Person A to still be visually distinct (e.g., more hours = brighter) */
+.person-card.person-a .hours-invested {
+    text-shadow: 0 0 8px rgba(45, 206, 137, 0.5); /* Add a subtle glow */
+}
+
+
+.hours-text {
+    font-size: 0.8rem; /* Smaller */
+    font-weight: 400;
+    display: block;
+    opacity: 0.6; /* More subtle */
+    color: var(--theme-muted-mint-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.proficiency-level {
+    font-weight: 600;
+    font-size: 0.9rem; /* Adjusted */
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.35rem 1.1rem; /* Adjusted */
+    border-radius: 20px;
+    display: inline-block;
+    min-width: 160px; /* Adjusted */
+}
+/* Themed Proficiency Tags - Sticking to Green Theme */
+.high-proficiency {
+    background-color: var(--theme-biotech-green); /* Green background */
+    color: var(--theme-deepest-bg-contrast); /* Dark text on green */
+    font-weight: bold;
+}
+.low-proficiency {
+    background-color: rgba(45, 206, 137, 0.15); /* Very subtle green background */
+    color: var(--theme-soft-mint-text);
+    border: 1px solid rgba(45, 206, 137, 0.35);
+}
+
+.comparison-detail {
+    font-size: 0.88rem; /* Adjusted */
+    opacity: 0.8;
+    color: var(--theme-light-mint-text);
+    line-height: 1.55;
+    flex-grow: 1;
+    max-width: 95%;
+}
+
+.comparison-question {
+    text-align: center;
+    font-style: italic;
+    margin-top: 2.5rem;
+    font-size: 1.05rem; /* Adjusted */
+    color: var(--theme-soft-mint-text);
+    opacity: 0.9;
+}
+.comparison-question span { /* For the highlighted "better" - make it green */
+    color: var(--theme-biotech-green); /* CHANGED TO GREEN */
+    font-weight: bold;
+    background-color: rgba(45, 206, 137, 0.1);
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+}
+.comparison-question span .highlight-focus { /* For the highlighted "better" - make it green */
+   font-size: 2rem;
+}
+
+/* Responsive adjustments for person comparison */
+@media (max-width: 900px) {
+    .person-card {
+        width: calc(50% - 1rem);
+        min-width: 250px; /* Adjusted */
+    }
+}
+
+@media (max-width: 600px) {
+    .comparison-split {
+        flex-direction: column;
+        align-items: center;
+    }
+    .person-card {
+        width: 100%; 
+        max-width: 360px; /* Adjusted */
+        margin-bottom: 1.5rem;
+    }
+    .person-comparison-container .subsection-title-center {
+        font-size: 1.6rem; /* Adjusted */
+    }
+    .comparison-intro-subtitle {
+        font-size: 0.95rem; /* Adjusted */
+    }
+    .hours-invested {
+        font-size: 2rem; /* Adjusted */
+    }
+}

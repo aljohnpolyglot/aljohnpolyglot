@@ -1,0 +1,40 @@
+/* --- Shop-Specific Header --- */
+header.shop-header {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    position: fixed; /* Assuming it's also fixed like the main header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Same as main header, adjust if layering needed */
+}
+nav.shop-nav-container { /* Use this class on the nav inside shop-header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    height: 65px; /* Different height than main nav */
+}
+.shop-header-left { display: flex; align-items: center; gap: 1.5rem; }
+.shop-logo-link { display: inline-block; transition: transform 0.2s ease-in-out; }
+.shop-logo-link:hover { transform: scale(1.05); }
+.shop-header-logo-img { height: 40px; width: auto; max-width: 180px; }
+.back-to-main-site-link {
+    text-decoration: none; color: var(--primary-blue); font-weight: 500;
+    font-size: 0.85rem; display: flex; align-items: center;
+    padding: 0.3rem 0.6rem; border-radius: 15px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.back-to-main-site-link i { margin-right: 6px; font-size: 0.9em; }
+.back-to-main-site-link:hover { background-color: var(--light-bg); color: var(--primary-red); }
+/* Nav links within shop header (.shop-page-nav-links) will inherit from general .nav-links in navbar.css */
+/* We only need overrides if their appearance or behavior is different in the shop context */
+.shop-page-nav-links a.active-link { /* Specific active state for shop nav if needed */
+    color: var(--primary-red);
+    font-weight: 700;
+}
+.shop-page-nav-links a.active-link::after { width: 100%; }
+
+/* Shop Header Responsive */
+    nav.shop-nav-container { /* Potentially adjust padding if needed */ }
+    .shop-header-logo-img { height: 35px; }

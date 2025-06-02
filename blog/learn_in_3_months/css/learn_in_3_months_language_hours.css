@@ -1,0 +1,185 @@
+/* D:\website\blog\learn_in_3_months\css\learn_in_3_months_language_hours.css */
+/* Themed Styles for Language Hours Showcase Section */
+
+.language-hours-showcase {
+ background-color: var(--theme-dark-bg-mid); /* Using the mid-range dark green */
+ 
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative; /* For any pseudo-elements if needed */
+    border-top: 1px solid var(--theme-card-border); /* Subtle separator */
+    border-bottom: 1px solid var(--theme-card-border); /* Subtle separator */
+}
+
+/* .section-title and .section-subtitle will inherit from global themed styles */
+
+.language-hours-showcase .section-subtitle {
+    margin-bottom: 2rem; /* Slightly less margin before scroll container */
+}
+
+.language-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 10px 10px 10px; /* Reduced bottom padding slightly */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; 
+    scrollbar-color: var(--theme-biotech-green) var(--theme-deepest-bg-contrast); /* Green thumb, very dark track */
+    position: relative;
+    margin-bottom: 1rem; /* Space before the note */
+}
+.language-scroll-container .note {
+    color:white
+}
+
+/* Themed Custom Scrollbar for WebKit browsers */
+.language-scroll-container::-webkit-scrollbar {
+    height: 12px;
+}
+.language-scroll-container::-webkit-scrollbar-track {
+    background: var(--theme-deepest-bg-contrast); /* Very dark track */
+    border-radius: 10px;
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.4); /* Darker inner shadow for track */
+}
+.language-scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--theme-biotech-green); /* Biotech Green thumb */
+    border-radius: 10px;
+    border: 3px solid var(--theme-deepest-bg-contrast); /* Creates "padding" effect */
+}
+.language-scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #3ff0aa; /* Lighter Green on hover for thumb */
+}
+.language-grid-horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px; /* Increased space between cards */
+    width: max-content;
+    padding-left: 5px; /* Ensure first card isn't cut off by container padding */
+    padding-right: 5px; /* Ensure last card isn't cut off */
+}
+
+/* Individual Language Card Theming */
+.language-card-v2 {
+    flex: 0 0 auto;
+    width: 250px; /* Slightly narrower to fit more */
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px; /* More rounded */
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    color: var(--theme-light-mint-text); /* Default text color for card */
+}
+.language-card-v2:hover {
+    transform: translateY(-8px) scale(1.03); /* Enhanced hover */
+    box-shadow: 0 12px 30px rgba(0, 70, 40, 0.4), inset 0 0 20px rgba(0,40,20,0.45);
+    border-color: var(--theme-card-border-hover);
+}
+
+.language-card-v2 .card-flag-area {
+    width: 100%;
+    height: 120px; /* Adjusted height */
+    overflow: hidden;
+    background-color: rgba(4, 15, 10, 0.5); /* Dark placeholder for flags */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--theme-card-border); /* Separator */
+}
+.language-card-v2 .card-flag-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85; /* Slightly desaturate/dim flags for dark theme */
+    transition: opacity 0.3s ease;
+}
+.language-card-v2:hover .card-flag-area img {
+    opacity: 1; /* Full opacity on hover */
+}
+
+.language-card-v2 .card-content-area {
+    padding: 20px 15px; /* Adjusted padding */
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.language-card-v2 .language-name {
+    font-family: var(--theme-font-primary);
+    color: var(--theme-brighter-mint-text);
+    font-size: 1.25rem; /* Adjusted size */
+    font-weight: 600; /* Slightly less bold for balance */
+    margin-bottom: 12px; /* More space */
+    line-height: 1.3;
+}
+
+.language-card-v2 .hours-display {
+    margin-top: auto;
+}
+
+.language-card-v2 .hours-value {
+    font-size: 2.6rem; 
+    font-weight: 700; 
+    font-family: var(--theme-font-primary); 
+    color: var(--accent-yellow); /* YELLOW for the hours to make them POP */
+    line-height: 1;
+    display: block;
+    text-shadow: 0 0 8px rgba(var(--accent-yellow-rgb-equivalent, 255, 215, 0), 0.3); 
+}
+.language-card-v2 .hours-unit {
+    font-size: 0.9rem; /* Adjusted */
+    color: var(--theme-soft-mint-text); /* Softer mint */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500; /* Regular weight */
+    opacity: 0.8;
+}
+
+/* Themed "Scroll" Hint */
+.language-scroll-container:after {
+    content: 'SCROLL →';
+    position: absolute;
+    right: 15px; /* Adjusted position */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75em; /* Smaller hint */
+    color: var(--theme-biotech-green);
+    font-weight: bold;
+    font-family: var(--theme-font-tech); /* Techy font for hint */
+    background-color: var(--theme-dark-bg-mid); /* Dark bg for hint */
+    padding: 3px 8px; /* Adjusted padding */
+    border-radius: 15px; /* Pill shape */
+    border: 1px solid var(--theme-card-border);
+    opacity: 0; /* Hidden by default, use JS to show if scrollable */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2; /* Ensure it's above cards if they overlap somehow */
+}
+
+/* JS would add this class if scrollWidth > clientWidth */
+.language-scroll-container.is-scrollable:after {
+    opacity: 0.8;
+}
+.language-scroll-container:hover:after { /* Optionally hide on hover if user is interacting */
+    /* opacity: 0; */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .language-card-v2 {
+        width: 220px; /* Narrower cards on smaller screens */
+    }
+    .language-card-v2 .card-flag-area {
+        height: 110px;
+    }
+    .language-card-v2 .language-name {
+        font-size: 1.15rem;
+    }
+    .language-card-v2 .hours-value {
+        font-size: 2.3rem;
+    }
+}

@@ -1,0 +1,614 @@
+/* css/blog_theme.css */
+/* Main Themed Styles for the ENTIRE Blog Page (blog.html) */
+
+/* ==========================================================================
+   0. THEME VARIABLES (POLYGLOT PAPERS BIOTECH THEME)
+   ========================================================================== */
+:root {
+    /* Polyglot Papers Theme Palette */
+    --theme-biotech-green: #2dce89;
+    --theme-biotech-green-rgb: 45, 206, 137; /* For rgba() */
+    --theme-dark-bg-base: #040f0a;
+    --theme-dark-bg-gradient-start: #040f0a;
+    --theme-dark-bg-gradient-mid: #0a2e1a;
+    --theme-dark-bg-gradient-end: #104527;
+    --theme-deepest-bg-contrast: #020805;
+    --theme-deepest-bg-contrast-rgb: 2, 8, 5; /* For rgba() */
+
+    --theme-light-mint-text: #c8f7e0;
+    --theme-brighter-mint-text: #e0f9ee;
+    --theme-soft-mint-text: #a0d8c0;
+    --theme-muted-mint-text: rgba(190, 230, 210, 0.75);
+
+    --theme-card-bg: rgba(10, 38, 25, 0.75);
+    --theme-card-bg-rgb: 10, 38, 25; /* For rgba() */
+    --theme-card-bg-hover: rgba(15, 48, 30, 0.85);
+    --theme-card-border: rgba(45, 206, 137, 0.35);
+    --theme-card-border-rgb: 45, 206, 137; /* For rgba() */
+    --theme-card-border-hover: rgba(45, 206, 137, 0.6);
+    --theme-card-shadow: 0 4px 25px rgba(0, 50, 30, 0.3), inset 0 0 12px rgba(0,30,15,0.3);
+
+    --theme-accent-yellow: #FFD700; /* Aljohn's distinct yellow */
+    --theme-accent-yellow-rgb: 255, 215, 0; /* For rgba() */
+    --theme-accent-yellow-darker: #f0c000;
+
+    --theme-font-primary: 'Montserrat', sans-serif;
+    --theme-font-secondary: 'Open Sans', sans-serif;
+    --theme-font-tech: 'Roboto Mono', monospace;
+
+    /* Fallback (can be removed if all browsers support new ones or if not strictly needed) */
+    --fallback-dark-text: var(--theme-brighter-mint-text);
+    --fallback-light-text: var(--theme-deepest-bg-contrast);
+}
+
+/* ==========================================================================
+   1. GLOBAL STYLES & RESETS (THEMED)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body.page-theme-biotech-dark { /* Apply theme only when this class is on body */
+    font-family: var(--theme-font-secondary);
+    color: var(--theme-light-mint-text);
+    line-height: 1.75;
+    background-color: var(--theme-dark-bg-base);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232dce89' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(140deg,
+            var(--theme-dark-bg-gradient-start) 0%,
+            var(--theme-dark-bg-gradient-mid) 45%,
+            var(--theme-dark-bg-gradient-end) 100%
+        );
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative; /* For z-indexing context if needed */
+    z-index: 1;
+}
+
+/* Links */
+a {
+    color: var(--theme-biotech-green);
+    text-decoration: none;
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+a:hover, a:focus {
+    color: var(--theme-accent-yellow);
+    opacity: 0.9;
+    outline: none; /* Remove default focus outline if custom is provided */
+}
+/* Add a subtle focus style for accessibility */
+a:focus-visible {
+    outline: 2px dashed var(--theme-biotech-green);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Headings & General Text */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--theme-font-primary);
+    color: var(--theme-brighter-mint-text);
+    line-height: 1.3;
+    margin-bottom: 0.75rem; /* Default bottom margin for headings */
+}
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(2rem, 5vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+h4 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+
+p {
+    margin-bottom: 1rem; /* Default bottom margin for paragraphs */
+}
+
+strong, .highlight-focus {
+    color: var(--theme-biotech-green); /* Default strong/highlight to green */
+    font-weight: 600;
+}
+.highlight-yellow-accent { /* Specific class for yellow highlight */
+    color: var(--accent-yellow);
+    font-weight: 600;
+}
+
+/* Buttons (Themed) */
+.btn {
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    line-height: 1.2; /* Ensure consistent line height */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+.btn:focus-visible {
+    outline: 2px dashed var(--theme-accent-yellow);
+    outline-offset: 3px;
+}
+
+.btn-primary { /* Main CTA button - Green */
+    background: linear-gradient(135deg, var(--theme-biotech-green), #23a870);
+    color: var(--theme-deepest-bg-contrast);
+    border: none;
+    box-shadow: 0 0 15px rgba(var(--theme-biotech-green-rgb), 0.4), 0 2px 5px rgba(0,0,0,0.2);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, #38e09b, var(--theme-biotech-green));
+    box-shadow: 0 0 25px rgba(var(--theme-biotech-green-rgb), 0.6), 0 4px 8px rgba(0,0,0,0.25);
+    transform: translateY(-2px) scale(1.02);
+    color: var(--theme-deepest-bg-contrast); /* Keep text dark */
+}
+
+.btn-outline { /* Secondary/Outline button - Green Outline */
+    background-color: transparent;
+    color: var(--theme-biotech-green);
+    border-color: var(--theme-biotech-green);
+}
+.btn-outline:hover, .btn-outline:focus {
+    background-color: var(--theme-biotech-green);
+    color: var(--theme-deepest-bg-contrast);
+    box-shadow: 0 0 15px rgba(var(--theme-biotech-green-rgb), 0.4);
+}
+
+.btn-accent { /* Yellow Accent Button */
+    background-color: var(--theme-accent-yellow);
+    color: var(--theme-deepest-bg-contrast);
+    border-color: var(--theme-accent-yellow);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15), 0 0 10px rgba(var(--theme-accent-yellow-rgb), 0.4);
+}
+.btn-accent:hover, .btn-accent:focus {
+    background-color: var(--theme-accent-yellow-darker);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 15px rgba(var(--theme-accent-yellow-rgb), 0.5);
+    transform: translateY(-2px) scale(1.02);
+}
+.btn-small {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+}
+.btn i { /* Icon inside button */
+    margin-right: 0.6em;
+    font-size: 1.05em; /* Slightly larger than button text */
+}
+
+
+/* General Content Section Structure */
+.content-section {
+    padding: 70px 0;
+    position: relative;
+}
+
+/* Themed Card Style (General purpose) */
+.themed-card {
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    color: var(--theme-light-mint-text);
+    margin-bottom: 2rem; /* Default spacing for cards */
+}
+.themed-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 70, 40, 0.38), inset 0 0 18px rgba(0,40,20,0.42);
+    border-color: var(--theme-card-border-hover);
+}
+.themed-card h3 { /* Generic h3 inside a themed card */
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   2. BLOG PAGE SPECIFIC STYLES (blog.html)
+   ========================================================================== */
+
+/* --- Blog Hero Section --- */
+/* (Styles from your previous blog_theme.css, verified and integrated) */
+.blog-hero-section {
+    padding: 100px 0 60px 0; 
+    text-align: center;
+    background-color: var(--theme-dark-bg-mid); 
+    color: var(--theme-brighter-mint-text);
+    border-bottom: 3px solid var(--theme-biotech-green);
+    position: relative;
+    overflow: hidden;
+}
+.blog-hero-section::before { 
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232dce89' fill-opacity='0.02' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.99-7.5L26 15v18.5l-13 7.5L0 33.5V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+.blog-hero-section .container {
+    position: relative; z-index: 1;
+}
+.blog-hero-logo { 
+    max-width: 140px; /* Adjusted */
+    margin-bottom: 1.25rem; /* Adjusted */
+    opacity: 0.85;
+}
+.blog-hero-title {
+    font-family: var(--theme-font-primary);
+    font-size: clamp(2.6rem, 5.5vw, 4rem); /* Adjusted */
+    color: var(--theme-brighter-mint-text);
+    text-shadow: 0 0 18px rgba(var(--theme-biotech-green-rgb), 0.55); /* Stronger glow */
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px; /* Slightly less spacing */
+}
+.blog-hero-tagline {
+    font-family: var(--theme-font-tech);
+    font-size: 1.05rem; /* Adjusted */
+    color: var(--theme-biotech-green);
+    text-transform: uppercase;
+    letter-spacing: 1.8px; /* Adjusted */
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+.blog-hero-intro {
+    font-size: 1.1rem; /* Adjusted */
+    color: var(--theme-soft-mint-text);
+    max-width: 680px; /* Adjusted */
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* --- Blog Archive Section --- */
+.blog-archive-section {
+    padding: 60px 0;
+    background-color: var(--theme-dark-bg-base); 
+}
+.blog-layout-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2.5rem;
+    align-items: flex-start; /* Important for sticky within flex: prevents stretching */
+}
+/* Sidebar Styling */
+.blog-sidebar {
+    flex: 0 0 280px; 
+    background-color: var(--theme-deepest-bg-contrast); 
+    padding: 1.8rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--theme-card-border);
+    box-shadow: inset 0 0 15px rgba(var(--theme-card-bg-rgb, 10, 38, 25), 0.3);
+    height: fit-content; 
+    position: sticky; /* <<< THIS IS THE KEY FOR CSS STICKY */
+    top: 100px;       /* <<< Adjust this based on your fixed header's height + desired gap */
+                      /* E.g., if header is 70px, top: 90px (70px header + 20px gap) or 100px is fine */
+    max-height: calc(100vh - 120px); /* (top value + some bottom viewport margin) */
+    overflow-y: auto; /* For when sidebar content is taller than max-height */
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme-biotech-green) var(--theme-deepest-bg-contrast);
+}
+.blog-sidebar::-webkit-scrollbar { height: 8px; width: 8px; }
+.blog-sidebar::-webkit-scrollbar-track { background: rgba(var(--theme-deepest-bg-contrast-rgb), 0.5); border-radius: 4px;}
+.blog-sidebar::-webkit-scrollbar-thumb { background-color: var(--theme-biotech-green); border-radius: 4px;}
+.sidebar-title {
+    font-family: var(--theme-font-primary);
+    font-size: 1.3rem; /* Adjusted */
+    color: var(--theme-biotech-green);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--theme-card-border); /* Thinner border */
+    text-align: center;
+}
+.sidebar-title i { margin-right: 0.6rem; opacity: 0.85; }
+
+.filter-group { margin-bottom: 1.8rem; /* Adjusted */ }
+.filter-label {
+    display: block;
+    font-family: var(--theme-font-tech);
+    font-size: 0.85rem; /* Adjusted */
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.6rem; /* Adjusted */
+    text-transform: uppercase;
+    letter-spacing: 1.2px; /* Adjusted */
+}
+.filter-select, .filter-search-input {
+    width: 100%;
+    padding: 0.65rem 0.9rem; /* Adjusted */
+    background-color: rgba(var(--theme-card-bg-rgb), 0.85); 
+    color: var(--theme-light-mint-text);
+    border: 1px solid var(--theme-card-border);
+    border-radius: 5px; /* Slightly more rounded */
+    font-size: 0.9rem;
+    font-family: var(--theme-font-secondary);
+}
+.filter-select:focus, .filter-search-input:focus {
+    outline: none;
+    border-color: var(--theme-biotech-green);
+    box-shadow: 0 0 10px rgba(var(--theme-biotech-green-rgb), 0.5); /* Brighter focus shadow */
+}
+.filter-search-input::placeholder {
+    color: var(--theme-muted-mint-text);
+    opacity: 0.8;
+}
+
+.filter-options-list button,
+.filter-options-list label { 
+    display: flex; /* For aligning checkbox and text */
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    color: var(--theme-soft-mint-text);
+    padding: 0.5rem 0.3rem; /* Adjusted */
+    border: none;
+    border-bottom: 1px dashed rgba(var(--theme-card-border-rgb), 0.15); /* More subtle dash */
+    font-size: 0.88rem; /* Adjusted */
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.filter-options-list button:last-child,
+.filter-options-list label:last-child { border-bottom: none; }
+
+.filter-options-list button:hover, .filter-options-list button.active,
+.filter-options-list label:hover, 
+.filter-options-list input[type="checkbox"]:checked + .filter-option-text { /* Target text after checked box */
+    color: var(--theme-biotech-green);
+    background-color: rgba(var(--theme-biotech-green-rgb), 0.07);
+    border-radius: 3px; /* Add radius on hover/active */
+}
+.filter-options-list input[type="checkbox"] { 
+    margin-right: 0.6rem; /* Space after checkbox */
+    accent-color: var(--theme-biotech-green);
+    width: 15px; height: 15px; /* Adjust size */
+    vertical-align: middle; /* Better alignment with text */
+}
+.filter-options-list .filter-option-text { /* Wrap label text in this span for better styling with checkbox */
+    flex-grow: 1;
+}
+
+
+.filter-reset-btn { 
+    width: 100%;
+    margin-top: 1.25rem; /* Adjusted */
+    font-size: 0.8rem; /* Smaller reset button */
+    padding: 0.6rem 1rem;
+}
+
+/* Main Blog Posts Area */
+.blog-posts-main { flex: 1; min-width: 0; }
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
+    gap: 2rem;
+}
+
+.blog-post-card { /* This will use .themed-card-style */
+    background-color: var(--theme-card-bg);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.blog-post-card:hover {
+    transform: translateY(-6px) scale(1.01); /* Subtle hover */
+    box-shadow: 0 12px 35px rgba(0, 70, 40, 0.45), inset 0 0 20px rgba(0,40,20,0.5);
+    border-color: var(--theme-card-border-hover);
+}
+.blog-post-card .card-image-link { display: block; position: relative; }
+.blog-post-card .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease; /* Added filter transition */
+    border-bottom: 1px solid var(--theme-card-border);
+    filter: saturate(0.85) brightness(0.95); /* Slightly desaturate/darken by default */
+}
+.blog-post-card:hover .card-image {
+    transform: scale(1.03); /* Slightly less scale */
+    filter: saturate(1) brightness(1); /* Full color on hover */
+}
+.card-category-tags {
+    position: absolute;
+    top: 12px; /* Adjusted */
+    left: 12px; /* Adjusted */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px; /* More gap */
+}
+.card-category-tag {
+    background-color: rgba(var(--theme-biotech-green-rgb), 0.85); /* More opaque */
+    color: var(--theme-deepest-bg-contrast);
+    font-family: var(--theme-font-tech);
+    font-size: 0.65rem; /* Slightly smaller */
+    padding: 4px 9px; /* Adjusted */
+    border-radius: 4px; /* More rounding */
+    text-transform: uppercase;
+    letter-spacing: 0.6px; /* More spacing */
+    font-weight: 500;
+}
+
+.card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+.card-title {
+    font-family: var(--theme-font-primary);
+    font-size: 1.3rem; /* Adjusted */
+    color: var(--theme-brighter-mint-text);
+    margin-bottom: 0.6rem; /* Adjusted */
+    line-height: 1.35;
+}
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--theme-biotech-green); }
+.card-meta {
+    font-size: 0.75rem; /* Adjusted */
+    color: var(--theme-muted-mint-text);
+    margin-bottom: 0.85rem; /* Adjusted */
+    font-family: var(--theme-font-tech);
+}
+.card-meta span { margin-right: 12px; }
+.card-meta i { margin-right: 4px; opacity: 0.8; }
+.card-excerpt {
+    font-size: 0.9rem; /* Adjusted */
+    color: var(--theme-soft-mint-text);
+    line-height: 1.65;
+    margin-bottom: 1.25rem; /* Adjusted */
+    flex-grow: 1; 
+}
+.card-read-more { /* Will use .btn .btn-outline (green outline) */
+    margin-top: auto; 
+    align-self: flex-start; 
+    font-size: 0.8rem; /* Adjusted */
+    padding: 0.5rem 1.1rem; /* Adjusted */
+}
+.card-read-more i { font-size: 0.9em; }
+
+.no-results-message {
+    grid-column: 1 / -1; 
+    text-align: center;
+    font-size: 1.15rem; /* Adjusted */
+    color: var(--theme-soft-mint-text);
+    padding: 3rem 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Pagination (Basic styling placeholder) */
+.pagination-controls { margin-top: 3rem; text-align: center; }
+.pagination-controls button { /* Will use .btn .btn-outline or .btn-primary */
+    margin: 0 5px;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+}
+/* css/theme_overrides.css OR css/blog_theme.css */
+
+/* ... (Navbar overrides) ... */
+
+/* ==========================================================================
+   FOOTER THEME OVERRIDES (for .page-theme-biotech-dark)
+   ========================================================================== */
+
+.page-theme-biotech-dark footer { /* Target the main footer tag */
+    background-color: var(--theme-deepest-bg-contrast) !important; /* VERY DARK background */
+    color: var(--theme-muted-mint-text); 
+    border-top: 2px solid var(--theme-biotech-green); 
+    padding: 40px 0 20px 0; /* Your original padding from footer.css */
+    font-size: 0.9rem;
+    font-family: var(--theme-font-primary);
+    line-height: 1.6;
+}
+
+/* Styling for the direct <p> children in THIS page's footer (copyright, sources) */
+.page-theme-biotech-dark footer > .container > p {
+    text-align: center; 
+    margin: 0 auto 0.6rem auto; 
+    padding: 0;
+    color: var(--theme-muted-mint-text); 
+    font-size: 0.85rem; 
+    width: 100%; 
+    max-width: 90%; 
+}
+.page-theme-biotech-dark footer > .container > p:last-of-type {
+    margin-bottom: 1.5rem; /* Space before #main-footer-placeholder content */
+}
+.page-theme-biotech-dark footer > .container > p a {
+    color: var(--theme-soft-mint-text); 
+}
+.page-theme-biotech-dark footer > .container > p a:hover {
+    color: var(--theme-biotech-green);
+}
+
+/* Styles for the content injected into #main-footer-placeholder by footer-loader.js */
+/* These ensure the INJECTED content (logo, links, social, inner .footer-bottom) is also themed */
+.page-theme-biotech-dark #main-footer-placeholder {
+    width: 100%; /* Ensure placeholder takes full width */
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-content {
+    /* Its flex properties from global footer.css are fine */
+    margin-bottom: 1.5rem; 
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-logo {
+    color: var(--theme-brighter-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-logo .logo-img {
+    border-color: var(--theme-biotech-green);
+    background-color: var(--theme-dark-bg-mid); /* Dark bg for logo if image transparent */
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-links a {
+    color: var(--theme-soft-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-links a:hover {
+    color: var(--theme-biotech-green);
+}
+.page-theme-biotech-dark #main-footer-placeholder .social-links a {
+    color: var(--theme-soft-mint-text);
+}
+.page-theme-biotech-dark #main-footer-placeholder .social-links a:hover {
+    color: var(--theme-biotech-green);
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom { /* The copyright line from global footer */
+    width: 100%; 
+    border-top: 1px solid var(--theme-card-border);
+    color: var(--theme-muted-mint-text);
+    padding-top: 1.5rem; 
+    margin-top: 1.5rem; 
+    text-align: center; 
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom p {
+    text-align: center; 
+    margin: 0 auto 0.5rem auto;
+}
+.page-theme-biotech-dark #main-footer-placeholder .footer-bottom p:last-child { margin-bottom: 0; }
+
+/* Responsive Blog Layout */
+@media (max-width: 992px) {
+    .blog-sidebar {
+        flex: 1 1 100%; 
+        order: -1; 
+        margin-bottom: 2.5rem;
+        position: static; /* Turn off sticky for smaller screens */
+        max-height: none;
+        overflow-y: visible;
+    }
+    .blog-posts-main { flex: 1 1 100%; }
+}
+
+@media (max-width: 768px) {
+    .blog-hero-title { font-size: clamp(2rem, 5vw, 3.2rem); } /* Adjusted */
+    .blog-hero-tagline { font-size: 0.95rem; letter-spacing: 1.5px; } /* Adjusted */
+    .blog-hero-intro { font-size: 1rem; } /* Adjusted */
+
+    .blog-posts-grid { grid-template-columns: 1fr; gap: 1.5rem; } /* Stack cards, reduce gap */
+    .card-title { font-size: 1.2rem; }
+    .card-excerpt { font-size: 0.88rem; }
+}
+
+@media (max-width: 480px) {
+    .blog-hero-section { padding: 80px 0 40px 0; }
+    .blog-hero-title { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+    .blog-hero-tagline { font-size: 0.85rem; }
+    .blog-hero-intro { font-size: 0.95rem; }
+
+    .sidebar-title { font-size: 1.2rem; }
+    .filter-label { font-size: 0.8rem; }
+    .filter-select, .filter-search-input { font-size: 0.85rem; padding: 0.5rem 0.7rem; }
+    .filter-options-list button, .filter-options-list label { font-size: 0.82rem; padding: 0.4rem 0.1rem;}
+    .card-title { font-size: 1.15rem; }
+}

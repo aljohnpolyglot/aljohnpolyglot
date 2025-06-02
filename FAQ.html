@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn Polyglot FAQ - Your Top Questions Answered</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+      <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+   
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --primary-blue: #003087;
+            --accent-yellow: lch(86.93% 87.16 91.27);
+            --dark-text: #2c3e50;
+            --light-text: #ffffff;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --header-height: 70px;
+        }
+
+        html {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--dark-text);
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding-top: var(--header-height); /* Offset for fixed header */
+        }
+
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+        /* --- Standard Header --- */
+        header {
+            background-color: var(--light-text);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            height: var(--header-height);
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        header nav.container { display: flex; justify-content: space-between; align-items: center; padding: 0; height: 100%;}
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
+        .nav-links { list-style: none; display: flex; align-items:center; padding-left:0; margin:0; } .nav-links li { margin-left: 18px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.85rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); } .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+        .nav-links li.dropdown { position: relative; } .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; padding:0; }
+        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
+        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 180px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 1001; border-radius: 0 0 4px 4px; top: 100%; left: 0; padding: 5px 0; }
+        .dropdown-content a { color: var(--dark-text); padding: 9px 15px; text-decoration: none; display: block; font-size: 0.8rem; font-weight: 500; }
+        .dropdown-content a:hover { background-color: var(--light-bg); color: var(--primary-red); } .nav-links li.dropdown:hover .dropdown-content { display: block; }
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 7px 15px !important; border-radius: 20px; font-size:0.85rem !important; } .nav-cta:hover { background-color: #A8001D; }
+        .menu-toggle { display: none; }
+         @media (max-width: 992px) {
+            .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: var(--header-height); left: 0; background-color: var(--light-text); box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding-bottom: 1rem; }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 0; width: 100%; text-align: center; }
+            .nav-links a { display: block; padding: 1rem; border-bottom: 1px solid var(--border-color); }
+            .nav-links li:last-child a { border-bottom: none; }
+            .nav-links .dropbtn { width: 100%; justify-content: center; }
+            .dropdown-content { position: static; box-shadow: none; border-radius: 0; background-color: transparent; padding:0; min-width: 100%; border-top: 1px solid var(--border-color); }
+            .dropdown-content a { border-bottom: 1px solid var(--border-color); }
+            .dropdown-content a:last-child { border-bottom: none; }
+            .menu-toggle { display: block; cursor:pointer; background: none; border: none; padding: 0;}
+            .hamburger { width: 25px; height: 3px; background-color: var(--dark-text); position: relative; transition: all 0.3s linear; }
+            .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: var(--dark-text); transition: all 0.3s linear; } .hamburger::before { top: -8px; } .hamburger::after { top: 8px; }
+            .menu-toggle.active .hamburger { background-color: transparent; } .menu-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); } .menu-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+        }
+
+        /* --- FAQ Page Specific Styles --- */
+        .faq-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
+            color: var(--light-text);
+            padding: 50px 20px;
+            margin-bottom: 2.5rem;
+        }
+        .faq-hero .container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
+        @media (min-width: 768px) { .faq-hero .container { flex-direction: row; text-align: left; gap: 2rem; } }
+        .faq-hero-image { flex-shrink: 0; width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid var(--accent-yellow); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .faq-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+        .faq-hero-text h1 { font-family: var(--font-primary); font-size: clamp(2rem, 5vw, 3.2rem); margin-top: 0; margin-bottom: 0.5rem; }
+        .faq-hero-text p { font-size: 1.05rem; max-width: 600px; opacity: 0.9; margin: 0; }
+
+        .faq-main-layout { display: flex; flex-direction: column; gap: 2.5rem; }
+        @media (min-width: 992px) { .faq-main-layout { flex-direction: row; } }
+
+        .faq-sidebar {
+            flex: 0 0 280px;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            align-self: flex-start;
+            position: sticky;
+            top: calc(var(--header-height) + 20px);
+            max-height: calc(100vh - var(--header-height) - 40px);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (max-width: 991px) { .faq-sidebar { position: static; max-height: none; overflow-y: visible; width: 100%; margin-bottom: 2rem; z-index: auto; display: block; } }
+        .faq-sidebar h2 { font-family: var(--font-primary); color: var(--primary-blue); font-size: 1.4rem; margin-top: 0; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; flex-shrink: 0; }
+        .faq-sidebar .search-bar-container { margin-bottom: 1.5rem; flex-shrink: 0; }
+        .faq-sidebar #faq-search { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.9rem; }
+        .faq-sidebar #faq-search:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 2px rgba(0, 48, 135, 0.2); }
+        .faq-sidebar .category-nav { flex-grow: 1; overflow-y: auto; min-height: 0; }
+        .faq-sidebar .category-nav ul { list-style: none; padding: 0; margin: 0; }
+        .faq-sidebar .category-nav li a { display: block; padding: 0.6rem 0.8rem; text-decoration: none; color: var(--dark-text); font-weight: 500; font-size: 0.95rem; border-radius: 5px; transition: background-color 0.2s ease, color 0.2s ease; margin-bottom: 0.3rem; }
+        .faq-sidebar .category-nav li a:hover, .faq-sidebar .category-nav li a.active-category { background-color: var(--primary-blue); color: var(--light-text); }
+        .faq-sidebar .category-nav li a.active-category { font-weight: 600; }
+
+        .faq-content-area { flex-grow: 1; min-width: 0; }
+        .faq-category-section {
+            margin-bottom: 3rem;
+            padding-top: calc(var(--header-height) + 15px); /* Reduced space for scroll target */
+            margin-top: calc(-(var(--header-height) + 15px));
+        }
+          .faq-category-section-top {
+            margin-bottom: 3rem;
+            padding-top: calc(var(--header-height) +0px ); /* Reduced space for scroll target */
+            margin-top: calc(-(var(--header-height) +0px ));
+        }
+        .faq-category-section:last-child { margin-bottom: 0; }
+        .faq-category-section > h2 { font-family: var(--font-primary); font-size: 1.8rem; color: var(--primary-red); margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-red); padding-bottom: 0.5rem; display: inline-block; }
+        .faq-category-section-top > h2 { /* Target h2 within both section classes */
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--primary-red); /* <<<< RESTORED RED COLOR */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-red); /* <<<< RESTORED RED BORDER */
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+        /* --- FAQ Accordion Specific Styles --- */
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .faq-item.highlight-search { border-left: 5px solid var(--accent-yellow); box-shadow: 0 4px 10px rgba(255,215,0,0.3); }
+
+        .faq-question-toggle {
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        .faq-question-toggle:hover { background-color: #f0f4f8; }
+
+        .faq-item.active .faq-question-toggle {
+            /* Optional: if you want a separator when open */
+            /* border-bottom: 1px solid var(--border-color); */
+        }
+
+        .faq-question-toggle .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.9em;
+            color: var(--primary-red);
+        }
+        .faq-item.active .faq-question-toggle .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #333;
+        }
+        .faq-item.active .faq-answer-content {
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-answer-content p { margin-top:0; margin-bottom: 0.8rem;}
+        .faq-answer-content p:last-child { margin-bottom: 0; }
+        .faq-answer-content ul { list-style: disc; padding-left: 20px; margin-top: 0.5rem; margin-bottom: 0.8rem; }
+        .faq-answer-content ul li { margin-bottom: 0.4rem; }
+        .faq-answer-content a { color: var(--primary-red); text-decoration: underline; font-weight: 500; }
+        .faq-answer-content a:hover { color: #A8001D; }
+        .faq-answer-content strong { color: var(--dark-text); font-weight: 600; }
+        .faq-answer-content em { display: block; margin-top: 0.8rem; font-size: 0.9em; color: #555; }
+
+
+        .no-results-message { text-align: center; font-size: 1.1rem; color: #777; padding: 2rem; background-color: #fff; border-radius: 8px; box-shadow: var(--card-shadow); }
+
+        /* Reach Out Section */
+        .faq-reach-out { margin-top: 3rem; padding: 2.5rem; background-color: #fff; border-radius: 8px; box-shadow: var(--card-shadow); text-align: center; border-top: 3px solid var(--primary-blue); }
+        .faq-reach-out h2 { font-family: var(--font-primary); color: var(--primary-blue); font-size: 1.6rem; margin-bottom: 0.75rem; }
+        .faq-reach-out p { color: #444; font-size: 1.05rem; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .reach-out-links { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        .reach-out-links a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; font-size: 0.95rem; }
+        .reach-out-links a.email-link { background-color: var(--primary-red); color: var(--light-text); }
+        .reach-out-links a.email-link:hover { background-color: #A8001D; transform: translateY(-2px); }
+        .reach-out-links a.facebook-link { background-color: #1877F2; color: var(--light-text); }
+        .reach-out-links a.facebook-link:hover { background-color: #125aac; transform: translateY(-2px); }
+        .reach-out-links a.contact-page-link { border: 2px solid var(--primary-blue); color: var(--primary-blue); }
+        .reach-out-links a.contact-page-link:hover { background-color: var(--primary-blue); color: var(--light-text); transform: translateY(-2px); }
+
+        /* Footer styles */
+        footer { background-color: var(--dark-text); color: rgba(255, 255, 255, 0.7); padding: 40px 0 20px; font-size: 0.9rem; }
+        footer .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; max-width: 1100px; margin-left:auto; margin-right:auto; width:90%;}
+        footer .footer-logo { display: flex; align-items: center; color: var(--light-text); font-weight: 600; text-decoration: none; }
+        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } footer .footer-logo span { font-family: var(--font-primary); font-size: 1.2rem; }
+        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
+        footer .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s ease; padding-bottom: 3px;}
+        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline;}
+        footer .social-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 1.5rem; margin-left: 15px; transition: color 0.3s ease, transform 0.2s ease; }
+        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        footer .copyright { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 1.5rem; margin-top: 1.5rem; color: rgba(255,255,255,0.7); }
+        @media (max-width: 768px) {footer .footer-content{flex-direction:column; gap:1rem; text-align:center;}}
+    </style>
+</head>
+<body>
+    <header id="main-header-placeholder"></header>
+
+    <main class="main-faq">
+        <section class="faq-hero">
+            <div class="container">
+                
+                <div class="faq-hero-text">
+                    <h1>Your Questions, Answered</h1>
+                    <p>Dive into the Aljohn Polyglot knowledge base. Find answers to common queries about my journey, methods, and more!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container faq-main-layout">
+            <aside class="faq-sidebar">
+                <h2><i class="fas fa-compass" style="margin-right: 8px;"></i>Navigate Topics</h2>
+                <div class="search-bar-container">
+                    <input type="text" id="faq-search" placeholder="Search FAQs (e.g., 'Anki', 'routine')...">
+                </div>
+                <nav class="category-nav">
+                    <ul>
+                        <li><a href="#cat-philosophy" class="active-category">I. P500 Claim & Philosophy</a></li>
+                        <li><a href="#cat-method">II. Intense Method & Routine</a></li>
+                        <li><a href="#cat-resources">III. Top Resources & Apps</a></li>
+                        <li><a href="#cat-sacrifices">IV. "Dark Side" & Sacrifices</a></li>
+                        <li><a href="#cat-stages">V. Learning Stages & Techniques</a></li>
+                        <li><a href="#cat-youtube">VI. YouTube & Identity</a></li>
+                        <li><a href="#cat-motivation">VII. Motivation & Background</a></li>
+                        <li><a href="#cat-practical">VIII. Practical Tips & Advice</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="faq-content-area">
+                <div id="no-results" class="no-results-message" style="display: none;">
+                    <p><i class="fas fa-search" style="font-size: 1.5em; margin-bottom: 0.5rem;"></i><br>No questions match your search. Please try different keywords or browse the categories.</p>
+                </div>
+
+                <!-- Category I: The P500 Claim & My Learning Philosophy -->
+                <section id="cat-philosophy" class="faq-category-section-top">
+                    <h2>I. The P500 Claim & My Learning Philosophy</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Seriously, only P500 to learn 11 languages? How is that possible?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Yes. That P500 was for my first decent pair of in-ear headphones. They were my portal. All actual learning resources, I "sourced" or found for free online.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What do you mean by "sourced" materials?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Let's just say I became very good at navigating the digital high seas for books, movies, and audio. If there's a will, there's a way.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Why the P500 limit? Couldn't you afford more?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Growing up, money was for essentials. Language courses and paid resources felt like luxuries I couldn't afford. My mindset became: if it's free online, why pay?</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>So, no tuition, no paid apps, no purchased textbooks?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Correct. Zero spent on those. Freeware and ingenuity were my tools.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What about internet and device costs?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Those were background costs largely covered by my parents, not my direct spending on language resources.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the real investment then, if not money?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Time – thousands of hours. And an almost manic dedication, an obsession.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Why do you think people still pay for expensive language learning?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>They confuse access with discipline, or they're not resourceful enough. The tools are mostly free; the mental wiring is what's often missing.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Is your extreme low-cost method for everyone?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>If you're resourceful, dedicated, and willing to put in insane hours and make sacrifices, yes. The barriers are mental, not financial.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>If you had a lot of money now, would you pay for courses?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Maybe. But my core philosophy is still: find the free way first.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the biggest takeaway from your P500 story?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>That financial limitations don't have to stop you. Resourcefulness and dedication are far more powerful. You can read more in my blog post: <a href="blog/500-pesos-investment.html">"Think Language Learning is Expensive?"</a></p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-method" class="faq-category-section">
+                    <h2>II. My Intense Learning Method & Daily Routine</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Can you really learn a language to a deep level in just 3 months?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Yes, if you're willing to commit to 8-12+ hours of focused, active immersion daily. That’s around 500+ hours of deliberate practice. See my <a href="resources/routine.html">Daily Routine</a> for the full system.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What does your daily schedule look like when learning intensely?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Wake up 2 AM for Anki & diary writing. 3-5 AM reading with breakfast. 5:30-8 AM exercise with podcasts. 8 AM-midday is main immersion (watching content). Midday for speaking practice. 4 PM more reading until sleep at 6 PM.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Why the extreme 2 AM wake-up and 6 PM bedtime?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>2 AM offers peak mental clarity and zero distractions. Early bedtime is essential for memory consolidation and to sustain that intensity.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you track your study hours?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>I used to use graph paper, color-coding blocks for reading, watching, listening. Knowing your total contact hours is crucial.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What is "deliberate practice" in your method?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It’s purposeful, systematic, focused attention on improving. Not mindless repetition. It's actively reading, listening, writing, and speaking.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you manage to study 10-12+ hours a day?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>By making language learning my absolute priority, building my life around it, and using "dead time" (like exercising) for listening.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What if someone doesn't have 5-6 hours a day, let alone 10-12?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Then don't aim for 3 months! Go at your own pace. The key is consistency and total hours logged over time.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Do you ever burn out with such intensity?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Yes, it's a relentless grind. My essay <a href="blog/devil-within.html">"The Devil Within"</a> details the strain. Sometimes a hiatus or shifting focus is necessary.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How important is "enjoyment" in your routine?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Crucial. I immerse in topics I love (like basketball in German podcasts) to make it a lifestyle, not a chore.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the "12-hour method" you refer to?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It's the intense daily routine I just described, aiming for at least 12 hours of focused immersion. Detailed on my <a href="resources/routine.html">Daily Routine page</a>.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-resources" class="faq-category-section">
+                    <h2>III. Top Recommended Resources & Apps (The Free Arsenal)</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What are your absolute top 3-5 FREE apps for language learning?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Anki (for vocabulary), YouTube (for immersion), ChatGPT (for practice/tutoring), a good podcast app like Pocket Casts, and an e-reader like ReadEra. See full reviews on my <a href="resources/apps.html">Toolkit Page</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Why is Anki so crucial for you? (10/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Its Spaced Repetition System (SRS) is scientifically proven for long-term memorization. I use it to burn words and sentences into my brain. I make my own cards for context. More on my <a href="resources/apps.html#app-anki">Anki review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You call YouTube a "free ticket to language immersion." Why? (10/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It has endless authentic content: vlogs, lectures, music, documentaries. It's an infinite universe of real people speaking real language. Subtitles (target language only!) are a bonus. See my <a href="resources/apps.html#app-youtube">YouTube review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>ChatGPT is like your "second wife" in learning. What makes it indispensable? (10/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It’s a 24/7 personal tutor: corrects grammar, roleplays conversations (even with voice!), explains concepts, translates colloquially. Limitless patience and mostly free. Details on my <a href="resources/apps.html#app-chatgpt">ChatGPT review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do YouTube and ChatGPT work together for you?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>YouTube provides the raw, authentic input. ChatGPT helps me understand it, practice output based on it, and build confidence to tackle more complex content. I discuss this synergy in my blog post <a href="blog/youtube-chatgpt-harem.html">"My Language Learning Harem."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your opinion on Duolingo? (4/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Okay for absolute beginners to get a feel for sounds/structure for a very short time. Then drop it. It's slow, repetitive, lacks real-world context, and pushes purchases. Full <a href="resources/apps.html#app-duolingo">Duolingo review here</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Which podcast app do you recommend and why?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Pocket Casts (10/10). It allows FREE offline downloads, which is essential for my routine and saves data. Tracks listening hours too. See my <a href="resources/apps.html#app-pocketcasts">Pocket Casts review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What e-reader app do you use?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>ReadEra (10/10). Tap-to-translate is key. I copy unknown words and their full sentences into Anki. Details in the <a href="resources/apps.html#app-readera">ReadEra review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Do you recommend any VPNs for accessing geo-restricted content?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>UrbanVPN (10/10) is a free option that works for accessing native streaming sites. Check my <a href="resources/apps.html#app-urbanvpn">UrbanVPN review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What about Language Transfer? (10/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>The best free language lessons for understanding the logic and grammar of a language, especially Romance languages. Full <a href="resources/apps.html#app-languagetransfer">Language Transfer review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you get your music if not from paid streaming services?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Telegram channels or, you know, sailing the digital high seas.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What’s Linguno good for? (10/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It’s an underrated conjugation coach. It targets your weaknesses with spaced repetition until you master verb forms. See my <a href="resources/apps.html#app-linguno">Linguno review</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>DeepL or Google Translate for translation?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>DeepL (9/10) for accuracy in formal contexts. Google Translate (8/10) as a backup or for offline files. ChatGPT is great for informal/colloquial translations. Compare them on my <a href="resources/apps.html">Toolkit page</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Did you use iTalki for paid tutors?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Mostly through sponsorship credits. The vast majority of my speaking practice came from free language partners on Discord (like Language Sloth server) and Tandem. More on these on the <a href="resources/apps.html#app-italki">iTalki section</a> and others.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What is Language Reactor used for? (10/10 rating)</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Browser extension for YouTube/Netflix. Shows dual subtitles and pop-up translations. But aim for target language subtitles ONLY as soon as possible. Full <a href="resources/apps.html#app-languagereactor">Language Reactor review</a>.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-sacrifices" class="faq-category-section">
+                    <h2>IV. The "Dark Side," Sacrifices & Personal Impact</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Your essay "The Genius They See, The Devil Within" talks about a dark side. What was that?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>The extreme obsession led to psycho-tendencies, fantasies of arson or even murder when my routine was threatened, public tantrums, and sacrificing my social life and mental stability. <a href="https://docs.google.com/document/d/1Q07eJgOU0Lq0hIMgLGIc8x9ZAFo3WvXj/edit?usp=sharing&ouid=103879800981881425127&rtpof=true&sd=true" target="_blank">Read the full essay</a> for context.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Were these dark thoughts serious, or just extreme frustration?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>They were serious fantasies at the time, born from a desperate need to protect my study time. I didn't act on them due to practical inability, not morality back then.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What were the biggest personal sacrifices you made?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Friendships faded, family relationships strained, I missed important events, my academic focus plummeted, and I lost my singular Filipino identity, becoming fragmented.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How did this intense period affect your mental health?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It was a brutal reshaping of my identity, leading to a manic, obsessive state. I essentially sacrificed my sanity for fluency.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Do you regret these sacrifices?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>For the language skills gained and the joy I find in studying, no. The essay is about the cost of that achievement.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How did you handle school when it interfered with your language study?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>I deprioritized it. Used AirPods to listen to languages during lectures, finished exams in 5 minutes, wrote essays in my target language first, and even forged an ID to save time.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You mentioned losing your "Filipino identity." What does that feel like?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>I inhabit different selves with each language. The original "me" feels distant. I often feel out of place, not truly belonging anywhere. I talk about this in my blog post <a href="blog/polyglot-expectations.html">"I'm Sorry If I Don't Meet Your 'Polyglot' Expectations."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What was the "internal force" driving this extreme behavior?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>An inherent obsessive personality trait that, when focused on languages, demanded total commitment and rapid progress above all else.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Do you still believe "balance is a lie" for achieving extraordinary things?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>For the level of mastery I aimed for in such a short time, yes. For me, prioritizing balance would have meant mediocrity in that specific goal.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>"I became a ghost, barely human... a machine." Do you still feel that way?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>While the routine may be less extreme now, the feelings of fragmentation and not being relatable persist, as shared in my <a href="blog/polyglot-expectations.html">"Polyglot Expectations" post</a>.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-stages" class="faq-category-section">
+                    <h2>V. Language Learning Stages & Specific Techniques</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your core advice for a complete beginner (A1-A2)?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Lay the foundation. Language Transfer for logic, Anki from day one for vocab, read very simple texts (like Harry Potter) in your target language, use Linguno for conjugations, watch basic YouTube grammar tutorials. My <a href="pathway/index.html">Pathway page</a> details this stage.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the key to the intermediate stage (B1-B2)?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Massive comprehensible input! Native reading, watching (target language subs only!), listening to podcasts/music. Keep using Anki. Start daily journaling and gentle speaking practice (AI, language partners). Track your hours! Also covered in the <a href="pathway/index.html">Pathway</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you reach an advanced C1-C2 level?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Intensive native interaction (tutors, advanced partners). Shadowing an "accent model." Consuming complex content (debates, academic papers). Refining output (complex essays, abstract discussions). See the <a href="pathway/index.html">C1-C2 section of my Pathway</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you use Spaced Repetition (SRS) effectively?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>With Anki or Migaku. Review cards just before you'd forget them. New knowledge is like a "sapling" needing daily watering (review); mature knowledge is like a strong tree.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your method for "learning something IN your target language"?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Instead of just studying the language, I study a topic through the language. E.g., learning about marketing by reading a marketing book in German.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you practice writing effectively?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Daily diary entries in my target language. Also, writing my college essays in my target language first, then translating, as detailed in my blog post: <a href="blog/academic-language-hack.html">"How I Study Languages While Managing a Full Academic Load."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>And for speaking practice without paid tutors?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>AI partners like ChatGPT (with its voice feature) or Gliglish. Free language exchange partners on Discord and Tandem. Recording video journals.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you tackle difficult grammar, like German cases?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Understand the logic first (if possible), then massive exposure to see it in context, followed by intensive active practice (like writing essays) and getting feedback.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your top tip for building a large vocabulary fast?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Anki, Anki, Anki. Create your own cards with full sentences for context, sourced from your immersion. Aim for 50-100 new words a day if you're intense.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you improve listening comprehension significantly?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Massive amounts of listening. Podcasts during "dead time." Start with learner material, then move to native content on topics you enjoy. Vary topics and accents. I wrote about this in <a href="blog/listening-podcasts.html">"Why Your Listening Skills Aren't Improving."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What does "comprehensible input" mean to you?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Material that is slightly above your current level, where you can still understand the main idea, even if not every word. It's crucial for acquisition.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you use subtitles when watching videos?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Target language subtitles ONLY, as soon as possible. This forces your brain to connect sounds with the written word in that language, rather than relying on translation.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How important is tracking your immersion hours?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Vitally important. Fluency is about total hours of contact, not just days or months. You need to know if you’ve hit 300, 500, or 1000 hours.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's "shadowing" and how do you do it?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Choosing a native speaker as an "accent model" and mimicking their tone, rhythm, and pronunciation as closely as possible.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you avoid just "passively consuming" content during immersion?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>By actively engaging: taking notes on new vocab/structures, looking up key things, mentally summarizing, or using Language Reactor.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-youtube" class="faq-category-section">
+                    <h2>VI. YouTube Channel & My "Polyglot" Identity</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Why did you start your YouTube channel, "Aljohn Polyglot"?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Initially, to showcase the languages I was learning and my journey.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Your video style has evolved. Why less "shocking natives" and more cultural deep dives?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It feels more authentic to me now. I prefer genuine engagement with cultures and discussing things I'm passionate about within that context.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You've spoken about a "fragmented identity" as a YouTuber. What does that mean?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>When I focus on one niche culture (e.g., French pop music), I might not meet the expectations of viewers who came for another language (e.g., Indonesian). It feels like different "Aljohns" for different audiences. I explore this in my blog post <a href="blog/polyglot-expectations.html">"I'm Sorry If I Don't Meet Your 'Polyglot' Expectations."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Why do you edit all your complex multilingual videos yourself?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>They're packed with specific cultural references, humor, and language nuances that I found other editors couldn't handle to my satisfaction.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the main goal of your planned educational videos?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>To share my unique language learning methods, how I track time with graphing paper, and my refined 12-hour immersion routine.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you feel about the "polyglot" label online?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It often comes with expectations (rapid-fire switching, shocking locals) that my current content style might not always meet. I'm more about deep, authentic immersion in one linguistic world at a time.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What does "living the language, not just showcasing it" mean for your videos?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Using the language to discuss things I genuinely care about (specific cultural interests) rather than just demonstrating how many languages I know.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Has YouTube fame or subscriber count ever been your primary goal?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>No. My main passion is learning languages. YouTube content creation actually takes time away from that pure study.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do your childhood interests (like knowing flags or geography) show up in your videos?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>(From "Expectations" post & essay) I might correct someone on Jakarta's train stations or discuss Eurovision details because I've immersed myself deeply in those cultural specifics.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What kind of feedback are you seeking when you ask if you should do "viral moments" or stay "authentic"?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>I want to know what my audience values and how I can best connect with them while staying true to my passion for deep cultural engagement.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-motivation" class="faq-category-section">
+                    <h2>VII. Motivation, Mindset & Background</h2>
+                     <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What fundamentally drives your intense passion for learning languages?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>An insatiable curiosity that's been with me since childhood. A desire to unlock new worlds, cultures, and ways of thinking. And an obsessive personality that thrives on deep focus and mastery.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How did your childhood (e.g., always studying, reading science books) lay the groundwork for your language learning?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It cultivated a love for learning, a strong ability to focus intensely for long periods, and a restlessness if my mind wasn't engaged – all key for my method.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You mentioned "the only bad thing is the government" when talking about learning Russian during the war. Can you expand?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>My goal was to understand Russian people and their culture, separate from political actions. I believe in connecting with individuals beyond governmental narratives.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You support Russian athletes despite bans. Why?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>I see individuals who've trained their whole lives. I believe competition should be separate from political affairs.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What does "fluency" mean to you, practically speaking?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Being able to live your life in that language – think, understand, speak, and read with minimal effort, across a wide range of topics.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How has learning 11 languages changed your worldview?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It has given me multiple perspectives, made me more empathetic, and shown me the vastness of human experience. It has also fragmented my sense of a single identity.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your earliest memory of being fascinated by languages or different cultures?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>(From essay, implied) Acquiring English through media as a child felt natural. The realization I could apply that "acquisition" principle to Spanish was a key spark.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you maintain such extreme discipline over so many years?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It's fueled by obsession and the genuine joy I find in the process. When the goal is compelling enough, discipline becomes a byproduct.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You describe yourself as an "ordinary, yet curious child." Do you still see yourself as ordinary now?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>(From essay & "Expectations" post) "I no longer feel relatable." The journey has made me feel different, fragmented, not ordinary in the conventional sense.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What role did your early "addiction" to gaming play in developing your focus?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>(From Biography PDF) It showed an early tendency towards immersive, focused activity, even if the object of that focus changed later.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="cat-practical" class="faq-category-section">
+                    <h2>VIII. Practical Tips & Advice for Learners</h2>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the very first step someone should take if they want to learn a language using your intense approach?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Understand the true cost and commitment (read my <a href="blog/devil-within.html">"Devil Within" essay</a>). Then, pick a language, get headphones, download Anki, clear your schedule, and prepare for an obsessive journey.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's the biggest mistake most language learners make?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Not putting in enough focused hours of comprehensible input. Or giving up too easily. Or thinking expensive tools are a substitute for hard work.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How can someone stay motivated when progress feels slow?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Track your hours, not just days – progress is being made. Focus on enjoyable content. Set small, achievable goals. Remember why you started.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Is it better to learn one language to a high level or multiple languages to a conversational level?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>My goal was deep fluency in each. For others, it depends on their personal goals. But dabbling without deep immersion won't lead to the kind of fluency I talk about.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you choose which language to learn next?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Often it's a spark of interest from another language or culture I've encountered (e.g., Russian from Turah Parthayana's videos, Italian because it was close to Spanish).</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>If you had to simplify your "Roadmap to Fluency" to one sentence per stage?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Beginner: Absorb basics and vocab like a sponge. Intermediate: Drown in native input and start using the language. Advanced: Polish every detail and live in the language. See the <a href="pathway/index.html">full roadmap</a>.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How crucial is understanding the culture when learning a language?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Extremely. You can't fully grasp a language without understanding its people, their shared knowledge, and references. I memorize cultural details.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your advice for overcoming the fear of speaking?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Practice with AI first (ChatGPT, Gliglish) for low-pressure reps. Then find patient language partners. Record yourself. Remember, mistakes are part of learning.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you recommend someone "find their own P500 headphones" – metaphorically speaking?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Identify the essential, minimal tools they need to kickstart their focused immersion, based on what's accessible and effective for them.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You emphasize "active" engagement. How can one make passive listening more active?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Focus intently, try to guess meanings, mentally summarize, or if possible, follow along with a transcript later.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What’s more important: the method or the mindset?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Mindset. A resourceful, obsessed, dedicated mindset will find or create an effective method.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you deal with the "forgetting curve"?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Spaced Repetition with Anki! That's precisely what it's designed to combat, by reviewing information at optimal intervals.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>Is it necessary to "mute" your native language(s) to learn a new one fast?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>For my extreme immersion method, yes. Blocking out native languages with constant foreign audio was key to creating that self-imposed VR simulation.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's your opinion on traditional classroom language learning?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>(Implied) It's often too slow, lacks sufficient input, and may not focus on authentic acquisition. My method is a direct contrast.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you "learn to learn" more effectively over time?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>By constantly refining my methods, tracking what works, experimenting, and reflecting on my own progress and challenges.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>You mentioned writing your PoliSci thesis involved reading sources in multiple languages. How did this help?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>It was incredible advanced reading practice with dense, academic texts, pushing my comprehension and vocabulary in those languages significantly. Read about it on my blog: <a href="blog/thesis-language-practice.html">"The Secret Language Practice I Found in My Thesis Research."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>For someone with a full-time job or studies, how can they adapt your intense methods?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Maximize "dead time" for listening. Dedicate focused blocks (even if shorter) consistently. Be extremely efficient. It will take longer than 3 months, but progress is possible.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>What's one unconventional language learning tip you swear by?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Writing academic papers or complex essays in your target language on topics you're already studying for something else. It’s highly effective, targeted practice. See: <a href="blog/academic-language-hack.html">"How I Study Languages While Managing a Full Academic Load."</a></p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>How do you define "success" in language learning?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>For me, it's deep comprehension, the ability to think and live in the language, and to connect authentically with its culture and people.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question-toggle"><span>After all this, what's the single most important piece of advice you'd give to someone starting their language journey today?</span><i class="fas fa-chevron-down toggle-icon"></i></div>
+                        <div class="faq-answer-wrapper"><div class="faq-answer-content"><p>Commit. Be prepared for an intense, obsessive journey if you want speed. Find joy in the process, immerse yourself relentlessly, be resourceful, and don't make excuses. The linguistic world is yours if you're willing to pay the price in time and dedication.</p></div></div>
+                    </div>
+                </section>
+
+                <!-- Reach Out Section -->
+                <section class="faq-reach-out">
+                    <h2>Still Have Questions?</h2>
+                    <p>If your query isn't covered above, or if you'd like to discuss something in more detail (collaborations, coaching, etc.), please don't hesitate to get in touch!</p>
+                    <div class="reach-out-links">
+                        <a href="mailto:mogatas.princealjohn.05082003@gmail.com" class="btn email-link"><i class="fas fa-envelope"></i> Email Me Directly</a>
+                        <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" class="btn facebook-link"><i class="fab fa-facebook-f"></i> Message on Facebook</a>
+                        <a href="contact.html" class="btn contact-page-link"><i class="fas fa-id-card"></i> Visit Contact Page</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+ <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
+ <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+<script src="js/navbar-loader.js" defer></script>
+<script src="js/footer-loader.js" defer></script>
+
+    <!-- <script src="js/script.js"></script> Ensure this path is correct if used -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                    const isExpanded = navLinks.classList.contains('active');
+                    menuToggle.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+
+            // FAQ Page Specific JavaScript
+            const faqItems = document.querySelectorAll('.faq-item');
+            const searchInput = document.getElementById('faq-search');
+            const categoryLinks = document.querySelectorAll('.faq-sidebar .category-nav a');
+            const noResultsMessage = document.getElementById('no-results');
+            const categorySections = document.querySelectorAll('.faq-category-section');
+
+            // Accordion functionality
+            faqItems.forEach(item => {
+                const questionToggle = item.querySelector('.faq-question-toggle');
+                const answerWrapper = item.querySelector('.faq-answer-wrapper');
+                const answerContent = item.querySelector('.faq-answer-content');
+
+                questionToggle.addEventListener('click', () => {
+                    const isActive = item.classList.toggle('active');
+
+                    if (isActive) {
+                        answerWrapper.style.maxHeight = answerContent.scrollHeight + "px";
+                    } else {
+                        answerWrapper.style.maxHeight = null;
+                    }
+                });
+            });
+
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                    const searchTerm = this.value.toLowerCase().trim();
+                    let resultsFoundOverall = false;
+
+                    categorySections.forEach(section => {
+                        let resultsFoundInSection = false;
+                        const itemsInSection = section.querySelectorAll('.faq-item');
+
+                        itemsInSection.forEach(item => {
+                            const questionText = item.querySelector('.faq-question-toggle span').textContent.toLowerCase();
+                            const answerTextElement = item.querySelector('.faq-answer-content');
+                            const answerText = answerTextElement ? answerTextElement.textContent.toLowerCase() : "";
+
+                            const isMatch = questionText.includes(searchTerm) || answerText.includes(searchTerm);
+
+                            item.style.display = isMatch ? '' : 'none';
+                            if (isMatch) {
+                                resultsFoundInSection = true;
+                                resultsFoundOverall = true;
+                                item.classList.add('highlight-search');
+                            } else {
+                                item.classList.remove('highlight-search');
+                            }
+                        });
+                        section.style.display = resultsFoundInSection ? '' : 'none';
+                    });
+                    if (noResultsMessage) {
+                        noResultsMessage.style.display = resultsFoundOverall ? 'none' : 'block';
+                    }
+                });
+            }
+
+            // Sidebar navigation active state and smooth scroll
+            const headerElement = document.querySelector('header');
+            const headerHeight = headerElement ? headerElement.offsetHeight : 70;
+            const scrollOffset = headerHeight + 15; // Adjusted scroll offset
+
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    categoryLinks.forEach(l => l.classList.remove('active-category'));
+                    this.classList.add('active-category');
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        if (searchInput && searchInput.value && targetElement.style.display === 'none') {
+                            targetElement.style.display = '';
+                        }
+
+                        // Get position of target relative to the document
+                        const bodyRect = document.body.getBoundingClientRect();
+                        const elemRect = targetElement.getBoundingClientRect();
+                        const elementPositionInDocument = elemRect.top - bodyRect.top;
+
+                        const offsetPosition = elementPositionInDocument - scrollOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scrollspy for sidebar active state
+            function onScroll() {
+                let currentSectionId = '';
+                const scrollSpyPosition = window.pageYOffset + scrollOffset + (window.innerHeight * 0.1);
+
+                for (const section of categorySections) {
+                    if (section.style.display !== 'none') {
+                        const sectionTop = section.offsetTop;
+                        const sectionBottom = sectionTop + section.offsetHeight;
+                        if (scrollSpyPosition >= sectionTop && scrollSpyPosition < sectionBottom) {
+                            currentSectionId = '#' + section.id;
+                            break;
+                        }
+                    }
+                }
+
+                if (!currentSectionId && (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+                    for (let i = categorySections.length - 1; i >= 0; i--) {
+                        if (categorySections[i].style.display !== 'none') {
+                            currentSectionId = '#' + categorySections[i].id;
+                            break;
+                        }
+                    }
+                }
+
+                let foundActive = false;
+                categoryLinks.forEach(link => {
+                    link.classList.remove('active-category');
+                    if (link.getAttribute('href') === currentSectionId) {
+                        link.classList.add('active-category');
+                        foundActive = true;
+                    }
+                });
+
+                 if (!foundActive && categoryLinks.length > 0) {
+                    for (let link of categoryLinks) {
+                        const targetSection = document.querySelector(link.getAttribute('href'));
+                        if (targetSection && targetSection.style.display !== 'none') {
+                            if (window.pageYOffset < scrollOffset) {
+                                if (link === categoryLinks[0]) {
+                                    link.classList.add('active-category');
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                     if (!document.querySelector('.faq-sidebar .category-nav a.active-category') && window.pageYOffset < scrollOffset) {
+                         if (categoryLinks[0]) categoryLinks[0].classList.add('active-category');
+                     }
+                }
+            }
+            window.addEventListener('scroll', onScroll);
+            onScroll();
+
+            // Auto-update copyright year
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

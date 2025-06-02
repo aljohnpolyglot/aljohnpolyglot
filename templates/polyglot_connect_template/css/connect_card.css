@@ -1,0 +1,160 @@
+/* css/connect_card.css */
+.connector-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+body.dark-mode .connector-card {
+    background-color: #2d2d30; /* Darker card bg */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.connector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(45, 105, 233, 0.15);
+}
+body.dark-mode .connector-card:hover {
+    box-shadow: 0 8px 25px rgba(3, 169, 244, 0.25);
+}
+
+.connector-card-bg {
+    height: 100px;
+    background: linear-gradient(135deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
+    border-bottom: 1px solid #eee;
+}
+body.dark-mode .connector-card-bg {
+    background: linear-gradient(135deg, #432d77 0%, #3e5f8e 50%, #4a7e7a 100%);
+    border-bottom-color: #444;
+}
+
+.connector-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin: -50px auto 0 auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+body.dark-mode .connector-avatar {
+    border-color: #2d2d30; /* Match dark card bg */
+}
+
+/* NEW: Status dot on connector card */
+.connector-status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #d1d1d1; /* Default inactive */
+    border: 2px solid #fff;
+    position: absolute;
+    top: 60px; /* Adjust to position over avatar shoulder */
+    left: calc(50% + 30px); /* Adjust */
+    z-index: 2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.connector-status.active {
+    background-color: #28a745; /* Green for active */
+}
+body.dark-mode .connector-status { border-color: #2d2d30; }
+body.dark-mode .connector-status.active { background-color: #32cd32; }
+
+
+.connector-name {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 15px 5px 15px;
+    color: #333;
+}
+body.dark-mode .connector-name { color: #e4e6eb; }
+
+.connector-language {
+    font-size: 0.95em;
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+body.dark-mode .connector-language { color: #b0b3b8; }
+
+.connector-bio {
+    font-size: 0.9em;
+    text-align: center;
+    color: #666;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    min-height: 60px; /* Ensure a minimum height for bios */
+}
+body.dark-mode .connector-bio { color: #a0a3a8; }
+
+
+.connector-actions {
+    padding: 15px 20px; /* Reduced padding slightly */
+    border-top: 1px solid #f0f0f0;
+    display: flex; /* Keep as flex for single button */
+    justify-content: center; /* Center the single button */
+    background-color: #f9f9f9;
+}
+body.dark-mode .connector-actions {
+    background-color: #3a3b3c;
+    border-top-color: #444;
+}
+
+.connector-actions button { /* General style for buttons in actions */
+    padding: 10px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none; /* Remove default border */
+    display: inline-flex; /* For icon and text alignment */
+    align-items: center;
+    justify-content: center;
+}
+.connector-actions button i { margin-right: 8px; }
+
+/* Specific for View Profile button */
+.view-profile-btn {
+    background-color: #007bff;
+    color: white;
+    width: auto; /* Allow button to size to content or be styled by flex container */
+}
+.view-profile-btn:hover { background-color: #0056b3; }
+
+body.dark-mode .view-profile-btn { background-color: #037bff; }
+body.dark-mode .view-profile-btn:hover { background-color: #0069d9; }
+
+
+/* Remove old direct-call-init-btn, voice-chat-init-btn, message-init-btn if they are still here,
+   as they are replaced by the single view-profile-btn */
+.connector-actions .direct-call-init-btn,
+.connector-actions .voice-chat-init-btn,
+.connector-actions .message-init-btn {
+    display: none; /* Hide old buttons if they exist in old HTML structures you might reuse */
+}
+
+
+/* At the end of connect_interface.css or in a dark-mode specific section */
+body.dark-mode .chat-message-ui.user-audio-error,
+body.dark-mode .chat-message-ui.connector-error { /* Assuming you add a .connector-error class */
+    background-color: #5e2d30; /* Darker red background */
+    color: #ffc1c1; /* Lighter red text */
+}
+
+body.dark-mode #direct-call-status-indicator[style*="color: rgb(220, 53, 69)"] { /* For isError=true */
+    color: #ff8080 !important; /* Lighter red for dark mode error */
+}

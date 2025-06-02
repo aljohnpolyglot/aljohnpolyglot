@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Endurance Challenge v3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%); /* Even darker, more serious */
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .game-container {
+            background-color: rgba(255, 255, 255, 0.06);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.65);
+            text-align: center;
+            width: 98%;
+            max-width: 1150px;
+        }
+
+        h1 {
+            color: #17a2b8; /* Info blue */
+            margin-bottom: 18px;
+            font-size: 2em;
+            text-shadow: 0 0 7px #17a2b8, 0 0 14px #17a2b8;
+        }
+
+        #srsGameCanvas {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 7px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            width: 100%;
+            height: 410px;
+        }
+
+        .controls {
+            margin: 18px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .controls button {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 9px 18px;
+            font-size: 0.9em;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 10px rgba(23, 162, 184, 0.4);
+        }
+
+        .controls button:hover:not(:disabled) {
+            background-color: #138496;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(23, 162, 184, 0.55);
+        }
+         .controls button.end-sim-button {
+            background-color: #dc3545; /* Danger red */
+            box-shadow: 0 2px 10px rgba(220, 53, 69, 0.4);
+        }
+        .controls button.end-sim-button:hover:not(:disabled) {
+            background-color: #c82333;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.55);
+        }
+        .controls button:disabled {
+            background-color: #343a40; /* Dark grey */
+            color: #6c757d; /* Muted text */
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .game-info {
+            background-color: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 7px;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 8px;
+            text-align: left;
+            font-size: 0.85em;
+        }
+
+        .game-info p { margin: 2px 0; }
+        .game-info span { font-weight: bold; color: #4db8ff; }
+        .game-info .strength-name { font-weight: bold; }
+
+        .feedback-area {
+            grid-column: 1 / -1;
+            text-align: center;
+            min-height: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .feedback, .game-over-message, .simulation-ended-message {
+            width: 100%; font-style: italic; font-size: 1em;
+            transition: opacity 0.4s ease; opacity: 0; line-height: 1.25;
+        }
+        .feedback.active, .game-over-message.active, .simulation-ended-message.active { opacity: 1; }
+        .feedback.info { color: #20c997; } /* Teal */
+        .feedback.warning { color: #ffc107; }
+        .feedback.error { color: #dc3545; }
+        .feedback.mastery { color: #ffd700; text-shadow: 0 0 6px #ffd700;} /* Gold */
+        .game-over-message { font-size: 1.3em; font-weight: bold; color: #f16d7a; }
+        .simulation-ended-message { font-size: 1.2em; font-weight: bold; color: #6cb2eb; }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🧠 Memory Endurance Challenge 🧠</h1>
+        <canvas id="srsGameCanvas"></canvas>
+        <div class="controls">
+            <button id="learnButton">🚀 Start New Memory!</button>
+            <button id="reviewButton" disabled>💡 Reinforce Memory!</button>
+            <button id="endSimulationButton" class="end-sim-button" disabled>🛑 End Challenge</button>
+        </div>
+        <div class="game-info">
+            <p>Time Survived: <span id="timeSurvivedDisplay">0.0</span> days</p>
+            <p>Retention: <span id="retentionPercentageDisplay">N/A</span>%</p>
+            <p>Strength: <span class="strength-name" id="strengthNameDisplay">N/A</span> (<span id="memoryStrengthDisplayValue">N/A</span>)</p>
+            <p>Reviews: <span id="reviewsDoneDisplay">0</span></p>
+            <div class="feedback-area">
+                <p class="feedback" id="feedbackMessage"></p>
+                <p class="game-over-message" id="gameOverMessage"></p>
+                <p class="simulation-ended-message" id="simulationEndedMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('srsGameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const learnButton = document.getElementById('learnButton');
+        const reviewButton = document.getElementById('reviewButton');
+        const endSimulationButton = document.getElementById('endSimulationButton');
+        // ... (other DOM element getters same as before) ...
+        const timeSurvivedDisplay = document.getElementById('timeSurvivedDisplay');
+        const retentionPercentageDisplay = document.getElementById('retentionPercentageDisplay');
+        const memoryStrengthDisplayValue = document.getElementById('memoryStrengthDisplayValue');
+        const strengthNameDisplay = document.getElementById('strengthNameDisplay');
+        const reviewsDoneDisplay = document.getElementById('reviewsDoneDisplay');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+        const gameOverMessage = document.getElementById('gameOverMessage');
+        const simulationEndedMessage = document.getElementById('simulationEndedMessage');
+
+
+        // --- Game Configuration ---
+        const VISIBLE_DAYS_ON_GRAPH = 35; // Show a bit more history
+        const CURRENT_TIME_X_PIN_FACTOR = 0.70;
+        const TIME_STEP = 0.04; // Slightly faster simulation ticks
+        
+        const INITIAL_RETENTION = 60.0; // Start even lower
+        const INITIAL_MEMORY_STRENGTH = 0.5;
+        const BASE_FORGETTING_CONSTANT = 0.65;
+        const INDELIBLE_IMPRINT_FORGETTING_RATE_DIVISOR = 50000; // Makes decay extremely slow for mastery
+        const REVIEW_STRENGTH_MULTIPLIER_BASE = 1.7;
+        const GAME_OVER_RETENTION_THRESHOLD = 1.0;
+
+        const INTUITION_ZONE_MIN = 90;
+        const INTUITION_ZONE_COLOR = 'rgba(0, 200, 255, 0.05)';
+        const INTUITION_LINE_COLOR = 'rgba(0, 200, 255, 0.2)';
+
+        const STRENGTH_LEVELS = [
+            { threshold: 0,    color: '#7f8c8d', name: 'Ephemeral Whisper' },
+            { threshold: 0.8,  color: '#2980b9', name: 'Distant Echo' },    // Belize Hole Blue
+            { threshold: 1.8,  color: '#27ae60', name: 'Nascent Spark' },   // Nephritis Green
+            { threshold: 3.8,  color: '#f39c12', name: 'Growing Awareness' },// Orange (Web)
+            { threshold: 7.5,  color: '#d35400', name: 'Solid Understanding' },// Pumpkin Orange
+            { threshold: 15.0, color: '#c0392b', name: 'Deep Conviction' },  // Pomegranate Red
+            { threshold: 28.0, color: '#8e44ad', name: 'Intuitive Insight' },// Wisteria Purple
+            { threshold: 50.0, color: '#34495e', name: 'Effortless Knowing'},// Wet Asphalt (Dark Blue/Grey)
+            { threshold: 85.0, color: '#f1c40f', name: 'Indelible Imprint'}  // Sun Flower Yellow (Gold-like for final)
+        ];
+        const MASTERY_THRESHOLD_INDEX = STRENGTH_LEVELS.length -1;
+
+        // --- Game State Variables ---
+        let state = { /* ... (same structure as before) ... */
+            gameActive: false, currentTime: 0, lastReviewTime: 0,
+            retention: 0, retentionAtLastReview: 0,
+            memoryStrength: INITIAL_MEMORY_STRENGTH,
+            history: [], reviewsDone: 0, scrollOffsetTime: 0,
+            animationFrameId: null, gameOver: false, simulationManuallyEnded: false,
+            feedbackTimeout: null, masteryMessageShown: false,
+            isIndelible: false // New flag for true mastery state
+        };
+
+        let particles = []; /* ... (same) ... */
+        const PARTICLE_COUNT = 30; const PARTICLE_LIFESPAN = 80;
+
+        // --- Utilities & Core Functions (hexToRgb, getCurrentStrengthStyle, particles - largely same) ---
+        function hexToRgb(hex) { /* ... (same) ... */ let r=0,g=0,b=0; if(hex.length===4){r=parseInt(hex[1]+hex[1],16);g=parseInt(hex[2]+hex[2],16);b=parseInt(hex[3]+hex[3],16);}else if(hex.length===7){r=parseInt(hex[1]+hex[2],16);g=parseInt(hex[3]+hex[4],16);b=parseInt(hex[5]+hex[6],16);} return {r,g,b};}
+        function getCurrentStrengthStyle() { /* ... (same) ... */ for(let i=STRENGTH_LEVELS.length-1;i>=0;i--){if(state.memoryStrength>=STRENGTH_LEVELS[i].threshold){return STRENGTH_LEVELS[i];}} return STRENGTH_LEVELS[0];}
+        function createParticles(x,y,color) { /* ... (same, maybe tweak speeds if needed) ... */ for(let i=0;i<PARTICLE_COUNT;i++){particles.push({x:x,y:y,vx:(Math.random()-0.5)*5,vy:(Math.random()-0.5)*5-2,alpha:1,size:Math.random()*2.5+1.5,life:PARTICLE_LIFESPAN+Math.random()*20,color:color});}}
+        function updateAndDrawParticles() { /* ... (same) ... */ ctx.globalCompositeOperation='lighter';for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.055;p.alpha=p.life/PARTICLE_LIFESPAN;p.life--;if(p.life<=0)particles.splice(i,1);else{const rgb=hexToRgb(p.color);ctx.fillStyle=`rgba(${rgb.r},${rgb.g},${rgb.b},${p.alpha})`;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();}}ctx.globalCompositeOperation='source-over';}
+
+        // --- Canvas Setup & Drawing (largely same, check coordinates if padding changes) ---
+        function resizeCanvas() { /* ... (same) ... */
+            const containerWidth = canvas.parentElement.clientWidth; canvas.width = containerWidth; canvas.height = 410;
+            if (state.gameActive || state.gameOver || state.simulationManuallyEnded) drawGame(); else drawEmptyGraphMessage();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        function drawAxesAndGrid() { /* ... (Mostly same, adjust padding values if changed) ... */
+            const padding = 45; // Maintained padding
+            const graphWidth = canvas.width - 2 * padding; const graphHeight = canvas.height - 2 * padding;
+            const pixelsPerDay = graphWidth / VISIBLE_DAYS_ON_GRAPH;
+            ctx.strokeStyle='rgba(255,255,255,0.15)'; ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.font='9px Arial'; ctx.textAlign='center'; ctx.textBaseline='middle';
+            ctx.beginPath(); ctx.moveTo(padding,padding); ctx.lineTo(padding,canvas.height-padding); ctx.stroke();
+            for(let i=0;i<=10;i++){const y=canvas.height-padding-(i/10)*graphHeight; ctx.fillText((i*10)+'%',padding-25,y); ctx.beginPath(); ctx.moveTo(padding-4,y);ctx.lineTo(padding,y); ctx.moveTo(padding,y);ctx.lineTo(canvas.width-padding,y); ctx.strokeStyle=(i%2===0)?'rgba(255,255,255,0.1)':'rgba(255,255,255,0.05)'; ctx.stroke();}
+            ctx.save();ctx.translate(padding-35,canvas.height/2);ctx.rotate(-Math.PI/2);ctx.font='11px Arial';ctx.fillText('Retention',0,0);ctx.restore();
+            ctx.beginPath();ctx.moveTo(padding,canvas.height-padding);ctx.lineTo(canvas.width-padding,canvas.height-padding);ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.stroke();
+            const dayInterval=VISIBLE_DAYS_ON_GRAPH>25?5:2;
+            for(let i=0;i<=VISIBLE_DAYS_ON_GRAPH+dayInterval;i++){const dayToDisplay=Math.floor(state.scrollOffsetTime)+i;const x=padding+(dayToDisplay-state.scrollOffsetTime)*pixelsPerDay;if(x>=padding-pixelsPerDay&&x<=canvas.width-padding+pixelsPerDay){if(dayToDisplay>=0&&dayToDisplay%dayInterval===0){ctx.fillText(dayToDisplay,x,canvas.height-padding+15);ctx.beginPath();ctx.moveTo(x,canvas.height-padding);ctx.lineTo(x,canvas.height-padding+3);ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.stroke();}ctx.beginPath();ctx.moveTo(x,padding);ctx.lineTo(x,canvas.height-padding);ctx.strokeStyle=(dayToDisplay>=0&&dayToDisplay%(dayInterval*2)===0&&dayInterval>1)?'rgba(255,255,255,0.07)':'rgba(255,255,255,0.035)';ctx.stroke();}}
+            ctx.font='11px Arial';ctx.fillText('Time (Days)',canvas.width/2,canvas.height-padding+30);
+        }
+        function drawIntuitionZone() { /* ... (same, check coordinates) ... */
+            const padding = 45; const graphHeight = canvas.height - 2 * padding;
+            const zoneY = canvas.height - padding - (INTUITION_ZONE_MIN / 100) * graphHeight;
+            const zoneTopY = canvas.height - padding - (100 / 100) * graphHeight;
+            ctx.fillStyle = INTUITION_ZONE_COLOR; ctx.fillRect(padding, zoneTopY, canvas.width - 2 * padding, zoneY - zoneTopY);
+            ctx.beginPath(); ctx.moveTo(padding, zoneY); ctx.lineTo(canvas.width - padding, zoneY);
+            ctx.strokeStyle = INTUITION_LINE_COLOR; ctx.setLineDash([3,3]); ctx.stroke(); ctx.setLineDash([]);
+            ctx.fillStyle = 'rgba(0, 200, 255, 0.5)'; ctx.font = 'bold 8px Arial'; ctx.textAlign = 'right';
+            ctx.fillText('INTUITION', canvas.width - padding - 3, zoneY - 5); ctx.textAlign = 'center';
+        }
+        function drawMemoryCurve() { /* ... (Mostly same, ensure lineWidth is appropriate) ... */
+            const padding = 45; const graphWidth = canvas.width - 2 * padding; const graphHeight = canvas.height - 2 * padding; const pixelsPerDay = graphWidth / VISIBLE_DAYS_ON_GRAPH;
+            if(state.history.length<1)return; ctx.lineWidth=2.2; let currentSegmentColor=state.history[0].strengthColor; ctx.beginPath();
+            for(let i=0;i<state.history.length;i++){const point=state.history[i];const x=padding+(point.time-state.scrollOffsetTime)*pixelsPerDay;const y=canvas.height-padding-(point.retention/100)*graphHeight;
+            if(x<padding-pixelsPerDay*2||x>canvas.width-padding+pixelsPerDay*2){if(i+1<state.history.length){const nextPoint=state.history[i+1];const nextX=padding+(nextPoint.time-state.scrollOffsetTime)*pixelsPerDay;if((x<padding&&nextX<padding)||(x>canvas.width-padding&&nextX>canvas.width-padding)){if(point.strengthColor!==currentSegmentColor){ctx.strokeStyle=currentSegmentColor;ctx.stroke();ctx.beginPath();currentSegmentColor=point.strengthColor;}ctx.moveTo(x,y);continue;}}else{continue;}}
+            if(i===0||state.history[i-1].time!==point.time){if(point.strengthColor!==currentSegmentColor){ctx.strokeStyle=currentSegmentColor;ctx.stroke();ctx.beginPath();ctx.moveTo(x,y);currentSegmentColor=point.strengthColor;}if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}else{ctx.strokeStyle=currentSegmentColor;ctx.lineTo(x,y);}}
+            ctx.strokeStyle=currentSegmentColor;ctx.stroke(); ctx.lineWidth=1;
+            const currentActualX=padding+(state.currentTime-state.scrollOffsetTime)*pixelsPerDay; const currentActualY=canvas.height-padding-(state.retention/100)*graphHeight;
+            if(currentActualX>=padding&&currentActualX<=canvas.width-padding){const orbColor=getCurrentStrengthStyle().color; ctx.beginPath();ctx.arc(currentActualX,currentActualY,5.5,0,Math.PI*2);ctx.fillStyle=orbColor;ctx.fill(); ctx.beginPath();ctx.arc(currentActualX,currentActualY,9,0,Math.PI*2);ctx.strokeStyle=orbColor;ctx.globalAlpha=0.45;ctx.stroke();ctx.globalAlpha=1.0;}
+        }
+        function drawEmptyGraphMessage(message = "Click 'Start New Memory' to begin the challenge!") { /* ... (same) ... */
+             ctx.clearRect(0,0,canvas.width,canvas.height);drawAxesAndGrid();drawIntuitionZone();ctx.fillStyle="rgba(240,240,240,0.7)";ctx.font="bold 17px Segoe UI";ctx.textAlign="center";ctx.fillText(message,canvas.width/2,canvas.height/2-30);
+        }
+        function drawGame() { /* ... (same) ... */ ctx.clearRect(0,0,canvas.width,canvas.height);drawAxesAndGrid();drawIntuitionZone();if(state.gameActive||state.gameOver||state.simulationManuallyEnded){drawMemoryCurve();}updateAndDrawParticles();}
+
+        // --- Game Logic & UI Updates ---
+        function updateUI() { /* ... (same) ... */
+            timeSurvivedDisplay.textContent=state.currentTime.toFixed(1);reviewsDoneDisplay.textContent=state.reviewsDone;
+            if(state.gameActive||state.gameOver||state.simulationManuallyEnded){retentionPercentageDisplay.textContent=state.retention.toFixed(1);const strengthStyle=getCurrentStrengthStyle();memoryStrengthDisplayValue.textContent=state.memoryStrength.toFixed(2);strengthNameDisplay.textContent=strengthStyle.name;strengthNameDisplay.style.color=strengthStyle.color;}
+        }
+        function clearAllMessages() { /* ... (same) ... */ feedbackMessage.textContent='';feedbackMessage.className='feedback';feedbackMessage.classList.remove('active');gameOverMessage.textContent='';gameOverMessage.classList.remove('active');simulationEndedMessage.textContent='';simulationEndedMessage.classList.remove('active');}
+        function setActionFeedback(message,type='info',duration=3000) { /* ... (same) ... */ clearAllMessages();feedbackMessage.textContent=message;feedbackMessage.className='feedback';feedbackMessage.classList.add(type);feedbackMessage.classList.add('active');if(state.feedbackTimeout)clearTimeout(state.feedbackTimeout);if(duration>0){state.feedbackTimeout=setTimeout(()=>{feedbackMessage.classList.remove('active');},duration);}}
+        function showGameOverMessage() { /* ... (same) ... */ clearAllMessages();gameOverMessage.textContent=`🧠 Memory Lost! Survived ${state.currentTime.toFixed(1)} days. Reviews: ${state.reviewsDone}. 🧠`;gameOverMessage.classList.add('active');}
+        function showSimulationEndedMessage() { /* ... (same) ... */ clearAllMessages();simulationEndedMessage.textContent=`Challenge ended. Survived ${state.currentTime.toFixed(1)} days. Well played!`;simulationEndedMessage.classList.add('active');}
+        function handleGameEnd(manual=false) { /* ... (same) ... */ state.gameActive=false;if(state.animationFrameId)cancelAnimationFrame(state.animationFrameId);reviewButton.disabled=true;endSimulationButton.disabled=true;learnButton.textContent="🚀 Try Again?";learnButton.disabled=false;if(manual){state.simulationManuallyEnded=true;showSimulationEndedMessage();}else{state.gameOver=true;showGameOverMessage();}drawGame();}
+
+        // --- NEW: Calculate retention after review (grind) ---
+        function calculateRetentionAfterReview() {
+            if (state.isIndelible) return 100.0; // Indelible items always jump to 100%
+
+            const reviews = state.reviewsDone; // Number of reviews completed *before* this one
+            if (reviews < 1) return 75.0;  // After 1st actual review (reviewsDone will be 1 after increment)
+            else if (reviews < 2) return 85.0; // After 2nd
+            else if (reviews < 4) return 92.0; // After 3rd, 4th
+            else if (reviews < 6) return 97.0; // After 5th, 6th
+            else return 100.0;                 // After 7th+
+        }
+
+        function gameLoop() {
+            if (!state.gameActive) { if (state.animationFrameId) cancelAnimationFrame(state.animationFrameId); return; }
+            state.currentTime += TIME_STEP;
+            const timeAtPinOnScreen = state.scrollOffsetTime + VISIBLE_DAYS_ON_GRAPH * CURRENT_TIME_X_PIN_FACTOR;
+            if (state.currentTime > timeAtPinOnScreen) { state.scrollOffsetTime = state.currentTime - VISIBLE_DAYS_ON_GRAPH * CURRENT_TIME_X_PIN_FACTOR; }
+
+            const daysSinceLastReview = state.currentTime - state.lastReviewTime;
+            let effectiveStrength = Math.max(0.05, state.memoryStrength); // Min strength for calc
+            let currentForgettingConstant = BASE_FORGETTING_CONSTANT;
+
+            // --- NEW: Indelible Imprint Logic ---
+            const currentStrengthStyleInfo = getCurrentStrengthStyle();
+            if (!state.isIndelible && 
+                currentStrengthStyleInfo.threshold >= STRENGTH_LEVELS[MASTERY_THRESHOLD_INDEX].threshold && 
+                state.retention >= INTUITION_ZONE_MIN - 5) { // Slightly more lenient retention to trigger
+                state.isIndelible = true;
+                setActionFeedback("This knowledge has achieved an Indelible Imprint!", 'mastery', 6000);
+                state.masteryMessageShown = true; // Ensure the main mastery message is shown
+            }
+            
+            if (state.isIndelible) {
+                // Extremely slow, almost negligible decay for indelible items
+                // It should take thousands of simulated days to drop even a few percent.
+                // The idea is it's practically permanent but not absolutely static.
+                state.retention -= (BASE_FORGETTING_CONSTANT / INDELIBLE_IMPRINT_FORGETTING_RATE_DIVISOR) * TIME_STEP * (100 / Math.max(1, state.retention)); // The (100/R) makes decay slightly faster if it somehow drops
+                state.retention = Math.max(90.0, state.retention); // Clamp above 90% for a very, very long time
+            } else {
+                if (daysSinceLastReview > 0) {
+                    state.retention = state.retentionAtLastReview * Math.exp(-currentForgettingConstant * daysSinceLastReview / effectiveStrength);
+                }
+            }
+            state.retention = Math.max(0, state.retention);
+
+            // Add to history (logic same)
+            const lastHistPoint=state.history[state.history.length-1];if(!lastHistPoint||Math.abs(state.currentTime-lastHistPoint.time)>TIME_STEP/2||Math.abs(state.retention-lastHistPoint.retention)>0.04||currentStrengthStyleInfo.color!==lastHistPoint.strengthColor){state.history.push({time:state.currentTime,retention:state.retention,strengthColor:currentStrengthStyleInfo.color});}
+            const oldestVisibleTime=state.scrollOffsetTime-VISIBLE_DAYS_ON_GRAPH*0.4;while(state.history.length>1&&state.history[0].time<oldestVisibleTime){state.history.shift();}
+
+            if (state.retention < GAME_OVER_RETENTION_THRESHOLD && !state.isIndelible) { handleGameEnd(false); return; }
+
+            // Feedback messages (adjusted)
+            if (state.isIndelible && !state.masteryMessageShown && (Math.floor(state.currentTime*10) % 500 === 0) ) { // Much less frequent for indelible
+                 setActionFeedback("Indelibly etched. This knowledge endures.", 'mastery', 5000);
+                 state.masteryMessageShown = true; // It can be shown again after a very long time.
+            } else if (!state.isIndelible) {
+                state.masteryMessageShown = false; // Reset if not indelible
+                if (state.retention < 35 && state.retention > GAME_OVER_RETENTION_THRESHOLD + 1 && (Math.floor(state.currentTime*10) % 22 === 0) ) {
+                    setActionFeedback("Memory trace significantly weak... Reinforce soon!", 'warning', 2700);
+                } else if (state.retention >= INTUITION_ZONE_MIN && currentStrengthStyleInfo.threshold >= STRENGTH_LEVELS[STRENGTH_LEVELS.length-3].threshold ) { 
+                    if (Math.floor(state.currentTime*10) % 30 === 0) {
+                        setActionFeedback("Excellent recall! Feels deeply intuitive.", 'info', 2800);
+                    }
+                }
+            }
+            drawGame(); updateUI();
+            state.animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        // --- Event Handlers ---
+        learnButton.addEventListener('click', () => { /* ... (Reset state, including new isIndelible flag) ... */
+            if(state.animationFrameId)cancelAnimationFrame(state.animationFrameId);particles=[];clearAllMessages();
+            state={gameActive:true,currentTime:0,lastReviewTime:0,retention:INITIAL_RETENTION,retentionAtLastReview:INITIAL_RETENTION,memoryStrength:INITIAL_MEMORY_STRENGTH,history:[],reviewsDone:0,scrollOffsetTime:0,animationFrameId:null,gameOver:false,simulationManuallyEnded:false,feedbackTimeout:null,masteryMessageShown:false,isIndelible:false}; // ADDED isIndelible reset
+            const initialStrengthStyle=getCurrentStrengthStyle();state.history.push({time:0,retention:INITIAL_RETENTION,strengthColor:initialStrengthStyle.color});
+            reviewButton.disabled=false;endSimulationButton.disabled=false;learnButton.textContent="🔁 Restart Challenge";learnButton.disabled=true;
+            setActionFeedback("New memory challenge: Forge an indelible link!",'info',3500);updateUI();drawGame();state.animationFrameId=requestAnimationFrame(gameLoop);
+        });
+
+        reviewButton.addEventListener('click', () => {
+            if (!state.gameActive) return;
+            const strengthStyleBeforeReview = getCurrentStrengthStyle();
+            state.history.push({ time: state.currentTime, retention: state.retention, strengthColor: strengthStyleBeforeReview.color });
+
+            // --- NEW: Use calculateRetentionAfterReview() ---
+            const newRetention = calculateRetentionAfterReview();
+            state.retention = newRetention;
+            state.retentionAtLastReview = newRetention;
+            state.lastReviewTime = state.currentTime;
+            
+            let multiplier = REVIEW_STRENGTH_MULTIPLIER_BASE;
+            if (state.memoryStrength > STRENGTH_LEVELS[STRENGTH_LEVELS.length - 4].threshold) multiplier *= 0.92;
+            if (state.memoryStrength > STRENGTH_LEVELS[STRENGTH_LEVELS.length - 3].threshold) multiplier *= 0.88;
+            if (state.memoryStrength > STRENGTH_LEVELS[STRENGTH_LEVELS.length - 2].threshold && !state.isIndelible) multiplier *= 0.82; // Less boost if not yet indelible but very high
+            if (state.isIndelible) multiplier *=0.95; // Even if indelible, slight boosts are fine but less impactful
+
+            state.memoryStrength *= Math.max(1.01, multiplier);
+            state.reviewsDone++;
+            // If it was indelible, and somehow strength dropped, achieving it again will re-trigger message logic
+            if(state.isIndelible && state.memoryStrength < STRENGTH_LEVELS[MASTERY_THRESHOLD_INDEX].threshold) state.isIndelible = false; 
+            if(!state.isIndelible) state.masteryMessageShown = false;
+
+            const strengthStyleAfterReview = getCurrentStrengthStyle();
+            state.history.push({ time: state.currentTime, retention: state.retention, strengthColor: strengthStyleAfterReview.color });
+            
+            const padding=45;const graphWidth=canvas.width-2*padding;const graphHeight=canvas.height-2*padding;const pixelsPerDay=graphWidth/VISIBLE_DAYS_ON_GRAPH;
+            const particleX=padding+(state.currentTime-state.scrollOffsetTime)*pixelsPerDay;const particleY=canvas.height-padding-(state.retention/100)*graphHeight;
+            if(particleX>=padding&&particleX<=canvas.width-padding){createParticles(particleX,particleY,strengthStyleAfterReview.color);}
+            setActionFeedback(`💡 Memory Reinforced! Now a ${strengthStyleAfterReview.name}. Retention to ${newRetention.toFixed(0)}%.`,'info',3000);
+            updateUI();drawGame(); 
+        });
+
+        endSimulationButton.addEventListener('click', () => { /* ... (same) ... */ if(state.gameActive){handleGameEnd(true);}});
+
+        // --- Initial Setup ---
+        resizeCanvas();drawEmptyGraphMessage();updateUI();
+    </script>
+</body>
+</html>

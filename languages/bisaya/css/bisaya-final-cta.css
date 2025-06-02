@@ -1,0 +1,84 @@
+/* css/bisaya-final-cta.css - REVAMPED */
+
+/* .final-cta-section base styles (background, text color) are in bisaya-page-main.css */
+.final-cta-section {
+    padding-top: 4rem; /* Adjusted padding now that image is gone */
+    padding-bottom: 4.5rem;
+    display: flex; /* For vertical centering of the content block if needed */
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if section has min-height */
+    min-height: 50vh; /* Example: ensure section has some height */
+}
+
+.final-cta-section > .container {
+    /* text-center is already on this div in HTML, which is good */
+}
+
+.final-cta-flourish { 
+    display: block;
+    margin: 0 auto 1.5rem; /* Increased bottom margin */
+    max-width: 120px; /* Adjust size as needed */
+    opacity: 0.7;
+}
+
+.final-cta-title { /* This class is on h2.section-title-bisaya */
+    /* Styles like color, text-shadow, font-size are inherited or set in bisaya-page-main.css */
+    margin-bottom: 1.5rem; /* Space after title, before message */
+}
+/* .final-cta-title .highlight-final-cta styles are in bisaya-page-main.css */
+
+
+/* REMOVED: .aljohn-final-image-container and .aljohn-final-image styles */
+
+
+.final-message-bisaya {
+    /* Color and base font-size inherited or set in bisaya-page-main.css */
+    line-height: 1.75; /* Good readability for longer text */
+    max-width: 680px; /* Constrain width for better readability */
+    margin-left: auto;  /* Center the paragraph block */
+    margin-right: auto; /* Center the paragraph block */
+    margin-bottom: 2.5rem; /* Space after message, before CTA button */
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem); /* Ensure it's not too small */
+}
+
+.btn-xlarge-youtube-cta { 
+    /* Styles like padding, font-size, gradient, color, text-shadow, border-radius, border 
+       are already defined in bisaya-sinulog-theme.css (as .btn-xlarge-sinulog-cta)
+       or bisaya-page-main.css. We just need to ensure it's displayed correctly.
+    */
+    display: inline-flex; /* This is good for aligning icon and text */
+    align-items: center;
+    gap: 0.8em; /* Increased gap between icon and text */
+    margin-top: 0; /* Remove any default top margin from .full-width-btn if it had it */
+    /* No need for margin:auto here as text-align:center on parent handles it for inline-flex */
+}
+.btn-xlarge-youtube-cta:hover {
+    /* Hover styles are in theme CSS */
+}
+.btn-xlarge-youtube-cta i.fa-youtube {
+    font-size: 1.6em; /* Slightly larger YouTube icon */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .final-cta-section {
+        padding-top: 3rem;
+        padding-bottom: 3.5rem;
+        min-height: 0; /* Allow it to shrink on mobile */
+    }
+    .final-cta-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem); /* Adjust for mobile */
+        margin-bottom: 1.2rem;
+    }
+    .final-message-bisaya {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+    .btn-xlarge-youtube-cta {
+        font-size: 0.95rem; /* Smaller button text on mobile */
+        padding: 0.7em 1.8em;
+    }
+    .btn-xlarge-youtube-cta i.fa-youtube {
+        font-size: 1.4em;
+    }
+}

@@ -1,0 +1,281 @@
+/* css/bisaya-top-picks.css - REVAMPED with Individual Palettes */
+
+/* --- Section: Akong Top Picks (Overall Styling) --- */
+.top-picks-section-bisaya {
+    background-color: var(--sinulog-black); /* Keep overall section dark */
+    padding-top: 0rem;
+    padding-bottom: 3rem; /* More bottom padding */
+}
+
+/* Section Title (using theme defaults, but ensure visibility) */
+.top-picks-section-bisaya > .container > .section-title-bisaya {
+    color: var(--sinulog-yellow); /* Yellow title on black bg */
+    margin-bottom: 0.75rem;
+    padding-top: 2rem;
+}
+.top-picks-section-bisaya > .container > .section-title-bisaya .highlight-sinulog-yellow {
+    /* "HALIGI" - Yellow text with a different background or just yellow text */
+    background-color: var(--sinulog-magenta); /* Magenta bg for HALIGI */
+    color: var(--sinulog-yellow); /* Yellow text on magenta */
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+}
+
+.top-picks-section-bisaya > .container > .section-subtitle-bisaya {
+    color: var(--sinulog-light-gray);
+    margin-bottom: 3.5rem; /* Space before first spotlight */
+}
+
+/* --- Individual Spotlights Container --- */
+.individual-spotlights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* More space between Chito's and Melai's sections */
+}
+
+/* --- General Spotlight Feature Structure --- */
+.spotlight-feature {
+    display: flex;
+    flex-direction: column; /* Stack main and sidebar on small screens */
+    gap: 2rem;
+    padding: 2rem; /* Padding around the entire spotlight box */
+    border-radius: 12px; /* More rounded corners for the feature box */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Stronger shadow */
+}
+
+@media (min-width: 992px) { /* Tablet landscape and up */
+    .spotlight-feature {
+        flex-direction: row; /* Side-by-side layout */
+    }
+}
+
+.spotlight-main-content-wrapper {
+    flex: 2.8; /* Main content takes more space */
+    min-width: 0; /* For flex behavior */
+    display: flex;
+    flex-direction: column;
+}
+
+.spotlight-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* Space between avatar and text */
+    margin-bottom: 1rem;
+}
+
+.spotlight-avatar-container {
+    flex-shrink: 0;
+    width: 70px; /* Slightly larger avatar */
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensure image stays within circle */
+    padding: 4px; /* Creates a "ring" effect with background */
+    position: relative;
+}
+.spotlight-creator-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.spotlight-header-info .spotlight-show-title {
+    font-family: var(--font-display); /* Montserrat Black/ExtraBold */
+    font-size: clamp(1.6rem, 3vw, 2.2rem); /* Prominent show title */
+    font-weight: 800;
+    margin: 0 0 0.1rem 0;
+    line-height: 1.1;
+}
+.spotlight-header-info .spotlight-host-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.aljohn-endorsement-spotlight {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.8rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.spotlight-video-section {
+    margin-top: auto; /* Pushes video section towards bottom if header/endorsement is short */
+}
+
+.spotlight-video-now-playing {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.video-player-embed-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000; /* Black bg for player */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow for the player */
+}
+.video-player-embed-container iframe {
+    width: 100%; height: 100%; border: none; display: block;
+}
+
+/* Sidebar Playlist */
+.spotlight-sidebar-playlist {
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px; /* Max width for sidebar */
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.spotlight-sidebar-playlist h4 { /* "More from..." */
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.6rem;
+    /* Border color will be brand specific */
+}
+
+.mini-playlist-scrollable {
+    overflow-y: auto;
+    max-height: 350px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-right: 0.5rem; /* For scrollbar */
+    flex-grow: 1; /* Allow it to take available vertical space */
+}
+/* Webkit scrollbar styling for sidebar */
+.mini-playlist-scrollable::-webkit-scrollbar { width: 6px; }
+.mini-playlist-scrollable::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px;}
+.mini-playlist-scrollable::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px;}
+.mini-playlist-scrollable::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+.mini-playlist-item-sidebar {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center; /* Align image and text nicely */
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    border-left: 3px solid transparent; /* For hover accent */
+}
+.mini-playlist-item-sidebar:hover {
+    /* Hover bg color will be brand specific */
+    border-left-color: var(--sinulog-yellow); /* Default hover accent */
+}
+.mini-playlist-item-sidebar img.playlist-item-thumbnail {
+    width: 100px; height: 56.25px; object-fit: cover; border-radius: 3px; flex-shrink: 0;
+}
+.mini-playlist-item-sidebar .playlist-item-details { overflow: hidden; }
+.playlist-item-details .playlist-item-title {
+    font-size: 0.85rem; font-weight: 600; line-height: 1.3; margin-bottom: 0.15rem;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden; text-overflow: ellipsis;
+}
+.playlist-item-details .playlist-item-creator { font-size: 0.75rem; opacity: 0.7; }
+
+.btn-spotlight-cta.full-playlist { /* "Watch Full Playlist" button */
+    margin-top: 1.5rem; /* Space above button */
+    padding: 0.7em 1.5em;
+    font-size: 0.9rem;
+    border-radius: var(--button-border-radius); /* Pill shape */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex; /* Center icon and text */
+    align-items: center;
+    justify-content: center;
+}
+.btn-spotlight-cta.full-playlist i { margin-left: 0.6em; }
+
+
+/* --- CHITO SAMONTINA Spotlight Specific Palette --- */
+.chito-spotlight {
+    background-color: #1A2238; /* Dark Navy base for Chito */
+    border-left: 6px solid #FFD700; /* Yellow accent border */
+    color: var(--sinulog-off-white);
+}
+.chito-spotlight .spotlight-avatar-container { background-color: #FFD700; /* Yellow ring for avatar */ }
+.chito-spotlight .spotlight-header-info .spotlight-show-title { color: #FFD700; /* Yellow Show Title */ }
+.chito-spotlight .spotlight-header-info .spotlight-host-name { color: #FFD700; opacity:0.8; }
+.chito-spotlight .aljohn-endorsement-spotlight { color: #AEB8C2; } /* Lighter gray for text */
+.chito-spotlight .spotlight-video-now-playing { color: #FFD700; opacity: 0.9; }
+.chito-spotlight .spotlight-sidebar-playlist {
+    background-color: rgba(13, 42, 79, 0.5); /* Darker translucent navy for sidebar */
+    border: 1px solid rgba(255, 215, 0, 0.2); /* Subtle yellow border */
+}
+.chito-spotlight .spotlight-sidebar-playlist h4 {
+    color: #FFD700; /* Yellow heading */
+    border-bottom-color: rgba(255, 215, 0, 0.3);
+}
+.chito-spotlight .mini-playlist-item-sidebar { color: var(--sinulog-off-white); }
+.chito-spotlight .mini-playlist-item-sidebar:hover {
+    background-color: rgba(255, 215, 0, 0.1); /* Faint yellow bg on hover */
+    border-left-color: #FFD700;
+}
+.chito-spotlight .playlist-item-details .playlist-item-title { color: var(--sinulog-white); }
+.chito-spotlight .playlist-item-details .playlist-item-creator { color: #AEB8C2; }
+.chito-spotlight .btn-spotlight-cta.full-playlist {
+    background-color: #FFD700; /* Yellow button */
+    color: #0D2A4F; /* Navy text */
+    border: 1px solid #FFD700;
+}
+.chito-spotlight .btn-spotlight-cta.full-playlist:hover { background-color: #FFC700; }
+
+
+/* --- MELAI CANTIVEROS (Kuan on One) Spotlight Specific Palette --- */
+.melai-spotlight {
+    background-color: #310B2D; /* Deep Purple/Magenta base for Melai */
+    border-left: 6px solid #E6007E; /* Magenta accent border */
+    color: var(--sinulog-off-white);
+}
+.melai-spotlight .spotlight-avatar-container { background-color: #E6007E; /* Magenta ring */ }
+.melai-spotlight .spotlight-header-info .spotlight-show-title { color: #E6007E; /* Magenta Show Title */ }
+.melai-spotlight .spotlight-header-info .spotlight-host-name { color: #E6007E; opacity:0.8; }
+.melai-spotlight .aljohn-endorsement-spotlight { color: #F5D0E8; } /* Light pinkish gray */
+.melai-spotlight .spotlight-video-now-playing { color: #E6007E; opacity: 0.9; }
+.melai-spotlight .spotlight-sidebar-playlist {
+    background-color: rgba(78, 17, 72, 0.5); /* Darker translucent magenta/purple */
+    border: 1px solid rgba(230, 0, 126, 0.2);
+}
+.melai-spotlight .spotlight-sidebar-playlist h4 {
+    color: #E6007E; /* Magenta heading */
+    border-bottom-color: rgba(230, 0, 126, 0.3);
+}
+.melai-spotlight .mini-playlist-item-sidebar { color: var(--sinulog-off-white); }
+.melai-spotlight .mini-playlist-item-sidebar:hover {
+    background-color: rgba(230, 0, 126, 0.1);
+    border-left-color: #E6007E;
+}
+.melai-spotlight .playlist-item-details .playlist-item-title { color: var(--sinulog-white); }
+.melai-spotlight .playlist-item-details .playlist-item-creator { color: #F5D0E8; }
+.melai-spotlight .btn-spotlight-cta.full-playlist {
+    background-color: #E6007E; /* Magenta button */
+    color: var(--sinulog-white);
+    border: 1px solid #E6007E;
+}
+.melai-spotlight .btn-spotlight-cta.full-playlist:hover { background-color: #C3006B; }
+
+
+/* Responsive adjustments for smaller spotlight sections */
+@media (max-width: 767px) {
+    .spotlight-feature { padding: 1.5rem; }
+    .spotlight-avatar-container { width: 60px; height: 60px; padding: 3px; }
+    .spotlight-header-info .spotlight-show-title { font-size: clamp(1.4rem, 2.8vw, 1.9rem); }
+    .spotlight-sidebar-playlist { padding: 1rem; min-width: unset; max-width: 100%; }
+    .mini-playlist-scrollable { max-height: 280px; }
+}

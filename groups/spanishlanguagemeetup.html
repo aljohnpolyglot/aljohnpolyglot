@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Language Meetup - Makati</title>
+   <!-- 1. MAIN STYLESHEET (with CSS Variables and global styles) - CRITICAL! -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 2. Component Stylesheets -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- 3. Page-Specific Stylesheet -->
+    <link rel="stylesheet" href="css/spanishlanguagemeetup-styles.css">
+    <!-- Path for spanishlanguagemeetup-styles.css:
+         If this file is in "website/groups/css/spanishlanguagemeetup-styles.css",
+         then href="css/spanishlanguagemeetup-styles.css" is CORRECT (relative to "website/groups/spanishlanguagemeetup.html")
+    -->
+    <!-- No need to link main styles.css if AF card is self-contained below -->
+    <link rel="icon" href="../images/groups/spanish_language_meetup_logo.avif" type="image/avif">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header id="main-header-placeholder"></header>
+
+    <main>
+        <section class="hero slm-hero">
+            <div class="container slm-hero-container"> 
+                <img src="../images/groups/spanish_language_meetup_logo.avif" alt="Spanish Language Meetup Logo" class="slm-main-logo slm-reveal-on-scroll delay-0">
+                <div> <a></a></div>
+                <div class="slm-hero-title-stacked slm-reveal-on-scroll delay-1">
+                    <h1>Spanish Language Meetup</h1>
+
+                </div>
+
+                <div class="slm-hero-subtitle-group slm-reveal-on-scroll delay-2">
+                    <p class="slm-hero-subtitle-main">Damas y Caballeros</p>
+                    <p class="slm-hero-subtitle-location">- Makati</p>
+                </div>
+
+                <p class="slm-hero-description slm-reveal-on-scroll delay-3">
+                    Enjoy learning and practicing Spanish in a fun, friendly atmosphere. Make new friends and improve your fluency!
+                </p>
+                
+                <a href="https://www.meetup.com/manila-spanish-language-meetup/events/fnwsltyhcgbqb/" target="_blank" class="slm-cta-button slm-reveal-on-scroll delay-4">Join a Meetup!</a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section slm-section-light slm-reveal-on-scroll">
+            <div class="container slm-about-container">
+                <div class="slm-about-text">
+                    <h2 class="section-title slm-title-blue">¡Hola Amigos!</h2>
+                    <p>This meetup group is for anyone interested in practicing their Spanish, from beginners to advanced speakers. We gather regularly to chat, play games, and enjoy the company of fellow Hispanophiles. It's a fantastic alternative, especially since the large "Spanish for Filipinos" Luneta meetups are temporarily suspended.</p>
+                    <p>Our sessions are designed to be inclusive. If you're new to Spanish, feel free to speak in English, and our members (including native speakers from Colombia, Mexico, and Spain at times!) will gladly help you. We're all here to learn and support each other.</p>
+                </div>
+                <div class="slm-about-image">
+                    <img src="../images/groups/spanish_language_meetup_group_pic_april_2025.jpg" alt="Spanish Language Meetup Group Fun">
+                </div>
+            </div>
+        </section>
+
+        <section id="meetup-details" class="content-section slm-section-dark-red slm-reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title slm-title-white">Meetup Information</h2>
+                <div class="meetup-info-grid">
+                    <div class="meetup-info-card slm-reveal-on-scroll delay-1">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>When?</h3>
+                        <p>Every 2nd Saturday of the month</p>
+                        <p>4:00 PM to 6:00 PM PHT</p>
+                        <p><strong>Next Meetup:</strong> <span id="next-meetup-date">Calculating...</span></p>
+                    </div>
+                    <div class="meetup-info-card slm-reveal-on-scroll delay-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Where?</h3>
+                        <p>Coffee Bean & Tea Leaf</p>
+                        <p>SM Jazz Mall, Nicanor Garcia St. (Reposo), Makati</p>
+                        <p class="small-text">(Near Alliance Française de Manille)</p>
+                    </div>
+                    <div class="meetup-info-card slm-reveal-on-scroll delay-3">
+                        <i class="fas fa-users"></i>
+                        <h3>Who?</h3>
+                        <p>All levels welcome! Led by Patrick and other enthusiastic members.</p>
+                        <p>A diverse group including Filipinos and often native Spanish speakers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="featured-video" class="content-section slm-section-light-red slm-reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title slm-title-white">See Us in Action!</h2> 
+                 <p class="section-subtitle slm-subtitle-light">Watch Aljohn Polyglot join one of our engaging Spanish conversation challenges.</p>
+                <div class="video-wrapper slm-video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/b9M7-Oe_xbE" title="Strangers From Around the World Take on a Spanish Language Challenge! 🇪🇸" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery" class="content-section slm-section-white slm-reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title slm-title-dark-red">Meetup Moments</h2>
+                <div class="gallery-slider-container-slm">
+                    <button class="gallery-nav-arrow-slm prev-grid-arrow-slm" id="slmPrevGridBtn" aria-label="Previous Images">❮</button>
+                    <div class="gallery-grid-wrapper-slm" id="slmGalleryGridWrapper">
+                        <div class="gallery-grid-slm" id="slmGalleryGrid">
+                            <div class="gallery-item-slm"><img src="../images/groups/spanish_language_meetup_group_pic_may_2025.jpg" alt="May 2025 Meetup" data-caption="Fun times at our May 2025 meetup!"></div>
+                            <div class="gallery-item-slm"><img src="../images/groups/spanish_language_meetup_group_pic_january_2025_2.jpg" alt="January 2025 Meetup" data-caption="Kicking off the year with Spanish, Jan 2025."></div>
+                            <div class="gallery-item-slm"><img src="../images/groups/spanish_language_meetup_group_pic_march_2025_sometimeswegotobarafter_poblacion_lol.jpg" alt="March 2025 After-Meetup" data-caption="Sometimes we head to Poblacion after, March 2025!"></div>
+                            <div class="gallery-item-slm"><img src="../images/groups/spanish_language_meetup_group_pic_february_2025_2.jpg" alt="February 2025 Meetup" data-caption="Great conversations in February 2025."></div>
+                            <div class="gallery-item-slm"><img src="../images/groups/spanish_language_meetup_group_pic_april_2025.jpg" alt="April 2025 Meetup" data-caption="Springing into Spanish, April 2025."></div>
+                            <div class="gallery-item-slm"><img src="../images/groups/spanish_language_meetup_group_pic_may_2025_2.jpg" alt="May 2025 Meetup - Group 2" data-caption="Another angle from our lively May 2025 gathering."></div>
+                        </div>
+                    </div>
+                    <button class="gallery-nav-arrow-slm next-grid-arrow-slm" id="slmNextGridBtn" aria-label="Next Images">❯</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="imageModalSLM" class="modal-slm">
+            <span class="close-slm">×</span>
+            <img class="modal-content-slm" id="modalImageSLM">
+            <div id="caption-slm"></div>
+            <a class="prev-slm">❮</a>
+            <a class="next-slm">❯</a>
+        </div>
+
+        <section id="join-cta" class="content-section slm-section-green slm-reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title slm-title-white">Ready to Practice?</h2>
+                <p class="section-subtitle slm-subtitle-light-alt">Find all event details, RSVP, and connect with fellow Spanish enthusiasts on Meetup.com!</p>
+                <div class="join-links-slm">
+                    <a href="https://www.meetup.com/manila-spanish-language-meetup/events/fnwsltyhcgbqb/" target="_blank" class="btn slm-btn-primary icon-btn"><i class="fab fa-meetup"></i> View on Meetup.com</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="nearby-gem" class="content-section slm-section-light slm-reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title slm-title-dark-red">A Nearby Gem for Language Lovers</h2>
+                <p class="section-subtitle slm-subtitle-dark">Our meetup spot at SM Jazz Mall is conveniently located near the Alliance Française de Manille, a hub for French language and culture.</p>
+                
+                <div class="institute-preview-grid-wrapper slm-af-card">
+                    <!-- AF Card HTML (copied from main site's structure for consistency) -->
+                    <div class="institute-card af-manille-card-slm">
+                        <div class="institute-card-image-container">
+                            <img src="../images/af-manille-logo.png" alt="Alliance Française de Manille Logo" class="institute-logo">
+                        </div>
+                        <div class="institute-card-content">
+                            <h3 class="institute-name">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="France Flag" class="country-flag">
+                                Alliance Française de Manille
+                            </h3>
+                            <p class="institute-description">
+                                The primary center for French language education and cultural exchange in the Philippines. Offering courses, exams, and diverse cultural events.
+                            </p>
+                            <div class="institute-card-actions">
+                                <a href="../languagecenters.html#af-manille" class="btn btn-primary btn-small af-btn-primary">Full Profile</a>
+                                <a href="https://www.alliance.ph/accueil-en/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-small af-btn-outline">Website</a>
+                                <div class="institute-social-links">
+                                    <a href="https://www.facebook.com/alliancefrancaisedemanille/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.instagram.com/afmanille/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="main-footer-placeholder"></div>
+    <script>
+    let siteBasePath;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+    }
+    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+</script>
+    <script src="../js/navbar-loader.js" defer></script>
+    <script src="../js/footer-loader.js" defer></script>
+    <script src="js/spanishlanguagemeetup-dynamic.js" defer></script> 
+</body>
+</html>

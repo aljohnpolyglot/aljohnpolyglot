@@ -1,0 +1,285 @@
+/* =============================================== */
+/* === Library Layout Styles (Main 3-column) === */
+/* =============================================== */
+
+#library-main-section {
+    display: flex;
+    gap: clamp(15px, 2vw, 25px); /* Responsive gap */
+    align-items: flex-start;
+    padding: 20px var(--page-padding, 15px); /* Use CSS var for page padding, fallback to 15px */
+    position: relative; /* For potential future sticky elements within */
+}
+
+/* --- Sidebars Common Styles --- */
+#filters-sidebar,
+#character-panel-sidebar {
+    flex-basis: 280px; /* Default width for larger screens */
+    flex-shrink: 0;
+    background-color: var(--background-color-light);
+    padding: clamp(15px, 2vw, 20px); /* Responsive padding */
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    /* Consider a subtle border if background is very similar to page */
+    /* border: 1px solid var(--secondary-accent-color-translucent); */
+    height: fit-content; /* Allow them to size to their content naturally */
+}
+
+/* --- Filters Sidebar Specific --- */
+#filters-sidebar h2 {
+    font-family: var(--title-font); /* Assuming --font-display is for more prominent titles */
+    color: var(--primary-accent-color); /* Match other prominent text */
+    font-size: clamp(1.5rem, 4vw, 1.8rem); /* Responsive font size */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-accent-color); /* More solid accent */
+    position: relative; /* For pseudo-elements if needed */
+}
+/* Optional: Add a little ship wheel or scroll icon before/after H2 */
+#filters-sidebar h2::before {
+    /* content: '\f14e'; /* Example: Font Awesome ship wheel */
+    /* font-family: "Font Awesome 6 Free"; font-weight: 900; */
+    /* margin-right: 10px; */
+    /* color: var(--secondary-accent-color); */
+}
+
+
+/* --- Library Content Area (Middle Section) --- */
+#library-content-area {
+    flex: 1; /* Takes up remaining space */
+    min-width: ; /* Important for flex children to prevent overflow */
+     background-color: rgba(253, 245, 230, 0.1); 
+     padding: 10px; 
+    border-radius: 5px; 
+    min-height: fit-content;
+}
+
+/* --- Main Message Area (Welcome / Language Hook) --- */
+#library-main-message-area {
+    padding: clamp(15px, 3vw, 25px);
+    margin-bottom: clamp(20px, 3vw, 30px);
+    border-radius: var(--border-radius-medium);
+    background-color: var(--background-color-light-translucent);
+    text-align: center; /* Default alignment, can be overridden by children */
+    border: 1px solid var(--secondary-accent-color-translucent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all 0.3s ease-out; /* Smooth transitions for content changes */
+
+}
+#library-main-message-area .library-main-title {
+    font-family: var(--title-font-decorative-pirate, 'Uncial Antiqua', cursive); /* Or your main display font */
+    font-size: clamp(2.2rem, 6vw, 3.8rem); /* Large and impactful */
+    color: var(--primary-accent-color, #A52A2A); /* A strong, thematic color */
+    margin-bottom: 15px; /* Space below title */
+    margin-top: 0;
+    line-height: 1.1;
+    text-shadow: 1px 1px 0px var(--gold-trim-light, #f0e6d2), /* Light outline/highlight */
+                 2px 3px 5px rgba(0,0,0,0.3); /* Subtle drop shadow */
+    letter-spacing: 1px;
+    /* Optional: A slight curve or wave effect if you have a SVG path or advanced CSS skills */
+}
+/* Styles for the Initial Welcome (Group Photo) */
+#library-main-message-area .initial-welcome-message {
+    font-size: clamp(1.1em, 2.5vw, 1.3em); /* Responsive font size */
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-family: var(--body-font); /* More readable for paragraphs */
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#library-main-message-area #crew-group-photo {
+    max-width: 100%;
+    width: clamp(400px, 80%, 550px); /* Responsive width with min/max */
+    height: auto;
+    border-radius: var(--border-radius-small);
+    margin: 15px auto 0; /* Centering and top margin */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    display: block; /* Ensure it behaves as a block for centering */
+}
+
+/* Styles for the Language-Specific Hook */
+#library-main-message-area .language-hook-container {
+    display: flex;
+    flex-direction: row; /* Default, but explicit */
+    align-items: center;
+    gap: clamp(2px, 2vw, 2px);
+    text-align: left;
+    padding: clamp(2px, 2vw, 2px);
+    border-left: 5px solid var(--primary-accent-color);
+    background-color: rgba(var(--primary-accent-color-rgb), 0.05); /* Subtle background tint */
+}
+
+#library-main-message-area .language-hook-flag {
+    width: clamp(36px, 5vw, 48px); /* Responsive flag size */
+    height: auto;
+    border-radius: 4px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+#library-main-message-area .language-hook-text {
+    flex-grow: 1; /* Allow text to take up space */
+    margin-left: 15px;
+}
+
+#library-main-message-area .language-hook-text h3 {
+    font-family: var(--title-font);
+    color: var(--primary-accent-color);
+    font-size: clamp(1.3em, 3vw, 1.7em);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+#library-main-message-area .language-hook-text p {
+    font-size: clamp(0.9em, 2vw, 1em);
+    color: var(--text-color-dark);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+/* --- Character Panel Sidebar Specific --- */
+#character-panel-sidebar {
+    display: flex;
+    flex-direction: column;
+    /* Add a subtle top border to distinguish from content above on mobile when stacked */
+    border-top: 2px solid transparent; /* Initially transparent */
+}
+
+#chatbot-interface {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Crucial for scrollable flex children */
+    margin-top: 15px; /* Space between character info and chat interface */
+}
+
+#chat-log-display {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 200px; /* Ensure a decent chat area */
+    /* max-height will be controlled by the overall sidebar height or viewport on mobile */
+    /* background-color: var(--background-color); */ /* Slightly different background for chat area */
+    padding: 10px;
+    border: 1px solid var(--secondary-accent-color-translucent);
+    border-radius: var(--border-radius-small);
+}
+
+/* Ensure library grid starts hidden if no language selected and not explicitly shown */
+#library-grid:not([style*="grid"]) {
+    display: none;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) { /* Tablet and potentially large phones */
+    #library-main-section {
+        flex-direction: column;
+        align-items: stretch; /* Make items take full width available in column */
+    }
+
+    #filters-sidebar,
+    #character-panel-sidebar {
+        flex-basis: auto;
+        width: 100%; /* Take full width */
+        margin-bottom: 20px;
+        /* Ensure consistent height or allow content to define it */
+    }
+    #character-panel-sidebar {
+        border-top-color: var(--secondary-accent-color-translucent); /* Show border on mobile */
+    }
+
+    #library-main-message-area .language-hook-container {
+        flex-direction: column; /* Stack flag and text on smaller screens */
+        align-items: center;
+        text-align: center;
+    }
+    #library-main-message-area .language-hook-flag {
+        margin-bottom: 10px;
+    }
+    #library-main-message-area .language-hook-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) { /* Mobile phones */
+    #filters-sidebar h2 {
+        font-size: 1.4rem; /* Smaller title on mobile */
+    }
+
+   #library-main-message-area .library-main-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem); /* Scale down title for mobile */
+    }
+    #library-main-message-area .initial-welcome-message {
+        font-size: clamp(1em, 3vw, 1.1em);
+    }
+    #library-main-message-area #crew-group-photo {
+        width: clamp(280px, 90%, 450px);
+    }
+
+    #library-main-message-area .language-hook-text h3 {
+        font-size: 1.2em;
+    }
+    #library-main-message-area .language-hook-text p {
+        font-size: 0.85em;
+    }
+
+    #chat-log-display {
+        min-height: 150px; /* Smaller min height on mobile for chat */
+        max-height: 60vh; /* Allow it to take significant viewport height if needed */
+    }
+
+    /* Optional: Hide character panel by default on very small screens, show via a button? */
+    /* For now, it stacks. */
+}
+
+/* Pagination styles (ensure these are also present from previous responses) */
+#pagination-controls {
+    text-align: center;
+    margin-top: 25px;
+    padding: 15px 0;
+}
+@media (max-width: 480px) {
+    #library-main-message-area .library-main-title {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+    }
+     #library-main-message-area .initial-welcome-message {
+        font-size: 0.9em;
+    }
+}
+#pagination-controls button {
+    background-color: var(--primary-accent-color);
+    color: white;
+    border: none;
+    padding: 10px 18px; /* Slightly larger buttons */
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    margin: 0 8px; /* Adjust spacing */
+    font-family: var(--body-font);
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#pagination-controls button:hover:not(:disabled) {
+    background-color: var(--primary-color); /* Darken on hover */
+    transform: translateY(-1px);
+}
+
+#pagination-controls button:disabled {
+    background-color: var(--secondary-color-light);
+    color: var(--text-color-light);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+#page-info {
+    font-weight: bold;
+    color: var(--text-color-dark);
+    margin: 0 10px; /* Ensure spacing */
+    display: inline-block; /* For proper margin application */
+}

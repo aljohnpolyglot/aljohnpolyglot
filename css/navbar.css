@@ -1,0 +1,348 @@
+/* css/navbar.css */
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--light-text); /* Using variable from styles.css */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+header nav.container { /* Made nav selector more specific to the header's nav */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    height: 70px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--primary-blue); /* Using variable */
+}
+
+.logo-text {
+    font-family: var(--font-primary); /* Using variable */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-blue); /* Using variable */
+}
+
+ul.nav-links { /* Made nav-links selector more specific */
+    list-style: none;
+    display: flex;
+    margin: 0; /* Reset margin for ul */
+    padding: 0; /* Reset padding for ul */
+}
+
+ul.nav-links li {
+    margin-left: 20px;
+}
+
+ul.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text); /* Using variable */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+ul.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-red); /* Using variable */
+    transition: width 0.3s ease;
+}
+
+ul.nav-links a:hover,
+ul.nav-links a.active-link {
+    color: var(--primary-red); /* Using variable */
+}
+
+ul.nav-links a:hover::after,
+ul.nav-links a.active-link::after {
+    width: 100%;
+}
+
+.nav-cta { /* This is a specific type of nav link */
+    background-color: var(--primary-red); /* Using variable */
+    color: var(--light-text) !important; /* Using variable */
+    padding: 8px 18px !important;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-cta:hover {
+    background-color: #A8001D;
+    transform: translateY(-2px);
+    color: var(--light-text) !important; /* Using variable */
+}
+
+.nav-cta::after { /* CTA doesn't need the underline */
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-text); /* Using variable */
+    position: relative;
+    transition: all 0.3s linear;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-text); /* Using variable */
+    transition: all 0.3s linear;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* --- Dropdown Menu in Navbar --- */
+ul.nav-links li.dropdown {
+    position: relative;
+}
+
+ul.nav-links .dropbtn {
+    text-decoration: none;
+    color: var(--dark-text); /* Using variable */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    display: inline-block;
+}
+
+ul.nav-links .dropbtn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-red); /* Using variable */
+    transition: width 0.3s ease;
+}
+
+ul.nav-links li.dropdown:hover .dropbtn,
+ul.nav-links .dropbtn:focus, /* Keep style on focus for accessibility */
+ul.nav-links .dropbtn.active-link { /* Added active state for parent of active dropdown item */
+    color: var(--primary-red); /* Using variable */
+}
+
+ul.nav-links li.dropdown:hover .dropbtn::after,
+ul.nav-links .dropbtn:focus::after,
+ul.nav-links .dropbtn.active-link::after {
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1001;
+    border-radius: 0 0 4px 4px;
+    top: 100%;
+    left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdown-content a {
+    color: var(--dark-text); /* Using variable */
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative; /* For its own ::after underline */
+    /* Resetting properties from ul.nav-links a that might be inherited */
+    padding-bottom: 10px; /* Override general nav link padding-bottom */
+}
+
+.dropdown-content a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-red); /* Using variable */
+    transition: width 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-bg); /* Using variable */
+    color: var(--primary-red); /* Using variable */
+}
+
+.dropdown-content a:hover::after {
+    width: calc(100% - 32px);
+}
+
+.dropdown-content a.active-link {
+    color: var(--primary-red); /* Using variable */
+    font-weight: 700;
+    background-color: #e9ecef;
+}
+.dropdown-content a.active-link::after {
+    width: calc(100% - 32px);
+}
+
+ul.nav-links li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* --- Responsive Navbar Styles --- */
+@media (max-width: 768px) {
+    ul.nav-links { /* Target the specific ul.nav-links */
+        display: none; /* Initially hidden, JS will toggle */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Height of the header */
+        left: 0;
+        background-color: var(--light-text); /* Using variable */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding-bottom: 1rem;
+    }
+
+    ul.nav-links.active { /* Class added by JS */
+        display: flex;
+    }
+
+    ul.nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    ul.nav-links a {
+        display: block;
+        padding: 1rem; /* Full clickable area */
+        border-bottom: 1px solid var(--border-color); /* Using variable */
+    }
+    ul.nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+
+    ul.nav-links a:hover::after,
+    ul.nav-links a.active-link::after {
+        width: 40%; /* Centered underline for mobile */
+        left: 30%;
+    }
+
+    .nav-cta { /* Adjust CTA for mobile menu */
+        margin: 1rem auto;
+        display: inline-block; /* To center with auto margins */
+        padding: 10px 25px !important;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    .menu-toggle.active .hamburger {
+        background-color: transparent; /* Middle line disappears */
+    }
+
+    .menu-toggle.active .hamburger::before {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .menu-toggle.active .hamburger::after {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* Responsive Dropdown (JS Controlled for click) */
+    .dropdown-content { /* When inside mobile menu */
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent; /* Should inherit from .nav-links */
+        padding-top: 0;
+        padding-bottom: 0;
+        min-width: 100%;
+
+        /* JS controlled visibility and animation */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+        opacity: 0;
+    }
+
+    .dropdown-content.show-mobile {
+        /* max-height is set by JS to content.scrollHeight + "px" */
+        opacity: 1;
+    }
+
+    .dropdown-content a {
+        padding: 0.8rem 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color); /* Using variable */
+        color: var(--dark-text); /* Ensure good contrast */
+    }
+    .dropdown-content a:hover {
+        background-color: rgba(0,0,0,0.05); /* Subtle hover */
+    }
+    .dropdown-content a:last-child {
+         border-bottom: 1px solid var(--border-color);
+    }
+
+    ul.nav-links .dropbtn i.fa-caret-down {
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+    ul.nav-links .dropbtn.mobile-dropdown-open i.fa-caret-down {
+        transform: rotate(-180deg);
+    }
+}

@@ -1,0 +1,525 @@
+/* css/bisaya-modals.css - Universal Modal Styling & Themes */
+
+/* --- Base Modal Structure (#bisaya-item-modal) --- */
+.modal-bisaya { /* The full-screen overlay/dimmer */
+    display: none; 
+    position: fixed;
+    z-index: 1200; 
+    left: 0; top: 0; width: 100%; height: 100%;
+    overflow-y: auto; 
+    background-color: rgba(var(--sinulog-black-rgb), 0.88); /* Darker, consistent dimmer */
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; 
+    box-sizing: border-box;
+}
+
+.modal-content-bisaya { /* The actual modal box */
+    background-color: var(--sinulog-white); /* Default: light bg for creators for now */
+    color: var(--sinulog-dark-charcoal);   /* Default: dark text */
+    margin: auto;
+    padding: 0; 
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    width: 90%;
+    max-width: 600px; /* Default max-width, can be smaller for specific themes */
+    position: relative;
+    animation: fadeInModal 0.3s ease-out forwards;
+    max-height: 88vh; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+@keyframes fadeInModal {
+    from { transform: translateY(15px) scale(0.98); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.close-modal-bisaya {
+    color: var(--sinulog-mid-gray); /* Default close button color for light modal */
+    position: absolute;
+    top: 10px; right: 10px; /* Adjusted for consistent padding */
+    font-size: 1.8rem; font-weight: bold; line-height: 1;
+    cursor: pointer;
+    z-index: 10; 
+    padding: 5px; /* Make it easier to click */
+    background: none; border: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.close-modal-bisaya:hover {
+    color: var(--sinulog-magenta); 
+    transform: rotate(90deg);
+}
+
+/* --- Generic Modal Sections (Styled for default light theme) --- */
+.modal-header-bisaya {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 1rem; /* Reduced gap */
+    padding: 1.2rem 1.5rem; /* Adjusted padding */
+    border-bottom: 1px solid var(--sinulog-light-gray); 
+}
+
+.modal-item-image-bisaya { /* Default for creator avatar */
+    width: 80px; height: 80px; border-radius: 50%;
+    object-fit: cover; 
+    border: 3px solid var(--sinulog-deep-blue); /* Default accent */
+    flex-shrink: 0;
+    background-color: var(--sinulog-light-gray); /* Placeholder bg */
+}
+
+.modal-item-info-header { display: flex; flex-direction: column; flex-grow: 1; }
+
+#modal-item-name { 
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem); /* More compact name */
+    color: var(--sinulog-dark-charcoal); 
+    margin: 0 0 0.2rem 0;
+    font-weight: 700; line-height: 1.25;
+}
+
+.modal-item-tags { 
+    display: none; /* Default: hide tags, specific themes will show */
+    gap: 0.4rem; /* Gap between tags */
+    flex-wrap: wrap; /* Allow tags to wrap */
+    margin-top: 0.25rem;
+}
+.tag-eyebrow { 
+    font-size: 0.7rem; padding: 0.2em 0.6em; border-radius: 10px;
+    font-weight: 600; display: inline-flex; align-items: center;
+    line-height: 1.3;
+}
+.tag-eyebrow i { margin-right: 0.3em; }
+.category-eyebrow { background-color: rgba(var(--sinulog-yellow-rgb),0.2); color: #8c6d00; border: 1px solid rgba(var(--sinulog-yellow-rgb),0.4); }
+.region-eyebrow { background-color: rgba(var(--sinulog-teal-rgb),0.15); color: var(--sinulog-teal); border: 1px solid rgba(var(--sinulog-teal-rgb),0.3); }
+
+
+.modal-body-bisaya {
+    padding: 1.2rem 1.5rem; 
+    overflow-y: auto;
+    flex-grow: 1;
+    color: #383838; /* Default body text */
+    font-size: 0.88rem; /* Slightly smaller base */
+    line-height: 1.6;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sinulog-mid-gray) var(--sinulog-off-white);
+}
+.modal-body-bisaya::-webkit-scrollbar { width: 6px; }
+.modal-body-bisaya::-webkit-scrollbar-track { background: var(--sinulog-off-white); border-radius: 3px;}
+.modal-body-bisaya::-webkit-scrollbar-thumb { background: var(--sinulog-mid-gray); border-radius: 3px;}
+.modal-body-bisaya #modal-item-long-desc p { margin-bottom: 0.8em; }
+.modal-body-bisaya #modal-item-long-desc p:last-child { margin-bottom: 0; }
+
+
+#modal-video-embeds-container { margin-top: 1.2rem; }
+
+.modal-video-wrapper { aspect-ratio: 16 / 9; margin-bottom: 1rem; border-radius: 6px; overflow: hidden; box-shadow: var(--shadow-soft); }
+.modal-video-wrapper:last-child { margin-bottom: 0; }
+.modal-video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+/* Video Tabs for Creator Modal */
+.video-tabs-container { margin-top: 1rem; }
+.video-tabs-nav { display: flex; margin-bottom: 0.5rem; border-bottom: 1px solid var(--sinulog-light-gray); }
+.video-tab-button {
+    padding: 0.5em 1em; font-size: 0.85rem; font-weight: 600;
+    border: none; background-color: transparent; color: var(--sinulog-mid-gray);
+    cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; /* Align with container border */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.video-tab-button:hover { color: var(--sinulog-deep-blue); }
+.video-tab-button.active { color: var(--sinulog-deep-blue); border-bottom-color: var(--sinulog-deep-blue); }
+.video-tabs-content .video-tab-pane { display: none; }
+.video-tabs-content .video-tab-pane.active { display: block; }
+
+
+.modal-dynamic-links-area { margin-top: 1.2rem; } /* For creator social or podcast links */
+.modal-social-links { /* For Creator social links in body */
+    padding-top: 1.2rem; border-top: 1px solid var(--sinulog-light-gray);
+    display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+}
+/* ... (styles for .modal-social-links h4, .btn-social, specific platform .btn-social colors remain from previous) ... */
+.btn-social { font-size: 0.8rem; padding: 0.4em 0.8em; }
+
+
+.modal-footer-bisaya {
+    padding: 1rem 1.5rem; 
+    border-top: 1px solid var(--sinulog-light-gray);
+    text-align: center; 
+    background-color: var(--sinulog-off-white);
+}
+#modal-item-cta { /* General CTA */
+    font-size: 0.9rem;
+    padding: 0.6em 1.5em;
+    /* Default styling via .btn-sinulog-style .btn-primary-sinulog */
+}
+
+
+/* === THEME: CREATOR MODAL (Dark Placeholder) === */
+/* === THEME: CREATOR MODAL (Dark with Tabs & Unstyled Icon CTAs) === */
+.modal-content-bisaya.creator-modal-theme {
+    background-color: var(--sinulog-dark-gray); 
+    color: var(--sinulog-off-white);
+    max-width: 680px; 
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.1);
+}
+.creator-modal-theme .close-modal-bisaya { color: var(--sinulog-light-gray); }
+.creator-modal-theme .close-modal-bisaya:hover { color: var(--sinulog-yellow); }
+
+.creator-modal-theme .modal-header-bisaya {
+    border-bottom-color: rgba(var(--sinulog-white-rgb), 0.15);
+    padding: 1rem 1.2rem; 
+    align-items: center; /* Ensure vertical alignment */
+}
+.creator-modal-theme .modal-item-image-bisaya { /* Circular avatar */
+    width: 80px; height: 80px; border-radius: 50%; /* Revert to 80px avatar */
+    border: 3px solid var(--sinulog-yellow); 
+}
+.creator-modal-theme #modal-item-name { 
+    color: var(--sinulog-white); 
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    margin-bottom: 0.3rem; 
+}
+
+/* UPDATED: Creator Modal Tags - Eyebrow Styling */
+.creator-modal-theme .modal-item-tags {
+    display: flex; /* Override default 'display: none' to show tags */
+    gap: 0.4rem; /* Consistent gap between tags */
+    margin-top: 0.1rem; 
+}
+.creator-modal-theme .tag-eyebrow { /* General tag styling for dark modal */
+    background-color: rgba(var(--sinulog-white-rgb), 0.1);
+    border: 1px solid rgba(var(--sinulog-white-rgb), 0.2);
+    color: var(--sinulog-light-gray); /* Default text for tags */
+}
+.creator-modal-theme .tag-eyebrow.category-eyebrow { 
+    background-color: rgba(var(--sinulog-yellow-rgb), 0.15); 
+    border-color: rgba(var(--sinulog-yellow-rgb), 0.3); 
+    color: var(--sinulog-yellow); 
+}   
+.creator-modal-theme .tag-eyebrow i {
+    margin-right: 0.3em;
+    font-size: 0.9em; /* Icon size relative to tag text */
+}
+/* Specific eyebrow styles for dark modal background */
+.creator-modal-theme .category-eyebrow { 
+    background-color: rgba(var(--sinulog-yellow-rgb), 0.15); 
+    border: 1px solid rgba(var(--sinulog-yellow-rgb), 0.3); 
+    color: var(--sinulog-yellow); 
+}
+.creator-modal-theme .region-eyebrow { 
+    background-color: rgba(var(--sinulog-teal-rgb), 0.15); 
+    border: 1px solid rgba(var(--sinulog-teal-rgb), 0.3); 
+    color: var(--sinulog-teal); 
+}
+
+
+.creator-modal-theme .modal-body-bisaya {
+    color: var(--sinulog-light-gray);
+    padding: 1rem 1.2rem;
+    scrollbar-color: var(--sinulog-mid-gray) rgba(var(--sinulog-black-rgb), 0.5);
+}
+/* ... (scrollbar webkit styles for dark modal body) ... */
+.creator-modal-theme #modal-item-long-desc { font-size: 0.85rem; line-height: 1.6; }
+
+
+/* Video Tabs Styling for Creator Dark Theme */
+.creator-modal-theme #modal-video-embeds-container { 
+    margin-top: 1.2rem; /* Adjusted margin */
+    margin-bottom: 1.2rem;
+}
+/* HIDE the "Mga Sample Videos:" or "Girekomenda ni Aljohn:" heading */
+.creator-modal-theme #modal-video-embeds-header {
+    display: none !important; 
+}
+
+.creator-modal-theme .video-tabs-container {
+    display: block; 
+    margin-top: 0; /* No top margin if heading is gone */
+}
+.creator-modal-theme .video-tabs-nav { 
+    border-bottom-color: rgba(var(--sinulog-white-rgb),0.1); 
+    margin-bottom: 0.6rem; /* Tighter to content */
+}
+.creator-modal-theme .video-tab-button { 
+    color: var(--sinulog-light-gray); 
+    font-size: 0.75rem; 
+    padding: 0.4em 0.8em;
+}
+.creator-modal-theme .video-tab-button:hover { color: var(--sinulog-white); background-color: rgba(var(--sinulog-white-rgb), 0.03); }
+.creator-modal-theme .video-tab-button.active { color: var(--sinulog-yellow); border-bottom-color: var(--sinulog-yellow); background-color: rgba(var(--sinulog-yellow-rgb), 0.03); }
+/* ... (.modal-video-wrapper styles for aspect ratio are in the base modal CSS) ... */
+
+
+.creator-modal-theme .modal-dynamic-links-area .modal-social-links {
+    border-top-color: rgba(var(--sinulog-white-rgb), 0.1);
+}
+.creator-modal-theme .modal-dynamic-links-area .modal-social-links h4 { color: var(--sinulog-mid-gray); }
+/* .btn-social colors are fine as they have their own backgrounds */
+
+.creator-modal-theme .modal-footer-bisaya {
+    background-color: rgba(var(--sinulog-black-rgb), 0.5); /* Darker footer */
+    border-top-color: rgba(var(--sinulog-white-rgb), 0.1);
+    padding: 0.8rem 1.2rem;
+}
+.creator-modal-theme #modal-item-cta { display: none !important; } /* Hide default text CTA */
+
+.modal-footer-actions { /* Container for icon buttons */
+    display: flex;
+    justify-content: center; /* Center the icons */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* More space between unstyled icons */
+}
+.btn-social-icon-cta { /* Icon-only CTAs - Unstyled look */
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    font-size: 1.5rem; /* Larger icons if no background */
+    color: var(--sinulog-light-gray); /* Default icon color */
+    text-decoration: none;
+    padding: 0.25rem; /* Minimal padding */
+    background: none !important; /* NO BACKGROUND */
+    border: none !important; /* NO BORDER */
+    box-shadow: none !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.btn-social-icon-cta:hover {
+    color: var(--sinulog-yellow); /* Highlight color on hover */
+    transform: scale(1.15);
+}
+/* === THEME: PODCAST SPOTIFY MODAL (Inspired by Spotify Desktop App Page) === */
+.modal-content-bisaya.podcast-spotify-modal-theme {
+    background-color: #121212; 
+    color: var(--sinulog-white);
+    max-width: 500px; /* More compact */
+    height: auto; /* Let content define height */
+    min-height: 300px; /* But ensure some minimum presence */
+    max-height: 75vh; /* Reduced max height */
+    border-radius: 8px; 
+    border: 1px solid #282828; 
+}
+.podcast-spotify-modal-theme .close-modal-bisaya { color: #B3B3B3; background-color: rgba(0,0,0,0.7); border-radius: 50%; width: 32px; height: 32px; line-height: 32px; top: 16px; right: 16px; font-size: 1.2rem; }
+.podcast-spotify-modal-theme .close-modal-bisaya:hover { color: var(--sinulog-white); background-color: rgba(0,0,0,0.9); }
+
+
+.podcast-spotify-modal-theme .modal-header-bisaya {
+    padding: 1.2rem 1.5rem 0.8rem 1.5rem; /* Reduced top/bottom padding */
+    gap: 1.2rem; border-bottom: none; 
+    align-items: center; /* Changed from flex-end for better vertical alignment */
+    background: linear-gradient(to bottom, #282828, #181818 80%); /* Darker gradient */
+    min-height: auto; /* Remove min-height, let content define */
+}
+.podcast-spotify-modal-theme .modal-item-image-bisaya {
+    width: 90px; height: 90px; /* Smaller cover art for compactness */
+    border-radius: 4px; box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    margin-bottom: 0; /* Remove bottom margin if align-items: center */
+}
+.podcast-spotify-modal-theme .modal-item-info-header {
+    padding-bottom: 0;
+}
+.podcast-spotify-modal-theme #modal-item-name {
+    font-size: clamp(1.2rem, 3vw, 1.6rem); /* More compact title */
+    font-weight: 700; /* Still bold, but not 900 */
+}
+.podcast-spotify-modal-theme .modal-item-info-header::after { /* "Podcast by Host" */
+    font-size: 0.8rem; margin-top: 0.2rem; color: #A0A0A0; /* Lighter for less emphasis */
+}
+
+.podcast-spotify-modal-theme .modal-body-bisaya {
+    padding: 1rem 1.5rem; /* Reduced padding */
+    color: #B3B3B3; 
+    font-size: 0.85rem; line-height: 1.55; /* More compact text */
+    background-color: #121212;
+    scrollbar-color: #535353 #1F1F1F; /* Adjusted track color */
+}
+.podcast-spotify-modal-theme .modal-body-bisaya::-webkit-scrollbar-track { background: #1F1F1F; }
+/* ... (#modal-item-long-desc h4, p styles from previous are fine) ... */
+.podcast-spotify-modal-theme #modal-item-long-desc { margin-bottom: 1rem; /* Add space before CTA */ }
+
+
+.podcast-spotify-modal-theme .modal-footer-bisaya {
+    padding: 1rem 1.5rem; /* Reduced padding */
+    background-color: #121212; /* Match body background for seamlessness */
+    text-align: center; /* Ensure CTA is centered */
+    border-top: 1px solid #282828; /* Subtle separator like Spotify */
+}
+.podcast-spotify-modal-theme #modal-item-cta.btn-spotify-listen {
+    background-color: #1DB954; /* Spotify Green */
+    color: var(--sinulog-white);
+    font-weight: 700; font-size: 0.9rem;
+    padding: 0.7em 1.8em; /* Generous padding */
+    border-radius: 500px; text-decoration: none; border: none;
+    display: inline-flex; align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.podcast-spotify-modal-theme #modal-item-cta.btn-spotify-listen i.fab.fa-spotify {
+    margin-right: 0.6em; font-size: 1.2em;
+}
+.podcast-spotify-modal-theme #modal-item-cta.btn-spotify-listen:hover {
+    background-color: #1ed760; transform: scale(1.04);
+}
+
+/* Responsive for modals */
+@media (max-width: 768px) {
+    .modal-content-bisaya { max-width: 90vw; max-height: 88vh; }
+    .modal-content-bisaya.podcast-spotify-modal-theme { max-height: 85vh; }
+    .podcast-spotify-modal-theme .modal-header-bisaya { flex-direction: column; align-items: center; text-align: center; padding: 1rem; }
+    .podcast-spotify-modal-theme .modal-item-image-bisaya { width: 80px; height: 80px; margin-bottom: 0.5rem; }
+    .podcast-spotify-modal-theme #modal-item-name { font-size: 1.3rem; }
+}
+@media (max-width: 480px) {
+    .modal-content-bisaya {
+        border-radius: 0; /* Full screen on very small mobile */
+        width: 100vw; height: 100vh; max-height: 100vh;
+        top:0; left:0; transform: none;
+    }
+    .close-modal-bisaya { top: 15px; right: 15px; }
+}
+/* css/bisaya-modals.css - Universal Modal Styling & Themes */
+
+/* ... (Base Modal Structure & Creator Modal Theme & Podcast Spotify Modal Theme - REMAINS THE SAME from last version) ... */
+
+/* --- NEW THEME: MUSIC ARTIST MODAL --- */
+/* --- NEW THEME: MUSIC ARTIST MODAL --- */
+.modal-content-bisaya.music-artist-modal-theme {
+    background-color: #282828; 
+    color: var(--sinulog-white);
+    max-width: 600px; 
+    max-height: 85vh; 
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    border: 1px solid #333;
+}
+.music-artist-modal-theme .close-modal-bisaya {
+    color: var(--sinulog-light-gray);
+    background-color: rgba(var(--sinulog-black-rgb), 0.5);
+    border-radius: 50%;
+    width: 32px; height: 32px; line-height: 32px;
+    top: 12px; right: 12px; font-size: 1.5rem;
+}
+.music-artist-modal-theme .close-modal-bisaya:hover {
+    color: var(--sinulog-white); background-color: rgba(var(--sinulog-black-rgb), 0.7);
+}
+
+.music-artist-modal-theme .modal-header-bisaya {
+    padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid rgba(var(--sinulog-white-rgb), 0.1); align-items: center;
+}
+.music-artist-modal-theme .modal-item-image-bisaya { /* Artist Cover Art (usually square) */
+    width: 100px; height: 100px; border-radius: 8px; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.music-artist-modal-theme #modal-item-name { 
+    font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 800; color: var(--sinulog-white); margin-bottom: 0;
+}
+.music-artist-modal-theme .modal-item-tags { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.music-artist-modal-theme .modal-item-tags .tag-eyebrow { /* General tag styling */
+    background-color: rgba(var(--sinulog-white-rgb), 0.1); border: 1px solid rgba(var(--sinulog-white-rgb), 0.2); color: var(--sinulog-light-gray); font-size: 0.75rem; padding: 0.25em 0.7em;
+}
+.music-artist-modal-theme .modal-item-tags .category-eyebrow { display: none; /* Hide category for music artist */ }
+.music-artist-modal-theme .modal-item-tags .region-eyebrow { /* Style for location tag */
+    color: var(--sinulog-yellow); background-color: rgba(var(--sinulog-yellow-rgb), 0.15); border-color: rgba(var(--sinulog-yellow-rgb), 0.3);
+}
+
+
+.music-artist-modal-theme .modal-body-bisaya {
+    padding: 1.2rem 1.5rem;
+    color: var(--sinulog-light-gray);
+    font-size: 0.9rem; line-height: 1.6;
+    background-color: #121212; /* Darker body background */
+    scrollbar-color: #535353 #282828;
+}
+/* ... (scrollbar webkit styles) ... */
+.music-artist-modal-theme #modal-item-long-desc {
+    margin-bottom: 1.5rem; /* Space before video */
+}
+
+/* Video Embeds for Music Artists */
+.music-artist-modal-theme #modal-video-embeds-container {
+    margin-top: 1.5rem; margin-bottom: 1.5rem;
+    display: block; /* Ensure it's visible */
+}
+.music-artist-modal-theme #modal-video-embeds-header { /* Featured song heading */
+    font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+    color: var(--sinulog-yellow); /* Yellow heading */
+    margin-bottom: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+.music-artist-modal-theme .modal-video-wrapper { /* For the featured song iframe */
+    border: 2px solid var(--sinulog-magenta); /* Magenta frame for video */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+/* Hide tabs container if present */
+.music-artist-modal-theme .video-tabs-container { display: none !important; }
+
+
+.music-artist-modal-theme .modal-footer-bisaya {
+    padding: 1rem 1.5rem;
+    background-color: #181818; /* Slightly lighter footer */
+    border-top: 1px solid rgba(var(--sinulog-white-rgb), 0.1);
+    text-align: center; /* Center CTAs */
+}
+/* Primary Spotify CTA Button */
+.music-artist-modal-theme #modal-item-cta.btn-spotify-listen { /* Use this specific class */
+    background-color: #1DB954; color: var(--sinulog-white); font-weight: 700;
+    font-size: 0.95rem; padding: 0.8em 2em; border-radius: var(--button-border-radius);
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.music-artist-modal-theme #modal-item-cta.btn-spotify-listen i { font-size: 1.2em; }
+.music-artist-modal-theme #modal-item-cta.btn-spotify-listen:hover { background-color: #1ed760; transform: scale(1.03); }
+
+
+/* Other Social Icon CTAs */
+.music-artist-modal-theme .modal-footer-actions { /* Container for icon buttons */
+    display: flex;
+    justify-content: center; align-items: center; flex-wrap: wrap;
+    gap: 0.8rem; /* Space between icons */
+    /* No margin-top if the only CTA is here, otherwise adjust */
+}
+/* NEW: Spotify Primary CTA (Logo Only) */
+.btn-social-icon-cta.spotify-primary-logo-only {
+    background-color: #1DB954; /* Spotify Green */
+    color: var(--sinulog-white) !important; /* White icon */
+    width: 50px; /* Larger circular button */
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.8rem; /* Larger icon */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+.btn-social-icon-cta.spotify-primary-logo-only:hover {
+    background-color: #1ed760; /* Lighter green on hover */
+    transform: scale(1.08);
+}
+.music-artist-modal-theme .btn-social-icon-cta { /* General style for secondary icons */
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; /* Icon size */
+    color: var(--sinulog-light-gray); /* Default light gray icon */
+    text-decoration: none; padding: 0.3rem;
+    background: none !important; border: none !important; box-shadow: none !important; /* Ensure no background/border */
+    border-radius: 50%; width: 36px; height: 36px; /* Smaller clickable area */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.music-artist-modal-theme .btn-social-icon-cta:hover {
+    color: var(--sinulog-yellow); /* Yellow highlight on hover */
+    transform: scale(1.1);
+}
+/* No specific platform colors for these unstyled icons */
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .music-artist-modal-theme .modal-header-bisaya { padding: 1rem; flex-direction: column; text-align: center; }
+    .music-artist-modal-theme .modal-item-image-bisaya { margin-bottom: 0.5rem; }
+    .music-artist-modal-theme #modal-item-name { font-size: 1.3rem; }
+    .music-artist-modal-theme .modal-body-bisaya { padding: 0.8rem 1rem; }
+    .music-artist-modal-theme #modal-item-long-desc { font-size: 0.8rem; }
+    .music-artist-modal-theme #modal-video-embeds-container { margin-top: 1rem; margin-bottom: 1rem; }
+    .music-artist-modal-theme #modal-video-embeds-header { font-size: 1rem; }
+    .music-artist-modal-theme .modal-footer-bisaya { padding: 0.8rem 1rem; }
+    .music-artist-modal-theme #modal-item-cta.btn-spotify-listen { width: 100%; font-size: 0.85rem; padding: 0.6em 1.2em; }
+    .music-artist-modal-theme .modal-footer-actions { gap: 0.6rem; }
+    .music-artist-modal-theme .btn-social-icon-cta { font-size: 1.2rem; width: 28px; height: 28px; }
+}
