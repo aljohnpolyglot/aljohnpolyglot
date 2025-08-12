@@ -1,0 +1,74 @@
+# .github/workflows/deploy-vite-site.yml
+name: Build and Deploy Vite Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Deploy when changes are pushed to main
+    paths: # Optional: only run if relevant files change
+      - 'polyglot_connect/**'
+      - 'vite.config.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy-vite-site.yml'
+      # Add other paths if your main site files (root index.html, css/, js/) are also processed by Vite
+      - 'index.html' 
+      - 'css/**'
+      - 'js/**' 
+      # etc.
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required for peaceiris/actions-gh-pages to push to gh-pages
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Or your preferred Node.js LTS version
+
+      - name: Install Dependencies ⚙️
+        run: npm ci # 'ci' is generally recommended for CI for faster, more reliable installs
+                    # If it fails, 'npm install' is also fine.
+
+      - name: Create .env file for Polyglot Connect (Vite build) 🔑
+        working-directory: ./polyglot_connect # Ensure .env is created in the correct spot for Vite
+        run: |
+          echo "Creating .env file in ./polyglot_connect/ for Vite build..."
+          echo "VITE_GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env # Use > for the first line to create/overwrite
+          echo "VITE_GEMINI_API_KEY_ALT=${{ secrets.GEMINI_API_KEY_ALT }}" >> .env
+          echo "VITE_GEMINI_API_KEY_ALT_2=${{ secrets.GEMINI_API_KEY_ALT_2 }}" >> .env
+          echo "VITE_GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" >> .env
+          echo "VITE_TOGETHER_API_KEY=${{ secrets.TOGETHER_API_KEY }}" >> .env
+          echo ".env file created."
+          echo "Verifying .env content (first line):"
+          head -n 1 .env
+
+      - name: Build with Vite 🛠️
+        run: npm run build # This runs 'vite build' as defined in your package.json
+                          # Output will be in './dist/' based on your vite.config.js
+
+      - name: Verify Build Output (Debugging) 🔍
+        run: |
+          echo "Listing contents of ./dist/ directory:"
+          ls -R ./dist
+          echo "--- Specifically listing ./dist/polyglot_connect/js/ ---"
+          ls -A ./dist/polyglot_connect/js/ || echo "Build output for polyglot_connect JS not found as expected."
+
+
+      - name: Deploy to gh-pages branch 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Deploy the entire 'dist' folder created by Vite
+          force_orphan: true  # Creates a fresh gh-pages branch history
+          keep_files: false   # Ensures old files are removed
+          # user_name: 'github-actions[bot]' # Optional
+          # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional
+          # commit_message: ${{ github.event.head_commit.message }} # Optional

@@ -1115,4 +1115,4 @@ details.skill-details summary { list-style: none; }
     .skill-content { padding: 1rem; }
     .app-summary { grid-template-columns: auto 1fr; gap: 10px; }
     .app-summary .toggle-details-btn { grid-column: 1 / -1; margin-top: 0.5rem; justify-self: center; }
-    .pros-cons-container { grid-template-columns: 1fr; },
+    .pros-cons-container { grid-template-columns: 1fr; }}

@@ -1,0 +1,148 @@
+/* D:\website\languages\spanish\css\mock-style.css */
+
+/* --- Importación de Fuentes de RTVE --- */
+@import url('https://css2.rtve.es/css/rtve.0000/rtve.0000.commons/rtve.core/basics.fonts.css');
+
+/* --- Reset Básico y Configuración Global (Inspirado en RTVE) --- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* Hace que 1rem = 10px */
+}
+
+body {
+    font-family: 'Roboto', 'arial', sans-serif;
+    font-size: 1.6rem; /* 16px por defecto */
+    line-height: 1.5;
+    background-color: #f2f2f2; /* Gris claro de fondo de RTVE */
+    color: #494847; /* Gris oscuro principal de RTVE */
+}
+
+a {
+    text-decoration: none;
+    color: #d25000; /* Naranja de enlaces de RTVE */
+    border-bottom: 1px solid #999;
+}
+
+a:hover {
+    border-color: #d25000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto Slab', 'arial', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #494847;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e8e8e8; /* Gris más claro para separadores */
+}
+
+h3 {
+    font-size: 2.2rem;
+}
+
+/* --- Estructura Principal --- */
+.container {
+    width: 118rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.mainheader {
+    background-color: #fff;
+    padding: 1rem 5%;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* --- Estanterías (Shelves) --- */
+.content-shelf {
+    margin-bottom: 4rem;
+}
+
+.shelf-container {
+    display: flex;
+    overflow-x: auto; /* Permite el scroll horizontal */
+    padding-bottom: 2rem; /* Espacio para la barra de scroll */
+    gap: 1.5rem; /* Espacio entre tarjetas */
+    
+    /* Para que el scroll sea más suave y ocultar la barra de scroll */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #f56b0d #e8e8e8;
+}
+
+/* Ocultar barra de scroll en navegadores Webkit (Chrome, Safari) */
+.shelf-container::-webkit-scrollbar {
+    height: 8px;
+}
+.shelf-container::-webkit-scrollbar-track {
+    background: #e8e8e8;
+    border-radius: 4px;
+}
+.shelf-container::-webkit-scrollbar-thumb {
+    background-color: #f56b0d; /* Naranja noticias de RTVE */
+    border-radius: 4px;
+}
+
+/* --- Estilo de Tarjetas para las Estanterías --- */
+.card {
+    flex: 0 0 220px; /* Base de la tarjeta: no crece, no se encoge, 220px de ancho */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card .card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card .card-content {
+    padding: 1rem;
+}
+
+.card .card-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: none; /* No queremos todo en mayúsculas aquí */
+    color: #494847;
+}
+
+.card .card-subtitle {
+    font-size: 1.3rem;
+    color: #737578; /* Gris medio de RTVE */
+}
+
+/* Estilo específico para la estantería de libros */
+#shelf-books .card .card-image {
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}

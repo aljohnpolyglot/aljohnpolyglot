@@ -1,3 +1,5 @@
+polyglot_connect/.env
+
 # Node.js / npm / Vite
 node_modules/
 dist/

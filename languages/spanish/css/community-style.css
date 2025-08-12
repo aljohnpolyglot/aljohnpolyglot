@@ -1,0 +1,338 @@
+/* D:\website\languages\spanish\css\community-style.css (Versión Completa y Final) */
+
+/* --- Contenedor Principal (Dark Mode) --- */
+#community-spotlights {
+    background-color: #151515; /* Negro suave */
+    color: #e0e0e0;
+    padding: 4rem 0;
+    border-top: 1px solid #333;
+}
+
+.community-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+#community-spotlights h2 {
+    color: #fff;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    border: none;
+}
+
+.community-subtitle {
+    font-size: 1.8rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Feature Card: Instituto Cervantes (SOLO ESTRUCTURA) --- */
+#cervantes-feature-container {
+    margin-bottom: 4rem;
+}
+
+.cervantes-card {
+    display: flex;
+    flex-direction: row; /* Asegura el layout de dos columnas */
+    gap: 5rem;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 5rem;
+}
+
+/* Columna Izquierda: Detalles */
+.cervantes-details-column {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.cervantes-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Columna 1: Detalles (toma el espacio restante) */
+.cervantes-details { 
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: center;
+    display: flex; /* Usamos flex para alinear su contenido interno */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* El logo ahora está DENTRO de los detalles */
+.cervantes-details-column .cervantes-logo-container {
+    max-width: 250px; 
+    margin-bottom: 2rem;
+    display: flex;            /* add this */
+    align-items: center;
+    justify-content: center;
+}
+
+.cervantes-details-column .cervantes-logo-container img { 
+    border-radius: 12px;
+    border: 4px solid rgba(255,255,255,0.8); 
+    width: 50%;
+}
+
+.cervantes-details-column h3 { 
+    font-size: 2.2rem; 
+    margin-bottom: 0.5rem; 
+    color: #fff;
+}
+.cervantes-details-column .subtitle { 
+    font-size: 1.6rem; 
+    font-weight: 700; 
+    margin-bottom: 1.5rem; 
+}
+.cervantes-details-column p { 
+    font-size: 1.3rem; 
+    line-height: 1.6; 
+    margin-bottom: 2rem; 
+    text-align: left; /* Centramos el párrafo también */
+    max-width: 500px; /* Evita que el texto sea demasiado ancho */
+}
+
+.key-offerings {
+    list-style: none; 
+    padding: 0; 
+    margin-bottom: 2.5rem;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1rem;
+    max-width: 600px;
+    justify-content: center;
+}
+
+.key-offerings li {
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 200px;
+}
+.key-offerings li:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    color: #fff;
+    background-color: #690101;
+}
+
+.cervantes-buttons { 
+    display: flex; 
+    gap: 1.5rem; 
+    justify-content: center; /* AÑADIDO: Centra los botones horizontalmente */
+}
+
+.cervantes-buttons .button-link {
+    padding: 0.5rem 1rem; 
+    border-radius: 8px;
+    font-weight: 500; 
+    text-decoration: none; 
+    border: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+
+.cervantes-buttons .button-link:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* --- Estantería de Grupos (SOLO ESTRUCTURA) --- */
+.shelf-subheader {
+    font-size: 2.2rem; 
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 2.5rem; 
+    border-top: 1px solid #333; 
+    padding-top: 3rem;
+}
+#groups-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+#groups-container .card {
+    flex: 0 0 280px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    padding: 2rem;
+    text-decoration: none; /* Los 'a' no deben tener subrayado */
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#groups-container .card:hover {
+  
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    cursor: default;
+}
+
+#groups-container .card .card-image {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 12px; /* CAMBIO: De 50% a 12px para esquinas redondeadas */
+    margin-bottom: 1.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+#groups-container .card .card-title {
+    font-size: 1.8rem; 
+    text-align: center; 
+    margin-bottom: 0.5rem;
+}
+
+#groups-container .card .card-subtitle {
+    text-align: center; 
+    font-size: 1.4rem; 
+    line-height: 1.4;
+}
+
+/* --- Responsividad (se mantiene igual) --- */
+@media (max-width: 768px) {
+    .cervantes-card { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .key-offerings { 
+        justify-content: center; 
+    }
+    .cervantes-buttons { 
+        justify-content: center; 
+    }
+}
+/* --- NUEVOS ESTILOS (Paso 2) --- */
+
+/* Estilo para el CTA tipo "eyebrow" en las tarjetas de grupo */
+#groups-container .card {
+    position: relative; /* Necesario para posicionar el CTA */
+    padding-bottom: 4rem; /* Hacemos espacio abajo para el CTA */
+}
+
+.eyebrow-cta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.8rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: filter 0.2s ease;
+}
+
+#groups-container .card:hover .eyebrow-cta {
+    filter: brightness(1.1); /* Sutil efecto de brillo al pasar el ratón */
+}
+/* Estructura de la tarjeta de grupo para separar el botón */
+#groups-container .group-card {
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    min-height: 350px;
+}
+
+/* Estilo para el botón "Más Detalles" en las tarjetas de grupo */
+#groups-container .button-link.secondary {
+    display: inline-block;
+    padding: calc(0.8rem - 2px) calc(1.5rem - 2px); /* Ajustar padding por el borde */
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1.5rem; /* Espacio arriba del botón */
+    transition: all 0.2s ease;
+}
+
+#groups-container .button-link.secondary:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+/* ============================================== */
+/* ==   NUEVOS ESTILOS PARA LA GALERÍA DE FOTOS  == */
+/* ============================================== */
+
+/* Columna Derecha: Galería */
+.cervantes-gallery {
+    flex: 0 0 40%; /* La galería ocupa un 40% del ancho, pero no más de 450px */
+    max-width: 450px;
+}
+
+.gallery-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Proporción más rectangular para la galería */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.carousel-track { display: flex; height: 100%; transition: transform 0.5s ease-in-out; }
+.carousel-slide { min-width: 100%; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.carousel-button:hover { background-color: rgba(0, 0, 0, 0.7); }
+.carousel-button.prev { left: 10px; }
+.carousel-button.next { right: 10px; }
+
+.carousel-caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+/* Responsividad para este layout */
+@media (max-width: 900px) {
+    .cervantes-card {
+        flex-direction: column;
+    }
+    .cervantes-gallery {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+
+

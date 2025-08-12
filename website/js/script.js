@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (languageFlagGridLinks.length > 0) {
         languageFlagGridLinks.forEach(link => {
             link.addEventListener('click', function(event) {
-                // Allow default navigation to the linked page (e.g., languages/spanish.html)
+                // Allow default navigation to the linked page (e.g., /languages/spanish/index.html)
                 // The alert was for testing, actual navigation should happen.
                 // event.preventDefault(); // Remove this if you want the link to work
                 // const langName = this.querySelector('span').textContent;

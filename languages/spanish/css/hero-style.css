@@ -1,0 +1,293 @@
+/* D:\website\languages\spanish\css\hero-style.css (Versión Final) */
+#hero-banner {
+    position: relative; /* needed for ::before positioning */
+    margin-top: 60px;
+    color: #fff;
+    padding: 6rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+
+    /* Brand-color gradient + background image */
+    background:
+        linear-gradient(
+            rgba(253, 103, 105, 0.32),
+            rgba(249, 212, 35, 0.75)
+        ),
+        url('../images/patterns/flamenco_pattern.png');
+    background-color: #1A1A1A; /* fallback if image fails */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* adjust blackness here */
+    z-index: 1;
+}
+
+#hero-banner > * {
+    position: relative; /* ensure content is above the ::before overlay */
+    z-index: 2;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Columna Izquierda: Texto */
+.hero-text-column {
+    flex: 1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn { /* ... (se mantiene igual) ... */ }
+
+.hero-text-column h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3.6rem;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: none;
+    text-transform: none;
+}
+
+.hero-flag { 
+    width: 40px; height: auto; 
+    transform: scale(1.5);
+    margin: 1rem;
+ }
+
+.hero-subtitle {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+.hero-cta-buttons .btn-primary {
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-cta-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #f43f3f, #facc15);
+}
+
+.hero-cta-buttons .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Columna Derecha: Carrusel de Fotos */
+.hero-gallery-column {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-carousel {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-carousel .carousel-track { display: flex; height: 100%; }
+.hero-carousel .carousel-slide { min-width: 100%; cursor: pointer; transition: opacity 0.3s ease; }
+.hero-carousel .carousel-slide:hover { opacity: 0.85; }
+.hero-carousel .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+.hero-carousel .carousel-button { /* ... (se mantiene igual) ... */ }
+
+/* Modal del Hero */
+/* ============================================== */
+/* ==   CSS DE REEMPLAZO (MODAL Y CAPTION)     == */
+/* ============================================== */
+
+/* Modal del Hero (Versión Corregida) */
+.hero-modal-overlay {
+    position: fixed; /* CLAVE: Saca el modal del flujo y lo pone sobre todo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.hero-modal-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s;
+}
+
+.hero-modal-overlay .modal-content {
+    position: relative; /* Para el posicionamiento del caption */
+    max-width: 80vw;
+    max-height: 80vh;
+    padding: 0;
+    background: none;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-modal-overlay:not(.hidden) .modal-content {
+    transform: scale(1);
+}.hero-modal-media {
+    display: inline-block;
+    max-width: 80%;
+    position: relative;
+}
+
+.hero-modal-media img {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#hero-modal-caption {
+    margin-top: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fafafa;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 100%; /* Always match the image width */
+    word-wrap: break-word; /* Allow breaking long words if needed */
+}
+
+
+/* El nuevo estilo para el caption que se parece a la imagen */
+#hero-modal-caption {
+    position: absolute;
+    bottom: 30px; /* Lo posiciona debajo de la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Ancho del caption */
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fafafa;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    max-width: auto;
+}
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.modal-nav-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-nav-btn.prev {
+    left: 10px;
+}
+
+.modal-nav-btn.next {
+    right: 10px;
+}
+
+.hero-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+
+@media (max-width: 900px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+    }
+
+    .hero-text-column {
+        text-align: center;
+    }
+    .hero-text-column h1 {
+        justify-content: center;
+        flex-direction: column;
+    }
+   
+    .hero-flag {
+        width: 40px; height: auto; 
+        transform: scale(2.5);
+        margin: 3rem;
+     }
+    .hero-gallery-column {
+        width: 100%;
+        max-width: 500px;
+    }
+    #hero-modal-caption {
+        bottom: 0.8rem; /* 0.8rem from bottom */
+        font-size: 0.8rem; /* slightly smaller text if needed */
+    }
+    #hero-modal-close-btn {
+        position: fixed !important;
+        top: 8px;
+        right: 8px;
+        margin: 0;
+        transform: none;
+        z-index: 99999;
+        display: block !important; /* ensure it's not flex-centered */
+    }
+
+    #hero-modal-close-btn > i {
+        transform: scale(1);
+    }
+}
