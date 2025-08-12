@@ -118,7 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
     // --- Rellenar información básica, AHORA INCLUYE LA BANDERA ---
     document.getElementById('modal-creator-img').src = creator.profilePic;
-    document.getElementById('creatorModalTitle').innerHTML = `${creator.name} ${modalFlagElement}`; // Se usa innerHTML para añadir la imagen
+    document.getElementById('creatorModalTitle').innerHTML = `
+    <span class="creator-name">${creator.name}</span>
+    <span class="creator-flag">${modalFlagElement}</span>
+`;
+ // Se usa innerHTML para añadir la imagen
     document.getElementById('modal-creator-long-desc').textContent = creator.longDesc;
     
         // --- Rellenar comentario de Aljohn (si existe) ---

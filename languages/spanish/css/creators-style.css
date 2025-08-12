@@ -447,7 +447,26 @@
     margin-top: auto;
     margin-bottom: auto;
     padding: 2rem;
+    
 }
+#creatorModalTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center both name and flag */
+    gap: 0.25rem; /* small space between name and flag */
+}
+
+#creatorModalTitle .creator-name {
+    font-size: inherit; /* keep h2's size */
+    font-weight: bold;
+}
+
+#creatorModalTitle .creator-flag img {
+    width: 50px;
+    height: auto;
+    margin-top: 3rem;
+}
+
 /* Estilo para el contenedor de las tarjetas dentro de cada estantería */
 /* Estilo para el contenedor de las tarjetas dentro de cada estantería */
 .shelf-container {
@@ -571,8 +590,27 @@
     background-color: #e86230; /* RTVE Orange */
 }
 
+/* shelf description color fff */
+.shelf-description {
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+    text-align: center;
+    
+}
 /* --- Media Queries para Responsividad --- */
 @media (max-width: 768px) {
+    .card-hover-details {
+        display: none;
+    }
+   .shelf-description   {
+    max-width: 80%;
+   }
+    
+    .card-cta{
+        display: none;
+    }
     .shelf-container {
         padding: 3rem 0 3.5rem 0; /* <-- ADJUSTED: Added padding-bottom for scrollbar visibility */
         scroll-snap-type: x mandatory;  /* Activa el 'scroll-snap' en el eje X, haciendo que las tarjetas se 'enganchen' al scroll */
@@ -581,7 +619,7 @@
    max-width: 85%;
     }
     .creator-card {
-        flex: 0 0 calc(50% - 1rem); /* Dos tarjetas por fila en tablets, con un gap de 1rem */
+    
         max-width: 280px; /* Para evitar que crezcan demasiado en pantallas intermedias */
         margin-left: 1rem;
         margin-right: 1rem;
@@ -727,7 +765,7 @@
 @media (max-width: 480px) {
     /* Tarjetas del Creador: Ajustes para que ocupen la mayor parte del ancho de la pantalla */
     .creator-card {
-        flex: 0 0 calc(100% - 3rem); /* La tarjeta ocupará casi todo el ancho, dejando 1.5rem a cada lado (para padding y gap) */
+    
         max-width: 320px; /* Límite de ancho para que no se hagan excesivamente grandes en algunos dispositivos */
         max-height: 350px; /* Ajuste de altura inicial para tarjetas en pantallas muy pequeñas */
         /* Se eliminó 'margin: 0 auto;' ya que 'scroll-snap-align' maneja mejor la alineación para el scroll horizontal */

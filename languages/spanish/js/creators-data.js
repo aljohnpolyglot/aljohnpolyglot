@@ -16,7 +16,7 @@ const creatorsData = [
         shortDesc: 'Aprende español de forma natural, solo escuchando. El mejor recurso de input comprensible.',
         longDesc: 'Dreaming Spanish es el canal líder en la metodología de "comprehensible input". A través de vídeos categorizados por nivel, Pablo y su equipo usan el habla, dibujos y gestos para que adquieras el idioma de manera intuitiva, sin estudiar gramática.',
         cefr: ['A1', 'A2', 'B1', 'B2', 'C1'],
-        embeddedId: 'hbguV_rS_qw',
+        embeddedId: 'xFXUVEnKZlc',
         aljohnsComment: "Este es, sin duda, el recurso número 1 que recomiendo a todos los principiantes. Su método basado en la ciencia simplemente funciona. Si eres nuevo, empieza aquí.",
         socialLinks: { youtube: 'https://www.youtube.com/@DreamingSpanish', website: 'https://www.dreamingspanish.com/' },
         tags: ['input comprensible']
@@ -31,7 +31,7 @@ const creatorsData = [
         shortDesc: 'Escucha a hispanohablantes reales en las calles de México y España.',
         longDesc: 'Este canal te saca del aula y te lleva a las calles. A través de entrevistas a gente real sobre temas cotidianos, aprendes vocabulario útil y te acostumbras a diferentes acentos. Todos los vídeos tienen subtítulos en español e inglés.',
         cefr: ['A2', 'B1', 'B2'],
-        embeddedId: 'L83jV4h3soM',
+        embeddedId: 'DwbAW8G-57A',
         aljohnsComment: "Cuando quieras empezar a entender cómo habla la gente de verdad, este es el canal. La variedad de acentos es increíblemente útil para entrenar el oído.",
         socialLinks: { youtube: 'https://www.youtube.com/@EasySpanish', instagram: 'https://www.instagram.com/easyspanish.official', podcast: 'https://www.easyspanish.fm/' },
         tags: ['input comprensible']
@@ -39,14 +39,14 @@ const creatorsData = [
     {
         id: 'butterfly-spanish',
         name: 'Butterfly Spanish',
-        profilePic: 'images/creators/butterfly-spanish.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mTnjLEffXjL6P_k0TXjSFVmZbglVLdoL9A2p4DVo8hqg=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Canal de YouTube',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'Lecciones profundas y carismáticas sobre todos los aspectos del español.',
         longDesc: 'Ana, de Butterfly Spanish, es una de las profesoras de español más queridas en YouTube. Sus lecciones son increíblemente detalladas y cubren desde gramática compleja y pronunciación hasta jerga y cultura. Su energía y pasión por enseñar hacen que cada vídeo sea entretenido y muy informativo.',
         cefr: ['A2', 'B1', 'B2'],
-        embeddedId: 'qE-03EATj_c',
+        embeddedId: 'QA9JdDpq62s',
         aljohnsComment: "Ana es una leyenda. Cuando necesito entender un tema a fondo, busco si ella tiene un vídeo al respecto. Sus explicaciones sobre el subjuntivo y la diferencia entre 'por' y 'para' son de las mejores que existen.",
         socialLinks: { youtube: 'https://www.youtube.com/@ButterflySpanish', facebook: 'https://www.facebook.com/ButterflySpanish/' },
         tags: ['input comprensible']
@@ -61,7 +61,7 @@ const creatorsData = [
         shortDesc: 'Conversaciones naturales y divertidas para estudiantes de nivel intermedio.',
         longDesc: 'Ana y David te sumergen en conversaciones sobre cultura, noticias y vida cotidiana en México. Su español es claro pero natural, y es perfecto para estudiantes intermedios que quieren llevar su comprensión al siguiente nivel.',
         cefr: ['B1', 'B2', 'C1'],
-        embeddedId: 'DwbAW8G-57A',
+        embeddedId: '3fuv9mpAnA0',
         aljohnsComment: "Este es uno de mis podcasts favoritos. Me encanta la química entre Ana y David. Es como escuchar a dos amigos hablar, y aprendes muchísimo sobre México en el proceso.",
         socialLinks: { youtube: 'https://www.youtube.com/@HowtoSpanishOfficial', website: 'https://howtospanishpodcast.com/' },
         tags: ['input comprensible', 'podcast']
@@ -69,17 +69,17 @@ const creatorsData = [
     {
         id: 'linguriosa',
         name: 'Linguriosa',
-        profilePic: 'images/creators/linguriosa.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/NgumTy7L_gBrLECtbVOq2oeX7H5LNJp0BMlMOV_kGlVXG50Aw7Oifu4DYO-PlAe8GWHMqGbYtA=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Canal de YouTube',
         country: 'España',
         flagCode: 'es',
         shortDesc: 'Explora el origen y las curiosidades del idioma español de una forma fascinante.',
         longDesc: 'Elena Herraiz se sumerge en la etimología y la historia de las palabras y expresiones en español. Aunque está dirigido a nativos, su español claro y el apoyo visual lo convierten en un recurso increíble para estudiantes avanzados.',
-        cefr: ['B2', 'C1', 'C2'],
-        embeddedId: 'R9e2qC1SoI4',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'KiqervherLQ',
         aljohnsComment: "Este canal es adictivo. Aprendes la historia detrás de las palabras que usas todos los días. Es fascinante y te da una apreciación mucho más profunda del idioma.",
         socialLinks: { youtube: 'https://www.youtube.com/@Linguriosa', instagram: 'https://www.instagram.com/linguriosa/' },
-        tags: ['input comprensible', 'ciencia y educación']
+        tags: ['input comprensible', 'ciencia y educación', 'personalidades']
     },
     {
         id: 'hola-spanish',
@@ -91,7 +91,7 @@ const creatorsData = [
         shortDesc: 'Lecciones de español con un enfoque en la comunicación real y la fluidez.',
         longDesc: 'Brenda, de Hola Spanish, se centra en enseñarte a hablar español de una manera que realmente usarías en una conversación. Sus vídeos son prácticos y llenos de consejos útiles para sonar más natural.',
         cefr: ['A2', 'B1'],
-        embeddedId: 'UNdgnn42erI',
+        embeddedId: 'zTGSmhtL34Q',
         aljohnsComment: "Los consejos de Brenda sobre la fluidez y las expresiones comunes son oro puro. Me ha ayudado mucho a dejar de sonar como un libro de texto.",
         socialLinks: { youtube: 'https://www.youtube.com/c/HolaSpanish', website: 'https://www.holaspanish.com.au/', instagram: 'https://www.instagram.com/holaspanish/' },
         tags: ['input comprensible']
@@ -99,32 +99,32 @@ const creatorsData = [
     {
         id: 'bilingue-blogs',
         name: 'Bilingue Blogs',
-        profilePic: 'images/creators/bilingue-blogs.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/qsliK8Ph3_endpIjq5usQfrcZQt2YC71v6VaRyrClCSlL8iWzRpcB4AK4vBLpr3cD3rAwLruzqA=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Canal de YouTube',
         country: 'Estados Unidos',
         flagCode: 'us',
         shortDesc: 'Comparaciones de jerga y dialectos del español de una manera divertida y visual.',
         longDesc: 'Brent explora las enormes diferencias y similitudes entre los dialectos del español. Sus vídeos sobre la jerga de cada país son increíblemente útiles para entender cómo varía el idioma y para no perderte en una conversación real.',
         cefr: ['B1', 'B2'],
-        embeddedId: 'u4788I_Y1Bw',
+        embeddedId: 'gnCF5vsAHkU',
         aljohnsComment: "Si alguna vez te has preguntado por qué una palabra significa algo diferente en México y en España, este es tu canal. Es súper entretenido y práctico.",
-        socialLinks: { youtube: 'https://www.youtube.com/@BilingueBlogs', instagram: 'https://www.instagram.com/bilingueblogs/' },
+        socialLinks: { youtube: 'https://www.youtube.com/c/Biling%C3%BCeBlogs', instagram: 'https://www.instagram.com/bilingueblogs/', website: 'https://www.bilingueblogs.com/' },
         tags: ['input comprensible']
     },
     {
         id: 'mr-salas',
         name: 'Mr. Salas',
-        profilePic: 'images/creators/mr-salas.jpg', // Placeholder
+        profilePic: 'https://yt3.googleusercontent.com/8EWgoC40UrQ_iRmt1o_6FcV8FDzR4YXhEH0PKTVeIcwtHH6rMQmcNG7WrJcYZoHA4fjTetI5lw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
         type: 'Profesor de Idiomas',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'Consejos prácticos y realistas para aprender idiomas de forma autodidacta.',
         longDesc: 'Aunque su enfoque principal es el inglés, los métodos y la filosofía de Mr. Salas son 100% aplicables al español. Explica cómo crear un sistema de inmersión, cómo pensar en otro idioma y cómo superar los bloqueos mentales. Sus consejos son increíblemente valiosos para cualquier estudiante de idiomas.',
         cefr: ['B1', 'B2'],
-        embeddedId: 'video-id-aqui', // Cómo PENSAR en INGLÉS para HABLAR con FLUIDEZ
+        embeddedId: 'y0m0ACWbMSs', // Cómo PENSAR en INGLÉS para HABLAR con FLUIDEZ
         aljohnsComment: "Los consejos de Mr. Salas me han ayudado a estructurar mi propio aprendizaje. Su enfoque en la mentalidad y en crear un sistema que funcione para ti es fundamental. Aunque hable de inglés, sus lecciones son universales.",
-        socialLinks: { youtube: 'https://www.youtube.com/@MrSalas', instagram: 'https://www.instagram.com/mrsalas.english' },
-        tags: ['input comprensible']
+        socialLinks: { youtube: 'https://www.youtube.com/@MrSalas', instagram: 'https://www.instagram.com/_mrsalas' },
+        tags: ['input comprensible', 'personalidades']
     },
     
     // =======================================================
@@ -133,59 +133,59 @@ const creatorsData = [
     {
         id: 'luisito-comunica',
         name: 'Luisito Comunica',
-        profilePic: 'images/creators/luisito-comunica.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nyXrAAt-FJ5azOAUoNd5Iw0aGQb-_b-SLSOkW0B_N2md4=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Vlogger de Viajes',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'El youtuber de viajes que te lleva a los lugares más insólitos del planeta.',
         longDesc: 'Luisito es el vlogger de viajes más grande de habla hispana. Con un estilo curioso y relajado, explora países de todo el mundo, mostrando no solo sus atracciones, sino también su cultura local y realidades sociales.',
         cefr: ['B1', 'B2', 'C1'],
-        embeddedId: 'Bvj6pWd2gS8',
+        embeddedId: 'Cq_KA3VVN-4',
         aljohnsComment: "Ver los vídeos de Luisito es como viajar con un amigo muy curioso. Es perfecto para acostumbrarse a la velocidad del habla natural.",
         socialLinks: { youtube: 'https://www.youtube.com/@LuisitoComunica', instagram: 'https://www.instagram.com/luisitocomunica' },
-        tags: ['vlogs y viajes']
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'oscar-alejandro',
         name: 'Oscar Alejandro',
-        profilePic: 'images/creators/oscar-alejandro.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nsL-tY5exirfHXQNQvIYpFKvlBoecWRNzozDiVCrnvHIY=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Vlogger de Viajes',
         country: 'Venezuela',
         flagCode: 've',
         shortDesc: 'Documenta sus aventuras por el mundo con un enfoque en turismo y experiencias.',
         longDesc: 'Oscar, un vlogger venezolano, muestra sus viajes de una manera muy personal y entusiasta. Su contenido se centra en ofrecer consejos prácticos para viajeros y explorar la gastronomía local.',
         cefr: ['B1', 'B2'],
-        embeddedId: 'o2nWhGzIfYQ',
+        embeddedId: 'vC0jEzNyJfE',
         aljohnsComment: "Me encanta la energía positiva de Oscar. Sus vídeos son geniales para aprender español mientras planeas tu próximo viaje.",
-        socialLinks: { youtube: 'https://www.youtube.com/@OscarAlejandro', instagram: 'https://www.instagram.com/oscaralejandro/' },
-        tags: ['vlogs y viajes']
+        socialLinks: { youtube: 'https://www.youtube.com/@oscaralejandr0', instagram: 'https://www.instagram.com/oscaralejandro/' },
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'alex-tienda',
         name: 'Alex Tienda',
-        profilePic: 'images/creators/alex-tienda.jpg', // Placeholder
+        profilePic: 'https://yt3.googleusercontent.com/XmtDvQn2PXf6xdZ8HVcNXXloGcHRfrlkcCzRIBa-6xB-xwEqyRYrrBrYzlkb6x5JgzhX6oskWg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
         type: 'Documentalista / Viajero',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'Viajero y documentalista que explora los lugares más complejos y fascinantes del mundo.',
         longDesc: 'Alex Tienda va más allá de un vlog de viajes; produce verdaderos documentales sobre los lugares que visita, a menudo países en conflicto o con realidades sociales muy complejas como Corea del Norte o Afganistán. Su trabajo es periodismo de aventura de alta calidad.',
         cefr: ['B2', 'C1'],
-        embeddedId: 'g7QyQp-To-4', // Trailer de su documental de Afganistán
+        embeddedId: '9oLvnHLKeMY', // Trailer de su documental de Afganistán
         aljohnsComment: "El trabajo de Alex es increíblemente valiente e importante. Sus documentales son de una calidad cinematográfica y te abren los ojos a realidades que no verías en ningún otro sitio. Su español es muy profesional.",
         socialLinks: { youtube: 'https://www.youtube.com/@AlexTienda', instagram: 'https://www.instagram.com/soyalextienda' },
-        tags: ['vlogs y viajes']
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'juanpa-zurita',
         name: 'Juanpa Zurita',
-        profilePic: 'images/creators/juanpa-zurita.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/jTEv8fnZA5AmQIfTsExYxT8tKJmu3gHRsmcqovV1BLjDTqVy7mOJLsMAF0YyriMXkmPdDTbv=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Influencer / Vlogger',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'Vlogs de alta producción sobre viajes, retos extremos y estilo de vida.',
         longDesc: 'Juanpa es una de las mayores celebridades de internet en Latinoamérica. Su contenido de alta calidad lo lleva a viajar por el mundo, realizar acrobacias peligrosas y colaborar con otras grandes estrellas.',
         cefr: ['B2', 'C1'],
-        embeddedId: 'y-X_2aUa3-k',
+        embeddedId: 'eef6vwBHazw',
         aljohnsComment: "El contenido de Juanpa es pura energía. Es un buen recurso para acostumbrarse al español mexicano más moderno.",
         socialLinks: { youtube: 'https://www.youtube.com/@JuanpaZurita', instagram: 'https://www.instagram.com/juanpazurita' },
         tags: ['vlogs y viajes', 'personalidades']
@@ -193,92 +193,92 @@ const creatorsData = [
     {
         id: 'coreano-vlogs',
         name: 'Coreano Vlogs',
-        profilePic: 'images/creators/coreano-vlogs.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n80kOWZLU9ovto1Zalf82ORLRmtIB_8H-bZbCiwOkuJ_E=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Vlogger Cultural',
         country: 'Corea del Sur',
         flagCode: 'kr',
         shortDesc: 'Un coreano que explora la cultura latina desde su perspectiva única y divertida.',
         longDesc: 'Christian crea un puente cultural entre Corea y Latinoamérica. Reacciona a costumbres, comida y música latina, y comparte aspectos de su propia cultura. Ver a un no-nativo hablar español con tanta fluidez es súper motivador.',
         cefr: ['A2', 'B1'],
-        embeddedId: 'Q5_5Y4t-6M4',
+        embeddedId: 'IxRWrJ2P948',
         aljohnsComment: "Los vídeos de Christian son geniales y muy divertidos. Sus reacciones a la cultura latina no tienen precio.",
         socialLinks: { youtube: 'https://www.youtube.com/@CoreanoVlogs', instagram: 'https://www.instagram.com/coreanovlogs/' },
-        tags: ['vlogs y viajes']
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
-        id: 'jdaniel',
+        id: 'https://yt3.googleusercontent.com/ytc/AIdro_ljcyMAuj664amr8ywOWbqfsuuHSSdZxuVxwVY-zNbhxwI=s120-c-k-c0x00ffffff-no-rj',
         name: 'JDaniel',
-        profilePic: 'images/creators/jdaniel.jpg', // Usamos tu placeholder local
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_ljcyMAuj664amr8ywOWbqfsuuHSSdZxuVxwVY-zNbhxwI=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
         type: 'Vlogger de Entretenimiento',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'Retos creativos, experimentos sociales y vlogs de entretenimiento.',
         longDesc: 'El canal de JDaniel se basa en ideas originales como "Sobrevivir con $1 peso por 30 días". Sus vídeos son dinámicos y se centran en la experiencia de llevar a cabo estos desafíos, usando un español mexicano muy coloquial.',
         cefr: ['B1', 'B2'],
-        embeddedId: 'qj8oB_t-5c4',
+        embeddedId: 'puOQAX2kOE4',
         aljohnsComment: "La creatividad de JDaniel es increíble. Sus vídeos son una forma muy entretenida de consumir contenido en español.",
-        socialLinks: { youtube: 'https://www.youtube.com/@JDaniel', instagram: 'https://www.instagram.com/jdanielrodriguezo/' },
-        tags: ['vlogs y viajes']
+        socialLinks: { youtube: 'https://www.youtube.com/@JDanielYT', instagram: 'https://www.instagram.com/jdanielyt/' },
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'mateo-y-lisanna',
         name: 'Mateo & Lisanna',
-        profilePic: 'images/creators/mateo-y-lisanna.jpg', // Placeholder
+        profilePic: 'https://yt3.googleusercontent.com/rbhBlMraJqyAzNAIFXc1huKjTH_zBq2LjbR4MmqfmU_xbochqolAFCi2WDGIZrtxhJ6oexW6Yn4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
         type: 'Vlog de Pareja Cultural',
-        country: 'Colombia / Estonia',
-        flagCode: 'co',
-        shortDesc: 'Una pareja colombo-estonia que documenta su vida, viajes y choques culturales.',
+        country: 'Argentina / Estonia',
+        flagCode: 'ar',
+        shortDesc: 'Una pareja argentina-estonia que documenta su vida, viajes y choques culturales.',
         longDesc: 'Este canal ofrece una visión única de la vida en pareja entre dos culturas muy diferentes. Comparten sus experiencias viviendo en Estonia y Colombia, sus viajes, y las curiosidades de sus respectivos países. El español de Mateo es claro y fácil de entender.',
         cefr: ['A2', 'B1'],
-        embeddedId: 'qI5Y1U4gQ5U',
+        embeddedId: 'azGOLxFPKrM',
         aljohnsComment: "Es muy interesante ver el contraste de culturas. Son una pareja muy simpática y su contenido es relajado y perfecto para una sesión de estudio ligera.",
-        socialLinks: { youtube: 'https://www.youtube.com/@MateoyLisanna', instagram: 'https://www.instagram.com/mateoylisanna/' },
-        tags: ['vlogs y viajes']
+        socialLinks: { youtube: 'https://www.youtube.com/@MateoLisanna', instagram: 'https://www.instagram.com/mateoylisanna/' },
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'chino-mexicano',
         name: 'CHINO MEXICANO',
-        profilePic: 'images/creators/chino-mexicano.jpg', // Placeholder
+        profilePic: 'https://yt3.googleusercontent.com/zxLBOZbS8TXuIM_jGPDM7cMdnM4yLwuSFx-Ciw9TE-NXi1EWKF25vdTiSAmJvpfjirJKWBfUTqc=s120-c-k-c0x00ffffff-no-rj', // Placeholder
         type: 'Vlogger Cultural',
         country: 'México',
         flagCode: 'mx',
         shortDesc: 'Las aventuras y observaciones de un joven chino viviendo en México.',
         longDesc: 'Este canal sigue a su creador mientras explora diferentes aspectos de la vida en México, desde la comida hasta los viajes y las costumbres. Ofrece una perspectiva externa sobre la cultura mexicana, hablada con un acento no nativo pero muy fluido.',
         cefr: ['B1', 'B2'],
-        embeddedId: '3U7rSD-wTzI',
-        aljohnsComment: "Es otro gran ejemplo de un no-nativo dominando el español. Su curiosidad por México es contagiosa y su contenido es muy auténtico.",
-        socialLinks: { youtube: 'https://www.youtube.com/@CHINOMEXICANO', instagram: 'https://www.instagram.com/chino_mexicano_/' },
-        tags: ['vlogs y viajes']
+        embeddedId: 'C1ebGdCsEHw',
+        aljohnsComment: "He encontrado ese chico en Discord jajajaja.. Es un placer",
+        socialLinks: { youtube: 'https://www.youtube.com/@CHINOMEXICANO21', instagram: 'https://www.instagram.com/clementrcheng/' },
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'joss-and-janik',
         name: 'Joss and Janik',
-        profilePic: 'images/creators/joss-and-janik.jpg', // Placeholder
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_lMm9H_Cu9dncAUzGpXKKeC5yp0tje48yt46nIPuhhYMQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
         type: 'Vlog de Pareja Viajera',
         country: 'México / Alemania',
         flagCode: 'mx',
         shortDesc: 'Una pareja mexicano-alemana que comparte sus viajes por el mundo.',
         longDesc: 'Joss (mexicana) y Janik (alemán) documentan sus viajes, ofreciendo guías y mostrando sus experiencias. El contenido está principalmente en español, hablado por Joss, lo que lo hace un buen recurso para escuchar un acento mexicano claro.',
         cefr: ['B1', 'B2'],
-        embeddedId: 'sF33T3xJg8c',
+        embeddedId: '-yxHLvaGIJY',
         aljohnsComment: "Me gusta ver sus vídeos para inspirarme para mis propios viajes. Joss tiene una forma de narrar muy agradable y fácil de seguir.",
-        socialLinks: { youtube: 'https://www.youtube.com/@JossandJanik', instagram: 'https://www.instagram.com/jossandjanik/' },
-        tags: ['vlogs y viajes']
+        socialLinks: { youtube: 'https://www.youtube.com/@JossandJanik', instagram: 'instagram.com/janikruehl',instagram: 'instagram.com/jossalm' },
+        tags: ['vlogs y viajes', 'personalidades']
     },
     {
         id: 'luel-zone',
         name: 'Luel Zone',
-        profilePic: 'images/creators/luel-zone.jpg', // Placeholder
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_kDh1yOJDejbNdEAd4hdb6nPlx4b7RowocllMwxKBUixC4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
         type: 'Vlogger Filipino',
         country: 'Filipinas',
         flagCode: 'ph',
         shortDesc: 'Un vlogger hispanohablante de Filipinas que comparte sus viajes y experiencias.',
         longDesc: 'Luel Zone es un creador de contenido filipino que crea vlogs en español sobre sus viajes, especialmente en Asia. Es un recurso fantástico para ver a un filipino usando el español de forma activa y fluida en sus aventuras.',
-        cefr: ['B2', 'C1'],
-        embeddedId: '9o4j_i_l-tY',
+        cefr: ['B1', 'C1'],
+        embeddedId: 'xNK2nO7Y_aA',
         aljohnsComment: "¡Apoyo total a los creadores filipinos en español! El contenido de Luel es una prueba de que la comunidad hispanohablante en Filipinas está creciendo y creando cosas increíbles.",
         socialLinks: { youtube: 'https://www.youtube.com/@luelzone7474', instagram: 'https://www.instagram.com/luelzone/' },
-        tags: ['vlogs y viajes']
+        tags: ['vlogs y viajes', 'personalidades']
     },
     // =======================================================
 // ==              ESTANTERÍA: MÚSICA                   ==
@@ -293,67 +293,67 @@ const creatorsData = [
     shortDesc: 'La princesa del pop español con éxitos que definen una generación.',
     longDesc: 'Aitana se convirtió en un fenómeno musical en España tras su paso por OT 2017. Su estilo ha evolucionado desde baladas pop a un sonido más electrónico y dance-pop. Sus letras sobre amor y desamor son perfectas para analizar vocabulario y expresiones coloquiales.',
     cefr: ['A2', 'B1', 'B2'],
-    embeddedId: 'n30d4A2IeTM', // Si Tú La Quieres con David Bisbal
+    embeddedId: 'e8vI0pYLcYU', // Si Tú La Quieres con David Bisbal
     aljohnsComment: "Aitana es una de mis artistas favoritas. Su música es pegadiza y fácil de cantar, lo que la hace perfecta para practicar. 'Vas a quedarte' es una de mis baladas preferidas.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCnJd-k_j1q0g_zL2D-eS-1g', instagram: 'https://www.instagram.com/aitanax/', spotify: 'https://open.spotify.com/artist/7eLcDZDYHXZCebtQmVFL25' },
-    tags: ['música']
+    tags: ['música', 'personalidades']
 },
 {
     id: 'sebastian-yatra',
     name: 'Sebastián Yatra',
-    profilePic: 'images/creators/sebastian-yatra.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/g2dG5kFUJ6hwgBq-DATUx5E3uBZk2LP_OrGnSkTL5em4wMypjjwkHGLHJT3p6QepcbtBqwNK=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
     shortDesc: 'Éxitos románticos y pop latino de una estrella global.',
     longDesc: 'Yatra es conocido por su carisma y versatilidad. Su música va desde baladas emotivas hasta reguetón-pop. Su pronunciación clara lo hace muy accesible para estudiantes, y sus letras son un buen material para aprender vocabulario sobre relaciones.',
     cefr: ['A2', 'B1', 'B2'],
-    embeddedId: 'g0vYy9G2_PE', // Cristina
+    embeddedId: 'sD9_l3oDOag', // Cristina
     aljohnsComment: "La voz de Yatra es inconfundible. 'Cristina' y 'No Hay Nadie Más' son canciones que he escuchado cientos de veces. Es genial para aprender español de forma romántica.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UC-n0t8s52aAT6iLAlNxxv0Q', instagram: 'https://www.instagram.com/sebastianyatra/', spotify: 'https://open.spotify.com/artist/07YUOmWljBTXwIseAUd9TW' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@SebastianYatra/', instagram: 'https://www.instagram.com/sebastianyatra/', spotify: 'https://open.spotify.com/artist/07YUOmWljBTXwIseAUd9TW' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'joaquina',
     name: 'Joaquina',
-    profilePic: 'images/creators/joaquina.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/YgskBD5s8Av9pfa-diEmhGKZez7NfVQ-SyQTs719Qybg90kc5Zr4fTfSCWndqf7IGj49tmOrng=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Venezuela',
     flagCode: 've',
     shortDesc: 'Letras profundas y melodías al piano que le valieron un Latin Grammy.',
     longDesc: 'Joaquina destaca por la profundidad poética de sus letras. Sus canciones exploran el crecimiento personal, el desamor y las complejidades de la juventud. Es ideal para estudiantes intermedios y avanzados interesados en un lenguaje más lírico y metafórico.',
     cefr: ['B1', 'B2', 'C1'],
-    embeddedId: '5b7f6Gg-VoA', // Los Mejores Años
+    embeddedId: '-hH1HV2zRDE', // Los Mejores Años
     aljohnsComment: "Descubrí a Joaquina y me enganché al instante. Sus letras son pura poesía y me hacen pensar. 'Los Mejores Años' es una obra de arte.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCW912y0Ym-Q3zG3L0Y5e3gA', instagram: 'https://www.instagram.com/joaquina/', spotify: 'https://open.spotify.com/artist/0Eembrjpm0P9A4QY2US_D3' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCW912y0Ym-Q3zG3L0Y5e3gA', instagram: 'https://www.instagram.com/joaquina/', spotify: 'https://open.spotify.com/intl-es/artist/081F5qgtVMfcHZKDY1IEa0' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'mafalda-cardenal',
     name: 'Mafalda Cardenal',
-    profilePic: 'images/creators/mafalda-cardenal.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/F_590W5WGhubCbcOWNgkeLf_Y5_hnILmMiuj7IS5WvS6oerK43YmzQtHKyP1yF1Pt_6v4ossGw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Cantautora española de indie-pop conocida por sus letras sinceras y melodías acústicas.',
     longDesc: 'Mafalda se ha hecho un hueco en la escena musical gracias a canciones íntimas y directas que a menudo comparte en redes sociales. Su estilo, frecuentemente acompañado de un ukelele o guitarra, es nostálgico y conecta con las emociones de su generación.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'fC9en65S4s4', // tu fan
+    embeddedId: 'htSab7vQ1aQ', // tu fan
     aljohnsComment: "'tu fan' se convirtió en un himno para mí. La forma en que escribe es tan honesta y directa. Es perfecta para aprender un español más coloquial y emocional.",
-    socialLinks: { youtube: 'https://www.youtube.com/@mafaldacardenal', instagram: 'https://www.instagram.com/mafaldacardenal/', spotify: 'https://open.spotify.com/artist/6RTU23SOe4VXT695iW1i1d' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@mafaldacardenal', instagram: 'https://www.instagram.com/mafaldacardenal/', spotify: 'https://open.spotify.com/intl-es/artist/1AsstJ8Cf7uQX92weRmZRz' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'morat',
     name: 'Morat',
-    profilePic: 'images/creators/morat.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/QriSdWHwiR7QoQ6yyckSU3HYcwZhzoPiMAchxBgEN2kx2pOT6_dqPDCh6N22XnxjWsjqcK7i_w=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Banda Musical',
     country: 'Colombia',
     flagCode: 'co',
     shortDesc: 'La banda colombiana de folk-pop reconocida por sus letras elaboradas y el uso del banjo.',
     longDesc: 'Morat es una de las bandas más exitosas de Latinoamérica. Su sonido característico combina instrumentos como el banjo con letras que cuentan historias complejas de amor y desamor de una manera poética, lo que les ha ganado una base de fans muy leal.',
     cefr: ['B1', 'B2', 'C1'],
-    embeddedId: 'k2E7yV2fGv8', // No Se Va
+    embeddedId: 'szeA9tvItJY', // No Se Va
     aljohnsComment: "Morat tiene un sonido único. Sus canciones son perfectas para un 'road trip'. Tienen un vocabulario muy rico, así que son geniales para estudiantes que quieren expandir su léxico.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCaK151h9nqiL3AhuO33bZgA', instagram: 'https://www.instagram.com/morat/', spotify: 'https://open.spotify.com/artist/5C4PDR4LnhZTbVnKWXuDKD' },
     tags: ['música']
@@ -361,59 +361,59 @@ const creatorsData = [
 {
     id: 'tini',
     name: 'TINI',
-    profilePic: 'images/creators/tini.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ogF62DLhgvyHFAwG8gdysKzI4a79RieBNRx86G4ju3R0QsNKiLLTiv937WUNztIdogG009XnLw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Argentina',
     flagCode: 'ar',
     shortDesc: 'Estrella del pop argentina que saltó a la fama con "Violetta" de Disney Channel.',
     longDesc: 'Martina "TINI" Stoessel ha tenido una exitosa transición de estrella infantil a artista pop consolidada. Su música fusiona pop latino con elementos urbanos y electrónicos, y es conocida por sus coreografías y espectáculos visuales.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'I-i8b2ej5f4', // La Triple T
+    embeddedId: 'mmRBXjVENDQ', // La Triple T
     aljohnsComment: "He seguido a TINI desde 'Violetta'. Su evolución como artista es increíble. Sus canciones más recientes son perfectas para entender el acento y la jerga argentina.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCJ6f02r_L6n2yJc3e24aT7A', instagram: 'https://www.instagram.com/tinistoessel/', spotify: 'https://open.spotify.com/artist/7vXDAI8JwjW531ouMGbfcp' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCJusEPcWIH9EyYSCqGP-1ew', instagram: 'https://www.instagram.com/tinistoessel/', spotify: 'https://open.spotify.com/artist/7vXDAI8JwjW531ouMGbfcp' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'lasso',
     name: 'Lasso',
-    profilePic: 'images/creators/lasso.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/aSNjzv2dzcDcWWAqmaY82IQ4dTQxhj8wUQKZ0G9hmp2TF5YrKTR9-YoXnwGZfKIJc-y6S2lz7g=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Venezuela',
     flagCode: 've',
     shortDesc: 'Cantautor venezolano conocido por su pop-rock y sus ingeniosas letras sobre el amor.',
     longDesc: 'Andrés Lazo, conocido como Lasso, ha construido una carrera sólida con canciones que combinan melodías pegadizas y letras que narran historias de relaciones de una forma muy particular. Su éxito global "Ojos Marrones" lo consolidó internacionalmente.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'G_919gF-pSg', // Ojos Marrones
+    embeddedId: '2BabCBQysrU', // Ojos Marrones
     aljohnsComment: "Lasso es un genio escribiendo letras. 'Ojos Marrones' es una canción simple pero brillante. Su música es genial para analizar cómo se cuentan historias en las canciones.",
     socialLinks: { youtube: 'https://www.youtube.com/user/LassoMusica', instagram: 'https://www.instagram.com/lassomusica/', spotify: 'https://open.spotify.com/artist/3SCOuAxngTC1yGjKMcIPEd' },
-    tags: ['música']
+    tags: ['música', 'personalidades']
 },
 {
     id: 'ela-taubert',
     name: 'Ela Taubert',
-    profilePic: 'images/creators/ela-taubert.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/S2SapDtpjDRmV41QjQL5DF2kWW5ufYqUrrPMRCAd7Yb9loOzUsaw0n7JMm7MVUv_vn0P7PVzFA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
     shortDesc: 'Cantautora emergente, creadora del género "Pop Triste Feliz".',
     longDesc: 'Ela Taubert ha conectado con una gran audiencia gracias a sus letras melancólicas sobre melodías pop optimistas. Este contraste explora temas como la ansiedad, el desamor y el autodescubrimiento de una forma muy moderna.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'Jg-g32zQu28', // ¿Por Qué No Me Fui Antes?
+    embeddedId: 'GAr9kdZjbu4', // ¿Por Qué No Me Fui Antes?
     aljohnsComment: "Su concepto de 'Pop Triste Feliz' es algo con lo que muchos nos podemos identificar. Su pronunciación es muy clara y sus canciones son perfectas para principiantes-intermedios.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCyM7R0jA4rG3XJ5-S0j-YUw', instagram: 'https://www.instagram.com/elataubert/', spotify: 'https://open.spotify.com/artist/5T2TCH1aEwim6iI3mlIe2Q' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UClFHZoZkb_xyy6NIByChp2w', instagram: 'https://www.instagram.com/elataubert/', spotify: 'https://open.spotify.com/intl-es/artist/5xS8cfsAaFyy188dNJGDbM' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'reik',
     name: 'Reik',
-    profilePic: 'images/creators/reik.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/VUzA3Kdwxr15C9-GT-4ZvAqjY9zaYX9BbWvZpX98ROi51WVyA8PzRVtTx-faQZCVGHWFtdBLy2A=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Banda Musical',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Trío mexicano de pop latino, famoso por sus baladas románticas y su evolución hacia sonidos urbanos.',
     longDesc: 'Con una larga y exitosa trayectoria, Reik comenzó como un grupo de baladas pop y se ha reinventado en los últimos años al colaborar con grandes figuras del género urbano, manteniéndose relevante y en la cima de las listas de éxitos.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'Z-h_Kse7s-M', // Ya Me Enteré
+    embeddedId: 'JyqD_zfXfi8', // Ya Me Enteré
     aljohnsComment: "Reik es un clásico. 'Ya Me Enteré' es una de esas canciones que no puedes evitar cantar. Son un ejemplo perfecto del pop mexicano moderno.",
     socialLinks: { youtube: 'https://www.youtube.com/user/reik', instagram: 'https://www.instagram.com/reikmx/', spotify: 'https://open.spotify.com/artist/0vR2qb8m9WHeZ5ByCbimq2' },
     tags: ['música']
@@ -424,303 +424,274 @@ const creatorsData = [
 {
     id: 'marina-reche',
     name: 'Marina Reche',
-    profilePic: 'images/creators/marina-reche.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/bETwJfC3llVklFNG000bvMvZyg1-9vEteame9NNa8BJyK3TwP95NxprF8qATQGSk5mAgzkNSyQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Artista emergente con una voz distintiva y un estilo pop con toques urbanos.',
     longDesc: 'Marina ha forjado su propio camino en la música. Su canción "Mil Preguntas" se volvió viral, destacando por su estilo pop contemporáneo y letras con las que es fácil conectar. Su música es muy actual y representativa de la escena pop española.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'q8q8n-s4q4I', // Mil Preguntas
+    embeddedId: 'xgqZRl_DtDM', // Mil Preguntas
     aljohnsComment: "'Mil Preguntas' y 'Por si quieres volver' son dos canciones que he tenido en bucle. Marina tiene un talento increíble para crear melodías pegadizas y emotivas.",
-    socialLinks: { youtube: 'https://www.youtube.com/@MarinaReche', instagram: 'https://www.instagram.com/marinareche/', spotify: 'https://open.spotify.com/artist/7hB76n3p0BIK3b1m4A2aI4' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@MarinaReche', instagram: 'https://www.instagram.com/marinareche_/', spotify: 'https://open.spotify.com/intl-es/artist/2fUMrRPj5xcEYXG5FoCTfw' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'inigo-quintero',
     name: 'iñigo quintero',
-    profilePic: 'images/creators/inigo-quintero.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/c5UuM67QWcN4RkxPWLOUiAzy3CAx2R0CLsCe422_kPXaDksCM3uZfWjumTJ88_SF2yD0UvZHgg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'El artista que alcanzó la fama mundial con su éxito viral "Si No Estás".',
     longDesc: 'Iñigo Quintero pasó de ser un artista desconocido a encabezar las listas globales de Spotify. Su estilo combina pop melancólico con una producción electrónica y letras de temática espiritual y emocional.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'Q3K98sMpj4g', // Si No Estás
+    embeddedId: 'vldYYjCQ7jc', // Si No Estás
     aljohnsComment: "El fenómeno de 'Si No Estás' fue increíble de presenciar. Es una canción con una atmósfera muy especial y una letra que da pie a muchas interpretaciones.",
-    socialLinks: { youtube: 'https://www.youtube.com/@inigoquinteroficial', instagram: 'https://www.instagram.com/inigoquinteroo/', spotify: 'https://open.spotify.com/artist/2E20Anqf2Yn1e3i0i4T3F3' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@inigoquintero', instagram: 'https://www.instagram.com/inigoquintero/', spotify: 'https://open.spotify.com/intl-es/artist/0jbo7KFNMiIkfBR6ih0yhm' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'david-bisbal',
     name: 'David Bisbal',
-    profilePic: 'images/creators/david-bisbal.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/3giHNJAoikRoAMjsdlClMkjKgE1YVYbv1D3dlzSrFeBJeZwp1NzUVaDVHRaBmz3OmVv9_ZKGaec=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Energético cantante español de pop latino, surgido de Operación Triunfo.',
     longDesc: 'Con una carrera de más de 20 años, David Bisbal es una de las figuras más reconocidas del pop español. Su estilo combina pop, flamenco y ritmos latinos, y es famoso por su increíble energía en el escenario.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'y-Am62i-FWw', // Dígale
+    embeddedId: 'Iwz4P8HfGVM', // Dígale
     aljohnsComment: "Un ícono de la música en español. 'Dígale' es una de esas baladas épicas. Su pronunciación es muy clara, lo que lo hace genial para practicar la escucha.",
     socialLinks: { youtube: 'https://www.youtube.com/user/davidbisbal', instagram: 'https://www.instagram.com/davidbisbal/', spotify: 'https://open.spotify.com/artist/5gOJTI4TusSENizxhcG7jB' },
-    tags: ['música']
+    tags: ['música', 'personalidades']
 },
 {
     id: 'pablo-alboran',
     name: 'Pablo Alborán',
-    profilePic: 'images/creators/pablo-alboran.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/tf0UxRJ68s9ZtMDr-hJUMSIZ9R5LJTMTkhLnhSKy9fCCkiS_9-DCDcHgnDG1bSc-Dt4mHB4E=s176-c-k-c0x00ffffff-no-rj-mo', // Placeholder
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Uno de los cantautores más importantes de España, conocido por sus baladas a piano y guitarra.',
     longDesc: 'Pablo Alborán ha dominado las listas de éxitos con su estilo romántico y su increíble talento vocal y compositivo. Sus canciones son conocidas por su intensidad emocional y arreglos musicales sofisticados.',
     cefr: ['B1', 'B2'],
-    embeddedId: '1i5s_zTwA4A', // Dónde está el amor
+    embeddedId: 'POP9_phDB2g', // Dónde está el amor
     aljohnsComment: "La voz de Pablo Alborán es simplemente espectacular. Sus canciones son perfectas para una tarde tranquila y para apreciar la belleza de las letras en español.",
-    socialLinks: { youtube: 'https://www.youtube.com/user/pabloalboran', instagram: 'https://www.instagram.com/pabloalboran/', spotify: 'https://open.spotify.com/artist/5M9Bb4adKAgrOFOhc05Y50' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@pabloalboran/featured', instagram: 'https://www.instagram.com/pabloalboran/', spotify: 'https://open.spotify.com/artist/5M9Bb4adKAgrOFOhc05Y50' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'camilo',
     name: 'Camilo',
-    profilePic: 'images/creators/camilo.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/eXtviVpNjpPCi9txwmKBaGEPZYvA9DUug7WexZGCgHI2na2qXx5VrNdvsdEk-JJotLeM4Ks33g=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
     shortDesc: 'Artista colombiano con un estilo único de pop latino, famoso por sus letras optimistas y su bigote.',
     longDesc: 'Camilo ha creado un sonido muy personal que mezcla pop, ritmos urbanos y letras que celebran el amor de una manera muy positiva y peculiar. Su estilo vocal y su forma de escribir son instantáneamente reconocibles.',
     cefr: ['A2', 'B1'],
-    embeddedId: '8q2kZ7Wp2R8', // El Mismo Aire
+    embeddedId: 'qKp1f7Vn9dM', // El Mismo Aire
     aljohnsComment: "La música de Camilo siempre me pone de buen humor. Es muy creativa y diferente a todo lo demás. Ideal para aprender un español más poético pero a la vez coloquial.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCw0aKHSGFa04_I-p_39b5Cw', instagram: 'https://www.instagram.com/camilo/', spotify: 'https://open.spotify.com/artist/28gNT5SR162UQswEoa4Kk0' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCw0aKHSGFGyrnMeVnHeYMyw', instagram: 'https://www.instagram.com/camilo/', spotify: 'https://open.spotify.com/intl-es/artist/28gNT5KBp7IjEOQoevXf9N' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'humbe',
     name: 'HUMBE',
-    profilePic: 'images/creators/humbe.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/EmHvm0L7UmVKZa6MOXVXq_02Eb8l14YmS1XGWJPsldVXyCZxNfbW_-IUKvF2fqe3wy4v5SdiqQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Artista innovador que mezcla pop alternativo con R&B y sonidos experimentales.',
     longDesc: 'Humberto "HUMBE" Rodríguez es conocido por su enfoque artístico único y su producción musical introspectiva. Sus canciones a menudo exploran temas filosóficos y emocionales, lo que le ha valido el reconocimiento de la crítica.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'M7ddy_g6c-8', // Te Lo Prometo
+    embeddedId: '7flT6J_1P7Y', // Te Lo Prometo
     aljohnsComment: "HUMBE es un artista increíblemente creativo. Su música es diferente y te hace sentir cosas. 'Te Lo Prometo' es una canción preciosa y su álbum 'ENTROPÍA' es una joya.",
-    socialLinks: { youtube: 'https://www.youtube.com/@HUMBE', instagram: 'https://www.instagram.com/humbe/', spotify: 'https://open.spotify.com/artist/1b7AEdUSudOQoZF5ebupgh' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@HUMBE', instagram: 'https://www.instagram.com/humbe/', spotify: 'https://open.spotify.com/intl-es/artist/1b7AEdUSudOQoZF5ebUxCL' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'ana-sofi-w',
     name: 'Ana Sofi W.',
-    profilePic: 'images/creators/ana-sofi-w.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/yr11NA8qDAzMjvxJ3UfIj52gda2df7JE-dfSn205g_vjlifNJhA76p38lHr4OYYf86fhyqb5=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Cantautora de pop acústico que conecta con el público joven a través de sus letras.',
     longDesc: 'Ana Sofi W. se dio a conocer en plataformas como TikTok, donde sus canciones sobre amor y relaciones resonaron fuertemente. Su estilo es íntimo, dulce y se apoya en melodías sencillas de guitarra o ukelele.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'z-2n_sX7s_c', // solo tu y yo
+    embeddedId: 'Tgec9SItZG8', // solo tu y yo
     aljohnsComment: "Descubrí a Ana Sofi en redes y sus canciones son muy tiernas y fáciles de aprender. Son perfectas para principiantes que quieren cantar en español.",
-    socialLinks: { youtube: 'https://www.youtube.com/@AnaSofiW', instagram: 'https://www.instagram.com/anasofiw/', spotify: 'https://open.spotify.com/artist/4h3j7gP5m52Dk22oM6ES0M' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/@AnaSofiW', instagram: 'https://www.instagram.com/anasofiw/', spotify: 'https://open.spotify.com/intl-es/artist/2lyO70w7by5Ekhac2H6zS0' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'danna-paola',
     name: 'Danna Paola',
-    profilePic: 'images/creators/danna-paola.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/jaNsZsdPKk5NhhznIlvsY3IvzO8VXMaGDQKthrrYWMtC-rDcsHkVZ54V8eazh1asw3z02xRA_ZM=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical / Actriz',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Superestrella mexicana, ícono del pop y aclamada actriz de la serie "Élite".',
     longDesc: 'Danna Paola es una fuerza de la naturaleza. Con una carrera que empezó en su niñez, ha evolucionado hasta convertirse en una de las reinas del pop en español, con himnos de empoderamiento y desamor. Su papel en "Élite" la catapultó a la fama mundial.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'to_b-H3i2kI', // Vuelve, Vuelve con David Bisbal
+    embeddedId: '42qe8aMqXts', // Vuelve, Vuelve con David Bisbal
     aljohnsComment: "Danna tiene una voz y una presencia escénica increíbles. Su música es poderosa y sus colaboraciones son siempre un éxito. Además, ¡es la voz de Rapunzel en español latino!",
-    socialLinks: { youtube: 'https://www.youtube.com/user/DannaPaola', instagram: 'https://www.instagram.com/dannapaola/', spotify: 'https://open.spotify.com/artist/5xIKn6R1affgPo1qHUEqg' },
+    socialLinks: { youtube: 'https://www.youtube.com/user/DannaPaola', instagram: 'https://www.instagram.com/dannapaola/', spotify: 'https://open.spotify.com/intl-es/artist/5xSx2FM8mQnrfgM1QsHniB' },
     tags: ['música', 'personalidades']
 },
 {
     id: 'ha-ash',
     name: 'Ha*Ash',
-    profilePic: 'images/creators/ha-ash.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/2FRL4XqHdtRsG4mH0Ji85SNemuqYW6-kJMkl4b-FU8mTHQb8ZE23IywXU4J2gRO3NmcDB0jy7w=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Banda Musical',
     country: 'Estados Unidos',
     flagCode: 'us',
     shortDesc: 'Dúo de hermanas mexico-estadounidenses, reinas del "country-pop" en español.',
     longDesc: 'Formado por Hanna y Ashley Pérez, Ha*Ash es famoso por sus himnos de desamor y empoderamiento. Su música fusiona pop, rock y country, y son conocidas por la armonía de sus voces y la fuerza de sus letras.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'KHPa7V1M2vA', // Te Dejo en Libertad
+    embeddedId: 'Uws510cVia4', // Te Dejo en Libertad
     aljohnsComment: "Nadie canta al desamor como Ha*Ash. Sus canciones son perfectas para cantar a todo pulmón. 'Te Dejo en Libertad' es un clásico absoluto.",
-    socialLinks: { youtube: 'https://www.youtube.com/user/haashoficial', instagram: 'https://www.instagram.com/haashoficial/', spotify: 'https://open.spotify.com/artist/5pSA2fcas2xiBGPI3suhM' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/user/haashoficial', instagram: 'https://www.instagram.com/haashoficial/', spotify: 'https://open.spotify.com/intl-es/artist/5xd2Tg7Zo8755eCy8Gxkp8' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'jesse-y-joy',
     name: 'Jesse & Joy',
-    profilePic: 'images/creators/jesse-y-joy.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/4MfU2L38X1nye02j49JNjMYtPGjSoCNtrmKbBjAuC0BQTFZkGXQytta8chcGgm5fk2KHvHFP6Q=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Banda Musical',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Dúo de hermanos mexicanos conocidos por sus emotivas baladas pop y su distintiva armonía vocal.',
     longDesc: 'Jesse & Joy han ganado innumerables premios por su música sincera y bien elaborada. Sus canciones, que a menudo tratan sobre el amor en todas sus facetas, se han convertido en parte de la banda sonora de toda una generación en Latinoamérica.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'pllR_7hA-Jc', // Me Soltaste
+    embeddedId: 'P2hM9CLAMu4', // Me Soltaste
     aljohnsComment: "La voz de Joy es simplemente angelical. 'Me Soltaste' es una de las baladas más tristes y bonitas que existen. Su español es muy claro y fácil de entender.",
-    socialLinks: { youtube: 'https://www.youtube.com/user/jesseyjoyoficial', instagram: 'https://www.instagram.com/jesseyjoy/', spotify: 'https://open.spotify.com/artist/1mX1TWKpNxDSAH16LgDfiR' },
-    tags: ['música']
+    socialLinks: { youtube: 'https://www.youtube.com/user/jesseyjoyoficial', instagram: 'https://www.instagram.com/jesseyjoy/', spotify: 'https://open.spotify.com/intl-es/artist/1mX1TWKpNxDSAH16LgDfiR' },
+    tags: ['música', 'personalidades']
 },
 {
     id: 'cnco',
     name: 'CNCO',
-    profilePic: 'images/creators/cnco.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/gBS5sEUwSKYNS4uy1y9RI0CSW_o66UXoBPeDVwokgkKO4M7urnT3r2vzdsuXbcvAVndqKJvrzA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Banda Musical',
     country: 'Estados Unidos',
     flagCode: 'us',
     shortDesc: 'La "boy band" latina que dominó las listas con su reguetón lento y pop urbano.',
     longDesc: 'Surgidos del reality "La Banda", CNCO se convirtió en un fenómeno global. Con miembros de diferentes países, su música es una mezcla de pop latino y reguetón con coreografías y un estilo que enamoró a millones de fans.',
     cefr: ['A2', 'B1'],
-    embeddedId: '7jpqqJackVo', // Reggaetón Lento (Bailemos)
+    embeddedId: '7jpqqBX-Myw', // Reggaetón Lento (Bailemos)
     aljohnsComment: "'Reggaetón Lento' fue un éxito masivo por una razón. Es una canción increíblemente pegadiza. Su música es muy divertida y genial para practicar español en un ambiente de fiesta.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCqtI5B21e2T39psh_wX4w5A', instagram: 'https://www.instagram.com/cncomusic/', spotify: 'https://open.spotify.com/artist/0eecdvMrqBftK0M1VKhaF4' },
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCqtHOqxV71OQ-fmLdI8rBYw', instagram: 'https://www.instagram.com/cncomusic/', spotify: 'https://open.spotify.com/intl-es/artist/0eecdvMrqBftK0M1VKhaF4' },
     tags: ['música']
 },
 {
     id: 'shakira',
     name: 'Shakira',
-    profilePic: 'images/creators/shakira.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/aFFxy2m2TB9dOJJEduJKEyAYsr79uE3ypQZLg-Jbc4TXlxsfCFoe7Ly3E3ou5sTPbglNiTyiKw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
     shortDesc: 'La reina del pop latino y un icono mundial de la música.',
     longDesc: 'Shakira es una de las artistas más influyentes del mundo. Su música fusiona pop, rock, y ritmos latinos y árabes. Con una carrera que abarca décadas, ha producido innumerables éxitos globales y es célebre por su talento como compositora y sus icónicos bailes.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'shb8I7V2Q8s', // Acróstico
+    embeddedId: 'oBofuVYDoG4', // Acróstico
     aljohnsComment: "Shakira es una leyenda viviente. 'Acróstico' me emocionó mucho. Su discografía es tan variada que puedes usarla para aprender todo tipo de vocabulario y ritmos.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCeDI1BqJdidjFiI1Vv-dpXA', instagram: 'https://www.instagram.com/shakira/', spotify: 'https://open.spotify.com/artist/0EmeFodog0BfCgMzAIvKQp' },
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCYLNGLIzMhRTi6ZOLjAPSmw', instagram: 'https://www.instagram.com/shakira/', spotify: 'https://open.spotify.com/artist/0EmeFodog0BfCgMzAIvKQp' },
     tags: ['música', 'personalidades']
 },
-{
-    id: 'maluma',
-    name: 'Maluma',
-    profilePic: 'images/creators/maluma.jpg', // Placeholder
-    type: 'Artista Musical',
-    country: 'Colombia',
-    flagCode: 'co',
-    shortDesc: 'Superestrella colombiana del reguetón y el pop latino.',
-    longDesc: 'Maluma es uno de los artistas más grandes del género urbano. Su estilo combina reguetón con pop y baladas, y es conocido por su carisma y su sentido de la moda. Ha colaborado con artistas de la talla de Madonna y The Weeknd.',
-    cefr: ['B1', 'B2'],
-    embeddedId: 'W-C-0-40A0Y', // ADMV
-    aljohnsComment: "Maluma demuestra que el reguetón también puede ser romántico. 'ADMV' es una balada preciosa. Es interesante para aprender la jerga y el acento 'paisa' de Medellín.",
-    socialLinks: { youtube: 'https://www.youtube.com/user/MalumaVEVO', instagram: 'https://www.instagram.com/maluma/', spotify: 'https://open.spotify.com/artist/1r4hJ1h58CWwUQe3MxPuau' },
-    tags: ['música', 'personalidades']
-},
-{
-    id: 'maria-becerra',
-    name: 'Maria Becerra',
-    profilePic: 'images/creators/maria-becerra.jpg', // Placeholder
-    type: 'Artista Musical',
-    country: 'Argentina',
-    flagCode: 'ar',
-    shortDesc: 'Conocida como "La Nena de Argentina", una de las líderes de la escena urbana.',
-    longDesc: 'Maria Becerra pasó de ser una youtuber a una de las artistas argentinas más exitosas. Su música mezcla reguetón, trap y pop, y es conocida por su flow y sus letras sobre empoderamiento y relaciones.',
-    cefr: ['B2', 'C1'],
-    embeddedId: 'm4ZgS-y3-7I', // DESAFIANDO EL DESTINO
-    aljohnsComment: "Maria tiene un estilo único. 'Desafiando el Destino' es una canción muy emotiva. Es un recurso excelente para acostumbrarse al acento y al 'lunfardo' (jerga) de Argentina.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCfA0sA6b-vx0s2j4gkx5f5A', instagram: 'https://www.instagram.com/mariabecerra/', spotify: 'https://open.spotify.com/artist/1DxLCyH42yaHKGK3cl5bvG' },
-    tags: ['música']
-},
+
 {
     id: 'k4os',
     name: 'K4OS',
-    profilePic: 'images/creators/k4os.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/8gOjAPErYBLjwAS477ioac7EAwzRCFlW8sGiZoM4o1oMXuRurDXKyDLxZDkIEYywNh6LubmUAGE=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Banda Musical',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Grupo de pop urbano y electrónico que mezcla música con creación de contenido.',
     longDesc: 'K4OS es un proyecto musical que también tiene una fuerte presencia en YouTube con vlogs y retos, creando una conexión más personal con sus seguidores. Su música es energética, bailable y sigue las tendencias actuales.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'f00tUTE838M', // Uff Baby
+    embeddedId: 'l8x1kMMruxo', // Uff Baby
     aljohnsComment: "Su música es muy divertida y pegadiza. Son un buen ejemplo de cómo los artistas modernos usan múltiples plataformas para conectar con su audiencia.",
-    socialLinks: { youtube: 'https://www.youtube.com/@K4OS', instagram: 'https://www.instagram.com/k4os.oficial/', spotify: 'https://open.spotify.com/artist/6bvl3p3lVtGwb4GoaI9dG1' },
+    socialLinks: { youtube: 'https://www.youtube.com/@K4OS', instagram: 'https://www.instagram.com/k4os.oficial/', spotify: 'https://open.spotify.com/artist/0jwhC8DIMe1p89BXvsMnYj' },
     tags: ['música']
 },
 {
     id: 'luis-miguel',
     name: 'Luis Miguel',
-    profilePic: 'images/creators/luis-miguel.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/n62oLwmiGp3ycFPjwCKgW_sHzuReHVv7sAVGVzFhOMebRQjZL0vU49SUPS4uMNBiP6H80H9AcSI=s176-c-k-c0x00ffffff-no-rj-mo', // Placeholder
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Conocido como "El Sol de México", una de las voces más legendarias de la música en español.',
     longDesc: 'Luis Miguel es un ícono. Su carrera abarca décadas y géneros, desde boleros y mariachi hasta baladas pop. Es famoso por su increíble potencia vocal y su presencia escénica. Su serie biográfica en Netflix revivió su popularidad para una nueva generación.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'fpkEMs-F41I', // La Incondicional
+    embeddedId: 'wOjzo02Tmck', // La Incondicional
     aljohnsComment: "No puedes aprender español sin escuchar a Luis Miguel. 'La Incondicional' es una obra maestra. Su dicción es perfecta, lo que lo hace increíble para la práctica de escucha.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCi-gaGAb_RLF0a440p-62hA', instagram: 'https://www.instagram.com/lmxlm/', spotify: 'https://open.spotify.com/artist/2nszmSgqreHSdJA3zWPyrW' },
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCi-gaGAb_RLF0a440p-62hA', instagram: 'https://www.instagram.com/lmxlm/', spotify: 'https://open.spotify.com/intl-es/artist/2nszmSgqreHSdJA3zWPyrW' },
     tags: ['música', 'personalidades']
 },
-{
-    id: 'sin-bandera',
-    name: 'Sin Bandera',
-    profilePic: 'images/creators/sin-bandera.jpg', // Placeholder
-    type: 'Banda Musical',
-    country: 'México / Argentina',
-    flagCode: 'mx',
-    shortDesc: 'El dúo romántico por excelencia, maestros de la balada pop.',
-    longDesc: 'Formado por el mexicano Leonel García y el argentino Noel Schajris, Sin Bandera definió la balada romántica de los 2000. Son conocidos por sus armonías vocales perfectas y sus letras poéticas que hablan de amor y desamor.',
-    cefr: ['A2', 'B1'],
-    embeddedId: 'IKA74Y_b8ZE', // Te vi venir
-    aljohnsComment: "Las canciones de Sin Bandera son pura poesía. Son perfectas para aprender vocabulario romántico y para dedicar. Cantan de forma lenta y muy clara.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCf53Y5g6r-uAa3fEXz_Al2A', instagram: 'https://www.instagram.com/sinbandera/', spotify: 'https://open.spotify.com/artist/7xeM7V594211ZpbUH8BTcr' },
-    tags: ['música']
-},
-{
-    id: 'jules',
-    name: 'Jules',
-    profilePic: 'images/creators/jules.jpg', // Placeholder
-    type: 'Artista Musical',
-    country: 'México',
-    flagCode: 'mx',
-    shortDesc: 'Cantautora emergente con un estilo pop confesional y emotivo.',
-    longDesc: 'Jules se está abriendo paso con canciones que exploran la vulnerabilidad y las emociones de una forma muy directa. Sus letras tratan sobre la autoaceptación, la ansiedad y las complejidades de las relaciones modernas.',
-    cefr: ['B1', 'B2'],
-    embeddedId: 'z-3Y-3b-7qU', // ELLA (envidia)
-    aljohnsComment: "Me gusta mucho la honestidad en la música de Jules. Sus canciones son como leer un diario. 'ENCONTRARME' es un tema muy poderoso.",
-    socialLinks: { youtube: 'https://www.youtube.com/@julesmusica_', instagram: 'https://www.instagram.com/julesmusica/', spotify: 'https://open.spotify.com/artist/2e2ee2aBGrIe36A1SgR3vA' },
-    tags: ['música']
-},
-{
-    id: 'daniela-spalla',
-    name: 'Daniela Spalla',
-    profilePic: 'images/creators/daniela-spalla.jpg', // Placeholder
-    type: 'Artista Musical',
-    country: 'Argentina',
-    flagCode: 'ar',
-    shortDesc: 'Cantautora argentina con un sonido retro-pop y letras inteligentes.',
-    longDesc: 'Residente en México, Daniela Spalla ha creado un estilo distintivo que evoca el pop de los años 70 y 80 pero con un toque moderno. Sus canciones son conocidas por sus melodías pegadizas y sus letras que a menudo tienen un giro irónico.',
-    cefr: ['B1', 'B2'],
-    embeddedId: 'w-8d-4e-8s_c', // 200K
-    aljohnsComment: "El estilo de Daniela es muy 'cool'. Su música tiene una onda retro que me encanta. Es genial para escuchar algo diferente dentro del pop en español.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCDV6yH73QkM4zL9M9vA2I5g', instagram: 'https://www.instagram.com/danielaspalla/', spotify: 'https://open.spotify.com/artist/2VSRhqonKsL7KRAIk8SMmt' },
-    tags: ['música']
-},
-{
-    id: 'pablo-lopez',
-    name: 'Pablo López',
-    profilePic: 'images/creators/pablo-lopez.jpg', // Placeholder
-    type: 'Artista Musical',
-    country: 'España',
-    flagCode: 'es',
-    shortDesc: 'Cantautor y pianista español conocido por la intensidad y pasión de sus composiciones.',
-    longDesc: 'Pablo López es un artista visceral. Sus canciones, casi siempre compuestas al piano, están llenas de metáforas complejas y una energía arrolladora. Es uno de los compositores más respetados de su generación en España.',
-    cefr: ['B2', 'C1'],
-    embeddedId: '3u-2f-5H-3s', // KLPSO
-    aljohnsComment: "Escuchar a Pablo López es una experiencia intensa. La forma en que toca el piano y canta es única. Su vocabulario es muy avanzado, ideal para un desafío de nivel superior.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UC6Q4G9zE5z5A9Z4t8Z7t8YQ', instagram: 'https://www.instagram.com/pablolopezmusic/', spotify: 'https://open.spotify.com/artist/7ylMLzruW9P3pFNw8lI3qD' },
-    tags: ['música']
-},
+// {
+//     id: 'sin-bandera',
+//     name: 'Sin Bandera',
+//     profilePic: 'images/creators/sin-bandera.jpg', // Placeholder
+//     type: 'Banda Musical',
+//     country: 'México / Argentina',
+//     flagCode: 'mx',
+//     shortDesc: 'El dúo romántico por excelencia, maestros de la balada pop.',
+//     longDesc: 'Formado por el mexicano Leonel García y el argentino Noel Schajris, Sin Bandera definió la balada romántica de los 2000. Son conocidos por sus armonías vocales perfectas y sus letras poéticas que hablan de amor y desamor.',
+//     cefr: ['A2', 'B1'],
+//     embeddedId: 'IKA74Y_b8ZE', // Te vi venir
+//     aljohnsComment: "Las canciones de Sin Bandera son pura poesía. Son perfectas para aprender vocabulario romántico y para dedicar. Cantan de forma lenta y muy clara.",
+//     socialLinks: { youtube: 'https://www.youtube.com/channel/UCf53Y5g6r-uAa3fEXz_Al2A', instagram: 'https://www.instagram.com/sinbandera/', spotify: 'https://open.spotify.com/artist/7xeM7V594211ZpbUH8BTcr' },
+//     tags: ['música']
+// },
+// {
+//     id: 'jules',
+//     name: 'Jules',
+//     profilePic: 'images/creators/jules.jpg', // Placeholder
+//     type: 'Artista Musical',
+//     country: 'México',
+//     flagCode: 'mx',
+//     shortDesc: 'Cantautora emergente con un estilo pop confesional y emotivo.',
+//     longDesc: 'Jules se está abriendo paso con canciones que exploran la vulnerabilidad y las emociones de una forma muy directa. Sus letras tratan sobre la autoaceptación, la ansiedad y las complejidades de las relaciones modernas.',
+//     cefr: ['B1', 'B2'],
+//     embeddedId: 'z-3Y-3b-7qU', // ELLA (envidia)
+//     aljohnsComment: "Me gusta mucho la honestidad en la música de Jules. Sus canciones son como leer un diario. 'ENCONTRARME' es un tema muy poderoso.",
+//     socialLinks: { youtube: 'https://www.youtube.com/@julesmusica_', instagram: 'https://www.instagram.com/julesmusica/', spotify: 'https://open.spotify.com/artist/2e2ee2aBGrIe36A1SgR3vA' },
+//     tags: ['música']
+// },
+// {
+//     id: 'daniela-spalla',
+//     name: 'Daniela Spalla',
+//     profilePic: 'images/creators/daniela-spalla.jpg', // Placeholder
+//     type: 'Artista Musical',
+//     country: 'Argentina',
+//     flagCode: 'ar',
+//     shortDesc: 'Cantautora argentina con un sonido retro-pop y letras inteligentes.',
+//     longDesc: 'Residente en México, Daniela Spalla ha creado un estilo distintivo que evoca el pop de los años 70 y 80 pero con un toque moderno. Sus canciones son conocidas por sus melodías pegadizas y sus letras que a menudo tienen un giro irónico.',
+//     cefr: ['B1', 'B2'],
+//     embeddedId: 'w-8d-4e-8s_c', // 200K
+//     aljohnsComment: "El estilo de Daniela es muy 'cool'. Su música tiene una onda retro que me encanta. Es genial para escuchar algo diferente dentro del pop en español.",
+//     socialLinks: { youtube: 'https://www.youtube.com/channel/UCDV6yH73QkM4zL9M9vA2I5g', instagram: 'https://www.instagram.com/danielaspalla/', spotify: 'https://open.spotify.com/artist/2VSRhqonKsL7KRAIk8SMmt' },
+//     tags: ['música']
+// },
+// {
+//     id: 'pablo-lopez',
+//     name: 'Pablo López',
+//     profilePic: 'images/creators/pablo-lopez.jpg', // Placeholder
+//     type: 'Artista Musical',
+//     country: 'España',
+//     flagCode: 'es',
+//     shortDesc: 'Cantautor y pianista español conocido por la intensidad y pasión de sus composiciones.',
+//     longDesc: 'Pablo López es un artista visceral. Sus canciones, casi siempre compuestas al piano, están llenas de metáforas complejas y una energía arrolladora. Es uno de los compositores más respetados de su generación en España.',
+//     cefr: ['B2', 'C1'],
+//     embeddedId: '3u-2f-5H-3s', // KLPSO
+//     aljohnsComment: "Escuchar a Pablo López es una experiencia intensa. La forma en que toca el piano y canta es única. Su vocabulario es muy avanzado, ideal para un desafío de nivel superior.",
+//     socialLinks: { youtube: 'https://www.youtube.com/channel/UC6Q4G9zE5z5A9Z4t8Z7t8YQ', instagram: 'https://www.instagram.com/pablolopezmusic/', spotify: 'https://open.spotify.com/artist/7ylMLzruW9P3pFNw8lI3qD' },
+//     tags: ['música']
+// },
 // ... (justo después del objeto de Pablo López)
 
 // =======================================================
@@ -729,14 +700,14 @@ const creatorsData = [
 {
     id: 'operacion-triunfo',
     name: 'Operación Triunfo',
-    profilePic: 'images/creators/operacion-triunfo.jpg', // Placeholder
+    profilePic: 'https://yt3.ggpht.com/15_8uUNWBjdMLeNZ-MnLkij-veJE_msh3BpYtbZniqC_s7EwUVdSdBVepps4tsWQay6oM-0Y=s48-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Talent Show Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'El aclamado concurso de talentos que ha lanzado a la fama a grandes artistas españoles.',
     longDesc: 'Operación Triunfo (OT) es más que un concurso; es un fenómeno cultural en España. Sigue a un grupo de jóvenes artistas mientras viven y se forman en una academia de música. El canal oficial publica las galas, actuaciones y el día a día, ofreciendo horas de contenido en español castellano natural.',
     cefr: ['B1', 'B2', 'C1'],
-    embeddedId: 'oN535oJ0c5s', // Casting de Aitana
+    embeddedId: 'fCe9Ij-CHrA', // Casting de Aitana
     aljohnsComment: "OT es una de mis grandes obsesiones. Vi completo OT 2017 y de ahí salieron artistas que amo como Aitana. Es perfecto para la inmersión porque escuchas conversaciones reales y casuales entre los concursantes durante horas.",
     socialLinks: { youtube: 'https://www.youtube.com/@OperacionTriunfoOficial', instagram: 'https://www.instagram.com/operaciontriunfo' },
     tags: ['shows y tv']
@@ -744,14 +715,14 @@ const creatorsData = [
 {
     id: 'got-talent-espana',
     name: 'Got Talent España',
-    profilePic: 'images/creators/got-talent-espana.jpg', // Placeholder
+    profilePic: 'https://yt3.ggpht.com/bAhvBpe5XKcmQEeJYFpuNNRhiZkZFjWhNkyiHKTjQxsrMLPxa7VKDG73YNqdlaRWd4J2ulN8JN8=s48-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Talent Show',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'La versión española del popular formato mundial, llena de actuaciones increíbles y emocionantes.',
     longDesc: 'Muestra las audiciones más impactantes, divertidas y emocionantes del programa. Incluye actuaciones de magia, canto, baile y todo tipo de habilidades. Es genial para aprender vocabulario relacionado con el arte y las emociones.',
     cefr: ['B1', 'B2'],
-    embeddedId: '7L_qI-g28qE', // Golden Buzzer de una niña refugiada ucraniana
+    embeddedId: '8UwHQ8X_mCc', // Golden Buzzer de una niña refugiada ucraniana
     aljohnsComment: "Siempre me sorprendo con el talento que hay en este programa. Las reacciones del jurado y las historias de los concursantes son una gran fuente de español emocional y espontáneo.",
     socialLinks: { youtube: 'https://www.youtube.com/@GotTalentEspana', instagram: 'https://www.instagram.com/gottalenttv' },
     tags: ['shows y tv']
@@ -759,14 +730,14 @@ const creatorsData = [
 {
     id: 'caso-cerrado',
     name: 'Caso Cerrado',
-    profilePic: 'images/creators/caso-cerrado.jpg', // Placeholder
+    profilePic: 'https://yt3.ggpht.com/uUcNnhGzOrNGTMX_3EkbBdBsntMMIbx0Nf8AIF_KexolBXcPQ8gZpsijAQzkCYTvQGbMpItLLA=s176-c-k-c0x00ffffff-no-rj-mo', // Placeholder
     type: 'Court Show / Talk Show',
     country: 'Estados Unidos',
     flagCode: 'us',
     shortDesc: 'El icónico programa de la Dra. Polo donde se resuelven los casos más insólitos.',
     longDesc: 'La Dra. Ana María Polo arbitra disputas legales entre litigantes. El programa es famoso por sus casos exagerados y dramáticos, lo que lo convierte en una fuente inagotable de vocabulario coloquial, jerga y expresiones de toda Latinoamérica.',
     cefr: ['B2', 'C1', 'C2'],
-    embeddedId: '8y-v-y-s-2Q', // Ejemplo de un caso
+    embeddedId: 'rgFmB8pY02o', // Ejemplo de un caso
     aljohnsComment: "¡He dicho, Caso Cerrado! Este programa es un clásico. Es un desafío increíble para la comprensión auditiva por la cantidad de acentos y la rapidez con la que hablan. ¡Y es súper entretenido!",
     socialLinks: { youtube: 'https://www.youtube.com/@CasoCerrado', instagram: 'https://www.instagram.com/casocerradotelemundo' },
     tags: ['shows y tv']
@@ -774,16 +745,16 @@ const creatorsData = [
 {
     id: 'la-voz',
     name: 'La Voz',
-    profilePic: 'images/creators/la-voz.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n7HMEc4AmKg7GKeB_1j8lkuXw8kPKOt2VapkAa6khcVw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Talent Show Musical',
     country: 'Internacional',
     flagCode: 'es', // Representativo de las versiones en español
     shortDesc: 'El formato de concurso de canto donde solo importa la voz. Visto a través de La Voz Global.',
     longDesc: 'El formato de "La Voz" consiste en audiciones a ciegas donde los coaches eligen a los concursantes solo por su talento vocal. El canal "La Voz Global" recopila actuaciones de las versiones de España, México, Argentina, etc., exponiéndote a una gran variedad de acentos.',
     cefr: ['B1', 'B2'],
-    embeddedId: '7B-89p3L3Qc', // Ejemplo de audición emocionante
+    embeddedId: 'QoOkA2s7cDM', // Ejemplo de audición emocionante
     aljohnsComment: "Me encanta ver las audiciones a ciegas y la reacción de los coaches cuando giran la silla. Es pura emoción y, al ser de diferentes países, es una forma genial de comparar acentos.",
-    socialLinks: { youtube: 'https://www.youtube.com/@LaVozGlobal' },
+    socialLinks: { youtube: 'https://www.youtube.com/c/LaVozKidsEspa%C3%B1a' },
     tags: ['shows y tv']
 },
     // --- ESTANTERÍA: PODCASTS ---
@@ -808,14 +779,14 @@ const creatorsData = [
 {
     id: 'drossrotzank',
     name: 'DrossRotzank',
-    profilePic: 'images/creators/drossrotzank.jpg', // Placeholder
+    profilePic: 'https://yt3.ggpht.com/lDw6p4b679wYw835cmI6s5ahBciRjjqrIiLAEMXkl0CP5fdcn8kcl-sOdSO0tMtKi_F7UcqGkOg=s48-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Misterio y Cultura Pop',
     country: 'Venezuela',
     flagCode: 've',
     shortDesc: 'El icónico canal de terror, misterio y tops perturbadores.',
     longDesc: 'Ángel David Revilla, "Dross", es una leyenda de YouTube. Su canal se especializa en narrar historias de terror, casos misteriosos y sus famosos "7 tops" sobre temas inquietantes del cine, los videojuegos y la cultura de internet, todo con su voz y estilo inconfundibles.',
     cefr: ['C1', 'C2'],
-    embeddedId: '8y-v-y-s-2Q', // Ejemplo de un top 7
+    embeddedId: '5qR82rFJG7I', // Ejemplo de un top 7
     aljohnsComment: "He visto a Dross durante años. Su forma de narrar es única y su vocabulario es increíblemente rico y avanzado. Es un desafío, pero aprendes palabras que no escucharías en ningún otro sitio. ¡Coño!",
     socialLinks: { youtube: 'https://www.youtube.com/@DrossRotzank', instagram: 'https://www.instagram.com/soydrossrotzank' },
     tags: ['cine y cultura pop']
@@ -823,14 +794,14 @@ const creatorsData = [
 {
     id: 'la-caja-geek',
     name: 'La Caja Geek',
-    profilePic: 'images/creators/la-caja-geek.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mBqCM1Ir3S2eCrP_D9giLxyvLgh8fq9xK-RNx4JHFwwPg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Cultura Geek',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'El universo de los cómics, superhéroes y cine explicado de forma rápida y sencilla.',
     longDesc: 'Este canal explora el universo de Marvel, DC y otras franquicias, respondiendo preguntas de fans, explicando lore complejo y analizando las últimas noticias y tráileres. Es perfecto para aprender vocabulario específico del mundo de los superhéroes.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de un Short sobre Spiderman
+    embeddedId: '17gahdLXJeA', // Ejemplo de un Short sobre Spiderman
     aljohnsComment: "Si eres fan de Marvel o DC, este canal es una parada obligatoria. Sus Shorts son geniales para píldoras rápidas de conocimiento geek en español.",
     socialLinks: { youtube: 'https://www.youtube.com/@LaCajaGeek', instagram: 'https://www.instagram.com/lacajageekoficial' },
     tags: ['cine y cultura pop']
@@ -838,44 +809,30 @@ const creatorsData = [
 {
     id: 'te-lo-voy-a-contar',
     name: 'Te lo voy a Contar',
-    profilePic: 'images/creators/te-lo-voy-a-contar.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nzxgMyEjd-TYZS_n-BEtjjhkevV4uD3jhIAY4F37G2kw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Resúmenes de Películas',
     country: 'N/A',
     flagCode: 'es', // Acento castellano
     shortDesc: 'Resúmenes de películas y series narrados de forma rápida y entretenida.',
     longDesc: 'Si quieres saber de qué trata una película sin verla, este canal te cuenta la trama completa en vídeos de 10 a 15 minutos, con un estilo de narración directo y humorístico. Genial para la comprensión auditiva a alta velocidad.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de resumen
+    embeddedId: 'Uq2kixWgW7Y', // Ejemplo de resumen
     aljohnsComment: "A veces no tengo tiempo para ver una película, así que veo uno de sus resúmenes. La narración es muy rápida, por lo que es un excelente ejercicio para entrenar el oído.",
     socialLinks: { youtube: 'https://www.youtube.com/@Telovoyacontar' },
     tags: ['cine y cultura pop']
 },
-{
-    id: 'delcarajo-tv',
-    name: 'DELCARAJO TV',
-    profilePic: 'images/creators/delcarajo-tv.jpg', // Placeholder
-    type: 'Noticias de Cultura Pop',
-    country: 'Argentina',
-    flagCode: 'ar',
-    shortDesc: 'Noticias y opinión sobre cultura pop, cine y polémicas de internet.',
-    longDesc: 'Con un estilo sarcástico y directo, este canal comenta las últimas noticias del mundo del entretenimiento, criticando producciones de Hollywood, tendencias y las controversias más recientes. Utiliza mucho lunfardo (jerga argentina).',
-    cefr: ['C1', 'C2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de vídeo de noticias
-    aljohnsComment: "Para estar al día de las polémicas del mundo geek, este es mi canal de referencia. Es un desafío por el acento y la jerga argentina, pero es muy divertido.",
-    socialLinks: { youtube: 'https://www.youtube.com/@delcarajotv', instagram: 'https://www.instagram.com/delcarajotv' },
-    tags: ['cine y cultura pop']
-},
+
 {
     id: 'netflix-espana',
     name: 'Netflix España',
-    profilePic: 'images/creators/netflix-espana.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/92XDN_PhYnUbrZVz3wTm1-LnXQQTGB5ccZDswiJCBInenlH5oTwgn3Siow8Dx_sMAXrrBeMYels=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Plataforma de Streaming',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'El canal oficial de Netflix para España, con tráileres, entrevistas y contenido extra.',
     longDesc: 'Publica tráileres, escenas, entrevistas con actores y contenido promocional de sus series y películas. Es el lugar ideal para estar al día de los lanzamientos de la plataforma en España y para escuchar a los actores en entrevistas.',
     cefr: ['B1', 'B2', 'C1'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de tráiler
+    embeddedId: 'FFzoqmAD-Rg', // Ejemplo de tráiler
     aljohnsComment: "Sigo este canal para no perderme ningún estreno. Los tráileres en español de España son una práctica de escucha rápida y muy útil.",
     socialLinks: { youtube: 'https://www.youtube.com/@NetflixEspana', instagram: 'https://www.instagram.com/netflixes' },
     tags: ['cine y cultura pop', 'shows y tv']
@@ -883,14 +840,14 @@ const creatorsData = [
 {
     id: 'charlie-tales',
     name: 'CharlieTales',
-    profilePic: 'images/creators/charlie-tales.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/Oi5tBI-bgjQxNaXEG1Ir-SIEgnbQdlGV71B-1UA1wiGqu3gb_nixlBt7RKC5etRgdPH14wsISQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Análisis de Cine y Series',
     country: 'N/A',
     flagCode: 'mx', // Acento mexicano
     shortDesc: 'Análisis y curiosidades sobre películas y series de zombies, terror y ciencia ficción.',
     longDesc: 'Charlie se especializa en desglosar series y películas, encontrando detalles ocultos, explicando finales y creando teorías. Su contenido sobre el universo de "The Walking Dead" y otras sagas de terror es muy popular.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de análisis
+    embeddedId: 'N6sMlQbf8Ss', // Ejemplo de análisis
     aljohnsComment: "Me encantan sus vídeos de 'cosas que no viste'. Te hacen apreciar las series de una forma diferente. Su español es muy claro y fácil de entender.",
     socialLinks: { youtube: 'https://www.youtube.com/@CharlieTales' },
     tags: ['cine y cultura pop']
@@ -900,44 +857,44 @@ const creatorsData = [
 {
     id: 'ale-marin',
     name: 'Ale Marin',
-    profilePic: 'images/creators/ale-marin.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nrTdoB7uAEHIg3KEkwJxnm3pJlagy4FTITYPuxEMIcN1s=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Crítica de Cultura Pop',
     country: 'Argentina',
     flagCode: 'ar',
     shortDesc: 'Análisis profundos y sin filtros sobre celebridades, música y el mundo del espectáculo.',
     longDesc: 'Alejandro Marin es un periodista musical y crítico de cultura pop muy respetado. Su canal ofrece análisis detallados sobre las carreras de grandes artistas, documentales sobre la industria y opiniones muy bien fundamentadas. Su español argentino es rápido y lleno de jerga.',
     cefr: ['C1', 'C2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de análisis de TINI
+    embeddedId: 'CXC-gmlUP8o', // Ejemplo de análisis de TINI
     aljohnsComment: "Los análisis de Ale son de otro nivel. Realmente investiga y ofrece una perspectiva que no encuentras en otros sitios. Es un desafío para la escucha, pero aprendes muchísimo.",
-    socialLinks: { youtube: 'https://www.youtube.com/@AleMarin', instagram: 'https://www.instagram.com/alemarinista' },
+    socialLinks: { youtube: 'https://www.youtube.com/@AleAbsolutable' },
     tags: ['cine y cultura pop', 'música']
 },
 {
     id: 'filmselect-espanol',
     name: 'FilmSelect Español',
-    profilePic: 'images/creators/filmselect-espanol.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_ldHAGvkoBMl3Eus_RIeKMeHJXcU1LExwv8ZSiw4exGRQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Tráileres de Películas',
     country: 'Internacional',
     flagCode: 'es', // Doblaje en español de España
     shortDesc: 'El lugar para encontrar los últimos tráileres de películas doblados al español.',
     longDesc: 'Este canal se dedica a publicar los tráileres más recientes de los grandes estrenos de Hollywood, doblados al castellano. Es un recurso excelente para una práctica de escucha rápida y para acostumbrarse a las voces de los actores de doblaje de España.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de tráiler
+    embeddedId: 'N2lzGmhf0yY', // Ejemplo de tráiler
     aljohnsComment: "Perfecto para ver qué películas nuevas van a salir. Escuchar los tráileres doblados es un ejercicio muy bueno para captar diálogos rápidos y vocabulario de acción o ciencia ficción.",
-    socialLinks: { youtube: 'https://www.youtube.com/@FilmSelectEspanol' },
+    socialLinks: { youtube: 'https://www.youtube.com/@filmselectespanol6692' },
     tags: ['cine y cultura pop']
 },
 {
     id: 'coffe-tv',
     name: 'CoffeTV',
-    profilePic: 'images/creators/coffe-tv.jpg', // Placeholder
+    profilePic: 'https://yt3.ggpht.com/N3lLQr2sGYJtXlICzcj2T64qs6hr0HngFhPo-3CrTHutgvrSPHvUNohLdYZUItbDyO5xy09UhFQ=s48-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Análisis de Cine',
     country: 'N/A',
     flagCode: 'mx', // Acento mexicano
     shortDesc: 'Reseñas, análisis y resúmenes de películas y sagas clásicas y modernas.',
     longDesc: 'CoffeTV ofrece un análisis profundo y bien editado de películas populares, desde sagas como Spider-Man hasta clásicos del cine. Sus vídeos exploran la narrativa, los personajes y los temas de las películas de una forma muy amena.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de análisis de Spider-Man 2
+    embeddedId: 'y2mRbHRUN_Y', // Ejemplo de análisis de Spider-Man 2
     aljohnsComment: "Me gusta mucho cómo profundiza en las películas que todos conocemos. Es genial para revivir esas historias mientras practicas español.",
     socialLinks: { youtube: 'https://www.youtube.com/@CoffeTV' },
     tags: ['cine y cultura pop']
@@ -945,14 +902,14 @@ const creatorsData = [
 {
     id: 'resumen-de-peliculas',
     name: 'Resumen de Peliculas',
-    profilePic: 'images/creators/resumen-de-peliculas.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/HOaX9yXHXKPO6mMnTi-YbOjRL8-ijS9-Y4w3ag6eUgP6NyA-rzqMh54usNHBzgRwQqp4e9rXv5s=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Resúmenes de Películas',
     country: 'N/A',
     flagCode: 'latam', // Acento latino neutro
     shortDesc: 'Resúmenes rápidos y directos de todo tipo de películas.',
     longDesc: 'Como su nombre indica, este canal se especializa en contar la trama de películas en vídeos cortos. Es otro gran recurso para practicar la comprensión auditiva a alta velocidad y para ponerte al día con películas que no has visto.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de resumen
+    embeddedId: 'giuNW5dN2Oc', // Ejemplo de resumen
     aljohnsComment: "Otro de mis canales de resúmenes. Cada uno tiene su estilo de narración, y es bueno exponerse a diferentes formas de contar una historia.",
     socialLinks: { youtube: 'https://www.youtube.com/@resumendepeliculas' },
     tags: ['cine y cultura pop']
@@ -960,16 +917,16 @@ const creatorsData = [
 {
     id: 'yo-te-cuento',
     name: 'Yo te Cuento',
-    profilePic: 'images/creators/yo-te-cuento.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_lhCkmprd0Ba-epezmWxoFOBBcGyGt1QzsCym52Lsde-NY=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Narración de Historias',
     country: 'N/A',
     flagCode: 'es', // Acento castellano
     shortDesc: 'Un canal que narra historias de películas, series y a veces casos reales.',
     longDesc: 'Este canal se enfoca en el "storytelling", narrando no solo resúmenes de películas, sino a veces desglosando personajes o contando historias interesantes relacionadas con el mundo del entretenimiento. La narración suele ser clara y bien estructurada.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'z-8y-v-y-s-2', // Ejemplo de narración
+    embeddedId: 'r4nxtjGBdJk', // Ejemplo de narración
     aljohnsComment: "Me gusta el enfoque de 'storytelling' que tienen. No es solo un resumen, sino una forma de volver a experimentar la historia. Su acento castellano es muy claro.",
-    socialLinks: { youtube: 'https://www.youtube.com/@yotcuento' },
+    socialLinks: { youtube: 'https://www.youtube.com/@YoteCuento' },
     tags: ['cine y cultura pop']
 },
 // ... (justo después del objeto de La Voz)
@@ -980,14 +937,14 @@ const creatorsData = [
 {
     id: 'enchufetv',
     name: 'enchufetv',
-    profilePic: 'images/creators/enchufetv.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/z31XZpAba74_y9imjnAtkGqHxnw-pyiJ51ewXSYS1k2iP78UXmmiUl558lUnCSP-sbEGInFBOg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Canal de Sketches',
     country: 'Ecuador',
     flagCode: 'ec',
     shortDesc: 'Los reyes de la comedia en YouTube en español con sketches virales.',
     longDesc: 'Producido por Touche Films, este canal es un referente de la comedia. Sus sketches parodian situaciones cotidianas, películas y tendencias de internet con un humor rápido y reconocible, lleno de jerga ecuatoriana.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'zLdo-h_y1tE', // MrBeast Parody
+    embeddedId: 'yI9Ynn6JjvM', // MrBeast Parody
     aljohnsComment: "He visto enchufetv por años y siempre me hacen reír. Su humor es muy rápido y lleno de localismos, así que es un excelente y divertido desafío para la comprensión auditiva.",
     socialLinks: { youtube: 'https://www.youtube.com/@enchufetv', instagram: 'https://www.instagram.com/enchufetv' },
     tags: ['comedia y animación']
@@ -995,14 +952,14 @@ const creatorsData = [
 {
     id: 'casi-creativo',
     name: 'Casi Creativo',
-    profilePic: 'images/creators/casi-creativo.jpg', // Placeholder
+    profilePic: 'https://yt3.googleusercontent.com/BKQ3-8AYb3e6BScwLIe-oULU7xZP63O5oZ_7B8pPkzZCI9Dv2jqYGYh65GTjGUr8cWbZtFv3=s120-c-k-c0x00ffffff-no-rj', // Placeholder
     type: 'Animación / Comedia',
     country: 'Panamá',
     flagCode: 'pa',
     shortDesc: 'Animaciones humorísticas y muy relatables sobre la vida cotidiana.',
     longDesc: 'Fred Lammie crea animaciones cortas y divertidas que retratan situaciones con las que todo el mundo puede identificarse, como las dificultades de levantarse por la mañana o las conversaciones con tus propios órganos.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'hN5X4k3q_4M', // Tus Órganos Cuando Comes Mucho Azúcar
+    embeddedId: 'zB3oRJf-Mjw', // Tus Órganos Cuando Comes Mucho Azúcar
     aljohnsComment: "Sus animaciones son brillantes y muy, muy graciosas. Capturan perfectamente esas pequeñas luchas de la vida diaria. Su español es claro y la animación ayuda mucho a entender el contexto.",
     socialLinks: { youtube: 'https://www.youtube.com/@CasiCreativo', instagram: 'https://www.instagram.com/casicreativo' },
     tags: ['comedia y animación']
