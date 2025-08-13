@@ -17,21 +17,7 @@ const creatorsData = [
         socialLinks: { instagram: 'https://www.instagram.com/claaragalle/?hl=es' },
         tags: ['personalidades']
     },
-    {
-        id: 'rubius-z',
-        name: 'Rubius Z',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n0Vd8NnC3LfY79I0ddwZ5N-Dw6NYyk7cQxL3t989gGdQ4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
-        type: 'Comedia / Reacciones',
-        country: 'España',
-        flagCode: 'es',
-        shortDesc: 'El canal secundario del icónico ElRubius, con reacciones y vídeos de memes.',
-        longDesc: 'En este canal, ElRubius reacciona a los vídeos más virales y los memes más populares de internet. Su humor es rápido, caótico y lleno de jerga de internet y de España. Es un contenido muy avanzado pero muy divertido.',
-        cefr: ['C1', 'C2'],
-        embeddedId: 'GuaWagn7sOU', // Ejemplo de un vídeo de memes
-        aljohnsComment: "Para entender el humor de internet en español, tienes que ver a ElRubius. Habla súper rápido y usa muchísima jerga pero te ríes un montón.",
-        socialLinks: { youtube: 'https://www.youtube.com/@elrubius', },
-        tags: ['comedia y animación', 'gaming', 'personalidades']
-    },
+  
     {
         id: 'charlyokei',
         name: 'Charlyokei',
@@ -140,6 +126,21 @@ const creatorsData = [
         aljohnsComment: "sí, también es española",
         socialLinks: { youtube: 'https://www.youtube.com/@AnnaCramlingES', instagram: 'https://www.instagram.com/annacramling' },
         tags: ['personalidades', 'gaming']
+    },
+    {
+        id: 'rubius-z',
+        name: 'Rubius Z',
+        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n0Vd8NnC3LfY79I0ddwZ5N-Dw6NYyk7cQxL3t989gGdQ4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        type: 'Comedia / Reacciones',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'El canal secundario del icónico ElRubius, con reacciones y vídeos de memes.',
+        longDesc: 'En este canal, ElRubius reacciona a los vídeos más virales y los memes más populares de internet. Su humor es rápido, caótico y lleno de jerga de internet y de España. Es un contenido muy avanzado pero muy divertido.',
+        cefr: ['C1', 'C2'],
+        embeddedId: 'GuaWagn7sOU', // Ejemplo de un vídeo de memes
+        aljohnsComment: "Para entender el humor de internet en español, tienes que ver a ElRubius. Habla súper rápido y usa muchísima jerga pero te ríes un montón.",
+        socialLinks: { youtube: 'https://www.youtube.com/@elrubius', },
+        tags: ['comedia y animación', 'gaming', 'personalidades']
     },
     // =======================================================
     // ==   ESTANTERÍA: PARA EMPEZAR: INPUT COMPRENSIBLE    ==
