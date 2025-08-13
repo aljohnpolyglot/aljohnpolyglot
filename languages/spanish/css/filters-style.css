@@ -1,0 +1,247 @@
+/*
+    ========================================
+    Polished Filter Styles
+    - Responsive, Stable, and Maintainable
+    ========================================
+*/
+
+/* --- Global Settings & CSS Variables --- */
+:root {
+    /* Colors */
+    --color-primary: #ba1f2f;      /* RTVE Red */
+    --color-secondary: #551857;   /* RTVE Purple */
+    --color-text-dark: #333;
+    --color-text-light: #666;
+    --color-text-muted: #888;
+    --color-bg-light: #fff;
+    --color-border: #ddd;
+    --color-border-hover: #ccc;
+    --color-shadow: rgba(0, 0, 0, 0.08);
+
+    /* Sizing & Spacing */
+    --spacing-s: 0.5rem;
+    --spacing-m: 1.5rem;
+    --spacing-l: 2.5rem;
+    --spacing-xl: 4rem;
+
+    /* Borders */
+    --border-radius-m: 8px;
+    --border-radius-l: 12px;
+}
+
+/* Base setup for easier box model and rem units */
+html {
+    font-size: 62.5%; /* Makes 1rem = 10px for easy calculation */
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/*
+    ========================================
+    1. Section Header
+    ========================================
+*/
+.shelves-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.shelves-header h2 {
+    display: inline-block;
+    padding-bottom: var(--spacing-s);
+    color: var(--color-text-dark);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.shelves-header p {
+    max-width: 600px;
+    margin: var(--spacing-m) auto 0;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+}
+
+/*
+    ========================================
+    2. Filter Controls Container
+    ========================================
+*/
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap; /* Allows filter groups to stack on smaller screens */
+    gap: var(--spacing-xl); /* Consistent gap between filter groups */
+
+    padding: var(--spacing-l);
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius-l);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 4px 15px var(--color-shadow);
+}
+.filter-content {
+    display: flex;
+   flex-direction: column;
+}
+.filter-group {
+    /* This is the key to the responsive and stable layout.
+       Each group will try to be 300px wide, will grow to fill space,
+       and will wrap onto a new line if space is tight. */
+    flex: 1 1 300px;
+    min-width: 280px; /* Ensures a minimum usable width before wrapping */
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: var(--spacing-m);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+/*
+    ========================================
+    3. CEFR Level Slider
+    ========================================
+*/
+#cefr-slider {
+    /* Reset default appearance to allow custom styling */
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%; /* CRITICAL: Changed from 400px to be responsive */
+    height: 8px;
+    background: var(--color-border);
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.2s ease-in-out;
+}
+
+#cefr-slider:hover {
+    background: var(--color-border-hover);
+}
+
+/* Slider Thumb - for Webkit browsers (Chrome, Safari) */
+#cefr-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+#cefr-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Slider Thumb - for Firefox */
+#cefr-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+#cefr-slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+
+.cefr-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-s);
+    padding: 0 5px; /* Slight padding to align with slider ends */
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+#cefr-description {
+    margin-top: var(--spacing-m);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+
+    /* VERY IMPORTANT FOR STABILITY:
+       Prevents the page layout from "jumping" when the description text
+       changes between 1, 2, or 3 lines. 1.4rem * 3 lines = 4.2rem */
+    min-height: 4.2rem;
+}
+
+/*
+    ========================================
+    4. Country Dropdown Filter
+    ========================================
+*/
+#country-filter {
+    /* Reset default appearance for custom styling */
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    padding: 1.2rem; /* Increased padding for better touch targets */
+    font-size: 1.6rem;
+    background-color: var(--color-bg-light);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-m);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    /* Custom dropdown arrow using an inlined SVG */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1rem auto;
+    padding-right: 4rem; /* Make space for the arrow */
+}
+
+#country-filter:hover {
+    border-color: var(--color-border-hover);
+}
+
+#country-filter:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(186, 31, 47, 0.3);
+}
+
+/*
+    ========================================
+    5. Helper Class
+    ========================================
+*/
+/* Used by JavaScript to hide cards that don't match the filters */
+.creator-card.is-hidden {
+    display: none;
+}
+
+/*
+    ========================================
+    6. Media Queries for Mobile
+    ========================================
+*/
+@media (max-width: 768px) {
+    .shelves-header h2 {
+        font-size: 2.4rem; /* Slightly smaller title on mobile */
+    }
+
+    .shelves-header p {
+        font-size: 1.6rem; /* Slightly smaller text on mobile */
+    }
+
+    .filter-controls {
+        padding: var(--spacing-m);
+        gap: var(--spacing-l); /* Reduce gap between filters on mobile */
+    }
+    .filter-group label {
+       margin-top: 1rem;
+    }
+}

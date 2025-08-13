@@ -87,9 +87,10 @@ h3 {
     scrollbar-color: #f56b0d #e8e8e8;
 }
 
+
 /* Ocultar barra de scroll en navegadores Webkit (Chrome, Safari) */
 .shelf-container::-webkit-scrollbar {
-    height: 8px;
+    height: 12px;
 }
 .shelf-container::-webkit-scrollbar-track {
     background: #e8e8e8;
@@ -145,4 +146,35 @@ h3 {
     height: 300px;
     object-fit: cover;
     object-position: top;
+}
+@media (max-width: 768px) {
+    .shelf-container {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 2rem;
+        gap: 1.5rem;
+
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin; /* For Firefox */
+        scrollbar-color: #f56b0d #e8e8e8;
+    }
+
+    /* For WebKit browsers (Chrome, Safari, Edge) */
+    .shelf-container::-webkit-scrollbar {
+        height: 12px; /* thickness of horizontal scrollbar */
+    }
+
+    .shelf-container::-webkit-scrollbar-track {
+        background: #e8e8e8;
+        border-radius: 6px;
+    }
+
+    .shelf-container::-webkit-scrollbar-thumb {
+        background: #f56b0d;
+        border-radius: 6px;
+    }
+
+    .shelf-container::-webkit-scrollbar-thumb:hover {
+        background: #d45d0c;
+    }
 }

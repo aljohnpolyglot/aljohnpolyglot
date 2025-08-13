@@ -1,0 +1,221 @@
+/* D:\website\languages\spanish\css\friends-style.css */
+
+#friends-section {
+    background: linear-gradient(135deg, #2c2c2c, #1e1e1e); /* Dark gray to slightly darker */
+    color: #FFFFFF;
+    padding: 4rem 0;
+    border-top: 1px solid #444;
+}
+
+
+#friends-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.friend-card {
+    background-color: #353535;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.friend-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.friend-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+    border: 3px solid #FFC400; /* Borde amarillo español */
+}
+
+.friend-name {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.friend-desc {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+    flex-grow: 1; /* Asegura que la descripción ocupe el espacio */
+}
+
+.country-logos-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.country-logo {
+    width: 30px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Modal de Amigos */
+.friends-modal-overlay { /* Reutiliza la base de otros modales */
+    /* ... (puedes copiar el estilo base de .picks-modal-overlay) ... */
+}
+/* ======================================================= */
+/* ==   CSS DE REEMPLAZO (MODAL DE AMIGOS DETALLADO)    == */
+/* ======================================================= */
+
+/* --- Modal de Amigos (Reutiliza la base de .picks-modal-overlay) --- */
+#friends-modal .picks-modal-content {
+    background-color: #353535;
+    color: #e0e0e0;
+    max-width: 600px; /* Un poco más ancho para el vídeo */
+    padding: 2.5rem;
+    border: 1px solid #555;
+    scrollbar-width: thin;
+    scrollbar-color: #FFC400 #444; /* Color del pulgar (thumb) y del riel (track) */
+}
+/* Para navegadores WebKit (Chrome, Safari, Edge, etc.) para una personalización más profunda */
+#friends-modal .picks-modal-content::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de scroll */
+}
+
+#friends-modal .picks-modal-content::-webkit-scrollbar-track {
+    background: #444; /* Color del riel (la barra de fondo) */
+    border-radius: 10px;
+}
+
+#friends-modal .picks-modal-content::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del pulgar (la parte que se mueve) */
+    border-radius: 10px; /* Bordes redondeados para el pulgar */
+    border: 2px solid #353535; /* Un pequeño borde del color del fondo del modal para un efecto de "flotación" */
+}
+
+#friends-modal .picks-modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: #FFC400; /* El pulgar se vuelve amarillo al pasar el ratón por encima */
+}
+#friends-modal .modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#friends-modal .modal-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #FFC400; /* Borde amarillo español */
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#friends-modal h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.6rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+#friends-modal .country-logos-container {
+    margin-bottom: 2rem;
+}
+
+#friends-modal .modal-video-embed-area {
+    margin-bottom: 2rem;
+}
+
+#friends-modal .modal-long-description-area h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #555;
+    padding-bottom: 0.5rem;
+}
+
+#friends-modal .modal-long-description-area p {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+#friends-modal .button-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #FFC400; /* Amarillo como color primario del botón */
+    color: #1A1A1A; /* Texto oscuro para contraste */
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#friends-modal .button-link:hover {
+    background-color: #ffd54f; /* Amarillo más brillante en hover */
+    transform: scale(1.05);
+}
+
+/* Reutilizamos el estilo del vídeo embebido que ya tienes */
+#friends-modal .embed-responsive {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 8px;
+}
+#friends-modal .embed-responsive iframe {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 100%; height: 100%;
+    border: none;
+}
+/* ======================================================= */
+/* == CSS DE REEMPLAZO (AÑADE VISIBILIDAD AL VÍDEO EMBEBIDO) == */
+/* ======================================================= */
+
+/* --- Estilos para el Vídeo Embebido en el Modal de Amigos --- */
+
+#friends-modal .modal-video-embed-area {
+    width: 100%;
+    margin-bottom: 2rem; /* Espacio debajo del vídeo */
+}
+
+/* Contenedor responsivo que fuerza la proporción 16:9 */
+#friends-modal .embed-responsive {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* Esto crea la proporción 16:9 */
+    border-radius: 8px;
+    background-color: #000; /* Fondo negro mientras carga */
+}
+
+/* El iframe del vídeo que se posiciona dentro del contenedor */
+#friends-modal .embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* ... (el resto de los estilos del modal que ya tienes) */

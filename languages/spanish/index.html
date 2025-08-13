@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="css/hero-style.css">
     <link rel="stylesheet" href="css/extra-style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/friends-style.css">
+    <link rel="stylesheet" href="css/filters-style.css">
+
 </head>
 <body>
     <header id="main-header-placeholder"></header>
@@ -186,6 +189,38 @@
                 </div>
             </div>
         </article>
+
+        <!-- ======================================================= -->
+<!-- ==           NUEVO SPOTLIGHT: ANKI                   == -->
+<!-- ======================================================= -->
+<article class="spotlight-card" id="spotlight-anki">
+    <div class="spotlight-content">
+        <div class="spotlight-details">
+            <a href="https://ankiweb.net/" target="_blank" class="spotlight-logo-link anki-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/1200px-Anki-icon.svg.png" alt="Logo de Anki" class="spotlight-logo">
+            </a>
+            <h3 class="spotlight-title"><br>Aljohn Polyglot Spanish Deck</h3>
+            <p class="spotlight-description">Anki es mi herramienta más importante: la repetición espaciada para no olvidar nunca. Aquí comparto mi mazo personal "My Spanish Soul", con miles de tarjetas que he creado en mi viaje.</p>
+            <a href="https://ankiweb.net/shared/info/980580505" target="_blank" class="button-link">Descargar mi Mazo</a>
+        </div>
+        <div class="spotlight-visual">
+            <div class="anki-sample-cards">
+                <div class="anki-card">
+                    <div class="card-front">querer (preterite)</div>
+                    <div class="card-back">quise</div>
+                </div>
+                <div class="anki-card">
+                    <div class="card-front">afortunadamente</div>
+                    <div class="card-back">fortunately</div>
+                </div>
+                <div class="anki-card">
+                    <div class="card-front">yo (haber)</div>
+                    <div class="card-back">he</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
         <!-- ======================================================= -->
         <!-- ==        NUEVO SPOTLIGHT: SERIE "EXTR@"             == -->
         <!-- ======================================================= -->
@@ -289,6 +324,44 @@
                 </div>
             </div>
         </article>
+
+
+       <!-- ======================================================= -->
+<!-- ==     BLOQUE DE REEMPLAZO (HTML FINAL PARA WEBTOON)   == -->
+<!-- ======================================================= -->
+<article class="spotlight-card" id="spotlight-webtoon">
+    <div class="spotlight-content">
+        <div class="spotlight-details">
+            <a href="https://www.webtoons.com/es/" target="_blank" class="spotlight-logo-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Naver_Line_Webtoon_logo.png" alt="Logo de WEBTOON" class="spotlight-logo">
+            </a>
+            <h3 class="spotlight-title">WEBTOON</h3>
+            <p class="spotlight-description">
+                Cómics en formato vertical, perfectos para una lectura moderna y adictiva.
+                Es una de mis formas favoritas de leer en español porque el apoyo visual ayuda muchísimo a la comprensión.
+            </p>
+            <a href="https://www.webtoons.com/es/" target="_blank" class="button-link">Explorar Cómics</a>
+        </div>
+        <div class="spotlight-visual">
+            <!-- Contenedor de scroll horizontal -->
+            <div id="webtoon-grid" class="webtoon-recommendations">
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+1" alt="Webtoon 1">
+                </div>
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+2" alt="Webtoon 2">
+                </div>
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+3" alt="Webtoon 3">
+                </div>
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+4" alt="Webtoon 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
     </div>
 </section>
         
@@ -313,122 +386,132 @@
         <div id="groups-container" class="shelf-container">
             <!-- Contenido dinámico desde community-data.js -->
         </div>
-
-    </div>
-</section>
-        <section id="content-shelves" class="container">
-            <h2>Explora Mis Favoritos</h2>
-            <p>Esta es mi colección personal de creadores, artistas y más. Están organizados por categoría para que encuentres fácilmente lo que buscas. ¡Disfruta!</p>
-
-            <!-- Estantería Especial para Principiantes -->
-            <article class="content-shelf ">
-                <h3>Para Empezar: Input Comprensible</h3>
-                <p class="shelf-description">Si eres principiante, te recomiendo empezar aquí. Estos canales están diseñados para ser entendidos fácilmente.</p>
-                <div id="shelf-comprehensible-input" class="shelf-container">
-                    <!-- JS poblará esto con canales como Dreaming Spanish, Easy Spanish, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Creadores de Contenido y Vlogs -->
-            <article class="content-shelf">
-                <h3>Vlogs, Viajes y Estilo de Vida</h3>
-                <div id="shelf-vlogs-lifestyle" class="shelf-container">
-                    <!-- JS poblará esto con canales como Luisito Comunica, Oscar Alejandro, Juanpa Zurita, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Música -->
-            <article class="content-shelf">
-                <h3>Música</h3>
-                <div id="shelf-music" class="shelf-container">
-                    <!-- JS poblará esto con todos los artistas musicales (Aitana, Yatra, Morat, etc.) -->
-                </div>
-            </article>
-   <!-- ============================================== -->
-            <!-- ==       NUEVA ESTANTERÍA DE PODCASTS       == -->
-            <!-- ============================================== -->
-            <article class="content-shelf">
-                <h3>Podcasts</h3>
-                <div id="shelf-podcasts" class="shelf-container">
-                    <!-- JS poblará esto -->
-                </div>
-            </article>
-            <article class="content-shelf">
-                <h3>Personalidades (Actores, Atletas y Más)</h3>
-                <p class="shelf-description">Sigue a estas figuras públicas en Instagram para una dosis diaria de español en un contexto real y cotidiano.</p>
-                <div id="shelf-personalities" class="shelf-container">
-                    <!-- JS poblará esto con actores, atletas, etc., principalmente de Instagram -->
-                </div>
-            </article>
-            <!-- Estantería de Shows y Entretenimiento -->
-            <article class="content-shelf">
-                <h3>Shows, Talentos y Reality TV</h3>
-                <div id="shelf-shows-entertainment" class="shelf-container">
-                    <!-- JS poblará esto con Operación Triunfo, Got Talent, Caso Cerrado, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Cine y Series -->
-            <article class="content-shelf">
-                <h3>Cine, Series y Cultura Pop</h3>
-                <div id="shelf-movies-popculture" class="shelf-container">
-                    <!-- JS poblará esto con Netflix España, DrossRotzank, DELCARAJO TV, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Comedia y Animación -->
-            <article class="content-shelf">
-                <h3>Comedia y Animación</h3>
-                <div id="shelf-comedy-animation" class="shelf-container">
-                    <!-- JS poblará esto con enchufetv, CasiCreativo, Cartoon Network LA, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Deportes -->
-            <article class="content-shelf">
-                <h3>Deportes</h3>
-                <div id="shelf-sports" class="shelf-container">
-                    <!-- JS poblará esto con Drafteados, FC Barcelona, NBA en Español, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Ciencia y Curiosidades -->
-            <article class="content-shelf">
-                <h3>Ciencia, Educación y Curiosidades</h3>
-                <div id="shelf-science-education" class="shelf-container">
-                    <!-- JS poblará esto con VisualPolitik, CdeCiencia, CuriosaMente, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Gaming -->
-            <article class="content-shelf">
-                <h3>Gaming</h3>
-                <div id="shelf-gaming" class="shelf-container">
-                    <!-- JS poblará esto con JuegaGerman, Rubius Z, Miriam Petricor, etc. -->
-                </div>
-            </article>
-
-            <!-- Estantería de Biblioteca -->
-            <article class="content-shelf">
-                <h3>Biblioteca</h3>
-                <div id="shelf-books" class="shelf-container">
-                    <!-- JS poblará esto usando books-data.js -->
-                </div>
-            </article>
-        </section>
-               <!-- ======================================================= -->
-        <!-- ==        SECCIÓN DE SUGERENCIAS DE LA COMUNIDAD     == -->
+  <!-- ======================================================= -->
+        <!-- ==        NUEVA SECCIÓN: AMIGOS Y COLABORADORES      == -->
         <!-- ======================================================= -->
-        <section id="community-picks">
+        <section id="friends-section">
             <div class="container">
-                <h2>Sugerencias de la Comunidad</h2>
-                <div id="community-carousel" class="shelf-container">
-                    <!-- Las tarjetas de sugerencias se cargarán aquí -->
+                <div class="community-header"> <!-- Reutilizamos el estilo del header -->
+                    <h2>Mis Amigos</h2>
+                    <p class="community-subtitle">El aprendizaje es mejor cuando se comparte. Estas son algunas de las personas increíbles que he conocido en el camino.</p>
+                </div>
+                <div id="friends-grid-container">
+                    <!-- Las tarjetas de amigos se cargarán aquí -->
                 </div>
             </div>
         </section>
+    </div>
+</section>
+        <section id="content-shelves" class="container">
+            
+        <!-- Nuevo Encabezado con Título y Descripción -->
+     <!-- ======================================================= -->
+<!-- ==        BLOQUE DE REEMPLAZO (HTML SIMPLIFICADO)    == -->
+<!-- ======================================================= -->
+<div class="shelves-header">
+    <h2>Explora Mis Favoritos</h2>
+    <p>Esta es mi colección personal de creadores, artistas y más. Usa los filtros para encontrar exactamente lo que buscas o simplemente explora las estanterías.</p>
+</div>
 
-        
+<!-- Contenedor de los Controles de Filtro (sin botón) -->
+<div class="filter-controls">
+   
+    <!-- Filtro de Nivel CEFR (Slider) -->
+    <div class="filter-group">
+        <label for="cefr-slider">Elige tu nivel:</label>
+        <input type="range" id="cefr-slider" min="0" max="6" value="0" step="1">
+        <div class="cefr-labels">
+            <span>Todos</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span>
+        </div>
+        <p id="cefr-description">Mueve el slider para filtrar por nivel y ver qué puedes esperar.</p>
+    </div>
+
+    <!-- Filtro de País (Dropdown Nativo) -->
+    <div class="filter-group">
+        <label for="country-filter">Filtra por acento/país:</label>
+        <select id="country-filter">
+            <!-- Las opciones se cargarán aquí con JS -->
+        </select>
+  
+</div>
+</div>
+
+        <!-- Las estanterías ahora están dentro de un contenedor principal -->
+        <div id="shelves-wrapper">
+            <!-- Estantería Especial para Principiantes -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-play-circle"></i> Para Empezar: Input Comprensible</h3>
+                <p class="shelf-description">Si eres principiante, te recomiendo empezar aquí. Estos canales están diseñados para ser entendidos fácilmente.</p>
+                <div id="shelf-comprehensible-input" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Creadores de Contenido y Vlogs -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-camera-retro"></i> Vlogs</h3>
+                <div id="shelf-vlogs-lifestyle" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Música -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-music"></i> Música</h3>
+                <div id="shelf-music" class="shelf-container"></div>
+            </article>
+            
+            <!-- Nueva Estantería de Podcasts -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-podcast"></i> Podcasts</h3>
+                <div id="shelf-podcasts" class="shelf-container"></div>
+            </article>
+            
+            <article class="content-shelf">
+                <h3><i class="fas fa-user"></i> Personalidades</h3>
+                <p class="shelf-description">Sigue a estas figuras públicas en Instagram para una dosis diaria de español en un contexto real y cotidiano.</p>
+                <div id="shelf-personalities" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Shows y Entretenimiento -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-star"></i> Shows, Talentos y Reality TV</h3>
+                <div id="shelf-shows-entertainment" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Cine y Series -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-film"></i> Cine, Series y Cultura Pop</h3>
+                <div id="shelf-movies-popculture" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Comedia y Animación -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-laugh"></i> Comedia y Animación</h3>
+                <div id="shelf-comedy-animation" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Deportes -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-basketball-ball"></i> Deportes</h3>
+                <div id="shelf-sports" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Ciencia y Curiosidades -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-flask"></i> Ciencia, Educación y Curiosidades</h3>
+                <div id="shelf-science-education" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Gaming -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-gamepad"></i> Gaming</h3>
+                <div id="shelf-gaming" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Biblioteca -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-book"></i> Biblioteca</h3>
+                <div id="shelf-books" class="shelf-container"></div>
+            </article>
+            
+        </div>
     <!-- ======================= -->
     <!--  MODAL PARA LOS LIBROS  -->
     <!-- ======================= -->
@@ -533,7 +616,40 @@
     </div>
     <div id="picks-modal-overlay"></div>
 </div>
+   <!-- ======================================================= -->
+<!-- ==     MODAL DE AMIGOS (VERSIÓN FINAL Y DETALLADA)   == -->
+<!-- ======================================================= -->
+<div id="friends-modal" class="picks-modal-overlay hidden">
+    <div class="picks-modal-content">
+        <button id="friends-modal-close-btn" class="modal-close-btn">&times;</button>
+        
+        <!-- Header del Modal con Imagen y Nombre -->
+        <div class="modal-header">
+            <img id="modal-friend-img" src="" alt="Foto de perfil del amigo" class="modal-image">
+            <h3 id="modal-friend-name"></h3>
+            <div id="modal-friend-logos" class="country-logos-container">
+                <!-- Los logos de países se cargarán aquí -->
+            </div>
+        </div>
 
+        <!-- Vídeo Embebido -->
+        <div id="modal-friend-embed" class="modal-video-embed-area">
+            <!-- El iframe del vídeo se cargará aquí -->
+        </div>
+
+        <!-- Descripción Larga -->
+        <div class="modal-long-description-area">
+             <h4>Sobre Nuestra Colaboración</h4>
+             <p id="modal-friend-long-desc"></p>
+        </div>
+
+        <!-- Botón de Enlace Externo -->
+        <a id="modal-friend-link" href="#" target="_blank" class="button-link">
+            Visitar su Perfil <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+    <div id="friends-modal-overlay"></div>
+</div>
 
     </main>
     <footer id="main-footer-placeholder"></footer>
@@ -567,7 +683,11 @@
 <script src="js/hero-data.js"></script>
 <script src="js/extra-loader.js"></script>
 <script src="js/extra-data.js"></script>
-
+<script src="js/friends-data.js"></script>
+<script src="js/friends-loader.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/webtoon-data.js"></script>
+<script src="js/webtoon-loader.js"></script>
 <script src="../../js/navbar-loader.js" defer></script>
 <script src="../../js/footer-loader.js" defer></script>
 </html>

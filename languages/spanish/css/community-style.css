@@ -206,6 +206,7 @@
 @media (max-width: 768px) {
     .cervantes-card { 
         flex-direction: column; 
+        justify-content: center;
         text-align: center; 
     }
     .key-offerings { 
@@ -213,6 +214,7 @@
     }
     .cervantes-buttons { 
         justify-content: center; 
+
     }
 }
 /* --- NUEVOS ESTILOS (Paso 2) --- */
@@ -327,10 +329,18 @@
 @media (max-width: 900px) {
     .cervantes-card {
         flex-direction: column;
+        padding: 3.5rem;
     }
     .cervantes-gallery {
         width: 100%;
         max-width: 500px;
+    }
+    .cervantes-buttons .button-link{
+        font-size: 0.9rem;
+        
+    }
+    .cervantes-details-column h3{
+        font-size: 2rem;
     }
 }
 

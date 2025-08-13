@@ -364,3 +364,112 @@
     margin: 0 auto; /* Centra el subtítulo */
     line-height: 1.5;
 }
+
+/* ======================================================= */
+/* ==       NUEVOS ESTILOS (SPOTLIGHT: WEBTOON)         == */
+/* ======================================================= */
+
+/* --- Spotlight Card: WEBTOON --- */
+#spotlight-webtoon {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    color: #000;
+}
+#spotlight-webtoon .spotlight-title {
+    color: #00d564; /* Verde característico de WEBTOON */
+}
+#spotlight-webtoon .button-link {
+    background-color: #00d564;
+    color: #fff;
+}
+#spotlight-webtoon .button-link:hover {
+    background-color: #00b856;
+}
+
+/* Contenedor de las portadas de los webtoons */
+#spotlight-webtoon .webtoon-recommendations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+#spotlight-webtoon .webtoon-item img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+#spotlight-webtoon .webtoon-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ======================================================= */
+/* ==       NUEVOS ESTILOS (SPOTLIGHT: ANKI)            == */
+/* ======================================================= */
+
+/* --- Spotlight Card: Anki --- */
+#spotlight-anki {
+    background-color: #f0f8ff; /* Azul cielo muy pálido, color "papel" */
+    color: #333;
+}
+#spotlight-anki .spotlight-title {
+    color: #0073cf; /* Azul característico de Anki */
+}
+#spotlight-anki .button-link {
+    background-color: #0073cf;
+    color: #fff;
+}
+#spotlight-anki .button-link:hover {
+    background-color: #005b9f;
+}
+
+/* Contenedor de las tarjetas de ejemplo */
+#spotlight-anki .anki-sample-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Estilo de cada tarjeta de ejemplo */
+.anki-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 280px;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.anki-card .card-front, .anki-card .card-back {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.anki-card .card-front {
+    color: #444;
+}
+
+.anki-card .card-back {
+    color: #0073cf;
+    font-weight: 700;
+    border-top: 2px solid #f0f0f0; /* Línea separadora */
+}
+
+/* Efecto de "stack" y hover interactivo */
+.anki-card:nth-child(1) { transform: rotate(-3deg); }
+.anki-card:nth-child(2) { transform: rotate(2deg) scale(1.02); z-index: 2; }
+.anki-card:nth-child(3) { transform: rotate(-2deg); }
+
+#spotlight-anki .anki-sample-cards:hover .anki-card {
+    transform: rotate(0) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.spotlight-logo-link.anki-logo .spotlight-logo {
+    width: 80px; /* or any size you want */
+   margin:-3rem;
+}
