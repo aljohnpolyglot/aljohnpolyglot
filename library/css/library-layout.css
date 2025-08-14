@@ -48,7 +48,7 @@
 /* --- Library Content Area (Middle Section) --- */
 #library-content-area {
     flex: 1; /* Takes up remaining space */
-    min-width: ; /* Important for flex children to prevent overflow */
+    min-width: 600px; /* Important for flex children to prevent overflow */
      background-color: rgba(253, 245, 230, 0.1); 
      padding: 10px; 
     border-radius: 5px; 
@@ -252,7 +252,7 @@
 }
 #pagination-controls button {
     background-color: var(--primary-accent-color);
-    color: white;
+    color: var(--oceandeepblue);
     border: none;
     padding: 10px 18px; /* Slightly larger buttons */
     border-radius: var(--border-radius-small);

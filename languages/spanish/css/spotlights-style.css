@@ -473,3 +473,76 @@
     width: 80px; /* or any size you want */
    margin:-3rem;
 }
+/* ======================================================= */
+/* ==   BLOQUE DE REEMPLAZO (CSS DEL LIBRO DE OLLY)     == */
+/* ======================================================= */
+
+/* --- Spotlight Card: Olly Richards' Book (Versión Corregida) --- */
+#spotlight-olly {
+    background-color: #124267;
+    color: #fff;
+}
+
+/* 
+ * >>>>> CAMBIO CLAVE AQUÍ <<<<<
+ * Hacemos que la columna visual sea un contenedor flex para centrar su contenido.
+*/
+#spotlight-olly .spotlight-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spotlight-olly .spotlight-title {
+    color: #F4D22D; 
+    font-family: 'Roboto Slab', serif;
+}
+#spotlight-olly .spotlight-description {
+    color: #e0e0e0;
+    font-style: italic;
+    border-left: 3px solid #F57222;
+    padding-left: 1.5rem;
+    max-width: 450px;
+}
+
+/* Contenedor de la imagen del libro (sin cambios) */
+#spotlight-olly .olly-book-container {
+    padding: 1rem;
+}
+#spotlight-olly .olly-book-container img {
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+#spotlight-olly .olly-book-container:hover img {
+    transform: rotate(3deg) scale(1.05);
+}
+
+/* Lista de características del libro (sin cambios) */
+#spotlight-olly .olly-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    max-width: 350px;
+}
+#spotlight-olly .olly-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+#spotlight-olly .olly-features .fa-check-circle {
+    color: #F57222;
+}
+
+/* Botón "Ver en Amazon" (sin cambios) */
+#spotlight-olly .button-link {
+    background-color: #F57222;
+    color: #fff;
+}
+#spotlight-olly .button-link:hover {
+    background-color: #d15b13;
+}

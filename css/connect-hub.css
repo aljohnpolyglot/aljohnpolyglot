@@ -1,0 +1,168 @@
+/* css/connect-hub.css */
+
+.connect-hub-section {
+    padding: 6rem 2rem;
+    background-color: #121212; /* A very dark, premium background */
+    color: #f0f0f0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.connect-hub-section .section-title {
+    color: #ffffff;
+}
+
+.connect-hub-section .section-subtitle {
+    color: #b3b3b3;
+}
+
+.hub-eyebrow {
+    display: block;
+    text-align: center;
+    color: #00aaff; /* A bright, techy accent color */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+}
+
+.hub-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hub-visual {
+    flex-basis: 55%;
+    perspective: 1500px; /* For a subtle 3D effect on hover */
+}
+
+.hub-text {
+    flex-basis: 45%;
+    text-align: left;
+}
+
+.hub-text h3 {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hub-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+/* Features List Styling */
+.hub-features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+}
+
+.hub-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.hub-features-list li i {
+    color: #00aaff; /* Match the eyebrow color */
+    font-size: 1.2rem;
+    width: 25px; /* Ensures consistent alignment */
+    text-align: center;
+}
+
+/* CTA Button */
+.btn-hub-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background-color: #00aaff;
+    color: #121212;
+    font-weight: 700;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-hub-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+}
+
+
+/* Browser Mockup Styling */
+.browser-mockup {
+    border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+    background-color: #2e2e2e;
+    overflow: hidden;
+    transform: rotateY(-10deg) rotateX(5deg); /* Subtle 3D tilt */
+    transition: transform 0.4s ease;
+}
+
+.hub-visual:hover .browser-mockup {
+    transform: rotateY(0) rotateX(0); /* Flatten on hover */
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #3c3c3c;
+}
+
+.dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.address-bar {
+    flex-grow: 1;
+    background-color: #252525;
+    color: #a0a0a0;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.browser-content img {
+    width: 100%;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hub-content-wrapper {
+        flex-direction: column;
+    }
+    .hub-text {
+        text-align: center;
+    }
+    .hub-features-list li {
+        justify-content: center;
+    }
+}

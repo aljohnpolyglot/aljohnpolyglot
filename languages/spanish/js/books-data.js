@@ -108,7 +108,7 @@ const booksData = [
         id: 'cinco-esquinas',
         title: 'Cinco esquinas',
         author: 'Mario Vargas Llosa',
-        coverImage: 'https://m.media-amazon.com/images/I/61mwiLwd1GL._UF1000,1000_QL80_.jpg', // Placeholder
+        coverImage: 'https://m.media-amazon.com/images/I/81UhbS5gMrL._UF1000,1000_QL80_.jpg', // Placeholder
         shortDesc: 'Un thriller ambientado en el Perú de Fujimori que explora el poder del periodismo amarillo.',
         longDesc: 'La novela se desarrolla durante los últimos meses de la dictadura de Fujimori. A través de una trama que involucra chantaje, erotismo y política, Vargas Llosa reflexiona sobre cómo el periodismo sensacionalista puede ser utilizado como un arma política.',
         cefr: ['C1'],

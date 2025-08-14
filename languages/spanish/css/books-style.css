@@ -163,3 +163,18 @@
 #modal-book-links .button-link:hover {
     background-color: #f56b0d;
 }
+
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+    }
+    #modal-book-title {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    #modal-book-author {
+    font-size: 1.5rem;
+}   
+}

@@ -80,10 +80,7 @@ html {
     margin-bottom: var(--spacing-xl);
     box-shadow: 0 4px 15px var(--color-shadow);
 }
-.filter-content {
-    display: flex;
-   flex-direction: column;
-}
+
 .filter-group {
     /* This is the key to the responsive and stable layout.
        Each group will try to be 300px wide, will grow to fill space,

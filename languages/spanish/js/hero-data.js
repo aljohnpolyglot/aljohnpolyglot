@@ -8,11 +8,18 @@ const heroGalleryData = [
         description: 'Con el Embajador de España, Miguel Utray. Una oportunidad increíble para conectar con figuras importantes de la comunidad hispanohablante.'
     },
     {
-        id: 'hero-chf-tertulia',
-        src: 'images/hero/club_hispanohablantes_tertulia_2024_activity_script_reading_aljohn.jpg',
-        alt: 'Aljohn participando en una tertulia del Club de Hispano-Hablantes',
-        description: 'Participando en una lectura de guion durante una tertulia del Club de Hispano-Hablantes. La práctica activa es clave.'
+        id: 'hero-wuilmer-harp',
+        src: 'images/hero/wuilmer_lopez_harp.JPEG',
+        alt: 'con Wuilmer López',
+        description: 'Disfrutando de la música tradicional con Wuilmer López, un momento especial que conecta Colombia y la musica.'
     },
+    {
+        id: 'hero-flavors-colombia',
+        src: 'images/hero/flavors_of_colombia_event.jpg',
+        alt: 'Evento Flavors of Colombia',
+        description: 'Celebrando la gastronomía y cultura colombiana en el evento Flavors of Colombia. Una experiencia llena de sabor y diversidad.'
+    },
+
    
     {
         id: 'hero-sff-luneta',
@@ -61,5 +68,11 @@ const heroGalleryData = [
         src: 'images/hero/may_spanish_meetup.jpg',
         alt: 'Foto de grupo del meetup de español de mayo',
         description: 'El meetup de mayo. Conociendo a nuevos miembros de la comunidad.'
-    }
+    },
+    {
+        id: 'hero-chf-tertulia',
+        src: 'images/hero/club_hispanohablantes_tertulia_2024_activity_script_reading_aljohn.jpg',
+        alt: 'Aljohn participando en una tertulia del Club de Hispano-Hablantes',
+        description: 'Participando en una lectura de guion durante una tertulia del Club de Hispano-Hablantes. La práctica activa es clave.'
+    },
 ];

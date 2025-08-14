@@ -35,13 +35,13 @@ const creatorsData = [
     },
     {
         id: 'lynette-ladelfa',
-        name: 'Lynette Ladelfa {K4OS)',
+        name: 'Lynette Ladelfa (K4OS)',
         profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhX1LV16uKS40r7SVqbQSoD_t5IczLGZUqBw&s',
         type: 'Artista / Influencer',
         country: 'Argentina',
         flagCode: 'ar',
-        shortDesc: 'Cantante, bailarina y creadora de contenido, miembro del grupo K4OS.',
-        longDesc: 'Lynette es una artista polifacética. Conocida por su talento para el canto y el baile en la comunidad K-Pop y por ser una de las integrantes del proyecto musical K4OS. En su Instagram comparte su vida y sus pasiones.',
+        shortDesc: 'Bailarina principal y vocalista de K4OS, conocida por su increíble talento en la danza.',
+        longDesc: 'Lynette "Lily" Ladelfa es la bailarina principal de K4OS y una pieza clave en la identidad visual del grupo. Con una formación en grupos de dance cover de K-Pop, aporta una precisión y energía espectaculares a cada coreografía. Además de su talento para el baile, también contribuye como vocalista, completando el sonido del cuarteto.',
         cefr: ['B1', 'B2', 'C1', 'C2'],
         embeddedId: 'jf6dKz521jY',
         aljohnsComment: "Soy un gran fan de K4OS y Lynette es mi favorita jajaja Es tan graciosa y parece divertido estar con ella.",
@@ -89,14 +89,48 @@ const creatorsData = [
         type: 'Artista / Influencer',
         country: 'Argentina',
         flagCode: 'ar',
-        shortDesc: 'Creador de contenido, cantante y miembro del grupo K4OS.',
-        longDesc: 'Tauro es una de las mentes creativas detrás de K4OS. Además de su faceta musical, es un youtuber y streamer con una gran comunidad, conocido por su humor y su contenido de entretenimiento.',
+        shortDesc: 'La líder y rapera principal de K4OS, con un carisma arrollador.',
+        longDesc: 'Mariana "Tau" Taurozzi es la líder y rapera principal de K4OS, marcando el ritmo y la actitud del grupo. Antes de K4OS, ya era una influencer y creadora de contenido muy popular, conocida por su humor y su conexión con la audiencia. Aporta una energía magnética y una gran presencia escénica al proyecto.',
         cefr: ['B1', 'B2', 'C1', 'C2'],
         embeddedId: null,
         aljohnsComment: "Otra rubia de k4os. Mi segunda favorita junto a Lynette. Y para mi la más guapa del grupo",
         socialLinks: { instagram: 'https://www.instagram.com/taurozzy/?hl=es' },
         tags: ['personalidades',]
     },
+    {
+    id: 'k4os-mechi-bitzer',
+    name: 'Mechi Bitzer (K4OS)',
+    profilePic: 'https://images.genius.com/e079dfd90ef3409c952955ab4cb74b9c.736x736x1.jpg',
+    type: 'Artista / Influencer',
+    country: 'Argentina',
+    flagCode: 'ar',
+    shortDesc: 'Vocalista principal y bailarina del grupo de pop argentino K4OS.',
+    longDesc: 'Mercedes "Mechi" Bitzer es conocida por su potente voz, siendo una de las vocalistas principales de K4OS. Antes de unirse al grupo, ya era una influencer reconocida, conectando con una gran audiencia a través de su carisma y contenido.',
+    cefr: ['B1', 'B2', 'C1', 'C2'],
+    embeddedId: null,
+    aljohnsComment: "La voz de Mechi es increíble y tiene una presencia escénica espectacular. Es una parte fundamental del sonido de K4OS.",
+    socialLinks: {
+        instagram: 'https://www.instagram.com/mechibitzer/'
+    },
+    tags: ['personalidades', 'música']
+},
+{
+    id: 'k4os-ines-civit',
+    name: 'Ine Civit (K4OS)',
+    profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX28J33stSZtiR0Ebl1UWL3r0RlC_VOvbJZw&s',
+    type: 'Artista / Cantautora',
+    country: 'Argentina',
+    flagCode: 'ar',
+    shortDesc: 'Vocalista principal y compositora, con una increíble trayectoria como solista.',
+    longDesc: 'Inés "Ine" Civit es una de las vocalistas principales y una talentosa compositora en K4OS. Antes de unirse al grupo, ya subía covers y canciones propias, y tuvo una memorable participación en Got Talent Argentina, donde demostró su enorme talento vocal.',
+    cefr: ['B1', 'B2', 'C1', 'C2'],
+    embeddedId: 'video-id-aqui', // Puedes poner aquí el ID del vídeo de su audición en Got Talent
+    aljohnsComment: "¡Vi su audición en Got Talent Argentina literalmente antes de que se uniera a K4OS y me siento increíblemente orgulloso! Sabía que tenía un talento especial. Verla ahora en el grupo es genial.",
+    socialLinks: {
+        instagram: 'https://www.instagram.com/inescivit/'
+    },
+    tags: ['personalidades', 'música']
+},
     {
         id: 'alaska-uruguay',
         name: 'Alaska',
@@ -455,6 +489,22 @@ const creatorsData = [
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCW912y0Ym-Q3zG3L0Y5e3gA', instagram: 'https://www.instagram.com/joaquina/', spotify: 'https://open.spotify.com/intl-es/artist/081F5qgtVMfcHZKDY1IEa0' },
     tags: ['música', 'personalidades']
 },
+
+{
+    id: 'k4os',
+    name: 'K4OS',
+    profilePic: 'https://yt3.googleusercontent.com/8gOjAPErYBLjwAS477ioac7EAwzRCFlW8sGiZoM4o1oMXuRurDXKyDLxZDkIEYywNh6LubmUAGE=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    type: 'Banda Musical',
+    country: 'Argentina',
+    flagCode: 'ar',
+    shortDesc: ' es un grupo de chicas argentino bajo Warner Music Argentina y Grand Move Records Argentina S.A.',
+    longDesc: 'K4os (escrito en letras mayúsculas) es un grupo de chicas argentino bajo Warner Music Argentina y Grand Move Records Argentina S.A. El mismo está compuesto por cuatro miembros e hicieron su debut el 7 de febrero de 2024 con su single "Caos".',
+    cefr: ['A2', 'B1'],
+    embeddedId: 'l8x1kMMruxo', // Uff Baby
+    aljohnsComment: "¡Mi grupo favorito! Luelson me lo descubrió y me enganché literalmente. Veo sus directos en Instagram y sus nuevos videoclips y vlogs inmediatamente. También estudio sus coreografías. Verlos es lo primero que haría nada más llegar a Argentina..",
+    socialLinks: { youtube: 'https://www.youtube.com/@K4OS', instagram: 'https://www.instagram.com/k4os.oficial/', spotify: 'https://open.spotify.com/artist/0jwhC8DIMe1p89BXvsMnYj' },
+    tags: ['música']
+},
 {
     id: 'mafalda-cardenal',
     name: 'Mafalda Cardenal',
@@ -686,7 +736,7 @@ const creatorsData = [
     longDesc: 'Pablo Alborán ha dominado las listas de éxitos con su estilo romántico y su increíble talento vocal y compositivo. Sus canciones son conocidas por su intensidad emocional y arreglos musicales sofisticados.',
     cefr: ['B1', 'B2'],
     embeddedId: 'POP9_phDB2g', // Dónde está el amor
-    aljohnsComment: "La voz de Pablo Alborán es simplemente espectacular. Sus canciones son perfectas para una tarde tranquila y para apreciar la belleza de las letras en español.",
+    // aljohnsComment: "La voz de Pablo Alborán es simplemente espectacular. Sus canciones son perfectas para una tarde tranquila y para apreciar la belleza de las letras en español.",
     socialLinks: { youtube: 'https://www.youtube.com/@pabloalboran/featured', instagram: 'https://www.instagram.com/pabloalboran/', spotify: 'https://open.spotify.com/artist/5M9Bb4adKAgrOFOhc05Y50' },
     tags: ['música', 'personalidades']
 },
@@ -701,7 +751,7 @@ const creatorsData = [
     longDesc: 'Camilo ha creado un sonido muy personal que mezcla pop, ritmos urbanos y letras que celebran el amor de una manera muy positiva y peculiar. Su estilo vocal y su forma de escribir son instantáneamente reconocibles.',
     cefr: ['A2', 'B1'],
     embeddedId: 'qKp1f7Vn9dM', // El Mismo Aire
-    aljohnsComment: "La música de Camilo siempre me pone de buen humor. Es muy creativa y diferente a todo lo demás. Ideal para aprender un español más poético pero a la vez coloquial.",
+    aljohnsComment: "Además de ser un buen músico, es mi modelo a seguir si algún día me convierto en marido, después de ver sus vídeos con su esposa y sus bodas. Sabes que sus canciones están compuestas desde lo más profundo de su corazón.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCw0aKHSGFGyrnMeVnHeYMyw', instagram: 'https://www.instagram.com/camilo/', spotify: 'https://open.spotify.com/intl-es/artist/28gNT5KBp7IjEOQoevXf9N' },
     tags: ['música', 'personalidades']
 },
@@ -716,7 +766,7 @@ const creatorsData = [
     longDesc: 'Humberto "HUMBE" Rodríguez es conocido por su enfoque artístico único y su producción musical introspectiva. Sus canciones a menudo exploran temas filosóficos y emocionales, lo que le ha valido el reconocimiento de la crítica.',
     cefr: ['B2', 'C1'],
     embeddedId: '7flT6J_1P7Y', // Te Lo Prometo
-    aljohnsComment: "HUMBE es un artista increíblemente creativo. Su música es diferente y te hace sentir cosas. 'Te Lo Prometo' es una canción preciosa y su álbum 'ENTROPÍA' es una joya.",
+    // aljohnsComment: "HUMBE es un artista increíblemente creativo. Su música es diferente y te hace sentir cosas. 'Te Lo Prometo' es una canción preciosa y su álbum 'ENTROPÍA' es una joya.",
     socialLinks: { youtube: 'https://www.youtube.com/@HUMBE', instagram: 'https://www.instagram.com/humbe/', spotify: 'https://open.spotify.com/intl-es/artist/1b7AEdUSudOQoZF5ebUxCL' },
     tags: ['música', 'personalidades']
 },
@@ -731,7 +781,7 @@ const creatorsData = [
     longDesc: 'Ana Sofi W. se dio a conocer en plataformas como TikTok, donde sus canciones sobre amor y relaciones resonaron fuertemente. Su estilo es íntimo, dulce y se apoya en melodías sencillas de guitarra o ukelele.',
     cefr: ['A2', 'B1'],
     embeddedId: 'Tgec9SItZG8', // solo tu y yo
-    aljohnsComment: "Descubrí a Ana Sofi en redes y sus canciones son muy tiernas y fáciles de aprender. Son perfectas para principiantes que quieren cantar en español.",
+    // aljohnsComment: "Descubrí a Ana Sofi en redes y sus canciones son muy tiernas y fáciles de aprender. Son perfectas para principiantes que quieren cantar en español.",
     socialLinks: { youtube: 'https://www.youtube.com/@AnaSofiW', instagram: 'https://www.instagram.com/anasofiw/', spotify: 'https://open.spotify.com/intl-es/artist/2lyO70w7by5Ekhac2H6zS0' },
     tags: ['música', 'personalidades']
 },
@@ -746,7 +796,7 @@ const creatorsData = [
     longDesc: 'Danna Paola es una fuerza de la naturaleza. Con una carrera que empezó en su niñez, ha evolucionado hasta convertirse en una de las reinas del pop en español, con himnos de empoderamiento y desamor. Su papel en "Élite" la catapultó a la fama mundial.',
     cefr: ['B1', 'B2'],
     embeddedId: '42qe8aMqXts', // Vuelve, Vuelve con David Bisbal
-    aljohnsComment: "Danna tiene una voz y una presencia escénica increíbles. Su música es poderosa y sus colaboraciones son siempre un éxito. Además, ¡es la voz de Rapunzel en español latino!",
+    aljohnsComment: "La vi en Elite y puse esa escena de la ducha en repetición, es broma. Solo diría que canta muy bien y es un orgullo para México. Además, ¡es la voz de Rapunzel en español latino!",
     socialLinks: { youtube: 'https://www.youtube.com/user/DannaPaola', instagram: 'https://www.instagram.com/dannapaola/', spotify: 'https://open.spotify.com/intl-es/artist/5xSx2FM8mQnrfgM1QsHniB' },
     tags: ['música', 'personalidades']
 },
@@ -761,7 +811,7 @@ const creatorsData = [
     longDesc: 'Formado por Hanna y Ashley Pérez, Ha*Ash es famoso por sus himnos de desamor y empoderamiento. Su música fusiona pop, rock y country, y son conocidas por la armonía de sus voces y la fuerza de sus letras.',
     cefr: ['B1', 'B2'],
     embeddedId: 'Uws510cVia4', // Te Dejo en Libertad
-    aljohnsComment: "Nadie canta al desamor como Ha*Ash. Sus canciones son perfectas para cantar a todo pulmón. 'Te Dejo en Libertad' es un clásico absoluto.",
+    // aljohnsComment: "Nadie canta al desamor como Ha*Ash. Sus canciones son perfectas para cantar a todo pulmón. 'Te Dejo en Libertad' es un clásico absoluto.",
     socialLinks: { youtube: 'https://www.youtube.com/user/haashoficial', instagram: 'https://www.instagram.com/haashoficial/', spotify: 'https://open.spotify.com/intl-es/artist/5xd2Tg7Zo8755eCy8Gxkp8' },
     tags: ['música', 'personalidades']
 },
@@ -776,7 +826,7 @@ const creatorsData = [
     longDesc: 'Jesse & Joy han ganado innumerables premios por su música sincera y bien elaborada. Sus canciones, que a menudo tratan sobre el amor en todas sus facetas, se han convertido en parte de la banda sonora de toda una generación en Latinoamérica.',
     cefr: ['A2', 'B1'],
     embeddedId: 'P2hM9CLAMu4', // Me Soltaste
-    aljohnsComment: "La voz de Joy es simplemente angelical. 'Me Soltaste' es una de las baladas más tristes y bonitas que existen. Su español es muy claro y fácil de entender.",
+    aljohnsComment: "Uno de mis favoritos, algo que escucharás en los SUV mientras vas al trabajo.",
     socialLinks: { youtube: 'https://www.youtube.com/user/jesseyjoyoficial', instagram: 'https://www.instagram.com/jesseyjoy/', spotify: 'https://open.spotify.com/intl-es/artist/1mX1TWKpNxDSAH16LgDfiR' },
     tags: ['música', 'personalidades']
 },
@@ -791,7 +841,7 @@ const creatorsData = [
     longDesc: 'Surgidos del reality "La Banda", CNCO se convirtió en un fenómeno global. Con miembros de diferentes países, su música es una mezcla de pop latino y reguetón con coreografías y un estilo que enamoró a millones de fans.',
     cefr: ['A2', 'B1'],
     embeddedId: '7jpqqBX-Myw', // Reggaetón Lento (Bailemos)
-    aljohnsComment: "'Reggaetón Lento' fue un éxito masivo por una razón. Es una canción increíblemente pegadiza. Su música es muy divertida y genial para practicar español en un ambiente de fiesta.",
+    aljohnsComment: "'Me entristeció descubrir que disolvieron el grupo. One Direction, pero latino.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCqtHOqxV71OQ-fmLdI8rBYw', instagram: 'https://www.instagram.com/cncomusic/', spotify: 'https://open.spotify.com/intl-es/artist/0eecdvMrqBftK0M1VKhaF4' },
     tags: ['música']
 },
@@ -806,26 +856,11 @@ const creatorsData = [
     longDesc: 'Shakira es una de las artistas más influyentes del mundo. Su música fusiona pop, rock, y ritmos latinos y árabes. Con una carrera que abarca décadas, ha producido innumerables éxitos globales y es célebre por su talento como compositora y sus icónicos bailes.',
     cefr: ['B1', 'B2'],
     embeddedId: 'oBofuVYDoG4', // Acróstico
-    aljohnsComment: "Shakira es una leyenda viviente. 'Acróstico' me emocionó mucho. Su discografía es tan variada que puedes usarla para aprender todo tipo de vocabulario y ritmos.",
+    aljohnsComment: "Es Shakira, no hace falta que lo explique más.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCYLNGLIzMhRTi6ZOLjAPSmw', instagram: 'https://www.instagram.com/shakira/', spotify: 'https://open.spotify.com/artist/0EmeFodog0BfCgMzAIvKQp' },
     tags: ['música', 'personalidades']
 },
 
-{
-    id: 'k4os',
-    name: 'K4OS',
-    profilePic: 'https://yt3.googleusercontent.com/8gOjAPErYBLjwAS477ioac7EAwzRCFlW8sGiZoM4o1oMXuRurDXKyDLxZDkIEYywNh6LubmUAGE=s120-c-k-c0x00ffffff-no-rj', // Placeholder
-    type: 'Banda Musical',
-    country: 'México',
-    flagCode: 'mx',
-    shortDesc: 'Grupo de pop urbano y electrónico que mezcla música con creación de contenido.',
-    longDesc: 'K4OS es un proyecto musical que también tiene una fuerte presencia en YouTube con vlogs y retos, creando una conexión más personal con sus seguidores. Su música es energética, bailable y sigue las tendencias actuales.',
-    cefr: ['A2', 'B1'],
-    embeddedId: 'l8x1kMMruxo', // Uff Baby
-    aljohnsComment: "Su música es muy divertida y pegadiza. Son un buen ejemplo de cómo los artistas modernos usan múltiples plataformas para conectar con su audiencia.",
-    socialLinks: { youtube: 'https://www.youtube.com/@K4OS', instagram: 'https://www.instagram.com/k4os.oficial/', spotify: 'https://open.spotify.com/artist/0jwhC8DIMe1p89BXvsMnYj' },
-    tags: ['música']
-},
 {
     id: 'luis-miguel',
     name: 'Luis Miguel',
@@ -837,7 +872,7 @@ const creatorsData = [
     longDesc: 'Luis Miguel es un ícono. Su carrera abarca décadas y géneros, desde boleros y mariachi hasta baladas pop. Es famoso por su increíble potencia vocal y su presencia escénica. Su serie biográfica en Netflix revivió su popularidad para una nueva generación.',
     cefr: ['B1', 'B2'],
     embeddedId: 'wOjzo02Tmck', // La Incondicional
-    aljohnsComment: "No puedes aprender español sin escuchar a Luis Miguel. 'La Incondicional' es una obra maestra. Su dicción es perfecta, lo que lo hace increíble para la práctica de escucha.",
+    aljohnsComment: "No sabía que me gustaría escuchar canciones antiguas.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCi-gaGAb_RLF0a440p-62hA', instagram: 'https://www.instagram.com/lmxlm/', spotify: 'https://open.spotify.com/intl-es/artist/2nszmSgqreHSdJA3zWPyrW' },
     tags: ['música', 'personalidades']
 },
@@ -932,7 +967,7 @@ const creatorsData = [
     longDesc: 'Muestra las audiciones más impactantes, divertidas y emocionantes del programa. Incluye actuaciones de magia, canto, baile y todo tipo de habilidades. Es genial para aprender vocabulario relacionado con el arte y las emociones.',
     cefr: ['B1', 'B2'],
     embeddedId: '8UwHQ8X_mCc', // Golden Buzzer de una niña refugiada ucraniana
-    aljohnsComment: "Siempre me sorprendo con el talento que hay en este programa. Las reacciones del jurado y las historias de los concursantes son una gran fuente de español emocional y espontáneo.",
+    aljohnsComment: "Risto es como Simon Cowell, no sé, pero creo que esa es la norma de esta franquicia de Got Talent, tener un juez así, jajaa.ja.",
     socialLinks: { youtube: 'https://www.youtube.com/@GotTalentEspana', instagram: 'https://www.instagram.com/gottalenttv' },
     tags: ['shows y tv']
 },
@@ -947,7 +982,7 @@ const creatorsData = [
     longDesc: 'La Dra. Ana María Polo arbitra disputas legales entre litigantes. El programa es famoso por sus casos exagerados y dramáticos, lo que lo convierte en una fuente inagotable de vocabulario coloquial, jerga y expresiones de toda Latinoamérica.',
     cefr: ['B2', 'C1', 'C2'],
     embeddedId: 'rgFmB8pY02o', // Ejemplo de un caso
-    aljohnsComment: "¡He dicho, Caso Cerrado! Este programa es un clásico. Es un desafío increíble para la comprensión auditiva por la cantidad de acentos y la rapidez con la que hablan. ¡Y es súper entretenido!",
+    aljohnsComment: "Sugerido por mi amiga Iceah, el vídeo en el que la chica le habla en inglés a Ana María Polo nunca dejará de ser divertido. Es muy emblemático.",
     socialLinks: { youtube: 'https://www.youtube.com/@CasoCerrado', instagram: 'https://www.instagram.com/casocerradotelemundo' },
     tags: ['shows y tv']
 },
@@ -962,7 +997,7 @@ const creatorsData = [
     longDesc: 'El formato de "La Voz" consiste en audiciones a ciegas donde los coaches eligen a los concursantes solo por su talento vocal. El canal "La Voz Global" recopila actuaciones de las versiones de España, México, Argentina, etc., exponiéndote a una gran variedad de acentos.',
     cefr: ['B1', 'B2'],
     embeddedId: 'QoOkA2s7cDM', // Ejemplo de audición emocionante
-    aljohnsComment: "Me encanta ver las audiciones a ciegas y la reacción de los coaches cuando giran la silla. Es pura emoción y, al ser de diferentes países, es una forma genial de comparar acentos.",
+    // aljohnsComment: "Me encanta ver las audiciones a ciegas y la reacción de los coaches cuando giran la silla. Es pura emoción y, al ser de diferentes países, es una forma genial de comparar acentos.",
     socialLinks: { youtube: 'https://www.youtube.com/c/LaVozKidsEspa%C3%B1a' },
     tags: ['shows y tv']
 },
@@ -977,7 +1012,7 @@ const creatorsData = [
     longDesc: 'Presentado por Pablo Motos, El Hormiguero es una mezcla de entrevistas a celebridades, comedia, divulgación científica y experimentos espectaculares. Es el programa líder de la televisión española y un lugar donde ver a las estrellas más grandes interactuar en un ambiente relajado.',
     cefr: ['B2', 'C1', 'C2'],
     embeddedId: 'N0BJ0cQamWI',
-    aljohnsComment: "Es el show perfecto para ver entrevistas con actores de Hollywood y artistas de todo el mundo hablando en español o interactuando con un traductor. Es muy divertido y te expones a conversaciones muy espontáneas.",
+    aljohnsComment: "El mejor lugar para saber más sobre las celebridades del mundo hispano, aquí es también donde obtengo mi información sobre las celebridades.",
     socialLinks: {
         youtube: 'https://www.youtube.com/@ElHormiguero',
         instagram: 'https://www.instagram.com/elhormiguero'
@@ -1000,6 +1035,27 @@ const creatorsData = [
         socialLinks: { website: 'https://www.hoyhablamos.com/', spotify: 'https://open.spotify.com/show/1puKUN2oF1M5DMt8o4M1bA' },
         tags: ['podcast']
     },
+    // =======================================================
+// ==         ADICIÓN A LA ESTANTERÍA DE PODCASTS         ==
+// =======================================================
+{
+    id: 'massiveball-podcast',
+    name: 'MassiveBall Podcast',
+    profilePic: 'https://i.scdn.co/image/ab67656300005f1ff3ff6983f6300dab14814420',
+    type: 'Podcast de NBA',
+    country: 'España',
+    flagCode: 'es',
+    shortDesc: 'Mi podcast diario para el gimnasio. Me encantan sus debates en la offseason.',
+    longDesc: 'MassiveBall es un podcast de NBA en español diseñado para todos aquellos que buscan pasar un buen rato escuchando noticias, rumores y, sobre todo, mucha opinión sin filtros. Publican tres episodios semanales cubriendo toda la actualidad de la liga.',
+    cefr: ['C1', 'C2'],
+    embeddedId: null, // No hay un vídeo principal, es un podcast
+    aljohnsComment: "Literalmente, escucho esto todos los días en el gimnasio. El contenido es 'peak', especialmente en la offseason cuando se ponen a debatir. ¡Me encanta! Es perfecto para escuchar español de España muy rápido y natural sobre un tema que me apasiona.",
+    socialLinks: {
+        spotify: 'https://open.spotify.com/show/5cFpt8nd2fI5T2EQX97AmS',
+        youtube: 'https://www.youtube.com/@MassiveBall' // También tienen canal de YouTube
+    },
+    tags: ['podcast', 'deportes']
+},
     // =======================================================
 // ==         ESTANTERÍA: CINE, SERIES Y CULTURA POP      ==
 // =======================================================
@@ -1249,7 +1305,7 @@ const creatorsData = [
     embeddedId: 'CEq6_qnZgO4', // Placeholder
     aljohnsComment: "Otro canal de la infancia. Genial para contenido fácil de entender y familiar, tanto animado como con actores reales.",
     socialLinks: { youtube: 'https://www.youtube.com/@MyChannel-t2r' },
-    tags: ['comedia y animación', 'shows y tv']
+    tags: ['comedia y animación',]
 },
 {
     id: 'nick-jr-espanol',
@@ -1279,7 +1335,7 @@ const creatorsData = [
     embeddedId: 'mNB25Y9-IZE', // Placeholder
     aljohnsComment: "Fútbol y animación, una gran combinación. Es muy entretenida y la terminología deportiva es útil si te gustan los deportes.",
     socialLinks: { youtube: 'https://www.youtube.com/c/SupaStrikasEspa%C3%B1ol' },
-    tags: ['comedia y animación', 'deportes']
+    tags: ['comedia y animación',]
 },
 {
     id: 'preguntas-incomodas',
@@ -1292,7 +1348,7 @@ const creatorsData = [
     longDesc: 'Este canal se basa en el humor de las entrevistas en la calle, haciendo preguntas incómodas o absurdas a la gente para capturar sus reacciones genuinas. Es perfecto para escuchar español de la calle sin filtros, con mucha jerga y acento de España.',
     cefr: ['B2', 'C1'],
     embeddedId: 'oaZ6qJPcOtc', // Placeholder
-    aljohnsComment: "Este canal es muy gracioso. Las reacciones de la gente son espontáneas y te expones al tipo de conversaciones y bromas que realmente escucharías en la calle en España.",
+    // aljohnsComment: "Este canal es muy gracioso. Las reacciones de la gente son espontáneas y te expones al tipo de conversaciones y bromas que realmente escucharías en la calle en España.",
     socialLinks: { youtube: 'https://www.youtube.com/@5preguntasincomodas' },
     tags: ['comedia y animación']
 },
@@ -1355,7 +1411,7 @@ const creatorsData = [
     longDesc: 'Maxi ofrece un punto de vista apasionado sobre la actualidad de la NBA, realizando streams en vivo durante los partidos, analizando jugadas y comentando las últimas noticias de la liga desde la perspectiva de un fan.',
     cefr: ['B2', 'C1'],
     embeddedId: '84xZMS4CBDM', // Stream de un partido
-    aljohnsComment: "Me gusta poner sus directos mientras veo los partidos. Es como ver el juego con un amigo que sabe mucho. Muy entretenido y espontáneo.",
+    // aljohnsComment: "Me gusta poner sus directos mientras veo los partidos. Es como ver el juego con un amigo que sabe mucho. Muy entretenido y espontáneo.",
     socialLinks: { youtube: 'https://www.youtube.com/@MaxiYTBasket' },
     tags: ['deportes']
 },
@@ -1451,7 +1507,7 @@ const creatorsData = [
     embeddedId: 'lSm4QZqN8cA', // Reaccionando a MrBeast
     aljohnsComment: "Ibai es simplemente Ibai. Es increíblemente divertido. Su español es muy rápido, lleno de jerga de España y expresiones del momento, por lo que es un desafío de nivel muy alto, pero te ríes sin parar. ¡parece como un gigante en clash of clans",
     socialLinks: { youtube: 'https://yt3.ggpht.com/alZ--DxDJfYQLF9UZ7s8q2tytDyFniBoj0-8bH27Ew5QTX5o3ultBNmfJmFqc05V2Wax-nkFKX8=s176-c-k-c0x00ffffff-no-rj-mo', instagram: 'https://www.instagram.com/ibaillanos' },
-    tags: ['gaming', 'personalidades', 'shows y tv']
+    tags: ['gaming', 'personalidades',]
 },
 {
     id: 'juegagerman',
@@ -1509,7 +1565,7 @@ const creatorsData = [
     longDesc: 'Reydama es el canal del Gran Maestro David Martínez ("El Divis"), uno de los comentaristas de ajedrez más conocidos de Chess24. Analiza partidas de élite, explica estrategias y sigue los grandes torneos mundiales.',
     cefr: ['C1', 'C2'],
     embeddedId: 'Kti3oKIZ8Mw', // Análisis de una partida de Magnus Carlsen
-    aljohnsComment: "Para aprender ajedrez en español, El Divis es el mejor. Su conocimiento es enciclopédico y su pasión es contagiosa. El vocabulario es extremadamente técnico, un gran desafío.",
+    aljohnsComment: "Aquí es donde estudié ajedrez cuando me enganché a Gambito de Dama durante la pandemia.",
     socialLinks: { youtube: 'https://www.youtube.com/@Reydama' },
     tags: ['gaming', 'deportes']
 },
@@ -1524,7 +1580,7 @@ const creatorsData = [
     longDesc: 'Con su identidad oculta tras un traje de licra, Rey Enigma se hizo famoso en Got Talent España. Su canal se dedica a partidas, análisis y a promover el ajedrez de una forma muy entretenida y espectacular.',
     cefr: ['B2', 'C1'],
     embeddedId: 'V431fCwUweM', // Retando a Kasparov
-    aljohnsComment: "El ajedrez es el deporte de la mente, y Rey Enigma lo hace increíblemente entretenido. Es fascinante verle jugar y explica las estrategias de una forma que todos pueden entender.",
+    aljohnsComment: "Yo estaba aquí cuando lo descubrieron. Verlo actuar contra Risto en Got Talent España me parece muy divertido.",
     socialLinks: { youtube: 'https://www.youtube.com/@ReyEnigma', instagram: 'https://www.instagram.com/rey.enigma' },
     tags: ['deportes', 'gaming']
 },
@@ -1790,7 +1846,7 @@ const creatorsData = [
     longDesc: 'Este canal ofrece un punto de vista diferente sobre la NBA, a menudo con un enfoque en los jugadores europeos. Sus análisis son detallados y su contenido es muy apreciado por los fans más hardcore del baloncesto.',
     cefr: ['C1', 'C2'],
     embeddedId: 'QQKchf95VJg', // Placeholder
-    aljohnsComment: "Otro canal de baloncesto que sigo. El acento castellano y el vocabulario técnico lo hacen un buen desafío para la escucha.",
+    // aljohnsComment: "Otro canal de baloncesto que sigo. El acento castellano y el vocabulario técnico lo hacen un buen desafío para la escucha.",
     socialLinks: { youtube: 'https://www.youtube.com/@demas6Basket' },
     tags: ['deportes'] // Lo movemos a deportes
 },
