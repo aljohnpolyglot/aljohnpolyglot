@@ -81,6 +81,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+nav li.dropdown .dropdown-content a {
+    color: var(--pirate-deep-sea-blue); /* or whatever style you need */
+}
+nav li.dropdown .dropdown-content a:hover {
+    color: #000 !important; /* darker on hover */
+}
 
 body {
     font-family: var(--font-body);

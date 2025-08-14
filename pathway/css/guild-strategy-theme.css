@@ -60,7 +60,14 @@ body.guild-strategy-page-mockup {
 #page-dynamic-background-MOCKUP.visible {
     opacity: 1;
 }
+nav li.dropdown .dropdown-content a {
+    color: var(--guild-text-on-light); /* Main text on parchment */
+}
 
+
+nav li.dropdown .dropdown-content a:hover {
+    color: var(--guild-text-on-dark); /* Main text on parchment */
+}
 header#main-header-placeholder {
     position: fixed; /* Or sticky, depending on navbar.css */
     top: 0;

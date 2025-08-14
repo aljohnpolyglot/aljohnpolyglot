@@ -43,6 +43,9 @@
     /* margin-right: 10px; */
     /* color: var(--secondary-accent-color); */
 }
+.dropdown-content a {
+    color: var(--pirate-deep-sea-blue); /* or whatever style you need */
+}
 
 
 /* --- Library Content Area (Middle Section) --- */
