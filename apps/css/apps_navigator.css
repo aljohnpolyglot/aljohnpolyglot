@@ -1312,5 +1312,120 @@ body.apps-tech-theme .arsenal-main-content > .arsenal-header p {
     pointer-events: none;   /* Good to keep, prevents icon from blocking clicks on input */
     /* z-index: 2; */      /* Usually not needed, but can add if it's behind something */
 }
+/* In apps/css/apps_navigator.css */
 
+/* === "Aljohn Original" Banner for Polyglot Connect === */
+
+/* Ensure the card is a positioning context */
+.app-card[data-app-id="app-polyglotconnect"] {
+    position: relative; /* This is crucial for the pseudo-element */
+    overflow: hidden; /* This keeps the banner neat */
+    border-color: var(--accent-yellow); /* Give it a default standout border */
+}
+
+/* Create the banner using a pseudo-element */
+.app-card[data-app-id="app-polyglotconnect"]::before {
+    content: "ORIGINAL";
+    position: absolute;
+    top: 22px;
+    right: -35px;
+    transform: rotate(45deg);
+    
+    background-color: var(--accent-yellow);
+    color: var(--deep-space-blue);
+    
+    padding: 5px 40px;
+    font-size: 0.6em;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1; /* Make sure it's above other card content */
+}
+/* In apps/css/apps_navigator.css */
+
+/* === Founder's Edition Card for Polyglot Connect === */
+
+/* Target the specific card using its ID */
+.app-card[data-app-id="app-polyglotconnect"] {
+    /* 1. A unique, subtle background gradient */
+    background: 
+        radial-gradient(circle at 100% 0%, rgba(200, 16, 46, 0.15), transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(0, 169, 255, 0.15), transparent 40%),
+        var(--panel-bg); /* Your existing panel background as the base */
+
+    /* 2. A more prominent border */
+    border: 1px solid var(--primary-red);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.3), /* Deeper shadow */
+        0 0 20px rgba(200, 16, 46, 0.3), /* Red glow */
+        inset 0 0 15px rgba(0, 169, 255, 0.1); /* Inner cyan glow */
+    
+    /* 3. A subtle animation to make it "breathe" */
+    animation: founderGlow 4s ease-in-out infinite;
+}
+
+/* 4. Override hover state for a unique interaction */
+.app-card[data-app-id="app-polyglotconnect"]:hover {
+    transform: translateY(-8px) scale(1.02); /* More pronounced lift */
+    border-color: var(--accent-yellow);
+    box-shadow: 
+        0 12px 25px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(255, 215, 0, 0.5), /* Brighter yellow glow on hover */
+        0 0 10px rgba(200, 16, 46, 0.4); /* Lingering red glow */
+}
+
+/* 5. Style the "Details" button to be a primary CTA */
+.app-card[data-app-id="app-polyglotconnect"] .app-card-details-btn {
+    background: linear-gradient(135deg, var(--accent-yellow), lch(80% 80 90));
+    color: var(--deep-space-blue);
+    border-color: lch(80% 80 90);
+    font-weight: 700;
+}
+
+.app-card[data-app-id="app-polyglotconnect"] .app-card-details-btn:hover {
+    box-shadow: var(--glow-shadow-yellow);
+}
+
+
+/* 6. The animation keyframes */
+@keyframes founderGlow {
+    0% {
+        box-shadow: 
+            0 8px 20px rgba(0, 0, 0, 0.3),
+            0 0 20px rgba(200, 16, 46, 0.3),
+            inset 0 0 15px rgba(0, 169, 255, 0.1);
+        border-color: var(--primary-red);
+    }
+    50% {
+        box-shadow: 
+            0 8px 20px rgba(0, 0, 0, 0.3),
+            0 0 30px rgba(200, 16, 46, 0.45), /* Intensify red glow */
+            inset 0 0 20px rgba(0, 169, 255, 0.2); /* Intensify cyan glow */
+        border-color: lch(60% 80 10); /* Slightly brighter red */
+    }
+    100% {
+        box-shadow: 
+            0 8px 20px rgba(0, 0, 0, 0.3),
+            0 0 20px rgba(200, 16, 46, 0.3),
+            inset 0 0 15px rgba(0, 169, 255, 0.1);
+        border-color: var(--primary-red);
+    }
+}
+/* Optional: Add a subtle icon to the banner */
+/* 
+.app-card[data-app-id="app-polyglotconnect"]::after {
+    content: "\f005"; // Star icon from Font Awesome
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--accent-yellow);
+    opacity: 0.5;
+    font-size: 1.2em;
+    z-index: 2;
+}
+*/
 /* You might not need specific overrides if the general toggle switch CSS is good */

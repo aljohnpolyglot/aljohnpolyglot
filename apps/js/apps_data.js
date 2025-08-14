@@ -2,6 +2,72 @@
 
 const allAppData = [
     {
+        id: "app-polyglotconnect",
+        name: "Polyglot Connect",
+        logoUrl: "https://polyglotconnect.club/images/polyglot_connect_logo.png",
+        tagline: "The social club I built so we can finally stop practicing and start connecting",
+        myTake: "This is a 10/10 because I'm biased as hell and I built it from scratch. Yes, I wrote every line of code here. That's why I disappeared for a month because I was sick of language apps treating fluency like a checklist. I remembered how ChatGPT's voice feature skyrocketed my progress because it gave me a space to just *talk*. But AI is a tool; real fluency is forged in human connection. So I built the space I needed, and the space I know you need. Polyglot Connect is a living social club. It's where you get real reps with people, in real time, without the pressure. We have voice calls, group chats, AI analysis to break down your conversations, and instant dictionaries. This is where you go from knowing a language to *living* it. Once you get comfortable here, talking to natives in the real world will feel insanely easy. This is the solution.",
+        rating: 10,
+        pros: [
+            "Built by a language learner, for language learners, with obsessive attention to detail.",
+            "Focuses on real-time human connection (text, voice, group chats) to build confidence.",
+            "Integrated AI provides instant feedback, analysis, and recaps on your conversations.",
+            "Live voice calls and voice memos to simulate real-world speaking practice.",
+            "Features like an in-chat dictionary and user dossiers remove friction from learning.",
+            "A dedicated space to find your 'vibe' and connect with like-minded people."
+        ],
+        cons: [
+            "As a new platform, the user base is growing (so join and help build the community!).",
+            "Best features are unlocked with a subscription (but there's a free tier to start).",
+            "It's a web app, so a dedicated mobile app experience is on the future roadmap."
+        ],
+        websiteUrl: "https://polyglotconnect.club/",
+        androidUrl: null, // As it's a web app for now
+        iosUrl: null,     // As it's a web app for now
+        windowsUrl: "https://polyglotconnect.club/",
+        // fullResourcePageUrl: "https://polyglotconnect.club/",
+        cefrSuitability: { A1: "Low", A2: "Medium", B1: "High", B2: "High", C1: "High", C2: "High" },
+        immersionTypes: ["Speaking", "Writing", "Listening", "Language Exchange"],
+        primaryCategories: ["Language Exchange", "Social Platform", "AI Tutor"],
+        skillFocus: ["Conversational Fluency", "Speaking Confidence", "Active Output", "Real-time Interaction", "Cultural Exchange"],
+        cost: "Freemium",
+        platforms: ["Web"],
+        tags: ["conversation practice", "speaking practice", "language exchange", "social learning", "community", "voice chat", "ai feedback", "must-have", "aljohn original"]
+    },
+    {
+        id: "app-migaku",
+        name: "Migaku",
+        logoUrl: "https://avatars.githubusercontent.com/u/52677511?s=200&v=4",
+        tagline: "The ultimate toolkit for deep immersion learning.",
+        myTake: "This is a 10/10, no question. My progress in German went from a crawl to a full-on sprint because of Migaku. The process is just freakin' insane. You're watching YouTube, you hear a sentence you want to learn, and making a perfect Anki card is literally just a few clicks. It pulls the audio, the subtitle, the translation, and a screenshot for you. It completely removes the friction from active immersion. Before I even commit to watching a full video, I can use their extension to preview my comprehension level, which is a massive time-saver. The community is great, and the developers are incredibly hands-on; I've chatted with them, and their responsiveness is unheard of. I recently ran out of my trial, and I already feel the difference. If you have the money to invest in a tool that will give you a serious, almost unfair, advantage in language learning, this is it. I can't recommend it enough.",
+        rating: 10,
+        pros: [
+            "One-click flashcard creation from Netflix & YouTube with audio, subs, and screenshots.",
+            "Browser extension previews comprehension of video content before watching.",
+            "Seamlessly integrates with Anki for a powerful learning loop.",
+            "Excellent for mining sentences and building a high-quality vocabulary deck fast.",
+            "Active, hands-on developers and a supportive community.",
+            "A suite of tools covering reading, listening, and vocabulary building."
+        ],
+        cons: [
+            "It's a subscription-based service, which is a commitment.",
+            "Can have a bit of a learning curve to set up and master all features.",
+            "Requires a desktop/laptop for the full power of the browser extension."
+        ],
+        websiteUrl: "https://migaku.com/",
+        androidUrl: "https://play.google.com/store/apps/details?id=com.migaku.android",
+        iosUrl: "https://apps.apple.com/us/app/migaku-really-learn-languages/id1664096855",
+        windowsUrl: "https://migaku.com/tools-redirect/", // This is the browser extension link
+        // fullResourcePageUrl: "/discounts/index.html", // Link to your new discounts page!
+        cefrSuitability: { A1: "High", A2: "High", B1: "High", B2: "Medium", C1: "Medium", C2: "Medium" },
+        immersionTypes: ["Watching", "Reading", "Vocabulary Building", "SRS"],
+        primaryCategories: ["Immersion Toolkit", "SRS", "Content Platform"],
+        skillFocus: ["Sentence Mining", "Vocabulary Acquisition", "Auditory Comprehension", "Reading Comprehension", "Active Immersion"],
+        cost: "Subscription",
+        platforms: ["Web", "Android", "iOS", "Windows"],
+        tags: ["immersion", "sentence mining", "youtube", "netflix", "anki integration", "srs", "vocabulary", "power-user", "must-have", "partner"]
+    },
+    {
         id: "app-anki",
         name: "Anki / AnkiDroid",
         logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/2048px-Anki-icon.svg.png",
@@ -15,7 +81,7 @@ const allAppData = [
         iosUrl: "https://apps.apple.com/us/app/ankimobile-flashcards/id373493387",
         windowsUrl: "https://apps.ankiweb.net/",
         fullResourcePageUrl: null,
-        cefrSuitability: { A1: "High", A2: "High", B1: "Medium", B2: "Low", C1: "Low", C2: "Low" },
+        cefrSuitability: { A1: "High", A2: "High", B1: "Medium", B2: "Medium", C1: "Medium", C2: "Medium" },
         immersionTypes: ["Vocabulary Building", "Reading", "Writing", ],
         primaryCategories: ["SRS", "Vocabulary Building"],
         skillFocus: ["Vocabulary Retention", "Concept Memorization", "Active Recall", "Grammar Pattern Recognition"],
@@ -23,6 +89,7 @@ const allAppData = [
         platforms: ["Web", "Android", "iOS", "Windows"],
         tags: ["flashcards", "spaced repetition", "srs", "vocabulary", "memorization", "core utility", "active recall", "must-have"]
     },
+  
     {
         id: "app-chatgpt",
         name: "ChatGPT",
@@ -158,7 +225,7 @@ const allAppData = [
     {
         id: "app-urbanvpn",
         name: "UrbanVPN",
-        logoUrl: "https://appteka.store/api/1/icon/get?hash=TPZUwy3ibxCBwnP7i2PfRbtKOgAWeRa2813msljIixgwTq0elKPFKyZrnujcxd%2BP",
+        logoUrl: "https://i0.wp.com/up4pc.com/wp-content/uploads/2025/01/urban.up4pc.com_.png.png",
         tagline: "Your Free Gateway to Geo-Restricted Language Immersion.",
         myTake: "I'm just inserting this app, especially for PC users. I've tried many VPN services, but this is the only one that's truly free for many useful locations. With this VPN, I can access other sites to get more resources. For example, if it's Spanish, you can watch RTVE, which is like Netflix but Spanish. In the Philippines, it's equivalent to iWantTFC or Vivamax. It's not required, but if you're bored with YouTube and want different content or to access content you can't easily find, you need this.",
         rating: 10,
@@ -403,7 +470,7 @@ const allAppData = [
         logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_EG7va_DHNEdjYthmQY520wIEiWO1fdqAeg&s", // Consider official logo if available
         tagline: "Your AI conversation partner for practicing real-world scenarios.",
         myTake: "This is good if you don't have money for a teacher to practice your language. You can practice in various situations here, like in a cafe, school, library, etc. It also has a voice feature you can use with your mic if you're lazy to type. The best part is, it's really for language learners, and the virtual teacher will correct your grammar mistakes. However, we need to remember this is just AI, and it's still different if a real person is teaching you. But I really recommend using this before you try to speak with real native speakers for initial confidence building.",
-        rating: 8,
+        rating: 10,
         pros: ["Immersive conversational learning experience with AI in various scenarios.", "Provides real-time feedback on grammar and pronunciation (for some languages).", "Offers a variety of conversation topics and role-play situations.", "Convenient and accessible for practice anytime.", "Voice input for hands-free practice."],
         cons: ["Potential for technical glitches or AI misunderstandings.", "May not fully capture all nuances of human conversation or culture.", "Subscription-based for full access to all features and languages.", "AI feedback might not always be perfectly accurate or contextual."],
         websiteUrl: "https://gliglish.com/",
