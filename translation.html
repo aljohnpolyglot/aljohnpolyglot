@@ -509,19 +509,241 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        /* === Revamped Translation Hero Section CSS === */
+        .translation-hero-revamped {
+    background: linear-gradient(180deg, #0a0f1a 0%, #182848 100%);
+    color: #ffffff;
+    padding: 160px 160px 170px 160px; /* top | right | bottom | left */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Crucial for containing the animation */
+}
+
+.translation-hero-revamped::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 1;
+}
+
+.hero-text-content {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 4rem;
+}
+
+.translation-hero-revamped h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.translation-hero-revamped .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+.translation-hero-revamped .btn.btn-hero-cta {
+    background-color: var(--accent-yellow);
+    color: var(--dark-text);
+    padding: 0.9rem 2.2rem;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.translation-hero-revamped .btn.btn-hero-cta:hover {
+    background-color: #e6c300;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* --- Conveyor Animation --- */
+.conveyor-animation-container {
+    position: absolute;
+    bottom: 95px;      /* distance from the bottom */
+    left: 0;
+    width: 100%;
+    height: 60px;      /* Height of the animation area */
+    z-index: 2;
+}
+
+
+.transformer-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 120px;
+    background: rgba(0, 169, 255, 0.1);
+    border: 2px solid rgba(0, 169, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0, 169, 255, 0.3), inset 0 0 15px rgba(0, 169, 255, 0.2);
+    backdrop-filter: blur(3px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #00A9FF;
+}
+
+.transformer-box::after { /* The flash effect */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(0, 169, 255, 0.3) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.transformer-box.flash::after {
+    animation: flash-effect 0.4s ease-out;
+}
+
+@keyframes flash-effect {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1); }
+}
+
+.transformer-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 0 5px #00A9FF;
+    border: 1px solid rgba(0, 169, 255, 0.3);
+    padding: 4px 8px;
+    background: rgba(10, 15, 26, 0.5);
+}
+
+.glow-light {
+    position: absolute;
+    bottom: 10px;
+    width: 60%;
+    height: 3px;
+    background-color: #00A9FF;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #00A9FF;
+}
+
+.conveyor-belt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.conveyor-items {
+    display: flex;
+    align-items: center;
+    position: absolute;
+  
+  
+  
+    /* Animation will be applied by JS */
+}
+
+.conveyor-item {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    margin: 0 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.conveyor-item.is-transforming {
+    animation: transform-glitch 0.4s ease-in-out;
+}
+
+@keyframes transform-glitch {
+    0% { transform: scale(1); filter: brightness(1); }
+    25% { transform: scale(1.2) rotate(5deg); filter: brightness(3) blur(2px); }
+    50% { opacity: 0; }
+    75% { transform: scale(0.8) rotate(-5deg); filter: brightness(3) blur(2px); }
+    100% { transform: scale(1); filter: brightness(1); opacity: 1; }
+}
+
+@keyframes scroll-flags {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-50%); }
+}
+
+
+
+@media (max-width: 768px) {
+  
+.conveyor-animation-container {
+    top: 810px;
+}
+@media (max-width: 480px) {
+    .translation-hero-revamped {
+   padding: 10px;
+   padding-bottom: 200px;
+}
+.hero-text-content {
+   margin-top: 120px;
+}
+.conveyor-animation-container {
+    top: 690px;
+}
+@media (max-width: 390px) {
+  
+.conveyor-animation-container {
+    top: 720px;
+}
+}
+@media (max-width: 375px) {
+  
+  .conveyor-animation-container {
+      top: 765px;
+  }
+}
+}
+}
     </style>
 </head>
 <body>
     <header id="main-header-placeholder"></header>
 
     <main>
-        <section class="translation-hero">
-            <div class="container">
-                <h1>Your Words, Accurately Conveyed, Culturally Resonant.</h1>
-                <p class="subtitle">Need to bridge communication gaps? I provide dedicated translation services, ensuring your message is understood with clarity and cultural sensitivity across the languages I command.</p>
-                <a href="#order-form" class="btn btn-hero-cta">Request Your Translation Quote <i class="fas fa-angle-double-right"></i></a>
+  <!-- ======================================================= -->
+<!-- START: Revamped Translation Hero Section              -->
+<!-- ======================================================= -->
+<section class="translation-hero-revamped">
+    <div class="container hero-text-content">
+        <h1>Your Words, Accurately Conveyed, Culturally Resonant.</h1>
+        <p class="subtitle">I bridge communication gaps with dedicated translation services, ensuring your message is understood with clarity and cultural sensitivity across the languages I command.</p>
+        <a href="#order-form" class="btn btn-hero-cta">Request Your Translation Quote <i class="fas fa-angle-double-right"></i></a>
+    </div>
+
+    <!-- Conveyor Belt Animation -->
+    <div class="conveyor-animation-container">
+        <div class="transformer-box">
+            <div class="transformer-title">TRANSLATION ENGINE</div>
+            <div class="glow-light"></div>
+        </div>
+        <div class="conveyor-belt">
+            <div class="conveyor-items">
+                <!-- Flags will be dynamically generated here by JavaScript -->
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+<!-- ======================================================= -->
+<!-- END: Revamped Translation Hero Section                -->
+<!-- ======================================================= -->
 
         <section class="content-section why-choose-section">
             <div class="container">
@@ -794,5 +1016,98 @@
 
         }); // End of DOMContentLoaded
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languages = [
+                { code: 'ph', name: 'Filipino' },
+                { code: 'us', name: 'English' },
+                { code: 'es', name: 'Spanish' },
+                { code: 'fr', name: 'French' },
+                { code: 'id', name: 'Indonesian' },
+                { code: 'it', name: 'Italian' },
+                { code: 'br', name: 'Portuguese' },
+                { code: 'ru', name: 'Russian' },
+                { code: 'se', name: 'Swedish' },
+                { code: 'de', name: 'German' }
+            ];
+        
+            const conveyorItemsContainer = document.querySelector('.conveyor-items');
+            const transformerBox = document.querySelector('.transformer-box');
+            const numFlags = 40; // Total flags on the belt, more = smoother loop
+            const animationDuration = 40; // in seconds, must be slow
+        
+            function getRandomLanguage(excludeCode = null) {
+                let availableLangs = languages;
+                if (excludeCode) {
+                    availableLangs = languages.filter(lang => lang.code !== excludeCode);
+                }
+                const randomIndex = Math.floor(Math.random() * availableLangs.length);
+                return availableLangs[randomIndex];
+            }
+        
+            function createFlagElement(lang) {
+                const img = document.createElement('img');
+                img.src = `https://flagcdn.com/w80/${lang.code}.png`;
+                img.alt = `Flag of ${lang.name}`;
+                img.className = 'conveyor-item';
+                img.dataset.code = lang.code; // Store current code
+                return img;
+            }
+        
+            function populateConveyor() {
+                if (!conveyorItemsContainer) return;
+                // Create two sets of flags for a seamless loop
+                for (let i = 0; i < 2; i++) {
+                    for (let j = 0; j < numFlags / 2; j++) {
+                        const lang = getRandomLanguage();
+                        conveyorItemsContainer.appendChild(createFlagElement(lang));
+                    }
+                }
+                
+                conveyorItemsContainer.style.animation = `scroll-flags ${animationDuration}s linear infinite`;
+            }
+        
+            function checkTransformation() {
+                if (!transformerBox || !conveyorItemsContainer) return;
+                
+                const transformerRect = transformerBox.getBoundingClientRect();
+                const flags = conveyorItemsContainer.querySelectorAll('.conveyor-item');
+        
+                flags.forEach(flag => {
+                    if (flag.classList.contains('is-transforming')) return;
+        
+                    const flagRect = flag.getBoundingClientRect();
+                    
+                    // Check if the flag's center is inside the transformer box
+                    const flagCenter = flagRect.left + flagRect.width / 2;
+                    if (flagCenter > transformerRect.left && flagCenter < transformerRect.right) {
+                        
+                        flag.classList.add('is-transforming');
+                        transformerBox.classList.add('flash');
+        
+                        const currentCode = flag.dataset.code;
+        
+                        setTimeout(() => {
+                            // Change the flag
+                            const newLang = getRandomLanguage(currentCode);
+                            flag.src = `https://flagcdn.com/w80/${newLang.code}.png`;
+                            flag.alt = `Flag of ${newLang.name}`;
+                            flag.dataset.code = newLang.code;
+                        }, 150); // Swap src mid-animation
+        
+                        // Cleanup classes after animation finishes
+                        setTimeout(() => {
+                            flag.classList.remove('is-transforming');
+                            transformerBox.classList.remove('flash');
+                        }, 500);
+                    }
+                });
+            }
+        
+            // Initialize
+            populateConveyor();
+            setInterval(checkTransformation, 100); // Check for transformations 10 times per second
+        });
+        </script>
 </body>
 </html>
