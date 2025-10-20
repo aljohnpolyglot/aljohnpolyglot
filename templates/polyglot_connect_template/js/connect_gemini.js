@@ -1,6 +1,5 @@
 // js/connect_gemini.js
 
-const GEMINI_API_KEY = "AIzaSyDfJspAjl93a5PnPENic7AG8yRT9vwRjh4"; // IMPORTANT: REPLACE WITH YOUR ACTUAL KEY
 const GEMINI_API_URL_BASE = "https://generativelanguage.googleapis.com/v1beta/models/";
 
 // Model strategy (as discussed, prioritize free tier for features)

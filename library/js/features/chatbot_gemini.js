@@ -7,8 +7,7 @@ const chatLogDisplayGlobal = document.getElementById('chat-log-display');
 const languageFilterSelect = document.getElementById('language-filter');
 
 // --- API Configuration ---
-const GEMINI_API_KEY = "AIzaSyDfJspAjl93a5PnPENic7AG8yRT9vwRjh4"; // YOUR PROVIDED KEY
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+const GEMINI_API_URL = 'https://my-gemini-proxy.mogatas-princealjohn-05082003.workers.dev';
 
 // --- Chat Configuration ---
 const MAX_HISTORY_TO_SEND = 10;
@@ -169,21 +168,19 @@ async function handleSendMessage() {
     const thinkingMessageText = activeCharacter ? `${activeCharacter.name} is thinking...` : "Captain Aljohn is thinking...";
     appendMessageToChatLog(thinkingMessageText, 'character', true);
 
-    let exampleBooksForPrompt = [];
+    let availableBooksForPrompt = [];
+    // The `window.publicDomainBooks` variable must be populated by your `book_data.js` script.
     if (activeCharacter && window.publicDomainBooks) {
-        const booksInCharLanguage = window.publicDomainBooks.filter(
-            book => book.language === activeCharacter.languageCode
-        );
-        if (booksInCharLanguage.length > 0) {
-            exampleBooksForPrompt = booksInCharLanguage
-                .sort(() => 0.5 - Math.random()).slice(0, 3)
-                .map(book => ({ title: book.title, author: book.author }));
-        }
+        availableBooksForPrompt = window.publicDomainBooks
+            .filter(book => book.language === activeCharacter.languageCode)
+            .map(book => ({ title: book.title, author: book.author })); // We only need title and author for the prompt.
     }
 
     try {
         const historyForAPI = chatHistory.slice(-MAX_HISTORY_TO_SEND);
-        const requestPayload = constructGeminiRequestPayload(userMessageText, activeCharacter, exampleBooksForPrompt, historyForAPI);
+        // --- MODIFICATION ---
+        // Pass the full list of available books to the payload constructor.
+        const requestPayload = constructGeminiRequestPayload(userMessageText, activeCharacter, availableBooksForPrompt, historyForAPI);
         
         const botResponseText = await getGeminiResponse(requestPayload);
         updateLastCharacterMessage(botResponseText || "I'm currently charting new literary seas... try again shortly!");
@@ -198,8 +195,7 @@ async function handleSendMessage() {
         sendChatMessageBtn.disabled = false;
     }
 }
-
-function constructGeminiRequestPayload(currentUserMessageText, character, exampleBooks = [], conversationHistory = []) {
+function constructGeminiRequestPayload(currentUserMessageText, character, availableBooks = [], conversationHistory = []) {
     let responseLanguageName = "English";
     let responseLanguageCode = "en";
     let characterPreamble;
@@ -213,11 +209,14 @@ function constructGeminiRequestPayload(currentUserMessageText, character, exampl
         if (character.dialogues && character.dialogues.length > 0) {
             characterSpeechExamples = character.dialogues.map(d => `- "${d}"`).join('\n');
         }
-        if (exampleBooks.length > 0) {
-            const bookList = exampleBooks.map(book => `"${book.title}"` + (book.author ? ` by ${book.author}` : "")).join(', ');
-            bookContext = `Your ${responseLanguageName} collection includes: ${bookList}.`;
+      // --- MODIFICATION ---
+        // The logic for building the book context is updated to be more direct and clear for the AI.
+        // Note: The function signature should now use `availableBooks` as the parameter name.
+        if (availableBooks.length > 0) {
+            const bookList = availableBooks.map(book => `"${book.title}" by ${book.author}`).join('; ');
+            bookContext = `Your library's ${responseLanguageName} collection consists of the following books: ${bookList}.`;
         } else {
-            bookContext = `Your ${responseLanguageName} collection is always growing.`;
+            bookContext = `Your ${responseLanguageName} collection is currently empty, but always growing.`;
         }
     } else { // Default to Captain Aljohn if no specific character for the language (or no language selected)
         characterPreamble = `You are Captain Aljohn, proprietor of the Aljohn Polyglot Library. You are friendly, knowledgeable, and speak with a hint of pirate flair. If a specific language character is contextually active, adopt their persona.`;
@@ -243,7 +242,7 @@ The user is speaking English.
 
 General Instructions:
 1. Respond naturally and in character. Keep responses concise (1-3 sentences typically).
-2. If asked about books, refer to known titles or the general collection for ${responseLanguageName}.
+2. If asked about books, answer based *only* on the list of titles provided in your context. Do not invent books or authors. If a book isn't on your list, say you don't have it.
 3. Do NOT break character. Do NOT mention you are an AI model.
 4. Your response must ONLY be in ${responseLanguageName}.
 5. Refer to the 'CONVERSATION HISTORY' below if present for context.
