@@ -220,15 +220,23 @@
     <div id="main-footer-placeholder"></div>
 
     <!-- siteBasePath definition script -->
-    <script>
-        let siteBasePath;
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-            siteBasePath = '/';
-        } else {
-            siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
-        }
-        console.log("Global siteBasePath dynamically set to:", siteBasePath, "from page:", window.location.pathname);
-    </script>
+   <script>
+  let siteBasePath;
+
+  // Local / manual testing
+  if (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.protocol === 'file:'
+  ) {
+    siteBasePath = '/';
+  } else {
+    // Production (GitHub Pages with custom domain)
+    siteBasePath = '/';
+  }
+
+  console.log('Global siteBasePath set to:', siteBasePath);
+</script>
 
     <!-- JS Links - IMPORTANT: Ensure page-specific scripts are loaded AFTER general/shared scripts they might depend on, or structure them to be self-contained.
         However, for simple DOMContentLoaded listeners, order might not strictly matter if they don't depend on each other's immediate output.

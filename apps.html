@@ -182,17 +182,23 @@
       
     </footer>
   <div id="main-footer-placeholder" class="tech-theme-footer-placeholder" ></div>
-    <script>
-        let siteBasePath;
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-            siteBasePath = '/'; 
-        } else {
-            // IMPORTANT: Adjust if your GitHub Pages site is NOT at the root of your username.github.io
-            // If your repo is 'aljohnpolyglot' and site is 'username.github.io/aljohnpolyglot/', then:
-            siteBasePath = '/aljohnpolyglot/'; // Example, adjust to your actual deployed base path on GitHub Pages
-        }
-        console.log("apps.html - Global siteBasePath dynamically set to:", siteBasePath);
-    </script>
+<script>
+  let siteBasePath;
+
+  // Local / manual testing
+  if (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.protocol === 'file:'
+  ) {
+    siteBasePath = '/';
+  } else {
+    // Production (GitHub Pages with custom domain)
+    siteBasePath = '/';
+  }
+
+  console.log('Global siteBasePath set to:', siteBasePath);
+</script>
 
     <!-- JS for this specific page (Arsenal Navigator) -->
     <script src="apps/js/apps_data.js"></script>
