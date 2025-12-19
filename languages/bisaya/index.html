@@ -581,12 +581,18 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
     <script src="js/main-script.js"></script> <!-- Handles navbar/footer loading -->
  <script>
     let siteBasePath;
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+
+    if (
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.protocol === 'file:'
+    ) {
         siteBasePath = '/';
     } else {
-        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+        siteBasePath = '/aljohnpolyglot/';
     }
-    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+
+    console.log('Global siteBasePath set to:', siteBasePath);
 </script>
 <script src="../../js/navbar-loader.js" defer></script>
 <script src="../../js/footer-loader.js" defer></script>

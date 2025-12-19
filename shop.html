@@ -654,14 +654,21 @@ footer .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0
 
    <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
    <script>
-    let siteBasePath;
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-        siteBasePath = '/';
-    } else {
-        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
-    }
-    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+  let siteBasePath;
+
+  if (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.protocol === 'file:'
+  ) {
+    siteBasePath = '/';
+  } else {
+    siteBasePath = '/aljohnpolyglot/';
+  }
+
+  console.log('Global siteBasePath set to:', siteBasePath);
 </script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('dev-popup-overlay');

@@ -553,7 +553,6 @@
 <script>
   let siteBasePath;
 
-  // Local / manual testing
   if (
     window.location.hostname === 'localhost' ||
     window.location.hostname === '127.0.0.1' ||
@@ -561,12 +560,12 @@
   ) {
     siteBasePath = '/';
   } else {
-    // Production (GitHub Pages with custom domain)
-    siteBasePath = '/';
+    siteBasePath = '/aljohnpolyglot/';
   }
 
   console.log('Global siteBasePath set to:', siteBasePath);
 </script>
+
 
 <script src="js/navbar-loader.js" defer></script>
 

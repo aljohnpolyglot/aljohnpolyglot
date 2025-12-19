@@ -705,12 +705,18 @@
     <script src="js/main-script.js"></script> <!-- Handles navbar/footer loading -->
  <script>
     let siteBasePath;
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+
+    if (
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.protocol === 'file:'
+    ) {
         siteBasePath = '/';
     } else {
-        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+        siteBasePath = '/aljohnpolyglot/';
     }
-    console.log("Global siteBasePath dynamically set to:", siteBasePath);
+
+    console.log('Global siteBasePath set to:', siteBasePath);
 </script>
 
     <!-- Archivos de Datos -->
