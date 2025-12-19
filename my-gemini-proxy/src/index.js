@@ -5,7 +5,11 @@ export default {
 	  const allowedOrigins = [
 		'http://127.0.0.1:5500', // Your local dev server
 		'http://localhost:5500',
-		'https://aljohnpolyglot.github.io' // Your live website
+		'https://aljohnpolyglot.github.io', // Your live website
+		'http://aljohnpolyglot.com/',
+		'https://aljohnpolyglot.com/',
+		 'https://www.aljohnpolyglot.com'
+
 	  ];
 	  const origin = request.headers.get('Origin');
 	  let corsHeaders = {};
