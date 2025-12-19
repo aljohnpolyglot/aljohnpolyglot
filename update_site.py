@@ -5,7 +5,7 @@ OLD_SNIPPET = """<script>
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
         siteBasePath = '/';
     } else {
-        siteBasePath = '/aljohnpolyglot/'; // Your GitHub repository name
+        siteBasePath = '/'; // Your GitHub repository name
     }
     console.log("Global siteBasePath dynamically set to:", siteBasePath);
 </script>"""
@@ -20,7 +20,7 @@ NEW_SNIPPET = """<script>
     ) {
         siteBasePath = '/';
     } else {
-        siteBasePath = '/aljohnpolyglot/';
+        siteBasePath = '/';
     }
 
     console.log('Global siteBasePath set to:', siteBasePath);
