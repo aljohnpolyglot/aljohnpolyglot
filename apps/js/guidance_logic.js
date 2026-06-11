@@ -1,4 +1,3 @@
-// D:\website\apps\js\guidance_logic.js
 
 const guidanceTexts = {
     "default": "<p>Welcome to Aljohn's Polyglot Arsenal! Select filters to see Aljohn's personalized advice and app recommendations. Your strategic journey starts here!</p>",

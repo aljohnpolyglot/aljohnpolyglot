@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\books-loader.js
 
 document.addEventListener('DOMContentLoaded', () => {
 

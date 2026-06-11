@@ -1,4 +1,3 @@
-// D:\website\js\languagecenters-interactive.js
 document.addEventListener('DOMContentLoaded', function() {
     const languageFilterContainer = document.getElementById('languageFilter');
     const institutesListContainer = document.getElementById('institutesList');

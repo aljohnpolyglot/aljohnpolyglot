@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\community-picks-loader.js
 
 document.addEventListener('DOMContentLoaded', () => {
 

@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\community-loader.js (Versión que aplica paletas de colores)
 
 document.addEventListener('DOMContentLoaded', () => {
 

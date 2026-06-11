@@ -1,4 +1,3 @@
-// D:\website\resources\visualizer\visualizer.js
 
 document.addEventListener('DOMContentLoaded', function() { // Ensure DOM is ready
 

@@ -1,4 +1,3 @@
-// D:\website\languages\js\renderers\swedish-page-resources-renderer.js
 // COMPLETE SCRIPT V11.2 - Enhanced Logging for Category Visible Count Debugging
 
 document.addEventListener('DOMContentLoaded', function() {

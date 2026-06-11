@@ -22,8 +22,6 @@ NEW_SNIPPET = """<script>
     } else {
         siteBasePath = '/';
     }
-
-    console.log('Global siteBasePath set to:', siteBasePath);
 </script>"""
 
 ROOT_DIR = "."

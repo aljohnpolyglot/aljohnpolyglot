@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\filters.js (VERSIÓN FINAL SIMPLIFICADA)
 
 document.addEventListener('DOMContentLoaded', () => {
 

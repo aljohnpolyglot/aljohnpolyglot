@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\community-picks-data.js
 
 const communityPicksData = [
     {

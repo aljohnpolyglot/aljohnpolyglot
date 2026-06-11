@@ -1,4 +1,3 @@
-// D:\website\apps\js\arsenal_main.js
 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Element References (cached for performance)

@@ -1,4 +1,3 @@
-// D:\website\apps\js\apps_data.js
 
 const allAppData = [
     {

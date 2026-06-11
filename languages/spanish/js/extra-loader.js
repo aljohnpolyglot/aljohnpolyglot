@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\extra-loader.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const spotlight = document.getElementById('extra-spotlight');

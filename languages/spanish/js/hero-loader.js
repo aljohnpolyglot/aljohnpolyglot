@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\hero-loader.js
 
 document.addEventListener('DOMContentLoaded', () => {
 

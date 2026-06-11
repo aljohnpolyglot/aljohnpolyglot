@@ -1,6 +1,4 @@
 
-// D:\website\languages\spanish\js\creators-data.js (Versión Final Corregida con Imágenes y País)
-
 const creatorsData = [
     {
         id: 'clara-galle',

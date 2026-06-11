@@ -1,4 +1,3 @@
-// D:\website\apps\js\modal_handler.js
 
 function openModal(appId) {
     const appData = allAppData.find(app => app.id === appId); // Assumes allAppData is global

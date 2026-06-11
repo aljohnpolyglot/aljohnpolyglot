@@ -1,4 +1,3 @@
-// D:\website\apps\js\filter_sort_logic.js
 
 let currentFilters = {
     keyword: '',

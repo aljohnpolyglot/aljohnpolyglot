@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\creators-loader.js (Versión con Depuración)
 
 document.addEventListener('DOMContentLoaded', () => {
    // --- FUNCIÓN DE AYUDA (HELPER FUNCTION) ---

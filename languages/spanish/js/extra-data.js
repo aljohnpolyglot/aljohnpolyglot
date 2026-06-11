@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\extra-data.js
 
 const extraSpotlightData = {
     title: 'Extr@ en Español',

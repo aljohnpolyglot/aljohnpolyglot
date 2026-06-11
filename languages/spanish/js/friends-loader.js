@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\friends-loader.js
 
 document.addEventListener('DOMContentLoaded', () => {
 

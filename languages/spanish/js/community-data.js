@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\community-data.js (Versión con Paletas de Colores)
 
 const communityData = [
     {

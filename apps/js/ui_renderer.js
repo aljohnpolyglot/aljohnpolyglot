@@ -1,4 +1,3 @@
-// D:\website\apps\js\ui_renderer.js
 
 function displayStarRating(rating, totalStars = 10, ratingOutOf = 10) {
     let starsHtml = '';

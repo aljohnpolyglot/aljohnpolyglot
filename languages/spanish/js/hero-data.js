@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\hero-data.js (Versión Completa y Final)
 
 const heroGalleryData = [
     {

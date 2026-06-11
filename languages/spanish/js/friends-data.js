@@ -1,4 +1,3 @@
-// D:\website\languages\spanish\js\friends-data.js
 
 const friendsData = [
     {
