@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aljohn Polyglot | The Language Learning Pathway (A1-C2)</title>
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Metamorphous&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
 :root {
     --pathway-bg: #F0EAD6; /* Parchment like - This will now be for content cards */
     --pathway-dark-brown: #4A3B2A;
-    --pathway-medium-brown: #6B4F2E; 
-    --pathway-green: #556B2F; 
-    --pathway-gold: #B8860B; 
-    --pathway-red-accent: #800000; 
-    --pathway-text: #3D2B1F; 
-    --pathway-border: #C1A87C; 
+    --pathway-medium-brown: #6B4F2E;
+    --pathway-green: #556B2F;
+    --pathway-gold: #B8860B;
+    --pathway-red-accent: #800000;
+    --pathway-text: #3D2B1F;
+    --pathway-border: #C1A87C;
     --pathway-card-bg: #FAF0E6; /* Existing card background, perfect for our "scrolls" */
     --font-themed-headings: 'MedievalSharp', cursive;
     --font-themed-text: 'Metamorphous', cursive;
@@ -31,7 +31,7 @@
 body.pathway-page {
     font-family: 'Open Sans', sans-serif;
     color: var(--pathway-text); /* Default text color for elements without specific bg */
-    padding-top: 70px; 
+    padding-top: 70px;
     position: relative; /* For the ::before pseudo-element */
     background-color: #4A3B2A; /* Fallback dark color if image doesn't load */
     overflow-x: hidden; /* Prevent horizontal scroll from scaled pseudo-element */
@@ -73,7 +73,7 @@ body.pathway-page::before {
 }
 
 .pathway-main-container {
-    padding-top: 20px; 
+    padding-top: 20px;
 }
 
 /* --- MODIFIED: pathway-map-intro --- */
@@ -102,7 +102,7 @@ body.pathway-page::before {
 }
  .pathway-map-intro .video-link-card img {
     width: 100%;
-    height: 170px; 
+    height: 170px;
     object-fit: cover;
 }
 .pathway-map-intro .video-link-card h4 {
@@ -125,7 +125,7 @@ body.pathway-page::before {
     position: relative;
     overflow: hidden;
 }
-.journey-phase::before { 
+.journey-phase::before {
     content: '';
     position: absolute;
     top: 10px; left: 10px; right: 10px; bottom: 10px;
@@ -136,12 +136,12 @@ body.pathway-page::before {
 
 .phase-banner {
     width: 100%;
-    max-height: 300px; 
-    object-fit: contain; 
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 20px;
     border: 2px solid var(--pathway-border);
-    background-color: #E0D6C3; 
+    background-color: #E0D6C3;
 }
 
 .phase-title {
@@ -175,7 +175,7 @@ body.pathway-page::before {
     display: flex;
     align-items: center;
 }
-.phase-section-heading i.heading-icon { 
+.phase-section-heading i.heading-icon {
     margin-right: 10px;
     color: var(--pathway-gold);
 }
@@ -190,11 +190,11 @@ body.pathway-page::before {
     display: flex;
     align-items: flex-start;
 }
-.phase-goals-list li i.goal-icon { 
+.phase-goals-list li i.goal-icon {
     color: var(--pathway-green);
     margin-right: 10px;
     margin-top: 4px;
-    width: 1.2em; 
+    width: 1.2em;
     text-align: center;
 }
 
@@ -236,7 +236,7 @@ body.pathway-page::before {
     display: flex;
     align-items: center;
 }
-.toolkit-category-header h4 i.category-icon { 
+.toolkit-category-header h4 i.category-icon {
     margin-right: 10px;
     color: var(--pathway-red-accent);
 }
@@ -253,7 +253,7 @@ body.pathway-page::before {
     border-top: 1px dashed transparent;
 }
 .toolkit-category.active .toolkit-category-content {
-    max-height: 1500px; 
+    max-height: 1500px;
     padding: 15px 18px;
     border-top-color: var(--pathway-border);
 }
@@ -262,27 +262,27 @@ body.pathway-page::before {
 }
 
 .tool-item {
-    margin-bottom: 18px; 
-    padding-bottom: 18px; 
+    margin-bottom: 18px;
+    padding-bottom: 18px;
     border-bottom: 1px dotted var(--pathway-border);
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
 }
 .tool-item:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
-.tool-header { 
+.tool-header {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
-.tool-icon { 
-    font-size: 1.5em; 
+.tool-icon {
+    font-size: 1.5em;
     color: var(--pathway-medium-brown);
     margin-right: 10px;
-    width: 25px; 
+    width: 25px;
     text-align: center;
 }
 
@@ -290,7 +290,7 @@ body.pathway-page::before {
     font-size: 1.1rem;
     color: var(--pathway-green);
 }
-.tool-item strong a { 
+.tool-item strong a {
     color: inherit;
     text-decoration: none;
 }
@@ -301,31 +301,31 @@ body.pathway-page::before {
 .tool-item .rating {
     font-weight: bold;
     font-style: italic;
-    margin-left: 8px; 
+    margin-left: 8px;
 }
 .tool-item .rating.essential { color: var(--pathway-red-accent); }
 .tool-item .rating.recommended { color: var(--pathway-green); }
 
 .tool-item ul {
     list-style-type: disc;
-    margin-left: 35px; 
+    margin-left: 35px;
     margin-top: 5px;
 }
 .tool-item ul li { margin-bottom: 5px; font-size: 0.95rem; }
 .tool-item ul em { font-style: normal; font-weight: bold; }
-.tool-item p { 
-    font-size: 0.95rem; 
-    margin-top: 0; 
-    padding-left: 35px; 
+.tool-item p {
+    font-size: 0.95rem;
+    margin-top: 0;
+    padding-left: 35px;
 }
-.tool-item > p:first-of-type { 
+.tool-item > p:first-of-type {
     margin-top: 5px;
 }
 
-.usage-note { 
+.usage-note {
     font-size: 0.8em;
     font-style: italic;
-    font-weight: normal; 
+    font-weight: normal;
     color: var(--pathway-medium-brown);
 }
 
@@ -356,7 +356,7 @@ body.pathway-page::before {
     background-color: rgba(184, 134, 11, 0.05);
     max-width: 700px; margin-left: auto; margin-right: auto;
 }
-.pathway-final-scroll .btn-outline { 
+.pathway-final-scroll .btn-outline {
     border-color: var(--pathway-gold);
     color: var(--pathway-gold);
     font-family: var(--font-themed-text);
@@ -373,12 +373,12 @@ body.pathway-page::before {
     .toolkit-category-header h4 { font-size: 1.1rem; }
     .pathway-map-intro .pathway-video-links { flex-direction: column; align-items: center; }
     /* .pathway-map-intro .intro-banner-image is removed */
-    .tool-item p, .tool-item ul { padding-left: 5px; margin-left: 5px; } 
+    .tool-item p, .tool-item ul { padding-left: 5px; margin-left: 5px; }
 }
 
 </style>
 </head>
-<body class="pathway-page"> 
+<body class="pathway-page">
   <header>
         <nav class="container">
             <a href="index.html" class="logo-link">
@@ -390,17 +390,17 @@ body.pathway-page::before {
                 <li class="dropdown">
                     <a href="index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="languages/tagalog.html">Tagalog</a>
-                        <a href="languages/cebuano.html">Cebuano</a>
-                        <a href="languages/english.html">English</a>
+                        <a href="languages/tagalog/index.html">Tagalog</a>
+                        <a href="languages/cebuano/index.html">Cebuano</a>
+                        <a href="languages/english/index.html">English</a>
                         <a href="/languages/spanish/index.html">Spanish</a>
-                        <a href="languages/french.html">French</a>
-                        <a href="languages/indonesian.html">Indonesian</a>
-                        <a href="languages/italian.html">Italian</a>
-                        <a href="languages/portuguese.html">Portuguese</a>
-                        <a href="languages/russian.html">Russian</a>
-                        <a href="languages/swedish.html">Swedish</a>
-                        <a href="languages/german.html">German</a>
+                        <a href="languages/french/index.html">French</a>
+                        <a href="languages/indonesian/index.html">Indonesian</a>
+                        <a href="languages/italian/index.html">Italian</a>
+                        <a href="languages/portuguese/index.html">Portuguese</a>
+                        <a href="languages/russian/index.html">Russian</a>
+                        <a href="languages/swedish/index.html">Swedish</a>
+                        <a href="languages/german/index.html">German</a>
                     </div>
                 </li>
                 <li class="dropdown">
@@ -418,9 +418,9 @@ body.pathway-page::before {
                     <a href="index.html#resources" class="dropbtn active-parent">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
                         <a href="blog.html">Polyglot Papers Blog</a>
-                        <a href="pathway.html" class="active-link">Pathway</a> 
+                        <a href="pathway.html" class="active-link">Pathway</a>
                         <a href="resources/apps.html">Essential Apps & Tools</a>
-                        <a href="resources/routine.html">Daily Routine</a> 
+                        <a href="resources/routine.html">Daily Routine</a>
                         <a href="index.html#cultural-institutes">Language & Culture Centers</a>
                     </div>
                 </li>
@@ -428,10 +428,10 @@ body.pathway-page::before {
                     <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
                         <a href="services/coaching/coaching.html">Language Coaching</a>
-                        <a href="services/translation/translation.html">Translation</a> 
+                        <a href="services/translation/translation.html">Translation</a>
                     </div>
                 </li>
-                <li><a href="shop/shop.html">Shop</a></li> 
+                <li><a href="shop/shop.html">Shop</a></li>
                 <li><a href="FAQ.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="nav-cta">YouTube Channel</a></li>
@@ -447,7 +447,7 @@ body.pathway-page::before {
             <h1 class="section-title">The Roadmap to Fluency</h1>
             <img src="images/pathway_coverart.png" alt="Roadmap to Fluency - The Grand Map" class="intro-banner-image">
             <p class="section-subtitle">This sacred map, etched from thousands of hours of linguistic adventure, guides you through the realms of language mastery. It demands courage and sacrifice, but promises treasures of fluency far swifter than conventional paths. Heed its wisdom, brave learner!</p>
-            
+
             <div class="pathway-video-links">
                  <div class="video-link-card">
                     <a href="https://www.youtube.com/watch?v=O-C_SdCtkLg" target="_blank">
@@ -482,7 +482,7 @@ body.pathway-page::before {
 
                 <h3 class="phase-section-heading"><i class="fas fa-brain heading-icon"></i>The Sacred Mindset</h3>
                 <p class="mindset-text">Enter as a humble apprentice, knowing naught. Focus thy energies on <strong>INPUT</strong> and absorption. The arts of speaking and writing (Output) are for a later quest.</p>
-                
+
                 <h3 class="phase-section-heading"><i class="fas fa-tools heading-icon"></i>Starter Gear (Key Methods & Tools)</h3>
                 <div class="toolkit">
                     <div class="toolkit-category">
@@ -675,7 +675,7 @@ body.pathway-page::before {
                         </div>
                     </div>
                 </div>
-                
+
                 <h3 class="phase-section-heading"><i class="fas fa-key heading-icon"></i>Path Unlocked (Milestone to Advance)</h3>
                 <p class="milestone-text">Advance to the Citadel when you have completed ~300 hours of tracked immersion, can understand the majority of native content without subtitles, listening feels intuitive (you understand without consciously translating), AND your Anki deck holds ~2500+ reviewed words.</p>
             </section>
@@ -787,13 +787,13 @@ body.pathway-page::before {
                   </div>
                  <nav class="footer-links">
                      <a href="index.html#about">About</a>
-                     <a href="#top">Pathway</a> 
+                     <a href="#top">Pathway</a>
                      <a href="blog.html">Blog</a>
                      <a href="resources/apps.html">Resources</a>
-                     <a href="mailto:youremail@example.com">Contact</a> 
+                     <a href="mailto:youremail@example.com">Contact</a>
                  </nav>
                  <div class="social-links">
-                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>          
+                     <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
                      <a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                  </div>
              </div>
@@ -819,7 +819,7 @@ body.pathway-page::before {
             });
         });
     });
-    
+
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();

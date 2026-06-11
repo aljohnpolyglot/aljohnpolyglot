@@ -70,17 +70,17 @@ function closeResourceModal() {
     if (overlay && overlay.classList.contains('visible')) {
         overlay.classList.remove('visible');
         const iframes = overlay.querySelectorAll('iframe');
-        iframes.forEach(iframe => { 
-            try { 
+        iframes.forEach(iframe => {
+            try {
                 // Attempt to stop video playback
                 let currentSrc = iframe.src;
                 iframe.src = ''; // Clear src to stop playback
                 // Optionally, restore src if iframe might be reused immediately, though usually not the case for modals.
-                // iframe.src = currentSrc; 
+                // iframe.src = currentSrc;
             } catch (e) { /* ignore errors if src access is restricted */ }
         });
-        setTimeout(() => { 
-            if (modalPlaceholder) modalPlaceholder.innerHTML = ''; 
+        setTimeout(() => {
+            if (modalPlaceholder) modalPlaceholder.innerHTML = '';
         }, 300); // Match CSS transition duration for fade-out
     }
 }
@@ -139,15 +139,15 @@ function openSpecificResourceModal(itemData, category) {
         }).filter(Boolean);
 
         normalizedCefrLevels.forEach(lObj => itemCefrMap.set(lObj.level, lObj));
-        
+
         standardCefrLevels.forEach(stdLvl => {
             const lI = itemCefrMap.get(stdLvl);
             let lCls = `level-${stdLvl.toLowerCase().replace('+', 'plus')}`;
-            let lvlTitle = stdLvl; 
+            let lvlTitle = stdLvl;
             if (lI && lI.strength !== 'none') { // Only add strength class if not 'none'
-                lCls += ` ${lI.strength || 'medium'}`; 
-                lvlTitle += `${lI.strength && lI.strength !== 'medium' ? ': '+lI.strength : ''}${lI.note ? ' ('+lI.note+')' : ''}`; 
-            } else { 
+                lCls += ` ${lI.strength || 'medium'}`;
+                lvlTitle += `${lI.strength && lI.strength !== 'medium' ? ': '+lI.strength : ''}${lI.note ? ' ('+lI.note+')' : ''}`;
+            } else {
                 lCls += ' not-present'; // If not found or strength is 'none'
             }
             cefrHTML += `<span class="cefr-level-dot ${lCls}" title="${lvlTitle}">${stdLvl}</span>`;
@@ -158,13 +158,13 @@ function openSpecificResourceModal(itemData, category) {
         }
         cefrHTML += '</p></div></div>';
     }
-    
+
     const mainComment = (category === 'top-podcasts' && itemData.aljohnsTake) ? itemData.aljohnsTake : itemData.aljohnsNote;
     let magnusCommentHTML = '';
     if (mainComment && mainComment.trim() !== '') {
         magnusCommentHTML = `
-            <div class="modal-aljohns-take-container"> 
-                <h4>Magnus Kommentar</h4> 
+            <div class="modal-aljohns-take-container">
+                <h4>Magnus Kommentar</h4>
                 <div class="modal-aljohns-take">${mainComment.replace(/\n/g, '<br>')}</div>
             </div>`;
     }
@@ -201,21 +201,21 @@ function openSpecificResourceModal(itemData, category) {
         <div class="modal-overlay swedish-resource-modal-overlay">
             <div class="modal-content swedish-resource-modal" role="dialog" aria-modal="true" aria-labelledby="resourceModalTitle-${modalIdSuffix}">
                 <button class="modal-close-btn" aria-label="Stäng modalen"><i class="fas fa-times"></i></button>
-                
+
                 <div class="modal-header">
                     <img src="${itemData.imgSrc || itemData.imageSrc || '../images/placeholder_resource_card.png'}" alt="${itemData.name || itemData.title || 'Resursbild'}" class="modal-image ${modalImgCls}">
                     <h2 id="resourceModalTitle-${modalIdSuffix}">${itemData.name || itemData.title || 'Resursinformation'}</h2>
                 </div>
-                
+
                 <div class="modal-main-content-area">
                     ${videoHTML}
                     ${longDescHTML}
                     ${cefrHTML}
-                    ${magnusCommentHTML} 
-                    ${linksHTML}       
+                    ${magnusCommentHTML}
+                    ${linksHTML}
                 </div>
 
-             
+
             </div>
         </div>`;
 
@@ -228,17 +228,17 @@ function openSpecificResourceModal(itemData, category) {
             const firstFocusableElement = closeButton || overlay.querySelector('iframe, button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
             if(firstFocusableElement) firstFocusableElement.focus();
         }, 10);
-        
-        overlay.addEventListener('click', e => { 
+
+        overlay.addEventListener('click', e => {
             if (e.target === overlay || e.target.closest('.modal-close-btn')) {
                 closeResourceModal();
             }
         });
-        overlay.addEventListener('keydown', e => { 
-            if (e.key === 'Escape') { 
-                e.preventDefault(); 
-                closeResourceModal(); 
-            } 
+        overlay.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeResourceModal();
+            }
         });
     } else {
         console.error("Failed to find modal overlay after injecting HTML for resource modal.");

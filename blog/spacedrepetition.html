@@ -73,14 +73,14 @@
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-img { height: 40px; width: 40px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
         .logo-text { font-family: var(--font-primary); font-size: 1.3rem; font-weight: 700; color: var(--primary-blue); }
-        
+
         .blog-nav-links { list-style: none; display: flex; }
         .blog-nav-links li { margin-left: 20px; }
         .blog-nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
         .blog-nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--accent-orange); transition: width 0.3s ease; }
         .blog-nav-links a:hover, .blog-nav-links a.active-link { color: var(--accent-orange); }
         .blog-nav-links a:hover::after, .blog-nav-links a.active-link::after { width: 100%; }
-        
+
         .menu-toggle { display: none; cursor: pointer; } /* Mobile menu toggle */
         .hamburger { width: 25px; height: 3px; background-color: var(--dark-text); position: relative; transition: all 0.3s linear; }
         .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: var(--dark-text); transition: all 0.3s linear; }
@@ -96,7 +96,7 @@
             margin-bottom: 2rem;
             box-shadow: var(--card-shadow);
         }
-        
+
         .blog-post-title {
             font-family: var(--font-display);
             font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -350,7 +350,7 @@
         .video-cta a.btn-cta:hover {
             background-color: #e67e00; /* Darker orange */
         }
-        
+
         /* --- Footer --- */
         footer.blog-footer {
             background-color: var(--dark-text);
@@ -401,8 +401,8 @@
         <li class="dropdown">
             <a href="../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
             <div class="dropdown-content">
-                <a href="../languages/tagalog.html">Tagalog</a>
-                <a href="../languages/cebuano.html">Cebuano</a>
+                <a href="../languages/tagalog/index.html">Tagalog</a>
+                <a href="../languages/cebuano/index.html">Cebuano</a>
                 <!-- ... other languages with ../ ... -->
             </div>
         </li>
@@ -454,7 +454,7 @@
                         <img src="..\blog\images\blog_spacedrepetition_byaljohnpolyglot.png" alt="Crossword puzzle asking how to memorize vocabulary" class="blog-image">
                     </div>
                     <p>How to memorize vocabulary and not forget it? "I've studied this, but why do I keep forgetting?" Sounds familiar? You probably haven't used <em>this</em> technique yet!</p>
-                    
+
                     <div class="highlight-box">
                         <h3>My Achievement with This Technique:</h3>
                         <div class="blog-image-container">
@@ -503,7 +503,7 @@
                     </div>
 
                     <p>On the other hand, if you care for the sapling and give it enough time and attention daily, it will gradually grow, and its roots will deepen and become strong. Thus, no matter what storm passes, it will not easily fall.</p>
-                    
+
                     <div class="blog-image-container">
                          <img src="../images/blog/blog_spacedrepetition_itslikethis.png" alt="Comparison of traditional study (wilting plant) vs spaced repetition (thriving plant)" class="blog-image">
                          <p class="caption">Consistent "watering" (review) helps knowledge grow strong.</p>
@@ -553,7 +553,7 @@
                         <img src="../images/blog/blog_spacedrepetition_graph_visualizer.png" alt="Ebbinghaus forgetting curve with review boosts" class="blog-image" style="display:none;"> <!-- Static image hidden, interactive below -->
                     </div>
                     <p>Here's a classic illustration of how our memory works – the forgetting curve. Notice how "watering our plants" (reviewing) boosts retention and flattens the curve over time.</p>
-                    
+
                     <div class="interactive-graph-container">
                         <h3>Interactive Forgetting Curve</h3>
                         <p>Click "Review" to see how spaced repetition impacts memory retention. The blue line shows learning with spaced reviews; the gray line shows learning without reviews.</p>
@@ -603,7 +603,7 @@
                         <p id="calendarInfo">Select a "Review Due" day (orange) to mark it as reviewed.</p>
                     </div>
                 </section>
-                
+
                 <section class="blog-section" id="tree-intervals-revisited">
                     <h3>Back to Our Trees: Intervals Explained</h3>
                     <p>Think of it this way:
@@ -707,7 +707,7 @@
             { day: 7, retention: 30, type: 'forget' },
             { day: 10, retention: 20, type: 'forget' }
         ];
-        
+
         let reviewedLineData = [{ day: 0, retention: 100 }];
         let currentReviewStep = 0;
         const reviewPoints = [
@@ -851,7 +851,7 @@
             const review = reviewPoints[reviewIndex];
             // Remove future points from where current review happens
             reviewedLineData = reviewedLineData.filter(p => p.day < review.day);
-            
+
             // Add dip to review day (optional, or go straight to boost)
             const lastPoint = reviewedLineData[reviewedLineData.length - 1];
             // Simple forgetting slope towards review day
@@ -862,12 +862,12 @@
             reviewedLineData.push({ day: review.day, retention: review.retentionBoost });
             // Add subsequent forgetting points
             review.nextForgetPoints.forEach(p => reviewedLineData.push(p));
-            
+
             currentReviewStep++;
             updateReviewButtons();
             drawGraph();
         }
-        
+
         function updateReviewButtons() {
             document.getElementById('reviewButton1').disabled = currentReviewStep > 0;
             document.getElementById('reviewButton2').disabled = currentReviewStep !== 1;
@@ -877,7 +877,7 @@
         document.getElementById('reviewButton1').addEventListener('click', () => handleReview(0));
         document.getElementById('reviewButton2').addEventListener('click', () => handleReview(1));
         document.getElementById('reviewButton3').addEventListener('click', () => handleReview(2));
-        
+
         document.getElementById('resetGraphButton').addEventListener('click', () => {
             reviewedLineData = [{ day: 0, retention: 100 }];
             // Re-add initial forgetting for blue line if no reviews yet
@@ -891,7 +891,7 @@
             updateReviewButtons();
             drawGraph();
         });
-        
+
         // Initial draw
         // For blue line, start with some forgetting before first review
         reviewedLineData.push({ day: 1, retention: 70});
@@ -906,7 +906,7 @@
         const calendarMonthYear = document.getElementById('calendarMonthYear');
         const calendarInfo = document.getElementById('calendarInfo');
         const learnNewItemButton = document.getElementById('learnNewItemButton');
-        
+
         let today = new Date();
         let currentMonth = today.getMonth();
         let currentYear = today.getFullYear();
@@ -915,10 +915,10 @@
         function generateCalendar(month, year) {
             calendarBody.innerHTML = '';
             calendarMonthYear.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
-            
+
             let firstDay = (new Date(year, month)).getDay();
             let daysInMonth = 32 - new Date(year, month, 32).getDate();
-            
+
             let date = 1;
             for (let i = 0; i < 6; i++) { // Max 6 rows
                 let row = document.createElement('tr');
@@ -933,7 +933,7 @@
                         const cellDate = new Date(year, month, date);
                         cell.dataset.date = cellDate.toISOString().split('T')[0];
 
-                        const itemToReview = learnedItems.find(item => 
+                        const itemToReview = learnedItems.find(item =>
                             item.nextReviewDate && item.nextReviewDate.toDateString() === cellDate.toDateString()
                         );
 
@@ -942,7 +942,7 @@
                             cell.classList.add('review-needed');
                             cell.title = `Review item learned on ${itemToReview.learnedDate.toLocaleDateString()}`;
                         }
-                        
+
                         cell.addEventListener('click', () => handleDayClick(cell, cellDate, itemToReview));
                         date++;
                     }
@@ -960,7 +960,7 @@
             }
 
             const remembered = confirm(`Reviewing item learned on ${itemToReview.learnedDate.toLocaleDateString()}.\nDid you remember it?`);
-            
+
             if (remembered) {
                 itemToReview.level++;
                 // Simplified intervals: 1, 3, 7, 14, 30 days for levels 0, 1, 2, 3, 4+
@@ -972,10 +972,10 @@
                 itemToReview.interval = 1; // Back to 1 day
                 calendarInfo.textContent = `No worries! Review again in ${itemToReview.interval} day.`;
             }
-            
+
             itemToReview.nextReviewDate = new Date(cellDate);
             itemToReview.nextReviewDate.setDate(cellDate.getDate() + itemToReview.interval);
-            
+
             generateCalendar(currentMonth, currentYear); // Refresh calendar
         }
 

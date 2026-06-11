@@ -382,8 +382,8 @@ ul, ol {
 /* Ensure parallax speed variables are in :root */
 :root {
     /* Ensure these are here or in your main :root */
-    --parallax-bg-speed: 0.15; 
-    --parallax-fg-speed: 0.08; 
+    --parallax-bg-speed: 0.15;
+    --parallax-fg-speed: 0.08;
     --main-navbar-height: 70px; /* CRITICAL: Adjust to your actual navbar height */
 }
 
@@ -391,7 +391,7 @@ ul, ol {
     display: flex;
     align-items: center; /* Vertically center .hero-text-overlay */
     justify-content: center; /* Horizontally center .hero-text-overlay */
-    position: relative; 
+    position: relative;
 min-height: 80vh; /* ADJUST: If content is more compact, you might not need as much min-height */
     height: auto;     /* Let content and padding primarily define the height */
     max-height: 700px;/* Keep a max height */
@@ -413,10 +413,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Background Layer (Scenic - Stockholm) - swedes_header_bg.png */
 /* Background Layer (Scenic - Stockholm) */
 .custom-hero-section#swedish-custom-hero .hero-parallax-bg {
-    top: 0; 
+    top: 0;
     height: 100%; /* Takes height of parent hero section */
     background-image: url('../../images/languages/swedish/header_design_test.png');
-    background-position: center center; 
+    background-position: center center;
     background-attachment: fixed; /* Creates parallax by staying fixed as content scrolls */
     z-index: 1;
 }
@@ -426,8 +426,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .custom-hero-section#swedish-custom-hero .hero-content-scrim {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, 
-        rgba(var(--sw-bg-primary-rgb), 0.1) 0%, 
+    background: linear-gradient(180deg,
+        rgba(var(--sw-bg-primary-rgb), 0.1) 0%,
         rgba(var(--sw-bg-primary-rgb), 0.35) 30%, /* Darker gradient sooner */
         rgba(var(--sw-bg-primary-rgb), 0.80) 100%);
     z-index: 3;
@@ -435,8 +435,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 /* Text Overlay Container */
 .custom-hero-section#swedish-custom-hero .hero-text-overlay {
-    position: relative; 
-    z-index: 4; 
+    position: relative;
+    z-index: 4;
     padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2); /* REDUCED padding inside overlay */
     width: 90%;
     max-width: 680px; /* REDUCED max-width for a tighter text block */
@@ -446,8 +446,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     align-items: center;
     justify-content: center;
     /* margin-top: var(--main-navbar-height); /* Handled by section's padding-top */
-    background: linear-gradient(180deg, 
-        rgba(var(--sw-bg-primary-rgb), 0.2) 0%, 
+    background: linear-gradient(180deg,
+        rgba(var(--sw-bg-primary-rgb), 0.2) 0%,
         rgba(var(--sw-bg-primary-rgb), 0.55) 50%, /* Adjusted scrim for readability */
         rgba(var(--sw-bg-primary-rgb), 0.85) 100%);
     border-radius: var(--sw-radius-md); /* Slightly more rounded */
@@ -469,8 +469,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 /* Main Hero Title H1 - More Compact */
 .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 {
-    font-family: var(--sw-font-display); 
-    font-weight: 300; 
+    font-family: var(--sw-font-display);
+    font-weight: 300;
     color: rgba(250, 250, 255, 0.85);
     line-height: 1.1; /* TIGHTER line height for combined title */
     text-shadow: 0 1px 5px rgba(0,0,0,0.65);
@@ -481,30 +481,30 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(1rem, 2.5vw, 1.5rem); /* REDUCED size for "Välkommen till" */
     letter-spacing: 0.5px;
     margin-bottom: 0; /* REMOVED margin to bring it very close to line 2 */
-    text-transform: uppercase; 
+    text-transform: uppercase;
     opacity: 0.8;
 }
 .custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
-    display: block; 
-    font-family: var(--sw-font-hero-main); 
-    font-weight: 700; 
+    display: block;
+    font-family: var(--sw-font-hero-main);
+    font-weight: 700;
     font-size: clamp(2.2rem, 7vw, 3.8rem); /* REDUCED size slightly for main part */
-    letter-spacing: -0.5px; 
+    letter-spacing: -0.5px;
     line-height: 1; /* Very tight line height */
-    color: var(--sw-text-on-blue); 
+    color: var(--sw-text-on-blue);
 }
 .custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow {
     color: var(--sw-flag-yellow);
-    font-family: var(--sw-font-hero-highlight); 
-    text-shadow: 0 0 6px rgba(var(--sw-flag-yellow-rgb), 0.5), 
+    font-family: var(--sw-font-hero-highlight);
+    text-shadow: 0 0 6px rgba(var(--sw-flag-yellow-rgb), 0.5),
                  0 0 12px rgba(var(--sw-flag-yellow-rgb), 0.3);
     /* line-height: 0.9; /* Consider if Anton still causes too much space */
 }
 /* Main Hero Title H1 - Refined Typography */
 //* Main Hero Title H1 - Refined Typography */
 .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 {
-    font-family: var(--sw-font-display); 
-    font-weight: 300; 
+    font-family: var(--sw-font-display);
+    font-weight: 300;
     color: rgba(250, 250, 255, 0.9);
     line-height: 1.2;
     text-shadow: 0 1px 6px rgba(0,0,0,0.65); /* Slightly softer */
@@ -512,25 +512,25 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 .custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-1 {
     display: block;
-    font-size: clamp(1.2rem, 3vw, 1.7rem); 
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
     letter-spacing: 0.6px; /* Slightly more spacing */
-    margin-bottom: calc(var(--sw-spacing-unit) * 0.20); 
-    text-transform: uppercase; 
+    margin-bottom: calc(var(--sw-spacing-unit) * 0.20);
+    text-transform: uppercase;
     opacity: 0.85;
 }
 .custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
-    display: block; 
-    font-family: var(--sw-font-hero-main); 
+    display: block;
+    font-family: var(--sw-font-hero-main);
     font-weight: 700; /* Montserrat bold */
     font-size: clamp(2.6rem, 7.5vw, 4.2rem); /* Slightly adjusted for overall balance */
-    letter-spacing: -0.5px; 
-    line-height: 1.05; 
-    color: var(--sw-text-on-blue); 
+    letter-spacing: -0.5px;
+    line-height: 1.05;
+    color: var(--sw-text-on-blue);
 }
 .custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow {
     color: var(--sw-flag-yellow);
     font-family: var(--sw-font-hero-highlight); /* Anton for "Värld" */
-    text-shadow: 0 0 7px rgba(var(--sw-flag-yellow-rgb), 0.55), 
+    text-shadow: 0 0 7px rgba(var(--sw-flag-yellow-rgb), 0.55),
                  0 0 16px rgba(var(--sw-flag-yellow-rgb), 0.35);
     padding: 0 0.1em; /* Add a tiny bit of padding if Anton clips */
 }
@@ -542,21 +542,21 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     line-height: 1.65; /* Slightly tighter */
     max-width: 600px; /* Narrower for better readability in compact space */
     margin: calc(var(--sw-spacing-unit) * 1.5) auto calc(var(--sw-spacing-unit) * 2.5) auto; /* REDUCED top/bottom margins */
-    color: #E0E8F0; 
-    text-shadow: 0 1px 4px rgba(0,0,0,0.9); 
+    color: #E0E8F0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.9);
 }
 .custom-hero-section#swedish-custom-hero .hero-intro-text .intro-text-highlight {
-    display: block; 
-    font-weight: 500; 
-    color: var(--sw-text-on-blue); 
-    font-size: 1.05em; 
+    display: block;
+    font-weight: 500;
+    color: var(--sw-text-on-blue);
+    font-size: 1.05em;
     margin-bottom: calc(var(--sw-spacing-unit) * 0.75); /* More distinct space */
 }
 /* Emphasized first line of intro text */
 .custom-hero-section#swedish-custom-hero .hero-intro-text .intro-text-highlight {
-    display: block; 
+    display: block;
     font-weight: 600; /* Bolder highlight */
-    color: var(--sw-text-on-blue); 
+    color: var(--sw-text-on-blue);
     font-size: 1.1em; /* Relative to its parent p, so also smaller */
     line-height: 1.3; /* Tighter line height for the highlight */
     margin-bottom: calc(var(--sw-spacing-unit) * 1); /* Space before the <br><br> */
@@ -570,9 +570,9 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     justify-content: center;
 }
 .custom-hero-section#swedish-custom-hero .hero-cta-buttons .btn {
-    padding: calc(var(--sw-spacing-unit)*1.2) calc(var(--sw-spacing-unit)*2.8); 
+    padding: calc(var(--sw-spacing-unit)*1.2) calc(var(--sw-spacing-unit)*2.8);
     font-size: 0.85rem; /* Slightly smaller for balance */
-    font-weight: 600; 
+    font-weight: 600;
     border-radius: var(--sw-radius-md); /* Consistent rounding */
     transition: all 0.25s var(--sw-transition-easing);
     letter-spacing: 0.4px;
@@ -596,12 +596,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .custom-hero-section#swedish-custom-hero .btn.btn-hero-outline {
     background-color: rgba(var(--sw-text-on-blue-rgb), 0.05); /* Very faint fill */
     color: var(--sw-text-on-blue);
-    border-color: rgba(var(--sw-text-on-blue-rgb), 0.7); 
+    border-color: rgba(var(--sw-text-on-blue-rgb), 0.7);
 }
 .custom-hero-section#swedish-custom-hero .btn.btn-hero-outline:hover {
-    background-color: rgba(var(--sw-flag-yellow-rgb), 0.9); 
-    border-color: var(--sw-flag-yellow); 
-    color: var(--sw-text-on-yellow); 
+    background-color: rgba(var(--sw-flag-yellow-rgb), 0.9);
+    border-color: var(--sw-flag-yellow);
+    color: var(--sw-text-on-yellow);
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 5px 12px rgba(var(--sw-flag-yellow-rgb),0.2);
 }
@@ -643,11 +643,11 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 /* Wrapper for the two columns */
-#fragmenterad-verklighet-section .essay-portrait-wrapper.layout-columns { 
-    display: flex; 
+#fragmenterad-verklighet-section .essay-portrait-wrapper.layout-columns {
+    display: flex;
     flex-direction: column; /* Mobile-first: stack columns */
     align-items: center; /* Center content horizontally when stacked */
-    gap: calc(var(--sw-spacing-unit) * 3); 
+    gap: calc(var(--sw-spacing-unit) * 3);
 }
 
 /* Desktop and Tablet Layout (side-by-side) */
@@ -686,15 +686,15 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     box-shadow: 0 0 0 7px var(--sw-text-on-blue), /* White ring */
                 0 0 0 10px var(--sw-bg-primary),   /* Dark blue ring (from site's dark theme) */
                 var(--sw-shadow-on-yellow);        /* Shadow on yellow background */
-    background-color: var(--sw-bg-primary); 
+    background-color: var(--sw-bg-primary);
     position: relative;
 }
 
-#fragmenterad-verklighet-section .journey-portrait-img-inline { 
-    display: block; 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+#fragmenterad-verklighet-section .journey-portrait-img-inline {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center top; /* Adjust if portrait needs different framing */
 }
 
@@ -762,7 +762,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.4s ease-out 0.1s,
                 margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth margin transition */
 }
@@ -775,7 +775,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 #fragmenterad-verklighet-section #read-more-narrative-btn.btn.btn-secondary-yellow-theme {
     display: inline-block;
-    align-self: flex-start; 
+    align-self: flex-start;
     margin-top: calc(var(--sw-spacing-unit) * 2); /* Increased margin */
     background-color: var(--sw-yellow-theme-accent); /* Dark blue button */
     color: var(--sw-text-on-blue); /* White text */
@@ -953,8 +953,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #swedish-resources {
     background-color: var(--sw-bg-secondary);
     color: var(--sw-text-primary);
-    position: relative; 
-    z-index: 5; 
+    position: relative;
+    z-index: 5;
     /* padding-top and padding-bottom are inherited from .content-section, which is good. */
 }
 /* 4.1 Resources Section Header */
@@ -1017,23 +1017,23 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-family: var(--sw-font-secondary);
     font-size: clamp(0.85rem, 2vw, 1rem); /* More compact */
     color: var(--sw-text-secondary);
-    max-width: 700 px; 
+    max-width: 700 px;
     margin: 0 auto calc(var(--sw-spacing-unit) * 2) auto; /* Space before image */
     line-height: 1.6;
     opacity: 0.9;
 }
 
 .magnus-info-icon-container {
-    margin-bottom: calc(var(--sw-spacing-unit) * 2); 
+    margin-bottom: calc(var(--sw-spacing-unit) * 2);
     position: relative; /* For absolute positioning of hover image */
     width: 120px; /* ADJUST to fit your image's desired display size */
     height: 120px; /* ADJUST to fit your image's desired display size */
     cursor: default; /* Or pointer if you want the image itself to seem clickable */
 }
 .magnus-header-icon-img {
-    display: block; 
-    width: 100%; 
-    height: 100%; 
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: contain; /* Ensure whole image is visible */
     position: absolute; /* Overlay images */
     top: 0;
@@ -1082,14 +1082,14 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-family: var(--sw-font-secondary);
     font-size: clamp(0.8rem, 1.8vw, 0.9rem); /* Smaller, instructional */
     color: var(--sw-text-tertiary);
-    max-width: 520px; 
+    max-width: 520px;
     margin: 0 auto;
     line-height: 1.5;
 }
 .resources-section-header .main-section-subtitle.action-subtitle-line2 .fa-info-circle {
     color: var(--sw-flag-yellow); /* Ensure icon is visible */
     font-size: 1em; /* Relative to this subtitle's font size */
-    margin: 0 3px; 
+    margin: 0 3px;
     vertical-align: -0.08em; /* Fine-tune */
 }
 /* 4.2 CEFR Filter Panel */
@@ -1106,7 +1106,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     border: 1px solid var(--cefr-panel-border-color);
     border-radius: var(--sw-radius-lg);
     /* Top accent glow and main shadow */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.18), 
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18),
                 0 -4px 0 0 var(--cefr-panel-accent-glow), /* Top accent */
                 0 -6px 12px -4px rgba(var(--sw-flag-yellow-rgb), 0.45); /* Accent glow */
     position: relative; /* For popover context if icons are inside */
@@ -1325,10 +1325,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     padding-bottom: calc(var(--sw-spacing-unit) * 1); /* Standard padding for underline */
     margin-top: 0; /* Space above title controlled by parent's padding */
     margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space between title and its description */
-    display: flex; 
+    display: flex;
     align-items: center;
     /* justify-content: space-between; /* Keep this if icon is direct child */
-    text-align: left; 
+    text-align: left;
     letter-spacing: normal;
 }
 #swedish-resources .resource-category-swedish .subsection-title i:first-child { /* The main category icon */
@@ -1683,11 +1683,11 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 /* If you want "Mina Lyssningsstips" to remain yellow and part of the main text */
 #top-podcasts-section .subsection-title .title-text-main .title-highlight-yellow {
-    color: var(--sw-flag-yellow); 
+    color: var(--sw-flag-yellow);
     /* margin-left: calc(var(--sw-spacing-unit) * 0.5); /* No longer needed if part of the span */
 }
 #top-podcasts-section .subsection-title > i.fa-headphones-alt { /* Target direct child icon */
-    color: var(--sw-flag-yellow); 
+    color: var(--sw-flag-yellow);
     font-size: 0.9em;
     margin-right: calc(var(--sw-spacing-unit) * 1); /* Space after icon */
     flex-shrink: 0;
@@ -1920,12 +1920,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: url('../images/languages/swedish/scandinavian_map_idea.png');
     background-repeat: no-repeat; background-position: center center;
-    background-size: contain; 
+    background-size: contain;
     z-index: 0; /* Behind section's blue color */
     /* EXPERIMENT with filter and opacity for desired subtlety */
-    filter: grayscale(100%) contrast(220%) brightness(190%); 
+    filter: grayscale(100%) contrast(220%) brightness(190%);
     mix-blend-mode: screen; /* 'screen' or 'lighten' often work well */
-    opacity: 0.07; 
+    opacity: 0.07;
     pointer-events: none;
 }
 
@@ -1940,7 +1940,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     margin-bottom: calc(var(--sw-spacing-unit) * 5);
     padding-top: calc(var(--sw-spacing-unit) * 6); /* Space above the title */
 }
-#scandinavian-encounters-section .section-title { 
+#scandinavian-encounters-section .section-title {
     color: var(--sw-flag-yellow);
     font-family: var(--sw-font-hero-highlight); /* Or your preferred display font */
     font-size: clamp(2.4rem, 7vw, 4rem); /* Impactful size */
@@ -1953,7 +1953,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     position: relative;
     text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
-#scandinavian-encounters-section .section-title::after { 
+#scandinavian-encounters-section .section-title::after {
     background-color: var(--sw-flag-yellow);
     width: 120px; /* Wider underline */
     height: 4px;
@@ -1961,7 +1961,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     transform: translateX(-50%); border-radius: 2px;
     box-shadow: 0 0 8px rgba(var(--sw-flag-yellow-rgb), 0.4);
 }
-#scandinavian-encounters-section .section-subtitle { 
+#scandinavian-encounters-section .section-subtitle {
     color: rgba(255,255,255,0.9);
     font-size: clamp(0.95rem, 2.3vw, 1.15rem);
     max-width: 750px;
@@ -1973,13 +1973,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .scandinavian-encounter-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: calc(var(--sw-spacing-unit) * 3.5); 
+    gap: calc(var(--sw-spacing-unit) * 3.5);
     margin-bottom: calc(var(--sw-spacing-unit) * 5);
 }
-@media (min-width: 600px) { 
+@media (min-width: 600px) {
     .scandinavian-encounter-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
     .scandinavian-encounter-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -1992,8 +1992,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex; flex-direction: column;
     overflow: hidden; position: relative;
     transition: transform 0.3s var(--sw-transition-easing), box-shadow 0.3s var(--sw-transition-easing), border-color 0.3s var(--sw-transition-easing);
-    border: 2px solid transparent; 
-    min-height: 340px; 
+    border: 2px solid transparent;
+    min-height: 340px;
     cursor: pointer;
 }
 .scandinavian-encounter-card:hover {
@@ -2006,7 +2006,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 .card-image-clipper {
     width: 100%;
-    aspect-ratio: 16 / 10; 
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     background-color: var(--sw-bg-secondary);
 }
@@ -2016,10 +2016,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 .scandinavian-encounter-card:hover .card-image { transform: scale(1.08); }
 
-.card-content { 
+.card-content {
     padding: calc(var(--sw-spacing-unit) * 1.75) calc(var(--sw-spacing-unit) * 2.25); /* Slightly adjusted padding */
     flex-grow: 1; display: flex; flex-direction: column;
-    position: relative; z-index: 1; 
+    position: relative; z-index: 1;
     transition: opacity 0.25s ease-out;
 }
 .scandinavian-encounter-card:hover .card-content {
@@ -2029,13 +2029,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 .card-title { /* The H3 title element */
     font-family: var(--sw-font-display);
-    font-size: clamp(1.05rem, 2.4vw, 1.2rem); 
+    font-size: clamp(1.05rem, 2.4vw, 1.2rem);
     font-weight: 600;
-    line-height: 1.4; 
+    line-height: 1.4;
     margin: 0 0 calc(var(--sw-spacing-unit) * 1.5) 0; /* Space AFTER title line */
-    color: var(--sw-text-primary); 
-    display: flex; 
-    align-items: center; 
+    color: var(--sw-text-primary);
+    display: flex;
+    align-items: center;
     flex-wrap: nowrap; /* Important to keep flags and text together */
     gap: calc(var(--sw-spacing-unit) * 0.75); /* Gap between items in the title (flags, text) */
 }
@@ -2047,11 +2047,11 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Styling for Inline Flag Images WITHIN the title */
 .title-inline-flag-img {
     height: 1.1em; /* Slightly larger relative to font-size for prominence */
-    width: auto;  
-    border-radius: 2px; 
+    width: auto;
+    border-radius: 2px;
     /* box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Softer shadow */
     object-fit: contain;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     /* No margin-right needed here, gap on .card-title handles it */
 }
 
@@ -2065,8 +2065,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: 0.85rem;
     color: var(--sw-text-secondary);
     line-height: 1.55;
-    margin-top: 0; 
-    flex-grow: 1; 
+    margin-top: 0;
+    flex-grow: 1;
     display: -webkit-box; -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
 }
@@ -2083,17 +2083,17 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     transition: opacity 0.3s var(--sw-transition-easing) 0.05s, transform 0.3s var(--sw-transition-easing) 0.05s;
     pointer-events: none;
     display: flex; flex-direction: column;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     z-index: 2;
     text-align: left;
 }
 .scandinavian-encounter-card:hover .card-overlay-details {
-    opacity: 1; transform: translateY(0); pointer-events: auto; 
+    opacity: 1; transform: translateY(0); pointer-events: auto;
 }
 .card-overlay-details h4 { /* Title in overlay */
     font-family: var(--sw-font-display);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 600;
-    color: var(--sw-flag-yellow); 
+    color: var(--sw-flag-yellow);
     margin: 0 0 calc(var(--sw-spacing-unit) * 1) 0;
     display: flex; align-items: center;
     gap: calc(var(--sw-spacing-unit) * 0.75);
@@ -2103,8 +2103,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 .card-overlay-details p { /* Description in overlay */
     font-size: 0.85rem; line-height: 1.6;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.75); color: #E8F1FA; 
-    display: -webkit-box; -webkit-line-clamp: 3; 
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.75); color: #E8F1FA;
+    display: -webkit-box; -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
 }
 /* Card CTA Chip (e.g., "Utforska Möte") in Overlay */
@@ -2112,17 +2112,17 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: inline-block;
     background-color: var(--sw-flag-yellow); /* Default: Standard yellow accent */
     /* If using dynamic accent from card's theme:
-       background-color: var(--dynamic-accent-color, var(--sw-flag-yellow)); 
+       background-color: var(--dynamic-accent-color, var(--sw-flag-yellow));
     */
     color: var(--sw-text-on-yellow); /* Text color for on yellow */
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     font-weight: 700; /* Bolder for CTA */
     padding: calc(var(--sw-spacing-unit) * 0.85) calc(var(--sw-spacing-unit) * 2); /* Adjusted padding */
     border-radius: var(--sw-radius-xl); /* Very rounded */
     text-transform: uppercase;
     letter-spacing: 0.75px; /* More spacing for emphasis */
     align-self: flex-start; /* Align to the left of the overlay content */
-    transition: background-color 0.25s var(--sw-transition-easing), 
+    transition: background-color 0.25s var(--sw-transition-easing),
                 transform 0.2s var(--sw-transition-easing),
                 box-shadow 0.25s var(--sw-transition-easing);
     box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Subtle shadow */
@@ -2132,7 +2132,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Hover effect for the CTA Chip */
 .scandinavian-encounter-card .card-cta-chip:hover {
     /* If using dynamic accent, you might want to darken it:
-       filter: brightness(0.9); 
+       filter: brightness(0.9);
        Or if using static yellow:
     */
     background-color: var(--sw-accent-yellow-darker);
@@ -2197,7 +2197,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     height: 100%; /* Fill the square container */
     object-fit: cover; /* Ensure image covers, might crop slightly */
     border-radius: var(--sw-radius-round); /* This makes the image itself circular */
-    border: 3px solid var(--sw-flag-yellow); 
+    border: 3px solid var(--sw-flag-yellow);
 }
 .error-card {
     padding: var(--sw-spacing-unit); text-align: center; color: var(--sw-danger-red);
@@ -2394,7 +2394,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
    ========================================================================== */
 
 .final-thoughts-swedish { /* The <section> element */
-    background-color: var(--sw-flag-blue); 
+    background-color: var(--sw-flag-blue);
     background-image: linear-gradient(165deg, var(--sw-flag-blue) 10%, var(--sw-accent-blue-darker) 100%);
     color: var(--sw-text-on-blue);
     padding: calc(var(--sw-spacing-unit) * 6) 0 calc(var(--sw-spacing-unit) * 7) 0; /* Adjusted padding */
@@ -2429,27 +2429,27 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     padding: calc(var(--sw-spacing-unit) * 4) calc(var(--sw-spacing-unit) * 3.5);
     max-width: 800px; /* Control width of the content box */
     margin: 0 auto; /* Center the box */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25), 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25),
                 inset 0 0 15px rgba(var(--sw-bg-primary-rgb), 0.3);
     border: 1px solid rgba(var(--sw-border-color-light-rgb), 0.2);
 }
 
 
-.final-thoughts-swedish .section-title-final { 
-    font-family: var(--sw-font-display); 
-    font-weight: 700; 
+.final-thoughts-swedish .section-title-final {
+    font-family: var(--sw-font-display);
+    font-weight: 700;
     font-size: clamp(1.8rem, 5.5vw, 2.8rem); /* Adjusted for balance in the box */
     color: var(--sw-text-on-blue);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     line-height: 1.25;
     margin-bottom: calc(var(--sw-spacing-unit) * 2); /* Space to paragraph */
     padding-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space for underline */
-    border-bottom: none; 
+    border-bottom: none;
     position: relative;
 }
 .final-thoughts-swedish .section-title-final::after { /* The yellow dash underline */
-    width: 80px; 
-    height: 4px; 
+    width: 80px;
+    height: 4px;
     background-color: var(--sw-flag-yellow);
     /* margin-top: calc(var(--sw-spacing-unit) * 1); /* Adjusted if needed */
     /* Using absolute positioning for more control */
@@ -2461,38 +2461,38 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     border-radius: 2px;
 }
 
-.final-thoughts-swedish .final-message-text { 
-    color: #E8F1FA; 
-    font-family: var(--sw-font-primary); 
+.final-thoughts-swedish .final-message-text {
+    color: #E8F1FA;
+    font-family: var(--sw-font-primary);
     font-weight: 400;
-    font-size: clamp(0.9rem, 2.2vw, 1.05rem); 
-    line-height: 1.7; 
+    font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+    line-height: 1.7;
     max-width: 700px; /* Control width of paragraph */
     margin: 0 auto calc(var(--sw-spacing-unit) * 3.5) auto; /* Space before button */
     opacity: 0.93;
 }
 .final-thoughts-swedish .final-message-text .text-highlight-yellow {
     color: var(--sw-flag-yellow);
-    font-weight: 600; 
+    font-weight: 600;
 }
 
 .final-thoughts-swedish .final-cta-button-wrapper { /* Wrapper for the button */
-    margin-top: calc(var(--sw-spacing-unit) * 1); 
+    margin-top: calc(var(--sw-spacing-unit) * 1);
 }
 
-.final-thoughts-swedish .btn-final-cta { 
-    background-color: var(--sw-danger-red); 
+.final-thoughts-swedish .btn-final-cta {
+    background-color: var(--sw-danger-red);
     color: var(--sw-text-on-blue);
     border: 2px solid var(--sw-danger-red);
-    font-family: var(--sw-font-display); 
+    font-family: var(--sw-font-display);
     font-weight: 600;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem); 
-    text-transform: uppercase; 
-    letter-spacing: 0.7px; 
-    padding: calc(var(--sw-spacing-unit)*1.4) calc(var(--sw-spacing-unit)*3.5); 
-    border-radius: var(--sw-radius-lg); 
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: calc(var(--sw-spacing-unit)*1.4) calc(var(--sw-spacing-unit)*3.5);
+    border-radius: var(--sw-radius-lg);
     box-shadow: 0 3px 10px rgba(0,0,0,0.3), inset 0 -2px 0px rgba(0,0,0,0.1);
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     gap: calc(var(--sw-spacing-unit) * 0.75);
     transition: all 0.25s var(--sw-transition-easing);
@@ -2502,9 +2502,9 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 .final-thoughts-swedish .btn-final-cta:hover,
 .final-thoughts-swedish .btn-final-cta:focus {
-    background-color: #B82424; 
-    border-color: #a01e1e; 
-    transform: translateY(-2px) scale(1.01); 
+    background-color: #B82424;
+    border-color: #a01e1e;
+    transform: translateY(-2px) scale(1.01);
     box-shadow: 0 5px 14px rgba(0,0,0,0.35), inset 0 -1px 0 rgba(0,0,0,0.1);
 }
 /*=========================================================================
@@ -2522,7 +2522,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex;
     align-items: center; /* Vertically center modal */
     justify-content: center; /* Horizontally center modal */
-    z-index: 5000; 
+    z-index: 5000;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--sw-transition-speed) var(--sw-transition-easing), visibility 0s linear var(--sw-transition-speed);
@@ -2535,23 +2535,23 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 .modal-content {
-    background-color: var(--sw-bg-tertiary); 
+    background-color: var(--sw-bg-tertiary);
     padding: calc(var(--sw-spacing-unit) * 3) calc(var(--sw-spacing-unit) * 3.5); /* Internal padding */
     border-radius: var(--sw-radius-lg);
-    width: 90%; 
-    max-width: 720px; 
-    max-height: 90vh; 
-    overflow-y: auto; 
-    position: relative; 
+    width: 90%;
+    max-width: 720px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
     box-shadow: var(--sw-shadow-lg);
     border: 1px solid var(--sw-border-color-light);
-    transform: translateY(20px) scale(0.97); 
+    transform: translateY(20px) scale(0.97);
     opacity: 0;
     transition: transform 0.35s var(--sw-transition-easing) 0.05s,
                 opacity 0.35s var(--sw-transition-easing) 0.05s;
 }
 .modal-overlay.visible .modal-content {
-    transform: translateY(0) scale(1); 
+    transform: translateY(0) scale(1);
     opacity: 1;
 }
 /* Custom Scrollbar for Modal Content */
@@ -2563,12 +2563,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 .modal-close-btn {
     position: absolute;
-    top: calc(var(--sw-spacing-unit)*1.5); 
+    top: calc(var(--sw-spacing-unit)*1.5);
     right: calc(var(--sw-spacing-unit)*1.5);
     background: transparent;
     border: none;
-    color: var(--sw-text-tertiary); 
-    font-size: 1.8rem; 
+    color: var(--sw-text-tertiary);
+    font-size: 1.8rem;
     cursor: pointer;
     padding: calc(var(--sw-spacing-unit)*0.5);
     line-height: 1;
@@ -2576,8 +2576,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     z-index: 10; /* Above other modal content */
 }
 .modal-close-btn:hover, .modal-close-btn:focus {
-    color: var(--sw-flag-yellow); 
-    transform: rotate(90deg) scale(1.1); 
+    color: var(--sw-flag-yellow);
+    transform: rotate(90deg) scale(1.1);
 }
 
 /* Generic Modal Header (Shared by all modal types) */
@@ -2594,19 +2594,19 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     width: 80px; /* Slightly smaller for a cleaner header */
     height: 80px;
     object-fit: cover;
-    border-radius: var(--sw-radius-round); 
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); 
-    border: 3px solid var(--sw-flag-blue); 
+    border-radius: var(--sw-radius-round);
+    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    border: 3px solid var(--sw-flag-blue);
     box-shadow: 0 2px 8px rgba(var(--sw-flag-blue-rgb), 0.3);
     background-color: var(--sw-bg-secondary);
 }
 .modal-header .modal-image.channel-logo { /* Specific for channel logos if they should be square/rectangular */
-    border-radius: var(--sw-radius-md); 
+    border-radius: var(--sw-radius-md);
 }
 .modal-header h2 { /* General modal title */
-    color: var(--sw-flag-yellow); 
+    color: var(--sw-flag-yellow);
     font-family: var(--sw-font-display);
-    font-size: clamp(1.4rem, 4vw, 2rem); 
+    font-size: clamp(1.4rem, 4vw, 2rem);
     margin: 0;
     line-height: 1.25;
     display: flex; /* For aligning inline flags if any */
@@ -2630,7 +2630,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     padding-top: calc(var(--sw-spacing-unit) * 1.5); /* Space after header */
 }
 .modal-main-content-area > *:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 /* Sections within the main content area */
 .modal-video-embed-area,
@@ -2641,10 +2641,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     margin-bottom: calc(var(--sw-spacing-unit) * 3); /* Increased default spacing between blocks */
 }
 /* Video Embed in Modals */
-.modal-video-embed-area .video-embed-container { 
+.modal-video-embed-area .video-embed-container {
     position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
     border-radius: var(--sw-radius-md);
-    background-color: #000; 
+    background-color: #000;
     margin-top: 0; /* Remove top margin if it's the first element in main content */
 }
 .modal-video-embed-area iframe {
@@ -2668,12 +2668,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     margin-bottom: calc(var(--sw-spacing-unit) * 1.25); /* More space after subheading */
     padding-bottom: calc(var(--sw-spacing-unit) * 0.75);
     border-bottom: 1px solid var(--sw-border-color); /* Solid, less distracting than dashed */
-    text-align: left; 
+    text-align: left;
 }
 
 .modal-long-description-area p {
     color: var(--sw-text-secondary);
-    line-height: 1.7; 
+    line-height: 1.7;
     font-size: 0.875rem; /* Slightly smaller than main page text */
     margin-bottom: calc(var(--sw-spacing-unit) * 1);
 }
@@ -2681,8 +2681,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 /* CEFR Details in Modals */
 .modal-cefr-details-area .cefr-dots-container {
-    margin-top: calc(var(--sw-spacing-unit) * 0.75); 
-    padding-top: 0; 
+    margin-top: calc(var(--sw-spacing-unit) * 0.75);
+    padding-top: 0;
     border-top: none;
     text-align: left; /* Or 'center' if you prefer the whole block centered */
     /* ADDED: Ensure it allows inline flow for its children */
@@ -2690,7 +2690,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 /* The <p> tag that wraps "Rekommenderad Nivå:" and the dots */
 .modal-cefr-details-area .cefr-dots-container p {
-    font-size: 0.82rem; 
+    font-size: 0.82rem;
     color: var(--sw-text-secondary);
     margin-bottom: 0 !important; /* Remove bottom margin if it's the only p */
     /* display: flex; */ /* Option 1: Make the <p> a flex container */
@@ -2698,7 +2698,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     /* flex-wrap: wrap; */ /* Allow dots to wrap if many */
     /* gap: calc(var(--sw-spacing-unit) * 0.25) calc(var(--sw-spacing-unit) * 0.5); */
 }
-.modal-cefr-details-area .cefr-dots-container p strong { 
+.modal-cefr-details-area .cefr-dots-container p strong {
     font-weight: 600; /* Make "Rekommenderad Nivå:" slightly bolder */
     color: var(--sw-text-primary);
     margin-right: calc(var(--sw-spacing-unit) * 1); /* Space after the label */
@@ -2712,19 +2712,19 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     align-items: center;
     justify-content: center;
     padding: 0.2em 0.7em; /* Adjusted padding for better circle/pill */
-    border-radius: var(--sw-radius-xl); 
+    border-radius: var(--sw-radius-xl);
     font-size: 0.75rem; /* Slightly larger dots */
     font-weight: 700; /* Bolder text in dot */
     color: var(--sw-text-on-yellow);
     text-transform: uppercase;
     border: 1px solid rgba(0,0,0,0.1); /* Subtle border on dot */
-    background-color: var(--sw-flag-yellow); 
-    line-height: 1.3; 
+    background-color: var(--sw-flag-yellow);
+    line-height: 1.3;
     min-width: 2.8em; /* Ensure a nice shape even for "A1" */
     box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
 }
 .cefr-level-dot.not-present {
-    background-color: var(--sw-border-color); 
+    background-color: var(--sw-border-color);
     color: var(--sw-text-tertiary);
     /* filter: saturate(0.2) brightness(0.85); /* Adjusted filter */
     opacity: 0.7;
@@ -2741,7 +2741,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     /* The H4 for "Externa Länkar" (if you have one) is styled by the shared h4 rule */
 }
 
-.modal-external-links-area .modal-links { 
+.modal-external-links-area .modal-links {
     display: flex; /* IMPORTANT: Make sure it's a flex container */
     flex-wrap: wrap; /* Allow buttons to wrap if many */
     justify-content: center; /* <<< THIS CENTERS THE BUTTONS HORIZONTALLY */
@@ -2766,21 +2766,21 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 
 /* Aljohn's Take / Magnus Kommentar section in modals */
-.modal-aljohns-take { 
-    background-color: rgba(var(--sw-flag-blue-rgb), 0.07); 
+.modal-aljohns-take {
+    background-color: rgba(var(--sw-flag-blue-rgb), 0.07);
     padding: calc(var(--sw-spacing-unit)*1.75) calc(var(--sw-spacing-unit)*2); /* More padding */
-    border-left: 4px solid var(--sw-flag-blue); 
-    border-radius: var(--sw-radius-md); 
-    font-style: normal; 
-    font-size: 0.875rem; 
+    border-left: 4px solid var(--sw-flag-blue);
+    border-radius: var(--sw-radius-md);
+    font-style: normal;
+    font-size: 0.875rem;
     color: var(--sw-text-secondary);
     line-height: 1.65;
     margin-top: 0; /* Reset margin if it's directly inside tab wrapper */
 }
-.modal-aljohns-take strong { 
+.modal-aljohns-take strong {
     color: var(--sw-flag-blue);
-    font-weight: 600; 
-    display: block; 
+    font-weight: 600;
+    display: block;
     margin-bottom: calc(var(--sw-spacing-unit) * 0.75);
 }
 
@@ -2790,13 +2790,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .swedish-resource-modal .modal-header img.modal-image {
     width: 90px; height: 90px; /* Slightly larger */
     object-fit: cover;
-    border-radius: var(--sw-radius-round); 
+    border-radius: var(--sw-radius-round);
     margin-bottom: calc(var(--sw-spacing-unit)*1.5); /* More space after image */
-    border: 3px solid var(--sw-flag-blue); 
+    border: 3px solid var(--sw-flag-blue);
     box-shadow: 0 2px 8px rgba(var(--sw-flag-blue-rgb), 0.3); /* Softer shadow */
 }
 .swedish-resource-modal .modal-header img.modal-image.channel-logo {
-    border-radius: var(--sw-radius-md); 
+    border-radius: var(--sw-radius-md);
 }
 /* Title for resource modal already covered by .modal-header h2 */
 
@@ -2971,7 +2971,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
     /* Final Thoughts Section */
     #final-thoughts-swedish-section-container .section-title.section-title-final { font-size: clamp(1.8rem, 5.5vw, 2.8rem); }
-    
+
     /* Grand YouTube Tip Box Responsive */
     #swedish-resources .modern-tip-box.grand-youtube-tip {
         flex-direction: column;

@@ -105,10 +105,10 @@
         .details-toggle { background: none; border: 1px solid var(--accent-yellow); color: var(--accent-yellow); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease; align-self: flex-start; }
         .details-toggle:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
         .details-toggle .fas { margin-left: 5px; transition: transform 0.3s ease-out; }
-        
+
         .timeline-details { /* Main content area that animates */
-            max-height: 0; 
-            overflow: hidden; 
+            max-height: 0;
+            overflow: hidden;
             background-color: rgba(15, 25, 45, 0.7);
             transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
             padding: 0 1.5rem; /* Horizontal padding is static, vertical animates with padding-top/bottom */
@@ -118,21 +118,21 @@
             padding-bottom: 1.5rem;
             border-top: 1px solid rgba(30, 40, 60, 0.8);
         }
-        
+
         /* STYLES FOR STATIC SUB-SECTIONS (NO LONGER NESTED ACCORDIONS) */
-        .sub-section-block { 
-            margin-bottom: 1.5rem; 
+        .sub-section-block {
+            margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 1px dashed rgba(255,255,255,0.15); 
+            border-bottom: 1px dashed rgba(255,255,255,0.15);
         }
-        .sub-section-block:last-child { 
-            margin-bottom: 0; 
+        .sub-section-block:last-child {
+            margin-bottom: 0;
             border-bottom: none;
             padding-bottom: 0;
         }
         .sub-section-header h4 { /* Styling for the static sub-section titles */
             font-family: var(--font-primary);
-            font-size: 1.15rem; 
+            font-size: 1.15rem;
             color: var(--accent-yellow);
             margin: 0 0 0.75rem 0;
         }
@@ -147,13 +147,13 @@
         .detail-block .beginner-tip strong { color: var(--accent-yellow); }
 
         /* Responsive Styles (Mobile nav included here for completeness) */
-        @media (max-width: 992px) { 
+        @media (max-width: 992px) {
             .routine-hero .container { flex-direction: column; text-align: center; }
             .hero-text-content { order: 1; }
             .routine-hero p.hero-subtitle { margin-right: auto; }
             .hero-video-content { order: 2; width: 100%; max-width: 600px; margin-top: 2rem; }
         }
-        @media (max-width: 768px) { 
+        @media (max-width: 768px) {
             .timeline::before { left: 20px; } .timeline-item { padding-left: 50px; } .timeline-marker { left: 0; width: 40px; height: 40px; }
             .timeline-header h3 { font-size: 1.2rem; } .timeline-header .summary-text { font-size: 0.9rem; }
             .routine-hero { padding-top: 80px; } .routine-hero h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
@@ -162,7 +162,7 @@
             .menu-toggle.active .hamburger { background-color: transparent; } .menu-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); } .menu-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
             .dropdown-content { position: static; box-shadow: none; border-radius: 0; background-color: transparent; padding:0; min-width: 100%; } .dropdown-content a { padding: 1rem; text-align: center; border-bottom: 1px solid var(--border-color); } .dropdown-content a:last-child { border-bottom: 1px solid var(--border-color); }
         }
-        
+
         /* Standard Sections Styling (Philosophy, Toolkit, Sacrifice, CTA, Footer) */
         .philosophy-section, .toolkit-section, .sacrifice-section { padding: 60px 0; color: var(--dark-text); background-color: #fff; /* Ensure light background for these */ }
         .philosophy-section .section-title, .toolkit-section .section-title, .sacrifice-section .section-title { color: var(--primary-blue); }
@@ -209,17 +209,17 @@
                 <li class="dropdown">
                     <a href="../index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="../languages/tagalog.html">Tagalog</a>
-                        <a href="../languages/cebuano.html">Cebuano</a>
-                        <a href="../languages/english.html">English</a>
+                        <a href="../languages/tagalog/index.html">Tagalog</a>
+                        <a href="../languages/cebuano/index.html">Cebuano</a>
+                        <a href="../languages/english/index.html">English</a>
                         <a href="../languages/spanish/index.html">Spanish</a>
-                        <a href="../languages/french.html">French</a>
-                        <a href="../languages/indonesian.html">Indonesian</a>
-                        <a href="../languages/italian.html">Italian</a>
-                        <a href="../languages/portuguese.html">Portuguese</a>
-                        <a href="../languages/russian.html">Russian</a>
-                        <a href="../languages/swedish.html">Swedish</a>
-                        <a href="../languages/german.html">German</a>
+                        <a href="../languages/french/index.html">French</a>
+                        <a href="../languages/indonesian/index.html">Indonesian</a>
+                        <a href="../languages/italian/index.html">Italian</a>
+                        <a href="../languages/portuguese/index.html">Portuguese</a>
+                        <a href="../languages/russian/index.html">Russian</a>
+                        <a href="../languages/swedish/index.html">Swedish</a>
+                        <a href="../languages/german/index.html">German</a>
                     </div>
                 </li>
                 <li class="dropdown">
@@ -239,7 +239,7 @@
                         <a href="../blog.html">Polyglot Papers Blog</a>
                         <a href="../pathway.html">Pathway</a>
                         <a href="apps.html">Essential Apps & Tools</a>
-                        <a href="routine.html" class="active-link">Daily Routine</a> 
+                        <a href="routine.html" class="active-link">Daily Routine</a>
                         <a href="../index.html#cultural-institutes">Language & Culture Centers</a>
                         <!-- Add library.html link if it exists at this level or ../library.html if at root -->
                         <!-- <a href="library.html">My Library</a> -->
@@ -249,7 +249,7 @@
                     <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
                         <a href="../services/coaching/coaching.html">Language Coaching</a>
-                        <a href="../services/translation/translation.html">Translation</a> 
+                        <a href="../services/translation/translation.html">Translation</a>
                     </div>
                 </li>
                 <li><a href="../shop/shop.html">Shop</a></li>
@@ -283,7 +283,7 @@
             <div class="container">
                 <h2 class="section-title">The System Unveiled: Hour by Hour</h2>
                 <p class="section-subtitle">Each block is part of the overall system. Click “View Main Details” to expand and see the full breakdown for each time segment. Everything starts off collapsed — if it doesn’t open fully, just click again.</p>
-                
+
                 <div class="timeline">
                     <!-- Morning Power Block -->
                     <div class="timeline-item" data-color="dark-blue">
@@ -338,7 +338,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Calisthenics + Podcast Listening -->
                     <div class="timeline-item" data-color="brown">
                         <div class="timeline-marker"><i class="fas fa-dumbbell"></i></div>
@@ -520,7 +520,7 @@
             }
             const currentYearSpan = document.getElementById('current-year');
             if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
-            
+
             const scrollElements = document.querySelectorAll('.interactive-breakdown, .philosophy-section, .toolkit-section, .sacrifice-section, .your-journey-section');
             const elementInView = (el, dividend = 1) => { if (!el) return false; const elementTop = el.getBoundingClientRect().top; return ( elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend ); };
             const displayScrollElement = (element) => { if (element) element.classList.add('visible'); };
@@ -538,10 +538,10 @@
 
                 // Initialize ALL main items as CLOSED
                 if (item && mainDetails && mainToggleIcon) {
-                    item.classList.remove('active'); 
+                    item.classList.remove('active');
                     mainToggleIcon.classList.remove('fa-chevron-up');
                     mainToggleIcon.classList.add('fa-chevron-down');
-                    mainDetails.style.maxHeight = '0px'; 
+                    mainDetails.style.maxHeight = '0px';
                     // Ensure padding is also 0 when closed for a clean collapse
                     // CSS will handle padding transition if .timeline-item.active .timeline-details has it
                     if (!item.classList.contains('active')) {
@@ -553,7 +553,7 @@
                 if (mainHeaderButton && mainDetails && mainToggleIcon) {
                     mainHeaderButton.addEventListener('click', () => {
                         const isActive = item.classList.toggle('active');
-                        
+
                         if (isActive) {
                             // Opening:
                             mainDetails.style.display = 'block'; // Make sure it's not display:none
@@ -565,11 +565,11 @@
                             mainDetails.style.maxHeight = '0px'; // Set back to 0px
                             mainDetails.offsetHeight; // Force reflow
                             mainDetails.style.transition = originalTransition; // Restore transition
-                            
+
                             requestAnimationFrame(() => { // Animate to full scrollHeight
                                 mainDetails.style.maxHeight = scrollHeight + "px";
                                 // Restore padding via CSS by letting .active class apply it
-                                mainDetails.style.paddingTop = ''; 
+                                mainDetails.style.paddingTop = '';
                                 mainDetails.style.paddingBottom = '';
                             });
 

@@ -1,4 +1,3 @@
-// WEBSITE/languages/js/data/swedish-page-data.js
 const swedishResourceData = {
   swedishRestaurantsPH: [
         {
@@ -114,7 +113,7 @@ const swedishResourceData = {
         }
     ],
     music: {
-       
+
           artists: [
     { id: 'victor-leksell', name: 'Victor Leksell', shortDesc: 'Känslosam pop från Idol-stjärnan.', longDesc: 'Victor Leksell slog igenom stort efter sin medverkan i Idol 2017 och har sedan dess blivit en av Sveriges mest streamade och älskade artister. Hans musik kännetecknas av ärliga, relaterbara texter och starka popmelodier som ofta berör teman som kärlek och saknad.', imgSrc: 'https://i1.sndcdn.com/artworks-CIG5nHE0MzrTcnnp-pv1HWg-t500x500.jpg', youtubeChannel: 'https://www.youtube.com/channel/UC63n6nJAlrfjXVOYnJ4yN4Q', spotifyLink: 'https://open.spotify.com/artist/6oB32jLgHeG7iA2gR93xro', sampleVideoEmbed: 'https://www.youtube.com/embed/dSRZ_1ncRhQ', aljohnsNote: 'Följde honom sedan Idol, en självklar favorit! \'Svag\' och \'Nätterna i Göteborg\' går på repeat.', cefrLevels: [ { level: 'B1', strength: 'medium' }, { level: 'B2', strength: 'high', note: 'För textförståelse & kulturella referenser' }, { level: 'C1', strength: 'medium' } ] },
     { id: 'benjamin-ingrosso', name: 'Benjamin Ingrosso', shortDesc: 'Min "Disneyprins"! Mello & Så Mycket Bättre.', longDesc: 'Benjamin Ingrosso är en mångfacetterad artist, känd för sin karisma och musikaliska talang som sträcker sig från pop och soul till influenser från sydeuropeisk musik. Han har vunnit Melodifestivalen och charmat publiken i program som "Så Mycket Bättre" med sina tolkningar och eget material.', imgSrc: 'https://i.scdn.co/image/ab6761610000e5eb414a4cca954d0a14740e3cc9', youtubeChannel: 'https://www.youtube.com/channel/UC6k09gN2hLhht3kKk3D6u6w', spotifyLink: 'https://open.spotify.com/artist/7jEEE187pVG6InOxn03oA5', sampleVideoEmbed: 'https://www.youtube.com/embed/SdODZPCZK3o', aljohnsNote: 'Sååå karismatisk och talangfull, en riktig stjärna som en Disneyprins! Hans energi är smittsam och musiken är alltid top-notch.', cefrLevels: [ { level: 'B1', strength: 'medium' }, { level: 'B2', strength: 'high' }, { level: 'C1', strength: 'medium' } ] },
@@ -128,7 +127,7 @@ const swedishResourceData = {
     { id: 'danny-saucedo', name: 'Danny Saucedo', shortDesc: 'Grym sångare! "Super 8" är en favorit.', longDesc: 'Danny Saucedo är en etablerad och populär svensk artist, känd för sina energiska framträdanden och hits inom popgenren. Han har deltagit i Melodifestivalen flera gånger och är en uppskattad liveartist.', imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMzZD3rMLiSWGFV0zza8aJD9ylmlRbrFnNUQ&s', youtubeChannel: 'https://www.youtube.com/channel/UC9f0s1Z5c4c8p5f3t4eW6Nw', spotifyLink: 'https://open.spotify.com/artist/55Vw88gL0b6Ah22DTR8z43', sampleVideoEmbed: 'https://www.youtube.com/embed/-KmUWXluoyg', aljohnsNote: '\'Super 8\' är en låt som alltid får mig på bra humör. Verkligen en bra sångare!', cefrLevels: [ { level: 'B1', strength: 'medium' }, { level: 'B2', strength: 'medium' } ] },
     { id: 'marcus-martinus', name: 'Marcus & Martinus', shortDesc: 'Mina idoler! Norska tvillingar.', longDesc: 'Den norska popduon Marcus & Martinus Gunnarsen har varit stjärnor sedan barnsben och tagit Skandinavien (och numera Europa) med storm. Kända för sin smittsamma energi, synkroniserade danssteg och moderna poplåtar. De vann svenska Melodifestivalen 2024 och representerade Sverige i Eurovision.', imgSrc: 'https://cdn-images.dzcdn.net/images/artist/af33a7c4e89bdc15c1140640543ca5e4/1900x1900-000000-80-0-0.jpg', youtubeChannel: 'https://www.youtube.com/channel/UCRUhH2V22gN4qL3zP3yS9dw', spotifyLink: 'https://open.spotify.com/artist/3N4fiwF558sFZ8KzL339uF', sampleVideoEmbed: 'https://www.youtube.com/embed/zuoSnQ0g5nE', aljohnsNote: 'De förtjänar världsberömmelse! Otroligt duktiga och \'Unforgettable\' var en riktig banger. Mina idoler!', cefrLevels: [ { level: 'A2', strength: 'high', note: 'Energi och tydlighet' }, { level: 'B1', strength: 'high' }, { level: 'B2', strength: 'medium' } ] },
     { id: 'estraden', name: 'estraden', shortDesc: 'Modern popgrupp. "Bra för dig" med Victor Leksell.', longDesc: 'Estraden är en svensk popgrupp känd för sina moderna poplåtar och samarbeten med andra kända artister. Deras musik har ofta relaterbara texter om kärlek och relationer.', imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZuFrP2XmgNzY3AvuFUKvjbvlPmGgR9vyd0w&s', youtubeChannel: 'https://www.youtube.com/channel/UCc0IaHZm7rN7PAb5zbw2NQA', spotifyLink: 'https://open.spotify.com/artist/2Osj5g9wBahb0uG2J2snbG', sampleVideoEmbed: 'https://www.youtube.com/embed/rHEvFj_fdC4', aljohnsNote: 'Perfekt modern pop med texter som är lätta att relatera till. Bra för att snappa upp vardagsuttryck.', cefrLevels: [ { level: 'B1', strength: 'medium' }, { level: 'B2', strength: 'medium' } ] }
-  ] 
+  ]
     },
     musicPrograms: {
        programs: [
@@ -248,5 +247,5 @@ const swedishResourceData = {
     { id: 'blippi-sv', name: 'Blippi Svenska', shortDesc: 'Pedagogiska videor för barn.', longDesc: 'Den energiska och nyfikna karaktären Blippi utforskar världen och lär barn om allt från färger och siffror till fordon och djur, allt på svenska. Interaktivt och lärorikt.', imgSrc: 'https://yt3.googleusercontent.com/oUS043fB33cKjHxQMBxXXoNYc4679ym7Z-pKyCMq0Wg_hIHp_Qmj8b-pUK9TWMD0czy9mb0=s900-c-k-c0x00ffffff-no-rj', youtubeChannel: 'https://www.youtube.com/watch?v=s7uwpJyQBmQ&pp=ygUOYmxpcHBpIHN2ZXJpZ2U%3D',  sampleVideoEmbed: 'https://www.youtube.com/embed/YOUR_BLIPPI_SV_VIDEO_ID', aljohnsNote: 'Blippi är entusiastisk och lär ut ord på ett roligt sätt. Bra för att se och höra ord i kontext.', cefrLevels: [ {level: 'A1', strength: 'medium'}, {level: 'A2', strength: 'medium'} ] }
   ]
 }
-    
+
 };

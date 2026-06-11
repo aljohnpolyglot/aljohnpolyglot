@@ -169,40 +169,40 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => { if (modalPlaceholder) modalPlaceholder.innerHTML = ''; }, 300);
         }
     };
-    
+
     // MODAL FOR SCANDINAVIAN ENCOUNTERS (Corrected Content Order & Video)
     window.openEncounterModalFromMain = function(itemData) {
         if (!modalPlaceholder || !itemData) { console.error("Modal Error: Encounter data missing for modal."); return; }
 
         let flagsHTML = '';
         if (itemData.countryCodes && Array.isArray(itemData.countryCodes)) {
-            flagsHTML = itemData.countryCodes.map(code => 
+            flagsHTML = itemData.countryCodes.map(code =>
                 `<img src="https://flagcdn.com/h24/${code.toLowerCase()}.png" alt="${code}" class="title-inline-flag-img" style="height:1.1em; margin-right: 6px; vertical-align: -0.1em; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);">`
             ).join('');
-        } else if (itemData.flags && Array.isArray(itemData.flags)) { 
+        } else if (itemData.flags && Array.isArray(itemData.flags)) {
              flagsHTML = itemData.flags.map(flag => `<span class="flag-icon">${flag}</span>`).join(' ');
         }
 
         const videoSectionHTML = itemData.sampleVideoEmbed ? `
-            <div class="modal-video-embed-area"> 
+            <div class="modal-video-embed-area">
                 <div class="video-embed-container">
                     <iframe src="${itemData.sampleVideoEmbed}" title="${itemData.title || 'Video'} Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>` : ''; // Removed fallback message, video is primary content here
-        
-        const longDescHTML = itemData.longDesc ? 
+
+        const longDescHTML = itemData.longDesc ?
             `<div class="modal-long-description-area">
                 <h4>Beskrivning</h4>
                 <p>${itemData.longDesc.replace(/\n/g, '</p><p>')}</p>
-            </div>` : 
+            </div>` :
             (itemData.cardTeaser ? `<div class="modal-long-description-area"><p>${itemData.cardTeaser}</p></div>` : '');
-        
-        const aljohnsNoteHTML = itemData.aljohnsNote ? 
+
+        const aljohnsNoteHTML = itemData.aljohnsNote ?
             `<div class="modal-aljohns-take-container">
                 <h4>Magnus Kommentar</h4>
                 <div class="modal-aljohns-take">${itemData.aljohnsNote.replace(/\n/g, '<br>')}</div>
             </div>` : '';
-        
+
         let modalThemeClass = 'scandinavian-encounter-modal';
         if (itemData.countryCodes) {
             if (itemData.countryCodes.includes('NO')) modalThemeClass += ' norway-theme-modal';
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.className = 'restaurant-ph-card';
             card.setAttribute('role', 'button'); card.setAttribute('tabindex', '0');
             card.setAttribute('aria-label', `Läs mer om ${itemData.name}`);
-            card.dataset.itemId = itemData.id; 
+            card.dataset.itemId = itemData.id;
 
             let linksHTML = '';
             if (itemData.facebookLink) linksHTML += `<a href="${itemData.facebookLink}" class="btn-icon" target="_blank" rel="noopener noreferrer" aria-label="${itemData.name} Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>`;
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     ${itemData.locationCity ? `<p class="restaurant-ph-card-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ${itemData.locationCity}</p>` : ''}
                     ${linksHTML ? `<div class="restaurant-ph-card-links">${linksHTML}</div>` : ''}
                 </div>`;
-            
+
             const openModalAction = () => {
                 const currentItemData = swedishResourceData.swedishRestaurantsPH.find(r => r.id === card.dataset.itemId);
                 if (currentItemData && typeof openRestaurantPHModalFromMain === 'function') {
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- INITIAL PAGE RENDER CALLS ---
-    renderMainSwedishRestaurantsPH(); 
+    renderMainSwedishRestaurantsPH();
 
     console.log("Swedish page main renderer (COMPLETE V FINAL - Popovers, Modals Updated) initialized.");
 });
