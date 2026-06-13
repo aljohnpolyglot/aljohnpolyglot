@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${post.readTime ? `<span><i class="fas fa-clock"></i> ${post.readTime}</span>` : ''}
                     </p>
                     <p class="card-excerpt">${post.excerpt}</p>
-                    <a href="${post.link}" class="btn btn-outline btn-small card-read-more">Read Dispatch <i class="fas fa-arrow-right"></i></a>
+                    <a href="${post.link}" class="btn btn-outline btn-small card-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
         `;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.textContent = option;
             button.dataset.filterType = filterType;
             button.dataset.filterValue = option;
-            if (option === "All Dispatches" || option === "All Languages") {
+            if (option === "All Articles" || option === "All Languages") {
                 button.classList.add('active'); // Default active
             }
             container.appendChild(button);
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Category Filter
         const activeCategoryButton = categoryFiltersContainer ? categoryFiltersContainer.querySelector('button.active') : null;
-        const selectedCategory = activeCategoryButton ? activeCategoryButton.dataset.filterValue : "All Dispatches";
-        if (selectedCategory !== "All Dispatches") {
+        const selectedCategory = activeCategoryButton ? activeCategoryButton.dataset.filterValue : "All Articles";
+        if (selectedCategory !== "All Articles") {
             filteredPosts = filteredPosts.filter(post => post.categories && post.categories.includes(selectedCategory));
         }
 
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tagSearchInput) tagSearchInput.value = '';
             if (categoryFiltersContainer) {
                 categoryFiltersContainer.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
-                const defaultCategoryButton = categoryFiltersContainer.querySelector('button[data-filter-value="All Dispatches"]');
+                const defaultCategoryButton = categoryFiltersContainer.querySelector('button[data-filter-value="All Articles"]');
                 if (defaultCategoryButton) defaultCategoryButton.classList.add('active');
             }
             if (languageFiltersContainer) {

@@ -1,0 +1,79 @@
+/* languages/spanish/css/nav-footer-fix.css */
+/*
+  The Spanish page sets html font-size to 62.5% for its local layout.
+  That makes the shared navbar/footer render smaller because both use rem-based sizing.
+  This file restores the shared header/footer proportions only on the Spanish page.
+*/
+
+header nav.container {
+    padding: 12px 0 !important;
+    height: 70px !important;
+}
+
+header .logo-img {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+header .logo-text {
+    font-size: 22px !important;
+}
+
+header ul.nav-links a,
+header ul.nav-links .dropbtn {
+    font-size: 14px !important;
+}
+
+header ul.nav-links li {
+    margin-left: 20px !important;
+}
+
+header .nav-cta {
+    padding: 8px 18px !important;
+}
+
+header .dropdown-content a {
+    font-size: 13.5px !important;
+    padding: 10px 16px !important;
+}
+
+@media (max-width: 768px) {
+    header ul.nav-links {
+        top: 70px !important;
+    }
+
+    header ul.nav-links a {
+        font-size: 15px !important;
+    }
+}
+
+footer, .site-footer {
+    padding: 40px 0 20px !important;
+    font-size: 14px !important;
+}
+
+footer .footer-logo .logo-img,
+.site-footer .footer-logo .logo-img {
+    width: 35px !important;
+    height: 35px !important;
+}
+
+footer .footer-logo span,
+.site-footer .footer-logo span {
+    font-size: 19px !important;
+}
+
+footer .footer-links a,
+.site-footer .footer-links a {
+    font-size: 14px !important;
+}
+
+footer .social-links a,
+.site-footer .social-links a {
+    font-size: 24px !important;
+}
+
+footer .footer-bottom,
+.site-footer .footer-bottom {
+    font-size: 13px !important;
+}

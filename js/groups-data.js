@@ -46,6 +46,36 @@ const languageGroupsData = [
         }
     },
     {
+        id: 'tropamici',
+        name: 'Tropamici - Italian for Filipinos',
+        logo: 'images/groups/tropamici_logo.png',
+        tagline: 'A Filipino-led Italian community built around daily chat, culture, and a welcoming in-person meetup history.',
+        languages: ['Italian'],
+        types: ['Facebook Group', 'Meetup (In-Person)', 'Social Club'],
+        link: 'groups/tropamici.html',
+        theme: {
+            backgroundColor: '#2E8B57',
+            textColor: '#FFFFFF',
+            accentColor: '#D72638',
+            buttonTextColor: '#FFFFFF'
+        }
+    },
+    {
+        id: 'filipinhos',
+        name: 'Filipinhos - Portuguese for Filipinos',
+        logo: 'images/groups/filipinhos_logo.png',
+        tagline: 'A supportive Portuguese-learning community guided by Professor Bruno Gomes, with active Messenger discussions and virtual meetups.',
+        languages: ['Portuguese'],
+        types: ['Facebook Group', 'Online Meetup', 'Mentorship'],
+        link: 'groups/filipinhos.html',
+        theme: {
+            backgroundColor: '#157F3B',
+            textColor: '#FFFFFF',
+            accentColor: '#F4C430',
+            buttonTextColor: '#1E2A20'
+        }
+    },
+    {
         id: 'chf',
         name: 'Club de Hispano-Hablantes Filipino',
         logo: 'images/groups/club_hispanohablantes_logo.jpg',

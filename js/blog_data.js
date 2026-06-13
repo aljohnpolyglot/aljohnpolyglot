@@ -3,13 +3,13 @@
 const blogPostsData = [
     {
         id: "learn-in-3-months", // Unique identifier
-        title: "How to Learn a Language in 3 Months? The Truth & The Method",
+        title: "Learning a Language in 3 Months: Method and Expectations",
         date: "2024-05-17", // Use YYYY-MM-DD for easy sorting. Replace with actual publish date.
         author: "Aljohn Polyglot",
-        categories: ["Core Systems & Schematics", "Psyche & Soma", "Field Reports & Cultural Intel"],
+        categories: ["Study Methods", "Learning Strategy", "Language Notes"],
         languageFocus: ["Multi-Language Focus", "Spanish", "French", "Italian", "Indonesian", "Portuguese", "Russian", "German", "Swedish"], // Languages it's relevant to or mentions
         tags: ["deliberate practice", "immersion", "language learning routine", "polyglot journey", "rapid fluency", "sacrifice", "mindset", "language acquisition"],
-        excerpt: "Can you *really* learn a language in 3 months? I say YES. This isn't just a claim; it's a field-tested methodology. Discover the '500 Deliberate Hour' rule, the intense daily routine that makes it possible, and the mindset that bypasses years of traditional study. Your calculator for fluency is inside.",
+        excerpt: "Can a language be learned in three months? This article outlines the method, the time commitment, and the habits that make consistent progress possible.",
         link: "blog/learn_in_3_months/index.html", // Relative path from blog.html to the article
         featuredImage: "images/blog/aljohn_3_months.png", // Placeholder - Create a compelling image for this
         // For "Most Popular" (future feature - can be updated dynamically or manually)
@@ -24,7 +24,7 @@ const blogPostsData = [
         title: "My First Month Immersed in French: What Really Happened",
         date: "2024-06-10",
         author: "Aljohn Polyglot",
-        categories: ["Field Reports & Cultural Intel", "Core Systems & Schematics"],
+        categories: ["Language Notes", "Study Methods"],
         languageFocus: ["French"],
         tags: ["beginner experience", "french immersion", "comprehensible input", "anki"],
         excerpt: "A raw look at the daily grind, the breakthroughs, and the frustrations of diving headfirst into French for 30 days straight.",
@@ -34,14 +34,14 @@ const blogPostsData = [
         readTime: "Approx. 8 min read"
     },
     {
-        id: "declassified-off-topic-1",
+        id: "off-topic-1",
         title: "Beyond Languages: My Obsession with [Your Off-Topic Interest]",
         date: "2024-07-01",
         author: "Aljohn Polyglot",
-        categories: ["[CLASSIFIED] Off-Topic Logs"],
+        categories: ["Other"],
         languageFocus: ["N/A"],
         tags: ["personal", "hobbies", "philosophy"],
-        excerpt: "Sometimes the polyglot needs a break. A peek into one of my other deep dives that isn't about verb conjugations or immersion hours.",
+        excerpt: "Sometimes it helps to step away from language study. This post explores another interest that shapes my thinking and routines.",
         link: "path/to/off-topic-article.html",
         featuredImage: "images/blog_previews/off-topic-1.jpg",
         views: 500,
@@ -52,11 +52,11 @@ const blogPostsData = [
 
 // Data for filter options (can also be generated dynamically from blogPostsData if preferred)
 const filterCategories = [
-    "All Dispatches", // Default option
-    "Core Systems & Schematics",
-    "Psyche & Soma",
-    "Field Reports & Cultural Intel",
-    "[CLASSIFIED] Off-Topic Logs"
+    "All Articles", // Default option
+    "Study Methods",
+    "Learning Strategy",
+    "Language Notes",
+    "Other"
 ];
 
 const filterLanguageFocus = [
