@@ -1,5 +1,10 @@
 function renderFrenchPlaylists() {
-    const numberFormatter = new Intl.NumberFormat('fr-FR');
+    const dateFormatter = new Intl.DateTimeFormat('fr-FR', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        timeZone: 'UTC',
+    });
 
     const escapeHtml = value =>
         String(value ?? '')
@@ -12,22 +17,19 @@ function renderFrenchPlaylists() {
     const buildMetaText = video => {
         const parts = [];
 
-        if (video.date) {
-            parts.push(video.date);
-        }
-
-        if (video.publishedTime) {
-            parts.push(video.publishedTime);
+        if (video.publishedAt) {
+            const publishedDate = new Date(`${video.publishedAt}T00:00:00Z`);
+            if (!Number.isNaN(publishedDate.getTime())) {
+                parts.push(dateFormatter.format(publishedDate));
+            }
         }
 
         if (video.duration) {
             parts.push(video.duration);
         }
 
-        if (typeof video.views === 'number') {
-            parts.push(`${numberFormatter.format(video.views)} vues`);
-        } else if (video.views) {
-            parts.push(video.views);
+        if (video.subtitleNote) {
+            parts.push(video.subtitleNote);
         }
 
         if (video.channelName) {
@@ -72,7 +74,17 @@ function renderFrenchPlaylists() {
         const playlistId = getPlaylistId(playlistUrl);
 
         const updateFeaturedVideo = (video, autoplay = false) => {
-            player.src = `https://www.youtube.com/embed/${video.id}${autoplay ? '?autoplay=1' : ''}`;
+            const playerParams = new URLSearchParams({ rel: '0' });
+
+            if (autoplay) {
+                playerParams.set('autoplay', '1');
+            }
+
+            if (playlistId) {
+                playerParams.set('list', playlistId);
+            }
+
+            player.src = `https://www.youtube.com/embed/${video.id}?${playerParams.toString()}`;
             title.textContent = video.title;
             meta.textContent = buildMetaText(video);
             link.href = playlistId
@@ -99,6 +111,7 @@ function renderFrenchPlaylists() {
             item.type = 'button';
             item.className = itemClassName;
             item.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
+            item.setAttribute('aria-label', `Lire ${video.title}`);
 
             if (index === 0) {
                 item.classList.add('active-video');

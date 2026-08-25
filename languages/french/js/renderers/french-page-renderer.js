@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (storyToggle && storyHidden) {
         storyToggle.addEventListener('click', () => {
             const isOpen = storyHidden.classList.toggle('open');
-            storyToggle.textContent = isOpen ? 'Lire moins' : 'Lire plus';
+            storyToggle.textContent = isOpen ? 'Réduire' : 'Lire la suite';
+            storyToggle.setAttribute('aria-expanded', String(isOpen));
         });
     }
 
@@ -21,7 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (typeof renderFrenchPlaylists === 'function') {
-        renderFrenchPlaylists();
+    if (typeof window.renderFrenchResources === 'function') {
+        window.renderFrenchResources();
+    }
+
+    if (typeof window.renderFrenchPlaylists === 'function') {
+        window.renderFrenchPlaylists();
     }
 });
