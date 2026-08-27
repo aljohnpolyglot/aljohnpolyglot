@@ -67,7 +67,7 @@ window.frenchCuratedChannelsData = {
             aljohnComment: 'Chanter « Ceux qu’on était » au Grand Karaoke de la Francophonie, devant la communauté francophone de Manille, était ma manière de remercier Pierre et Star Academy pour tout ce qu’ils avaient réveillé en moi.',
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites'],
-            sampleVideo: { id: 'xhG45EjK14I', title: 'Pierre Garnier — Ceux qu’on était (clip officiel)' },
+            sampleVideo: { id: 'RcFbfDJi3t4', title: 'Pierre Garnier raconte les coulisses de son premier album — BFMTV' },
             links: { instagram: 'https://www.instagram.com/pierregarniermusique/', youtube: 'https://www.youtube.com/@PierreGarnierVEVO-cf1gi' },
         }),
         frenchCreator({

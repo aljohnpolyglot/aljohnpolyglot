@@ -69,21 +69,29 @@ function renderFrenchResources() {
             return `<img src="${escapeHtml(spotlight.imageSrc)}" alt="${escapeHtml(spotlight.imageAlt)}" loading="lazy" decoding="async">`;
         }
 
-        const countClass = spotlight.gallery.length > 4 ? 'count-many' : `count-${spotlight.gallery.length}`;
         return `
-            <div class="spotlight-album-fr ${countClass}" role="list" aria-label="Album photo — ${escapeHtml(spotlight.name)}">
-                ${spotlight.gallery
-                    .map(
-                        (photo, index) => `
-                            <figure class="spotlight-album-photo-fr${index === 0 ? ' featured' : ''}" role="listitem">
-                                <button class="spotlight-album-trigger-fr" type="button" data-spotlight-id="${escapeHtml(spotlight.id)}" data-photo-index="${index}" aria-label="Agrandir : ${escapeHtml(photo.caption)}">
-                                    <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}" loading="lazy" decoding="async">
-                                </button>
-                                <figcaption aria-hidden="true">${escapeHtml(photo.caption)}</figcaption>
-                            </figure>
-                        `,
-                    )
-                    .join('')}
+            <div class="spotlight-album-fr" data-spotlight-id="${escapeHtml(spotlight.id)}" data-active-index="0" role="group" aria-roledescription="carrousel" aria-label="Album photo — ${escapeHtml(spotlight.name)}">
+                <div class="spotlight-album-viewport-fr">
+                    ${spotlight.gallery
+                        .map(
+                            (photo, index) => `
+                                <figure class="spotlight-album-photo-fr${index === 0 ? ' is-active' : ''}" data-photo-index="${index}"${index === 0 ? '' : ' hidden'} aria-hidden="${index === 0 ? 'false' : 'true'}">
+                                    <button class="spotlight-album-trigger-fr" type="button" data-spotlight-id="${escapeHtml(spotlight.id)}" data-photo-index="${index}" aria-label="Agrandir : ${escapeHtml(photo.caption)}">
+                                        <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}" loading="lazy" decoding="async">
+                                    </button>
+                                    <figcaption aria-hidden="true">${escapeHtml(photo.caption)}</figcaption>
+                                </figure>
+                            `,
+                        )
+                        .join('')}
+                </div>
+                <button class="spotlight-album-nav-fr previous" type="button" data-carousel-direction="-1" aria-label="Photo précédente de ${escapeHtml(spotlight.name)}">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="spotlight-album-nav-fr next" type="button" data-carousel-direction="1" aria-label="Photo suivante de ${escapeHtml(spotlight.name)}">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <p class="spotlight-album-status-fr" aria-live="polite">Photo 1 sur ${spotlight.gallery.length}</p>
             </div>
         `;
     };
@@ -102,9 +110,6 @@ function renderFrenchResources() {
                     <div class="spotlight-copy">
                         <h3>${escapeHtml(spotlight.name)}</h3>
                         ${spotlight.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}
-                        <div class="offering-list" role="group" aria-label="Points forts">
-                            ${spotlight.tags.map(tag => `<span class="offering-chip">${escapeHtml(tag)}</span>`).join('')}
-                        </div>
                         <div class="action-row">
                             ${spotlight.actions.map(renderAction).join('')}
                         </div>
@@ -169,7 +174,32 @@ function renderFrenchResources() {
         }, 180);
     };
 
+    const changeCarouselPhoto = (album, direction) => {
+        const photos = Array.from(album.querySelectorAll('.spotlight-album-photo-fr'));
+        if (photos.length < 2) return;
+
+        const currentIndex = Number.parseInt(album.dataset.activeIndex || '0', 10);
+        const nextIndex = (currentIndex + direction + photos.length) % photos.length;
+        photos.forEach((photo, index) => {
+            const isActive = index === nextIndex;
+            photo.hidden = !isActive;
+            photo.classList.toggle('is-active', isActive);
+            photo.setAttribute('aria-hidden', String(!isActive));
+        });
+        album.dataset.activeIndex = String(nextIndex);
+        const status = album.querySelector('.spotlight-album-status-fr');
+        if (status) status.textContent = `Photo ${nextIndex + 1} sur ${photos.length}`;
+    };
+
     spotlightContainer.addEventListener('click', event => {
+        const carouselButton = event.target.closest('.spotlight-album-nav-fr');
+        if (carouselButton && spotlightContainer.contains(carouselButton)) {
+            const album = carouselButton.closest('.spotlight-album-fr');
+            const direction = Number.parseInt(carouselButton.dataset.carouselDirection || '1', 10);
+            if (album) changeCarouselPhoto(album, direction);
+            return;
+        }
+
         const trigger = event.target.closest('.spotlight-album-trigger-fr');
         if (!trigger || !spotlightContainer.contains(trigger)) return;
 

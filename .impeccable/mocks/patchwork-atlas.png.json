@@ -1,0 +1,8 @@
+{
+  "approved": true,
+  "approvedAt": "2026-08-27",
+  "approvedBy": "user",
+  "promptFile": ".impeccable/mocks/patchwork-atlas.prompt.txt",
+  "promptEmbedded": true,
+  "note": "The exact generation prompt is embedded in the PNG tEXt metadata and mirrored in the adjacent prompt file."
+}

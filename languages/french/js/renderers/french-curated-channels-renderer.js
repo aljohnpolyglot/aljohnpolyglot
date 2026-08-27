@@ -235,21 +235,6 @@ function renderFrenchCuratedChannels() {
         }
     };
 
-    const renderModalTags = channel => {
-        const tagsContainer = document.getElementById('curated-modal-tags-fr');
-        if (!tagsContainer) return;
-
-        tagsContainer.replaceChildren();
-        channel.categories.forEach(categoryId => {
-            const category = categoryById.get(categoryId);
-            if (!category) return;
-
-            const tag = document.createElement('span');
-            tag.innerHTML = `<i class="${category.icon}" aria-hidden="true"></i> ${category.title}`;
-            tagsContainer.appendChild(tag);
-        });
-    };
-
     const renderModalLevels = channel => {
         const levelsContainer = document.getElementById('curated-modal-levels-fr');
         const guidance = document.getElementById('curated-modal-level-guidance-fr');
@@ -330,7 +315,6 @@ function renderFrenchCuratedChannels() {
         video.src = `https://www.youtube.com/embed/${channel.sampleVideo.id}?rel=0`;
         video.title = channel.sampleVideo.title;
         videoTitle.textContent = channel.sampleVideo.title;
-        renderModalTags(channel);
         renderModalLevels(channel);
         renderModalLinks(channel);
 

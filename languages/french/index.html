@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vidéos, rencontres, centres culturels et ressources qui accompagnent le parcours d'Aljohn Polyglot en français aux Philippines.">
-    <meta name="theme-color" content="#173a84">
+    <meta name="theme-color" content="#1a2c40">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:title" content="Mon coin français | Aljohn Polyglot">
@@ -20,58 +20,70 @@
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Caveat:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/page-language-french.css">
+    <link rel="stylesheet" href="css/page-language-french-patchwork.css">
 </head>
 <body class="french-page">
+    <!--
+    THESIS: Aljohn’s French library is a living atlas sewn from real people, places, videos and memories; it refuses the generic resource portal and its interchangeable cards.
+    OWN-WORLD: Indigo denim, cream linen, faded chambray and red thread form square folios, stitched rows, cloth pockets and documentary photo quilts.
+    STORY: Visitors meet Aljohn’s community first, understand why each resource matters, then open a video, creator, place or album without leaving the personal context.
+    FIRST VIEWPORT: A compact indigo masthead tops an 18/82 split: a cream stitched spine holds four destinations and the red primary action; a near-full-bleed Saging Ça Va ? quilt leads the right side, followed immediately by independent creator shelves.
+    FORM: “L’atlas cousu”, composition C of the chosen Patchwork direction; seed key 12c5f53c.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
     <a class="skip-link-fr" href="#main-content">Aller au contenu</a>
     <header id="main-header-placeholder"></header>
 
     <main id="main-content" class="french-main">
         <section class="hero-fr" aria-labelledby="hero-title-fr">
-            <div class="container-fr hero-frame">
-                <article class="glass-card hero-copy-card">
-                    <div>
-                        <div class="hero-title-wrap">
-                            <span class="hero-flag-badge" aria-hidden="true"></span>
-                            <h1 id="hero-title-fr" class="hero-title">Mon coin <span class="accent">français</span></h1>
-                        </div>
-                        <p class="hero-copy">
-                            Le français a quitté mes cahiers dès que je l'ai parlé avec de vraies personnes. À Manille et à Cebu, je l'ai retrouvé dans les <strong>médiathèques</strong>, les conversations improvisées, les festivals, les chansons et les rencontres communautaires.
-                        </p>
-                        <p class="hero-copy">
-                            Ce carnet réunit les vidéos, les lieux et les ressources qui ont réellement nourri mon parcours — avec des portes d'entrée concrètes pour construire le tien.
-                        </p>
-                    </div>
-                    <nav class="hero-actions" aria-label="Découvrir la page">
-                        <a class="btn-fr primary" href="#playlist-francais"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Voir mes vidéos</a>
-                        <a class="btn-fr primary" href="#bibliotheque"><i class="fa-solid fa-users-viewfinder" aria-hidden="true"></i> Explorer mes créateurs</a>
-                    </nav>
-                </article>
+            <header class="atlas-masthead-fr">
+                <a class="atlas-brand-fr" href="../../index.html" aria-label="Retour à l'accueil d'Aljohn Polyglot">
+                    <span>Aljohn en français</span>
+                </a>
+                <nav class="atlas-top-nav-fr" aria-label="Parcourir mon atlas francophone">
+                    <a class="active" href="#main-content">Accueil</a>
+                    <a href="#playlist-francais">Vidéos</a>
+                    <a href="#bibliotheque">Créateurs</a>
+                    <a href="#extra-francais">Playlists</a>
+                    <a href="#ressources-francophones">Lieux</a>
+                </nav>
+                <a class="atlas-search-link-fr" href="#bibliotheque" aria-label="Rechercher dans la bibliothèque">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </a>
+            </header>
 
-                <div class="hero-gallery" role="group" aria-label="Moments de mon parcours en français">
-                    <article class="hero-gallery-card tall">
-                        <img src="../../images/languagecenters/Alliance_Manille_SaturdayVisit_2025_Collage.png" alt="Collage d'une visite à l'Alliance Française de Manille" fetchpriority="high" decoding="async">
-                        <div class="hero-gallery-label">
-                            <span>Alliance</span>
-                            <h2>Week-ends, médiathèque, cinéma et immersion à Makati.</h2>
-                        </div>
-                    </article>
-                    <article class="hero-gallery-card">
-                        <img src="../../images/groups/saging_cava_feb2024_meetup4.jpg" alt="Rencontre de la communauté Saging Ça Va ?" loading="lazy" decoding="async">
-                        <div class="hero-gallery-label">
-                            <span>Communauté</span>
-                            <h2>Saging Ça Va ? rend la langue sociale et concrète.</h2>
-                        </div>
-                    </article>
-                    <article class="hero-gallery-card">
-                        <img src="../../images/languagecenters/fr_embassy_2024_filmfestival.jpg" alt="Aljohn au Festival du film français" loading="lazy" decoding="async">
-                        <div class="hero-gallery-label">
-                            <span>Culture</span>
-                            <h2>Le cinéma et les événements gardent la langue vivante.</h2>
-                        </div>
-                    </article>
+            <div class="atlas-hero-grid-fr">
+                <aside class="atlas-spine-fr" aria-label="Points d'entrée de l'atlas">
+                    <nav class="atlas-spine-nav-fr">
+                        <a href="#playlist-francais"><i class="fa-solid fa-photo-film" aria-hidden="true"></i><span>Regarder</span></a>
+                        <a href="#bibliotheque"><i class="fa-solid fa-people-group" aria-hidden="true"></i><span>Créateurs</span></a>
+                        <a href="#ressources-francophones"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Lieux</span></a>
+                        <a href="#saging-ca-va"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Communauté</span></a>
+                    </nav>
+                    <div class="atlas-pocket-fr">
+                        <h1 id="hero-title-fr">Ma bibliothèque francophone</h1>
+                        <span class="atlas-tricolor-stitch-fr" aria-hidden="true"></span>
+                        <a class="atlas-primary-action-fr" href="#rituel-star-academy">Commencer par mon histoire</a>
+                    </div>
+                </aside>
+
+                <div class="atlas-quilt-fr" role="group" aria-label="Rencontres qui font vivre mon français">
+                    <figure class="atlas-photo-fr atlas-photo-main-fr">
+                        <img src="images/community/saging-february-28-group-portrait.jpg" alt="Aljohn et les membres de Saging Ça Va ? réunis autour d'une table" fetchpriority="high" decoding="async">
+                    </figure>
+                    <figure class="atlas-photo-fr atlas-photo-side-fr">
+                        <img src="images/community/saging-february-28-table-activity.jpg" alt="Activité de conversation pendant une rencontre Saging Ça Va ?" fetchpriority="high" decoding="async">
+                    </figure>
+                    <figure class="atlas-photo-fr atlas-photo-lower-fr">
+                        <img src="images/community/saging-july-19-group-portrait.jpg" alt="Portrait de groupe lors d'une rencontre tricolore Saging Ça Va ?" loading="eager" decoding="async">
+                    </figure>
+                    <a class="atlas-note-fr" href="#saging-ca-va">
+                        <span>Chaque rencontre</span>
+                        <strong>laisse une trace.</strong>
+                    </a>
                 </div>
             </div>
         </section>
@@ -112,12 +124,6 @@
                     <div class="extra-details-fr">
                         <h2 id="extra-heading-fr">Extr@ en français</h2>
                         <p id="extra-summary-copy-fr">Une sitcom accessible pour entraîner l'oreille avec des situations quotidiennes, un débit clair et beaucoup de répétitions utiles. Commence avec les sous-titres français, puis revois une scène sans les lire.</p>
-                        <div class="offering-list" role="group" aria-label="Caractéristiques de la série">
-                            <span class="offering-chip">Sitcom pour apprenants</span>
-                            <span class="offering-chip">Sous-titres français</span>
-                            <span class="offering-chip">Épisodes de 24 minutes</span>
-                            <span class="offering-chip">Compréhension orale</span>
-                        </div>
                         <div class="action-row">
                             <a id="extra-youtube-link-fr" class="btn-fr primary" href="https://www.youtube.com/watch?v=EaNqp4FXh-s&amp;list=PLhAxKCm7GPvi1fmbLUbhYhQcLGTZ2Fqwq" target="_blank" rel="noopener noreferrer">Voir sur YouTube</a>
                             <a class="btn-fr secondary" href="#bibliotheque">Explorer mes créateurs</a>
@@ -144,7 +150,7 @@
                     <p>Pas un annuaire automatique : chaque personne ou chaîne est ici parce qu’elle appartient réellement à mon apprentissage, à mes vidéos aimées ou aux comptes que je suis.</p>
                 </div>
 
-                <article class="curation-story-fr" aria-labelledby="curation-story-heading-fr">
+                <article id="rituel-star-academy" class="curation-story-fr" aria-labelledby="curation-story-heading-fr">
                     <div class="curation-story-time-fr" aria-hidden="true">
                         <span>3 h</span>
                         <small>à Manille</small>
@@ -237,12 +243,11 @@
 
             <header class="curated-channel-modal-header-fr">
                 <div class="curated-channel-modal-image-wrap-fr">
-                    <img id="curated-modal-image-fr" src="" alt="">
+                    <img id="curated-modal-image-fr" src="../../images/channel_profile_aljohn_polyglot.png" alt="Portrait d’Aljohn Polyglot">
                     <span id="curated-modal-platform-fr" class="curated-channel-modal-platform-fr"><i class="fa-brands fa-youtube" aria-hidden="true"></i></span>
                 </div>
                 <div class="curated-channel-modal-title-fr">
                     <h2 id="curated-modal-name-fr"></h2>
-                    <div id="curated-modal-tags-fr" class="curated-channel-modal-tags-fr"></div>
                     <p id="curated-modal-description-fr"></p>
                 </div>
             </header>
@@ -296,7 +301,7 @@
                 <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
             </button>
             <figure class="photo-lightbox-figure-fr">
-                <img id="photo-lightbox-image-fr" src="" alt="">
+                <img id="photo-lightbox-image-fr" src="images/community/saging-july-19-tricolore-flag.jpg" alt="Membres de Saging Ça Va ? réunis autour du drapeau français">
                 <figcaption id="photo-lightbox-caption-fr"></figcaption>
             </figure>
             <button id="photo-lightbox-next-fr" class="photo-lightbox-nav-fr next" type="button" aria-label="Photo suivante">

@@ -157,9 +157,14 @@ window.frenchResourcesData = {
         {
             id: 'ambassade-france',
             name: "La francophonie avec l'Ambassade de France",
-            imageSrc: '../../images/languagecenters/fr_embassy_2024_filmfestival_with_embassy_cultural_attache_martin_macalintal.jpg',
-            imageAlt: "Aljohn lors d'un événement de l'Ambassade de France aux Philippines",
+            imageSrc: '../../images/languagecenters/fr_embassy_paris2024olympics_opening_pic_with_ambassador_marie_fontanel_should_be_at_front.jpg',
+            imageAlt: "Aljohn avec l'ambassadrice Marie Fontanel pendant un événement Paris 2024",
             gallery: [
+                {
+                    src: '../../images/languagecenters/fr_embassy_paris2024olympics_opening_pic_with_ambassador_marie_fontanel_should_be_at_front.jpg',
+                    alt: "Aljohn avec l'ambassadrice Marie Fontanel pendant un événement Paris 2024",
+                    caption: "Avec l'ambassadrice Marie Fontanel pour Paris 2024",
+                },
                 {
                     src: '../../images/languagecenters/fr_embassy_2024_filmfestival_with_embassy_cultural_attache_martin_macalintal.jpg',
                     alt: "Aljohn avec Martin Macalintal pendant le Festival du film français",
@@ -169,11 +174,6 @@ window.frenchResourcesData = {
                     src: '../../images/languagecenters/fr_embassy_2024_filmfestival.jpg',
                     alt: 'Aljohn au Festival du film français aux Philippines',
                     caption: 'Le cinéma français vécu à Manille',
-                },
-                {
-                    src: '../../images/languagecenters/fr_embassy_paris2024olympics_opening_pic_with_ambassador_marie_fontanel_should_be_at_front.jpg',
-                    alt: "Aljohn avec l'ambassadrice Marie Fontanel pendant un événement Paris 2024",
-                    caption: "Avec l'ambassadrice Marie Fontanel pour Paris 2024",
                 },
                 {
                     src: '../../images/languagecenters/fr_embassy_2024_filmfestival2.jpg',
