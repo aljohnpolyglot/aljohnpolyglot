@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-27T03:10:23.057Z",
+  "title": "Design System: Mon coin français — L’atlas cousu",
+  "extensions": {
+    "colorMeta": {
+      "indigo-950": {
+        "role": "neutral",
+        "displayName": "Selvedge Ink",
+        "canonical": "#111820",
+        "tonalRamp": [
+          "oklch(15% 0.019 252.1)",
+          "oklch(25% 0.019 252.1)",
+          "oklch(35% 0.019 252.1)",
+          "oklch(45% 0.019 252.1)",
+          "oklch(55% 0.019 252.1)",
+          "oklch(65% 0.019 252.1)",
+          "oklch(80% 0.019 252.1)",
+          "oklch(95% 0.019 252.1)"
+        ]
+      },
+      "indigo-900": {
+        "role": "primary",
+        "displayName": "Atlas Indigo",
+        "canonical": "#1a2c40",
+        "tonalRamp": [
+          "oklch(15% 0.044 252.0)",
+          "oklch(25% 0.044 252.0)",
+          "oklch(35% 0.044 252.0)",
+          "oklch(45% 0.044 252.0)",
+          "oklch(55% 0.044 252.0)",
+          "oklch(65% 0.044 252.0)",
+          "oklch(80% 0.044 252.0)",
+          "oklch(95% 0.044 252.0)"
+        ]
+      },
+      "indigo-800": {
+        "role": "secondary",
+        "displayName": "Shelf Indigo",
+        "canonical": "#2a4257",
+        "tonalRamp": [
+          "oklch(15% 0.047 245.9)",
+          "oklch(25% 0.047 245.9)",
+          "oklch(35% 0.047 245.9)",
+          "oklch(45% 0.047 245.9)",
+          "oklch(55% 0.047 245.9)",
+          "oklch(65% 0.047 245.9)",
+          "oklch(80% 0.047 245.9)",
+          "oklch(95% 0.047 245.9)"
+        ]
+      },
+      "indigo-700": {
+        "role": "neutral",
+        "displayName": "Seam Blue",
+        "canonical": "#3f5a70",
+        "tonalRamp": [
+          "oklch(15% 0.048 243.7)",
+          "oklch(25% 0.048 243.7)",
+          "oklch(35% 0.048 243.7)",
+          "oklch(45% 0.048 243.7)",
+          "oklch(55% 0.048 243.7)",
+          "oklch(65% 0.048 243.7)",
+          "oklch(80% 0.048 243.7)",
+          "oklch(95% 0.048 243.7)"
+        ]
+      },
+      "linen-100": {
+        "role": "neutral",
+        "displayName": "Label Linen",
+        "canonical": "#e2d8c7",
+        "tonalRamp": [
+          "oklch(15% 0.025 81.1)",
+          "oklch(25% 0.025 81.1)",
+          "oklch(35% 0.025 81.1)",
+          "oklch(45% 0.025 81.1)",
+          "oklch(55% 0.025 81.1)",
+          "oklch(65% 0.025 81.1)",
+          "oklch(80% 0.025 81.1)",
+          "oklch(95% 0.025 81.1)"
+        ]
+      },
+      "linen-200": {
+        "role": "neutral",
+        "displayName": "Spine Linen",
+        "canonical": "#d9cebe",
+        "tonalRamp": [
+          "oklch(15% 0.025 77.4)",
+          "oklch(25% 0.025 77.4)",
+          "oklch(35% 0.025 77.4)",
+          "oklch(45% 0.025 77.4)",
+          "oklch(55% 0.025 77.4)",
+          "oklch(65% 0.025 77.4)",
+          "oklch(80% 0.025 77.4)",
+          "oklch(95% 0.025 77.4)"
+        ]
+      },
+      "linen-300": {
+        "role": "neutral",
+        "displayName": "Worn Linen",
+        "canonical": "#c5b8a5",
+        "tonalRamp": [
+          "oklch(15% 0.030 77.5)",
+          "oklch(25% 0.030 77.5)",
+          "oklch(35% 0.030 77.5)",
+          "oklch(45% 0.030 77.5)",
+          "oklch(55% 0.030 77.5)",
+          "oklch(65% 0.030 77.5)",
+          "oklch(80% 0.030 77.5)",
+          "oklch(95% 0.030 77.5)"
+        ]
+      },
+      "chambray": {
+        "role": "secondary",
+        "displayName": "Faded Chambray",
+        "canonical": "#a7b8c7",
+        "tonalRamp": [
+          "oklch(15% 0.029 244.8)",
+          "oklch(25% 0.029 244.8)",
+          "oklch(35% 0.029 244.8)",
+          "oklch(45% 0.029 244.8)",
+          "oklch(55% 0.029 244.8)",
+          "oklch(65% 0.029 244.8)",
+          "oklch(80% 0.029 244.8)",
+          "oklch(95% 0.029 244.8)"
+        ]
+      },
+      "thread": {
+        "role": "primary",
+        "displayName": "Oxblood Thread",
+        "canonical": "#8a2b1f",
+        "tonalRamp": [
+          "oklch(15% 0.131 30.4)",
+          "oklch(25% 0.131 30.4)",
+          "oklch(35% 0.131 30.4)",
+          "oklch(45% 0.131 30.4)",
+          "oklch(55% 0.131 30.4)",
+          "oklch(65% 0.131 30.4)",
+          "oklch(80% 0.131 30.4)",
+          "oklch(95% 0.131 30.4)"
+        ]
+      },
+      "thread-bright": {
+        "role": "secondary",
+        "displayName": "Bright Repair Thread",
+        "canonical": "#b33a2e",
+        "tonalRamp": [
+          "oklch(15% 0.159 29.2)",
+          "oklch(25% 0.159 29.2)",
+          "oklch(35% 0.159 29.2)",
+          "oklch(45% 0.159 29.2)",
+          "oklch(55% 0.159 29.2)",
+          "oklch(65% 0.159 29.2)",
+          "oklch(80% 0.159 29.2)",
+          "oklch(95% 0.159 29.2)"
+        ]
+      },
+      "stitch-light": {
+        "role": "neutral",
+        "displayName": "Cream Stitch",
+        "canonical": "rgba(226, 216, 199, 0.82)",
+        "tonalRamp": [
+          "oklch(15% 0.025 81.1 / 0.82)",
+          "oklch(25% 0.025 81.1 / 0.82)",
+          "oklch(35% 0.025 81.1 / 0.82)",
+          "oklch(45% 0.025 81.1 / 0.82)",
+          "oklch(55% 0.025 81.1 / 0.82)",
+          "oklch(65% 0.025 81.1 / 0.82)",
+          "oklch(80% 0.025 81.1 / 0.82)",
+          "oklch(95% 0.025 81.1 / 0.82)"
+        ]
+      },
+      "stitch-dark": {
+        "role": "neutral",
+        "displayName": "Red Stitch",
+        "canonical": "rgba(138, 43, 31, 0.74)",
+        "tonalRamp": [
+          "oklch(15% 0.131 30.4 / 0.74)",
+          "oklch(25% 0.131 30.4 / 0.74)",
+          "oklch(35% 0.131 30.4 / 0.74)",
+          "oklch(45% 0.131 30.4 / 0.74)",
+          "oklch(55% 0.131 30.4 / 0.74)",
+          "oklch(65% 0.131 30.4 / 0.74)",
+          "oklch(80% 0.131 30.4 / 0.74)",
+          "oklch(95% 0.131 30.4 / 0.74)"
+        ]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Golden Focus",
+        "canonical": "#ffd668",
+        "tonalRamp": [
+          "oklch(15% 0.136 89.0)",
+          "oklch(25% 0.136 89.0)",
+          "oklch(35% 0.136 89.0)",
+          "oklch(45% 0.136 89.0)",
+          "oklch(55% 0.136 89.0)",
+          "oklch(65% 0.136 89.0)",
+          "oklch(80% 0.136 89.0)",
+          "oklch(95% 0.136 89.0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Creator names and singular full-screen folio moments."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major uppercase section openings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Folio subheads, card names, and modal headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Narrative and explanatory French copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, actions, filters, shelf labels, and counters."
+      },
+      "handwriting": {
+        "displayName": "Handwriting",
+        "purpose": "Personal photograph notes and lightbox captions only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "atlas-edge",
+        "value": "10px 0 28px rgba(7, 16, 25, 0.2)",
+        "purpose": "Separates the linen atlas spine from the documentary quilt."
+      },
+      {
+        "name": "stacked-folio",
+        "value": "14px 16px 0 rgba(17, 24, 32, 0.24)",
+        "purpose": "Creates the hard physical offset beneath major cream folios."
+      },
+      {
+        "name": "indigo-folio",
+        "value": "14px 16px 0 rgba(7, 16, 25, 0.34)",
+        "purpose": "Adds a stronger hard offset beneath the nocturnal story panel."
+      },
+      {
+        "name": "pinned-note",
+        "value": "0 12px 30px rgba(7, 16, 25, 0.28)",
+        "purpose": "Lifts a handwritten linen annotation over a photograph."
+      },
+      {
+        "name": "overlay-folio",
+        "value": "0 30px 90px rgba(0, 0, 0, 0.52)",
+        "purpose": "Provides maximum separation for the creator details dialog."
+      }
+    ],
+    "motion": [
+      {
+        "name": "duration-state",
+        "value": "180ms",
+        "purpose": "Color changes and overlay fades."
+      },
+      {
+        "name": "duration-index",
+        "value": "220ms",
+        "purpose": "Destination underline reveals."
+      },
+      {
+        "name": "duration-photo",
+        "value": "600ms",
+        "purpose": "Creator portrait scaling on hover."
+      },
+      {
+        "name": "ease-cloth",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Physical lifts, notes, and cloth-strip transforms."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "520px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "atlas-narrow",
+        "value": "980px"
+      },
+      {
+        "name": "single-column",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The oxblood sewn label used for primary actions and selected playlist items.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">COMMENCER PAR MON HISTOIRE</button>",
+      "css": ".ds-btn-primary { min-height: 3rem; padding: .72rem 1rem; color: var(--fr-linen-100, #e2d8c7); background: var(--fr-thread, #8a2b1f); border: 2px dashed rgba(226,216,199,.88); border-radius: .2rem; font: 700 1.05rem/1.05 'Barlow Condensed', sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; box-shadow: 0 6px 14px rgba(7,16,25,.16); transition: transform 240ms cubic-bezier(.16,1,.3,1), box-shadow 240ms ease, background-color 180ms ease; } .ds-btn-primary:hover { background: #a8372b; transform: translateY(-3px); box-shadow: 0 10px 19px rgba(7,16,25,.24); } .ds-btn-primary:focus-visible { outline: 3px solid var(--fr-focus, #ffd668); outline-offset: 3px; box-shadow: 0 0 0 6px var(--fr-indigo-950, #111820); }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "A square linen search field for the curated creator library.",
+      "html": "<label class=\"ds-search-label\" for=\"ds-search\">RECHERCHER UN CRÉATEUR OU UN THÈME</label><span class=\"ds-search-wrap\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg><input id=\"ds-search\" type=\"search\" placeholder=\"Cyprien, histoire, français facile…\"></span>",
+      "css": ".ds-search-label { display: block; margin-bottom: .55rem; color: var(--fr-indigo-900, #1a2c40); font: 700 1rem/1.2 'Barlow Condensed', sans-serif; letter-spacing: .06em; text-transform: uppercase; } .ds-search-wrap { position: relative; display: block; } .ds-search-wrap svg { position: absolute; top: 50%; left: 1rem; width: 1.15rem; height: 1.15rem; color: var(--fr-indigo-900, #1a2c40); transform: translateY(-50%); pointer-events: none; } .ds-search-wrap input { width: 100%; min-height: 3.3rem; padding: .85rem 1rem .85rem 2.85rem; color: var(--fr-indigo-900, #1a2c40); background-color: rgba(226,216,199,.78); background-image: var(--fr-linen-texture); border: 2px dashed rgba(63,90,112,.62); border-radius: 0; font: 400 1rem/1.75 'Instrument Sans', sans-serif; } .ds-search-wrap input:focus-visible { outline: 3px solid var(--fr-focus, #ffd668); outline-offset: 3px; box-shadow: 0 0 0 6px var(--fr-indigo-950, #111820); }"
+    },
+    {
+      "name": "Masthead Navigation",
+      "kind": "nav",
+      "refersTo": "nav-masthead",
+      "description": "The indigo, horizontally scrollable destination layer at the top of the French atlas.",
+      "html": "<nav class=\"ds-masthead\" aria-label=\"Parcourir mon atlas francophone\"><a class=\"active\" href=\"#\">ACCUEIL</a><a href=\"#\">VIDÉOS</a><a href=\"#\">CRÉATEURS</a><a href=\"#\">LIEUX</a></nav>",
+      "css": ".ds-masthead { display: flex; min-height: 4.5rem; overflow-x: auto; color: var(--fr-linen-100, #e2d8c7); background-color: var(--fr-indigo-900, #1a2c40); background-image: var(--fr-denim-texture); border-bottom: 2px dashed rgba(226,216,199,.82); scrollbar-width: none; } .ds-masthead a { position: relative; display: inline-flex; align-items: center; flex: 0 0 auto; padding: .8rem 1.25rem; color: inherit; font: 700 1.05rem/1.05 'Barlow Condensed', sans-serif; letter-spacing: .075em; text-decoration: none; } .ds-masthead a::after { position: absolute; right: 1rem; bottom: .62rem; left: 1rem; height: 2px; content: ''; background: var(--fr-thread-bright, #b33a2e); transform: scaleX(0); transform-origin: left; transition: transform 220ms cubic-bezier(.16,1,.3,1); } .ds-masthead a:hover::after, .ds-masthead a.active::after { transform: scaleX(1); } .ds-masthead a:focus-visible { outline: 3px solid var(--fr-focus, #ffd668); outline-offset: -5px; }"
+    },
+    {
+      "name": "Creator Shelf",
+      "kind": "custom",
+      "refersTo": "creator-shelf",
+      "description": "A full-width category rail joined directly to an independently scrolling row.",
+      "html": "<section class=\"ds-shelf\"><h3>MUSIQUE</h3><div class=\"ds-shelf-row\"><span>PIERRE GARNIER</span><span>JOYCE JONATHAN</span><span>MARGUERITE</span></div></section>",
+      "css": ".ds-shelf { display: grid; grid-template-columns: clamp(11rem,17vw,16rem) minmax(0,1fr); color: var(--fr-linen-100, #e2d8c7); background-color: var(--fr-indigo-900, #1a2c40); background-image: var(--fr-denim-texture); border-bottom: 2px dashed rgba(226,216,199,.82); } .ds-shelf h3 { display: flex; align-items: center; margin: 0; padding: 1rem 1.8rem; background-color: var(--fr-indigo-800, #2a4257); background-image: var(--fr-denim-texture); border-right: 2px dashed rgba(226,216,199,.82); font: 700 1.85rem/1 'Barlow Condensed', sans-serif; letter-spacing: .055em; } .ds-shelf-row { display: flex; min-width: 0; overflow-x: auto; color: var(--fr-indigo-900, #1a2c40); background-color: var(--fr-linen-100, #e2d8c7); background-image: var(--fr-linen-texture); scroll-snap-type: x proximity; } .ds-shelf-row span { flex: 0 0 17rem; min-height: 7rem; display: grid; align-items: center; padding: 1rem; border-right: 2px dashed rgba(138,43,31,.74); font: 700 1.32rem/1 'Barlow Condensed', sans-serif; scroll-snap-align: start; }"
+    },
+    {
+      "name": "Sewn Folio Dialog",
+      "kind": "custom",
+      "refersTo": "modal-folio",
+      "description": "The large creator-details overlay joining documentary portrait, indigo title field, linen notes, and a sample-video panel.",
+      "html": "<article class=\"ds-folio\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"ds-folio-title\"><header><img src=\"/languages/french/images/creators/pierregarniermusique.jpg\" alt=\"Portrait de Pierre Garnier\"><div><h2 id=\"ds-folio-title\">PIERRE GARNIER</h2><p>L’artiste derrière la chanson choisie pour monter sur scène à Manille.</p></div></header><div class=\"ds-folio-body\"><section><h3>POURQUOI SUIVRE CETTE CHAÎNE ?</h3><p>Un repère personnel où musique et apprentissage restent liés.</p></section><aside><h3>UNE VIDÉO POUR DÉCOUVRIR</h3><div>LECTEUR 16:9</div></aside></div></article>",
+      "css": ".ds-folio { width: min(96vw,88rem); max-height: min(92dvh,58rem); overflow: auto; color: var(--fr-indigo-900, #1a2c40); background-color: var(--fr-linen-200, #d9cebe); background-image: var(--fr-linen-texture); border: 2px dashed rgba(226,216,199,.82); border-radius: 0; box-shadow: 0 30px 90px rgba(0,0,0,.52); } .ds-folio header { display: grid; grid-template-columns: minmax(16rem,.55fr) minmax(0,1.45fr); min-height: 20rem; color: var(--fr-linen-100, #e2d8c7); background-color: var(--fr-indigo-900, #1a2c40); background-image: var(--fr-denim-texture); border-bottom: 2px dashed rgba(226,216,199,.82); } .ds-folio header img { width: 100%; height: 100%; object-fit: cover; border-right: 2px dashed rgba(226,216,199,.82); } .ds-folio header div { display: flex; flex-direction: column; justify-content: center; padding: 3rem; } .ds-folio h2 { margin: 0; font: 700 clamp(3rem,7vw,7.5rem)/.86 'Barlow Condensed', sans-serif; } .ds-folio header p { max-width: 60ch; font: 400 1.05rem/1.75 'Instrument Sans', sans-serif; } .ds-folio-body { display: grid; grid-template-columns: minmax(20rem,.75fr) minmax(0,1.25fr); padding: 2rem; } .ds-folio-body section, .ds-folio-body aside { padding: 2rem; border: 2px dashed rgba(138,43,31,.74); } .ds-folio-body aside { color: var(--fr-linen-100, #e2d8c7); background-color: var(--fr-indigo-900, #1a2c40); background-image: var(--fr-denim-texture); border-color: rgba(226,216,199,.82); } .ds-folio h3 { margin-top: 0; font: 700 1.5rem/1 'Barlow Condensed', sans-serif; letter-spacing: .04em; } .ds-folio-body p { font: 400 1rem/1.75 'Instrument Sans', sans-serif; } .ds-folio-body aside div { display: grid; aspect-ratio: 16/9; place-items: center; border: 2px dashed rgba(226,216,199,.82); font: 700 1.05rem/1 'Barlow Condensed', sans-serif; letter-spacing: .06em; } @media (max-width: 760px) { .ds-folio header, .ds-folio-body { grid-template-columns: 1fr; } .ds-folio header img { min-height: 42vh; border-right: 0; border-bottom: 2px dashed rgba(226,216,199,.82); } .ds-folio header div, .ds-folio-body { padding: 1.25rem; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "L’atlas cousu",
+    "overview": "This system turns Aljohn’s French-learning library into a physical atlas assembled from cloth, thread, photographs, and personal notes. Indigo denim establishes the field; cream linen becomes the paper and labels; oxblood thread marks choices and seams. The system is tactile and editorial, but the documentary evidence remains the hero.\n\nThe French surface is intentionally distinct from the shared site chrome. Within `languages/french/`, large square folios, stitched rails, real photographs, and horizontal library shelves replace generic digital cards. Depth should feel made by overlap, seams, and fabric weight—not by translucent glass or ornamental interface effects.",
+    "keyCharacteristics": [
+      "Documentary photography leads; decoration supports it.",
+      "Indigo textile fields alternate with cream linen folios and faded chambray pacing bands.",
+      "Two stitched navigation layers orient the visitor without flattening the atlas into one menu.",
+      "Square geometry dominates, with restrained softness reserved for sewn pockets and a single circular ritual marker.",
+      "Horizontal shelves and one-photo-at-a-time albums keep dense collections browsable without compression.",
+      "Personal notes use a restrained handwritten accent; all functional copy stays crisp and condensed or plainly readable."
+    ],
+    "rules": [
+      {
+        "name": "The Thread Is Sparse Rule",
+        "body": "Oxblood identifies a primary action, an active destination, or a sewn accent. Do not let it become a broad background across multiple neighboring surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Material Pairing Rule",
+        "body": "Cream stitches belong on indigo cloth; red stitches belong on cream linen. This reversal is what keeps the seams legible.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three-Voices Rule",
+        "body": "Condensed block type operates the atlas, Instrument Sans explains it, and Caveat signs the human moments. Never use the handwriting face for controls or general body copy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shelf Independence Rule",
+        "body": "Each creator category owns its own horizontal shelf. Never merge categories into one mixed row or replace the shelves with a dense card grid.",
+        "section": "layout"
+      },
+      {
+        "name": "The Sewn-Not-Floating Rule",
+        "body": "A resting content surface earns depth through a seam, textile change, or hard offset. Do not apply generic soft shadows to every card.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square-First Rule",
+        "body": "Start every new surface, card, field, and media frame at zero radius. Add softness only when the object is specifically a pocket or a small physical control.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do lead with real documentary photographs and preserve faces through deliberate crop positioning.",
+      "Do pair cream seams with indigo fields and red seams with linen folios.",
+      "Do keep creator categories in independent horizontal shelves with visible category rails.",
+      "Do keep only one active photograph visible in each inline resource album, with controls, status, and a full-screen viewing path.",
+      "Do preserve the Golden Focus ring, focus trapping, Escape behavior, and focus restoration in overlays.",
+      "Do retain generous 92rem folios, long-form line lengths near 58–66 characters, and ample vertical section spacing."
+    ],
+    "donts": [
+      "Don't turn the system into glassmorphism, floating digital cards, or a generic resource portal.",
+      "Don't introduce pill-shaped filters, tags, buttons, or logo containers; the shipped grammar is rectangular and stitched.",
+      "Don't use decorative or generated imagery where a real project photograph, profile image, logo, or video frame exists.",
+      "Don't combine creator categories into a single mixed shelf or replace one-photo carousels with crowded contact sheets.",
+      "Don't use Caveat for functional controls, metadata, or long-form body copy.",
+      "Don't hide focus outlines or rely on motion to communicate state."
+    ]
+  }
+}
