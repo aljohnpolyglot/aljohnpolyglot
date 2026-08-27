@@ -1,11 +1,35 @@
 function renderFrenchResources() {
     const data = window.frenchResourcesData;
     const spotlightContainer = document.getElementById('resource-stack-fr');
-    const shelfContainer = document.getElementById('shelf-zone-fr');
+    const photoModal = document.getElementById('photo-lightbox-fr');
+    const photoModalDialog = photoModal?.querySelector('.photo-lightbox-dialog-fr');
+    const photoModalImage = document.getElementById('photo-lightbox-image-fr');
+    const photoModalCaption = document.getElementById('photo-lightbox-caption-fr');
+    const photoModalCounter = document.getElementById('photo-lightbox-counter-fr');
+    const photoModalClose = document.getElementById('photo-lightbox-close-fr');
+    const photoModalPrevious = document.getElementById('photo-lightbox-prev-fr');
+    const photoModalNext = document.getElementById('photo-lightbox-next-fr');
 
-    if (!data || !spotlightContainer || !shelfContainer) {
+    if (
+        !data
+        || !spotlightContainer
+        || !photoModal
+        || !photoModalDialog
+        || !photoModalImage
+        || !photoModalCaption
+        || !photoModalCounter
+        || !photoModalClose
+        || !photoModalPrevious
+        || !photoModalNext
+    ) {
         return;
     }
+
+    const lightboxState = {
+        photos: [],
+        activeIndex: 0,
+        trigger: null,
+    };
 
     const escapeHtml = value =>
         String(value ?? '')
@@ -38,12 +62,38 @@ function renderFrenchResources() {
         return `<span class="spotlight-logo-mark" aria-hidden="true">${escapeHtml(spotlight.badge)}</span>`;
     };
 
+    const hasGallery = spotlight => Array.isArray(spotlight.gallery) && spotlight.gallery.length > 0;
+
+    const renderSpotlightVisual = spotlight => {
+        if (!hasGallery(spotlight)) {
+            return `<img src="${escapeHtml(spotlight.imageSrc)}" alt="${escapeHtml(spotlight.imageAlt)}" loading="lazy" decoding="async">`;
+        }
+
+        const countClass = spotlight.gallery.length > 4 ? 'count-many' : `count-${spotlight.gallery.length}`;
+        return `
+            <div class="spotlight-album-fr ${countClass}" role="list" aria-label="Album photo — ${escapeHtml(spotlight.name)}">
+                ${spotlight.gallery
+                    .map(
+                        (photo, index) => `
+                            <figure class="spotlight-album-photo-fr${index === 0 ? ' featured' : ''}" role="listitem">
+                                <button class="spotlight-album-trigger-fr" type="button" data-spotlight-id="${escapeHtml(spotlight.id)}" data-photo-index="${index}" aria-label="Agrandir : ${escapeHtml(photo.caption)}">
+                                    <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}" loading="lazy" decoding="async">
+                                </button>
+                                <figcaption aria-hidden="true">${escapeHtml(photo.caption)}</figcaption>
+                            </figure>
+                        `,
+                    )
+                    .join('')}
+            </div>
+        `;
+    };
+
     spotlightContainer.innerHTML = data.spotlights
         .map(
             spotlight => `
                 <article class="glass-card spotlight-fr${spotlight.reverse ? ' reverse' : ''}" id="${escapeHtml(spotlight.id)}">
-                    <div class="spotlight-visual">
-                        <img src="${escapeHtml(spotlight.imageSrc)}" alt="${escapeHtml(spotlight.imageAlt)}" loading="lazy" decoding="async">
+                    <div class="spotlight-visual${hasGallery(spotlight) ? ' has-album' : ''}">
+                        ${renderSpotlightVisual(spotlight)}
                         <div class="spotlight-logo-pill">
                             ${renderSpotlightBadge(spotlight)}
                             <span>${escapeHtml(spotlight.name)}</span>
@@ -64,36 +114,110 @@ function renderFrenchResources() {
         )
         .join('');
 
-    shelfContainer.innerHTML = data.shelves
-        .map(
-            shelf => `
-                <article class="glass-card content-shelf-fr" id="${escapeHtml(shelf.id)}">
-                    <h3><i class="${escapeHtml(shelf.icon)}" aria-hidden="true"></i> ${escapeHtml(shelf.title)}</h3>
-                    <div class="shelf-container-fr" role="group" aria-label="${escapeHtml(shelf.title)}">
-                        ${shelf.cards
-                            .map(card => {
-                                const externalAttributes = isExternalLink(card.href)
-                                    ? ' target="_blank" rel="noopener noreferrer"'
-                                    : '';
+    const getFocusableModalElements = () =>
+        Array.from(photoModalDialog.querySelectorAll('button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
 
-                                return `
-                                    <article class="shelf-card-fr">
-                                        <img src="${escapeHtml(card.imageSrc)}" alt="${escapeHtml(card.imageAlt)}" loading="lazy" decoding="async">
-                                        <div class="shelf-card-body">
-                                            <span class="shelf-badge">${escapeHtml(card.badge)}</span>
-                                            <h4>${escapeHtml(card.title)}</h4>
-                                            <p>${escapeHtml(card.description)}</p>
-                                            <a class="mini-link" href="${escapeHtml(card.href)}"${externalAttributes}>${escapeHtml(card.linkLabel)} <span aria-hidden="true">→</span></a>
-                                        </div>
-                                    </article>
-                                `;
-                            })
-                            .join('')}
-                    </div>
-                </article>
-            `,
-        )
-        .join('');
+    const renderActivePhoto = () => {
+        const photo = lightboxState.photos[lightboxState.activeIndex];
+        if (!photo) return;
+
+        photoModalImage.src = photo.src;
+        photoModalImage.alt = photo.alt;
+        photoModalCaption.textContent = photo.caption;
+        photoModalCounter.textContent = `Photo ${lightboxState.activeIndex + 1} sur ${lightboxState.photos.length}`;
+        const hasMultiplePhotos = lightboxState.photos.length > 1;
+        photoModalPrevious.hidden = !hasMultiplePhotos;
+        photoModalNext.hidden = !hasMultiplePhotos;
+    };
+
+    const changePhoto = direction => {
+        const photoCount = lightboxState.photos.length;
+        if (photoCount < 2) return;
+
+        lightboxState.activeIndex = (lightboxState.activeIndex + direction + photoCount) % photoCount;
+        renderActivePhoto();
+    };
+
+    const openPhotoModal = (spotlight, photoIndex, trigger) => {
+        if (!hasGallery(spotlight)) return;
+
+        lightboxState.photos = [...spotlight.gallery];
+        lightboxState.activeIndex = Math.max(0, Math.min(photoIndex, lightboxState.photos.length - 1));
+        lightboxState.trigger = trigger;
+        renderActivePhoto();
+        photoModal.hidden = false;
+        photoModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('photo-lightbox-open-fr');
+        requestAnimationFrame(() => {
+            photoModal.classList.add('open');
+            photoModalClose.focus();
+        });
+    };
+
+    const closePhotoModal = () => {
+        photoModal.classList.remove('open');
+        photoModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('photo-lightbox-open-fr');
+
+        window.setTimeout(() => {
+            photoModal.hidden = true;
+            photoModalImage.src = '';
+            lightboxState.trigger?.focus();
+            lightboxState.photos = [];
+            lightboxState.activeIndex = 0;
+            lightboxState.trigger = null;
+        }, 180);
+    };
+
+    spotlightContainer.addEventListener('click', event => {
+        const trigger = event.target.closest('.spotlight-album-trigger-fr');
+        if (!trigger || !spotlightContainer.contains(trigger)) return;
+
+        const spotlight = data.spotlights.find(item => item.id === trigger.dataset.spotlightId);
+        const photoIndex = Number.parseInt(trigger.dataset.photoIndex || '0', 10);
+        if (spotlight) openPhotoModal(spotlight, photoIndex, trigger);
+    });
+
+    photoModal.addEventListener('click', event => {
+        if (event.target.closest('[data-photo-lightbox-close]')) closePhotoModal();
+    });
+    photoModalClose.addEventListener('click', closePhotoModal);
+    photoModalPrevious.addEventListener('click', () => changePhoto(-1));
+    photoModalNext.addEventListener('click', () => changePhoto(1));
+
+    document.addEventListener('keydown', event => {
+        if (photoModal.hidden) return;
+
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closePhotoModal();
+            return;
+        }
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            changePhoto(-1);
+            return;
+        }
+        if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            changePhoto(1);
+            return;
+        }
+        if (event.key !== 'Tab') return;
+
+        const focusableElements = getFocusableModalElements();
+        if (focusableElements.length === 0) return;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+        }
+    });
+
 }
 
 window.renderFrenchResources = renderFrenchResources;

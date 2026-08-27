@@ -67,3 +67,5 @@ polyglot_connect/.netlify/
 *.tmp
 *.swp
 *.swo
+# Local agent instructions
+/AGENTS.md

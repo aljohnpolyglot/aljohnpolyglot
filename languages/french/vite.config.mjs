@@ -13,6 +13,7 @@ function copyFrenchRuntimeAssets() {
             const runtimeDirectories = [
                 ['images', 'images'],
                 ['templates', 'templates'],
+                ['languages/french/images', 'languages/french/images'],
                 ['languages/spanish/images/spotlights', 'languages/spanish/images/spotlights'],
             ];
 

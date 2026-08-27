@@ -5,7 +5,25 @@ window.frenchResourcesData = {
             name: 'Alliance Française de Manille',
             imageSrc: '../../images/languagecenters/Alliance_Manille_SaturdayVisit_2025_Collage.png',
             imageAlt: "Visite d'Aljohn à l'Alliance Française de Manille",
-            badge: 'AFM',
+            gallery: [
+                {
+                    src: '../../images/languagecenters/Alliance_Manille_SaturdayVisit_2025_Collage.png',
+                    alt: "Collage de la visite d'Aljohn à l'Alliance Française de Manille",
+                    caption: "Un samedi à l'Alliance Française de Manille",
+                },
+                {
+                    src: '../../images/languagecenters/alliance_manille_library_reading.JPG',
+                    alt: "Aljohn lit dans la médiathèque de l'Alliance Française de Manille",
+                    caption: 'Lire et travailler dans la médiathèque',
+                },
+                {
+                    src: '../../images/languagecenters/alliance_manille_cinema_selfie.JPG',
+                    alt: "Aljohn avant une projection à l'Alliance Française de Manille",
+                    caption: 'Avant une projection en français',
+                },
+            ],
+            logoSrc: 'images/resources/alliance-francaise-manille-logo.png',
+            logoAlt: "Logo de l'Alliance Française de Manille",
             paragraphs: [
                 "À Makati, l'Alliance réunit cours, certifications DELF/DALF, médiathèque et programmation culturelle. C'est l'un de mes points d'ancrage pour faire vivre le français en dehors des manuels.",
                 "J'aime y passer le week-end pour lire, assister à une projection et retrouver une communauté qui transforme une séance d'étude en véritable immersion.",
@@ -19,19 +37,87 @@ window.frenchResourcesData = {
         {
             id: 'saging-ca-va',
             name: 'Saging Ça Va ? — French for Filipinos',
-            imageSrc: '../../images/groups/saging_cava_feb2024_meetup4.jpg',
-            imageAlt: 'Rencontre de la communauté Saging Ça Va ?',
+            imageSrc: './images/community/saging-july-19-tricolore-flag.jpg',
+            imageAlt: 'Membres de Saging Ça Va ? réunis derrière le drapeau français le 19 juillet 2026',
+            gallery: [
+                {
+                    src: './images/community/saging-july-19-tricolore-flag.jpg',
+                    alt: 'Membres de Saging Ça Va ? réunis derrière le drapeau français',
+                    caption: 'Le tricolore au cœur de la rencontre du 19 juillet 2026',
+                },
+                {
+                    src: './images/community/saging-july-19-group-portrait.jpg',
+                    alt: 'Portrait de groupe pendant la rencontre Saging Ça Va ? du 19 juillet 2026',
+                    caption: 'Autour de la table pour célébrer la fête nationale française',
+                },
+                {
+                    src: './images/community/saging-july-19-activity.jpg',
+                    alt: 'Participants à un jeu en français pendant la rencontre du 19 juillet 2026',
+                    caption: 'Brise-glace, Mot interdit et Téléphone arabe en français',
+                },
+                {
+                    src: './images/community/saging-february-28-group-portrait.jpg',
+                    alt: 'Portrait de groupe à la rencontre Crêpe de la Crêpe du 28 février 2026',
+                    caption: '« Crêpe de la Crêpe » chez Crêpe Glazik, le 28 février 2026',
+                },
+                {
+                    src: './images/community/saging-february-28-event-card.jpg',
+                    alt: 'Cartes souvenir Crêpe de la Crêpe de Saging Ça Va ?',
+                    caption: 'Les cartes souvenir de la deuxième Chandeleur du groupe',
+                },
+                {
+                    src: './images/community/saging-february-28-conversation.jpg',
+                    alt: 'Deux participants échangent en français pendant Crêpe de la Crêpe',
+                    caption: 'Une conversation pendant l’après-midi autour des crêpes',
+                },
+                {
+                    src: './images/community/saging-february-28-table-activity.jpg',
+                    alt: 'Participants réunis pour une activité de conversation le 28 février 2026',
+                    caption: 'Les activités de langue continuent autour de la table',
+                },
+                {
+                    src: './images/community/saging-community-members.jpg',
+                    alt: 'Aljohn avec plusieurs membres du groupe Saging Ça Va ?',
+                    caption: 'Avec des membres de Saging Ça Va ?',
+                },
+                {
+                    src: './images/community/france-norway-world-cup-poblacion.jpg',
+                    alt: 'Aljohn et un ami pendant le match France–Norvège à Poblacion',
+                    caption: 'Le match France–Norvège avec un ami à Poblacion',
+                },
+                {
+                    src: '../../images/groups/saging_cava_feb2024_meetup4.jpg',
+                    alt: 'Participants à une rencontre Saging Ça Va ?',
+                    caption: 'Une rencontre de la communauté à Manille en février 2024',
+                },
+                {
+                    src: '../../images/groups/saging_cava_feb2024_meetup2.jpg',
+                    alt: 'Conversation en français pendant une rencontre Saging Ça Va ?',
+                    caption: 'Parler français autour de la même table',
+                },
+                {
+                    src: '../../images/groups/saging_cava_group_screenshot.png',
+                    alt: 'Aperçu du groupe Facebook Saging Ça Va ?',
+                    caption: 'Garder le contact entre les rencontres',
+                },
+                {
+                    src: '../../images/groups/saging_cava_feb2024_meetup_sticker.jpg',
+                    alt: 'Autocollant souvenir de Saging Ça Va ?',
+                    caption: 'Un petit souvenir de la communauté',
+                },
+            ],
             logoSrc: '../../images/groups/saging_cava_logo_yellowbg.jpg',
             logoAlt: 'Logo de Saging Ça Va ?',
             reverse: true,
             paragraphs: [
-                "Une langue progresse autrement quand elle a des visages. Saging Ça Va ? rassemble des apprenants philippins et des francophones autour de rencontres simples, chaleureuses et sans pression.",
-                "On y vient pour parler, faire des erreurs, recommencer et créer les occasions de pratique qui manquent souvent entre deux cours.",
+                "Saging Ça Va ? — French for Filipinos est une communauté locale d'apprenants philippins et de francophones qui se retrouvent à Manille pour pratiquer le français dans une ambiance détendue.",
+                "Les rencontres mêlent conversations, jeux et sorties. Le groupe Facebook permet de partager les prochains rendez-vous et de garder le contact entre deux rencontres.",
             ],
-            tags: ['Rencontres mensuelles', 'Groupe Facebook', 'Discussions en ligne', 'Communauté locale'],
+            tags: ['Rencontres à Makati', 'Jeux en français', 'Groupe Facebook', 'Communauté locale'],
             actions: [
                 { label: 'Découvrir la communauté', href: '../../groups/sagingcava.html' },
                 { label: 'Rejoindre le groupe', href: 'https://www.facebook.com/groups/846327791047174', variant: 'secondary' },
+                { label: 'Voir le reel chez Crêpe Glazik', href: 'https://www.facebook.com/reel/1625937425280058', variant: 'secondary' },
             ],
         },
         {
@@ -39,7 +125,25 @@ window.frenchResourcesData = {
             name: 'Alliance Française de Cebu',
             imageSrc: '../../images/languagecenters/alliance_cebu_aljohn_with_cebu_filipinofrench_speakers_group.jpg',
             imageAlt: "Aljohn avec des francophones à l'Alliance Française de Cebu",
-            badge: 'AFC',
+            gallery: [
+                {
+                    src: '../../images/languagecenters/alliance_cebu_aljohn_with_cebu_filipinofrench_speakers_group.jpg',
+                    alt: "Aljohn avec le groupe de francophones de l'Alliance Française de Cebu",
+                    caption: 'Avec les francophones de Cebu',
+                },
+                {
+                    src: '../../images/languagecenters/alliance_cebu_aljohn_with_cebu_filipinofrench_speakers_bts.jpg',
+                    alt: "Coulisses du tournage d'Aljohn à l'Alliance Française de Cebu",
+                    caption: 'Dans les coulisses de notre tournage',
+                },
+                {
+                    src: '../../images/languagecenters/alliance_cebu_aljohn_with_cebu_filipinofrench_speakers_bts_2.jpg',
+                    alt: "Conversation pendant le tournage à l'Alliance Française de Cebu",
+                    caption: 'Des histoires francophones venues des Visayas',
+                },
+            ],
+            logoSrc: 'images/resources/alliance-francaise-cebu-logo.jpg',
+            logoAlt: "Logo de l'Alliance Française de Cebu",
             paragraphs: [
                 "L'Alliance Française de Cebu est un véritable relais francophone dans les Visayas, avec des cours, des certifications et des événements culturels pour tous les niveaux.",
                 "J'y ai tourné une vidéo avec des francophones de Cebu. Leur accueil et leur envie de partager la langue ont donné à cette rencontre une énergie que je voulais garder ici.",
@@ -55,6 +159,28 @@ window.frenchResourcesData = {
             name: "La francophonie avec l'Ambassade de France",
             imageSrc: '../../images/languagecenters/fr_embassy_2024_filmfestival_with_embassy_cultural_attache_martin_macalintal.jpg',
             imageAlt: "Aljohn lors d'un événement de l'Ambassade de France aux Philippines",
+            gallery: [
+                {
+                    src: '../../images/languagecenters/fr_embassy_2024_filmfestival_with_embassy_cultural_attache_martin_macalintal.jpg',
+                    alt: "Aljohn avec Martin Macalintal pendant le Festival du film français",
+                    caption: 'Au Festival du film français avec Martin Macalintal',
+                },
+                {
+                    src: '../../images/languagecenters/fr_embassy_2024_filmfestival.jpg',
+                    alt: 'Aljohn au Festival du film français aux Philippines',
+                    caption: 'Le cinéma français vécu à Manille',
+                },
+                {
+                    src: '../../images/languagecenters/fr_embassy_paris2024olympics_opening_pic_with_ambassador_marie_fontanel_should_be_at_front.jpg',
+                    alt: "Aljohn avec l'ambassadrice Marie Fontanel pendant un événement Paris 2024",
+                    caption: "Avec l'ambassadrice Marie Fontanel pour Paris 2024",
+                },
+                {
+                    src: '../../images/languagecenters/fr_embassy_2024_filmfestival2.jpg',
+                    alt: "Aljohn pendant un autre moment du Festival du film français",
+                    caption: 'Des rencontres autour de la culture francophone',
+                },
+            ],
             flagBadge: true,
             reverse: true,
             paragraphs: [
@@ -65,6 +191,7 @@ window.frenchResourcesData = {
             actions: [
                 { label: "Voir le site de l'Ambassade", href: 'https://ph.ambafrance.org/' },
                 { label: 'Suivre les actualités', href: 'https://www.facebook.com/FrenchEmbassyPH/', variant: 'secondary' },
+                { label: 'Voir mon reel du Festival du film français', href: 'https://www.facebook.com/reel/1161771929440983', variant: 'secondary' },
             ],
         },
         {
@@ -82,110 +209,6 @@ window.frenchResourcesData = {
             actions: [
                 { label: 'Pratiquer le français', href: 'https://www.linguno.com/conjugate/fr/' },
                 { label: 'Découvrir Linguno', href: 'https://www.linguno.com/', variant: 'secondary' },
-            ],
-        },
-    ],
-    shelves: [
-        {
-            id: 'instituts',
-            title: 'Instituts et médiathèques',
-            icon: 'fa-solid fa-landmark',
-            cards: [
-                {
-                    badge: 'Manille',
-                    title: 'Lire à la médiathèque',
-                    description: "Livres, presse, films et espace de travail : un lieu calme pour prolonger l'apprentissage par curiosité.",
-                    imageSrc: '../../images/languagecenters/alliance_manille_library_reading.JPG',
-                    imageAlt: "Lecture à la médiathèque de l'Alliance Française de Manille",
-                    linkLabel: 'Découvrir la médiathèque',
-                    href: 'https://www.alliance.ph/library-5/',
-                },
-                {
-                    badge: 'Cinéma',
-                    title: 'Voir le français en contexte',
-                    description: "Une projection donne des voix, des gestes et des références aux mots rencontrés pendant l'étude.",
-                    imageSrc: '../../images/languagecenters/alliance_manille_cinema_selfie.JPG',
-                    imageAlt: "Avant une projection à l'Alliance Française de Manille",
-                    linkLabel: 'Explorer les centres',
-                    href: '../../languagecenters.html',
-                },
-                {
-                    badge: 'Cebu',
-                    title: 'Rencontrer les francophones des Visayas',
-                    description: "Cours et activités culturelles créent un point de rencontre durable pour pratiquer à Cebu.",
-                    imageSrc: '../../images/languagecenters/alliance_cebu_aljohn_with_cebu_filipinofrench_speakers_bts.jpg',
-                    imageAlt: "Coulisses d'un tournage à l'Alliance Française de Cebu",
-                    linkLabel: "Visiter l'Alliance de Cebu",
-                    href: 'https://alliancefr.ph/',
-                },
-            ],
-        },
-        {
-            id: 'communaute',
-            title: 'Communauté et rencontres',
-            icon: 'fa-solid fa-users',
-            cards: [
-                {
-                    badge: 'Rencontre',
-                    title: 'Parler sans attendre de se sentir prêt',
-                    description: "Les rencontres Saging Ça Va ? donnent une raison concrète d'utiliser le français dès maintenant.",
-                    imageSrc: '../../images/groups/saging_cava_feb2024_meetup.jpg',
-                    imageAlt: 'Participants à une rencontre Saging Ça Va ?',
-                    linkLabel: 'Voir la communauté',
-                    href: '../../groups/sagingcava.html',
-                },
-                {
-                    badge: 'En ligne',
-                    title: 'Garder le contact entre les rencontres',
-                    description: "Le groupe Facebook partage les prochains rendez-vous et maintient la conversation entre deux événements.",
-                    imageSrc: '../../images/groups/saging_cava_group_screenshot.png',
-                    imageAlt: 'Aperçu du groupe Facebook Saging Ça Va ?',
-                    linkLabel: 'Rejoindre le groupe',
-                    href: 'https://www.facebook.com/groups/846327791047174',
-                },
-                {
-                    badge: 'Réseau',
-                    title: 'Trouver des partenaires de pratique',
-                    description: "Le chat communautaire facilite les échanges spontanés, les questions et l'organisation des sorties.",
-                    imageSrc: '../../images/groups/saging_cava_feb2024_meetup_sticker.jpg',
-                    imageAlt: 'Autocollant de la communauté Saging Ça Va ?',
-                    linkLabel: 'Rejoindre le groupe',
-                    href: 'https://www.facebook.com/groups/846327791047174',
-                },
-            ],
-        },
-        {
-            id: 'culture',
-            title: 'Culture et événements',
-            icon: 'fa-solid fa-film',
-            cards: [
-                {
-                    badge: 'Festival',
-                    title: 'Festival du film français',
-                    description: "Le cinéma fait entendre plusieurs accents et ouvre une conversation sur la société, l'histoire et les arts.",
-                    imageSrc: '../../images/languagecenters/fr_embassy_2024_filmfestival.jpg',
-                    imageAlt: 'Aljohn au Festival du film français aux Philippines',
-                    linkLabel: "Suivre l'Ambassade",
-                    href: 'https://www.facebook.com/FrenchEmbassyPH/',
-                },
-                {
-                    badge: 'Paris 2024',
-                    title: 'Créer des ponts par les grands rendez-vous',
-                    description: "Les événements internationaux deviennent des occasions de parler français et de rencontrer la communauté locale.",
-                    imageSrc: '../../images/languagecenters/fr_embassy_paris2024olympics_opening_pic_with_ambassador_marie_fontanel_should_be_at_front.jpg',
-                    imageAlt: "Aljohn avec l'ambassadrice Marie Fontanel lors d'un événement Paris 2024",
-                    linkLabel: "Voir l'actualité culturelle",
-                    href: 'https://ph.ambafrance.org/',
-                },
-                {
-                    badge: 'Francophonie',
-                    title: 'Partager la langue sur scène',
-                    description: "Chanter, présenter ou simplement échanger avec le public transforme le français en expérience collective.",
-                    imageSrc: '../../images/languagecenters/fr_embassy_2024_filmfestival2.jpg',
-                    imageAlt: "Aljohn lors d'un événement francophone aux Philippines",
-                    linkLabel: 'Voir mes vidéos en français',
-                    href: '#playlist-francais',
-                },
             ],
         },
     ],
