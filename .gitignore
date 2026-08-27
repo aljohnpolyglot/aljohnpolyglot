@@ -1,5 +1,3 @@
-polyglot_connect/.env
-
 # Node.js / npm / Vite
 node_modules/
 dist/
@@ -53,14 +51,8 @@ MANIFEST
 # *.output
 # specific_script_output_folder/
 
-# Polyglot Connect App Specific
-# This is the crucial one: ignore the api_keys.js file that contains REAL secrets.
-# The workflow will generate the version for deployment.
-polyglot_connect/js/config/api_keys.js
-
 # Netlify (even if deleted locally, good to keep if it might reappear)
 .netlify/
-polyglot_connect/.netlify/
 
 # Other temporary or sensitive files
 *.log
@@ -69,3 +61,21 @@ polyglot_connect/.netlify/
 *.swo
 # Local agent instructions
 /AGENTS.md
+
+# Private local curation exports (never deploy or commit)
+/local-data/
+
+# Local browser QA caches and disposable captures
+/.impeccable/*profile*/
+/.impeccable/review/*
+!/.impeccable/review/desktop.png
+!/.impeccable/review/hero-repro.png
+!/.impeccable/review/mobile.png
+!/.impeccable/review/mobile-long.png
+!/.impeccable/review/creator-modal.png
+/.impeccable/mocks/decision/
+/.impeccable/mocks/patchwork-cover.png
+/.impeccable/mocks/patchwork-cover.prompt.txt
+/.impeccable/questions/
+/.impeccable/quality/*
+!/.impeccable/quality/quilt-hero.webp

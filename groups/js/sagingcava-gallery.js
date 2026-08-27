@@ -1,134 +1,115 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- MODAL FUNCTIONALITY for Saging Ca Va Page ---
-    const modalSCV = document.getElementById("imageModalSCV");
-    const modalImgSCV = document.getElementById("modalImageSCV");
-    const captionTextSCV = document.getElementById("caption-scv");
-    // Target images within the crepe gallery specifically for its modal
-    const galleryItemsForModalSCV = document.querySelectorAll("#scvCrepeGalleryGrid .gallery-item-scv img");
-    const closeBtnModalSCV = document.querySelector(".modal-scv .close-scv");
-    const prevBtnModalSCV = document.querySelector(".modal-scv .prev-scv");
-    const nextBtnModalSCV = document.querySelector(".modal-scv .next-scv");
+    const modalSCV = document.getElementById('imageModalSCV');
+    const modalImgSCV = document.getElementById('modalImageSCV');
+    const captionTextSCV = document.getElementById('caption-scv');
+    const galleryTriggersSCV = Array.from(document.querySelectorAll('#scvCrepeGalleryGrid .gallery-item-scv'));
+    const closeBtnModalSCV = document.querySelector('.modal-scv .close-scv');
+    const prevBtnModalSCV = document.querySelector('.modal-scv .prev-scv');
+    const nextBtnModalSCV = document.querySelector('.modal-scv .next-scv');
+    const modalSCVImagesData = galleryTriggersSCV.map(trigger => {
+        const image = trigger.querySelector('img');
+        return {
+            src: image?.src || '',
+            alt: image?.alt || '',
+            caption: image?.dataset.caption || image?.alt || '',
+        };
+    });
 
-    let currentSCVModalImageIndex;
-    const modalSCVImagesData = [];
+    let currentSCVModalImageIndex = 0;
+    let lastSCVModalTrigger = null;
 
-    galleryItemsForModalSCV.forEach((img, index) => {
-        modalSCVImagesData.push({
-            src: img.src,
-            alt: img.alt,
-            caption: img.dataset.caption || img.alt
-        });
+    function updateSCVModalContent(index) {
+        if (!modalImgSCV || !captionTextSCV || index < 0 || index >= modalSCVImagesData.length) return;
+        const image = modalSCVImagesData[index];
+        modalImgSCV.src = image.src;
+        modalImgSCV.alt = image.alt;
+        captionTextSCV.textContent = image.caption;
+        currentSCVModalImageIndex = index;
+    }
 
-        img.onclick = function() {
-            if (modalSCV) {
-                modalSCV.style.display = "block";
-                updateSCVModalContent(index);
+    function openSCVModal(index, trigger) {
+        if (!modalSCV || !closeBtnModalSCV) return;
+        lastSCVModalTrigger = trigger;
+        updateSCVModalContent(index);
+        modalSCV.style.display = 'block';
+        modalSCV.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('scv-modal-open');
+        closeBtnModalSCV.focus();
+    }
+
+    function closeSCVModal() {
+        if (!modalSCV) return;
+        modalSCV.style.display = 'none';
+        modalSCV.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('scv-modal-open');
+        lastSCVModalTrigger?.focus();
+        lastSCVModalTrigger = null;
+    }
+
+    function changeSCVModalImage(direction) {
+        if (!modalSCVImagesData.length) return;
+        const nextIndex = (currentSCVModalImageIndex + direction + modalSCVImagesData.length) % modalSCVImagesData.length;
+        updateSCVModalContent(nextIndex);
+    }
+
+    galleryTriggersSCV.forEach((trigger, index) => {
+        trigger.addEventListener('click', () => openSCVModal(index, trigger));
+    });
+    closeBtnModalSCV?.addEventListener('click', closeSCVModal);
+    prevBtnModalSCV?.addEventListener('click', () => changeSCVModalImage(-1));
+    nextBtnModalSCV?.addEventListener('click', () => changeSCVModalImage(1));
+    modalSCV?.addEventListener('click', event => {
+        if (event.target === modalSCV) closeSCVModal();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (!modalSCV || modalSCV.getAttribute('aria-hidden') !== 'false') return;
+        if (event.key === 'ArrowLeft') changeSCVModalImage(-1);
+        else if (event.key === 'ArrowRight') changeSCVModalImage(1);
+        else if (event.key === 'Escape') closeSCVModal();
+        else if (event.key === 'Tab') {
+            const controls = [closeBtnModalSCV, prevBtnModalSCV, nextBtnModalSCV].filter(Boolean);
+            const firstControl = controls[0];
+            const lastControl = controls[controls.length - 1];
+            if (event.shiftKey && document.activeElement === firstControl) {
+                event.preventDefault();
+                lastControl.focus();
+            } else if (!event.shiftKey && document.activeElement === lastControl) {
+                event.preventDefault();
+                firstControl.focus();
             }
         }
     });
 
-    function updateSCVModalContent(index) {
-        if (modalImgSCV && captionTextSCV && index >= 0 && index < modalSCVImagesData.length) {
-            modalImgSCV.src = modalSCVImagesData[index].src;
-            modalImgSCV.alt = modalSCVImagesData[index].alt;
-            captionTextSCV.innerHTML = modalSCVImagesData[index].caption;
-            currentSCVModalImageIndex = index;
-        }
-    }
-
-    if (closeBtnModalSCV) {
-        closeBtnModalSCV.onclick = function() { if (modalSCV) modalSCV.style.display = "none"; }
-    }
-    if (prevBtnModalSCV) {
-        prevBtnModalSCV.onclick = function() {
-            currentSCVModalImageIndex = (currentSCVModalImageIndex - 1 + modalSCVImagesData.length) % modalSCVImagesData.length;
-            updateSCVModalContent(currentSCVModalImageIndex);
-        }
-    }
-    if (nextBtnModalSCV) {
-        nextBtnModalSCV.onclick = function() {
-            currentSCVModalImageIndex = (currentSCVModalImageIndex + 1) % modalSCVImagesData.length;
-            updateSCVModalContent(currentSCVModalImageIndex);
-        }
-    }
-    window.onclick = function(event) {
-        if (event.target == modalSCV) { if (modalSCV) modalSCV.style.display = "none"; }
-    }
-    document.addEventListener('keydown', function(event) {
-        if (modalSCV && modalSCV.style.display === "block") {
-            if (event.key === "ArrowLeft" && prevBtnModalSCV) prevBtnModalSCV.click();
-            else if (event.key === "ArrowRight" && nextBtnModalSCV) nextBtnModalSCV.click();
-            else if (event.key === "Escape" && closeBtnModalSCV) closeBtnModalSCV.click();
-        }
-    });
-
-    // --- GALLERY SLIDER FUNCTIONALITY for "But I'M A CRÊPE" Meetup ---
+    // One-photo community carousel. The same ordered collection opens in the full-screen modal.
     const crepeGalleryGrid = document.getElementById('scvCrepeGalleryGrid');
     const crepeGalleryWrapper = document.getElementById('scvCrepeGalleryWrapper');
     const crepePrevGridBtn = document.getElementById('scvPrevCrepeBtn');
     const crepeNextGridBtn = document.getElementById('scvNextCrepeBtn');
+    const crepeGalleryStatus = document.getElementById('scvGalleryStatus');
 
     if (crepeGalleryGrid && crepeGalleryWrapper && crepePrevGridBtn && crepeNextGridBtn) {
-        let crepeScrollAmount = 0;
-        let crepeItemWidth = 0;
-        let crepeItemsPerPage = 3; // Default for this gallery, can be adjusted
         const crepeGalleryItems = Array.from(crepeGalleryGrid.children);
         const crepeTotalItems = crepeGalleryItems.length;
+        let currentCrepeIndex = 0;
 
-        function crepeCalculateDimensions() {
-            if (crepeGalleryItems.length === 0) return;
-            const firstItem = crepeGalleryItems[0];
-            crepeItemWidth = firstItem.offsetWidth;
-            const wrapperWidth = crepeGalleryWrapper.offsetWidth;
-            const gapValue = parseFloat(window.getComputedStyle(crepeGalleryGrid).gap) || 16;
-            
-            crepeItemsPerPage = Math.floor((wrapperWidth + gapValue) / (crepeItemWidth + gapValue));
-            crepeItemsPerPage = Math.max(1, crepeItemsPerPage);
-
-            crepeGalleryGrid.style.width = `${crepeTotalItems * (crepeItemWidth + gapValue) - gapValue}px`;
-        }
-
-        function crepeUpdateArrowStates() {
-            crepePrevGridBtn.classList.toggle('disabled', crepeScrollAmount === 0);
-            const maxScroll = crepeGalleryGrid.scrollWidth - crepeGalleryWrapper.clientWidth;
-            // Add a small tolerance for floating point inaccuracies
-            crepeNextGridBtn.classList.toggle('disabled', crepeScrollAmount >= maxScroll - 5); 
-        }
-
-        function crepeScrollToPosition() {
-            crepeGalleryGrid.style.transform = `translateX(-${crepeScrollAmount}px)`;
-            crepeUpdateArrowStates();
+        function showCrepePhoto(index) {
+            if (!crepeTotalItems) return;
+            currentCrepeIndex = (index + crepeTotalItems) % crepeTotalItems;
+            crepeGalleryGrid.style.transform = `translateX(-${currentCrepeIndex * 100}%)`;
+            if (crepeGalleryStatus) {
+                crepeGalleryStatus.textContent = `Photo ${currentCrepeIndex + 1} sur ${crepeTotalItems}`;
+            }
         }
 
         crepePrevGridBtn.addEventListener('click', () => {
-            const scrollStep = crepeItemsPerPage * (crepeItemWidth + (parseFloat(window.getComputedStyle(crepeGalleryGrid).gap) || 16));
-            crepeScrollAmount = Math.max(0, crepeScrollAmount - scrollStep);
-            crepeScrollToPosition();
+            showCrepePhoto(currentCrepeIndex - 1);
         });
 
         crepeNextGridBtn.addEventListener('click', () => {
-            const scrollStep = crepeItemsPerPage * (crepeItemWidth + (parseFloat(window.getComputedStyle(crepeGalleryGrid).gap) || 16));
-            const maxScroll = crepeGalleryGrid.scrollWidth - crepeGalleryWrapper.clientWidth;
-            crepeScrollAmount = Math.min(maxScroll, crepeScrollAmount + scrollStep);
-            crepeScrollToPosition();
+            showCrepePhoto(currentCrepeIndex + 1);
         });
 
-        if (crepeTotalItems > 0) {
-            crepeCalculateDimensions();
-            crepeUpdateArrowStates();
-        }
-
-        let crepeResizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(crepeResizeTimeout);
-            crepeResizeTimeout = setTimeout(() => {
-                if (crepeTotalItems > 0) {
-                    crepeScrollAmount = 0; 
-                    crepeScrollToPosition();
-                    crepeCalculateDimensions();
-                    crepeUpdateArrowStates();
-                }
-            }, 250);
-        });
+        showCrepePhoto(0);
     }
 });

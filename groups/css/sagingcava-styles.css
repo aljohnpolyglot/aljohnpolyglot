@@ -8,7 +8,7 @@
     --scv-bg-light-alt: #FFF9E6; /* Very light creamy yellow for alternate sections */
     --scv-card-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     --scv-font-headings: 'Poppins', sans-serif; /* Playful yet modern */
-    --scv-font-main: 'Open Sans', sans-serif;
+    --scv-font-main: 'Nunito Sans', sans-serif;
 
     /* Poster-inspired palette for "But I'M A CRÊPE" section */
     --crepe-bg: #FAF0E6; /* Linen / Light Beige */
@@ -203,11 +203,11 @@ body {
 /* Gallery Slider for Crepe Meetup */
 .gallery-slider-container-scv { position: relative; display: flex; align-items: center; justify-content: center; margin-top: 1rem; padding: 0 35px; }
 .gallery-grid-wrapper-scv { overflow: hidden; width: 100%; margin: 0 auto; }
-.gallery-grid-scv { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(180px, 1fr); gap: 0.8rem; transition: transform 0.5s ease-in-out; }
-@media (min-width: 768px) { .gallery-grid-scv { grid-auto-columns: minmax(200px, 1fr); } }
-.gallery-item-scv { cursor: pointer; overflow: hidden; border-radius: 8px; box-shadow: var(--scv-card-shadow); transition: transform 0.3s ease; }
-.gallery-item-scv img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.gallery-grid-scv { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 0; transition: transform 0.5s ease-in-out; }
+.gallery-item-scv { display: block; width: 100%; padding: 0; cursor: pointer; overflow: hidden; appearance: none; background: transparent; border: 0; border-radius: 8px; box-shadow: var(--scv-card-shadow); transition: transform 0.3s ease; }
+.gallery-item-scv img { width: 100%; height: clamp(260px, 34vw, 410px); object-fit: cover; display: block; transition: transform 0.4s ease; }
 .gallery-item-scv:hover img { transform: scale(1.1); }
+.gallery-item-scv:focus-visible { outline: 4px solid var(--crepe-accent-red); outline-offset: 4px; }
 .gallery-nav-arrow-scv {
     position: absolute; top: 50%; transform: translateY(-50%); background-color: var(--crepe-accent-red); color: white;
     border: none; padding: 8px 10px; font-size: 20px; cursor: pointer; z-index: 10; border-radius: 50%;
@@ -217,16 +217,19 @@ body {
 .gallery-nav-arrow-scv.prev-grid-arrow-scv { left: -5px; }
 .gallery-nav-arrow-scv.next-grid-arrow-scv { right: -5px; }
 .gallery-nav-arrow-scv.disabled { opacity: 0.4; cursor: default; background-color: lighten(var(--crepe-accent-red), 15%);}
+.gallery-status-scv { margin: 0.8rem 0 0; color: var(--crepe-text-dark); font-size: 0.85rem; font-weight: 700; text-align: center; }
 
 /* SCV Modal Styles */
 .modal-scv { display: none; position: fixed; z-index: 1050; padding-top: 20px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(48, 51, 107, 0.9); animation: fadeInModalSCV 0.3s ease-out;}
+.scv-modal-open { overflow: hidden; }
 .modal-content-scv { margin: auto; display: block; max-width: 90%; max-height: 85vh; animation: zoomInModalSCV 0.3s ease-out;}
 #caption-scv { margin: 10px auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ddd; padding: 10px 0; font-size: 1.1rem;}
-.close-scv { position: absolute; top: 15px; right: 25px; color: #f1f1f1; font-size: 35px; font-weight: bold; transition: 0.3s; cursor: pointer;}
+.close-scv { position: absolute; top: 15px; right: 25px; padding: 0.2rem 0.65rem; color: #f1f1f1; background: transparent; border: 0; font-size: 35px; font-weight: bold; transition: 0.3s; cursor: pointer;}
 .close-scv:hover, .close-scv:focus { color: #bbb; text-decoration: none; }
-.prev-scv, .next-scv { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); padding: 12px 16px; color: white; font-weight: bold; font-size: 28px; transition: 0.4s ease; user-select: none; background-color: rgba(0,0,0,0.4); border-radius: 4px;}
+.prev-scv, .next-scv { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); padding: 12px 16px; color: white; font-weight: bold; font-size: 28px; transition: 0.4s ease; user-select: none; background-color: rgba(0,0,0,0.4); border: 0; border-radius: 4px;}
 .prev-scv { left: 10px; } .next-scv { right: 10px; }
 .prev-scv:hover, .next-scv:hover { background-color: rgba(0,0,0,0.7); }
+.close-scv:focus-visible, .prev-scv:focus-visible, .next-scv:focus-visible { outline: 3px solid #ffd76a; outline-offset: 3px; }
 @keyframes fadeInModalSCV { from { opacity: 0; } to { opacity: 1; } }
 @keyframes zoomInModalSCV { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
@@ -310,7 +313,7 @@ body {
     .group-logo-scv { max-width: 180px; }
     .founders-grid-scv { flex-direction: column; align-items: center; }
     .founder-profile-scv.main-founder, .founder-profile-scv.co-founder { flex-basis: auto; width: 90%; max-width: 280px;}
-    .gallery-grid-scv { grid-auto-columns: minmax(160px, 1fr); }
+    .gallery-grid-scv { grid-auto-columns: 100%; }
     .gallery-nav-arrow-scv { width: 35px; height: 35px; font-size: 18px; padding: 6px 8px;}
 
     .hero-title-scv {
@@ -354,7 +357,7 @@ body {
         padding: 0 45px;
     }
     .gallery-item-scv img {
-        height: 160px;
+        height: 300px;
     }
     .gallery-nav-arrow-scv.prev-grid-arrow-scv {
         left: 5px;
@@ -493,10 +496,10 @@ body {
         padding: 0 40px;
     }
     .gallery-grid-scv {
-        grid-auto-columns: minmax(140px, 1fr);
+        grid-auto-columns: 100%;
     }
      .gallery-item-scv img {
-        height: 140px;
+        height: 240px;
     }
     .gallery-nav-arrow-scv {
         width: 32px; height: 32px; font-size: 16px; padding: 4px 6px;
