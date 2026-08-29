@@ -61,6 +61,8 @@ MANIFEST
 *.swo
 # Local agent instructions
 /AGENTS.md
+/REVIEWNOTES.md
+/TODO.md
 
 # Private local curation exports (never deploy or commit)
 /local-data/

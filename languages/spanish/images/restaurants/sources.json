@@ -1,0 +1,26 @@
+{
+  "barcino-greenbelt.webp": {
+    "source": "https://static.wixstatic.com/media/957c86_586cc516a5864318975696420640168e~mv2.jpg",
+    "asset": "official restaurant website food photograph"
+  },
+  "socarrat-cebu.webp": {
+    "source": "https://primer.com.ph/food/wp-content/uploads/sites/4/2026/05/470128383_17935046855952951_9060681379710153821_n.jpg",
+    "asset": "restaurant interior photograph from Philippine Primer, supplied by Socarrat"
+  },
+  "shooters-makati.webp": {
+    "source": "https://static.wixstatic.com/media/654b53_02c1e62b4acd4d52a7f2e151ebff9e1c~mv2.jpeg",
+    "asset": "official restaurant website interior photograph"
+  },
+  "barcino-greenbelt-logo.webp": {
+    "source": "https://static.wixstatic.com/media/957c86_2ec2b342d3014daf9ae1be7deafa0fb6~mv2.png",
+    "asset": "official Barcino website logo"
+  },
+  "socarrat-cebu-logo.webp": {
+    "source": "https://www.facebook.com/socarratcebu/",
+    "asset": "official Socarrat Facebook profile logo, downloaded and stored locally"
+  },
+  "shooters-makati-logo.webp": {
+    "source": "https://static.wixstatic.com/media/654b53_e7b9bc65ab364a0a83af25f3892b263c~mv2.png",
+    "asset": "official Shooters website logo"
+  }
+}

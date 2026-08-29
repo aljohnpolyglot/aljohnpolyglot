@@ -214,3 +214,8 @@
     /* background-image: url('../images/assets/banderitas_tileable_pattern.png'), linear-gradient(...); */
     /* background-blend-mode: multiply; */ /* Experiment with blend modes for pattern */
 }
+
+#bisaya-creator-community,
+#bisaya-top-picks {
+    overflow-x: clip;
+}

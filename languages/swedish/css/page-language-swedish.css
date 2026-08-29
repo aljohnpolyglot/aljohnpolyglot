@@ -122,17 +122,19 @@
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500&display=swap');
 
-*, *::before, *::after {
+#language-page-swedish,
+#language-page-swedish *,
+#language-page-swedish *::before,
+#language-page-swedish *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
+html:has(body.swedish-page-active) {
     height: 100%;
     scroll-padding-top: var(--main-navbar-height);
     scroll-behavior: smooth;
-    font-size: 16px; /* Base font size */
 }
 
 body.swedish-page-active {
@@ -155,47 +157,54 @@ main#language-page-swedish {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+#language-page-swedish h1,
+#language-page-swedish h2,
+#language-page-swedish h3,
+#language-page-swedish h4,
+#language-page-swedish h5,
+#language-page-swedish h6 {
     margin-top: 0;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    margin-bottom: 12px;
     font-family: var(--sw-font-display);
     color: var(--sw-text-primary);
     line-height: 1.3;
 }
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.2rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.9rem; }
+#language-page-swedish h1 { font-size: 2.5rem; }
+#language-page-swedish h2 { font-size: 2rem; }
+#language-page-swedish h3 { font-size: 1.5rem; }
+#language-page-swedish h4 { font-size: 1.2rem; }
+#language-page-swedish h5 { font-size: 1rem; }
+#language-page-swedish h6 { font-size: 0.9rem; }
 
-p {
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+#language-page-swedish p {
+    margin-bottom: 12px;
 }
-p:last-child {
+#language-page-swedish p:last-child {
     margin-bottom: 0;
 }
 
-a {
+#language-page-swedish a {
     color: var(--sw-flag-yellow);
     text-decoration: none;
     transition: color var(--sw-transition-speed) var(--sw-transition-easing);
 }
-a:hover, a:focus {
+#language-page-swedish a:hover,
+#language-page-swedish a:focus {
     color: var(--sw-accent-yellow-darker);
     text-decoration: underline;
 }
 
-img {
+#language-page-swedish img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-ul, ol {
+#language-page-swedish ul,
+#language-page-swedish ol {
     list-style-position: inside;
-    padding-left: calc(var(--sw-spacing-unit) * 2);
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    padding-left: 16px;
+    margin-bottom: 12px;
 }
 
 /*=========================================================================
@@ -206,13 +215,13 @@ ul, ol {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: calc(var(--sw-spacing-unit) * 2);
-    padding-right: calc(var(--sw-spacing-unit) * 2);
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #language-page-swedish .content-section {
-    padding-top: calc(var(--sw-spacing-unit) * 5.5);
-    padding-bottom: calc(var(--sw-spacing-unit) * 5.5);
+    padding-top: 44px;
+    padding-bottom: 44px;
     position: relative;
 }
 
@@ -234,9 +243,9 @@ ul, ol {
     font-size: clamp(1.8rem, 5vw, 2.8rem);
     color: var(--sw-text-primary);
     text-align: center;
-    margin-bottom: calc(var(--sw-spacing-unit) * 3);
+    margin-bottom: 24px;
     line-height: 1.2;
-    padding-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    padding-bottom: 12px;
     position: relative;
 }
 #language-page-swedish .section-title::after {
@@ -257,7 +266,7 @@ ul, ol {
     font-weight: 600;
     font-size: clamp(1.4rem, 4vw, 1.9rem);
     color: var(--sw-text-primary);
-    margin-bottom: calc(var(--sw-spacing-unit) * 2);
+    margin-bottom: 16px;
     line-height: 1.3;
 }
 
@@ -268,7 +277,7 @@ ul, ol {
     font-weight: 500;
     border-bottom: 1px dotted rgba(var(--sw-flag-yellow-rgb), 0.7);
     padding: 0.05em 0.1em;
-    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    transition: color var(--sw-transition-speed) var(--sw-transition-easing), background-color var(--sw-transition-speed) var(--sw-transition-easing), border-color var(--sw-transition-speed) var(--sw-transition-easing);
 }
 #language-page-swedish .inline-link:hover,
 #language-page-swedish .inline-link:focus {
@@ -287,13 +296,13 @@ ul, ol {
     font-weight: 500;
     font-size: 0.9rem;
     letter-spacing: 0.3px;
-    padding: calc(var(--sw-spacing-unit)*1.1) calc(var(--sw-spacing-unit)*2.6);
+    padding: 8.8px 20.8px;
     border-radius: var(--sw-radius-sm);
     border: 1px solid transparent;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    transition: color var(--sw-transition-speed) var(--sw-transition-easing), background-color var(--sw-transition-speed) var(--sw-transition-easing), border-color var(--sw-transition-speed) var(--sw-transition-easing), transform var(--sw-transition-speed) var(--sw-transition-easing), box-shadow var(--sw-transition-speed) var(--sw-transition-easing);
 }
 #language-page-swedish .btn-primary {
     background-color: var(--sw-flag-yellow);
@@ -321,20 +330,20 @@ ul, ol {
 }
 #language-page-swedish .btn-small {
     font-size: 0.8rem;
-    padding: calc(var(--sw-spacing-unit)*0.75) calc(var(--sw-spacing-unit)*1.5);
+    padding: 6px 12px;
 }
 #language-page-swedish .btn-icon {
     background-color: transparent;
     color: var(--sw-text-tertiary);
     border: 1px solid var(--sw-border-color);
-    width: calc(var(--sw-spacing-unit) * 4);
-    height: calc(var(--sw-spacing-unit) * 4);
+    width: 32px;
+    height: 32px;
     border-radius: var(--sw-radius-round);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    transition: color var(--sw-transition-speed) var(--sw-transition-easing), background-color var(--sw-transition-speed) var(--sw-transition-easing), border-color var(--sw-transition-speed) var(--sw-transition-easing), transform var(--sw-transition-speed) var(--sw-transition-easing), box-shadow var(--sw-transition-speed) var(--sw-transition-easing);
     padding: 0; /* Reset padding for icon buttons */
 }
 #language-page-swedish .btn-icon:hover,
@@ -360,7 +369,7 @@ ul, ol {
     color: var(--sw-text-secondary);
     font-style: italic;
     text-align: center;
-    padding: calc(var(--sw-spacing-unit) * 2);
+    padding: 16px;
 }
 .text-center {
     text-align: center;
@@ -395,8 +404,8 @@ ul, ol {
 min-height: 80vh; /* ADJUST: If content is more compact, you might not need as much min-height */
     height: auto;     /* Let content and padding primarily define the height */
     max-height: 700px;/* Keep a max height */
-    padding-top: calc(var(--main-navbar-height) + var(--sw-spacing-unit) * 3); /* ADJUSTED: Space below navbar before content starts */
-    padding-bottom: calc(var(--sw-spacing-unit) * 4); /* Space at the very bottom of the hero section */
+    padding-top: calc(var(--main-navbar-height) + 24px); /* Space below navbar before content starts */
+    padding-bottom: 32px; /* Space at the very bottom of the hero section */
 }
 
 /* Parallax Layers Common Styling */
@@ -415,7 +424,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .custom-hero-section#swedish-custom-hero .hero-parallax-bg {
     top: 0;
     height: 100%; /* Takes height of parent hero section */
-    background-image: url('../../images/languages/swedish/header_design_test.png');
+    background-image: url('../../../images/languages/swedish/header_design_test.png');
     background-position: center center;
     background-attachment: fixed; /* Creates parallax by staying fixed as content scrolls */
     z-index: 1;
@@ -437,7 +446,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .custom-hero-section#swedish-custom-hero .hero-text-overlay {
     position: relative;
     z-index: 4;
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2); /* REDUCED padding inside overlay */
+    padding: 20px 16px; /* REDUCED padding inside overlay */
     width: 90%;
     max-width: 680px; /* REDUCED max-width for a tighter text block */
     text-align: center;
@@ -454,7 +463,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 /* Title Box & Flag */
 .custom-hero-section#swedish-custom-hero .hero-main-title-box {
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* REDUCED space after title block */
+    margin-bottom: 12px; /* REDUCED space after title block */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -462,7 +471,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .custom-hero-section#swedish-custom-hero .hero-main-title-box .hero-flag {
     width: clamp(35px, 4vw, 45px); /* REDUCED flag size further */
     height: auto;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1); /* REDUCED space below flag */
+    margin-bottom: 8px; /* REDUCED space below flag */
     filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
     opacity: 0.95;
 }
@@ -501,7 +510,6 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     /* line-height: 0.9; /* Consider if Anton still causes too much space */
 }
 /* Main Hero Title H1 - Refined Typography */
-//* Main Hero Title H1 - Refined Typography */
 .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 {
     font-family: var(--sw-font-display);
     font-weight: 300;
@@ -514,7 +522,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: block;
     font-size: clamp(1.2rem, 3vw, 1.7rem);
     letter-spacing: 0.6px; /* Slightly more spacing */
-    margin-bottom: calc(var(--sw-spacing-unit) * 0.20);
+    margin-bottom: 1.6px;
     text-transform: uppercase;
     opacity: 0.85;
 }
@@ -541,7 +549,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(0.85rem, 1.8vw, 0.95rem); /* REDUCED size for intro text */
     line-height: 1.65; /* Slightly tighter */
     max-width: 600px; /* Narrower for better readability in compact space */
-    margin: calc(var(--sw-spacing-unit) * 1.5) auto calc(var(--sw-spacing-unit) * 2.5) auto; /* REDUCED top/bottom margins */
+    margin: 12px auto 20px auto; /* REDUCED top/bottom margins */
     color: #E0E8F0;
     text-shadow: 0 1px 4px rgba(0,0,0,0.9);
 }
@@ -550,7 +558,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-weight: 500;
     color: var(--sw-text-on-blue);
     font-size: 1.05em;
-    margin-bottom: calc(var(--sw-spacing-unit) * 0.75); /* More distinct space */
+    margin-bottom: 6px; /* More distinct space */
 }
 /* Emphasized first line of intro text */
 .custom-hero-section#swedish-custom-hero .hero-intro-text .intro-text-highlight {
@@ -559,22 +567,22 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-on-blue);
     font-size: 1.1em; /* Relative to its parent p, so also smaller */
     line-height: 1.3; /* Tighter line height for the highlight */
-    margin-bottom: calc(var(--sw-spacing-unit) * 1); /* Space before the <br><br> */
+    margin-bottom: 8px; /* Space before the <br><br> */
     letter-spacing: 0.2px;
 }
 /* CTA Buttons - Refined */
 /* CTA Buttons - Refined */
 .custom-hero-section#swedish-custom-hero .hero-cta-buttons {
     display: flex;
-    gap: calc(var(--sw-spacing-unit) * 1.75); /* Slightly less gap */
+    gap: 14px; /* Slightly less gap */
     justify-content: center;
 }
 .custom-hero-section#swedish-custom-hero .hero-cta-buttons .btn {
-    padding: calc(var(--sw-spacing-unit)*1.2) calc(var(--sw-spacing-unit)*2.8);
+    padding: 9.6px 22.4px;
     font-size: 0.85rem; /* Slightly smaller for balance */
     font-weight: 600;
     border-radius: var(--sw-radius-md); /* Consistent rounding */
-    transition: all 0.25s var(--sw-transition-easing);
+    transition: color 0.25s var(--sw-transition-easing), background-color 0.25s var(--sw-transition-easing), border-color 0.25s var(--sw-transition-easing), transform 0.25s var(--sw-transition-easing), box-shadow 0.25s var(--sw-transition-easing);
     letter-spacing: 0.4px;
     border-width: 2px;
     border-style: solid;
@@ -634,8 +642,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-color: var(--sw-yellow-theme-bg-start);
     background-image: linear-gradient(150deg, var(--sw-yellow-theme-bg-start) 0%, var(--sw-yellow-theme-bg-end) 100%);
     color: var(--sw-yellow-theme-text-primary);
-    padding-top: calc(var(--sw-spacing-unit) * 5.5);
-    padding-bottom: calc(var(--sw-spacing-unit) * 5.5);
+    padding-top: 44px;
+    padding-bottom: 44px;
     border-top: 3px solid var(--sw-yellow-theme-border);
     border-bottom: 3px solid var(--sw-yellow-theme-border);
     position: relative;
@@ -647,7 +655,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex;
     flex-direction: column; /* Mobile-first: stack columns */
     align-items: center; /* Center content horizontally when stacked */
-    gap: calc(var(--sw-spacing-unit) * 3);
+    gap: 24px;
 }
 
 /* Desktop and Tablet Layout (side-by-side) */
@@ -655,7 +663,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     #fragmenterad-verklighet-section .essay-portrait-wrapper.layout-columns {
         flex-direction: row; /* Columns side-by-side */
         align-items: center; /* <<< THIS IS THE KEY for vertical centering of the columns */
-        gap: calc(var(--sw-spacing-unit) * 5); /* Wider gap for desktop */
+        gap: 40px; /* Wider gap for desktop */
     }
 }
 
@@ -720,9 +728,9 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-yellow-theme-text-primary); /* Dark text on yellow BG */
     font-size: clamp(1.8rem, 5vw, 2.8rem); /* Adjusted to better match screenshot */
     text-align: left; /* CHANGED from center for this layout */
-    margin: 0 0 calc(var(--sw-spacing-unit) * 2.5) 0; /* Bottom margin before text block */
+    margin: 0 0 20px 0; /* Bottom margin before text block */
     line-height: 1.25;
-    padding-bottom: calc(var(--sw-spacing-unit) * 1.25); /* Space for underline */
+    padding-bottom: 10px; /* Space for underline */
     position: relative;
     max-width: 100%; /* Takes width of its column */
 }
@@ -748,7 +756,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-family: var(--sw-font-secondary);
     font-size: clamp(0.9rem, 2.1vw, 1rem);
     line-height: 1.75;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.75);
+    margin-bottom: 14px;
     text-align: left;
 }
 #fragmenterad-verklighet-section .narrative-text-blocks-container p.narrative-text-block strong {
@@ -762,25 +770,23 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s ease-out 0.1s,
-                margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth margin transition */
+    transition: none;
 }
 #fragmenterad-verklighet-section .narrative-hidden.show {
     display: block;
     max-height: 1500px; /* Generous max height */
     opacity: 1;
-    margin-top: calc(var(--sw-spacing-unit) * 1.75); /* Add margin when shown */
+    margin-top: 14px; /* Add margin when shown */
 }
 
 #fragmenterad-verklighet-section #read-more-narrative-btn.btn.btn-secondary-yellow-theme {
     display: inline-block;
     align-self: flex-start;
-    margin-top: calc(var(--sw-spacing-unit) * 2); /* Increased margin */
+    margin-top: 16px; /* Increased margin */
     background-color: var(--sw-yellow-theme-accent); /* Dark blue button */
     color: var(--sw-text-on-blue); /* White text */
     border: none;
-    padding: calc(var(--sw-spacing-unit) * 1.25) calc(var(--sw-spacing-unit) * 3);
+    padding: 10px 24px;
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: var(--sw-radius-md);
@@ -796,158 +802,6 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 /*=========================================================================
-   SECTION 3: Videohöjdpunkt (#video-highlight-main-section)
-   ========================================================================== */
-#video-highlight-main-section.video-highlight-theme {
-    background-color: var(--sw-flag-blue);
-    background-image: linear-gradient(160deg, var(--sw-flag-blue) 0%, var(--sw-accent-blue-darker) 100%);
-    padding-top: calc(var(--sw-spacing-unit) * 4.5);
-    padding-bottom: calc(var(--sw-spacing-unit) * 4.5);
-}
-
-#video-highlight-main-section .container { /* Container for this specific section */
-    max-width: 700px; /* Constrain width for video highlight */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#video-highlight-main-section .highlighted-video-feature {
-    background-color: var(--sw-bg-tertiary);
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
-    border-radius: var(--sw-radius-lg);
-    box-shadow: var(--sw-shadow-lg);
-    border: 1px solid var(--sw-border-color-light);
-    margin: 0; /* Remove default article margins if any */
-    /* For flip card functionality */
-    perspective: 1200px;
-}
-
-#video-highlight-main-section .highlighted-video-feature .video-highlight-title {
-    font-family: var(--sw-font-display);
-    font-weight: 600;
-    color: var(--sw-text-primary);
-    font-size: clamp(1.2rem, 3.5vw, 1.45rem);
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
-    display: flex;
-    align-items: center;
-    line-height: 1.3;
-}
-#video-highlight-main-section .highlighted-video-feature .video-highlight-title i.fa-star,
-#video-highlight-main-section .highlighted-video-feature .video-highlight-title i.fa-history {
-    color: var(--sw-flag-yellow);
-    margin-right: calc(var(--sw-spacing-unit) * 1);
-    font-size: 1.05em;
-}
-
-/* Flip Card Mechanics */
-#video-highlight-main-section .highlighted-video-feature .card-inner {
-    position: relative;
-    width: 100%;
-    text-align: left;
-    transition: transform 0.7s var(--sw-transition-easing);
-    transform-style: preserve-3d;
-}
-#video-highlight-main-section .highlighted-video-feature.is-flipped .card-inner {
-    transform: rotateY(180deg);
-}
-
-#video-highlight-main-section .highlighted-video-feature .card-front,
-#video-highlight-main-section .highlighted-video-feature .card-back {
-    width: 100%;
-    min-height: 300px; /* Ensure card has some height */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-#video-highlight-main-section .highlighted-video-feature .card-front {
-    /* Content already defined by .video-highlight-title, .video-embed-container, etc. */
-}
-
-#video-highlight-main-section .highlighted-video-feature .card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%; /* Take full height of the card */
-    transform: rotateY(180deg);
-    padding: calc(var(--sw-spacing-unit) * 2.5);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: var(--sw-bg-secondary); /* Slightly different bg for back */
-    border-radius: var(--sw-radius-lg); /* Match front card's rounding */
-    overflow: auto; /* If content overflows */
-}
-
-#video-highlight-main-section .highlighted-video-feature .video-embed-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: var(--sw-radius-md);
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.25);
-    background-color: #000; /* Black background for video area */
-}
-#video-highlight-main-section .highlighted-video-feature .video-embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-#video-highlight-main-section .highlighted-video-feature .video-description-front {
-    color: var(--sw-text-secondary);
-    font-size: 0.825rem;
-    line-height: 1.5;
-    margin-bottom: calc(var(--sw-spacing-unit) * 0.25);
-}
-#video-highlight-main-section .highlighted-video-feature .flip-prompt {
-    display: inline-block;
-    font-size: 0.78rem;
-    color: var(--sw-flag-yellow);
-    margin-top: calc(var(--sw-spacing-unit)*0.25);
-    font-style: italic;
-    cursor: pointer;
-    padding: calc(var(--sw-spacing-unit) * 0.25) 0;
-    border-bottom: 1px dotted transparent;
-    transition: border-bottom-color var(--sw-transition-speed) ease;
-    text-align: left; /* Explicitly left for the prompt in card front */
-}
-#video-highlight-main-section .highlighted-video-feature .flip-prompt:hover {
-    border-bottom-color: var(--sw-flag-yellow);
-}
-
-#video-highlight-main-section .highlighted-video-feature .card-back p {
-    color: var(--sw-text-secondary);
-    line-height: 1.6;
-    font-size: 0.85rem;
-    margin-bottom: calc(var(--sw-spacing-unit) * 2);
-    max-width: 90%; /* Prevent text from touching edges */
-}
-#video-highlight-main-section .highlighted-video-feature .flip-back-btn {
-    font-family: var(--sw-font-primary);
-    font-size: 0.8rem;
-    font-weight: 500;
-    background-color: var(--sw-bg-tertiary);
-    color: var(--sw-text-secondary);
-    border: 1px solid var(--sw-border-color);
-    padding: calc(var(--sw-spacing-unit)*0.8) calc(var(--sw-spacing-unit)*1.6);
-    border-radius: var(--sw-radius-sm);
-    cursor: pointer;
-    transition: background-color var(--sw-transition-speed) ease, color var(--sw-transition-speed) ease;
-    margin-top: calc(var(--sw-spacing-unit) * 1.5);
-}
-#video-highlight-main-section .highlighted-video-feature .flip-back-btn:hover {
-    background-color: var(--sw-border-color-light);
-    color: var(--sw-text-primary);
-}
-
-/*=========================================================================
    SECTION 4: Swedish Immersion Resources (#swedish-resources)
    ========================================================================== */
 #swedish-resources {
@@ -960,8 +814,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* 4.1 Resources Section Header */
 #swedish-resources .resources-section-header {
    text-align: center;
-    padding: calc(var(--sw-spacing-unit) * 2.5) 0 calc(var(--sw-spacing-unit) * 1.5) 0; /* Adjusted overall padding */
-    margin-bottom: calc(var(--sw-spacing-unit) * 2); /* Space before CEFR panel */
+    padding: 20px 0 12px 0; /* Adjusted overall padding */
+    margin-bottom: 16px; /* Space before CEFR panel */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -972,7 +826,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-weight: 800;
     line-height: 1.1;
     color: var(--sw-flag-blue); /* Default: Blue title */
-    margin: 0 auto calc(var(--sw-spacing-unit) * 1) auto;
+    margin: 0 auto 8px auto;
     max-width: 800px;
     letter-spacing: 0.5px;
     /* Override general .section-title styles */
@@ -1001,7 +855,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(0.9rem, 2.2vw, 1.1rem);
     color: var(--sw-text-secondary);
     max-width: 600px;
-    margin: 0 auto calc(var(--sw-spacing-unit) * 2.5) auto;
+    margin: 0 auto 20px auto;
     line-height: 1.65;
     font-style: italic;
     opacity: 0.95;
@@ -1018,13 +872,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(0.85rem, 2vw, 1rem); /* More compact */
     color: var(--sw-text-secondary);
     max-width: 700 px;
-    margin: 0 auto calc(var(--sw-spacing-unit) * 2) auto; /* Space before image */
+    margin: 0 auto 16px auto; /* Space before image */
     line-height: 1.6;
     opacity: 0.9;
 }
 
 .magnus-info-icon-container {
-    margin-bottom: calc(var(--sw-spacing-unit) * 2);
+    margin-bottom: 16px;
     position: relative; /* For absolute positioning of hover image */
     width: 120px; /* ADJUST to fit your image's desired display size */
     height: 120px; /* ADJUST to fit your image's desired display size */
@@ -1072,7 +926,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(1rem, 2.5vw, 1.2rem); /* Larger */
     color: var(--sw-flag-yellow); /* Yellow highlight */
     font-weight: 600;
-    margin: 0 auto calc(var(--sw-spacing-unit) * 0.5) auto; /* Small space below */
+    margin: 0 auto 4px auto; /* Small space below */
     line-height: 1.3;
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
@@ -1097,7 +951,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     position: relative;
     margin-top: 0; /* Let the header above it define the space */
     /* ADJUSTED: INCREASED margin-bottom for more space BEFORE the first resource category */
-    margin-bottom: calc(var(--sw-spacing-unit) * 5); /* Was *4, try *5 or *6 */
+    margin-bottom: 40px; /* Was *4, try *5 or *6 */
     z-index: 200; /* Ensure it's above normal content */
 }
 
@@ -1111,31 +965,31 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
                 0 -6px 12px -4px rgba(var(--sw-flag-yellow-rgb), 0.45); /* Accent glow */
     position: relative; /* For popover context if icons are inside */
     overflow: visible; /* Allow popovers from child icons to show */
-   max-width: auto;
+   max-width: none;
     margin-left: auto;
     margin-right: auto;
 }
 
 #cefr-filter-controls-container .cefr-panel-content-wrapper {
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2);
+    padding: 20px 16px;
     text-align: center; /* Center header, intro, buttons */
 }
 
 /* CEFR Panel Header Content */
 #cefr-filter-controls-container .cefr-panel-header {
     text-align: center;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    margin-bottom: 12px;
 }
 #cefr-filter-controls-container .cefr-panel-header h3 {
     color: var(--cefr-panel-title-color); /* Yellow */
     font-family: var(--sw-font-display);
     font-weight: 700;
     font-size: clamp(1.4rem, 3.8vw, 1.8rem);
-    margin: 0 0 calc(var(--sw-spacing-unit) * 0.75) 0;
+    margin: 0 0 6px 0;
     letter-spacing: 0.5px;
 }
 #cefr-filter-controls-container .cefr-panel-header h3 i {
-    margin-right: calc(var(--sw-spacing-unit) * 0.75);
+    margin-right: 6px;
     color: var(--cefr-panel-title-color); /* Match title */
     font-size: 0.9em;
 }
@@ -1144,45 +998,34 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-secondary);
     line-height: 1.55;
     max-width: 700px;
-    margin: 0 auto calc(var(--sw-spacing-unit) * 2); /* Added bottom margin */
+    margin: 0 auto 16px; /* Added bottom margin */
     text-align: center;
-    transition: max-height 0.3s ease, opacity 0.3s ease, margin-bottom 0.3s ease, font-size 0.3s ease;
+    transition: none;
 }
 #cefr-filter-controls-container .cefr-panel-intro .inline-link {
     white-space: nowrap;
 }
-#cefr-filter-controls-container.is-sticky .cefr-panel-header { /* Reduced margin when sticky */
-    margin-bottom: calc(var(--sw-spacing-unit) * 1);
-}
-#cefr-filter-controls-container.is-sticky .cefr-panel-intro { /* Hide intro when sticky */
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    margin-bottom: 0 !important;
-    font-size: 0rem;
-}
-
 /* CEFR Buttons Area */
 #cefr-filter-controls-container .cefr-filter-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 1);
+    gap: 8px;
 }
 #cefr-filter-controls-container .btn-filter-cefr {
     background-color: var(--cefr-btn-bg);
     color: var(--cefr-btn-text);
     border: 1px solid var(--cefr-btn-border);
-    padding: calc(var(--sw-spacing-unit)*0.8) calc(var(--sw-spacing-unit)*1.5);
+    padding: 6.4px 12px;
     border-radius: var(--sw-radius-sm);
     font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.25s var(--sw-transition-easing);
+    transition: color 0.25s var(--sw-transition-easing), background-color 0.25s var(--sw-transition-easing), border-color 0.25s var(--sw-transition-easing), transform 0.25s var(--sw-transition-easing), box-shadow 0.25s var(--sw-transition-easing);
     display: flex;
     align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 0.5);
+    gap: 4px;
     box-shadow: inset 0 1px 1px rgba(255,255,255,0.02), 0 1px 0px rgba(0,0,0,0.05);
     flex-grow: 0;
     flex-shrink: 0;
@@ -1190,15 +1033,15 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #cefr-filter-controls-container .btn-filter-cefr .cefr-level-tag {
     background-color: var(--sw-border-color);
     color: var(--sw-text-primary);
-    padding: calc(var(--sw-spacing-unit)*0.2) calc(var(--sw-spacing-unit)*0.6);
+    padding: 1.6px 4.8px;
     border-radius: var(--sw-radius-sm);
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 1;
-    transition: all 0.25s ease;
+    transition: color 0.25s ease, background-color 0.25s ease;
 }
 #cefr-filter-controls-container .btn-filter-cefr .cefr-level-desc {
-    transition: all 0.25s ease;
+    transition: color 0.25s ease;
     font-size: 0.8em;
 }
 #cefr-filter-controls-container .btn-filter-cefr:not(.active):hover,
@@ -1235,16 +1078,16 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-color: var(--cefr-btn-clear-bg);
     color: var(--cefr-btn-clear-text);
     border: 1px solid var(--cefr-btn-clear-bg);
-    padding: calc(var(--sw-spacing-unit)*0.9) calc(var(--sw-spacing-unit)*1.8);
+    padding: 7.2px 14.4px;
     border-radius: var(--sw-radius-sm);
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.25px;
     cursor: pointer;
-    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    transition: color var(--sw-transition-speed) var(--sw-transition-easing), background-color var(--sw-transition-speed) var(--sw-transition-easing), border-color var(--sw-transition-speed) var(--sw-transition-easing), transform var(--sw-transition-speed) var(--sw-transition-easing), box-shadow var(--sw-transition-speed) var(--sw-transition-easing);
     display: inline-flex;
     align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 0.75);
+    gap: 6px;
     box-shadow: 0 2px 5px rgba(var(--sw-flag-yellow-rgb),0.2), inset 0 -1px 1px rgba(0,0,0,0.05);
     flex-grow: 0;
     flex-shrink: 0;
@@ -1260,49 +1103,30 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     box-shadow: 0 3px 7px rgba(var(--sw-flag-yellow-rgb), 0.3);
 }
 
-/* Compact CEFR buttons when panel is sticky */
-#cefr-filter-controls-container.is-sticky .btn-filter-cefr {
-    padding: calc(var(--sw-spacing-unit)*0.5) calc(var(--sw-spacing-unit)*0.8);
-}
-#cefr-filter-controls-container.is-sticky .btn-filter-cefr .cefr-level-desc {
-    display: none;
-}
-#cefr-filter-controls-container.is-sticky .btn-filter-cefr .cefr-level-tag {
-    font-size: 0.7rem;
-    padding: calc(var(--sw-spacing-unit)*0.2) calc(var(--sw-spacing-unit)*0.5);
-}
-#cefr-filter-controls-container.is-sticky .btn-filter-cefr-clear {
-    padding: calc(var(--sw-spacing-unit)*0.6) calc(var(--sw-spacing-unit)*1.2);
-    font-size: 0.8rem;
-}
-
 /* Active Filters Display */
 #cefr-filter-controls-container #active-filters-display-container {
     min-height: 1.5em;
-    margin-top: calc(var(--sw-spacing-unit) * 0.75);
+    margin-top: 6px;
     text-align: center;
-}
-#cefr-filter-controls-container.is-sticky #active-filters-display-container {
-    display: none; /* Hide filter display text when sticky and compact */
 }
 #cefr-filter-controls-container #active-filters-display {
     font-size: 0.75rem;
     background-color: rgba(var(--sw-bg-tertiary-rgb), 0.7);
-    padding: calc(var(--sw-spacing-unit)*0.5) var(--sw-spacing-unit);
+    padding: 4px var(--sw-spacing-unit);
     border-radius: var(--sw-radius-sm);
     display: inline-block; /* So background fits text */
 }
 
 /* 4.3 Resource Category General Styles */
 #swedish-resources .resource-category-wrapper {
-    margin-bottom: calc(var(--sw-spacing-unit) * 3.5);
+    margin-bottom: 28px;
     position: relative;
 }
 #swedish-resources .resource-category-swedish {
     background-color: var(--sw-bg-tertiary);
     border: 1px solid var(--sw-border-color);
     border-radius: var(--sw-radius-lg);
-    padding: calc(var(--sw-spacing-unit) * 2) calc(var(--sw-spacing-unit) * 2.5); /* Reduced top/bottom padding slightly */
+    padding: 16px 20px; /* Reduced top/bottom padding slightly */
     box-shadow: var(--sw-shadow-md);
     border-left-width: 5px; /* Default, color set by theme class */
 }
@@ -1322,9 +1146,9 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(1.2rem, 3.5vw, 1.65rem); /* ADJUSTED: Slightly smaller for better fit */
     color: var(--sw-text-primary);
     border-bottom: 1px solid var(--sw-border-color-light);
-    padding-bottom: calc(var(--sw-spacing-unit) * 1); /* Standard padding for underline */
+    padding-bottom: 8px; /* Standard padding for underline */
     margin-top: 0; /* Space above title controlled by parent's padding */
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space between title and its description */
+    margin-bottom: 12px; /* Space between title and its description */
     display: flex;
     align-items: center;
     /* justify-content: space-between; /* Keep this if icon is direct child */
@@ -1333,12 +1157,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #swedish-resources .resource-category-swedish .subsection-title i:first-child { /* The main category icon */
     font-size: 0.9em; /* Relative to title's font-size */
-    margin-right: calc(var(--sw-spacing-unit)*1.25);
+    margin-right: 10px;
     opacity: 0.85;
 }
 #swedish-resources .resource-category-swedish .subsection-title .title-text-main {
     flex-grow: 1; /* Allows text to take available space */
-    margin-right: calc(var(--sw-spacing-unit) * 0.5); /* Add a small gap before info icon if it's next */
+    margin-right: 4px; /* Add a small gap before info icon if it's next */
 }
 /* Icon colors for category titles */
 #swedish-resources .learning-theme .subsection-title i:first-child { color: var(--sw-flag-blue); }
@@ -1365,7 +1189,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     width: 60%; /* Adjust width of underline */
     height: 3px;
     background-color: var(--sw-danger-red); /* Red underline */
-    margin-top: calc(var(--sw-spacing-unit) * 0.5);
+    margin-top: 4px;
 }
 #swedish-resources .resource-category-swedish.tv-theme[data-category-id="music-programs"] .subsection-title .title-highlight-red-underline {
     /* If you use a span for the text to be underlined, style it here or let the wrapper handle it */
@@ -1379,7 +1203,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #swedish-resources .resource-category-swedish > p[id$="-desc"] {
     color: var(--sw-text-secondary);
     font-size: 0.88rem;
-    margin-bottom: calc(var(--sw-spacing-unit) * 2);
+    margin-bottom: 16px;
     line-height: 1.6;
 }
 
@@ -1387,7 +1211,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #swedish-resources .info-icon-wrapper {
     display: inline-flex;
     align-items: center;
-    margin-left: calc(var(--sw-spacing-unit) * 1);
+    margin-left: 8px;
     color: var(--sw-text-tertiary);
     cursor: pointer;
     transition: color var(--sw-transition-speed) ease, transform var(--sw-transition-speed) ease;
@@ -1415,7 +1239,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-secondary);
     border: 1px solid var(--sw-border-color);
     border-radius: var(--sw-radius-md);
-    padding: calc(var(--sw-spacing-unit) * 1.75) calc(var(--sw-spacing-unit) * 2.25);
+    padding: 14px 18px;
     box-shadow: var(--sw-shadow-lg);
     width: clamp(280px, 80vw, 400px);
     z-index: 1000; /* High z-index */
@@ -1447,9 +1271,9 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #swedish-resources .info-popover-header {
     display: flex;
     align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 1);
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
-    padding-bottom: calc(var(--sw-spacing-unit) * 1);
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--sw-border-color-light);
 }
 #swedish-resources .info-popover-header .popover-icon { /* General class for icon in popover header */
@@ -1467,7 +1291,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     margin: 0;
 }
 #swedish-resources .info-popover-content p {
-    margin-bottom: calc(var(--sw-spacing-unit) * 1);
+    margin-bottom: 8px;
     color: var(--sw-text-secondary); /* Ensure p inherits popover text color */
 }
 #swedish-resources .info-popover-content p:last-child {
@@ -1480,10 +1304,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-color: rgba(var(--sw-bg-primary-rgb), 0.2);
     border-left: 3px solid; /* Color set by specific class */
     border-radius: var(--sw-radius-sm);
-    padding: calc(var(--sw-spacing-unit) * 1.5) calc(var(--sw-spacing-unit) * 2);
-    margin: calc(var(--sw-spacing-unit) * 2.5) 0;
+    padding: 12px 16px;
+    margin: 20px 0;
     display: flex;
-    gap: calc(var(--sw-spacing-unit) * 1.5);
+    gap: 12px;
     align-items: flex-start;
 }
 #swedish-resources .inline-tip.youtube-subs-inline-tip {
@@ -1492,7 +1316,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #swedish-resources .inline-tip-icon-area {
     flex-shrink: 0;
-    margin-top: calc(var(--sw-spacing-unit) * 0.25);
+    margin-top: 2px;
 }
 #swedish-resources .inline-tip-icon-area i {
     font-size: 1.3em;
@@ -1523,7 +1347,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     border: 1px solid var(--sw-border-color-light);
     border-radius: var(--sw-radius-lg);
     padding: 0; /* Inner elements will handle padding */
-    margin: calc(var(--sw-spacing-unit) * 5) 0; /* Spacing around this large tip */
+    margin: 40px 0; /* Spacing around this large tip */
     box-shadow: 0 5px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(var(--sw-border-color-rgb), 0.5);
     display: flex;
     align-items: stretch; /* Make children stretch to full height */
@@ -1533,7 +1357,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #swedish-resources .grand-youtube-tip .tip-accent-bar {
     flex-shrink: 0;
-    width: calc(var(--sw-spacing-unit) * 1.5); /* 12px */
+    width: 12px; /* 12px */
     background-color: var(--sw-resource-youtube-red);
     background-image: linear-gradient(to right, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
     box-shadow: inset 2px 0 5px rgba(0,0,0,0.2);
@@ -1543,7 +1367,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 2);
+    padding: 20px 16px;
 }
 #swedish-resources .grand-youtube-tip .tip-icon-area .tip-icon.fa-youtube {
     font-size: 3em !important; /* Ensure size */
@@ -1557,15 +1381,15 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #swedish-resources .grand-youtube-tip .tip-content {
     flex-grow: 1;
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
-    padding-left: calc(var(--sw-spacing-unit) * 2.5); /* Ensure balanced padding if icon area is small */
+    padding: 20px 24px;
+    padding-left: 20px; /* Ensure balanced padding if icon area is small */
 }
 #swedish-resources .grand-youtube-tip .tip-content h3 {
     font-family: var(--sw-font-display);
     font-weight: 700;
     font-size: clamp(1.2rem, 3vw, 1.4rem);
     color: var(--sw-text-primary);
-    margin: 0 0 calc(var(--sw-spacing-unit) * 1.5) 0;
+    margin: 0 0 12px 0;
     line-height: 1.3;
 }
 #swedish-resources .grand-youtube-tip .tip-content h3 .tip-title-highlight {
@@ -1590,8 +1414,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-on-yellow);
 }
 #swedish-resources .grand-youtube-tip .tip-content .tip-takeaway { /* Second paragraph specific styling */
-    margin-top: calc(var(--sw-spacing-unit) * 2);
-    padding: calc(var(--sw-spacing-unit) * 1.5);
+    margin-top: 16px;
+    padding: 12px;
     background-color: rgba(var(--sw-bg-primary-rgb), 0.3);
     border-radius: var(--sw-radius-md);
     border-left: 3px solid var(--sw-flag-yellow);
@@ -1602,7 +1426,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #swedish-resources .grand-youtube-tip .tip-content .tip-takeaway .tip-takeaway-icon {
     color: var(--sw-flag-yellow);
-    margin-right: calc(var(--sw-spacing-unit) * 0.75);
+    margin-right: 6px;
     font-size: 1.1em;
 }
 #swedish-resources .grand-youtube-tip .tip-content .tip-takeaway:last-child {
@@ -1613,26 +1437,26 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #swedish-resources .resource-tip { /* Targets general tip boxes like Magnus's advice */
     background-color: var(--sw-bg-tertiary); /* Darker than section, similar to cards */
     color: var(--sw-text-secondary);
-    padding: calc(var(--sw-spacing-unit) * 2) calc(var(--sw-spacing-unit) * 2.5);
+    padding: 16px 20px;
     border-radius: var(--sw-radius-md);
-    margin: calc(var(--sw-spacing-unit) * 2.5) 0;
+    margin: 20px 0;
     border-left: 4px solid var(--sw-flag-blue); /* Default blue accent */
     box-shadow: var(--sw-shadow-sm);
     display: flex;
     align-items: flex-start;
-    gap: calc(var(--sw-spacing-unit) * 1.5);
+    gap: 12px;
     font-size: 0.9rem;
     line-height: 1.65;
 }
 #swedish-resources .resource-tip .tip-icon { /* Font Awesome icon in tip */
     font-size: 1.6em;
     color: var(--sw-flag-blue);
-    margin-top: calc(var(--sw-spacing-unit) * 0.25);
+    margin-top: 2px;
     flex-shrink: 0;
 }
 #swedish-resources .resource-tip .tip-icon.aljohn-tip-icon { /* Aljohn avatar image */
-    width: calc(var(--sw-spacing-unit) * 5); /* 40px */
-    height: calc(var(--sw-spacing-unit) * 5);
+    width: 40px; /* 40px */
+    height: 40px;
     object-fit: cover;
     border-radius: var(--sw-radius-round);
     border: 2px solid var(--sw-flag-blue);
@@ -1646,7 +1470,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-flag-blue);
     font-weight: 600;
     display: block;
-    margin-bottom: calc(var(--sw-spacing-unit) * 0.5);
+    margin-bottom: 4px;
     font-size: 1.05em;
 }
 #swedish-resources .resource-tip .tip-content strong { /* Other strong tags */
@@ -1655,11 +1479,20 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 /* 4.7 Specific "Topp-Poddar" Section Styling */
+#swedish-resources .container > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+#swedish-resources #top-podcasts-section {
+    order: -1;
+}
+
 #swedish-resources #top-podcasts-section.resource-category-wrapper { /* ID takes precedence */
     background-color: var(--sw-bg-tertiary); /* Dark background for this section block */
     border: 1px solid var(--sw-border-color);
     border-radius: var(--sw-radius-lg);
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
+    padding: 20px 24px;
     box-shadow: var(--sw-shadow-md);
     border-left: 5px solid var(--sw-flag-yellow); /* Yellow accent border for this section */
     position: relative;
@@ -1667,9 +1500,9 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #top-podcasts-section .subsection-title { /* Targets the H3 */
     color: var(--sw-text-primary);
     border-bottom: 1px solid var(--sw-border-color-light); /* Consistent with other categories */
-    padding-bottom: calc(var(--sw-spacing-unit) * 1);
+    padding-bottom: 8px;
     margin-top: 0; /* Let parent padding control space above */
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space to description */
+    margin-bottom: 12px; /* Space to description */
     display: flex;
     align-items: center;
     /* justify-content: space-between; /* IF info icon is direct child */
@@ -1679,27 +1512,27 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #top-podcasts-section .subsection-title .title-text-main {
     flex-grow: 1; /* Allows text to take available space */
-    margin-right: calc(var(--sw-spacing-unit) * 0.5); /* Space before info icon */
+    margin-right: 4px; /* Space before info icon */
 }
 /* If you want "Mina Lyssningsstips" to remain yellow and part of the main text */
 #top-podcasts-section .subsection-title .title-text-main .title-highlight-yellow {
     color: var(--sw-flag-yellow);
-    /* margin-left: calc(var(--sw-spacing-unit) * 0.5); /* No longer needed if part of the span */
+    /* margin-left: 4px; /* No longer needed if part of the span */
 }
 #top-podcasts-section .subsection-title > i.fa-headphones-alt { /* Target direct child icon */
     color: var(--sw-flag-yellow);
     font-size: 0.9em;
-    margin-right: calc(var(--sw-spacing-unit) * 1); /* Space after icon */
+    margin-right: 8px; /* Space after icon */
     flex-shrink: 0;
 }
 #swedish-resources #top-podcasts-section .subsection-title .title-highlight-yellow {
     color: var(--sw-flag-yellow); /* "Mina Lyssningsstips" is yellow */
-    margin-left: calc(var(--sw-spacing-unit) * 0.5);
+    margin-left: 4px;
 }
 #swedish-resources #top-podcasts-section #top-podcasts-desc { /* Description paragraph */
     color: var(--sw-text-secondary);
     font-size: 0.9rem;
-    margin-bottom: calc(var(--sw-spacing-unit) * 3);
+    margin-bottom: 24px;
     line-height: 1.65;
     text-align: left; /* Sub-description can be left-aligned */
 }
@@ -1707,12 +1540,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 #swedish-resources #top-podcasts-grid { /* Grid container for podcast cards */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: calc(var(--sw-spacing-unit) * 2.5);
+    gap: 20px;
 }
 #swedish-resources .swedish-podcast-card { /* Yellow cards */
     background-color: var(--sw-flag-yellow);
     color: var(--sw-text-on-yellow);
-    padding: calc(var(--sw-spacing-unit) * 2);
+    padding: 16px;
     border-radius: var(--sw-radius-lg);
     text-align: center;
     display: flex;
@@ -1738,7 +1571,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-family: var(--sw-font-display);
     font-weight: 600;
     font-size: 1.2rem;
-    margin-bottom: calc(var(--sw-spacing-unit)*0.5);
+    margin-bottom: 4px;
     color: var(--sw-text-on-yellow);
     line-height: 1.25;
 }
@@ -1748,7 +1581,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-on-yellow);
     opacity: 0.85;
     line-height: 1.5;
-    margin-bottom: calc(var(--sw-spacing-unit)*1.5);
+    margin-bottom: 12px;
     flex-grow: 1; /* Allows short desc to take space */
     min-height: 3em; /* Approx 2 lines of text for consistent card height */
 }
@@ -1756,7 +1589,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-color: var(--sw-flag-blue);
     color: var(--sw-text-on-blue);
     border: none;
-    padding: calc(var(--sw-spacing-unit)*0.7) calc(var(--sw-spacing-unit)*1.6);
+    padding: 5.6px 12.8px;
     border-radius: var(--sw-radius-xl); /* Very round */
     text-decoration: none;
     font-weight: 500;
@@ -1775,8 +1608,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap; /* Essential for horizontal layout of inline-flex items */
-    padding: calc(var(--sw-spacing-unit) * 0.5) calc(var(--sw-spacing-unit) * 0.25) calc(var(--sw-spacing-unit) * 1.5) calc(var(--sw-spacing-unit) * 0.25);
-    margin: 0 calc(-1 * var(--sw-spacing-unit) * 0.25); /* Absorb padding if parent has it */
+    padding: 4px 2px 12px 2px;
+    margin: 0 -2px; /* Absorb padding if parent has it */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     scrollbar-width: thin;
     scrollbar-color: var(--sw-flag-blue) var(--sw-bg-secondary);
@@ -1801,8 +1634,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 #swedish-resources .swedish-item-grid { /* Direct child of scroll wrapper */
     display: inline-flex; /* Key for horizontal item layout */
-    gap: calc(var(--sw-spacing-unit) * 2); /* 16px gap */
-    padding-bottom: calc(var(--sw-spacing-unit) * 0.5); /* Space for scrollbar without cutting shadow */
+    gap: 16px; /* 16px gap */
+    padding-bottom: 4px; /* Space for scrollbar without cutting shadow */
 }
 #swedish-resources .resource-item-card { /* General dark theme resource cards */
     background-color: var(--sw-bg-tertiary);
@@ -1815,7 +1648,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     vertical-align: top; /* Align cards to top if heights differ */
     white-space: normal; /* Allow text inside to wrap */
     justify-content: flex-start; /* Align items to the start vertically */
-    transition: all var(--sw-transition-speed) var(--sw-transition-easing);
+    transition: transform var(--sw-transition-speed) var(--sw-transition-easing), box-shadow var(--sw-transition-speed) var(--sw-transition-easing), border-color var(--sw-transition-speed) var(--sw-transition-easing);
     border: 1px solid var(--sw-border-color);
     position: relative;
     cursor: pointer;
@@ -1849,7 +1682,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     transform: scale(1.05);
 }
 #swedish-resources .resource-item-card .card-content-area {
-    padding: calc(var(--sw-spacing-unit)*1.25);
+    padding: 10px;
     display: flex;
     flex-direction: column;
     flex-grow: 1; /* Allow content area to take remaining space */
@@ -1860,7 +1693,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-weight: 500;
     color: var(--sw-text-primary);
     font-size: 0.9rem;
-    margin-bottom: calc(var(--sw-spacing-unit)*0.5);
+    margin-bottom: 4px;
     line-height: 1.3;
     min-height: 2.6em; /* Approx 2 lines for title */
 }
@@ -1871,30 +1704,30 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.25s ease-out 0.05s, margin-bottom 0.3s ease-out;
+    transition: none;
     margin-bottom: 0; /* No margin when hidden */
     text-align: center;
 }
 #swedish-resources .resource-item-card:hover .card-short-desc {
     max-height: 70px; /* Allow space for ~3-4 lines */
     opacity: 1;
-    margin-bottom: calc(var(--sw-spacing-unit)*1.25); /* Space below revealed desc */
+    margin-bottom: 10px; /* Space below revealed desc */
 }
 #swedish-resources .resource-item-card .btn-group { /* Container for icon buttons */
     margin-top: auto; /* Push to bottom of card */
-    padding-top: calc(var(--sw-spacing-unit)*0.75);
+    padding-top: 6px;
     border-top: 1px solid var(--sw-border-color-light);
     display: flex;
     justify-content: center;
-    gap: calc(var(--sw-spacing-unit)*0.75);
+    gap: 6px;
 }
 
 /* Snabb Fakta Highlight (if used - HTML not present for this version, but styles included for completeness) */
 #snabbfakta-highlight-container {
     background-color: var(--sw-bg-tertiary);
-    padding: calc(var(--sw-spacing-unit)*2.5);
+    padding: 20px;
     border-radius: var(--sw-radius-md);
-    margin-top: calc(var(--sw-spacing-unit)*3);
+    margin-top: 24px;
     border: 1px solid var(--sw-border-color);
 }
 /* ... Assuming .snabbfakta-card structure and styles would follow patterns from resource-tip or similar if fully fleshed out ... */
@@ -1908,7 +1741,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-image: linear-gradient(170deg, var(--sw-flag-blue) 0%, var(--sw-accent-blue-darker) 90%);
     color: var(--sw-text-on-blue);
     padding-top: 0; /* Header inside now has its own top padding */
-    padding-bottom: calc(var(--sw-spacing-unit) * 7);
+    padding-bottom: 56px;
     position: relative;
     overflow: hidden;
     z-index: 4; /* Adjust as needed for page stacking */
@@ -1937,8 +1770,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Section Header for "Skandinaviska Äventyr" */
 .section-header-scandinavian {
     text-align: center;
-    margin-bottom: calc(var(--sw-spacing-unit) * 5);
-    padding-top: calc(var(--sw-spacing-unit) * 6); /* Space above the title */
+    margin-bottom: 40px;
+    padding-top: 48px; /* Space above the title */
 }
 #scandinavian-encounters-section .section-title {
     color: var(--sw-flag-yellow);
@@ -1948,8 +1781,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 0 auto calc(var(--sw-spacing-unit) * 1.5) auto;
-    padding-bottom: calc(var(--sw-spacing-unit) * 2);
+    margin: 0 auto 12px auto;
+    padding-bottom: 16px;
     position: relative;
     text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
@@ -1973,8 +1806,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .scandinavian-encounter-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: calc(var(--sw-spacing-unit) * 3.5);
-    margin-bottom: calc(var(--sw-spacing-unit) * 5);
+    gap: 28px;
+    margin-bottom: 40px;
 }
 @media (min-width: 600px) {
     .scandinavian-encounter-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2017,7 +1850,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .scandinavian-encounter-card:hover .card-image { transform: scale(1.08); }
 
 .card-content {
-    padding: calc(var(--sw-spacing-unit) * 1.75) calc(var(--sw-spacing-unit) * 2.25); /* Slightly adjusted padding */
+    padding: 14px 18px; /* Slightly adjusted padding */
     flex-grow: 1; display: flex; flex-direction: column;
     position: relative; z-index: 1;
     transition: opacity 0.25s ease-out;
@@ -2032,12 +1865,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(1.05rem, 2.4vw, 1.2rem);
     font-weight: 600;
     line-height: 1.4;
-    margin: 0 0 calc(var(--sw-spacing-unit) * 1.5) 0; /* Space AFTER title line */
+    margin: 0 0 12px 0; /* Space AFTER title line */
     color: var(--sw-text-primary);
     display: flex;
     align-items: center;
     flex-wrap: nowrap; /* Important to keep flags and text together */
-    gap: calc(var(--sw-spacing-unit) * 0.75); /* Gap between items in the title (flags, text) */
+    gap: 6px; /* Gap between items in the title (flags, text) */
 }
 /* Themed title text (now applied to the span inside h3) */
 .norway-theme-card .card-title-text { color: var(--norway-accent); }
@@ -2076,7 +1909,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
     background: linear-gradient(transparent 15%, rgba(var(--sw-bg-tertiary-rgb), 0.9) 55%, var(--sw-bg-tertiary) 95%);
-    padding: calc(var(--sw-spacing-unit) * 2.5);
+    padding: 20px;
     color: var(--sw-text-on-blue);
     opacity: 0;
     transform: translateY(10px); /* Start slightly lower */
@@ -2094,16 +1927,16 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-family: var(--sw-font-display);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 600;
     color: var(--sw-flag-yellow);
-    margin: 0 0 calc(var(--sw-spacing-unit) * 1) 0;
+    margin: 0 0 8px 0;
     display: flex; align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 0.75);
+    gap: 6px;
 }
 .card-overlay-details h4 .title-inline-flag-img { /* Flags in overlay */
     height: 0.95em; /* Consistent with card title flags */
 }
 .card-overlay-details p { /* Description in overlay */
     font-size: 0.85rem; line-height: 1.6;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.75); color: #E8F1FA;
+    margin-bottom: 14px; color: #E8F1FA;
     display: -webkit-box; -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
 }
@@ -2117,7 +1950,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-on-yellow); /* Text color for on yellow */
     font-size: 0.8rem;
     font-weight: 700; /* Bolder for CTA */
-    padding: calc(var(--sw-spacing-unit) * 0.85) calc(var(--sw-spacing-unit) * 2); /* Adjusted padding */
+    padding: 6.8px 16px; /* Adjusted padding */
     border-radius: var(--sw-radius-xl); /* Very rounded */
     text-transform: uppercase;
     letter-spacing: 0.75px; /* More spacing for emphasis */
@@ -2140,29 +1973,6 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
 }
 
-/* If you decide to use the --dynamic-accent-color for the chip:
-   (This requires the JS to set --dynamic-accent-color on the .scandinavian-encounter-card)
-
-.scandinavian-encounter-card {
-    --dynamic-accent-color: var(--sw-flag-yellow); // Default fallback
-}
-.norway-theme-card { --dynamic-accent-color: var(--norway-accent); }
-.denmark-ehef-theme-card { --dynamic-accent-color: var(--denmark-accent); }
-.finland-theme-card { --dynamic-accent-color: var(--finland-accent); }
-
-.card-cta-chip {
-    background-color: var(--dynamic-accent-color);
-    // You'd need to ensure text contrast for all possible accent colors.
-    // For example, if accents can be light, text might need to be dark.
-    // color: var(--sw-text-on-blue); // Assuming most accents are dark enough for white text
-}
-.scandinavian-encounter-card .card-cta-chip:hover {
-    filter: brightness(0.9); // Simple way to darken any accent color
-    transform: scale(1.03) translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-*/
-
 /* Magnus Tip Box (used in Scandinavian Encounters and potentially elsewhere) */
 .encounter-tip-box-magnus,
 .large-image-tip-box { /* General class for similar tip boxes */
@@ -2170,13 +1980,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     border: 1px solid var(--sw-border-color-light);
     border-left-width: 5px; /* Accent border */
     border-radius: var(--sw-radius-lg);
-    padding: calc(var(--sw-spacing-unit) * 2.5) calc(var(--sw-spacing-unit) * 3);
+    padding: 20px 24px;
     display: flex;
     align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 2.5);
+    gap: 20px;
     color: var(--sw-text-on-blue); /* Text on blue section */
-    max-width: auto;
-    margin: calc(var(--sw-spacing-unit) * 4) auto 0 auto; /* Spacing for tip box */
+    max-width: none;
+    margin: 32px auto 0 auto; /* Spacing for tip box */
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 /* In your .encounter-tip-box-magnus styles or where .tip-box-icon-area is defined */
@@ -2235,7 +2045,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--sw-flag-yellow); /* Default persona name color */
-    margin: 0 0 calc(var(--sw-spacing-unit) * 0.75) 0;
+    margin: 0 0 6px 0;
     display: block; /* Ensure it takes its own line */
 }
 .music-theme .large-image-tip-box .tip-content strong:first-child {
@@ -2256,8 +2066,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-color: var(--sw-yellow-theme-bg-start);
     background-image: linear-gradient(150deg, var(--sw-yellow-theme-bg-start) 0%, var(--sw-yellow-theme-bg-end) 100%);
     color: var(--sw-yellow-theme-text-primary); /* Dark text on yellow section */
-    padding-top: calc(var(--sw-spacing-unit) * 5);
-    padding-bottom: calc(var(--sw-spacing-unit) * 5);
+    padding-top: 40px;
+    padding-bottom: 40px;
     border-top: 3px solid var(--sw-yellow-theme-border);
     border-bottom: 3px solid var(--sw-yellow-theme-border);
 }
@@ -2281,10 +2091,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center cards horizontally */
-    gap: calc(var(--sw-spacing-unit) * 2.5); /* 20px gap */
-    margin-top: calc(var(--sw-spacing-unit) * 3);
-    padding-left: calc(var(--sw-spacing-unit) * 1); /* Prevent cards touching edge */
-    padding-right: calc(var(--sw-spacing-unit) * 1);
+    gap: 20px; /* 20px gap */
+    margin-top: 24px;
+    padding-left: 8px; /* Prevent cards touching edge */
+    padding-right: 8px;
 }
 /* Restaurant Card (Dark cards on yellow section) */
 .restaurant-ph-card {
@@ -2299,7 +2109,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     border: 1px solid var(--sw-border-color); /* Dark border */
     overflow: hidden; /* For image zoom and teaser reveal */
     position: relative;
-    flex: 0 1 calc(33.333% - calc(var(--sw-spacing-unit) * 2.5 * 2 / 3)); /* 3 cards per row, accounting for gap */
+    flex: 0 1 calc(33.333% - 14px); /* 3 cards per row, accounting for gap */
     min-width: 270px;
     max-width: 320px;
     box-sizing: border-box;
@@ -2328,7 +2138,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     bottom: 0; left: 0; right: 0;
     background-color: rgba(var(--sw-bg-primary-rgb), 0.85); /* Dark, semi-opaque background */
     color: var(--sw-text-on-blue); /* Light text on dark teaser bg */
-    padding: calc(var(--sw-spacing-unit) * 1.25) calc(var(--sw-spacing-unit) * 1.5);
+    padding: 10px 12px;
     font-size: 0.825rem;
     line-height: 1.5;
     opacity: 0;
@@ -2344,7 +2154,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     transform: translateY(0); /* Reveal teaser */
 }
 .restaurant-ph-card .restaurant-ph-card-content {
-    padding: calc(var(--sw-spacing-unit)*1.5) calc(var(--sw-spacing-unit)*1.75);
+    padding: 12px 14px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -2353,28 +2163,28 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-family: var(--sw-font-display);
     font-size: 1.05rem;
     color: var(--sw-flag-yellow); /* Yellow name on dark card */
-    margin: 0 0 calc(var(--sw-spacing-unit)*0.5) 0;
+    margin: 0 0 4px 0;
     line-height: 1.3;
     font-weight: 600;
 }
 .restaurant-ph-card .restaurant-ph-card-location {
     font-size: 0.8rem;
     color: var(--sw-text-secondary); /* Light gray location text */
-    margin-bottom: calc(var(--sw-spacing-unit)*1);
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
 }
 .restaurant-ph-card .restaurant-ph-card-location i.fa-map-marker-alt {
-    margin-right: calc(var(--sw-spacing-unit)*0.5);
+    margin-right: 4px;
     color: var(--sw-flag-blue); /* Blue location icon */
     font-size: 0.9em;
 }
 .restaurant-ph-card .restaurant-ph-card-links {
     display: flex;
     justify-content: flex-start; /* Align icons to left */
-    gap: calc(var(--sw-spacing-unit)*0.75);
+    gap: 6px;
     margin-top: auto; /* Push to bottom */
-    padding-top: calc(var(--sw-spacing-unit)*1);
+    padding-top: 8px;
     border-top: 1px solid var(--sw-border-color-light);
 }
 /* .btn-icon for Facebook, etc. will use global styles */
@@ -2397,7 +2207,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     background-color: var(--sw-flag-blue);
     background-image: linear-gradient(165deg, var(--sw-flag-blue) 10%, var(--sw-accent-blue-darker) 100%);
     color: var(--sw-text-on-blue);
-    padding: calc(var(--sw-spacing-unit) * 6) 0 calc(var(--sw-spacing-unit) * 7) 0; /* Adjusted padding */
+    padding: 48px 0 56px 0; /* Adjusted padding */
     text-align: center;
     position: relative;
     overflow: hidden; /* For any ::before or ::after pseudo-elements */
@@ -2426,7 +2236,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .final-thoughts-swedish .final-thoughts-content-box {
     background-color: rgba(var(--sw-bg-primary-rgb), 0.2); /* Darker, semi-transparent panel */
     border-radius: var(--sw-radius-lg);
-    padding: calc(var(--sw-spacing-unit) * 4) calc(var(--sw-spacing-unit) * 3.5);
+    padding: 32px 28px;
     max-width: 800px; /* Control width of the content box */
     margin: 0 auto; /* Center the box */
     box-shadow: 0 5px 20px rgba(0,0,0,0.25),
@@ -2442,8 +2252,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-on-blue);
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     line-height: 1.25;
-    margin-bottom: calc(var(--sw-spacing-unit) * 2); /* Space to paragraph */
-    padding-bottom: calc(var(--sw-spacing-unit) * 1.5); /* Space for underline */
+    margin-bottom: 16px; /* Space to paragraph */
+    padding-bottom: 12px; /* Space for underline */
     border-bottom: none;
     position: relative;
 }
@@ -2451,7 +2261,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     width: 80px;
     height: 4px;
     background-color: var(--sw-flag-yellow);
-    /* margin-top: calc(var(--sw-spacing-unit) * 1); /* Adjusted if needed */
+    /* margin-top: 8px; /* Adjusted if needed */
     /* Using absolute positioning for more control */
     content: '';
     position: absolute;
@@ -2468,7 +2278,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(0.9rem, 2.2vw, 1.05rem);
     line-height: 1.7;
     max-width: 700px; /* Control width of paragraph */
-    margin: 0 auto calc(var(--sw-spacing-unit) * 3.5) auto; /* Space before button */
+    margin: 0 auto 28px auto; /* Space before button */
     opacity: 0.93;
 }
 .final-thoughts-swedish .final-message-text .text-highlight-yellow {
@@ -2477,7 +2287,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 .final-thoughts-swedish .final-cta-button-wrapper { /* Wrapper for the button */
-    margin-top: calc(var(--sw-spacing-unit) * 1);
+    margin-top: 8px;
 }
 
 .final-thoughts-swedish .btn-final-cta {
@@ -2489,13 +2299,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     text-transform: uppercase;
     letter-spacing: 0.7px;
-    padding: calc(var(--sw-spacing-unit)*1.4) calc(var(--sw-spacing-unit)*3.5);
+    padding: 11.2px 28px;
     border-radius: var(--sw-radius-lg);
     box-shadow: 0 3px 10px rgba(0,0,0,0.3), inset 0 -2px 0px rgba(0,0,0,0.1);
     display: inline-flex;
     align-items: center;
-    gap: calc(var(--sw-spacing-unit) * 0.75);
-    transition: all 0.25s var(--sw-transition-easing);
+    gap: 6px;
+    transition: color 0.25s var(--sw-transition-easing), background-color 0.25s var(--sw-transition-easing), border-color 0.25s var(--sw-transition-easing), transform 0.25s var(--sw-transition-easing), box-shadow 0.25s var(--sw-transition-easing);
 }
 .final-thoughts-swedish .btn-final-cta .fab.fa-youtube {
     font-size: 1.15em; /* Relative to button font size */
@@ -2526,7 +2336,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--sw-transition-speed) var(--sw-transition-easing), visibility 0s linear var(--sw-transition-speed);
-    padding: calc(var(--sw-spacing-unit) * 2); /* Consistent padding around modal for small screens */
+    padding: 16px; /* Consistent padding around modal for small screens */
 }
 .modal-overlay.visible {
     opacity: 1;
@@ -2536,7 +2346,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 .modal-content {
     background-color: var(--sw-bg-tertiary);
-    padding: calc(var(--sw-spacing-unit) * 3) calc(var(--sw-spacing-unit) * 3.5); /* Internal padding */
+    padding: 24px 28px; /* Internal padding */
     border-radius: var(--sw-radius-lg);
     width: 90%;
     max-width: 720px;
@@ -2563,16 +2373,16 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
 .modal-close-btn {
     position: absolute;
-    top: calc(var(--sw-spacing-unit)*1.5);
-    right: calc(var(--sw-spacing-unit)*1.5);
+    top: 12px;
+    right: 12px;
     background: transparent;
     border: none;
     color: var(--sw-text-tertiary);
     font-size: 1.8rem;
     cursor: pointer;
-    padding: calc(var(--sw-spacing-unit)*0.5);
+    padding: 4px;
     line-height: 1;
-    transition: all var(--sw-transition-speed) ease;
+    transition: color var(--sw-transition-speed) ease, background-color var(--sw-transition-speed) ease, border-color var(--sw-transition-speed) ease, transform var(--sw-transition-speed) ease;
     z-index: 10; /* Above other modal content */
 }
 .modal-close-btn:hover, .modal-close-btn:focus {
@@ -2583,8 +2393,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Generic Modal Header (Shared by all modal types) */
 .modal-header {
     text-align: center;
-    margin-bottom: calc(var(--sw-spacing-unit) * 2.5);
-    padding-bottom: calc(var(--sw-spacing-unit) * 2);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--sw-border-color);
     display: flex;
     flex-direction: column;
@@ -2595,7 +2405,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     height: 80px;
     object-fit: cover;
     border-radius: var(--sw-radius-round);
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+    margin-bottom: 12px;
     border: 3px solid var(--sw-flag-blue);
     box-shadow: 0 2px 8px rgba(var(--sw-flag-blue-rgb), 0.3);
     background-color: var(--sw-bg-secondary);
@@ -2612,7 +2422,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex; /* For aligning inline flags if any */
     align-items: center;
     justify-content: center;
-    gap: calc(var(--sw-spacing-unit) * 0.75);
+    gap: 6px;
 }
 /* Inline flags within modal titles (e.g., encounter modal) */
 /* Inline flags within modal titles (e.g., for encounter modal header) */
@@ -2627,7 +2437,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Main Content Area for Modals (No Tabs for Core Info) */
 /* Main Content Area for Modals */
 .modal-main-content-area {
-    padding-top: calc(var(--sw-spacing-unit) * 1.5); /* Space after header */
+    padding-top: 12px; /* Space after header */
 }
 .modal-main-content-area > *:last-child {
     margin-bottom: 0;
@@ -2638,7 +2448,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .modal-cefr-details-area,
 .modal-aljohns-take-container, /* Wrapper for Magnus's comment */
 .modal-external-links-area {
-    margin-bottom: calc(var(--sw-spacing-unit) * 3); /* Increased default spacing between blocks */
+    margin-bottom: 24px; /* Increased default spacing between blocks */
 }
 /* Video Embed in Modals */
 .modal-video-embed-area .video-embed-container {
@@ -2665,8 +2475,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     font-weight: 600; /* Semibold */
     text-transform: uppercase; /* ALL CAPS for label style */
     letter-spacing: 0.5px;
-    margin-bottom: calc(var(--sw-spacing-unit) * 1.25); /* More space after subheading */
-    padding-bottom: calc(var(--sw-spacing-unit) * 0.75);
+    margin-bottom: 10px; /* More space after subheading */
+    padding-bottom: 6px;
     border-bottom: 1px solid var(--sw-border-color); /* Solid, less distracting than dashed */
     text-align: left;
 }
@@ -2675,13 +2485,13 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-text-secondary);
     line-height: 1.7;
     font-size: 0.875rem; /* Slightly smaller than main page text */
-    margin-bottom: calc(var(--sw-spacing-unit) * 1);
+    margin-bottom: 8px;
 }
 .modal-long-description-area p:last-child { margin-bottom: 0; }
 
 /* CEFR Details in Modals */
 .modal-cefr-details-area .cefr-dots-container {
-    margin-top: calc(var(--sw-spacing-unit) * 0.75);
+    margin-top: 6px;
     padding-top: 0;
     border-top: none;
     text-align: left; /* Or 'center' if you prefer the whole block centered */
@@ -2696,14 +2506,14 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     /* display: flex; */ /* Option 1: Make the <p> a flex container */
     /* align-items: center; */
     /* flex-wrap: wrap; */ /* Allow dots to wrap if many */
-    /* gap: calc(var(--sw-spacing-unit) * 0.25) calc(var(--sw-spacing-unit) * 0.5); */
+    /* gap: 2px 4px; */
 }
 .modal-cefr-details-area .cefr-dots-container p strong {
     font-weight: 600; /* Make "Rekommenderad Nivå:" slightly bolder */
     color: var(--sw-text-primary);
-    margin-right: calc(var(--sw-spacing-unit) * 1); /* Space after the label */
+    margin-right: 8px; /* Space after the label */
     /* display: block; */ /* Option 2a: If keeping <p> as block, make strong block */
-    /* margin-bottom: calc(var(--sw-spacing-unit) * 0.5); */ /* Option 2a: Space after label */
+    /* margin-bottom: 4px; */ /* Option 2a: Space after label */
 }
 /* CEFR Level Dots themselves */
 /* CEFR Level Dots */
@@ -2745,8 +2555,8 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     display: flex; /* IMPORTANT: Make sure it's a flex container */
     flex-wrap: wrap; /* Allow buttons to wrap if many */
     justify-content: center; /* <<< THIS CENTERS THE BUTTONS HORIZONTALLY */
-    gap: calc(var(--sw-spacing-unit) * 1.5); /* Space between buttons */
-    margin-top: calc(var(--sw-spacing-unit) * 1.5); /* Space above the buttons, after the h4 if any */
+    gap: 12px; /* Space between buttons */
+    margin-top: 12px; /* Space above the buttons, after the h4 if any */
     padding-top: 0; /* No extra padding if margin is used */
     border-top: none; /* No border if it's part of the main flow */
 }
@@ -2768,7 +2578,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 /* Aljohn's Take / Magnus Kommentar section in modals */
 .modal-aljohns-take {
     background-color: rgba(var(--sw-flag-blue-rgb), 0.07);
-    padding: calc(var(--sw-spacing-unit)*1.75) calc(var(--sw-spacing-unit)*2); /* More padding */
+    padding: 14px 16px; /* More padding */
     border-left: 4px solid var(--sw-flag-blue);
     border-radius: var(--sw-radius-md);
     font-style: normal;
@@ -2781,7 +2591,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     color: var(--sw-flag-blue);
     font-weight: 600;
     display: block;
-    margin-bottom: calc(var(--sw-spacing-unit) * 0.75);
+    margin-bottom: 6px;
 }
 
 /* Specific Modal Types (Header adjustments mostly) */
@@ -2791,7 +2601,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     width: 90px; height: 90px; /* Slightly larger */
     object-fit: cover;
     border-radius: var(--sw-radius-round);
-    margin-bottom: calc(var(--sw-spacing-unit)*1.5); /* More space after image */
+    margin-bottom: 12px; /* More space after image */
     border: 3px solid var(--sw-flag-blue);
     box-shadow: 0 2px 8px rgba(var(--sw-flag-blue-rgb), 0.3); /* Softer shadow */
 }
@@ -2810,7 +2620,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 .scandinavian-encounter-modal .modal-header h2 .flag-icon {
     font-size: 1.1em; /* Relative to h2 size */
-    margin-right: calc(var(--sw-spacing-unit)*0.65);
+    margin-right: 5.2px;
     line-height: 1; /* Prevent extra space due to flag characters */
 }
 /* encounter-modal-video-area already styled above */
@@ -2839,11 +2649,11 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 .swedish-restaurant-ph-modal p.restaurant-modal-address {
     font-size: 0.82rem;
     color: var(--sw-text-secondary);
-    margin-top: calc(var(--sw-spacing-unit)*0.25);
+    margin-top: 2px;
 }
 .swedish-restaurant-ph-modal p.restaurant-modal-address i {
     color: var(--sw-flag-blue); /* Blue map icon */
-    margin-right: calc(var(--sw-spacing-unit)*0.5);
+    margin-right: 4px;
 }
 
 
@@ -2887,10 +2697,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     /* Grid layouts becoming 2 columns or 1 */
     .scandinavian-encounter-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Allow more flexible sizing */
-        gap: calc(var(--sw-spacing-unit) * 2.5);
+        gap: 20px;
     }
-    .restaurant-ph-grid {
-        flex: 0 1 calc(50% - calc(var(--sw-spacing-unit) * 2.5 / 2)); /* Aim for 2 cards */
+    .restaurant-ph-grid .restaurant-ph-card {
+        flex: 0 1 calc(50% - 10px); /* Two cards per row */
     }
     #swedish-resources #top-podcasts-grid {
         grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -2898,12 +2708,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 @media (max-width: 767px) { /* Large Mobile / Small Tablet */
-    html { font-size: 15px; }
+    #language-page-swedish { font-size: 16px; }
 
     #language-page-swedish .content-section,
     #language-page-swedish .custom-hero-section#swedish-custom-hero { /* Padding adjustment for sections */
-        padding-top: calc(var(--sw-spacing-unit) * 3.5);
-        padding-bottom: calc(var(--sw-spacing-unit) * 3.5);
+        padding-top: 28px;
+        padding-bottom: 28px;
     }
     #language-page-swedish .container { /* Reduce container padding */
         padding-left: var(--sw-spacing-unit);
@@ -2912,10 +2722,10 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
     /* Hero Section */
     .custom-hero-section#swedish-custom-hero .hero-text-overlay {
-        padding-top: calc(var(--sw-spacing-unit) * 5); /* Adjust hero text padding */
+        padding-top: 40px; /* Adjust hero text padding */
     }
     @media (max-height: 700px) { /* Further adjust for short screens */
-        .custom-hero-section#swedish-custom-hero .hero-text-overlay { padding-top: calc(var(--sw-spacing-unit)*6); }
+        .custom-hero-section#swedish-custom-hero .hero-text-overlay { padding-top: 48px; }
     }
     .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 { font-size: clamp(1.6rem, 5.5vw, 2.6rem); }
     .custom-hero-section#swedish-custom-hero .hero-main-title-box .highlight-yellow { font-size: clamp(2.1rem, 7vw, 3.6rem); }
@@ -2934,12 +2744,12 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
         overflow-x: hidden; /* No horizontal scroll */
         white-space: normal;
         margin: 0;
-        padding: calc(var(--sw-spacing-unit)*0.5) 0;
+        padding: 4px 0;
     }
     #swedish-resources .swedish-item-grid {
         display: grid; /* Switch to grid layout */
         grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-        gap: calc(var(--sw-spacing-unit) * 1.5);
+        gap: 12px;
     }
     #swedish-resources .resource-item-card {
         width: 100%; /* Full width in grid cell */
@@ -2951,7 +2761,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     .restaurant-ph-grid,
     #swedish-resources #top-podcasts-grid {
         grid-template-columns: 1fr; /* Single column */
-        gap: calc(var(--sw-spacing-unit) * 2);
+        gap: 16px;
     }
      .restaurant-ph-grid .restaurant-ph-card {
         flex-basis: 100%; /* Single column for flex items */
@@ -2960,7 +2770,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 
     /* Modals */
     .modal-content {
-        padding: calc(var(--sw-spacing-unit) * 2);
+        padding: 16px;
         max-width: 95%; /* More screen width for modal */
     }
     .swedish-resource-modal .modal-header h2,
@@ -2979,19 +2789,19 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     }
     #swedish-resources .grand-youtube-tip .tip-accent-bar {
         width: 100%;
-        height: calc(var(--sw-spacing-unit) * 0.75); /* 6px horizontal bar */
+        height: 6px; /* 6px horizontal bar */
         background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
         box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
     }
     #swedish-resources .grand-youtube-tip .tip-icon-area {
-        padding: calc(var(--sw-spacing-unit) * 1.5) calc(var(--sw-spacing-unit) * 2);
+        padding: 12px 16px;
         justify-content: flex-start; /* Align icon left */
     }
     #swedish-resources .grand-youtube-tip .tip-icon-area .tip-icon.fa-youtube {
         font-size: 2.5em !important; /* Slightly smaller icon */
     }
     #swedish-resources .grand-youtube-tip .tip-content {
-        padding: calc(var(--sw-spacing-unit) * 2) calc(var(--sw-spacing-unit) * 2.5);
+        padding: 16px 20px;
         text-align: left;
     }
     #swedish-resources .grand-youtube-tip .tip-content h3 {
@@ -3002,11 +2812,11 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     .encounter-tip-box-magnus, .large-image-tip-box {
         flex-direction: column;
         text-align: center;
-        padding: calc(var(--sw-spacing-unit) * 2);
+        padding: 16px;
     }
     .encounter-tip-box-magnus .tip-box-icon-area,
     .large-image-tip-box .tip-image-container {
-        margin-bottom: calc(var(--sw-spacing-unit) * 1.5);
+        margin-bottom: 12px;
     }
     .scandinavian-encounter-card .card-overlay-details p {
         -webkit-line-clamp: 3; /* Less text in overlay on mobile */
@@ -3014,7 +2824,7 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
 }
 
 @media (max-width: 480px) { /* Mobile Portrait */
-    html { font-size: 14.5px; }
+    #language-page-swedish { font-size: 16px; }
 
     /* Hero Section */
     .custom-hero-section#swedish-custom-hero .hero-main-title-box h1 { font-size: clamp(1.4rem, 6vw, 2rem); }
@@ -3048,29 +2858,21 @@ min-height: 80vh; /* ADJUST: If content is more compact, you might not need as m
     #swedish-resources .resource-item-card .card-short-desc { font-size: 0.7rem; }
 
     /* Modals */
-    .modal-content { padding: calc(var(--sw-spacing-unit)*1.5); }
+    .modal-content { padding: 12px; }
     .modal-tabs .tab-link {
-        padding: calc(var(--sw-spacing-unit)*0.75) var(--sw-spacing-unit);
+        padding: 6px var(--sw-spacing-unit);
         font-size: 0.75rem;
     }
 
     /* CEFR Filter Buttons */
     #cefr-filter-controls-container .cefr-filter-buttons {
-        gap: calc(var(--sw-spacing-unit)*0.5);
+        gap: 4px;
     }
     #cefr-filter-controls-container .btn-filter-cefr,
     #cefr-filter-controls-container .btn-filter-cefr-clear {
-        padding: calc(var(--sw-spacing-unit)*0.5) calc(var(--sw-spacing-unit)*0.85);
+        padding: 4px 6.8px;
         font-size: 0.7rem;
     }
-     #cefr-filter-controls-container.is-sticky .cefr-panel-header {
-        display: none; /* Hide entire header when sticky and screen is very small */
-    }
-    #cefr-filter-controls-container.is-sticky .cefr-panel-content-wrapper {
-        padding-left: var(--sw-spacing-unit);
-        padding-right: var(--sw-spacing-unit);
-    }
-
     /* Final Thoughts Section */
     #final-thoughts-swedish-section-container .section-title.section-title-final { font-size: clamp(1.6rem, 5.5vw, 2.4rem); }
     #final-thoughts-swedish-section-container .text-center { font-size: clamp(0.82rem, 2.5vw, 1rem); }

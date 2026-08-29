@@ -140,6 +140,21 @@
 #spotlight-rtve .button-link:hover {
     background-color: #e64a00;
 }
+#spotlight-rtve .rtve-spotlight-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+#spotlight-rtve .rtve-crosslink {
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+}
+#spotlight-rtve .rtve-crosslink:hover {
+    color: #151515;
+    background: #fff;
+}
 
 /* Contenedor principal de los pósters */
 #spotlight-rtve .series-recommendations {
@@ -324,6 +339,13 @@
     }
     #spotlight-rtve .series-item {
         flex-basis: 45%; /* Cada póster ocupa casi la mitad del espacio */
+    }
+    #spotlight-rtve .rtve-spotlight-actions {
+        width: 100%;
+    }
+    #spotlight-rtve .rtve-spotlight-actions .button-link {
+        width: 100%;
+        text-align: center;
     }
 
     /* SpanishDict: el logo grande se ve mejor encima del texto */

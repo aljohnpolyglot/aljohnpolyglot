@@ -1,0 +1,2092 @@
+{
+  "language": "id",
+  "categories": [
+    {
+      "id": "musik",
+      "title": "Musik Indonesia"
+    },
+    {
+      "id": "hiburan",
+      "title": "Hiburan dan bincang-bincang"
+    },
+    {
+      "id": "edukasi",
+      "title": "Pengetahuan dan gagasan"
+    },
+    {
+      "id": "olahraga",
+      "title": "Olahraga"
+    },
+    {
+      "id": "gaming",
+      "title": "Gaming dan kreator digital"
+    },
+    {
+      "id": "budaya",
+      "title": "Budaya dan keseharian"
+    }
+  ],
+  "creators": [
+    {
+      "id": "lookatme",
+      "name": "lookatme",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/lookatme.jpg",
+      "imageAlt": "lookatme",
+      "description": "Kanal klip budaya pop yang menyoroti momen lucu dari penyanyi, podcast, dan acara hiburan Indonesia.",
+      "longDescription": "lookatme merangkai klip singkat seputar Ziva Magnolya, Mahalini, Rizky Febian, Podhub, dan figur hiburan lain. Judul, potongan dialog, dan reaksi membuat bahasa gaul serta konteks selebritas Indonesia mudah dikenali.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan dukungan visual; slang dan percakapan cepat lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "O2q7NootjKk",
+        "title": "KETIKA FAITH LEBIH TAU LAGU ZIVA"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@lookaatme"
+        }
+      ]
+    },
+    {
+      "id": "deddy-corbuzier",
+      "name": "Deddy Corbuzier",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/deddy-corbuzier.jpg",
+      "imageAlt": "Deddy Corbuzier",
+      "description": "Pembawa acara dan kreator Indonesia dengan podcast serta percakapan bersama tokoh publik.",
+      "longDescription": "Kanal Deddy Corbuzier berisi percakapan panjang, wawancara, dan komentar tentang topik publik dalam bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk topik familiar; percakapan panjang, slang, dan opini lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "mai8nHdQBrE",
+        "title": "PRILLY MANTAN PERTAMA KIKI CJR - PODHUB"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@corbuzier"
+        }
+      ]
+    },
+    {
+      "id": "vokalplus-by-indra-aziz",
+      "name": "VokalPlus by Indra Aziz",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "B1—C1",
+      "image": "images/creators/vokalplus-by-indra-aziz.jpg",
+      "imageAlt": "VokalPlus by Indra Aziz",
+      "description": "Kanal vokal yang membahas teknik bernyanyi, suara, dan latihan musik dalam bahasa Indonesia.",
+      "longDescription": "VokalPlus membingkai pembahasan vokal melalui demonstrasi, istilah teknik, dan contoh lagu. Visualisasi suara membantu menghubungkan kosakata musik dengan praktik yang terdengar.",
+      "personalComment": null,
+      "levelGuidance": "Demonstrasi membantu mulai dari B1; istilah teknik dan penjelasan panjang lebih cocok untuk B2—C1.",
+      "sampleVideo": {
+        "id": "yi6gaDhSSHs",
+        "title": "Whistle Voice Raisa"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@Vokalplus"
+        }
+      ]
+    },
+    {
+      "id": "lyodra-official",
+      "name": "Lyodra Official",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/lyodra-official.jpg",
+      "imageAlt": "Lyodra Official",
+      "description": "Kanal resmi Lyodra, berisi lagu, video musik, dan penampilan penyanyi Indonesia.",
+      "longDescription": "Kanal resmi ini menyajikan lagu dan penampilan Lyodra dengan bahasa Indonesia yang hadir terutama lewat lirik, judul, dan materi promosi.",
+      "personalComment": "Lyodra adalah salah satu penyanyi Indonesia yang lagunya sering saya dengarkan. Saat mengikuti Indonesian Idol, dia juga menjadi favorit saya.",
+      "levelGuidance": "Lirik dan refrein dapat dipakai dari A2; wawancara atau materi promosi lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "o9Y3iA8jKDs",
+        "title": "Lyodra - Teganya Kau (Official Music Video)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCVbDyLu0MatwYdm2Bh8E79w"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/lyodraofficial/"
+        }
+      ]
+    },
+    {
+      "id": "hits-records",
+      "name": "HITS Records",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/hits-records.jpg",
+      "imageAlt": "HITS Records",
+      "description": "Label musik Indonesia dengan video musik dan rilisan artis berbahasa Indonesia.",
+      "longDescription": "HITS Records mengarsipkan video musik dan materi lirik dari berbagai artis. Format lagu memberi konteks kuat untuk kosakata emosi dan kehidupan sehari-hari.",
+      "personalComment": null,
+      "levelGuidance": "Mulai dari A2 melalui lirik dan refrein; B1—B2 untuk makna kiasan dan materi pendamping.",
+      "sampleVideo": {
+        "id": "5lHj-PvluiE",
+        "title": "Ghea Indrawari - Rasa Cinta Ini (Official Video Lyric)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@hitsrecords_"
+        }
+      ]
+    },
+    {
+      "id": "ziva-magnolya",
+      "name": "Ziva Magnolya",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/ziva-magnolya.jpg",
+      "imageAlt": "Ziva Magnolya",
+      "description": "Kanal resmi penyanyi Indonesia Ziva Magnolya dengan lagu dan penampilan musik.",
+      "longDescription": "Video musik dan penampilan Ziva Magnolya memperlihatkan bahasa Indonesia melalui lirik, judul, dan pengantar pertunjukan.",
+      "personalComment": "Lagu-lagu Ziva termasuk musik Indonesia yang selalu saya dengarkan. Ziva juga salah satu penyanyi yang menginspirasi saya sebagai musisi.",
+      "levelGuidance": "Lagu dapat dipakai dari A2; B1—B2 untuk memahami metafora dan percakapan di luar lagu.",
+      "sampleVideo": {
+        "id": "aFPJJ5WehRw",
+        "title": "Ziva Magnolya - Cukup (Official Music Video)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCz9QAx52ECmUNnCybGnCDvg"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/zivamagnolya/"
+        }
+      ]
+    },
+    {
+      "id": "raisa6690",
+      "name": "Raisa",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/raisa6690.jpg",
+      "imageAlt": "Raisa",
+      "description": "Kanal resmi Raisa yang memuat musik, penampilan, dan materi dari penyanyi Indonesia.",
+      "longDescription": "Raisa menggunakan lagu, penampilan, dan materi panggung untuk membawa bahasa Indonesia ke konteks musik populer.",
+      "personalComment": "Raisa termasuk inspirasi musik Indonesia saya. Saya juga suka musiknya dan sering kembali ke lagu-lagunya.",
+      "levelGuidance": "Lirik dan refrein cocok untuk A2; penampilan dan materi bicara berkembang ke B1—B2.",
+      "sampleVideo": {
+        "id": "Zj5LQ-etiAE",
+        "title": "Moment #SiPalingMahir Aku"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UC8xcPPVYvUxv1CPoEcqj4fQ"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/raisa6690/"
+        }
+      ]
+    },
+    {
+      "id": "yovie-widianto",
+      "name": "Yovie Widianto",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/yovie-widianto.jpg",
+      "imageAlt": "Yovie Widianto",
+      "description": "Kanal musisi dan pencipta lagu Indonesia yang menampilkan karya serta kolaborasi musik.",
+      "longDescription": "Karya dan kolaborasi Yovie Widianto mempertemukan lirik bahasa Indonesia dengan penampilan artis-artis Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Lagu mendukung pembelajar A2—B1; wawancara dan konteks industri musik lebih menantang di B2.",
+      "sampleVideo": {
+        "id": "y4t-OR9hFWQ",
+        "title": "LYODRA yang TERLALU CINTA"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCV-0R7ritLptGwOelwH3RPw"
+        }
+      ]
+    },
+    {
+      "id": "filda-salim",
+      "name": "Filda Salim",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/filda-salim.jpg",
+      "imageAlt": "Filda Salim",
+      "description": "Pianis dan kreator musik Indonesia dengan cover, tur studio piano, latihan nada, dan eksperimen musikal singkat.",
+      "longDescription": "Filda Salim memainkan cover piano, membedah nada melalui demonstrasi, dan memperlihatkan ruang serta proses bermusik. Instruksi pendek seperti latihan do-re-mi dan permainan tuts hitam memberi konteks konkret untuk kosakata musik.",
+      "personalComment": null,
+      "levelGuidance": "Konteks visual mendukung B1; percakapan cepat dan slang lebih sesuai untuk B2—C1.",
+      "sampleVideo": {
+        "id": "HzLvaqN0Gfs",
+        "title": "APT APT APA TUH?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCIpmP8hNh86T99hKiqmxijQ"
+        }
+      ]
+    },
+    {
+      "id": "tiara-andini",
+      "name": "Tiara Andini",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/tiara-andini.jpg",
+      "imageAlt": "Tiara Andini",
+      "description": "Kanal resmi penyanyi Indonesia Tiara Andini dengan lagu, studio, dan penampilan.",
+      "longDescription": "Kanal resmi Tiara Andini memperlihatkan lagu dan proses penampilan melalui lirik, judul, serta materi di balik layar.",
+      "personalComment": "Saya selalu mendengarkan lagu-lagu Tiara Andini, terutama karena kolaborasinya dengan Zack Tabudlo. Saya juga berharap bisa bertemu Tiara suatu hari nanti.",
+      "levelGuidance": "Lagu cocok mulai A2; materi studio dan percakapan berkembang ke B1—B2.",
+      "sampleVideo": {
+        "id": "D1fCq4eGj4Y",
+        "title": "Behind The Recording: Tiara Andini - Bukan Untukku"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UC6B6N7-2yNGDZtLhAeTj6mA"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/tiaraandini/"
+        }
+      ]
+    },
+    {
+      "id": "andre-herviant",
+      "name": "Andre Herviant",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/andre-herviant.jpg",
+      "imageAlt": "Andre Herviant",
+      "description": "Penyanyi dan kreator OmeTV yang memadukan cover lagu dengan reaksi spontan dari lawan bicara.",
+      "longDescription": "Andre Herviant membawakan cover dan medley melalui percakapan OmeTV, lalu mempertahankan reaksi lawan bicara sebagai bagian dari videonya. Format bernyanyi dan respons langsung memberi konteks jelas untuk sapaan, pujian, kejutan, dan humor informal.",
+      "personalComment": null,
+      "levelGuidance": "Mulai di B1 dengan dukungan situasi; kecepatan bicara dan slang menuntut B2—C1.",
+      "sampleVideo": {
+        "id": "8UQWJ2bH9hg",
+        "title": "Udah FTV Sctv banget belom?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@AndreHerviant"
+        }
+      ]
+    },
+    {
+      "id": "samuel-christ",
+      "name": "Samuel Christ",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/samuel-christ.jpg",
+      "imageAlt": "Samuel Christ",
+      "description": "Kreator Indonesia yang membandingkan keseharian Indonesia–Amerika melalui cerita, daftar penjelas, dan pengalaman pribadi.",
+      "longDescription": "Samuel Christ membahas pengalaman seperti makan, bioskop, pekerjaan, dan kehidupan di Amerika sambil membandingkannya dengan kebiasaan Indonesia. Monolog berbentuk pertanyaan dan daftar membuat alurnya mudah diikuti, sementara beberapa rilisan musik memperluas sisi kreatif kanalnya.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk menangkap alur; B2—C1 untuk argumen, nuansa, dan istilah abstrak.",
+      "sampleVideo": {
+        "id": "S9GsFyaj780",
+        "title": "TUHAN CUMAN BOLEHIN S3GS KEPADA 1 ORANG SAJA?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@SamuelChrist"
+        }
+      ]
+    },
+    {
+      "id": "kok-bisa",
+      "name": "Kok Bisa?",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/kok-bisa.jpg",
+      "imageAlt": "Kok Bisa?",
+      "description": "Kanal edukasi Indonesia yang menjelaskan sains, sejarah, dan pertanyaan sehari-hari.",
+      "longDescription": "Kok Bisa? memakai animasi, narasi, dan pertanyaan pembuka untuk menjelaskan topik sains serta budaya dalam bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Animasi mendukung B1; istilah dan penalaran lengkap lebih cocok untuk B2—C1.",
+      "sampleVideo": {
+        "id": "7VP6a9Vty1g",
+        "title": "Buku-Buku Ini Pernah Dilarang Dibaca!"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@KokBisa"
+        }
+      ]
+    },
+    {
+      "id": "trinity-optima-production",
+      "name": "Trinity Optima Production",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/trinity-optima-production.jpg",
+      "imageAlt": "Trinity Optima Production",
+      "description": "Label dan rumah produksi musik Indonesia dengan video musik resmi.",
+      "longDescription": "Kanal ini memuat video musik dari artis Indonesia. Lirik dan gambar memberi jalur kontekstual untuk mendengar bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Lirik cocok untuk A2—B1; makna kiasan dan materi promosi lebih sesuai untuk B2.",
+      "sampleVideo": {
+        "id": "H-VrSl2Ha6Y",
+        "title": "Rossa - Wanita Yang Kau Pilih | Official Music Video"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@TrinityOptimaProduction"
+        }
+      ]
+    },
+    {
+      "id": "keisya-levronka-channel",
+      "name": "Keisya Levronka Channel",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/keisya-levronka-channel.jpg",
+      "imageAlt": "Keisya Levronka Channel",
+      "description": "Kanal musik Indonesia yang menampilkan Keisya Levronka dan kolaborasi lagu.",
+      "longDescription": "Kanal ini menggabungkan penampilan, tantangan musik, dan lagu berbahasa Indonesia.",
+      "personalComment": "Lagu-lagu Keisya Levronka termasuk musik Indonesia yang selalu saya dengarkan. “Tak Ingin Usai” juga menjadi salah satu lagu yang saya ingat.",
+      "levelGuidance": "Lagu dan tantangan singkat dapat dimulai dari A2; percakapan lebih sesuai B1—B2.",
+      "sampleVideo": {
+        "id": "_4PcdeB19zk",
+        "title": "Marion Jola ft. Rayi Putra - Jangan | Tebak Lagu Challenge"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCpUrz0dfF9z2Msg2DsB39cQ"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/keisyalevronka/"
+        }
+      ]
+    },
+    {
+      "id": "sheila-anandara",
+      "name": "Sheila Anandara",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/sheila-anandara.jpg",
+      "imageAlt": "Sheila Anandara",
+      "description": "Kreator musik Indonesia dengan video lagu dan penampilan singkat.",
+      "longDescription": "Video Sheila Anandara menempatkan lagu dan performa sebagai pusat, sehingga lirik dan pengucapan menjadi bahan dengar yang jelas.",
+      "personalComment": null,
+      "levelGuidance": "Lagu cocok untuk A2—B1; percakapan dan materi spontan lebih cocok untuk B2.",
+      "sampleVideo": {
+        "id": "_VhCdyxhcSc",
+        "title": "ternyataa aku makin cintaa"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@SheilaAnandara"
+        }
+      ]
+    },
+    {
+      "id": "imgames",
+      "name": "IMGames",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "B1—C1",
+      "image": "images/creators/imgames.jpg",
+      "imageAlt": "IMGames",
+      "description": "Kanal hiburan musik Indonesia dengan tantangan bernyanyi dan kolaborasi artis.",
+      "longDescription": "IMGames memakai tantangan dan permainan musik untuk mempertemukan artis, lagu, dan percakapan bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Format visual mendukung B1; dialog spontan dan permainan kata berkembang ke B2—C1.",
+      "sampleVideo": {
+        "id": "iRFDLMb8K1U",
+        "title": "NYANYI Bahasa Kalbu NADA ASLI BARENG RAISA DAN SOLEH SOLIHUN"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@imgamesindomusik"
+        }
+      ]
+    },
+    {
+      "id": "rizky-febian",
+      "name": "Rizky Febian",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/rizky-febian.jpg",
+      "imageAlt": "Rizky Febian",
+      "description": "Kanal resmi penyanyi Indonesia Rizky Febian dengan lagu dan sesi live.",
+      "longDescription": "Kanal ini menampilkan lagu serta sesi live Rizky Febian, dengan bahasa Indonesia hadir dalam lirik dan pengantar musik.",
+      "personalComment": "Rizky Febian termasuk penyanyi Indonesia yang menginspirasi saya. Ia saya sebut ketika menjelaskan musik yang membantu saya berkembang sebagai penyanyi.",
+      "levelGuidance": "Lirik cocok untuk A2—B1; sesi live dan wawancara lebih sesuai B2.",
+      "sampleVideo": {
+        "id": "JApyz5NM8qw",
+        "title": "Rizky Febian ft. Luqman Kev - Cukup Tau (Live Session)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCbygpKn8gqj1LMTMyROF9fg"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/rizkyfbian/"
+        }
+      ]
+    },
+    {
+      "id": "cerita-basket",
+      "name": "Cerita Basket",
+      "country": "Indonesia",
+      "categoryId": "olahraga",
+      "category": "Olahraga",
+      "cefr": "B1—C1",
+      "image": "images/creators/cerita-basket.jpg",
+      "imageAlt": "Cerita Basket",
+      "description": "Kanal olahraga Indonesia yang membahas basket, pemain, dan cerita di balik pertandingan.",
+      "longDescription": "Cerita Basket menggunakan ulasan, konteks pertandingan, dan narasi tokoh untuk menjelaskan basket dalam bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan bantuan visual pertandingan; istilah olahraga dan analisis lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "1mh3GSlz9cs",
+        "title": "Kenapa Densu Sempat SANGAT DIBENCI Fans Basket Indonesia?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@CeritaBasket"
+        }
+      ]
+    },
+    {
+      "id": "tonightshownet",
+      "name": "TonightShowNet",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/tonightshownet.jpg",
+      "imageAlt": "TonightShowNet",
+      "description": "Program hiburan Indonesia dengan wawancara, komedi, dan percakapan spontan.",
+      "longDescription": "TonightShowNet menghadirkan wawancara dan permainan dengan ritme percakapan Indonesia yang natural.",
+      "personalComment": null,
+      "levelGuidance": "Konteks panggung mendukung B1; humor, interupsi, dan slang lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "_Cd_R3mM0Z4",
+        "title": "Jokes Bapack Bapack"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@TonightShowNet"
+        }
+      ]
+    },
+    {
+      "id": "rcti-mega-entertainment",
+      "name": "RCTI Mega Entertainment",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/rcti-mega-entertainment.jpg",
+      "imageAlt": "RCTI Mega Entertainment",
+      "description": "Kanal hiburan televisi Indonesia dengan konser, pertunjukan, dan program populer.",
+      "longDescription": "Kanal ini membawa konser dan program hiburan RCTI ke format video, dengan bahasa Indonesia dari pembawa acara dan penampil.",
+      "personalComment": null,
+      "levelGuidance": "Pertunjukan membantu B1; pengantar dan komentar cepat lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "F6RuehJuw1M",
+        "title": "Duet Dewa 19 x Lyodra - Risalah Hati"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@RCTIMEGAENTERTAINMENT"
+        }
+      ]
+    },
+    {
+      "id": "its-sandwich",
+      "name": "ItsSandwich",
+      "country": "Indonesia",
+      "categoryId": "gaming",
+      "category": "Gaming dan kreator digital",
+      "cefr": "B1—C1",
+      "image": "images/creators/itssandwich.jpg",
+      "imageAlt": "ItsSandwich",
+      "description": "Kreator gaming Indonesia dengan video permainan dan narasi berbahasa Indonesia.",
+      "longDescription": "ItsSandwich memakai permainan dan situasi virtual sebagai konteks percakapan, reaksi, serta humor berbahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Visual permainan mendukung B1; komentar cepat dan slang lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "KF9lPq3zOpU",
+        "title": "Simulasi The Purge di Minecraft"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@ItsSandwich"
+        }
+      ]
+    },
+    {
+      "id": "fajrul-fx",
+      "name": "Fajrul Fx",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/fajrul-fx.jpg",
+      "imageAlt": "Fajrul Fx",
+      "description": "Kreator edukasi yang menguji kuis, eksperimen DNA, fisika olahraga, AI, dan fakta populer dalam format cepat.",
+      "longDescription": "Fajrul Fx memakai kuis, tantangan, dan eksperimen pribadi untuk menjelaskan sains serta teknologi populer. Topiknya bergerak dari hukum fisika dalam sepak bola hingga tes DNA dan penggunaan AI, dengan visual yang terus mendukung narasi.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk mengikuti aturan dan alur; komentar spontan lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "en2bCT6cijc",
+        "title": "Speedrun menyelesaikan quiz Clash of Champions"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@FajrulFx"
+        }
+      ]
+    },
+    {
+      "id": "rony-parulian",
+      "name": "Rony Parulian",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/rony-parulian.jpg",
+      "imageAlt": "Rony Parulian",
+      "description": "Kanal musik penyanyi Indonesia Rony Parulian dengan lagu dan penampilan vokal.",
+      "longDescription": "Lagu dan penampilan Rony Parulian menghadirkan bahasa Indonesia melalui lirik dan konteks pertunjukan.",
+      "personalComment": null,
+      "levelGuidance": "Lirik cocok untuk A2—B1; wawancara dan materi panggung lebih sesuai B2.",
+      "sampleVideo": {
+        "id": "afwdLdZuO4k",
+        "title": "Tanpa Batas Waktu - Rony Nainggolan (cover)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UC1BMupJf6d4f6Len323tjUA"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/ronyparulian__/"
+        }
+      ]
+    },
+    {
+      "id": "agusleo-halim",
+      "name": "Agusleo Halim",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/agusleo-halim.jpg",
+      "imageAlt": "Agusleo Halim",
+      "description": "Kanal Indonesia yang membahas pertumbuhan diri, usia dewasa, dan gagasan kehidupan.",
+      "longDescription": "Agusleo Halim menyajikan monolog dan pembahasan reflektif tentang tantangan hidup dengan struktur narasi bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk gagasan utama; B2—C1 untuk nuansa reflektif dan kosakata abstrak.",
+      "sampleVideo": {
+        "id": "ijOthfliaRc",
+        "title": "Alasan Kenapa Usia 20-an itu PENUH Masa Sulit"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@AgusleoHalim"
+        }
+      ]
+    },
+    {
+      "id": "indomusikteam",
+      "name": "IndomusikTeam",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/indomusikteam.jpg",
+      "imageAlt": "IndomusikTeam",
+      "description": "Kanal musik Indonesia dengan sesi bernyanyi, kolaborasi, dan permainan musik.",
+      "longDescription": "IndomusikTeam menempatkan lagu dan kolaborasi vokal sebagai konteks utama untuk mendengar bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Lagu dapat dimulai dari A2; percakapan dan tantangan musik lebih sesuai B1—B2.",
+      "sampleVideo": {
+        "id": "yDICdNWDTQ4",
+        "title": "MENGAPA NADA ASLI BARENG RONY PARULIAN"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UC23sotCh77ZcVild-pLH0QQ"
+        }
+      ]
+    },
+    {
+      "id": "tri-adinata",
+      "name": "Tri Adinata",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "B1—C1",
+      "image": "images/creators/tri-adinata.jpg",
+      "imageAlt": "Tri Adinata",
+      "description": "Kanal pelatih vokal Indonesia dengan kelas, latihan, dan pembahasan lagu.",
+      "longDescription": "Tri Adinata menggabungkan kelas vokal, contoh lagu, dan penjelasan teknik dalam bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan dukungan demonstrasi; B2—C1 untuk istilah vokal dan penjelasan mendalam.",
+      "sampleVideo": {
+        "id": "YrBa9DcFK0M",
+        "title": "Mati Matian - Mahalini Vocal Class Sir Tri Adinata"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@triadinata91"
+        }
+      ]
+    },
+    {
+      "id": "billman",
+      "name": "billman",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/billman.jpg",
+      "imageAlt": "billman",
+      "description": "Kreator video pendek dengan sketsa hubungan, prank OmeTV, dan situasi sosial berujung kejutan.",
+      "longDescription": "billman membangun video pendek dari salah paham, prank, dan pertemuan OmeTV. Percakapan yang sangat singkat, bahasa gaul, dan perubahan situasi mendadak menjadikannya latihan untuk menangkap maksud dari konteks sosial.",
+      "personalComment": null,
+      "levelGuidance": "Situasi visual membantu B1; slang dan tempo percakapan lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "8meZoUKY3Ac",
+        "title": "lagi jaman teman tapi masuk"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@billmannnnn"
+        }
+      ]
+    },
+    {
+      "id": "sandi-official",
+      "name": "Sandi Official",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/sandi-official.jpg",
+      "imageAlt": "Sandi Official",
+      "description": "Kreator hiburan Indonesia dengan percakapan, dubbing, dan video sosial.",
+      "longDescription": "Sandi Official menggunakan percakapan dan transformasi suara untuk membangun sketsa hiburan dalam bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan bantuan konteks; slang dan permainan suara menuntut B2—C1.",
+      "sampleVideo": {
+        "id": "4d-A9c140Ao",
+        "title": "CEWEK INI KAGET SUARA AKU BISA BERUBAH JADI KARTUN"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@SandiDubberOfficial"
+        }
+      ]
+    },
+    {
+      "id": "the-voice-indonesia",
+      "name": "The Voice Indonesia",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "B1—C1",
+      "image": "images/creators/the-voice-indonesia.jpg",
+      "imageAlt": "The Voice Indonesia",
+      "description": "Kanal acara musik Indonesia dengan audisi, penampilan, dan komentar juri.",
+      "longDescription": "Audisi dan komentar juri The Voice Indonesia menghadirkan bahasa Indonesia dalam konteks pertunjukan yang jelas.",
+      "personalComment": null,
+      "levelGuidance": "Penampilan membantu B1; komentar juri dan humor lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "so42-VwU3Fk",
+        "title": "Raisa - Kali Kedua | Grand Final"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@TheVoiceIndonesia"
+        }
+      ]
+    },
+    {
+      "id": "isagastari",
+      "name": "isagastari",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/isagastari.jpg",
+      "imageAlt": "isagastari",
+      "description": "Kreator musik Indonesia dengan lagu, penampilan, dan video pendek.",
+      "longDescription": "Konten isagastari menempatkan musik dan performa sebagai jalur utama untuk mendengar bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Lagu dan refrein cocok untuk A2; video percakapan lebih sesuai B1—B2.",
+      "sampleVideo": {
+        "id": "49g_7IppmFk",
+        "title": "merona"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@isagastari"
+        }
+      ]
+    },
+    {
+      "id": "james-adam",
+      "name": "James Adam",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/james-adam.jpg",
+      "imageAlt": "James Adam",
+      "description": "Kreator musik Indonesia dengan cover lagu dan sesi kolaborasi vokal.",
+      "longDescription": "James Adam menggabungkan cover lagu dan sesi jam untuk menampilkan lirik serta percakapan musik berbahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Lagu mendukung A2—B1; penjelasan dan kolaborasi lebih sesuai B2.",
+      "sampleVideo": {
+        "id": "r-D_9wa4uhY",
+        "title": "TAK DIANGGAP (cover) - Anneth ft. Fivein"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@JamesAdam98"
+        }
+      ]
+    },
+    {
+      "id": "nihongo-mantappu",
+      "name": "Nihongo Mantappu",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Budaya dan keseharian",
+      "cefr": "B1—C1",
+      "image": "images/creators/nihongo-mantappu.jpg",
+      "imageAlt": "Nihongo Mantappu",
+      "description": "Kanal kreator Indonesia tentang pengalaman lintas budaya, sekolah, dan keseharian.",
+      "longDescription": "Nihongo Mantappu menggunakan vlog dan interaksi lintas budaya dengan narasi serta percakapan bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan dukungan visual; percakapan spontan dan konteks budaya lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "SnWG8YcQU6s",
+        "title": "Muridnya Cewek Semua, Ada Gramedia di Sekolah!?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@nihongomantappu"
+        }
+      ]
+    },
+    {
+      "id": "papa-louise",
+      "name": "Papa Louise",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/papa-louise.jpg",
+      "imageAlt": "Papa Louise",
+      "description": "Kreator tutorial edit foto pendek yang menunjukkan penghapusan objek, perubahan cahaya, dan efek wajah.",
+      "longDescription": "Papa Louise mendemonstrasikan langkah edit foto seperti menghapus stiker atau kendaraan, mengubah siang menjadi malam, dan memodifikasi tampilan wajah. Hasil sebelum–sesudah membuat kata kerja perintah dan istilah visual mudah dipahami.",
+      "personalComment": null,
+      "levelGuidance": "Visual mendukung B1; komentar spontan dan slang lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "K7_HHt_pe4o",
+        "title": "Mempermuda poto bisa nggak?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@vwxzo"
+        }
+      ]
+    },
+    {
+      "id": "heriss-skuyy",
+      "name": "Heriss Skuyy",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/heriss-skuyy.jpg",
+      "imageAlt": "Heriss Skuyy",
+      "description": "Kreator OmeTV dengan prank karakter, reaksi kaget, dan percakapan singkat yang sangat informal.",
+      "longDescription": "Heriss Skuyy memakai pertemuan OmeTV untuk membuat prank suara atau karakter dan menangkap reaksi lawan bicara. Bahasa yang cepat, seruan, serta humor situasional menjadikannya bahan dengar tingkat lanjut dengan dukungan visual kuat.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan konteks; slang dan tempo tinggi lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "XlDK5u9GwCQ",
+        "title": "Musuh terlihat"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@HerissSkuyy"
+        }
+      ]
+    },
+    {
+      "id": "londokampung",
+      "name": "Londokampung",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Budaya dan keseharian",
+      "cefr": "B1—C1",
+      "image": "images/creators/londokampung.jpg",
+      "imageAlt": "Londokampung",
+      "description": "Kanal lintas budaya yang memakai bahasa Indonesia dan Jawa dalam interaksi dengan penjual, guru, dan orang asing.",
+      "longDescription": "Londokampung merekam percakapan di warung, permainan kuis, prank lintas budaya, dan perbandingan ungkapan bahasa Jawa. Situasi nyata membantu membedakan ragam Indonesia sehari-hari dari kosakata daerah yang muncul di dalamnya.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk mengikuti situasi; variasi aksen dan percakapan spontan lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "MlUZ2b4yuBE",
+        "title": "Gara-gara Tahu, Bule Disuruh Nunggu Bosnya Datang!!"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@Londokampung"
+        }
+      ]
+    },
+    {
+      "id": "bw",
+      "name": "BW.",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Hiburan dan bincang-bincang",
+      "cefr": "B1—C1",
+      "image": "images/creators/bw.jpg",
+      "imageAlt": "BW.",
+      "description": "Kanal hiburan Indonesia dengan wawancara dan percakapan bersama tokoh populer.",
+      "longDescription": "BW. menggunakan format wawancara dan komentar untuk menghadirkan bahasa Indonesia percakapan.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk topik dan alur; B2—C1 untuk humor, opini, dan respons spontan.",
+      "sampleVideo": {
+        "id": "iB7RkpCyVMs",
+        "title": "GAK NYANGKA MEREKA BAKAL NGOMONG INI DI UNBW!"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@bw.2417"
+        }
+      ]
+    },
+    {
+      "id": "dezetpi-movie-base",
+      "name": "DEZETPI Movie Base",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/dezetpi-movie-base.jpg",
+      "imageAlt": "DEZETPI Movie Base",
+      "description": "Kanal trivia film yang menjelaskan detail tersembunyi dari animasi, superhero, dan film keluarga lewat narasi singkat.",
+      "longDescription": "DEZETPI Movie Base memakai seri “Tahukah Kamu” untuk mengulas detail dari film seperti The Incredibles, The Boss Baby, Deadpool, dan Spider-Man. Potongan adegan menjaga rujukan visual tetap jelas saat narasi menjelaskan fakta atau hubungan cerita.",
+      "personalComment": null,
+      "levelGuidance": "Visual film mendukung B1; ringkasan dan analisis lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "81rbJv4qIQM",
+        "title": "Tahukah Kamu dalam Film Tom & Jerry"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@DEZETPIMovieBase"
+        }
+      ]
+    },
+    {
+      "id": "dr-indrawan-nugroho",
+      "name": "Dr. Indrawan Nugroho",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/dr-indrawan-nugroho.jpg",
+      "imageAlt": "Dr. Indrawan Nugroho",
+      "description": "Kanal Indonesia tentang bisnis, teknologi, dan perubahan masyarakat.",
+      "longDescription": "Dr. Indrawan Nugroho membahas bisnis dan teknologi melalui penjelasan terstruktur serta kosakata gagasan dalam bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk kerangka umum; B2—C1 untuk istilah bisnis, teknologi, dan argumen.",
+      "sampleVideo": {
+        "id": "CKZ5LKqeIx0",
+        "title": "Metaverse Sudah Mati? Pikir Lagi!"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@IndrawanNugroho"
+        }
+      ]
+    },
+    {
+      "id": "rocky-padila",
+      "name": "Rocky Padila",
+      "country": "Indonesia",
+      "categoryId": "olahraga",
+      "category": "Olahraga",
+      "cefr": "B1—C1",
+      "image": "images/creators/rocky-padila.jpg",
+      "imageAlt": "Rocky Padila",
+      "description": "Kanal olahraga Indonesia yang membahas basket dan budaya penggemarnya.",
+      "longDescription": "Rocky Padila membahas basket melalui pengalaman, tempat, dan komentar berbahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 dengan dukungan visual; istilah olahraga dan analisis lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "PZmGCgUSZrA",
+        "title": "NBA Store TERBESAR di Manila"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@RockyPadila"
+        }
+      ]
+    },
+    {
+      "id": "turah-parthayana",
+      "name": "Turah Parthayana",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Budaya dan keseharian",
+      "cefr": "B1—C1",
+      "image": "images/creators/turah-parthayana.jpg",
+      "imageAlt": "Turah Parthayana",
+      "description": "Kreator vlog Indonesia–Ukraina dengan keluarga angkat, makanan, pemotretan, dan keseharian lintas budaya.",
+      "longDescription": "Turah Parthayana merekam kehidupan antara latar Indonesia, Bali, dan Ukraina: persiapan musim dingin, kegiatan bersama keluarga angkat, pemotretan, serta reaksi mencoba makanan. Percakapan vlog memberi konteks untuk bahasa keluarga dan keseharian lintas budaya.",
+      "personalComment": "Turah Parthayana adalah salah satu pengaruh paling penting dalam perjalanan bahasa saya. Kontennya membuat saya tertarik mempelajari bahasa berikutnya, yaitu bahasa Rusia.",
+      "levelGuidance": "B1 untuk vlog kontekstual; percakapan spontan lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "pWtTjWCELbA",
+        "title": "Cocok gak nih? Chuaks"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@TurahParthayana"
+        }
+      ]
+    },
+    {
+      "id": "kevindikmanto2",
+      "name": "Kevindikmanto2",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/kevindikmanto2.jpg",
+      "imageAlt": "Kevindikmanto2",
+      "description": "Kreator fakta singkat tentang sains, sejarah, olahraga, dan perilaku manusia dengan judul berbentuk pertanyaan.",
+      "longDescription": "Kevindikmanto2 menjawab pertanyaan seperti apakah kepiting merasakan sakit dan menceritakan kejadian aneh dalam sejarah atau olahraga. Narasinya ringkas, langsung menuju fakta utama, dan didukung gambar yang menjelaskan pokok bahasan.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk inti topik; B2—C1 untuk kecepatan, humor, dan kosakata abstrak.",
+      "sampleVideo": {
+        "id": "lBrhW3kXhKs",
+        "title": "3 Orang Prediksi Kematian Sendiri"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@Kevindikmanto2"
+        }
+      ]
+    },
+    {
+      "id": "zet22",
+      "name": "Zet22",
+      "country": "Indonesia",
+      "categoryId": "gaming",
+      "category": "Gaming dan kreator digital",
+      "cefr": "B1—C1",
+      "image": "images/creators/zet22.jpg",
+      "imageAlt": "Zet22",
+      "description": "Kanal gaming Indonesia dengan ulasan dan pembahasan animasi serta permainan.",
+      "longDescription": "Zet22 menggunakan contoh permainan dan animasi untuk membangun komentar berbahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Visual membantu B1; istilah dan komentar cepat lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "XXu0o6-sMII",
+        "title": "10 Kesalahan Yang Terdapat Dalam Animasi Minecraft"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@Zet22."
+        }
+      ]
+    },
+    {
+      "id": "gerald-vincent",
+      "name": "Gerald Vincent",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/gerald-vincent-geraldvincentt.jpg",
+      "imageAlt": "Gerald Vincent",
+      "description": "Kreator video penjelas singkat tentang anime, olahraga, bahasa, gim profesional, dan fakta umum.",
+      "longDescription": "Gerald Vincent membuka video dengan satu pertanyaan—dari anime Muslim dan sejarah olahraga hingga perbedaan English US/UK—lalu memberi jawaban ringkas. Struktur tanya–jawab dan durasi pendek membantu latihan menangkap gagasan utama.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk topik familiar; referensi budaya dan tempo komentar lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "IaFxtXBkUus",
+        "title": "Ada gak ANIME yang MUSLIM??"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@geraldvincentt"
+        }
+      ]
+    },
+    {
+      "id": "ina-basketball",
+      "name": "INA Basketball",
+      "country": "Indonesia",
+      "categoryId": "olahraga",
+      "category": "Olahraga",
+      "cefr": "B1—C1",
+      "image": "images/creators/ina-basketball.jpg",
+      "imageAlt": "INA Basketball",
+      "description": "Kanal basket Indonesia dengan berita, pemain, dan perkembangan olahraga.",
+      "longDescription": "INA Basketball menyajikan cerita pemain dan perkembangan basket melalui narasi serta wawancara berbahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "B1 untuk laporan visual; istilah olahraga dan komentar analitis lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "7CgNSpc51i8",
+        "title": "Bisakah Gelo Menyusul Saudara2nya?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@inabasketball2205"
+        }
+      ]
+    },
+    {
+      "id": "the-jooomers",
+      "name": "The Jooomers",
+      "country": "Indonesia",
+      "categoryId": "gaming",
+      "category": "Gaming dan kreator digital",
+      "cefr": "B1—C1",
+      "image": "images/creators/the-jooomers.jpg",
+      "imageAlt": "The Jooomers",
+      "description": "Kanal gaming Indonesia dengan gameplay, komentar, dan cerita permainan.",
+      "longDescription": "The Jooomers memakai gameplay dan komentar langsung untuk menghadirkan bahasa Indonesia lisan dalam konteks permainan.",
+      "personalComment": null,
+      "levelGuidance": "Visual gameplay membantu B1; komentar cepat dan slang lebih cocok B2—C1.",
+      "sampleVideo": {
+        "id": "C1YMpj_78ho",
+        "title": "AKHIRNYA SEMUA BEBAS !! BEST ENDING !!! - Detroit: Become Human"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@TheJooomers"
+        }
+      ]
+    },
+    {
+      "id": "afgan",
+      "name": "Afgan",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/afgan.jpg",
+      "imageAlt": "Afgan",
+      "description": "Penyanyi Indonesia yang dikenal melalui lagu pop, balada, dan penampilan vokal.",
+      "longDescription": "Kanal resmi Afgan menghadirkan lagu, video musik, dan materi penampilan. Lirik serta konteks pertunjukan memperkenalkan bahasa Indonesia melalui musik pop dan balada.",
+      "personalComment": "Afgan termasuk penyanyi Indonesia yang sangat menginspirasi saya. Ia adalah salah satu penyanyi favorit saya, dan gaya bernyanyinya adalah yang paling sering saya tiru.",
+      "levelGuidance": "Lirik dan refrein cocok untuk A2—B1; materi penampilan dan percakapan lebih sesuai B2.",
+      "sampleVideo": {
+        "id": "oO9INJONFzs",
+        "title": "Les vokal buat persiapan konser | Evolution Live in Jakarta Concert 2023"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@afganofficial"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/afgan__/"
+        }
+      ]
+    },
+    {
+      "id": "mahalini",
+      "name": "Mahalini",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/mahalini.jpg",
+      "imageAlt": "Mahalini",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan lagu pop emosional serta penampilan vokal.",
+      "longDescription": "Kanal resmi Mahalini memuat video musik, penampilan, dan materi di balik lagu. Lirik dan cerita lagu memberi konteks untuk kosakata perasaan dalam bahasa Indonesia.",
+      "personalComment": "Mahalini termasuk penyanyi yang lagu-lagunya sering saya dengarkan sejak awal belajar bahasa Indonesia. Saya juga pernah menyanyikan lagunya dan membahas penjelasannya tentang makna lagu tersebut.",
+      "levelGuidance": "Lirik dan refrein dapat dimulai dari A2; makna kiasan serta materi bicara lebih sesuai B1—B2.",
+      "sampleVideo": {
+        "id": "ZcbaoUsnchU",
+        "title": "Dibalik kisah 'Sampai Menutup Mata'"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@mahaliniraharjaofc"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mahaliniraharja/"
+        }
+      ]
+    },
+    {
+      "id": "tulus",
+      "name": "Tulus",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/tulus.jpg",
+      "imageAlt": "Tulus",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan pop bernuansa puitis dan penampilan live.",
+      "longDescription": "Kanal resmi Tulus menghadirkan lagu dan pertunjukan yang mengandalkan lirik, aransemen, dan cerita emosional dalam bahasa Indonesia.",
+      "personalComment": "Tulus adalah salah satu favorit saya; lagu “Hati-hati di jalan” adalah lagu Indonesia pertama yang saya pelajari ketika mulai belajar bahasa Indonesia.",
+      "levelGuidance": "Lirik dan refrein cocok untuk A2—B1; ungkapan puitis dan makna tersirat lebih sesuai B2.",
+      "sampleVideo": {
+        "id": "3j1V8HSuYio",
+        "title": "Gajah"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@musiktulus"
+        }
+      ]
+    },
+    {
+      "id": "gita-wirjawan",
+      "name": "Gita Wirjawan",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Pengetahuan dan gagasan",
+      "cefr": "B1—C1",
+      "image": "images/creators/gita-wirjawan.jpg",
+      "imageAlt": "Gita Wirjawan",
+      "description": "Pembawa acara dan tokoh publik Indonesia yang membahas gagasan, bisnis, pendidikan, dan isu global.",
+      "longDescription": "Melalui Endgame dan percakapan lain, Gita Wirjawan mengembangkan wawancara panjang tentang pendidikan, ekonomi, sains, dan masa depan Indonesia.",
+      "personalComment": "Saya menyukai podcast Pak Gita Wirjawan, Endgame, karena membahas konsep-konsep ilmiah dan banyak hal lainnya. Kontennya menjadi bagian dari materi Indonesia yang saya ikuti.",
+      "levelGuidance": "B1 dengan dukungan konteks; wawancara panjang dan istilah abstrak lebih sesuai B2—C1.",
+      "sampleVideo": {
+        "id": "ikXXHpnSYF8",
+        "title": "Berapa Brand Indonesia Yang Mendunia di 2045?"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/@gwirjawan"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/gwirjawan/"
+        }
+      ]
+    },
+    {
+      "id": "vidi-aldiano",
+      "name": "Vidi Aldiano",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/vidi-aldiano.jpg",
+      "imageAlt": "Vidi Aldiano",
+      "description": "Penyanyi dan pembawa acara Indonesia dengan video musik, kolaborasi, dan percakapan bersama seniman lain.",
+      "longDescription": "Kanal Vidi Aldiano mempertemukan musik pop, proses kreatif, dan percakapan santai. Lagu memberi pijakan melalui lirik, sedangkan materi bincang-bincangnya memperluas kosakata sehari-hari.",
+      "personalComment": null,
+      "levelGuidance": "Lagu dapat diikuti mulai A2; percakapan spontan dan humor lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "He_kHvXrQ_A",
+        "title": "VIDI - Senyumin Dulu Aja (Official Music Video)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCnBgzvne3WyXz_aBgWD9vCg"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/vidialdiano/"
+        }
+      ]
+    },
+    {
+      "id": "isyana-sarasvati",
+      "name": "Isyana Sarasvati",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/isyana-sarasvati.jpg",
+      "imageAlt": "Isyana Sarasvati",
+      "description": "Penyanyi, penulis lagu, dan musisi Indonesia dengan karya pop, klasik, dan pertunjukan teatrikal.",
+      "longDescription": "Kanal Isyana Sarasvati memuat video musik, pertunjukan, dan proyek musikal. Perpaduan lirik, dialog panggung, dan visual teatrikal memberi konteks yang kaya untuk mendengar bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Lagu cocok mulai A2; dialog musikal dan pembahasan proses kreatif lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "pRj-a01YqaY",
+        "title": "Tiba-Tiba Musikal part 1"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCsNmCa9ubwale8yTpHXJSGA"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/isyanasarasvati/"
+        }
+      ]
+    },
+    {
+      "id": "yura-yunita",
+      "name": "Yura Yunita",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/yura-yunita.jpg",
+      "imageAlt": "Yura Yunita",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan lirik reflektif serta penampilan live yang ekspresif.",
+      "longDescription": "Kanal Yura Yunita menghadirkan video musik dan pertunjukan live yang menonjolkan cerita, emosi, dan diksi dalam lirik bahasa Indonesia.",
+      "personalComment": null,
+      "levelGuidance": "Refrein dapat dipakai mulai A2; metafora dan ungkapan emosional lebih cocok untuk B1—B2.",
+      "sampleVideo": {
+        "id": "fupNHnAWg9M",
+        "title": "Yura Yunita, Dewa 19 - Kangen & Risalah Hati (Official Live Performance)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCDlCTYDSxnZFN_JyrkBBC-A"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/yurayunita/"
+        }
+      ]
+    },
+    {
+      "id": "judika",
+      "name": "Judika",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/judika.jpg",
+      "imageAlt": "Judika",
+      "description": "Penyanyi Indonesia dengan balada pop, penampilan vokal, dan lagu-lagu berbahasa Indonesia.",
+      "longDescription": "Kanal Judika Entertainment menampilkan video musik dan penampilan vokal Judika. Lirik yang jelas dan tema emosional memberi bahan dengar yang mudah diulang.",
+      "personalComment": null,
+      "levelGuidance": "Lirik dan refrein cocok mulai A2; ungkapan emosional dan makna kiasan berkembang ke B1—B2.",
+      "sampleVideo": {
+        "id": "V4zt9bGkOTI",
+        "title": "Judika - Ingkar Janji (Official Music Video)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UC_4lll6yMkKDUaINGy93nbQ"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/jud1ka/"
+        }
+      ]
+    },
+    {
+      "id": "marion-jola",
+      "name": "Marion Jola",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/marion-jola.jpg",
+      "imageAlt": "Marion Jola",
+      "description": "Penyanyi Indonesia dengan video musik pop, kolaborasi, dan penampilan panggung.",
+      "longDescription": "Kanal Marion Jola menyajikan lagu pop dan kolaborasi dalam bahasa Indonesia. Struktur lagu dan konteks visual membantu menghubungkan ungkapan dengan emosi serta situasi.",
+      "personalComment": null,
+      "levelGuidance": "Lagu cocok mulai A2; permainan kata dan percakapan di luar lagu lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "Y5q7etvf8_o",
+        "title": "Marion Jola - Jangan (Official Music Video) ft. Rayi Putra"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCsq8mazNxPzmg1NN5pZzm2w"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/lalamarionmj/"
+        }
+      ]
+    },
+    {
+      "id": "feby-putri",
+      "name": "Feby Putri",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/feby-putri.jpg",
+      "imageAlt": "Feby Putri",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan karya akustik, cover, dan lagu bernuansa naratif.",
+      "longDescription": "Kanal Feby Putri memuat lagu orisinal, cover, dan penampilan akustik. Aransemen yang lapang membantu memusatkan perhatian pada bunyi dan pilihan kata dalam lirik.",
+      "personalComment": null,
+      "levelGuidance": "Pengulangan dalam lagu membantu mulai A2; diksi puitis dan makna tersirat lebih cocok untuk B1—B2.",
+      "sampleVideo": {
+        "id": "KSoI_Vq5S3g",
+        "title": "Celengan Rindu - Fiersa Besari (Feby Cover Video)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCysFw-i5aqG2aD5WDj-lmqA"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/fbyputrinc/"
+        }
+      ]
+    },
+    {
+      "id": "raissa-anggiani",
+      "name": "Raissa Anggiani",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/raissa-anggiani.jpg",
+      "imageAlt": "Raissa Anggiani",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan pop akustik dan lirik tentang pengalaman pribadi.",
+      "longDescription": "Kanal Raissa Anggiani menghadirkan lagu dan penampilan yang berpusat pada lirik. Tempo yang tenang memberi ruang untuk menangkap pengucapan dan ungkapan perasaan.",
+      "personalComment": null,
+      "levelGuidance": "Lagu dapat diikuti mulai A2; ungkapan puitis dan nuansa emosional lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "OkybOByrqfg",
+        "title": "Itu Aku"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCG0mboHEIkMcRrgNou2kaTw"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/raissanggiani/"
+        }
+      ]
+    },
+    {
+      "id": "fabio-asher",
+      "name": "Fabio Asher",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/fabio-asher.jpg",
+      "imageAlt": "Fabio Asher",
+      "description": "Penyanyi Indonesia dengan lagu pop dan balada yang menempatkan lirik sebagai pusat cerita.",
+      "longDescription": "Kanal Fabio Asher berisi video musik dan penampilan lagu pop Indonesia. Tema hubungan dan emosi membuat kosakatanya dekat dengan percakapan personal.",
+      "personalComment": null,
+      "levelGuidance": "Refrein cocok mulai A2; ungkapan emosional dan bahasa kiasan lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "rA16U_mR5H8",
+        "title": "Fabio Asher - Mahir Memberi Luka (Official Music Video)"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCNG1v1YvTVKjUJk3VSdZiiA"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/fabioasher/"
+        }
+      ]
+    },
+    {
+      "id": "virgoun",
+      "name": "Virgoun",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/virgoun.jpg",
+      "imageAlt": "Virgoun",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan balada pop dan materi penampilan singkat.",
+      "longDescription": "Kanal Virgoun menghadirkan lagu, cuplikan pertunjukan, dan materi musik dalam bahasa Indonesia. Liriknya memberi jalur untuk mempelajari ungkapan personal dan emosional.",
+      "personalComment": null,
+      "levelGuidance": "Lagu cocok mulai A2; metafora dan materi spontan di luar lagu lebih sesuai untuk B1—B2.",
+      "sampleVideo": {
+        "id": "X48k4ozLnUc",
+        "title": "Energi panggung saat menyanyikan lagu"
+      },
+      "links": [
+        {
+          "label": "Kanal YouTube",
+          "url": "https://www.youtube.com/channel/UCLZDxzPCTxEXgWI5k8QWlvw"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/virgoun_/"
+        }
+      ]
+    },
+    {
+      "id": "anggun",
+      "name": "Anggun",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik Indonesia dan karier internasional",
+      "cefr": "A2—C1",
+      "image": "images/creators/anggun.jpg",
+      "imageAlt": "Potret penyanyi Anggun",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan katalog pop lintas bahasa, pertunjukan panggung, dan wawancara internasional.",
+      "longDescription": "Anggun membangun karier dari musik pop dan rock Indonesia menuju rilisan internasional dalam bahasa Inggris dan Prancis. Materi resminya mempertemukan video musik, penampilan langsung, arsip lagu Indonesia, dan wawancara tentang identitas serta proses kreatif. Peralihan bahasa menjadi bagian nyata dari pengalaman mendengarkan, bukan sekadar hiasan.",
+      "personalComment": null,
+      "levelGuidance": "Lagu Indonesia dapat dipakai mulai A2; wawancara dan peralihan bahasa lebih sesuai untuk B2—C1.",
+      "sampleVideo": { "id": "Q81EPJ-0BHE", "title": "Anggun — Mimpi" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/anggun_cipta/" }]
+    },
+    {
+      "id": "bunga-citra-lestari",
+      "name": "Bunga Citra Lestari",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik, film, dan dokumenter pribadi",
+      "cefr": "B1—C1",
+      "image": "images/creators/bunga-citra-lestari.jpg",
+      "imageAlt": "Potret Bunga Citra Lestari",
+      "description": "Penyanyi dan aktris Indonesia dengan video musik, konser, serta seri dokumenter tentang keluarga dan perjalanan hidup.",
+      "longDescription": "Bunga Citra Lestari, atau BCL, memadukan karier musik dan akting dengan materi dokumenter di kanal resminya. Selain lagu dan penampilan panggung, seri Love Story menghadirkan narasi personal, percakapan keluarga, dan refleksi tentang perubahan hidup. Format ini memberi variasi antara bahasa lirik yang terukur dan bahasa lisan yang lebih intim.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti narasi dengan konteks visual; B2—C1 untuk percakapan emosional, kilas balik, dan ungkapan reflektif.",
+      "sampleVideo": { "id": "1i-s98qxSus", "title": "Love Story #1 — BCL Sebelum & Sesudah Ashraf" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@ITSMEBCL" },
+        { "label": "Instagram", "url": "https://www.instagram.com/itsmebcl/" }
+      ]
+    },
+    {
+      "id": "rossa",
+      "name": "Rossa",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop Indonesia dan wawancara",
+      "cefr": "A2—C1",
+      "image": "images/creators/rossa.jpg",
+      "imageAlt": "Potret penyanyi Rossa",
+      "description": "Penyanyi pop Indonesia dengan konser, video musik, arsip lagu, dan wawancara panjang tentang karier serta keluarga.",
+      "longDescription": "Rossa menghadirkan katalog balada pop, pertunjukan besar, kolaborasi, dan percakapan panjang di berbagai kanal Indonesia. Wawancara tentang industri musik, hubungan keluarga, tekanan, dan perjalanan karier memperlihatkan bahasa yang jauh lebih spontan daripada lirik. Pendengar dapat berpindah dari refrein yang berulang ke dialog emosional tanpa meninggalkan figur yang sama.",
+      "personalComment": null,
+      "levelGuidance": "Lagu cocok mulai A2; percakapan panjang, humor, dan topik emosional menuntut B2—C1.",
+      "sampleVideo": { "id": "4A2aeZrHqzc", "title": "Rossa dan Rizky dalam Curhat Bang" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@RossaOfficial" },
+        { "label": "Instagram", "url": "https://www.instagram.com/itsrossa910/" }
+      ]
+    },
+    {
+      "id": "ariel-noah",
+      "name": "Ariel NOAH",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Musik, penulisan lagu, dan percakapan",
+      "cefr": "B1—C1",
+      "image": "images/creators/ariel-noah.jpg",
+      "imageAlt": "Potret Ariel NOAH",
+      "description": "Vokalis dan penulis lagu Indonesia yang membahas musik, kegagalan, tekanan publik, dan cara memandang hidup dalam wawancara panjang.",
+      "longDescription": "Ariel dikenal melalui karya bersama Peterpan dan NOAH, tetapi nilai dengarnya tidak berhenti pada lagu. Dalam podcast dan wawancara, ia mengurai proses kreatif, perubahan kelompok, kegagalan, tekanan, dan cara mengambil keputusan. Tuturannya tenang dan reflektif, dengan jeda alami serta kosakata abstrak yang cocok untuk latihan mendengar tingkat menengah-atas.",
+      "personalComment": null,
+      "levelGuidance": "B1 menangkap alur cerita; B2—C1 memahami refleksi, sindiran halus, dan jawaban panjang tanpa banyak bantuan visual.",
+      "sampleVideo": { "id": "CojxHgbtM_Y", "title": "Perjalanan Hidup Ariel — Daniel Tetangga Kamu" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/arielnoah/" }]
+    },
+    {
+      "id": "andmesh-kamaleng",
+      "name": "Andmesh Kamaleng",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop dan balada Indonesia",
+      "cefr": "A2—B2",
+      "image": "images/creators/andmesh-kamaleng.jpg",
+      "imageAlt": "Andmesh Kamaleng tampil di panggung",
+      "description": "Penyanyi Indonesia dengan balada pop, video musik resmi, penampilan langsung, dan lirik bertema rindu serta hubungan.",
+      "longDescription": "Andmesh Kamaleng menempatkan kekuatan vokal dan cerita emosional di pusat lagu-lagunya. Video musik resmi dan penampilan langsung memberi konteks visual yang jelas untuk kosakata tentang rindu, kehilangan, dukungan, dan kasih sayang. Pengucapan dalam balada relatif lapang, meski ornamen vokal dapat mengubah panjang bunyi.",
+      "personalComment": null,
+      "levelGuidance": "Refrein dapat diikuti mulai A2; B1—B2 membantu memahami seluruh cerita dan pengucapan yang dihias secara musikal.",
+      "sampleVideo": { "id": "CJC5PY5erzI", "title": "Andmesh — Hanya Rindu" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/andmeshkamaleng_/" }]
+    },
+    {
+      "id": "idgitaf",
+      "name": "Idgitaf",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop alternatif dan penulisan lagu",
+      "cefr": "A2—B2",
+      "image": "images/creators/idgitaf.jpg",
+      "imageAlt": "Potret penyanyi Idgitaf",
+      "description": "Penyanyi dan penulis lagu Indonesia dengan pop alternatif, video lirik, pertunjukan, dan cerita personal yang kuat.",
+      "longDescription": "Idgitaf menulis lagu dengan sudut pandang personal, pilihan kata percakapan, dan metafora yang dekat dengan pengalaman tumbuh dewasa. Kanal resminya memuat video lirik, video musik, dan penampilan yang menempatkan teks sebagai pusat. Tempo serta artikulasi membantu pembelajar, sementara makna tersirat memberi tantangan lanjutan.",
+      "personalComment": null,
+      "levelGuidance": "A2 menggunakan teks dan refrein; B1—B2 menafsirkan metafora, perubahan sudut pandang, dan emosi yang tidak dinyatakan langsung.",
+      "sampleVideo": { "id": "U-2ktrigB2Q", "title": "Idgitaf — Dermaga" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@Idgitaf" },
+        { "label": "Instagram", "url": "https://www.instagram.com/idgitaf/" }
+      ]
+    },
+    {
+      "id": "nabila-taqiyyah",
+      "name": "Nabila Taqiyyah",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop Indonesia generasi baru",
+      "cefr": "A2—B2",
+      "image": "images/creators/nabila-taqiyyah.jpg",
+      "imageAlt": "Potret penyanyi Nabila Taqiyyah",
+      "description": "Penyanyi muda Indonesia dengan video musik, penampilan panggung, dan materi di balik proses peluncuran lagu.",
+      "longDescription": "Nabila Taqiyyah mengembangkan karya pop melalui video musik resmi, penampilan langsung, dan potongan interaksi dengan pendengar. Lagu-lagunya mengangkat cinta, harapan, dan keraguan dalam struktur yang mudah diikuti. Materi promosi serta panggung memperkenalkan bahasa lisan yang lebih cepat daripada liriknya.",
+      "personalComment": null,
+      "levelGuidance": "Lagu cocok mulai A2; B1—B2 untuk metafora, ucapan panggung, dan percakapan promosi.",
+      "sampleVideo": { "id": "YGEkWh-Gu4o", "title": "Nabila Taqiyyah — Aku Cinta Kamu" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@NabilaTaqiyyah" },
+        { "label": "Instagram", "url": "https://www.instagram.com/nabilataqiyyah/" }
+      ]
+    },
+    {
+      "id": "nyoman-paul",
+      "name": "Nyoman Paul",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop, panggung, dan identitas lintas budaya",
+      "cefr": "A2—B2",
+      "image": "images/creators/nyoman-paul.jpg",
+      "imageAlt": "Nyoman Paul bernyanyi sambil bermain gitar",
+      "description": "Penyanyi Indonesia dengan rilisan pop, kolaborasi, penampilan langsung, dan latar budaya Indonesia–Swedia.",
+      "longDescription": "Nyoman Paul tampil melalui lagu pop, kolaborasi, dan pertunjukan yang mempertemukan pengalaman Indonesia dengan latar keluarga Indonesia–Swedia. Materi musiknya memberi jalan masuk melalui lirik dan melodi, sedangkan wawancara serta konten panggung memperlihatkan bahasa Indonesia sehari-hari dan pembicaraan tentang identitas.",
+      "personalComment": null,
+      "levelGuidance": "Refrein dapat dipakai mulai A2; B1—B2 untuk percakapan panggung, identitas, dan peralihan bahasa sesekali.",
+      "sampleVideo": { "id": "BqFEtDsTUrQ", "title": "Nyoman Paul dan Andi Rianto — The Way You Look At Me" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@PaulAroOfficial" },
+        { "label": "Instagram", "url": "https://www.instagram.com/manpaularo/" }
+      ]
+    },
+    {
+      "id": "boy-william",
+      "name": "Boy William",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Pembawa acara dan wawancara",
+      "cefr": "B1—C1",
+      "image": "images/creators/boy-william.jpg",
+      "imageAlt": "Boy William bersama para tamu dalam acara Drink With Boy",
+      "description": "Pembawa acara Indonesia dengan format wawancara santai, permainan, kunjungan rumah, dan percakapan lintas budaya.",
+      "longDescription": "Boy William membangun acara seperti Nebeng Boy dan Drink With Boy di sekitar percakapan informal dengan musisi, aktor, serta tamu internasional. Suasana rumah, mobil, permainan, dan makanan membuat topik mudah dikenali. Bahasa Indonesia bercampur slang, bahasa Inggris, tawa, serta suara yang saling menimpa.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti konteks dan pertanyaan utama; B2—C1 untuk slang, alih kode, humor, dan banyak penutur.",
+      "sampleVideo": { "id": "k5xWO0dwevc", "title": "SB19 Main ke Rumah Boy — Drink With Boy" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@bw.2417" },
+        { "label": "Instagram", "url": "https://www.instagram.com/boywilliam17/" }
+      ]
+    },
+    {
+      "id": "najwa-shihab",
+      "name": "Najwa Shihab",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Jurnalisme dan isu publik",
+      "cefr": "B2—C2",
+      "image": "images/creators/najwa-shihab.jpg",
+      "imageAlt": "Potret jurnalis Najwa Shihab",
+      "description": "Jurnalis dan pewawancara Indonesia dengan Mata Najwa, dialog kebijakan, laporan publik, dan percakapan budaya.",
+      "longDescription": "Najwa Shihab memimpin wawancara yang menuntut jawaban rinci dari pejabat, aktivis, akademisi, dan seniman. Mata Najwa serta program kanalnya membahas kebijakan, pendidikan, hukum, budaya, dan kehidupan publik dengan pertanyaan lanjutan yang tajam. Struktur acara jelas, tetapi kosakata institusional dan argumen panjang membuatnya materi tingkat lanjut.",
+      "personalComment": null,
+      "levelGuidance": "B2 mengikuti posisi utama dan bukti; C1—C2 diperlukan untuk istilah kebijakan, sanggahan, ironi, dan jawaban yang padat.",
+      "sampleVideo": { "id": "9ibLmF4EQ6E", "title": "Presiden Prabowo Menjawab — Mata Najwa" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@NajwaShihab" },
+        { "label": "Instagram", "url": "https://www.instagram.com/najwashihab/" }
+      ]
+    },
+    {
+      "id": "maudy-ayunda",
+      "name": "Maudy Ayunda",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris, musisi, dan percakapan pendidikan",
+      "cefr": "B1—C1",
+      "image": "images/creators/maudy-ayunda.jpg",
+      "imageAlt": "Potret Maudy Ayunda",
+      "description": "Aktris, penyanyi, dan kreator Indonesia yang membahas karya, pendidikan, hubungan, kebiasaan berpikir, dan kehidupan lintas budaya.",
+      "longDescription": "Maudy Ayunda berpindah antara film, musik, wawancara, dan format percakapan di MOD Media. Topiknya mencakup proses kreatif, pendidikan, hubungan, pengambilan keputusan, serta pengalaman hidup di lingkungan internasional. Tuturannya terstruktur, tetapi sering beralih antara bahasa Indonesia dan Inggris serta menggunakan kosakata konseptual.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti cerita personal; B2—C1 untuk alih kode, gagasan abstrak, dan percakapan panjang tanpa naskah.",
+      "sampleVideo": { "id": "uwP3TOGxbrE", "title": "Buka Kartu bersama Najwa Shihab dan Maudy Ayunda" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@modmedia" },
+        { "label": "Instagram", "url": "https://www.instagram.com/maudyayunda/" }
+      ]
+    },
+    {
+      "id": "dian-sastrowardoyo",
+      "name": "Dian Sastrowardoyo",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris dan perfilman Indonesia",
+      "cefr": "B1—C1",
+      "image": "images/creators/dian-sastrowardoyo.jpg",
+      "imageAlt": "Potret aktris Dian Sastrowardoyo",
+      "description": "Aktris dan produser Indonesia dalam wawancara tentang karakter, film, pendidikan, keluarga, dan perubahan industri kreatif.",
+      "longDescription": "Dian Sastrowardoyo berbicara dalam podcast, wawancara film, dan forum publik tentang proses akting, pilihan peran, produksi, pendidikan, serta kehidupan keluarga. Jawabannya sering berkembang menjadi cerita panjang dengan humor dan refleksi. Materi ini memperkenalkan kosakata perfilman sekaligus bahasa percakapan Jakarta yang alami.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti kisah utama; B2—C1 untuk humor, referensi budaya, dan penjelasan panjang tentang proses kreatif.",
+      "sampleVideo": { "id": "YDc5_Jx0CnM", "title": "Babak Baru Dian Sastrowardoyo" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/therealdisastr/" }]
+    },
+    {
+      "id": "vino-g-bastian",
+      "name": "Vino G. Bastian",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktor dan cerita di balik peran",
+      "cefr": "B2—C1",
+      "image": "images/creators/vino-g-bastian.jpg",
+      "imageAlt": "Potret aktor Vino G. Bastian",
+      "description": "Aktor Indonesia dalam percakapan panjang tentang pendalaman karakter, keluarga, lokasi syuting, dan perjalanan karier.",
+      "longDescription": "Vino G. Bastian muncul dalam podcast dan wawancara promosi yang membedah cara menyiapkan peran, menghadapi materi sensitif, serta menjaga hubungan antara pekerjaan dan keluarga. Cerita-ceritanya memakai bahasa informal, tiruan dialog, dan banyak perubahan tempo. Format panjang memberi konteks, tetapi tidak menyederhanakan tuturan.",
+      "personalComment": null,
+      "levelGuidance": "B2 disarankan untuk mengikuti cerita dan slang; C1 membantu saat humor, kutipan karakter, dan penutur lain saling menyela.",
+      "sampleVideo": { "id": "YKNUmr_LiNk", "title": "Vino G. Bastian di PWK" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/vinogbastian__/" }]
+    },
+    {
+      "id": "jefri-nichol",
+      "name": "Jefri Nichol",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktor dan percakapan budaya pop",
+      "cefr": "B1—C1",
+      "image": "images/creators/jefri-nichol.jpg",
+      "imageAlt": "Potret aktor Jefri Nichol",
+      "description": "Aktor Indonesia dalam wawancara santai tentang film, hubungan, kebugaran, sorotan publik, dan kehidupan sehari-hari.",
+      "longDescription": "Jefri Nichol hadir di podcast komedi, program wawancara, dan materi film dengan gaya bicara yang santai serta langsung. Percakapan dapat berpindah dari pengalaman syuting ke hubungan, kebugaran, dan respons terhadap perhatian publik. Pertanyaan pembawa acara membantu, tetapi slang dan candaan memerlukan pemahaman konteks sosial.",
+      "personalComment": null,
+      "levelGuidance": "B1 menangkap topik dan cerita pendek; B2—C1 untuk slang, implikatur, dan humor antarteman.",
+      "sampleVideo": { "id": "zibrm6l2uKM", "title": "Gaya Pacaran Jefri Nichol bersama Raditya Dika" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/jefrinichol/" }]
+    },
+    {
+      "id": "amanda-rawles",
+      "name": "Amanda Rawles",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris dan percakapan film",
+      "cefr": "B1—C1",
+      "image": "images/creators/amanda-rawles.jpg",
+      "imageAlt": "Potret aktris Amanda Rawles",
+      "description": "Aktris Indonesia dalam percakapan tentang perjalanan karier, keluarga, persiapan peran, dan pesan sosial di balik film.",
+      "longDescription": "Amanda Rawles mengikuti format wawancara film dan podcast yang memberi ruang untuk membahas perjalanan karier, hubungan dengan keluarga, pemilihan proyek, dan cara memahami karakter. Percakapan umumnya tenang dan terarah, tetapi dapat beralih antara bahasa Indonesia dan Inggris ketika membahas pendidikan atau pengalaman internasional.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti pertanyaan dan cerita utama; B2—C1 untuk alih kode, istilah film, dan refleksi pribadi yang panjang.",
+      "sampleVideo": { "id": "xJtOADpOnj4", "title": "Amanda Rawles: perjalanan karier dan pesan film" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/amandarawles/" }]
+    },
+    {
+      "id": "anya-geraldine",
+      "name": "Anya Geraldine",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris dan kreator digital",
+      "cefr": "B1—C1",
+      "image": "images/creators/anya-geraldine.jpg",
+      "imageAlt": "Potret Anya Geraldine",
+      "description": "Aktris dan kreator Indonesia dalam bincang-bincang tentang pekerjaan, hubungan, citra publik, dan budaya media sosial.",
+      "longDescription": "Anya Geraldine tampil dalam podcast, wawancara promosi, dan percakapan budaya pop yang membahas pekerjaan akting, hubungan, media sosial, serta batas antara kehidupan pribadi dan citra publik. Suasananya sangat informal, dengan tawa, slang, dan respons spontan yang mencerminkan bahasa percakapan urban.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti topik familiar; B2—C1 diperlukan untuk slang, sindiran, dan percakapan cepat dengan lebih dari satu pembicara.",
+      "sampleVideo": { "id": "qO6yKJWkfBM", "title": "Anya Geraldine dan Luna Maya di TS Talks" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/anyageraldine/" }]
+    },
+    {
+      "id": "adhisty-zara",
+      "name": "Adhisty Zara",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris dan pemain film generasi muda",
+      "cefr": "B1—C1",
+      "image": "images/creators/adhisty-zara.jpg",
+      "imageAlt": "Potret aktris Adhisty Zara",
+      "description": "Aktris Indonesia dalam wawancara pemeran, podcast hiburan, dan percakapan tentang karakter, keluarga, serta proses syuting.",
+      "longDescription": "Adhisty Zara hadir dalam Movie Talks, program hiburan, dan wawancara bersama pemain lain. Ia membahas hubungan antarkarakter, suasana lokasi syuting, pengalaman tumbuh di depan publik, dan kerja bersama ansambel. Format kelompok memberi konteks film yang jelas, namun juga membawa tawa dan suara yang tumpang tindih.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti pertanyaan tentang film; B2—C1 untuk percakapan kelompok, slang, dan komentar yang saling menyambung.",
+      "sampleVideo": { "id": "awf5V5Gbu4k", "title": "Adhisty Zara, Devano, dan Messi Gusti — Movie Talks" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/zaraadhsty/" }]
+    },
+    {
+      "id": "denny-sumargo",
+      "name": "Denny Sumargo",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Podcast, olahraga, dan cerita personal",
+      "cefr": "B2—C1",
+      "image": "images/creators/denny-sumargo.jpg",
+      "imageAlt": "Potret Denny Sumargo",
+      "description": "Pembawa podcast dan mantan atlet basket Indonesia dengan percakapan panjang, pengakuan personal, humor, dan tamu lintas bidang.",
+      "longDescription": "Denny Sumargo memimpin Curhat Bang, sebuah ruang percakapan panjang dengan musisi, aktor, atlet, dan figur publik. Ia menggali pengalaman keluarga, konflik, karier, kesehatan, serta keyakinan dengan gaya langsung dan kadang konfrontatif. Bahasa sangat spontan, penuh slang, perubahan emosi, dan suara yang saling menyela.",
+      "personalComment": null,
+      "levelGuidance": "B2 diperlukan untuk mengikuti episode; C1 membantu memahami slang, perubahan nada, humor, dan cerita sensitif yang panjang.",
+      "sampleVideo": { "id": "-0jXvYniQYk", "title": "Percakapan di Curhat Bang Denny Sumargo" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@curhatbang" },
+        { "label": "Instagram", "url": "https://www.instagram.com/sumargodenny/" }
+      ]
+    },
+    {
+      "id": "fiki-naki",
+      "name": "Fiki Naki",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Bahasa dan percakapan lintas budaya",
+      "cefr": "B1—C1",
+      "image": "images/creators/fiki-naki.jpg",
+      "imageAlt": "Potret kreator Fiki Naki",
+      "description": "Kreator multilingual Indonesia dengan percakapan OmeTV, kejutan bahasa, perkenalan budaya, dan komentar dalam bahasa Indonesia.",
+      "longDescription": "Fiki Naki berbicara dengan orang dari berbagai negara melalui OmeTV dan beralih di antara bahasa Indonesia, Inggris, Rusia, Spanyol, serta bahasa lain. Narasi, pengantar, dan reaksinya tetap memberi pijakan bahasa Indonesia, sementara percakapan menunjukkan bagaimana pilihan bahasa mengubah kedekatan dan humor. Pergantian kode berlangsung cepat dan tidak dibuat sebagai pelajaran formal.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti pengantar dan reaksi; B2—C1 untuk alih kode cepat, candaan, serta percakapan dengan kualitas audio yang berubah-ubah.",
+      "sampleVideo": { "id": "F3AbCSD7gTs", "title": "Prank minta diajarin bahasa mereka — OmeTV Internasional" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@fikinakiii" },
+        { "label": "Instagram", "url": "https://www.instagram.com/fikinakii/" }
+      ]
+    },
+    {
+      "id": "indonesian-idol",
+      "name": "Indonesian Idol",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Kompetisi musik dan televisi",
+      "cefr": "A2—C1",
+      "image": "images/creators/indonesian-idol.jpg",
+      "imageAlt": "Logo Indonesian Idol",
+      "description": "Kanal resmi kompetisi musik dengan penampilan, komentar juri, profil kontestan, latihan, dan momen di belakang panggung.",
+      "longDescription": "Indonesian Idol menggabungkan lagu, pengantar pembawa acara, komentar juri, kisah kontestan, dan reaksi langsung. Penampilan memberi akses awal melalui lirik, sedangkan evaluasi juri memperkenalkan istilah vokal, panggung, emosi, dan kompetisi. Episode serta cuplikan terbaru juga memperlihatkan variasi aksen dari peserta berbagai daerah.",
+      "personalComment": null,
+      "levelGuidance": "Lagu dapat digunakan mulai A2; komentar juri cocok B1—B2; percakapan cepat dan humor studio dapat mencapai C1.",
+      "sampleVideo": { "id": "VzyYc_lvWv4", "title": "Meidra — Jikalau Kau Cinta | Spekta 6 Indonesian Idol 2026" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@indonesianidol" },
+        { "label": "Instagram", "url": "https://www.instagram.com/indonesianidolid/" }
+      ]
+    },
+    {
+      "id": "jakarta-movin",
+      "name": "Jakarta Movin",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Teater musikal Indonesia",
+      "cefr": "B1—C1",
+      "image": "images/creators/jakarta-movin.jpg",
+      "imageAlt": "Logo Jakarta Movin",
+      "description": "Komunitas teater musikal Indonesia dengan latihan, produksi panggung, lagu ansambel, dan pembahasan proses kreatif.",
+      "longDescription": "Jakarta Movin mengembangkan teater musikal melalui produksi, pelatihan, lagu ansambel, dan kerja kolaboratif di balik panggung. Wawancara dengan timnya membahas penulisan, koreografi, vokal, audisi, dan tantangan membangun ekosistem musikal Indonesia. Materi pertunjukan memberi konteks visual, sedangkan diskusi proses memakai istilah seni yang cukup padat.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti demonstrasi dan cuplikan latihan; B2—C1 untuk istilah produksi, penjelasan kreatif, dan percakapan tim.",
+      "sampleVideo": { "id": "BWJIrXyf0Uc", "title": "Jakarta Movin: Kekuatan Kreatif di Balik Teater Musikal Indonesia" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/jakartamovin/" }]
+    },
+    {
+      "id": "uss-feed",
+      "name": "USS Feed",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Media budaya pop dan gaya hidup",
+      "cefr": "B1—C1",
+      "image": "images/creators/uss-feed.jpg",
+      "imageAlt": "Logo USS Feed",
+      "description": "Media anak muda Indonesia tentang musik, mode, olahraga, selebritas, acara, dan momen budaya pop dalam format singkat.",
+      "longDescription": "USS Feed menerbitkan wawancara pendek, liputan acara, cuplikan gaya hidup, dan komentar budaya pop. Topiknya bergerak cepat dari musik dan mode ke olahraga serta figur internasional yang berkunjung ke Indonesia. Format visual membantu mengenali situasi, tetapi judul, slang, dan potongan dialog mengandalkan pengetahuan tren terkini.",
+      "personalComment": null,
+      "levelGuidance": "B1 menangkap informasi utama lewat visual; B2—C1 untuk slang, nama tren, dan potongan wawancara yang sangat cepat.",
+      "sampleVideo": { "id": "aInWPa4UjAI", "title": "OOTD Mesut Özil di Indonesia" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@ussfeed" },
+        { "label": "Instagram", "url": "https://www.instagram.com/ussfeeds/" }
+      ]
+    },
+    {
+      "id": "mawar-de-jongh",
+      "name": "Mawar de Jongh",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris, penyanyi, dan perfilman",
+      "cefr": "B1—C1",
+      "image": "images/creators/mawar-de-jongh.jpg",
+      "imageAlt": "Potret aktris dan penyanyi Mawar de Jongh",
+      "description": "Aktris dan penyanyi Indonesia dalam wawancara tentang pendalaman karakter, proses syuting, penulisan lagu, dan rekaman soundtrack.",
+      "longDescription": "Mawar de Jongh bergerak antara film layar lebar dan musik pop. Dalam wawancara film ia membahas cara memahami emosi karakter, membangun hubungan dengan lawan main, dan menerjemahkan cerita keluarga ke dalam adegan. Percakapan musiknya menambah kosakata tentang lirik, warna vokal, rekaman, dan lagu tema. Tuturannya umumnya tenang, tetapi jawaban panjang dan istilah produksi membutuhkan perhatian lebih.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti pertanyaan dan cerita utama; B2—C1 untuk istilah film, uraian emosi, dan percakapan spontan yang beralih topik.",
+      "sampleVideo": { "id": "C9qda19xqu4", "title": "Mawar de Jongh membahas peran yang diangkat dari kisah nyata" },
+      "links": [
+        { "label": "Instagram", "url": "https://www.instagram.com/mawar_eva/" },
+        { "label": "Profil artis", "url": "https://www.trinityproduction.com/id/artist/mawar-de-jongh" }
+      ]
+    },
+    {
+      "id": "antonio-blanco-jr",
+      "name": "Antonio Blanco Jr.",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktor dan percakapan film",
+      "cefr": "B1—C1",
+      "image": "images/creators/antonio-blanco-jr.jpg",
+      "imageAlt": "Potret aktor Antonio Blanco Jr.",
+      "description": "Aktor Indonesia dalam wawancara pemeran tentang karakter, chemistry, komedi, romansa, dan kehidupan di lokasi syuting.",
+      "longDescription": "Antonio Blanco Jr. muncul dalam wawancara televisi, podcast, dan percakapan promosi serial. Ia membahas persiapan peran, hubungan antarpemain, pengalaman mencoba genre baru, serta sisi pekerjaan yang tidak terlihat di layar. Format studio memberi konteks yang jelas, tetapi pembawa acara dan tamu sering memakai slang, bercanda, dan saling menyela.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti pertanyaan langsung dan cerita singkat; B2—C1 untuk slang, candaan, dan percakapan beberapa pembicara.",
+      "sampleVideo": { "id": "ZKb2LKbsyh0", "title": "Antonio Blanco Jr. di FYP TRANS7" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/antonioblancojr/" }]
+    },
+    {
+      "id": "caitlin-halderman",
+      "name": "Caitlin Halderman",
+      "country": "Indonesia",
+      "categoryId": "hiburan",
+      "category": "Aktris, musik, dan wawancara",
+      "cefr": "B1—C1",
+      "image": "images/creators/caitlin-halderman.jpg",
+      "imageAlt": "Potret aktris Caitlin Halderman",
+      "description": "Aktris, penyanyi, dan presenter Indonesia dalam wawancara santai tentang film, masa sekolah, pekerjaan, dan budaya pop.",
+      "longDescription": "Caitlin Halderman hadir dalam wawancara hiburan, permainan studio, dan percakapan promosi film. Topiknya bergerak dari pengalaman pertama, kebiasaan masa sekolah, dan proses akting ke musik serta kerja di depan kamera. Gaya bicaranya informal dan ekspresif; visual serta pertanyaan pembawa acara membantu, sementara slang dan ledakan tawa menambah tantangan menyimak.",
+      "personalComment": null,
+      "levelGuidance": "B1 menangkap tema dan jawaban pendek; B2—C1 untuk slang urban, kecepatan bicara, dan humor yang bergantung pada konteks.",
+      "sampleVideo": { "id": "zIcAjHT4V8s", "title": "Caitlin Halderman berbagi cerita di Tema Indonesia" },
+      "links": [{ "label": "Instagram", "url": "https://www.instagram.com/caitlinhalderman/" }]
+    },
+    {
+      "id": "rafi-sudirman",
+      "name": "Rafi Sudirman",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop, saksofon, dan penulisan lagu",
+      "cefr": "A2—B2",
+      "image": "images/creators/rafi-sudirman.jpg",
+      "imageAlt": "Potret musisi Rafi Sudirman",
+      "description": "Penyanyi-penulis lagu, produser, dan pemain saksofon Indonesia dengan video musik, sesi langsung, serta lagu pop berbahasa Indonesia dan Inggris.",
+      "longDescription": "Rafi Sudirman menerbitkan video musik, sesi panggung, dan materi di balik lagu yang memperlihatkan pekerjaannya sebagai penyanyi, penulis, produser, dan multi-instrumentalis. Katalognya bergerak dari pop dan R&B berbahasa Inggris ke lagu Indonesia seperti Pengagum, Senyam-Senyum, dan Senin Sampai Jumat. Lirik menyediakan pengulangan yang ramah bagi pelajar, sedangkan wawancara memperkenalkan kosakata aransemen, emosi, dan proses penciptaan.",
+      "personalComment": null,
+      "levelGuidance": "Lirik dan video musik dapat diikuti mulai A2; B1—B2 untuk metafora, wawancara, dan penjelasan proses kreatif.",
+      "sampleVideo": { "id": "S4pqhnyfn8c", "title": "Rafi Sudirman — Senin Sampai Jumat" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@rafisudirman" },
+        { "label": "Instagram", "url": "https://www.instagram.com/rafisudirman/" }
+      ]
+    },
+    {
+      "id": "arsy-widianto",
+      "name": "Arsy Widianto",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop, komposisi, dan kolaborasi",
+      "cefr": "A2—B2",
+      "image": "images/creators/arsy-widianto.jpg",
+      "imageAlt": "Potret penyanyi dan penulis lagu Arsy Widianto",
+      "description": "Penyanyi dan penulis lagu pop Indonesia dengan video musik, video lirik, balada romantis, dan rangkaian kolaborasi vokal.",
+      "longDescription": "Kanal artis resmi Arsy Widianto berisi video musik dan video lirik untuk lagu solo maupun kolaborasi, termasuk rangkaian cerita musikal bersama Brisia Jodie dan Tiara Andini. Lagu-lagunya banyak memakai dialog batin, ungkapan hubungan, dan kosakata emosi sehari-hari. Diksi dalam nyanyian relatif jelas, tetapi metafora serta struktur puitis tetap memerlukan pembacaan lirik.",
+      "personalComment": null,
+      "levelGuidance": "A2 dapat mengikuti penggalan lirik berulang; B1—B2 untuk metafora cinta, bentuk puitis, dan percakapan di balik produksi.",
+      "sampleVideo": { "id": "TnpqPJpQIuY", "title": "Arsy Widianto dan WIJAYA80 — Ini Adalah Cinta" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@arsy_widianto" },
+        { "label": "Instagram", "url": "https://www.instagram.com/arsywidianto/" }
+      ]
+    },
+    {
+      "id": "stevan-pasaribu",
+      "name": "Stevan Pasaribu",
+      "country": "Indonesia",
+      "categoryId": "musik",
+      "category": "Pop, balada, dan sesi akustik",
+      "cefr": "A2—B2",
+      "image": "images/creators/stevan-pasaribu.jpg",
+      "imageAlt": "Potret penyanyi Stevan Pasaribu",
+      "description": "Penyanyi pop Indonesia dengan balada emosional, duet, video musik, dan aransemen langsung akustik.",
+      "longDescription": "Kanal artis resmi Stevan Pasaribu mengumpulkan video musik, duet, penampilan langsung, serta versi akustik dari lagu-lagu pop tentang kehilangan, harapan, dan hubungan. Format Acoustic Live menempatkan vokal di depan sehingga frasa lebih mudah dipisahkan daripada dalam percakapan cepat. Wawancara dan materi belakang layar menambah kosakata tentang karakter suara, kolaborasi, serta perjalanan membuat album.",
+      "personalComment": null,
+      "levelGuidance": "A2 mengikuti bagian refrain; B1—B2 untuk lirik emosional, ungkapan kiasan, dan percakapan musik di balik lagu.",
+      "sampleVideo": { "id": "-oRQcJgTTz8", "title": "Belum Siap Kehilangan — Acoustic Live Version" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@StevanPasaribuMusicaOfficial" },
+        { "label": "Instagram", "url": "https://www.instagram.com/stevan_pasaribu/" }
+      ]
+    },
+    {
+      "id": "raymond-chin",
+      "name": "Raymond Chin",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Bisnis, ekonomi, dan kebijakan",
+      "cefr": "B2—C2",
+      "image": "images/creators/raymond-chin.jpg",
+      "imageAlt": "Raymond Chin menjelaskan topik ekonomi dalam sebuah video",
+      "description": "Kreator dan pengusaha Indonesia dengan esai video tentang bisnis, keuangan, pertumbuhan perusahaan, ekonomi, dan arah kebijakan.",
+      "longDescription": "Raymond Chin membuat penjelasan panjang yang menghubungkan berita ekonomi dengan strategi bisnis, perilaku konsumen, investasi, pembangunan perusahaan, dan keputusan pemerintah. Ia sering memulai dari pertanyaan besar lalu memecahnya menjadi klaim, data, contoh, serta konsekuensi. Struktur visual membantu navigasi, tetapi istilah finansial, angka, dan tempo argumentasi menuntut kemampuan menyimak tingkat lanjut.",
+      "personalComment": null,
+      "levelGuidance": "B2 mengikuti tesis dan contoh utama; C1—C2 untuk istilah ekonomi, nuansa kebijakan, angka, dan evaluasi argumen.",
+      "sampleVideo": { "id": "5GSuXmx6cfs", "title": "Prabowo mau membawa Indonesia ke mana?" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@RaymondChins" },
+        { "label": "Situs resmi", "url": "https://raymondchins.com/" }
+      ]
+    },
+    {
+      "id": "jerhemy-owen",
+      "name": "Jerhemy Owen",
+      "country": "Indonesia",
+      "categoryId": "edukasi",
+      "category": "Lingkungan dan aksi lapangan",
+      "cefr": "B1—C1",
+      "image": "images/creators/jerhemy-owen.jpg",
+      "imageAlt": "Jerhemy Owen dalam video kegiatan penanaman pohon",
+      "description": "Kreator Indonesia dengan dokumentasi lapangan tentang sampah, daur ulang, energi, penanaman pohon, mangrove, dan proyek sosial.",
+      "longDescription": "Jerhemy Owen membawa kamera ke lokasi pengolahan sampah, kawasan mangrove, kegiatan penanaman pohon, dan proyek komunitas. Videonya menggabungkan tantangan, demonstrasi, wawancara singkat, angka dampak, serta penjelasan tentang solusi lingkungan. Aksi visual memberi konteks kuat; kebisingan lokasi, perubahan penutur, dan kosakata teknis membuat beberapa bagian lebih menantang.",
+      "personalComment": null,
+      "levelGuidance": "B1 mengikuti urutan kegiatan dan hasil utama; B2—C1 untuk istilah lingkungan, angka, wawancara lapangan, dan penjelasan sebab-akibat.",
+      "sampleVideo": { "id": "dQ__BrVGrZI", "title": "Menanam 10.000 pohon untuk Indonesia" },
+      "links": [{ "label": "Kanal YouTube", "url": "https://www.youtube.com/@JerhemyOwen" }]
+    },
+    {
+      "id": "cretivox",
+      "name": "Cretivox",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Media anak muda dan percakapan publik",
+      "cefr": "B1—C1",
+      "image": "images/creators/cretivox.jpg",
+      "imageAlt": "Peserta program Teman Asing dari Cretivox",
+      "description": "Media digital anak muda dengan vox pop, permainan identitas, Teman Asing, wawancara, dan obrolan tentang budaya sehari-hari.",
+      "longDescription": "Cretivox memakai vox pop sebagai salah satu format utamanya: banyak orang menjawab pertanyaan singkat tentang satu topik, kebiasaan, atau pengalaman. Program lain seperti Ternyata Begini, Coba Tebak, dan Teman Asing mempertemukan peserta melalui permainan, perbedaan budaya, makanan, dan percakapan spontan. Pergantian pembicara sangat cepat, sehingga materi ini bagus untuk membandingkan ragam suara Indonesia tetapi cukup berat tanpa konteks visual.",
+      "personalComment": null,
+      "levelGuidance": "B1 menangkap pertanyaan dan respons pendek; B2—C1 untuk slang, banyak penutur, pemotongan cepat, serta humor lintas budaya.",
+      "sampleVideo": { "id": "om-w2bP9AbY", "title": "Orang Rusia mencoba usus ayam — Teman Asing" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@Cretivox" },
+        { "label": "Situs resmi", "url": "https://cretivox.com/platform" }
+      ]
+    },
+    {
+      "id": "medy-renaldy",
+      "name": "Medy Renaldy",
+      "country": "Indonesia",
+      "categoryId": "budaya",
+      "category": "Mainan, koleksi, dan nostalgia pop",
+      "cefr": "A2—B2",
+      "image": "images/creators/medy-renaldy.jpg",
+      "imageAlt": "Medy Renaldy memperlihatkan jajanan nostalgia dalam sebuah video",
+      "description": "Kreator Indonesia dengan unboxing dan ulasan mainan, action figure, barang koleksi, blind box, serta perjalanan nostalgia budaya pop.",
+      "longDescription": "Medy Renaldy membongkar, mencoba, dan membandingkan mainan mulai dari action figure serta robot transformasi sampai blind box dan koleksi karakter. Ia juga membuat video nostalgia tentang jajanan, kartun, dan benda populer dari masa sekolah. Demonstrasi konkret membuat banyak kata benda mudah dipahami, sementara reaksi spontan, istilah kolektor, harga, dan komentar teknis memperluas kosakata sehari-hari.",
+      "personalComment": null,
+      "levelGuidance": "A2 mengikuti nama benda dan tindakan melalui visual; B1—B2 untuk detail ulasan, istilah koleksi, nostalgia, dan komentar spontan.",
+      "sampleVideo": { "id": "FgsrOtaiM3o", "title": "Mencoba jajanan warung dari tahun 1990-an" },
+      "links": [
+        { "label": "Kanal YouTube", "url": "https://www.youtube.com/@MedyRenaldy" },
+        { "label": "Instagram", "url": "https://www.instagram.com/medyrenaldy/" }
+      ]
+    }
+  ]
+}

@@ -187,6 +187,26 @@ function initializeLibraryManager() {
             renderBooks(false); 
         }
     });
+
+    const route = new URLSearchParams(window.location.search);
+    const routedLanguage = route.get('language');
+    const routedBookId = route.get('book');
+    const routedBook = routedBookId && Array.isArray(window.publicDomainBooks)
+        ? window.publicDomainBooks.find((book) => book.id === routedBookId)
+        : null;
+    const languageOptionExists = routedLanguage
+        && Array.from(languageFilterSelect.options).some((option) => option.value === routedLanguage);
+
+    if (languageOptionExists) {
+        languageFilterSelect.value = routedLanguage;
+        languageFilterSelect.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    if (routedBook && (!routedLanguage || routedBook.language === routedLanguage)) {
+        window.requestAnimationFrame(() => {
+            if (typeof openBookModal === 'function') openBookModal(routedBook.id);
+        });
+    }
 }
 
 // --- Function to Update the Main Message Area (Welcome or Language Hook) ---

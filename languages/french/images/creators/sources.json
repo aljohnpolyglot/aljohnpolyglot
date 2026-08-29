@@ -1,0 +1,31 @@
+{
+  "note": "Creator portraits are locally hosted derivatives of current public profile images. The retrieval used Aljohn's private local following export only as evidence; no signed CDN URL or private export field is retained here.",
+  "assets": {
+    "angele.webp": "https://www.instagram.com/angele_vl/",
+    "soprano.webp": "https://www.instagram.com/sopranopsy4/",
+    "vitaa.webp": "https://www.instagram.com/vitaa/",
+    "slimane.webp": "https://www.instagram.com/slimane/",
+    "inoxtag.webp": "https://www.instagram.com/inoxtag/",
+    "kylian-mbappe.webp": "https://www.instagram.com/k.mbappe/",
+    "olivier-giroud.webp": "https://www.instagram.com/oliviergiroud/",
+    "ousmane-dembele.webp": "https://www.instagram.com/o.dembele7/",
+    "matt-pokora.webp": "https://www.instagram.com/mattpokora/",
+    "kendji.webp": "https://www.instagram.com/kendji/",
+    "amel-bent.webp": "https://www.instagram.com/amelbent/",
+    "france-tv.webp": "https://www.instagram.com/france.tv/",
+    "danse-avec-les-stars.webp": "https://www.instagram.com/dals_tf1/",
+    "comedie-francaise.webp": "https://www.instagram.com/comedie.francaise.officiel/",
+    "linh.webp": "https://www.youtube.com/@LINHOFFICIEL",
+    "jeck.webp": "https://www.youtube.com/@moicestjeck",
+    "charles-melanie.webp": "https://www.youtube.com/@CharlesMelanie",
+    "52-minutes-rts.webp": "https://www.youtube.com/@52minutes",
+    "maelle.webp": "https://www.youtube.com/@maelleofficiel",
+    "allocine.webp": "https://www.youtube.com/@allocine",
+    "blitzstream.webp": "https://www.youtube.com/@VideosEchecs",
+    "pierre-croce.webp": "https://www.youtube.com/@pierrecroce",
+    "le-monde.webp": "https://www.youtube.com/@lemondefr",
+    "cest-pas-sorcier.webp": "https://www.youtube.com/@Cestpassorcierofficiel",
+    "squeezie.webp": "https://www.youtube.com/@Squeezie",
+    "david-castello-lopes.webp": "https://www.youtube.com/@MrDastiz"
+  }
+}

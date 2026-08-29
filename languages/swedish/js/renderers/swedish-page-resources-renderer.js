@@ -305,6 +305,7 @@ function openSpecificResourceModal(itemData, category) {
     function createPodcastCard(podcastData) {
         const card = createNode('div');
         card.className = 'swedish-podcast-card';
+        card.setAttribute('role', 'listitem');
         card.dataset.item = JSON.stringify(podcastData);
         card.dataset.category = 'top-podcasts';
 
@@ -322,7 +323,7 @@ function openSpecificResourceModal(itemData, category) {
             <img src="${podcastData.imageSrc || '../images/placeholder_resource_card.png'}" alt="${podcastData.name}" class="podcast-card-image-new">
             <h4 class="podcast-card-name-new">${podcastData.name}</h4>
             <p class="podcast-card-shortdesc-new">${podcastData.shortDesc || 'Klicka för mer info...'}</p>
-            <a href="${podcastData.podcastLink || '#'}" target="_blank" class="btn btn-primary podcast-card-button-new" onclick="event.stopPropagation();">Lyssna här</a>`;
+            <a href="${podcastData.podcastLink || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-primary podcast-card-button-new" onclick="event.stopPropagation();">Lyssna här</a>`;
 
         card.addEventListener('click', e => {
             if (e.target.closest('a.podcast-card-button-new')) return;
@@ -357,6 +358,54 @@ function openSpecificResourceModal(itemData, category) {
             return;
         }
         podcastsData.forEach(podcast => append(gridContainer, createPodcastCard(podcast)));
+        setupTopPodcastShelf(gridContainer);
+    }
+
+    function setupTopPodcastShelf(gridContainer) {
+        const previousButton = document.getElementById('top-podcasts-previous');
+        const nextButton = document.getElementById('top-podcasts-next');
+        if (!previousButton || !nextButton) return;
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let updateFrame = 0;
+
+        const getStep = () => {
+            const firstVisibleCard = Array.from(gridContainer.querySelectorAll('.swedish-podcast-card'))
+                .find(card => !card.classList.contains('hidden-by-filter'));
+            if (!firstVisibleCard) return Math.max(gridContainer.clientWidth * 0.8, 240);
+            const styles = window.getComputedStyle(gridContainer);
+            const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+            return firstVisibleCard.getBoundingClientRect().width + gap;
+        };
+
+        const updateControls = () => {
+            updateFrame = 0;
+            const maxScroll = Math.max(0, gridContainer.scrollWidth - gridContainer.clientWidth);
+            previousButton.disabled = gridContainer.scrollLeft <= 2;
+            nextButton.disabled = gridContainer.scrollLeft >= maxScroll - 2;
+        };
+
+        const scheduleControlUpdate = () => {
+            if (!updateFrame) updateFrame = window.requestAnimationFrame(updateControls);
+        };
+
+        const moveShelf = direction => {
+            gridContainer.scrollBy({
+                left: direction * getStep(),
+                behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+            });
+        };
+
+        if (gridContainer.dataset.shelfControlsBound !== 'true') {
+            previousButton.addEventListener('click', () => moveShelf(-1));
+            nextButton.addEventListener('click', () => moveShelf(1));
+            gridContainer.addEventListener('scroll', scheduleControlUpdate, { passive: true });
+            window.addEventListener('resize', scheduleControlUpdate);
+            gridContainer.dataset.shelfControlsBound = 'true';
+        }
+
+        gridContainer.updateShelfControls = scheduleControlUpdate;
+        scheduleControlUpdate();
     }
 
     function renderSnabbFaktaHighlight() {
@@ -654,6 +703,8 @@ function openSpecificResourceModal(itemData, category) {
                 if (clearCefrFiltersButton) clearCefrFiltersButton.classList.remove('less-active');
             }
         }
+
+        document.getElementById('top-podcasts-grid')?.updateShelfControls?.();
     }
 
     cefrFilterButtons.forEach(button => {

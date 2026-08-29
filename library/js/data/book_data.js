@@ -10,7 +10,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Classics", "Novels", "Fiction", "Adventure"],
         recommendedCEFR: "C2",
-        coverImg: "https://imgv2-1-f.scribdassets.com/img/word_document/315233472/original/216x287/36867d8558/1752371410?v=1",
+        coverImg: "/library/images/books/spanish/don-quijote-de-la-mancha.webp",
         description: "The seminal work of Spanish literature, this novel follows the comedic and epic adventures of a nobleman who, driven mad by reading chivalric romances, sets out to become a knight-errant.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1e2tynkDTYQz8Mfhx4SLr64suS4E3hzP2&usp=drive_copy",
@@ -24,7 +24,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Classics", "Magic Realism", "Fiction"],
         recommendedCEFR: "C1",
-        coverImg: "https://m.media-amazon.com/images/I/91TvVQS7loL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/cien-anos-de-soledad.webp",
         description: "The multi-generational saga of the Buendía family in the mythical town of Macondo. A masterpiece of magic realism and a cornerstone of Latin American literature.",
         pdfLink: "https://drive.google.com/open?id=1FUO_6q4PQGDK443GjkwkUlOcguNs087K&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=12VrymDsNdsqZp34ONE36gM48kaXvjFBo&usp=drive_copy",
@@ -38,7 +38,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Romance", "Classics", "Fiction"],
         recommendedCEFR: "C1",
-        coverImg: "https://m.media-amazon.com/images/I/71mKpV0iLdL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/el-amor-en-los-tiempos-del-colera.webp",
         description: "A timeless love story spanning over half a century. Florentino Ariza waits 51 years, 9 months, and 4 days for his beloved, a beautiful meditation on love, aging, and time.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1aisDiB6Fy2_Iipvtb_YS4pq48MHyALaD&usp=drive_copy",
@@ -52,7 +52,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Historical Fiction", "Romance", "Magic Realism"],
         recommendedCEFR: "C1",
-        coverImg: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1284242962i/9283798.jpg",
+        coverImg: "/library/images/books/spanish/del-amor-y-otros-demonios.webp",
         description: "A tragic and poetic novel about the forbidden love between a supposedly possessed young girl and the priest sent to exorcise her in colonial Cartagena.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1r8gBlwP-mBufzOuGQpMygINBiNo31N88&usp=drive_copy",
@@ -66,7 +66,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Mystery", "Historical Fiction", "Thriller"],
         recommendedCEFR: "B2",
-        coverImg: "https://m.media-amazon.com/images/I/81CEi-3PbBL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/la-sombra-del-viento.webp",
         description: "A literary mystery set in post-war Barcelona. A young boy finds a cursed book, leading him into a web of secrets, love, and tragedy surrounding its mysterious author.",
         pdfLink: "https://drive.google.com/open?id=1OeUcTp9BOl9nstjwcqJz_aRFM8ran8PL&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=1jGL_h5LeRonWa3KQJ23dSgshWugnqNLr&usp=drive_copy",
@@ -80,7 +80,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Magic Realism", "Historical Fiction", "Saga"],
         recommendedCEFR: "C1",
-        coverImg: "https://m.media-amazon.com/images/I/816xOSfb2XL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/la-casa-de-los-espiritus.webp",
         description: "The powerful debut novel from Isabel Allende, chronicling the lives of the Trueba family through several generations against the backdrop of Chile's tumultuous political history.",
         pdfLink: "https://drive.google.com/open?id=1K7hr7ciCXy9TyU84BtaYNOPLyF8CzEux&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=1O53-ipkEFIqdDd6Y5v1CnJrPVMGrbQ1d&usp=drive_copy",
@@ -94,7 +94,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Magic Realism", "Romance", "Fiction"],
         recommendedCEFR: "B2",
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Z9ojggK7owtCSjWK1h7ngQEhTZNidE2twg&s",
+        coverImg: "/library/images/books/spanish/como-agua-para-chocolate.webp",
         description: "A novel where cooking and emotions magically intertwine. Tita, forbidden to marry her true love, expresses her feelings through her recipes, which have magical effects on those who eat them.",
         pdfLink: "https://drive.google.com/open?id=1Meca72Sz2bhImWtd0SJkJU5HiS1g83tF&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=1BMQaOEG2cIGtBMwB_albDe4XdDt0i9_X&usp=drive_copy",
@@ -108,7 +108,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Memoir", "Autobiography", "Poetry"],
         recommendedCEFR: "C2",
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUrVpq6v5e9OYNr3Dwxi4pm738Flip-6c3Ow&s",
+        coverImg: "/library/images/books/spanish/confieso-que-he-vivido.webp",
         description: "The memoirs of Nobel Prize-winning poet Pablo Neruda. A journey through his travels, loves, political activism, and the creative process behind his celebrated works.",
         pdfLink: "https://drive.google.com/open?id=1Q_4ImgCgkQvhzzMJGxFGn1zjFk0C-LEk&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=1LzSWpX3Df0yX4wiTzwVcaPndnueRkOsO&usp=drive_copy",
@@ -122,7 +122,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Thriller", "Political Fiction", "Novels"],
         recommendedCEFR: "C1",
-        coverImg: "https://m.media-amazon.com/images/I/81UhbS5gMrL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/cinco-esquinas.webp",
         description: "A thriller set during the final months of Fujimori's dictatorship in Peru, exploring how yellow journalism can be weaponized for political ends.",
         pdfLink: "https://drive.google.com/open?id=19SkTyqkeJjLP9pBtQ5qzV1qJ7_OMp8AC&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=1SUfBXBnXQIr-G80V9lg3Zsoe0_SKpJzp&usp=drive_copy",
@@ -136,7 +136,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Romance", "Novels", "Fiction"],
         recommendedCEFR: "C1",
-        coverImg: "https://m.media-amazon.com/images/I/81XLlbh7cXL.jpg",
+        coverImg: "/library/images/books/spanish/travesuras-de-la-nina-mala.webp",
         description: "An obsessive love story that spans four decades and three continents, following Ricardo Somocurcio's tumultuous relationship with an enigmatic woman who constantly reappears in his life under different identities.",
         pdfLink: "https://drive.google.com/open?id=1joVgWsKxn6DizBiU3YUDiGACzlAL7RJS&usp=drive_copy",
         epubLink: "https://drive.google.com/open?id=1XlCQxyWVDoMti3702L7YvZyVfa7Z27Da&usp=drive_copy",
@@ -150,7 +150,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Philosophy", "Classics", "Fiction"],
         recommendedCEFR: "C2",
-        coverImg: "https://m.media-amazon.com/images/I/710G+uFD-YL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/niebla.webp",
         description: "A philosophical novel that breaks the fourth wall. The protagonist, Augusto Pérez, confronts his own author to question his existence. A foundational work of the Generation of '98.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1qsiG5KvWHDjqQI0DnkxMz7nI_v9uvKwn&usp=drive_copy",
@@ -164,7 +164,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Classics", "Fiction", "Novels"],
         recommendedCEFR: "C1",
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW10yF-yJVZ3gS5pSrPEIg3N2KsLKRiz0WLQ&s",
+        coverImg: "/library/images/books/spanish/la-tia-tula.webp",
         description: "An intense psychological portrait of frustrated motherhood and sacrifice in early 20th-century Spain. Tula dedicates her life to raising her deceased sister's children, forgoing her own.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1EMofCoYVo99pbjgPSGx1--Y1xF0ET5vE&usp=drive_copy",
@@ -178,7 +178,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Philosophy", "Essay", "Non-Fiction"],
         recommendedCEFR: "C2",
-        coverImg: "https://m.media-amazon.com/images/I/81tI6+WJ2pL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/spanish/del-sentimiento-tragico-de-la-vida.webp",
         description: "One of Unamuno's most important philosophical essays, exploring the existential struggle between reason and faith, and the human longing for immortality.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1cJHGiO4EelQ32666eMv0uMJaF1vo6tZQ&usp=drive_copy",
@@ -192,7 +192,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Classics", "Satire", "Fiction"],
         recommendedCEFR: "C2",
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1m9GZDnOEWXM3b1mR9zfAnYp5gv0rXfreAw&s",
+        coverImg: "/library/images/books/spanish/amor-y-pedagogia.webp",
         description: "A satire on the attempt to create a genius through a purely scientific upbringing. A fierce critique of positivism, championing the importance of love and the irrational.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1-WTwghZZ9_5q7I53km5GWFWcw3FYBYBz&usp=drive_copy",
@@ -206,10 +206,24 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Classics", "Short Stories", "Fiction"],
         recommendedCEFR: "C1",
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5k4SED4Bku6iP3ZWWzIQ53y2PRsc3cQMGA&s",
+        coverImg: "/library/images/books/spanish/tres-novelas-ejemplares.webp",
         description: "A collection of three short novels where Unamuno's strong protagonists struggle to impose their will against social conventions.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=13UAJVW5iRPe3BnIsHKzqdT5rVkwZ308V&usp=drive_copy",
+        aljohnsNotes: ""
+    },
+    {
+        id: "es_abel_sanchez",
+        title: "Abel Sánchez: una historia de pasión",
+        author: "Miguel de Unamuno",
+        language: "es",
+        languageName: "Español",
+        genres: ["Classics", "Novels", "Fiction", "Psychological Novel"],
+        recommendedCEFR: "B1",
+        coverImg: "/library/images/books/spanish/abel-sanchez.webp",
+        description: "Miguel de Unamuno reworks the story of Cain and Abel through Joaquín Monegro's consuming envy of his childhood friend and rival Abel Sánchez.",
+        pdfLink: null,
+        epubLink: "https://drive.google.com/open?id=1-WTwghZZ9_5q7I53km5GWFWcw3FYBYBz&usp=drive_copy",
         aljohnsNotes: ""
     },
     {
@@ -220,7 +234,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["History", "Non-Fiction", "Memoir"],
         recommendedCEFR: "C1",
-        coverImg: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1481198070i/33242220.jpg",
+        coverImg: "/library/images/books/spanish/resena-veridica-revolucion-filipina.webp",
         description: "A first-person historical account by Emilio Aguinaldo of the events leading to the declaration of Philippine independence, originally written in Spanish.",
         pdfLink: null,
         epubLink: "https://drive.google.com/open?id=1-WTwghZZ9_5q7I53km5GWFWcw3FYBYBz&usp=drive_copy",
@@ -234,7 +248,7 @@ const publicDomainBooks_data = [
         languageName: "Español",
         genres: ["Short Stories", "Learning", "Fiction"],
         recommendedCEFR: "B1",
-        coverImg: "https://m.media-amazon.com/images/I/71+lEr6-peL._SY466_.jpg",
+        coverImg: "/library/images/books/spanish/short-stories-spanish-beginners.webp",
         description: "A collection of eight unconventional short stories designed for A2-B1 level students. An excellent tool for building reading confidence with controlled vocabulary and comprehension questions.",
         pdfLink: null,
         epubLink: null,
@@ -334,11 +348,12 @@ const publicDomainBooks_data = [
         languageName: "Français",
         genres: ["Children's Book", "Classics", "Fiction", "Illustrated", "Philosophy"],
         recommendedCEFR: ["A2", "B1"], // Accessible language, deep themes
-        coverImg: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1367545443i/157993.jpg",
+        coverImg: "/library/images/books/french/le-petit-prince.jpg",
         description: "A timeless fable where a stranded pilot meets a young prince from another planet, leading to profound reflections on friendship, love, loss, and the essence of life.",
         pdfLink: "https://www.ebooksgratuits.com/pdf/st_exupery_le_petit_prince.pdf",
         epubLink: "https://archive.org/download/le-petit-prince-antoine-st-ex-livre/%20Le_petit_prince%20Antoine%20St%20Ex%20Livre.epub",
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/french/index.html#livres-francais"
     },
     {
         id: "fr_au_secours_waldo",
@@ -404,11 +419,12 @@ const publicDomainBooks_data = [
         languageName: "Français",
         genres: ["Classics", "Children's Book", "Fiction", "Poetry"],
         recommendedCEFR: ["B1", "B2"], // Poetic language, allegorical
-        coverImg: "https://www.gutenberg.org/cache/epub/56327/pg56327.cover.medium.jpg",
+        coverImg: "/library/images/books/french/fables-la-fontaine.jpg",
         description: "A celebrated collection of fables in verse, where animals and mythical creatures offer timeless moral lessons and witty observations on human nature.",
         pdfLink: "https://beq.ebooksgratuits.com/vents/Lafontaine-fables-1.pdf",
         epubLink: "https://www.gutenberg.org/ebooks/56327.epub.images",
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/french/index.html#livres-francais"
     },
     {
         id: "fr_petit_chaperon_rouge",
@@ -432,11 +448,12 @@ const publicDomainBooks_data = [
         languageName: "Français",
         genres: ["Classics", "Novels", "Fiction", "Adventure", "Sci-Fi"],
         recommendedCEFR: ["B1", "B2"], // Adventure story, descriptive language
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDHFJRPWr_it3BbVzeIuQIjGmIuydXK19SOA&s",
+        coverImg: "/library/images/books/french/voyage-centre-terre.jpg",
         description: "Jules Verne's thrilling adventure following Professor Lidenbrock and his nephew Axel as they descend into an Icelandic volcano to reach the Earth's core.",
         pdfLink: "https://beq.ebooksgratuits.com/vents/Verne-centre.pdf",
         epubLink: "https://www.gutenberg.org/ebooks/4791.epub.images",
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/french/index.html#livres-francais"
     },
     {
         id: "fr_trois_mousquetaires",
@@ -446,11 +463,12 @@ const publicDomainBooks_data = [
         languageName: "Français",
         genres: ["Classics", "Novels", "Fiction", "Adventure", "Historical Novel"],
         recommendedCEFR: ["B2", "C1"], // Lengthy, rich vocabulary, historical context
-        coverImg: "https://www.gutenberg.org/cache/epub/13951/pg13951.cover.medium.jpg",
+        coverImg: "/library/images/books/french/trois-mousquetaires.jpg",
         description: "Alexandre Dumas's swashbuckling tale of youthful ambition, camaraderie, and adventure in 17th-century France, following d'Artagnan and the legendary musketeers.",
         pdfLink: "https://beq.ebooksgratuits.com/vents/Dumas_Les_trois_mousquetaires_1.pdf",
         epubLink: "https://www.gutenberg.org/ebooks/13951.epub.images",
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/french/index.html#livres-francais"
     },
     {
         id: "fr_candide",
@@ -460,11 +478,27 @@ const publicDomainBooks_data = [
         languageName: "Français",
         genres: ["Classics", "Novels", "Fiction", "Philosophy", "Satire"],
         recommendedCEFR: "C1", // Philosophical satire, nuanced language
-        coverImg: "https://bibliothequenumerique.tv5monde.com/media/img/org/ae/189_Candide.jpg",
+        coverImg: "/library/images/books/french/candide.jpg",
         description: "Voltaire's sharp philosophical satire chronicling the tumultuous journey of Candide as he confronts a world of suffering, challenging Leibnizian optimism.",
         pdfLink: "https://www.vousnousils.fr/casden/pdf/id00265.pdf",
         epubLink: "https://www.gutenberg.org/ebooks/4650.epub.images",
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/french/index.html#livres-francais"
+    },
+    {
+        id: "fr_tour_du_monde",
+        title: "Le tour du monde en quatre-vingts jours",
+        author: "Jules Verne",
+        language: "fr",
+        languageName: "Français",
+        genres: ["Classics", "Novels", "Fiction", "Adventure"],
+        recommendedCEFR: ["B1", "B2"],
+        coverImg: "/library/images/books/french/tour-du-monde.jpg",
+        description: "Phileas Fogg bets that he can travel around the world in eighty days, beginning a tightly paced journey of missed connections, changing landscapes, and unexpected alliances.",
+        pdfLink: null,
+        epubLink: "https://www.gutenberg.org/ebooks/800.epub3.images",
+        aljohnsNotes: "",
+        languagePageLink: "/languages/french/index.html#livres-francais"
     },
 
     // --- Indonesian Books ---
@@ -476,11 +510,15 @@ const publicDomainBooks_data = [
         languageName: "Bahasa Indonesia",
         genres: ["Novels", "Classics", "Fiction", "Historical Novel"],
         recommendedCEFR: ["B2", "C1"], // Significant literary work
-        coverImg: "https://pbs.twimg.com/media/FacTS0HXgAAHN7n.jpg",
+        coverImg: "/library/images/books/id/id_bumi_manusia.webp",
+        coverWidth: 387,
+        coverHeight: 583,
         description: "Pramoedya Ananta Toer's epic novel, part of the Buru Quartet, exploring love, colonialism, and the awakening of national consciousness in Dutch East Indies.",
         pdfLink: "https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf",
         epubLink: null,
-        aljohnsNotes: "Captain's Note: While a treasure, this specific tome still sails under copyright. Seek it through proper channels!"
+        officialLink: "https://www.gramedia.com/products/bumi-manusia-lentera-dipantara",
+        aljohnsNotes: "Captain's Note: While a treasure, this specific tome still sails under copyright. Seek it through proper channels!",
+        languagePageLink: "/languages/indonesian/index.html#buku-indonesia"
     },
     {
         id: "id_sitti_nurbaya",
@@ -490,11 +528,15 @@ const publicDomainBooks_data = [
         languageName: "Bahasa Indonesia",
         genres: ["Classics", "Novels", "Fiction", "Romance"],
         recommendedCEFR: ["B1", "B2"], // Classic Indonesian romance
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykCWxDacahkhIXtH-GTuEaTm15MvFNr5Z6A&s",
+        coverImg: "/library/images/books/id/id_sitti_nurbaya.webp",
+        coverWidth: 189,
+        coverHeight: 267,
         description: "A poignant classic of Indonesian literature by Marah Roesli, narrating the tragic love story of Sitti Nurbaya and Syamsul Bahri, constrained by tradition.",
         pdfLink: "http://pustaka.unp.ac.id/file/abstrak_kki/EBOOKS/Marah%20Rusli%20-%20Siti%20Nurbaya%20Kasih%20Tak%20Sampai.pdf",
         epubLink: null,
-        aljohnsNotes: ""
+        officialLink: "https://books.google.com/books/about/Siti_Nurbaya.html?hl=id&id=a3RPEAAAQBAJ",
+        aljohnsNotes: "",
+        languagePageLink: "/languages/indonesian/index.html#buku-indonesia"
     },
 
     // --- Swedish Books ---
@@ -636,11 +678,12 @@ const publicDomainBooks_data = [
         languageName: "Italiano",
         genres: ["Classics", "Fiction", "Poetry"],
         recommendedCEFR: "C2", // Foundational, complex medieval Italian
-        coverImg: "https://imgv2-1-f.scribdassets.com/img/document/306929844/149x198/8cf3098350/1606850423?v=1",
+        coverImg: "/library/images/books/italian/divina-commedia.webp",
         description: "The first part of Dante's epic poem 'The Divine Comedy,' a profound allegorical journey through the nine circles of Hell.",
         pdfLink: "https://wyomingcatholic.edu/wp-content/uploads/dante-01-inferno.pdf",
         epubLink: null,
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/italian/index.html#libri-italiani"
     },
     {
         id: "it_pinocchio",
@@ -650,11 +693,12 @@ const publicDomainBooks_data = [
         languageName: "Italiano",
         genres: ["Children's Book", "Classics", "Fiction"],
         recommendedCEFR: ["A2", "B1"], // Classic children's story
-        coverImg: "https://www.gutenberg.org/cache/epub/52484/pg52484.cover.medium.jpg",
+        coverImg: "/library/images/books/italian/pinocchio.webp",
         description: "The beloved tale of a wooden puppet's mischievous adventures as he yearns to become a real boy, facing trials and learning life lessons along the way.",
         pdfLink: "http://www.giuliotortello.it/racconti/Pinocchio.pdf",
         epubLink: "https://www.gutenberg.org/ebooks/52484.epub.images",
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/italian/index.html#libri-italiani"
     },
     {
         id: "it_promessi_sposi",
@@ -664,11 +708,12 @@ const publicDomainBooks_data = [
         languageName: "Italiano",
         genres: ["Classics", "Novels", "Fiction", "Historical Novel"],
         recommendedCEFR: "C1", // Major Italian historical novel
-        coverImg: "https://upload.wikimedia.org/wikipedia/commons/c/cc/I_promessi_sposi-008.jpg",
+        coverImg: "/library/images/books/italian/promessi-sposi.webp",
         description: "Alessandro Manzoni's influential historical novel set in 17th-century Lombardy, recounting the trials of two young lovers, Renzo and Lucia, amidst plague and oppression.",
         pdfLink: "https://www.iispandinipiazza.edu.it/wp/wp-content/uploads/2016/09/manzoni_i_promessi_sposi.pdf",
         epubLink: null,
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/italian/index.html#libri-italiani"
     },
     {
         id: "it_il_principe",
@@ -678,11 +723,12 @@ const publicDomainBooks_data = [
         languageName: "Italiano",
         genres: ["Classics", "Non-Fiction", "Philosophy", "Politics"],
         recommendedCEFR: "C2", // Foundational political philosophy
-        coverImg: "https://m.media-amazon.com/images/I/81zXqxTQ3EL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/italian/il-principe.webp",
         description: "Niccolò Machiavelli's seminal 16th-century political treatise offering pragmatic, and often controversial, advice to rulers on acquiring and maintaining power.",
         pdfLink: "https://skypescuola.wordpress.com/wp-content/uploads/2015/05/machiavelli-il-principe.pdf",
         epubLink: null,
-        aljohnsNotes: ""
+        aljohnsNotes: "",
+        languagePageLink: "/languages/italian/index.html#libri-italiani"
     },
 
     // --- Portuguese (Brazilian) Books ---
@@ -766,7 +812,7 @@ const publicDomainBooks_data = [
         languageName: "Русский",
         genres: ["Children's Book", "Classics", "Fiction", "Poetry", "Folklore"],
         recommendedCEFR: ["B1", "B2"], // Poetic, foundational Russian literature
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTse-Jrghxl0bPfYTCVH-BEutKkX2xZiwaFCQ&s",
+        coverImg: "/library/images/books/ru/ru_skazki_pushkina.webp",
         description: "A treasured collection of Alexander Pushkin's fairy tales in verse, including 'The Tale of Tsar Saltan' and 'The Golden Cockerel,' woven from rich Russian folklore.",
         pdfLink: "https://www.cls-tambov.ru/ru/bib_recommendations/pdf/%D0%A1%D0%BA%D0%B0%D0%B7%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B8%D1%80%20%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0.pdf",
         epubLink: null,
@@ -780,7 +826,7 @@ const publicDomainBooks_data = [
         languageName: "Русский",
         genres: ["Classics", "Novels", "Fiction", "Historical Novel"],
         recommendedCEFR: "C2", // Epic scale, complex language and philosophy
-        coverImg: "https://m.media-amazon.com/images/I/912F83swwRL._UF1000,1000_QL80_.jpg",
+        coverImg: "/library/images/books/ru/ru_voina_i_mir.webp",
         description: "Leo Tolstoy's epic masterpiece chronicling Russian society during the Napoleonic era, interweaving the fates of aristocratic families with grand historical events.",
         pdfLink: "https://tolstoy.ru/upload/iblock/519/voina-i-mir.pdf",
         epubLink: "https://tolstoy.ru/upload/iblock/dac/voina-i-mir.epub",
@@ -794,7 +840,7 @@ const publicDomainBooks_data = [
         languageName: "Русский",
         genres: ["Classics", "Novels", "Fiction", "Psychological Novel"],
         recommendedCEFR: "C1", // Deep psychological and philosophical themes
-        coverImg: "https://rusneb.ru/local/tools/exalead/thumbnail.php?url=010000_000060_ART-8f382c81-78f9-4575-bf21-4cfcd2439626&width=360&height=460",
+        coverImg: "/library/images/books/ru/ru_prestuplenie_i_nakazanie.webp",
         description: "Fyodor Dostoevsky's profound psychological novel exploring the moral torment of Rodion Raskolnikov, an impoverished student who commits murder.",
         pdfLink: "https://rusneb.ru/local/tools/exalead/getFiles.php?book_id=010000_000060_ART-8f382c81-78f9-4575-bf21-4cfcd2439626&name=010000_000060_ART-8f382c81-78f9-4575-bf21-4cfcd2439626-%D0%9F%D1%80%D0%B5%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5&doc_type=pdf",
         epubLink: "https://rusneb.ru/local/tools/exalead/getFiles.php?book_id=010000_000060_ART-8f382c81-78f9-4575-bf21-4cfcd2439626&name=010000_000060_ART-8f382c81-78f9-4575-bf21-4cfcd2439626-%D0%9F%D1%80%D0%B5%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5&doc_type=epub",
@@ -808,7 +854,7 @@ const publicDomainBooks_data = [
         languageName: "Русский",
         genres: ["Classics", "Novels", "Fiction", "Satire"],
         recommendedCEFR: "C1", // Satirical, rich vocabulary
-        coverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3cplufHEt9k2XdLe6_sGvHHUw012SRiUSA&s",
+        coverImg: "/library/images/books/ru/ru_mertvye_dushi.webp",
         description: "Nikolai Gogol's satirical masterpiece following the adventures of Chichikov, a schemer who buys 'dead souls' (deceased serfs) to perpetrate fraud.",
         pdfLink: "https://rusneb.ru/local/tools/exalead/getFiles.php?book_id=000207_000017_RU_RGDB_BIBL_0000354737&name=000207_000017_RU_RGDB_BIBL_0000354737-%D0%9C%D0%B5%D1%80%D1%82%D0%B2%D1%8B%D0%B5%20%D0%B4%D1%83%D1%88%D0%B8%20%D0%9F%D0%BE%D1%8D%D0%BC%D0%B0&doc_type=pdf",
         epubLink: null,
@@ -822,7 +868,7 @@ const publicDomainBooks_data = [
         languageName: "Русский",
         genres: ["Classics", "Theater", "Fiction", "Drama"],
         recommendedCEFR: "B2", // Classic play, conversational but nuanced
-        coverImg: "https://www.mann-ivanov-ferber.ru/assets/images/covers/38/32138/1.50x-thumb.png",
+        coverImg: "/library/images/books/ru/ru_vishnevy_sad.webp",
         description: "Anton Chekhov's poignant play depicting the decline of the Russian aristocracy at the turn of the century, centered around the sale of a beloved cherry orchard.",
         pdfLink: "https://rusneb.ru/local/tools/exalead/getFiles.php?book_id=010000_000060_ART-33bfc45a-3b08-4ee0-94b8-1902bcfc6828&name=010000_000060_ART-33bfc45a-3b08-4ee0-94b8-1902bcfc6828-%D0%92%D0%B8%D1%88%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B4&doc_type=pdf",
         epubLink: "https://rusneb.ru/local/tools/exalead/getFiles.php?book_id=010000_000060_ART-33bfc45a-3b08-4ee0-94b8-1902bcfc6828&name=010000_000060_ART-33bfc45a-3b08-4ee0-94b8-1902bcfc6828-%D0%92%D0%B8%D1%88%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B4&doc_type=epub",
@@ -831,6 +877,46 @@ const publicDomainBooks_data = [
 ];
 
 // --- Language, Genre, and CEFR data for filters ---
+const spanishLanguagePageBookIds_data = new Set([
+    "es_don_quijote_de_la_mancha",
+    "es_cien_anos_de_soledad",
+    "es_el_amor_en_los_tiempos_del_colera",
+    "es_del_amor_y_otros_demonios",
+    "es_la_sombra_del_viento",
+    "es_la_casa_de_los_espiritus",
+    "es_como_agua_para_chocolate",
+    "es_confieso_que_he_vivido",
+    "es_cinco_esquinas",
+    "es_travesuras_de_la_nina_mala",
+    "es_niebla",
+    "es_la_tia_tula",
+    "es_del_sentimiento_tragico_de_la_vida",
+    "es_amor_y_pedagogia",
+    "es_tres_novelas_ejemplares",
+    "es_abel_sanchez",
+    "es_resena_veridica_revolucion_filipina"
+]);
+
+publicDomainBooks_data.forEach((book) => {
+    if (spanishLanguagePageBookIds_data.has(book.id)) {
+        book.languagePageLink = "/languages/spanish/index.html#shelf-books";
+    }
+});
+
+const russianLanguagePageBookIds_data = new Set([
+    "ru_skazki_pushkina",
+    "ru_voina_i_mir",
+    "ru_prestuplenie_i_nakazanie",
+    "ru_mertvye_dushi",
+    "ru_vishnevy_sad"
+]);
+
+publicDomainBooks_data.forEach((book) => {
+    if (russianLanguagePageBookIds_data.has(book.id)) {
+        book.languagePageLink = "/languages/russian/index.html#books";
+    }
+});
+
 const availableLanguages_data = [
     { code: "es", name: "Español", characterId: "sofia" },
     { code: "fr", name: "Français", characterId: "emile" },

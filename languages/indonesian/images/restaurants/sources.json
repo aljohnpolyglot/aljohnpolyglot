@@ -1,0 +1,42 @@
+{
+  "citra-minang-logo.webp": {
+    "sourcePage": "https://restaurantguru.com/CITRA-MINANG-Makati",
+    "sourceImage": "https://img.restaurantguru.com/reb5-interior-CITRA-MINANG-2025-03.jpg",
+    "treatment": "Cropped to the verified PBCom Tower food-court sign area."
+  },
+  "citra-minang.webp": {
+    "sourcePage": "https://restaurantguru.com/CITRA-MINANG-Makati",
+    "sourceImage": "https://img02.restaurantguru.com/c4e9-food-CITRA-MINANG.jpg",
+    "treatment": "Cropped to the upper food display and stored locally."
+  },
+  "rasa-baru-logo.webp": {
+    "sourcePage": "https://rasabaru.com.ph/",
+    "sourceImage": "https://img1.wsimg.com/isteam/ip/6cbdb892-00b7-4843-84fe-d5abc2341980/rasabaru.jpeg/",
+    "treatment": "Historic official-site logo normalized to a 16:9 local asset."
+  },
+  "rasa-baru.webp": {
+    "sourcePage": "https://www.foodpanda.ph/restaurant/wgc5/rasa-baru-restaurant",
+    "sourceImage": "https://images.deliveryhero.io/image/fd-ph/LH/wgc5-listing.jpg",
+    "treatment": "Restaurant listing photograph resized and stored locally."
+  },
+  "warung-kita-logo.webp": {
+    "sourcePage": "https://www.instagram.com/warungkitaph/",
+    "sourceImage": "Official public Instagram profile image for @warungkitaph",
+    "treatment": "Profile mark normalized to a 16:9 local identity panel."
+  },
+  "warung-kita-profile.webp": {
+    "sourcePage": "https://www.instagram.com/warungkitaph/",
+    "sourceImage": "Official public Instagram profile image for @warungkitaph",
+    "treatment": "Separate full-width profile identity treatment; no unrelated photograph substituted."
+  },
+  "depot-selera-logo.webp": {
+    "sourcePage": "https://www.facebook.com/people/Depots-Selera/pfbid02CGDitVrYMtLAQ3swLNKQGhtv4PERk4dXTBCMVDimQ7N9C2J2degKjGUDidCYsLAul/",
+    "sourceImage": "Official public Facebook profile image",
+    "treatment": "Cropped to remove the profile-photo frame and normalized locally."
+  },
+  "depot-selera.webp": {
+    "sourcePage": "https://wanderlog.com/place/details/9651994/depot-selera-indonesian-resto-3663-general-lunamakati",
+    "sourceImage": "https://itin-dev.wanderlogstatic.com/freeImage/odAntLeINEr7nMpYNM8ffzEYbgkLgI6C",
+    "treatment": "Venue interior photograph resized and stored locally."
+  }
+}

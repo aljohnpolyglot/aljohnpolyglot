@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlideshowIndex = 0;
     let currentPhotos = [];
     let currentPhotoCaptions = [];
+    let lastFocusedElement = null;
 
     function getTextColorOnBackground(hexOrVarBgColor) {
         const defaultLightText = 'var(--light-text-global, #ffffff)';
@@ -220,9 +221,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        lastFocusedElement = document.activeElement;
         const palette = institute.brandPalette || {};
         modalFlag.src = institute.flag || 'images/placeholder-flag.png';
+        modalFlag.alt = institute.name ? `${institute.name} flag` : 'Institute flag';
         modalLogo.src = institute.logo || 'images/placeholder-logo.png';
+        modalLogo.alt = institute.name ? `${institute.name} logo` : 'Institute logo';
         modalInstituteName.textContent = institute.name || 'Institute Details';
         modalPartnershipInfo.innerHTML = institute.partnershipDescription ? `<p>${institute.partnershipDescription}</p>` : '';
 
@@ -281,7 +285,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         showTab('overview');
         modal.classList.add('open');
+        modal.removeAttribute('inert');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        window.requestAnimationFrame(() => closeModalBtn?.focus());
     }
     
     function setupPhotoGallerySlideshow() {
@@ -331,15 +338,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function closeModal() {
         modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('inert', '');
         document.body.style.overflow = '';
+        const activeHash = window.location.hash.substring(1);
+        if ((activeHash.startsWith('institute-') || activeHash.includes('#')) && currentLanguageKey) {
+            window.history.replaceState(null, '', `#${currentLanguageKey}`);
+        }
         if (currentLanguageKey) {
             highlightActiveLanguageFilter(currentLanguageKey); // Re-highlight active filter
+        }
+        if (lastFocusedElement && lastFocusedElement !== document.body && document.contains(lastFocusedElement)) {
+            lastFocusedElement.focus();
         }
     }
 
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
     if (backToInstitutesListBtn) backToInstitutesListBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+    modal.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeModal();
+            return;
+        }
+        if (event.key !== 'Tab') return;
+        const focusable = Array.from(modal.querySelectorAll('a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'))
+            .filter(element => element.offsetParent !== null);
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    });
     modalTabs.forEach(button => button.addEventListener('click', () => showTab(button.dataset.tab)));
 
     function showTab(tabId) {
@@ -351,16 +387,39 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeTabContent) activeTabContent.classList.add('active');
     }
     
+    function normaliseInstituteSlug(value) {
+        return String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '');
+    }
+
     function handleHashChange() {
         if (typeof culturalInstitutesData === 'undefined' || typeof languageFilters === 'undefined') {
             setTimeout(handleHashChange, 250);
             return;
         }
-        const hash = window.location.hash.substring(1);
+        const hashParts = window.location.hash.substring(1).split('#');
+        const hash = hashParts[0];
+        const instituteSlug = hashParts[1] || null;
         let instituteIdToOpen = null;
         let langKeyToShow = null;
 
-        if (hash.startsWith('institute-')) {
+        if (instituteSlug) {
+            const targetInstitute = culturalInstitutesData.find(inst => {
+                const instituteLanguages = Array.isArray(inst.languageKey) ? inst.languageKey : [inst.languageKey];
+                return instituteLanguages.includes(hash)
+                    && (normaliseInstituteSlug(inst.id) === normaliseInstituteSlug(instituteSlug)
+                        || normaliseInstituteSlug(inst.name) === normaliseInstituteSlug(instituteSlug));
+            });
+            if (targetInstitute) {
+                instituteIdToOpen = targetInstitute.id;
+                langKeyToShow = hash;
+            } else {
+                window.history.replaceState(null, '', window.location.pathname);
+            }
+        } else if (hash.startsWith('institute-')) {
             instituteIdToOpen = hash.replace('institute-', '');
             const targetInstitute = culturalInstitutesData.find(inst => inst.id === instituteIdToOpen);
             if (targetInstitute) {

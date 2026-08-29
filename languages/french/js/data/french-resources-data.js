@@ -31,7 +31,7 @@ window.frenchResourcesData = {
             tags: ['Cours de français', 'DELF / DALF', 'Médiathèque', 'Ciné-club'],
             actions: [
                 { label: "Découvrir l'Alliance", href: 'https://www.alliance.ph/' },
-                { label: 'Voir mon carnet des centres', href: '../../languagecenters.html', variant: 'secondary' },
+                { label: "Voir la fiche de l'Alliance", href: '../../languagecenters.html#institute-af-manille', variant: 'secondary' },
             ],
         },
         {
@@ -44,6 +44,12 @@ window.frenchResourcesData = {
                     src: './images/community/saging-july-19-tricolore-flag.jpg',
                     alt: 'Membres de Saging Ça Va ? réunis derrière le drapeau français',
                     caption: 'Le tricolore au cœur de la rencontre du 19 juillet 2026',
+                },
+                {
+                    type: 'facebookReel',
+                    sourceUrl: 'https://www.facebook.com/reel/1625937425280058',
+                    title: 'Reel de la rencontre Saging Ça Va ? chez Crêpe Glazik',
+                    caption: 'La rencontre chez Crêpe Glazik, racontée en reel',
                 },
                 {
                     src: './images/community/saging-july-19-group-portrait.jpg',
@@ -117,7 +123,6 @@ window.frenchResourcesData = {
             actions: [
                 { label: 'Découvrir la communauté', href: '../../groups/sagingcava.html' },
                 { label: 'Rejoindre le groupe', href: 'https://www.facebook.com/groups/846327791047174', variant: 'secondary' },
-                { label: 'Voir le reel chez Crêpe Glazik', href: 'https://www.facebook.com/reel/1625937425280058', variant: 'secondary' },
             ],
         },
         {
@@ -166,6 +171,12 @@ window.frenchResourcesData = {
                     caption: "Avec l'ambassadrice Marie Fontanel pour Paris 2024",
                 },
                 {
+                    type: 'facebookReel',
+                    sourceUrl: 'https://www.facebook.com/reel/1161771929440983',
+                    title: "Reel d'Aljohn au Festival du film français",
+                    caption: 'Mon souvenir vidéo du Festival du film français',
+                },
+                {
                     src: '../../images/languagecenters/fr_embassy_2024_filmfestival_with_embassy_cultural_attache_martin_macalintal.jpg',
                     alt: "Aljohn avec Martin Macalintal pendant le Festival du film français",
                     caption: 'Au Festival du film français avec Martin Macalintal',
@@ -191,24 +202,6 @@ window.frenchResourcesData = {
             actions: [
                 { label: "Voir le site de l'Ambassade", href: 'https://ph.ambafrance.org/' },
                 { label: 'Suivre les actualités', href: 'https://www.facebook.com/FrenchEmbassyPH/', variant: 'secondary' },
-                { label: 'Voir mon reel du Festival du film français', href: 'https://www.facebook.com/reel/1161771929440983', variant: 'secondary' },
-            ],
-        },
-        {
-            id: 'linguno',
-            name: 'Linguno pour les conjugaisons',
-            imageSrc: '../spanish/images/spotlights/linguno_feature.png',
-            imageAlt: "Interface d'un exercice de français sur Linguno",
-            logoSrc: '../spanish/images/spotlights/linguno_logo.png',
-            logoAlt: 'Logo de Linguno',
-            paragraphs: [
-                "Pour une séance courte et ciblée, Linguno permet de travailler les conjugaisons françaises sous forme de quiz. Je l'utilise comme complément pratique entre deux moments d'écoute ou de conversation.",
-                "Choisis un temps, un groupe de verbes et un niveau de difficulté : dix minutes suffisent pour repérer les formes qui demandent encore de l'attention.",
-            ],
-            tags: ['Conjugaisons', 'Vocabulaire', 'Exercices adaptatifs', 'Révision rapide'],
-            actions: [
-                { label: 'Pratiquer le français', href: 'https://www.linguno.com/conjugate/fr/' },
-                { label: 'Découvrir Linguno', href: 'https://www.linguno.com/', variant: 'secondary' },
             ],
         },
     ],

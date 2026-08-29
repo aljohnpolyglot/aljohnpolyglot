@@ -10,12 +10,16 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- Enlace al CSS -->
     <link rel="stylesheet" href="css/mock-style.css">
     <link rel="stylesheet" href="css/books-style.css">
     <link rel="stylesheet" href="css/playlist-style.css">
     <link rel="stylesheet" href="css/spotlights-style.css">
+    <link id="app-logo-fallback-asset" rel="preload" as="image" href="../../images/apps/app-fallback.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/community-style.css">
     <link rel="stylesheet" href="css/community-picks-style.css">
     <link rel="stylesheet" href="css/creators-style.css">
@@ -26,52 +30,83 @@
     <link rel="stylesheet" href="css/nav-footer-fix.css">
     <link rel="stylesheet" href="css/friends-style.css">
     <link rel="stylesheet" href="css/filters-style.css">
+    <link rel="stylesheet" href="css/restaurants-style.css">
+    <link rel="stylesheet" href="../shared/css/language-section-nav.css">
 
 </head>
-<body>
+<body class="spanish-page has-language-section-nav">
     <header id="main-header-placeholder"></header>
+    <nav class="language-section-nav" data-language-section-nav aria-label="Capítulos de Mi rincón del español">
+        <div class="language-section-nav__viewport">
+            <ul class="language-section-nav__list">
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#hero-banner" aria-current="location">Mi historia</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#aljohn-playlist-section">Mis vídeos</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#spotlights-start-here">Ruta de estudio</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#community-spotlights">Comunidad</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#content-shelves">Creadores</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#shelf-books">Biblioteca</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#lugares-para-hablar-espanol">En la mesa</a></li>
+            </ul>
+        </div>
+    </nav>
     <main class="bodier">
-      <!-- ============================================== -->
-<!-- ==           HERO BANNER SECTION            == -->
-<!-- ============================================== -->
-<!-- ======================================================= -->
-<!-- ==     NUEVO HERO BANNER (2 COLUMNAS + CARRUSEL)     == -->
-<!-- ======================================================= -->
-<section id="hero-banner">
+<section id="hero-banner" aria-labelledby="spanish-hero-title">
+    <div class="hero-fan" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
     <div class="hero-content-wrapper container">
-        
-        <!-- Columna Izquierda: Texto -->
         <div class="hero-text-column">
-           
-            <h1>
-                <img src="https://flagcdn.com/w40/es.png" alt="Bandera de España" class="hero-flag">
-            Mi Rincón del Español
-              
+            <h1 id="spanish-hero-title">
+                <span class="hero-title-small">Mi rincón del</span>
+                <span class="hero-title-main">Español</span>
             </h1>
             <p class="hero-subtitle">
                 El español fue el primer idioma que decidí aprender de forma obsesiva. Fue una guerra contra el tiempo que lo cambió todo. Este rincón no es solo una lista de recursos; es el mapa de esa inmersión, el arsenal que usé y la increíble comunidad que encontré en el camino.
             </p>
             <div class="hero-cta-buttons">
-                <a href="#spotlights-start-here" class="btn btn-primary">Explorar los Recursos ↓</a>
+                <a href="#spotlights-start-here" class="btn btn-primary">
+                    <span>Explorar los recursos</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v13m0 0 5-5m-5 5-5-5" />
+                    </svg>
+                </a>
             </div>
+            <p class="hero-signoff">
+                <img src="https://flagcdn.com/w40/es.png" alt="Bandera de España" class="hero-flag">
+                <span>Mi historia. Mis recursos. Mi comunidad.</span>
+            </p>
         </div>
 
-        <!-- Columna Derecha: Carrusel de Fotos -->
         <div class="hero-gallery-column">
-            <div id="hero-carousel-container" class="hero-carousel">
-                <div id="hero-carousel-track" class="carousel-track">
-                    <!-- Las imágenes se cargarán aquí con JS -->
+            <div class="hero-gallery-heading">
+                <span>Momentos del camino</span>
+                <span id="hero-carousel-count" class="hero-carousel-count">01 / 14</span>
+            </div>
+            <div class="hero-photo-frame">
+                <div id="hero-carousel-container" class="hero-carousel" aria-label="Galería de momentos de mi camino con el español">
+                    <div id="hero-carousel-track" class="carousel-track">
+                        <!-- Las imágenes se cargarán aquí con JS -->
+                    </div>
+                    <button id="hero-prev-btn" class="carousel-button prev" type="button" aria-label="Ver foto anterior">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+                    </button>
+                    <button id="hero-next-btn" class="carousel-button next" type="button" aria-label="Ver foto siguiente">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+                    </button>
                 </div>
-                <button id="hero-prev-btn" class="carousel-button prev">&lt;</button>
-                <button id="hero-next-btn" class="carousel-button next">&gt;</button>
+                <div class="hero-photo-caption">
+                    <span aria-hidden="true"></span>
+                    <p id="hero-current-caption">Una vida vivida en español, foto a foto.</p>
+                </div>
+                <p id="hero-carousel-status" class="hero-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
             </div>
         </div>
-
     </div>
 </section>
 
-  <!-- 1. MODAL PARA EL HERO BANNER -->
-  <div id="hero-modal" class="hero-modal-overlay hidden">
+  <div id="hero-modal" class="hero-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="hero-modal-caption" aria-hidden="true">
+    <div id="hero-modal-backdrop" class="hero-modal-backdrop"></div>
     <div class="modal-content">
         <button id="hero-modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">
             <i class="fas fa-times"></i>
@@ -83,8 +118,8 @@
         </button>
 
         <div class="hero-modal-media">
-            <img id="hero-modal-img" src="" alt="Galería de Aljohn">
-            <p id="hero-modal-caption">Texto de ejemplo que podría ser muy largo</p>
+            <img id="hero-modal-img" src="images/hero/aljohn_with_ambassador_spanish_miguel_utray.jpg" alt="Aljohn con el Embajador de España Miguel Utray">
+            <p id="hero-modal-caption" aria-live="polite" aria-atomic="true">Texto de ejemplo que podría ser muy largo</p>
         </div>
         
         <!-- Next Arrow -->
@@ -92,7 +127,6 @@
             <i class="fas fa-chevron-right"></i>
         </button>
     </div>
-    <div id="hero-modal-overlay"></div>
 </div>
 
          <!-- ============================================== -->
@@ -199,7 +233,7 @@
     <div class="spotlight-content">
         <div class="spotlight-details">
             <a href="https://ankiweb.net/" target="_blank" class="spotlight-logo-link anki-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/1200px-Anki-icon.svg.png" alt="Logo de Anki" class="spotlight-logo">
+                <img src="../../images/apps/anki.webp" width="80" height="80" loading="lazy" decoding="async" alt="Logo de Anki" class="spotlight-logo resilient-logo" data-app-name="Anki">
             </a>
             <h3 class="spotlight-title"><br>Aljohn Polyglot Spanish Deck</h3>
             <p class="spotlight-description">Anki es mi herramienta más importante: la repetición espaciada para no olvidar nunca. Aquí comparto mi mazo personal "My Spanish Soul", con miles de tarjetas que he creado en mi viaje.</p>
@@ -232,7 +266,7 @@
     <div class="spotlight-content">
         <div class="spotlight-visual">
             <div class="olly-book-container">
-                <img src="https://m.media-amazon.com/images/I/71+lEr6-peL._SY466_.jpg" alt="Portada del libro Short Stories in Spanish for Beginners de Olly Richards">
+                <img src="/library/images/books/spanish/short-stories-spanish-beginners.webp" width="304" height="466" loading="lazy" decoding="async" alt="Portada del libro Short Stories in Spanish for Beginners de Olly Richards">
             </div>
         </div>
         <div class="spotlight-details">
@@ -327,7 +361,10 @@
                     </a>
                     <h3 class="spotlight-title">RTVE Play - Inmersión Gratuita</h3>
                     <p class="spotlight-description">Sumérgete en el español de España con series de alta calidad y acceso gratuito.</p>
-                    <a href="https://www.rtve.es/play/" target="_blank" class="button-link">Explorar</a>
+                    <div class="rtve-spotlight-actions">
+                        <a href="https://www.rtve.es/play/" target="_blank" rel="noopener noreferrer" class="button-link">Explorar RTVE</a>
+                        <a href="../french/#cinema-francais" class="button-link rtve-crosslink">Ver mi portal francés · TF1+ y France.tv</a>
+                    </div>
                 </div>
             </div>
         </article>
@@ -339,10 +376,10 @@
             <div class="spotlight-content">
                 <div class="spotlight-visual">
                     <div class="movie-recommendations">
-                        <a href="https://www.elitetorrent.com/peliculas/superman/" target="_blank" class="movie-item"><img src="https://www.elitetorrent.com/wp-content/uploads/2025/08/superman-(poster604).jpg" alt="Superman"></a>
-                        <a href="https://www.elitetorrent.com/peliculas/jurassic-world-el-renacer/" target="_blank" class="movie-item"><img src="https://www.elitetorrent.com/wp-content/uploads/2025/08/jurassic-world-el-renacer-(poster48).jpg" alt="Jurassic World"></a>
-                        <a href="https://www.elitetorrent.com/peliculas/lilo-y-stitch-2/" target="_blank" class="movie-item"><img src="https://www.elitetorrent.com/wp-content/uploads/2025/08/lilo-y-stitch-(poster554).jpg" alt="Lilo y Stitch"></a>
-                        <a href="https://www.elitetorrent.com/peliculas/una-pelicula-de-minecraft-3/" target="_blank" class="movie-item"><img src="https://www.elitetorrent.com/wp-content/uploads/2025/08/una-pelicula-de-minecraft-(poster392).jpg" alt="Minecraft"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/superman/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/superman-2025.webp" alt="Póster de Superman (2025)" width="420" height="622" loading="lazy" decoding="async"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/jurassic-world-el-renacer/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/jurassic-world-rebirth.webp" alt="Póster de Jurassic World: Rebirth" width="420" height="594" loading="lazy" decoding="async"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/lilo-y-stitch-2/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/lilo-and-stitch-2025.webp" alt="Póster de Lilo &amp; Stitch (2025)" width="420" height="622" loading="lazy" decoding="async"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/una-pelicula-de-minecraft-3/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/a-minecraft-movie.webp" alt="Póster de A Minecraft Movie" width="420" height="622" loading="lazy" decoding="async"></a>
                     </div>
                 </div>
                 <div class="spotlight-details">
@@ -393,7 +430,6 @@
     </div>
 </article>
 
-    </div>
 </section>
         
      <!-- ======================================================= -->
@@ -454,7 +490,7 @@
         <div class="cefr-labels">
             <span>Todos</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span>
         </div>
-        <p id="cefr-description">Mueve el slider para filtrar por nivel y ver qué puedes esperar.</p>
+        <p id="cefr-description" aria-live="polite">Todos los niveles de escucha.</p>
     </div>
 
     <!-- Filtro de País (Dropdown Nativo) -->
@@ -545,19 +581,17 @@
             
             
         </div>
-
-
-
+    </section>
 
     <!-- ======================= -->
     <!--  MODAL PARA LOS LIBROS  -->
     <!-- ======================= -->
     <div id="book-modal" class="modal-overlay hidden">
-        <div id="book-modal-content" class="modal-content">
+        <div id="book-modal-content" class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-book-title">
             <button id="modal-close-btn" class="modal-close-button" aria-label="Cerrar modal">&times;</button>
             
             <div class="modal-left">
-                <img id="modal-book-cover" src="" alt="Portada del libro">
+                <img id="modal-book-cover" src="/library/images/assets/open_book_flipping_icon.png" alt="Portada del libro">
             </div>
 
             <div class="modal-right">
@@ -684,11 +718,16 @@
         <a id="modal-friend-link" href="#" target="_blank" class="button-link">
             Visitar su Perfil <i class="fas fa-external-link-alt"></i>
         </a>
+        <a id="modal-friend-collab-link" href="#" target="_blank" rel="noopener noreferrer" class="button-link hidden">
+            Ver nuestra colaboración <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a id="modal-friend-secondary-link" href="#" target="_blank" rel="noopener noreferrer" class="button-link hidden">
+            Ver Instagram <i class="fas fa-external-link-alt"></i>
+        </a>
     </div>
     <div id="friends-modal-overlay"></div>
 </div>
 
-    </main>
     <!-- ======================================================= -->
 <!-- ==     BLOQUE DE REEMPLAZO / RESTAURACIÓN            == -->
 <!-- ==   SECCIÓN DE SUGERENCIAS DE LA COMUNIDAD          == -->
@@ -702,9 +741,19 @@
         </div>
     </div>
 </section>
+
+<section id="lugares-para-hablar-espanol" class="restaurant-places-section" aria-labelledby="lugares-para-hablar-espanol-title" data-language-restaurant-shelf>
+    <div class="container restaurant-places-inner">
+        <header class="restaurant-places-heading">
+            <h2 id="lugares-para-hablar-espanol-title">El español también se practica en la mesa</h2>
+            <p>Los restaurantes y lugares de encuentro que aparecen en mis videos: abre cada ficha para ver la dirección, el contacto y la conversación completa.</p>
+        </header>
+        <div class="restaurant-places-rail" data-language-restaurant-rail aria-live="polite"></div>
+    </div>
+</section>
+    </main>
     <footer id="main-footer-placeholder"></footer>
     <!-- Global JS (Shared) -->
-    <script src="js/main-script.js"></script> <!-- Handles navbar/footer loading -->
  <script>
     let siteBasePath;
 
@@ -727,9 +776,10 @@
 
    <!-- Archivo de Lógica Principal -->
    <script src="js/books-loader.js"></script> <!-- Enlazamos el nuevo loader -->
-   <script src="js/main-logic.js"></script>
    <script src="js/playlist-data.js"></script>
 <script src="js/playlist-loader.js"></script>
+<script src="js/restaurants-data.js"></script>
+<script src="../shared/js/language-restaurants.js"></script>
 <script src="js/community-loader.js"></script>
 <script src="js/community-picks-data.js"></script>
 <script src="js/community-picks-loader.js"></script>
@@ -744,6 +794,9 @@
 <script src="js/filters.js"></script>
 <script src="js/webtoon-data.js"></script>
 <script src="js/webtoon-loader.js"></script>
+<script type="module" src="../../js/app-preview.js"></script>
+<script src="../shared/js/language-section-nav.js" defer></script>
 <script src="../../js/navbar-loader.js" defer></script>
 <script src="../../js/footer-loader.js" defer></script>
+</body>
 </html>

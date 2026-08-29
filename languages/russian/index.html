@@ -1,449 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-      <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    <meta name="description" content="Личная история русского языка Алджона Полиглота: видео, 1000+ часов спортивного погружения и русскоязычные авторы.">
+    <meta name="theme-color" content="#932317">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Мой русский архив | Aljohn Polyglot">
+    <meta property="og:description" content="Как русский стал самым трудным и самым живым языком в моём повседневном расписании.">
+    <meta property="og:url" content="https://aljohnpolyglot.com/languages/russian/">
+    <meta property="og:image" content="https://aljohnpolyglot.com/languages/russian/images/playlist/rIh8uVrR0pk.jpg">
+    <title>Мой русский архив | Aljohn Polyglot</title>
+    <link rel="canonical" href="https://aljohnpolyglot.com/languages/russian/">
     <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-red: #C8102E;
-            --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27); /* Gold-like yellow */
-            --dark-text: #2c3e50;
-            --light-text: #ffffff;
-            --light-bg: #f8f9fa; /* Used for header background */
-            --border-color: #e0e0e0;
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Open Sans', sans-serif;
-            --font-mono: 'Roboto Mono', monospace;
-            --tech-cyan: #00A9FF;
-            --deep-space-blue: #0a0f1a; /* Darker blue for contrast */
-            --maintenance-page-bg: #0d1424; /* Specific background for this page */
-            --maintenance-panel-bg: rgba(10, 25, 47, 0.9); /* Panel background */
-            --maintenance-border: rgba(0, 169, 255, 0.25);
-            --maintenance-text-light: #e0f2f7;
-            --maintenance-text-secondary: #a8c0d8;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body.maintenance-page-active { /* Add this class to body in HTML */
-            font-family: var(--font-secondary);
-            background-color: var(--maintenance-page-bg);
-            color: var(--maintenance-text-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
-            padding-top: 70px; /* For fixed header */
-        }
-
-        /* Header Styles (Ensure these align with your global styles.css for consistency) */
-        /* If these are already perfectly defined in styles.css and linked, you might not need to repeat all of them here */
-        header {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background-color: var(--light-bg); /* Light background for contrast */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header nav.container { /* This is the inner container for nav content */
-            width: 90%;
-            max-width: 1100px; /* Or your site's standard max-width */
-            margin: 0 auto; /* Centers the nav content within the full-width header */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
-        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-
-        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
-        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-
-        .nav-links li.dropdown { position: relative; }
-        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; /* Match link padding */ }
-        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--light-bg);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-            z-index: 1001;
-            border-radius: 0 0 6px 6px;
-            top: 100%;
-            left: 0; /* Aligns dropdown to the left of its parent li */
-            padding: 8px 0;
-            border: 1px solid var(--border-color);
-            border-top: none;
-            text-align: left; /* Ensures content within dropdown is left-aligned */
-        }
-        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
-        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
-        .nav-links li.dropdown.open .dropdown-content { display: block; } /* For JS toggle */
-
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
-        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
-        .nav-cta:hover::after { width: 0 !important; } /* Prevent underline on CTA button */
-
-
-        .menu-toggle { display: none; /* Handled by global styles.css for mobile */ }
-
-
-        main.main-maintenance {
-            flex-grow: 1;
-            display: flex; /* Use flex to center its child */
-            align-items: center; /* Vertically center */
-            justify-content: center; /* Horizontally center */
-            width: 100%;
-            padding: 40px 20px; /* Adjusted top padding is handled by body */
-            text-align: center; /* Center text within this main block */
-        }
-
-        .container-maintenance {
-            background-color: var(--maintenance-panel-bg);
-            padding: 35px 40px 45px;
-            border-radius: 12px;
-            box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
-            border: 1px solid var(--maintenance-border);
-            max-width: 750px;
-            width: 100%;
-            /* text-align: center; is inherited from main.main-maintenance */
-        }
-
-        .maintenance-icon-area { margin-bottom: 1.8rem; }
-        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .maintenance-icon-area .fa-tools { display: none; /* Hide if image is present */ font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .maintenance-message h1 {
-            font-family: var(--font-primary);
-            font-size: clamp(1.8rem, 5vw, 2.6rem);
-            color: var(--accent-yellow);
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-        .maintenance-message .subtitle {
-            font-family: var(--font-secondary);
-            font-size: 1.15rem;
-            color: var(--tech-cyan);
-            margin-bottom: 1.8rem;
-            font-weight: 600;
-        }
-
-        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
-        .maintenance-description strong { color: var(--maintenance-text-light); }
-
-        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
-        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
-        .mini-challenge .challenge-word-display {
-            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
-            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
-            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
-            font-weight: 500; letter-spacing: 1.5px;
-        }
-        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
-        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
-        .clue strong { color: var(--maintenance-text-light); }
-        .guess-input-area { margin-bottom: 1.8rem; }
-        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
-        #languageGuess {
-            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
-            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
-            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
-        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
-
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
-        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
-        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
-        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
-        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
-        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
-        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
-        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
-
-        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
-        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
-
-        /* Footer specific styles for dark theme */
-        footer {
-            background-color: var(--deep-space-blue);
-            color: var(--maintenance-text-secondary);
-            padding: 50px 0 30px;
-            font-size: 0.9rem;
-            border-top: 2px solid var(--tech-cyan);
-            width:100%;
-            margin-top: auto; /* Pushes footer to bottom if content is short */
-        }
-        footer .footer-content { /* Assuming .container class is used for width/centering */
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
-        }
-        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
-        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } /* From your main styles */
-        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
-        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
-        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
-        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
-        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
-        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
-
-        /* Responsive adjustments for maintenance page header/footer */
-        @media (max-width: 768px) {
-            body.maintenance-page-active {
-                padding-top: 60px; /* Adjust if mobile header height is different */
-            }
-            header nav.container {
-                height: 60px; /* Adjust if mobile header height is different */
-                /* If nav-links are hidden by default via main styles.css display:none, this is fine */
-                /* If they are not, and menu-toggle handles it, ensure menu-toggle is styled for this page */
-            }
-            .nav-links { /* This ensures mobile menu (if toggled by JS) behaves */
-                display: none; /* Initially hidden */
-                flex-direction: column;
-                position: absolute;
-                top: 100%; /* Position below header */
-                left: 0;
-                width: 100%;
-                background-color: var(--light-bg);
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-                padding: 10px 0;
-            }
-            .nav-links.active { display: flex; } /* JS adds 'active' to show */
-            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
-            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
-            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; /* Slightly different for contrast */}
-
-            .menu-toggle { display: block; /* Usually handled by global styles.css */ cursor:pointer; /* ... add your hamburger styles ... */ }
-
-
-            .container-maintenance { padding: 25px 20px 30px; }
-            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
-            .maintenance-message .subtitle { font-size: 1rem; }
-            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
-
-            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Unbounded:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/page-language-russian.css">
 </head>
-<body class="maintenance-page-active">
-   <header id="main-header-placeholder"></header>
-    <main class="main-maintenance">
-        <div class="container-maintenance">
-            <div class="maintenance-icon-area">
-                <img src="../../images/aljohn_scientist.png" alt="Aljohn working on updates">
-                <i class="fas fa-tools"></i>
-            </div>
-            <div class="maintenance-message">
-                <h1>System Upgrade in Progress!</h1>
-                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
-            </div>
-            <div class="maintenance-description">
-                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
-                <p>In the meantime, why not take a quick linguistic challenge?</p>
-            </div>
+<body class="russian-page">
+    <!--
+    THESIS: Русский архив Алджона превращает реальную практику — разговоры, кино и тысячи часов баскетбола — в ясный маршрут, а не в безличный каталог.
+    OWN-WORLD: Архивная конструктивистская печатная мастерская без политической символики: бумага, чёрная краска, окисленный красный, бирюзовые штампы и нумерованные реестры.
+    STORY: Сначала звучит личная причина, затем открывается плейлист, путь от кириллицы к разговору, ежедневное NBA-погружение и независимые полки авторов.
+    FIRST VIEWPORT: Диагональное слово «РУССКИЙ» сразу передаёт внимание рабочему столу 60/40 с белорусской встречей в проигрывателе.
+    FORM: user-pinned approved comp 03; grounded direction 1; seed 44d8acb5.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
+    <a class="skip-link-ru" href="#main-content">Перейти к содержанию</a>
+    <header id="main-header-placeholder"></header>
 
-            <div class="mini-challenge">
-                <h2>Linguistic Puzzle Break!</h2>
-                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
-                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
-
-                <div class="clues-container">
-                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
-                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
-                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
-                </div>
-
-                <div class="guess-input-area">
-                    <label for="languageGuess">Your guessed language:</label>
-                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
-                </div>
-                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
-                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
-                <div id="feedbackMessage"></div>
-            </div>
-
-            <div class="navigation-links">
-                <p>While this section is being polished, feel free to explore other parts of my world:</p>
-                <a href="../../index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
-                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
-            </div>
+    <nav class="chapter-nav-ru" aria-label="Разделы русского архива">
+        <a class="chapter-mark-ru" href="#start" aria-label="В начало русского архива">РУ / 01</a>
+        <div class="chapter-links-ru">
+            <a href="#playlist">Мои видео</a>
+            <a href="#path">Мой путь</a>
+            <a href="#openrussian">Словарь</a>
+            <a href="#immersion">Погружение</a>
+            <a href="#films">Кинозал</a>
+            <a href="#books">Книги</a>
+            <a href="#creators">Авторы</a>
+            <a href="#closing">Дальше</a>
         </div>
+        <a class="chapter-channel-ru" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+    </nav>
+
+    <main id="main-content" class="russian-main">
+        <section id="start" class="hero-ru" aria-labelledby="hero-title-ru">
+            <div class="hero-register-ru" aria-hidden="true"><span>2022</span><span>МАНИЛА</span><span>АРХИВ 01</span></div>
+            <div class="hero-grid-ru">
+                <div class="hero-copy-ru">
+                    <p class="kicker-ru">Личный языковой архив</p>
+                    <h1 id="hero-title-ru">Я начал учить русский, чтобы смотреть дальше стереотипов и услышать людей.</h1>
+                    <p>Он оказался моим самым трудным языком: новый алфавит, падежи, ударение, вид глагола. Но именно поэтому каждый настоящий разговор до сих пор ощущается как маленькая победа.</p>
+                    <a class="primary-action-ru" href="#playlist"><span>Смотреть первую встречу</span><b aria-hidden="true">↓</b></a>
+                </div>
+                <div class="hero-word-ru" aria-hidden="true">
+                    <span>РУССКИЙ</span>
+                </div>
+            </div>
+            <div class="hero-footnote-ru">
+                <span>РАЗГОВОРЫ • КИНО • СПОРТ</span>
+                <strong>Живой журнал языка, который я действительно использую.</strong>
+            </div>
+        </section>
+
+        <section id="playlist" class="playlist-section-ru" aria-labelledby="playlist-heading-ru">
+            <header class="section-head-ru section-head-light-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 01 / МОИ ВИДЕО</p>
+                    <h2 id="playlist-heading-ru">Сначала — реальный разговор</h2>
+                </div>
+                <p>Эта встреча с Аней из Беларуси случилась неожиданно: я готовился говорить по-французски, услышал знакомый акцент и переключился на русский.</p>
+            </header>
+            <div class="playlist-worktable-ru">
+                <div class="featured-player-ru">
+                    <div class="video-frame-ru">
+                        <iframe id="russian-featured-player" src="https://www.youtube-nocookie.com/embed/rIh8uVrR0pk?rel=0&modestbranding=1" title="Реакция белорусской девушки, когда филиппинец заговорил по-русски" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="featured-caption-ru" aria-live="polite">
+                        <span id="featured-video-number">01</span>
+                        <div>
+                            <h3 id="featured-video-title">Реакция белорусской девушки, когда филиппинец заговорил по-русски</h3>
+                            <p id="featured-video-note">Я готовился к французскому, но одна случайная встреча стала моим самым памятным разговором по-русски.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-ledger-ru">
+                    <div class="ledger-head-ru">
+                        <span>ЛИЧНЫЙ ПЛЕЙЛИСТ</span>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI0F5kPFzexi_H0Ah4p7b1x" target="_blank" rel="noopener noreferrer">Открыть весь ↗</a>
+                    </div>
+                    <div id="russian-playlist-list" class="playlist-list-ru" aria-label="Выбрать видео Алджона"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="path" class="path-section-ru" aria-labelledby="path-heading-ru">
+            <header class="section-head-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 02 / МОЙ ПУТЬ</p>
+                    <h2 id="path-heading-ru">От кириллицы к живой речи</h2>
+                </div>
+                <p>Я не нашёл одного волшебного приложения. Русский складывался слоями: сначала опора, потом сотни часов знакомого контента, затем люди.</p>
+            </header>
+
+            <ol class="path-ledger-ru">
+                <li>
+                    <span class="path-number-ru">01</span>
+                    <p class="path-label-ru">ОПОРА</p>
+                    <h3>Алфавит, базовая грамматика, карточки</h3>
+                    <p>Duolingo был коротким входом, а Anki помог удержать слова и формы.</p>
+                </li>
+                <li>
+                    <span class="path-number-ru">02</span>
+                    <p class="path-label-ru">ПОГРУЖЕНИЕ</p>
+                    <h3>Кино, мультфильмы и спорт</h3>
+                    <p>После базы я перешёл на русские субтитры, фильмы и знакомые сюжеты. Контекст постепенно сделал падежи и глаголы менее абстрактными.</p>
+                </li>
+                <li>
+                    <span class="path-number-ru">03</span>
+                    <p class="path-label-ru">ГОЛОС</p>
+                    <h3>Discord и неожиданные встречи</h3>
+                    <p>Разговоры с Мариной, Матвеем, Коулом и случайными собеседниками показали главное: язык может «остыть», но возвращается после разминки.</p>
+                </li>
+            </ol>
+
+            <div class="story-spread-ru">
+                <div class="story-title-ru">
+                    <span>САМЫЙ</span>
+                    <strong>ТРУДНЫЙ</strong>
+                    <span>ЯЗЫК</span>
+                </div>
+                <div class="story-copy-ru">
+                    <p class="story-lede-ru">Русский научил меня не путать понимание с готовностью говорить.</p>
+                    <p>Бывают периоды, когда активные слова уходят, особенно если я долго не разговариваю. Но понимание остаётся. Мне обычно нужна короткая разминка — и язык снова начинает двигаться.</p>
+                    <p>Поначалу меня пугало, что одно слово меняется почти в каждом предложении. Потом я перестал ждать полного контроля и начал замечать формы внутри реальных сцен: в кино, разговорах и спортивных комментариях.</p>
+                    <p>Неожиданно русский ещё сильнее связал меня со спортом. Я следил за гимнастикой, фигурным катанием, Камилой Валиевой, Алиной Загитовой и Анной Щербаковой — темами, которые раньше вообще не ожидал открыть для себя.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="openrussian" class="openrussian-section-ru" aria-labelledby="openrussian-heading-ru">
+            <header class="section-head-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 03 / СЛОВАРЬ И ГРАММАТИКА</p>
+                    <h2 id="openrussian-heading-ru">Русское слово — сразу в контексте</h2>
+                </div>
+                <p>OpenRussian соединяет словарь, уровни A1–C2, грамматику и практику. Здесь можно набрать слово кириллицей и открыть его точную словарную статью.</p>
+            </header>
+
+            <div class="openrussian-grid-ru">
+                <article class="openrussian-search-ru" aria-labelledby="openrussian-search-heading-ru">
+                    <header class="openrussian-brand-ru">
+                        <img src="images/openrussian-mascot.png" alt="Маскот OpenRussian в виде шара в цветах российского флага" width="247" height="222" loading="lazy" decoding="async">
+                        <div>
+                            <p>OPENRUSSIAN / ПРОБНАЯ СТАНЦИЯ</p>
+                            <h3 id="openrussian-search-heading-ru">Найти слово</h3>
+                        </div>
+                    </header>
+                    <form id="openrussian-search-form" class="openrussian-form-ru" novalidate>
+                        <label for="openrussian-word">Русское слово</label>
+                        <div class="openrussian-input-row-ru">
+                            <div class="openrussian-combobox-ru">
+                                <input id="openrussian-word" name="word" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="например, человек" aria-describedby="openrussian-status" role="combobox" aria-autocomplete="list" aria-controls="openrussian-suggestions" aria-expanded="false">
+                                <ul id="openrussian-suggestions" class="openrussian-suggestions-ru" role="listbox" aria-label="Варианты русских слов" hidden></ul>
+                            </div>
+                            <button type="submit">Открыть ↗</button>
+                        </div>
+                        <p id="openrussian-status" class="openrussian-status-ru" role="status"></p>
+                    </form>
+                    <div class="openrussian-keyboard-shell-ru" aria-label="Экранная русская клавиатура">
+                        <div id="openrussian-keyboard" class="openrussian-keyboard-ru"></div>
+                    </div>
+                    <nav id="openrussian-links" class="openrussian-links-ru" aria-label="Разделы OpenRussian"></nav>
+                    <a class="openrussian-source-ru" href="https://en.openrussian.org/" target="_blank" rel="noopener noreferrer">Открыть OpenRussian ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="immersion" class="immersion-section-ru" aria-labelledby="immersion-heading-ru">
+            <header class="immersion-head-ru">
+                <p class="section-index-ru">ГЛАВА 04 / ЕЖЕДНЕВНАЯ ПРАКТИКА</p>
+                <h2 id="immersion-heading-ru"><span>1000+</span> часов русского</h2>
+                <p>Около двух часов в день, больше трёх лет — просто потому, что я и так хотел смотреть NBA.</p>
+            </header>
+
+            <div class="immersion-grid-ru">
+                <article class="immersion-manifesto-ru">
+                    <p class="stamp-ru">СПОРТИВНЫЙ РУССКИЙ</p>
+                    <h3>Мотивацией стал не учебник, а доступ к контенту, который мне уже был нужен.</h3>
+                    <p>Когда я научился читать кириллицу, русскоязычный интернет резко стал больше: дубляж, фильмы, документальные материалы и спортивные эфиры. Поиск <b>«смотреть фильм»</b> превратился для меня в дополнительную практику чтения.</p>
+                    <p>Главным ежедневным тренажёром стала NBA. В начале я переводил почти каждую строку. Теперь чтение и перевод в реальном времени чаще происходят без усилия.</p>
+                    <p class="caption-tip-ru"><strong>Подсказка:</strong> если речь пока слишком быстрая, включите Live Caption в браузере — так знакомые слова легче удержать на слух.</p>
+                    <aside>
+                        <strong>Честное ограничение</strong>
+                        <p>Я могу весь день говорить о баскетболе, но в кабинете врача или на деловой встрече мне всё ещё не хватит слов. Мастерство начинается с того, что любишь, — но оно остаётся тематическим.</p>
+                    </aside>
+                </article>
+
+                <div class="reel-gallery-ru">
+                    <div class="reel-gallery-head-ru">
+                        <div>
+                            <p>ПОЛЕВЫЕ ЗАПИСИ</p>
+                            <span id="reel-position" aria-live="polite">01 / 03</span>
+                        </div>
+                        <div class="reel-controls-ru">
+                            <button id="reel-previous" type="button" aria-label="Предыдущее короткое видео">←</button>
+                            <button id="reel-next" type="button" aria-label="Следующее короткое видео">→</button>
+                        </div>
+                    </div>
+                    <div id="reel-track" class="reel-stack-ru" aria-label="Короткие видео Алджона о русском погружении" tabindex="0">
+                    <div class="reel-slide-ru" data-reel-card><article class="reel-card-ru">
+                        <div class="reel-meta-ru"><span>REEL 01</span><strong>Бесплатный контент как мотивация</strong></div>
+                        <div class="facebook-frame-ru">
+                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F25032313739781274&show_text=false&width=560" title="Алджон о русскоязычном контенте как мотивации" width="560" height="315" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <a href="https://www.facebook.com/reel/25032313739781274" target="_blank" rel="noopener noreferrer">Смотреть в Facebook ↗</a>
+                    </article></div>
+                    <div class="reel-slide-ru" data-reel-card><article class="reel-card-ru">
+                        <div class="reel-meta-ru"><span>REEL 02</span><strong>1000+ часов NBA-погружения</strong></div>
+                        <div class="facebook-frame-ru">
+                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1214471113995742%2F%3Fs%3Dsingle_unit&show_text=false&width=560" title="Алджон о тысяче часов NBA на русском" width="560" height="315" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <a href="https://www.facebook.com/reel/1214471113995742/?s=single_unit" target="_blank" rel="noopener noreferrer">Смотреть в Facebook ↗</a>
+                    </article></div>
+                    <div class="reel-slide-ru" data-reel-card><article class="reel-card-ru">
+                        <div class="reel-meta-ru"><span>REEL 03</span><strong>Как я практикую русский каждый день</strong></div>
+                        <div class="facebook-frame-ru">
+                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1759602801250870&show_text=false&width=560" title="Алджон показывает ежедневную практику русского во время матчей NBA" width="560" height="315" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p>В этом сыром фрагменте видно сам ритуал: матч идёт, а русский работает рядом — без отдельного «учебного часа».</p>
+                        <a href="https://www.facebook.com/reel/1759602801250870" target="_blank" rel="noopener noreferrer">Смотреть в Facebook ↗</a>
+                    </article></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="go-to-band-ru" aria-labelledby="goto-heading-ru">
+                <p>МОИ GO-TO ИСТОЧНИКИ</p>
+                <h3 id="goto-heading-ru">AANBA и «Взял Мяч»</h3>
+                <span>Новости, разборы, история команд и повторяющаяся баскетбольная лексика — именно здесь привычка стала настоящим языковым объёмом.</span>
+                <a href="#shelf-sport">Открыть спортивную полку ↓</a>
+            </div>
+
+        </section>
+
+        <section id="books" class="books-section-ru" aria-labelledby="books-heading-ru">
+            <header class="section-head-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 05 / КНИГИ</p>
+                    <h2 id="books-heading-ru">Моя русская книжная полка</h2>
+                </div>
+                <p>Сейчас здесь пять книг с разной длиной и сложностью. Полка открыта для новых жанров и современных авторов, когда я добавлю их позже.</p>
+            </header>
+            <div class="books-register-ru">
+                <div class="books-register-head-ru">
+                    <p>КНИЖНАЯ ПОЛКА / B1–C2</p>
+                    <div>
+                        <button id="russian-books-previous" type="button" aria-label="Прокрутить книжную полку назад">←</button>
+                        <button id="russian-books-next" type="button" aria-label="Прокрутить книжную полку вперёд">→</button>
+                    </div>
+                </div>
+                <ul id="russian-books-shelf" class="books-shelf-ru" aria-label="Книги на русском языке"></ul>
+                <p id="russian-books-status" class="books-status-ru" role="status">Загружаю книжную полку…</p>
+            </div>
+        </section>
+
+        <section id="creators" class="creators-section-ru" aria-labelledby="creators-heading-ru">
+            <header class="section-head-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 06 / РУССКОЯЗЫЧНЫЕ АВТОРЫ</p>
+                    <h2 id="creators-heading-ru">Слушать по интересам</h2>
+                </div>
+                <p>Язык, современный разговор, спорт и повседневность живут на отдельных полках. Russian with Max и Russian Progress открывают языковую полку — дальше можно выбирать тему и темп.</p>
+            </header>
+            <fieldset id="russian-creator-level-filter" class="creator-level-filter-ru">
+                <legend>Фильтр по уровню</legend>
+                <div class="creator-level-options-ru" aria-label="Выбрать уровень сложности">
+                    <button type="button" data-creator-level="all" aria-pressed="true">Все</button>
+                    <button type="button" data-creator-level="A1" aria-pressed="false">A1</button>
+                    <button type="button" data-creator-level="A2" aria-pressed="false">A2</button>
+                    <button type="button" data-creator-level="B1" aria-pressed="false">B1</button>
+                    <button type="button" data-creator-level="B2" aria-pressed="false">B2</button>
+                    <button type="button" data-creator-level="C1" aria-pressed="false">C1</button>
+                </div>
+            </fieldset>
+            <div id="russian-creator-shelves" class="creator-shelves-ru" aria-live="polite"></div>
+            <p id="creator-library-status" class="library-status-ru" role="status">Загружаю полки…</p>
+        </section>
+
+        <section id="films" class="films-section-ru" aria-labelledby="films-heading-ru">
+            <header class="section-head-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 05 / КИНОЗАЛ</p>
+                    <h2 id="films-heading-ru">Смотреть бесплатно</h2>
+                </div>
+                <p>Когда я искал «смотреть фильм онлайн бесплатно», это было больше, чем кино: я учился читать описания, привыкал к быстрой речи и запоминал интонации в живом контексте.</p>
+            </header>
+            <div class="films-feature-card-ru">
+                <div class="kinozed-brand-header-ru">
+                    <a href="https://kinozed.org/" target="_blank" rel="noopener noreferrer" class="kinozed-logo-box-ru"><span class="logo__title">Kinozed</span><span class="logo__caption">Фильмы онлайн</span></a>
+                    <div class="kinozed-meta-ru"><span class="kinozed-badge-ru">КАТАЛОГ ПОГРУЖЕНИЯ</span><h3>Русское кино для языковой практики</h3><p>Фильмы, мультфильмы и сериалы в русской озвучке.</p></div>
+                    <a href="https://kinozed.org/" target="_blank" rel="noopener noreferrer" class="kinozed-portal-link-ru">Открыть Kinozed ↗</a>
+                </div>
+            <div class="films-register-ru">
+                <div class="films-register-head-ru">
+                    <div><p>КАТАЛОГ КИНО / A1–C1</p><span>Прямой просмотр и тренировка живого языка</span></div>
+                    <div class="films-controls-ru">
+                        <button id="russian-films-previous" type="button" aria-label="Прокрутить каталог кино назад">←</button>
+                        <button id="russian-films-next" type="button" aria-label="Прокрутить каталог кино вперёд">→</button>
+                    </div>
+                </div>
+                <ul id="russian-films-grid" class="films-shelf-ru" aria-label="Каталог фильмов на русском языке"></ul>
+            </div>
+        </section>
+
+
+        <section id="closing" class="closing-section-ru" aria-labelledby="closing-heading-ru">
+            <div class="closing-word-ru" aria-hidden="true">ДАЛЬШЕ</div>
+            <div class="closing-copy-ru">
+                <p class="section-index-ru">ПОСЛЕДНЯЯ ЗАПИСЬ / ПОКА</p>
+                <h2 id="closing-heading-ru">Мне не нужен идеальный русский, чтобы продолжать им жить.</h2>
+                <p>Он может остыть между разговорами. Он может быть намного сильнее в баскетболе, чем в больнице. Но он уже изменил то, что я смотрю, кого понимаю и какие истории замечаю.</p>
+                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Продолжить историю на моём канале <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
     </main>
- <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
- <script>
-    let siteBasePath;
 
-    if (
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === '127.0.0.1' ||
-        window.location.protocol === 'file:'
-    ) {
-        siteBasePath = '/';
-    } else {
-        siteBasePath = '/';
-    }
+    <div id="creator-modal" class="creator-modal-ru" hidden>
+        <div class="creator-backdrop-ru" data-modal-close></div>
+        <section class="creator-dialog-ru" role="dialog" aria-modal="true" aria-labelledby="creator-modal-name" aria-describedby="creator-modal-description">
+            <button class="creator-close-ru" type="button" data-modal-close aria-label="Закрыть сведения об авторе">×</button>
+            <div class="creator-modal-scroll-ru">
+                <header class="creator-modal-head-ru">
+                    <img id="creator-modal-image" src="../../images/creators/creator-fallback.svg" alt="" width="360" height="360">
+                    <div>
+                        <p id="creator-modal-category" class="creator-modal-kicker-ru"></p>
+                        <h2 id="creator-modal-name"></h2>
+                        <p id="creator-modal-level" class="creator-level-ru"></p>
+                    </div>
+                </header>
+                <p id="creator-modal-description" class="creator-modal-description-ru"></p>
+                <section class="creator-note-ru" aria-labelledby="creator-note-heading">
+                    <p id="creator-note-heading">ЗАМЕТКА АЛДЖОНА</p>
+                    <blockquote id="creator-modal-note"></blockquote>
+                </section>
+                <section class="creator-sample-ru" aria-labelledby="creator-sample-heading">
+                    <div class="creator-sample-head-ru">
+                        <p id="creator-sample-heading">ПОСЛУШАТЬ В КОНТЕКСТЕ</p>
+                        <span id="creator-sample-title"></span>
+                    </div>
+                    <div id="creator-sample-frame" class="creator-sample-frame-ru"></div>
+                </section>
+                <div id="creator-modal-links" class="creator-modal-links-ru"></div>
+            </div>
+        </section>
+    </div>
 
-    console.log('Global siteBasePath set to:', siteBasePath);
-</script>
-<script src="../../js/navbar-loader.js" defer></script>
-<script src="../../js/footer-loader.js" defer></script>
-    <script>
-        // Mini Challenge Game Logic
-        const maintenanceWords = [
-            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
-            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
-            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
-            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
-            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
-            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
-            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
-            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
-            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
-            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
-        ];
-        let currentChallenge;
-        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
-        const cluesContainer = document.querySelector('.clues-container');
-        const languageGuessInput = document.getElementById('languageGuess');
-        const submitGuessBtn = document.getElementById('submitGuessBtn');
-        const newWordBtn = document.getElementById('newWordBtn');
-        const feedbackMessage = document.getElementById('feedbackMessage');
+    <div id="russian-book-modal" class="book-modal-ru" hidden aria-hidden="true">
+        <div class="book-backdrop-ru" data-book-modal-close></div>
+        <section class="book-dialog-ru" role="dialog" aria-modal="true" aria-labelledby="russian-book-modal-title" aria-describedby="russian-book-modal-description" tabindex="-1">
+            <button class="book-close-ru" type="button" data-book-modal-close-button data-book-modal-close aria-label="Закрыть сведения о книге">×</button>
+            <div class="book-modal-scroll-ru">
+                <div class="book-modal-cover-ru">
+                    <img id="russian-book-modal-cover" src="/library/images/books/ru/ru_skazki_pushkina.webp" alt="" width="360" height="540">
+                    <span id="russian-book-modal-source"></span>
+                </div>
+                <div class="book-modal-copy-ru">
+                    <p id="russian-book-modal-category"></p>
+                    <h2 id="russian-book-modal-title"></h2>
+                    <strong id="russian-book-modal-author"></strong>
+                    <span id="russian-book-modal-level"></span>
+                    <p id="russian-book-modal-description"></p>
+                    <section aria-labelledby="russian-book-guidance-heading">
+                        <p id="russian-book-guidance-heading">КАК ПОДСТУПИТЬСЯ</p>
+                        <p id="russian-book-modal-guidance"></p>
+                    </section>
+                    <div id="russian-book-modal-links" class="book-modal-links-ru"></div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-        function setupNewMaintenanceChallenge() {
-            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
-            challengeWordDisplay.textContent = currentChallenge.word;
-            cluesContainer.innerHTML = '';
-            currentChallenge.clues.forEach((clueText, index) => {
-                const clueDiv = document.createElement('div');
-                clueDiv.classList.add('clue');
-                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
-                cluesContainer.appendChild(clueDiv);
-            });
-            feedbackMessage.textContent = ''; languageGuessInput.value = '';
-            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
-            languageGuessInput.focus(); newWordBtn.style.display = 'none';
-        }
-        if (submitGuessBtn) { // Check if elements exist (they should on this page)
-            submitGuessBtn.addEventListener('click', function() {
-                const userGuess = languageGuessInput.value.trim().toLowerCase();
-                const correctAnswer = currentChallenge.language.toLowerCase();
-                if (!userGuess) {
-                    feedbackMessage.textContent = "Please enter your language guess!";
-                    feedbackMessage.className = 'feedback-incorrect'; return;
-                }
-                if (userGuess === correctAnswer) {
-                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
-                    feedbackMessage.className = 'feedback-correct';
-                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
-                    newWordBtn.style.display = 'inline-block';
-                } else {
-                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
-                    feedbackMessage.className = 'feedback-incorrect';
-                    newWordBtn.style.display = 'inline-block'; // Show new word button even on incorrect guess
-                }
-            });
-            languageGuessInput.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
-            });
-            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
-            setupNewMaintenanceChallenge(); // Initialize
-        }
+    <footer id="main-footer-placeholder"></footer>
 
-        // Copyright Year
-        const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
-
-        // Mobile Menu Toggle (assuming .menu-toggle and .nav-links structure from global nav)
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active'); // JS toggles this class
-                menuToggle.classList.toggle('active'); // For hamburger animation
-            });
-        }
-
-        // Desktop Dropdown Menu Logic
-        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
-        desktopDropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('a.dropbtn');
-            if (button) {
-                button.setAttribute('aria-haspopup', 'true');
-                button.setAttribute('aria-expanded', 'false');
-                button.addEventListener('click', function(event) {
-                    // For dropdowns where dropbtn itself is not a page link
-                    if (button.getAttribute('href') === 'javascript:void(0)' || button.getAttribute('href') === '#') {
-                        event.preventDefault();
-                    }
-                    // If it's a link to a page section (like index.html#languages), allow default but still open dropdown
-                    // For now, let's assume all dropbtns are primarily for toggling
-                    if (button.getAttribute('href').startsWith('#') && button.getAttribute('href') !== 'javascript:void(0)') {
-                        // If it's a fragment identifier for the same page, we might still want to prevent default and handle scroll
-                        // But for now, we focus on the toggle action
-                    } else {
-                         event.preventDefault(); // Prevent navigation for most dropbtn clicks
-                    }
-
-
-                    const isCurrentlyOpen = dropdown.classList.contains('open');
-                    desktopDropdowns.forEach(otherDd => {
-                        if (otherDd !== dropdown) {
-                            otherDd.classList.remove('open');
-                            const otherButton = otherDd.querySelector('a.dropbtn');
-                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    if (isCurrentlyOpen) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        dropdown.classList.add('open');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                    event.stopPropagation();
-                });
-            }
-        });
-        document.addEventListener('click', function(event) {
-            desktopDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove('open');
-                    const button = dropdown.querySelector('a.dropbtn');
-                    if (button) button.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    </script>
+    <script>const siteBasePath = '../../';</script>
+    <script src="../../js/navbar-loader.js"></script>
+    <script src="../../js/footer-loader.js"></script>
+    <script src="../../library/js/data/book_data.js"></script>
+    <script type="module" src="js/russian-entry.js"></script>
 </body>
 </html>

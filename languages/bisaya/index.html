@@ -26,6 +26,7 @@
                  <link rel="stylesheet" href="css/bisaya-afc-feature.css">
                      
     <link rel="stylesheet" href="css/bisaya-navbar-footer.css">
+    <link rel="stylesheet" href="../shared/css/language-section-nav.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -34,9 +35,22 @@
 
     <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png"> <!-- Update path if needed -->
 </head>
-<body class="bisaya-page">
+<body class="bisaya-page has-language-section-nav">
 
     <header id="main-header-placeholder"></header>
+    <nav class="language-section-nav" data-language-section-nav aria-label="Mga kapitulo sa Bisdak Polyglot">
+        <div class="language-section-nav__viewport">
+            <ul class="language-section-nav__list">
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#bisaya-hero" aria-current="location">Sugilanon</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#aljohn-cebu-adventure-video">72 Oras</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#bisaya-creator-community">Creators</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#bisaya-top-picks">Top Picks</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#bisaya-shows-podcasts">Salida ug Podcast</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#bisaya-music-section">Musika</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#alliance-francaise-cebu-feature">Komunidad</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main id="aljohn-bisaya-world">
 
@@ -451,7 +465,7 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
 
     <div class="immersive-actions"> <!-- CTA is now a direct child of immersive-content-area, sibling to the scrollable part -->
         <a id="kdrama-detail-viu-link" href="#" target="_blank" class="btn-watch-viu-immersive">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Viu_logo.svg/2560px-Viu_logo.svg.png" alt="Watch on Viu" class="viu-logo-immersive">
+            <img src="images/viu-logo.png" alt="Watch on Viu" class="viu-logo-immersive" width="160" height="56" loading="lazy" decoding="async">
             <span>Tan-awa Karon sa Viu</span>
         </a>
     </div>
@@ -596,6 +610,7 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
 </script>
 <script src="../../js/navbar-loader.js" defer></script>
 <script src="../../js/footer-loader.js" defer></script>
+<script src="../shared/js/language-section-nav.js" defer></script>
 <!-- YouTube Iframe API Loader (MUST BE BEFORE YouTube API SCRIPT) -->
     <script src="js/youtube-api-loader.js"></script> 
     <!-- Actual YouTube Iframe API Script -->

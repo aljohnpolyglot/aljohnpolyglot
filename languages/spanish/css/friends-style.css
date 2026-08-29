@@ -171,6 +171,14 @@
     transform: scale(1.05);
 }
 
+#friends-modal .button-link + .button-link {
+    margin-left: 0.75rem;
+}
+
+#friends-modal .hidden {
+    display: none;
+}
+
 /* Reutilizamos el estilo del vídeo embebido que ya tienes */
 #friends-modal .embed-responsive {
     position: relative;

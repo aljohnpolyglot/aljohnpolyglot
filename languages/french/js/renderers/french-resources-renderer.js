@@ -4,6 +4,7 @@ function renderFrenchResources() {
     const photoModal = document.getElementById('photo-lightbox-fr');
     const photoModalDialog = photoModal?.querySelector('.photo-lightbox-dialog-fr');
     const photoModalImage = document.getElementById('photo-lightbox-image-fr');
+    const photoModalVideo = document.getElementById('photo-lightbox-video-fr');
     const photoModalCaption = document.getElementById('photo-lightbox-caption-fr');
     const photoModalCounter = document.getElementById('photo-lightbox-counter-fr');
     const photoModalClose = document.getElementById('photo-lightbox-close-fr');
@@ -16,6 +17,7 @@ function renderFrenchResources() {
         || !photoModal
         || !photoModalDialog
         || !photoModalImage
+        || !photoModalVideo
         || !photoModalCaption
         || !photoModalCounter
         || !photoModalClose
@@ -26,7 +28,7 @@ function renderFrenchResources() {
     }
 
     const lightboxState = {
-        photos: [],
+        items: [],
         activeIndex: 0,
         trigger: null,
     };
@@ -64,34 +66,65 @@ function renderFrenchResources() {
 
     const hasGallery = spotlight => Array.isArray(spotlight.gallery) && spotlight.gallery.length > 0;
 
+    const isFacebookReel = item => item?.type === 'facebookReel';
+
+    const getFacebookEmbedUrl = sourceUrl =>
+        `https://www.facebook.com/plugins/video.php?height=476&href=${encodeURIComponent(sourceUrl)}&show_text=false&width=267&t=0`;
+
+    const renderGalleryItem = (spotlight, item, index) => {
+        const activeClass = index === 0 ? ' is-active' : '';
+        const hiddenAttributes = index === 0 ? '' : ' hidden';
+        const ariaHidden = index === 0 ? 'false' : 'true';
+
+        if (isFacebookReel(item)) {
+            const embedUrl = getFacebookEmbedUrl(item.sourceUrl);
+
+            return `
+                <figure class="spotlight-album-photo-fr spotlight-album-reel-fr${activeClass}" data-gallery-index="${index}"${hiddenAttributes} aria-hidden="${ariaHidden}">
+                    <div class="spotlight-album-reel-frame-fr">
+                        <iframe src="${index === 0 ? escapeHtml(embedUrl) : 'about:blank'}" data-embed-src="${escapeHtml(embedUrl)}" title="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <figcaption>
+                        <span>${escapeHtml(item.caption)}</span>
+                        <a class="spotlight-album-reel-source-fr" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Ouvrir sur Facebook <span aria-hidden="true">↗</span></a>
+                    </figcaption>
+                </figure>
+            `;
+        }
+
+        return `
+            <figure class="spotlight-album-photo-fr${activeClass}" data-gallery-index="${index}"${hiddenAttributes} aria-hidden="${ariaHidden}">
+                <button class="spotlight-album-trigger-fr" type="button" data-spotlight-id="${escapeHtml(spotlight.id)}" data-gallery-index="${index}" aria-label="Agrandir : ${escapeHtml(item.caption)}">
+                    <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}" loading="lazy" decoding="async">
+                </button>
+                <figcaption aria-hidden="true">${escapeHtml(item.caption)}</figcaption>
+            </figure>
+        `;
+    };
+
     const renderSpotlightVisual = spotlight => {
         if (!hasGallery(spotlight)) {
             return `<img src="${escapeHtml(spotlight.imageSrc)}" alt="${escapeHtml(spotlight.imageAlt)}" loading="lazy" decoding="async">`;
         }
 
+        const hasMixedMedia = spotlight.gallery.some(isFacebookReel);
+        const itemLabel = hasMixedMedia ? 'Élément' : 'Photo';
+        const navigationLabel = hasMixedMedia ? 'Média' : 'Photo';
+
         return `
-            <div class="spotlight-album-fr" data-spotlight-id="${escapeHtml(spotlight.id)}" data-active-index="0" role="group" aria-roledescription="carrousel" aria-label="Album photo — ${escapeHtml(spotlight.name)}">
+            <div class="spotlight-album-fr" data-spotlight-id="${escapeHtml(spotlight.id)}" data-active-index="0" data-item-label="${itemLabel}" role="group" aria-roledescription="carrousel" aria-label="Galerie — ${escapeHtml(spotlight.name)}">
                 <div class="spotlight-album-viewport-fr">
                     ${spotlight.gallery
-                        .map(
-                            (photo, index) => `
-                                <figure class="spotlight-album-photo-fr${index === 0 ? ' is-active' : ''}" data-photo-index="${index}"${index === 0 ? '' : ' hidden'} aria-hidden="${index === 0 ? 'false' : 'true'}">
-                                    <button class="spotlight-album-trigger-fr" type="button" data-spotlight-id="${escapeHtml(spotlight.id)}" data-photo-index="${index}" aria-label="Agrandir : ${escapeHtml(photo.caption)}">
-                                        <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}" loading="lazy" decoding="async">
-                                    </button>
-                                    <figcaption aria-hidden="true">${escapeHtml(photo.caption)}</figcaption>
-                                </figure>
-                            `,
-                        )
+                        .map((item, index) => renderGalleryItem(spotlight, item, index))
                         .join('')}
                 </div>
-                <button class="spotlight-album-nav-fr previous" type="button" data-carousel-direction="-1" aria-label="Photo précédente de ${escapeHtml(spotlight.name)}">
+                <button class="spotlight-album-nav-fr previous" type="button" data-carousel-direction="-1" aria-label="${navigationLabel} précédent de ${escapeHtml(spotlight.name)}">
                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
-                <button class="spotlight-album-nav-fr next" type="button" data-carousel-direction="1" aria-label="Photo suivante de ${escapeHtml(spotlight.name)}">
+                <button class="spotlight-album-nav-fr next" type="button" data-carousel-direction="1" aria-label="${navigationLabel} suivant de ${escapeHtml(spotlight.name)}">
                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
-                <p class="spotlight-album-status-fr" aria-live="polite">Photo 1 sur ${spotlight.gallery.length}</p>
+                <p class="spotlight-album-status-fr" aria-live="polite">${itemLabel} 1 sur ${spotlight.gallery.length}</p>
             </div>
         `;
     };
@@ -120,36 +153,53 @@ function renderFrenchResources() {
         .join('');
 
     const getFocusableModalElements = () =>
-        Array.from(photoModalDialog.querySelectorAll('button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+        Array.from(
+            photoModalDialog.querySelectorAll(
+                'button:not([disabled]):not([hidden]), iframe:not([hidden]), [tabindex]:not([tabindex="-1"]):not([hidden])',
+            ),
+        );
 
-    const renderActivePhoto = () => {
-        const photo = lightboxState.photos[lightboxState.activeIndex];
-        if (!photo) return;
+    const renderActiveMedia = () => {
+        const item = lightboxState.items[lightboxState.activeIndex];
+        if (!item) return;
 
-        photoModalImage.src = photo.src;
-        photoModalImage.alt = photo.alt;
-        photoModalCaption.textContent = photo.caption;
-        photoModalCounter.textContent = `Photo ${lightboxState.activeIndex + 1} sur ${lightboxState.photos.length}`;
-        const hasMultiplePhotos = lightboxState.photos.length > 1;
-        photoModalPrevious.hidden = !hasMultiplePhotos;
-        photoModalNext.hidden = !hasMultiplePhotos;
+        if (isFacebookReel(item)) {
+            photoModalImage.hidden = true;
+            photoModalImage.src = '';
+            photoModalVideo.hidden = false;
+            photoModalVideo.title = item.title;
+            photoModalVideo.src = getFacebookEmbedUrl(item.sourceUrl);
+        } else {
+            photoModalVideo.hidden = true;
+            photoModalVideo.src = 'about:blank';
+            photoModalImage.hidden = false;
+            photoModalImage.src = item.src;
+            photoModalImage.alt = item.alt;
+        }
+
+        photoModalCaption.textContent = item.caption;
+        const itemLabel = lightboxState.items.some(isFacebookReel) ? 'Élément' : 'Photo';
+        photoModalCounter.textContent = `${itemLabel} ${lightboxState.activeIndex + 1} sur ${lightboxState.items.length}`;
+        const hasMultipleItems = lightboxState.items.length > 1;
+        photoModalPrevious.hidden = !hasMultipleItems;
+        photoModalNext.hidden = !hasMultipleItems;
     };
 
-    const changePhoto = direction => {
-        const photoCount = lightboxState.photos.length;
-        if (photoCount < 2) return;
+    const changeMedia = direction => {
+        const itemCount = lightboxState.items.length;
+        if (itemCount < 2) return;
 
-        lightboxState.activeIndex = (lightboxState.activeIndex + direction + photoCount) % photoCount;
-        renderActivePhoto();
+        lightboxState.activeIndex = (lightboxState.activeIndex + direction + itemCount) % itemCount;
+        renderActiveMedia();
     };
 
-    const openPhotoModal = (spotlight, photoIndex, trigger) => {
+    const openPhotoModal = (spotlight, galleryIndex, trigger) => {
         if (!hasGallery(spotlight)) return;
 
-        lightboxState.photos = [...spotlight.gallery];
-        lightboxState.activeIndex = Math.max(0, Math.min(photoIndex, lightboxState.photos.length - 1));
+        lightboxState.items = [...spotlight.gallery];
+        lightboxState.activeIndex = Math.max(0, Math.min(galleryIndex, lightboxState.items.length - 1));
         lightboxState.trigger = trigger;
-        renderActivePhoto();
+        renderActiveMedia();
         photoModal.hidden = false;
         photoModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('photo-lightbox-open-fr');
@@ -167,8 +217,11 @@ function renderFrenchResources() {
         window.setTimeout(() => {
             photoModal.hidden = true;
             photoModalImage.src = '';
+            photoModalVideo.src = 'about:blank';
+            photoModalVideo.hidden = true;
+            photoModalImage.hidden = false;
             lightboxState.trigger?.focus();
-            lightboxState.photos = [];
+            lightboxState.items = [];
             lightboxState.activeIndex = 0;
             lightboxState.trigger = null;
         }, 180);
@@ -182,13 +235,19 @@ function renderFrenchResources() {
         const nextIndex = (currentIndex + direction + photos.length) % photos.length;
         photos.forEach((photo, index) => {
             const isActive = index === nextIndex;
+            const embeddedVideo = photo.querySelector('iframe[data-embed-src]');
             photo.hidden = !isActive;
             photo.classList.toggle('is-active', isActive);
             photo.setAttribute('aria-hidden', String(!isActive));
+
+            if (embeddedVideo) {
+                embeddedVideo.src = isActive ? embeddedVideo.dataset.embedSrc : 'about:blank';
+            }
         });
         album.dataset.activeIndex = String(nextIndex);
         const status = album.querySelector('.spotlight-album-status-fr');
-        if (status) status.textContent = `Photo ${nextIndex + 1} sur ${photos.length}`;
+        const itemLabel = album.dataset.itemLabel || 'Photo';
+        if (status) status.textContent = `${itemLabel} ${nextIndex + 1} sur ${photos.length}`;
     };
 
     spotlightContainer.addEventListener('click', event => {
@@ -204,16 +263,16 @@ function renderFrenchResources() {
         if (!trigger || !spotlightContainer.contains(trigger)) return;
 
         const spotlight = data.spotlights.find(item => item.id === trigger.dataset.spotlightId);
-        const photoIndex = Number.parseInt(trigger.dataset.photoIndex || '0', 10);
-        if (spotlight) openPhotoModal(spotlight, photoIndex, trigger);
+        const galleryIndex = Number.parseInt(trigger.dataset.galleryIndex || '0', 10);
+        if (spotlight) openPhotoModal(spotlight, galleryIndex, trigger);
     });
 
     photoModal.addEventListener('click', event => {
         if (event.target.closest('[data-photo-lightbox-close]')) closePhotoModal();
     });
     photoModalClose.addEventListener('click', closePhotoModal);
-    photoModalPrevious.addEventListener('click', () => changePhoto(-1));
-    photoModalNext.addEventListener('click', () => changePhoto(1));
+    photoModalPrevious.addEventListener('click', () => changeMedia(-1));
+    photoModalNext.addEventListener('click', () => changeMedia(1));
 
     document.addEventListener('keydown', event => {
         if (photoModal.hidden) return;
@@ -225,12 +284,12 @@ function renderFrenchResources() {
         }
         if (event.key === 'ArrowLeft') {
             event.preventDefault();
-            changePhoto(-1);
+            changeMedia(-1);
             return;
         }
         if (event.key === 'ArrowRight') {
             event.preventDefault();
-            changePhoto(1);
+            changeMedia(1);
             return;
         }
         if (event.key !== 'Tab') return;

@@ -8,6 +8,13 @@
     position: relative;
 }
 
+#shelf-books .book-card:focus-visible,
+.modal-close-button:focus-visible,
+#modal-book-links .button-link:focus-visible {
+    outline: 3px solid #d25000;
+    outline-offset: 4px;
+}
+
 #shelf-books .book-card .card-image {
     height: 250px; /* Altura fija para las portadas */
     object-fit: cover;

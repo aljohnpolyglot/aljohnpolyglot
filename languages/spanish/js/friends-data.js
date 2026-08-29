@@ -28,6 +28,29 @@ const friendsData = [
         longDesc: 'Conocí a Luis a través de la comunidad y su energía es increíble. Como mexicano viviendo en Filipinas, ofrece una perspectiva única y muy divertida. En nuestros vídeos juntos se puede ver la increíble conexión entre México y Filipinas.',
         videoId: 'CF3RExvS3_8',
         link: 'https://www.tiktok.com/@luisaguilarph',
+        secondaryLink: 'https://www.instagram.com/luisaguilar_ph/',
+        secondaryLinkLabel: 'Ver Instagram',
         countryLogos: ['mx',]
+    },
+    {
+        id: 'lcs-manila',
+        name: 'LCS Manila',
+        profilePic: 'images/friends/lcs-manila-instagram.jpg',
+        shortDesc: 'Nuestro colaborador para acercar América Latina y Filipinas a través de la cultura.',
+        longDesc: 'Con LCS Manila compartí Sabor Latino 2025, un festival que reunió comida, música y cultura latinoamericana en Makati. La pregunta que quedó en el aire fue: «¿El adobo no es filipino?». Perú y México también tienen su propio adobo; la comida es la evidencia de una historia compartida y compleja. No nos conformemos con la mitad de la historia: probemos la verdad en el festival.',
+        link: 'https://www.lcsmanila.com/',
+        collaborationLink: 'https://www.facebook.com/reel/825407263250500',
+        videoEmbedUrl: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F825407263250500&show_text=false',
+        countryLogos: ['ph']
+    },
+    {
+        id: 'sergio-octubre',
+        name: 'SergioOctubrePremium',
+        profilePic: 'images/friends/sergio-octubre.jpg',
+        shortDesc: 'Mi amigo de Discord: humor, parodias y mucha buena onda en YouTube.',
+        longDesc: 'Conocí a Sergio en Discord y es una persona muy divertida y graciosa. Hace parodias y otros vídeos en YouTube con un sentido del humor que siempre me saca una sonrisa.',
+        videoId: 'M1nTAL6Itf0',
+        link: 'https://www.youtube.com/@SergioOctubrePremium',
+        countryLogos: ['ar']
     }
 ];

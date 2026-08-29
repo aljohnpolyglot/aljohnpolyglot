@@ -40,6 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
         window.renderFrenchResources();
     }
 
+    if (typeof window.renderFrenchStudyKit === 'function') {
+        window.renderFrenchStudyKit();
+    }
+
+    if (typeof window.renderFrenchBooks === 'function') {
+        window.renderFrenchBooks();
+    }
+
+    if (typeof window.renderFrenchPodcasts === 'function') {
+        window.renderFrenchPodcasts();
+    }
+
     if (typeof window.renderFrenchPlaylists === 'function') {
         window.renderFrenchPlaylists();
     }

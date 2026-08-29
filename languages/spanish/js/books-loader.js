@@ -1,5 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    let lastFocusedBookCard = null;
+    let previousBodyOverflow = '';
+    const bookFallbackImage = '/library/images/assets/open_book_flipping_icon.png';
 
     // --- 1. CARGADOR DE LA ESTANTERÍA DE LIBROS ---
     // Función para cargar y mostrar los libros en su estantería
@@ -12,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Ordenar libros: primero por nivel CEFR (los más fáciles primero), luego alfabéticamente por título
-        const sortedBooks = booksData.sort((a, b) => {
+        const sortedBooks = [...booksData].sort((a, b) => {
             const levelA = a.cefr[0]; // Tomamos el nivel más bajo del rango
             const levelB = b.cefr[0];
             
@@ -28,9 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('article');
             card.className = 'card book-card';
             card.dataset.bookId = book.id; // Usamos un data-attribute para identificar el libro
+            card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-haspopup', 'dialog');
+            card.setAttribute('aria-controls', 'book-modal');
+            card.setAttribute('aria-label', `Ver detalles y descargas de ${book.title}`);
 
             card.innerHTML = `
-                <img src="${book.coverImage}" alt="Portada de ${book.title}" class="card-image">
+                <img src="${book.coverImage}" alt="Portada de ${book.title}" class="card-image" width="360" height="540" loading="lazy" decoding="async">
                 <div class="card-content">
                     <h4 class="card-title">${book.title}</h4>
                     <p class="card-subtitle">${book.author}</p>
@@ -55,6 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Poblar el modal con los datos del libro seleccionado
         document.getElementById('modal-book-cover').src = book.coverImage;
         document.getElementById('modal-book-cover').alt = `Portada de ${book.title}`;
+        document.getElementById('modal-book-cover').onerror = () => {
+            const cover = document.getElementById('modal-book-cover');
+            cover.onerror = null;
+            cover.src = bookFallbackImage;
+            cover.alt = `Portada no disponible para ${book.title}`;
+        };
         document.getElementById('modal-book-title').textContent = book.title;
         document.getElementById('modal-book-author').textContent = `por ${book.author}`;
         document.getElementById('modal-book-cefr').textContent = `Nivel Sugerido: ${book.cefr.join(' - ')}`;
@@ -70,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             epubLink.className = 'button-link';
             epubLink.textContent = 'Descargar EPUB';
             epubLink.target = '_blank';
+            epubLink.rel = 'noopener noreferrer';
             linksContainer.appendChild(epubLink);
         }
 
@@ -79,12 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
             pdfLink.className = 'button-link';
             pdfLink.textContent = 'Descargar PDF';
             pdfLink.target = '_blank';
+            pdfLink.rel = 'noopener noreferrer';
             linksContainer.appendChild(pdfLink);
         }
 
         // Mostrar el modal
         modal.classList.remove('hidden');
+        previousBodyOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+        document.getElementById('modal-close-btn')?.focus();
     }
 
 
@@ -93,9 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------
     function closeBookModal() {
         const modal = document.getElementById('book-modal');
-        if (modal) {
+        if (modal && !modal.classList.contains('hidden')) {
             modal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restaura el scroll del fondo
+            document.body.style.overflow = previousBodyOverflow;
+            lastFocusedBookCard?.focus();
         }
     }
 
@@ -107,17 +126,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cargar los libros cuando la página esté lista
     loadBooks();
 
-    // Listener para abrir el modal al hacer clic en una tarjeta de libro
+    function openBookFromCard(card) {
+        const selectedBook = booksData.find(book => book.id === card.dataset.bookId);
+        if (selectedBook) {
+            lastFocusedBookCard = card;
+            openBookModal(selectedBook);
+        }
+    }
+
+    // Listener para abrir el modal al hacer clic o usar el teclado en una tarjeta de libro
     const bookShelf = document.getElementById('shelf-books');
     if (bookShelf) {
         bookShelf.addEventListener('click', (event) => {
             const card = event.target.closest('.book-card');
             if (card) {
-                const bookId = card.dataset.bookId;
-                const selectedBook = booksData.find(b => b.id === bookId);
-                if (selectedBook) {
-                    openBookModal(selectedBook);
-                }
+                openBookFromCard(card);
+            }
+        });
+
+        bookShelf.addEventListener('keydown', (event) => {
+            const card = event.target.closest('.book-card');
+            if (card && (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault();
+                openBookFromCard(card);
             }
         });
     }
@@ -135,8 +166,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Listener para cerrar el modal con la tecla "Escape"
     document.addEventListener('keydown', (event) => {
+        const modal = document.getElementById('book-modal');
+        if (!modal || modal.classList.contains('hidden')) return;
         if (event.key === 'Escape') {
+            event.preventDefault();
             closeBookModal();
+            return;
+        }
+        if (event.key === 'Tab') {
+            const focusable = Array.from(modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
     });
 

@@ -32,6 +32,7 @@
     display: flex;
     gap: 2.5rem;
     align-items: flex-start;
+    min-width: 0;
 }
 
 /* --- Filter Sidebar --- */
@@ -45,6 +46,8 @@
     position: sticky;
     top: var(--sticky-top-offset);
     color: var(--sinulog-off-white);
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .filter-sidebar-bisaya h3 { /* "Filter" title */

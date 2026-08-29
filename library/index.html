@@ -150,7 +150,7 @@
 
             <aside id="character-panel-sidebar" style="display: none;">
                 <div id="character-info">
-                    <img src="" alt="Character Portrait" id="character-portrait-img"> <!-- Portrait on its own line -->
+                    <img src="images/assets/captain_aljohn_transparent.png" alt="Character Portrait" id="character-portrait-img"> <!-- Portrait on its own line -->
                     <div id="character-name-line"> <!-- New container for flag and name -->
                         <!-- Flag will be prepended here by JS -->
                         <h3 id="character-name-display"></h3>
@@ -158,12 +158,12 @@
                 </div> <!-- ***** THIS CLOSING DIV WAS MISSING for #character-info ***** -->
                 
                 <div id="chatbot-interface">
-                    <div id="chat-log-display">
+                    <div id="chat-log-display" role="log" aria-live="polite" aria-relevant="additions text">
                         <!-- Chat messages appear here -->
                     </div>
                     <div id="chat-input-container">
-                        <input type="text" id="user-chat-input-field" placeholder="Ask or practice...">
-                        <button id="send-chat-message-btn"><i class="fas fa-paper-plane"></i></button>
+                        <input type="text" id="user-chat-input-field" placeholder="Ask or practice..." aria-label="Ask the library assistant">
+                        <button id="send-chat-message-btn" type="button" aria-label="Send message"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
                     </div>
                     <p class="api-note">Our linguist awaits your query.</p> <!-- Simplified API note -->
                 </div>
@@ -264,12 +264,12 @@
 
        
     <!-- Book Modal Structure (hidden by default) -->
-    <div id="book-info-modal" class="modal-overlay">
-        <div class="modal-content-box">
-            <button class="close-modal-button">×</button>
+    <div id="book-info-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-book-title-text">
+        <div class="modal-content-box" tabindex="-1">
+            <button class="close-modal-button" type="button" aria-label="Close book details">×</button>
             <div class="modal-book-layout">
                 <div class="modal-cover-container">
-                    <img src="" alt="Book Cover" id="modal-book-cover-img">
+                    <img src="images/assets/open_book_flipping_icon.png" alt="Book Cover" id="modal-book-cover-img">
                 </div>
                 <div class="modal-details-container">
                     <h2 id="modal-book-title-text"></h2>
@@ -285,6 +285,7 @@
                     <div class="modal-download-actions">
                         <a href="#" id="modal-epub-download-btn" class="download-btn" target="_blank" download style="display:none;">Download EPUB <i class="fas fa-book-reader"></i></a>
                         <a href="#" id="modal-pdf-download-btn" class="download-btn" target="_blank" download style="display:none;">Download PDF <i class="fas fa-file-pdf"></i></a>
+                        <a href="#" id="modal-language-page-link" class="download-btn" style="display:none;">Continue on the language page <i class="fas fa-compass"></i></a>
                     </div>
                 </div>
             </div>
@@ -296,7 +297,7 @@
             <button class="close-modal-button" id="close-character-bio-modal">×</button>
             <div class="modal-character-layout">
                 <div class="modal-character-portrait-container">
-                    <img src="" alt="Character Full Portrait" id="modal-character-full-img">
+                    <img src="images/assets/captain_aljohn_transparent.png" alt="Character Full Portrait" id="modal-character-full-img">
                 </div>
             <div class="modal-character-details-container">
     <div id="modal-character-name-container"> <!-- New container -->

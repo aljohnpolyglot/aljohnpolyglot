@@ -123,7 +123,7 @@ const culturalInstitutesData = [
         name: "Philippine Italian Association",
         languageKey: "italian",
         // partnerId: "dante-manila", // No longer needed if they are listed separately
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxDSSc1WSb7Kvf4pYjuyIUOU8vfwmMqPHixg&s",
+        logo: "images/languagecenters/pia-logo.jpg",
         flag: "https://flagcdn.com/w40/it.png",
         brandPalette: {
           cardBackground: "#ffffff",
@@ -169,7 +169,7 @@ const culturalInstitutesData = [
         name: "Società Dante Alighieri Manila",
         languageKey: "italian",
         // partnerId: "pia", // No longer needed
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6xeJZsHuplrW3VykiLFXDZRzWAUG8QuOdg&s",
+        logo: "images/languagecenters/dante-manila-logo.jpg",
         flag: "https://flagcdn.com/w40/it.png",
         brandPalette: {
           cardBackground: "#5ac5ef", // Bright Blue background

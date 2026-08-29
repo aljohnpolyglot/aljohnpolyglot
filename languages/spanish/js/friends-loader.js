@@ -42,15 +42,29 @@ function openFriendsModal(friend) {
     ).join('');
 
     // Poblar Vídeo
-    document.getElementById('modal-friend-embed').innerHTML = `
+    const embedArea = document.getElementById('modal-friend-embed');
+    const embedSrc = friend.videoEmbedUrl || (friend.videoId ? `https://www.youtube.com/embed/${encodeURIComponent(friend.videoId)}?autoplay=1` : '');
+    embedArea.innerHTML = embedSrc ? `
         <div class="embed-responsive">
-            <iframe src="https://www.youtube.com/embed/${friend.videoId}?autoplay=1" title="Video de ${friend.name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="${embedSrc}" title="Video de ${friend.name}" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    `;
+    ` : '';
 
     // Poblar Descripción y Enlace
     document.getElementById('modal-friend-long-desc').textContent = friend.longDesc;
     document.getElementById('modal-friend-link').href = friend.link;
+    const collaborationLink = document.getElementById('modal-friend-collab-link');
+    const hasEmbeddedVideo = Boolean(friend.videoId || friend.videoEmbedUrl);
+    collaborationLink.classList.toggle('hidden', !friend.collaborationLink || hasEmbeddedVideo);
+    if (friend.collaborationLink) {
+        collaborationLink.href = friend.collaborationLink;
+    }
+    const secondaryLink = document.getElementById('modal-friend-secondary-link');
+    secondaryLink.classList.toggle('hidden', !friend.secondaryLink);
+    if (friend.secondaryLink) {
+        secondaryLink.href = friend.secondaryLink;
+        secondaryLink.childNodes[0].textContent = `${friend.secondaryLinkLabel || 'Ver enlace'} `;
+    }
 
     // Mostrar Modal
     modal.classList.remove('hidden');

@@ -1,450 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-      <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    <meta name="description" content="Perjalanan Bahasa Indonesia Aljohn Polyglot: video, musik, sumber belajar, kreator, KBRI Manila, dan persahabatan Indonesia–Filipina.">
+    <meta name="theme-color" content="#071b2a">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="Ruang Bahasa Indonesia saya · Aljohn Polyglot">
+    <meta property="og:description" content="Bahasa yang membawa Aljohn kepada musik, percakapan, dan orang-orang di antara Indonesia dan Filipina.">
+    <meta property="og:image" content="https://aljohnpolyglot.com/languages/indonesian/images/hero/christian-bautista-lunch-2023.jpg">
+    <title>Ruang Bahasa Indonesia saya · Aljohn Polyglot</title>
+    <link rel="canonical" href="https://aljohnpolyglot.com/languages/indonesian/">
     <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-red: #C8102E;
-            --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27); /* Gold-like yellow */
-            --dark-text: #2c3e50;
-            --light-text: #ffffff;
-            --light-bg: #f8f9fa; /* Used for header background */
-            --border-color: #e0e0e0;
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Open Sans', sans-serif;
-            --font-mono: 'Roboto Mono', monospace;
-            --tech-cyan: #00A9FF;
-            --deep-space-blue: #0a0f1a; /* Darker blue for contrast */
-            --maintenance-page-bg: #0d1424; /* Specific background for this page */
-            --maintenance-panel-bg: rgba(10, 25, 47, 0.9); /* Panel background */
-            --maintenance-border: rgba(0, 169, 255, 0.25);
-            --maintenance-text-light: #e0f2f7;
-            --maintenance-text-secondary: #a8c0d8;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body.maintenance-page-active { /* Add this class to body in HTML */
-            font-family: var(--font-secondary);
-            background-color: var(--maintenance-page-bg);
-            color: var(--maintenance-text-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
-            padding-top: 70px; /* For fixed header */
-        }
-
-        /* Header Styles (Ensure these align with your global styles.css for consistency) */
-        /* If these are already perfectly defined in styles.css and linked, you might not need to repeat all of them here */
-        header {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background-color: var(--light-bg); /* Light background for contrast */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header nav.container { /* This is the inner container for nav content */
-            width: 90%;
-            max-width: 1100px; /* Or your site's standard max-width */
-            margin: 0 auto; /* Centers the nav content within the full-width header */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
-        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-
-        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
-        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-
-        .nav-links li.dropdown { position: relative; }
-        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; /* Match link padding */ }
-        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--light-bg);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-            z-index: 1001;
-            border-radius: 0 0 6px 6px;
-            top: 100%;
-            left: 0; /* Aligns dropdown to the left of its parent li */
-            padding: 8px 0;
-            border: 1px solid var(--border-color);
-            border-top: none;
-            text-align: left; /* Ensures content within dropdown is left-aligned */
-        }
-        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
-        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
-        .nav-links li.dropdown.open .dropdown-content { display: block; } /* For JS toggle */
-
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
-        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
-        .nav-cta:hover::after { width: 0 !important; } /* Prevent underline on CTA button */
-
-
-        .menu-toggle { display: none; /* Handled by global styles.css for mobile */ }
-
-
-        main.main-maintenance {
-            flex-grow: 1;
-            display: flex; /* Use flex to center its child */
-            align-items: center; /* Vertically center */
-            justify-content: center; /* Horizontally center */
-            width: 100%;
-            padding: 40px 20px; /* Adjusted top padding is handled by body */
-            text-align: center; /* Center text within this main block */
-        }
-
-        .container-maintenance {
-            background-color: var(--maintenance-panel-bg);
-            padding: 35px 40px 45px;
-            border-radius: 12px;
-            box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
-            border: 1px solid var(--maintenance-border);
-            max-width: 750px;
-            width: 100%;
-            /* text-align: center; is inherited from main.main-maintenance */
-        }
-
-        .maintenance-icon-area { margin-bottom: 1.8rem; }
-        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .maintenance-icon-area .fa-tools { display: none; /* Hide if image is present */ font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .maintenance-message h1 {
-            font-family: var(--font-primary);
-            font-size: clamp(1.8rem, 5vw, 2.6rem);
-            color: var(--accent-yellow);
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-        .maintenance-message .subtitle {
-            font-family: var(--font-secondary);
-            font-size: 1.15rem;
-            color: var(--tech-cyan);
-            margin-bottom: 1.8rem;
-            font-weight: 600;
-        }
-
-        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
-        .maintenance-description strong { color: var(--maintenance-text-light); }
-
-        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
-        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
-        .mini-challenge .challenge-word-display {
-            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
-            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
-            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
-            font-weight: 500; letter-spacing: 1.5px;
-        }
-        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
-        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
-        .clue strong { color: var(--maintenance-text-light); }
-        .guess-input-area { margin-bottom: 1.8rem; }
-        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
-        #languageGuess {
-            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
-            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
-            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
-        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
-
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
-        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
-        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
-        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
-        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
-        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
-        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
-        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
-
-        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
-        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
-
-        /* Footer specific styles for dark theme */
-        footer {
-            background-color: var(--deep-space-blue);
-            color: var(--maintenance-text-secondary);
-            padding: 50px 0 30px;
-            font-size: 0.9rem;
-            border-top: 2px solid var(--tech-cyan);
-            width:100%;
-            margin-top: auto; /* Pushes footer to bottom if content is short */
-        }
-        footer .footer-content { /* Assuming .container class is used for width/centering */
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
-        }
-        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
-        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } /* From your main styles */
-        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
-        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
-        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
-        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
-        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
-        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
-
-        /* Responsive adjustments for maintenance page header/footer */
-        @media (max-width: 768px) {
-            body.maintenance-page-active {
-                padding-top: 60px; /* Adjust if mobile header height is different */
-            }
-            header nav.container {
-                height: 60px; /* Adjust if mobile header height is different */
-                /* If nav-links are hidden by default via main styles.css display:none, this is fine */
-                /* If they are not, and menu-toggle handles it, ensure menu-toggle is styled for this page */
-            }
-            .nav-links { /* This ensures mobile menu (if toggled by JS) behaves */
-                display: none; /* Initially hidden */
-                flex-direction: column;
-                position: absolute;
-                top: 100%; /* Position below header */
-                left: 0;
-                width: 100%;
-                background-color: var(--light-bg);
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-                padding: 10px 0;
-            }
-            .nav-links.active { display: flex; } /* JS adds 'active' to show */
-            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
-            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
-            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; /* Slightly different for contrast */}
-
-            .menu-toggle { display: block; /* Usually handled by global styles.css */ cursor:pointer; /* ... add your hamburger styles ... */ }
-
-
-            .container-maintenance { padding: 25px 20px 30px; }
-            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
-            .maintenance-message .subtitle { font-size: 1rem; }
-            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
-
-            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,600;0,700;0,900;1,600&family=Commissioner:wght@400;500;600;700&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/page-language-indonesian.css">
+    <link rel="stylesheet" href="css/books-style.css">
+    <link rel="stylesheet" href="css/restaurants-style.css">
 </head>
-<body class="maintenance-page-active">
-   <header id="main-header-placeholder"></header>
-    <main class="main-maintenance">
-        <div class="container-maintenance">
-            <div class="maintenance-icon-area">
-                <img src="../../images/aljohn_scientist.png" alt="Aljohn working on updates">
-                <i class="fas fa-tools"></i>
-            </div>
-            <div class="maintenance-message">
-                <h1>System Upgrade in Progress!</h1>
-                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
-            </div>
-            <div class="maintenance-description">
-                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
-                <p>In the meantime, why not take a quick linguistic challenge?</p>
-            </div>
+<body class="indonesian-page">
+    <!--
+    THESIS: Indonesian chapter is a cinematic journey across an inhabited archipelago, not a dormant lesson dashboard or a copied tourism atlas.
+    OWN-WORLD: Twilight teal sea, Merah Putih signals, bamboo amber, layered island silhouettes, documentary contact sheets, concert posters, and rehearsal passes.
+    STORY: Understand why Indonesian belongs, watch Aljohn, learn, meet KBRI and Bapak Agus, then discover creators.
+    FIRST VIEWPORT: A large statement on the left and a real Christian Bautista 2023 photo contact sheet on the right; the primary action opens Aljohn's videos.
+    FORM: User-pinned Wonderland-inspired adaptation, rebuilt as Panggung Kepulauan with direction key ID-PANGGUNG-0829.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
+    <a class="skip-link-id" href="#konten-utama">Langsung ke konten</a>
+    <header id="main-header-placeholder"></header>
 
-            <div class="mini-challenge">
-                <h2>Linguistic Puzzle Break!</h2>
-                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
-                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
-
-                <div class="clues-container">
-                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
-                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
-                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
-                </div>
-
-                <div class="guess-input-area">
-                    <label for="languageGuess">Your guessed language:</label>
-                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
-                </div>
-                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
-                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
-                <div id="feedbackMessage"></div>
-            </div>
-
-            <div class="navigation-links">
-                <p>While this section is being polished, feel free to explore other parts of my world:</p>
-                <a href="../../index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
-                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
-            </div>
+    <nav class="chapter-nav" aria-label="Daftar isi halaman Bahasa Indonesia">
+        <div class="chapter-nav-track">
+            <a href="#cerita">Cerita saya</a>
+            <a href="#video-saya">Video saya</a>
+            <a href="#kreator">Kreator</a>
+            <a href="#buku-indonesia">Buku</a>
+            <a href="#komunitas">KBRI Manila</a>
+            <a href="#penghormatan">Bapak Agus</a>
+            <a href="#tempat-makan">Kuliner</a>
         </div>
+    </nav>
+
+    <main id="konten-utama">
+        <section class="hero-id" id="cerita" aria-labelledby="judul-utama">
+            <div class="hero-stage-id">
+                <div class="hero-copy-id">
+                <p class="stage-label">Aljohn · Indonesia × Filipina</p>
+                <h1 id="judul-utama">Bahasa ini membawa saya kepada <em>orang-orang.</em></h1>
+                <p class="hero-lede-id">Saya mulai karena ingin mengenal budaya Indonesia. Lalu satu lagu membuka percakapan, percakapan membawa saya ke acara komunitas, dan bahasa ini perlahan membentuk saya sebagai musisi.</p>
+                <div class="hero-actions-id">
+                    <a class="action action--red" href="#video-saya">Putar video saya <span aria-hidden="true">↓</span></a>
+                    <a class="action action--line" href="#komunitas">Masuk ke ceritanya</a>
+                </div>
+                </div>
+
+                <section class="contact-sheet" aria-roledescription="karusel" aria-label="Pertemuan Aljohn dan Christian Bautista" tabindex="0" data-hero-carousel>
+                    <div class="contact-sheet-stage">
+                        <figure class="contact-frame is-active" data-hero-slide>
+                            <img src="images/hero/christian-bautista-lunch-2023.jpg" width="1800" height="1010" alt="Aljohn dan Christian Bautista duduk bersama saat pertemuan tahun 2023" fetchpriority="high" decoding="async">
+                            <figcaption><span>Manila · 2023</span> Bahasa, musik, dan satu percakapan yang nyata</figcaption>
+                        </figure>
+                        <figure class="contact-frame" data-hero-slide aria-hidden="true">
+                            <img src="images/hero/christian-bautista-bts-2023.jpg" width="1200" height="1600" alt="Aljohn dan Christian Bautista di balik layar rekaman tahun 2023" loading="lazy" decoding="async">
+                            <figcaption><span>Di balik layar · 2023</span> Tantangan Bahasa Indonesia bersama Christian</figcaption>
+                        </figure>
+                        <figure class="contact-frame" data-hero-slide aria-hidden="true">
+                            <img src="images/hero/christian-bautista-2025.jpg" width="1200" height="1600" alt="Aljohn bertemu kembali dengan Christian Bautista pada tahun 2025" loading="lazy" decoding="async">
+                            <figcaption><span>Bertemu lagi · 2025</span> Cerita musik itu masih berlanjut</figcaption>
+                        </figure>
+                    </div>
+                    <div class="contact-controls">
+                        <button type="button" data-hero-previous aria-label="Foto sebelumnya"><span aria-hidden="true">←</span></button>
+                        <p aria-live="polite"><span data-hero-current>1</span> / 3</p>
+                        <button type="button" data-hero-next aria-label="Foto berikutnya"><span aria-hidden="true">→</span></button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="story-strip" aria-label="Perjalanan Bahasa Indonesia Aljohn">
+            <article>
+                <span class="story-key">Lagu</span>
+                <p>Saya menyerap bunyi dan emosi lewat Tulus, Lyodra, Ziva, Mahalini, Afgan, dan banyak suara lain yang saya dengarkan berulang kali.</p>
+            </article>
+            <article>
+                <span class="story-key">Percakapan</span>
+                <p>Saat berbicara dengan orang Indonesia, kemiripan dengan Filipina terasa dekat—tetapi perbedaannya justru membuat saya ingin terus belajar.</p>
+            </article>
+            <article>
+                <span class="story-key">Panggung</span>
+                <p>Dari Indonesian Idol sampai kompetisi menyanyi di Manila, Bahasa Indonesia akhirnya ikut membentuk cara saya bernyanyi.</p>
+            </article>
+        </section>
+
+        <section class="section-id playlist-section-id" id="video-saya" aria-labelledby="judul-video">
+            <header class="section-heading-id section-heading-id--split">
+                <div>
+                    <p class="stage-label stage-label--light">Arsip pribadi · pilih satu video</p>
+                    <h2 id="judul-video">Bahasa Indonesia di depan kamera</h2>
+                </div>
+                <p>Di sinilah perjalanan saya terdengar apa adanya: belajar lagu, berbicara dengan orang Indonesia, bertemu musisi, dan hadir di perayaan komunitas.</p>
+            </header>
+
+            <div class="playlist-console">
+                <div class="featured-player-id">
+                    <div class="video-frame-id">
+                        <iframe id="indonesian-featured-player" src="about:blank" title="Video Bahasa Indonesia terpilih dari Aljohn Polyglot" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="now-playing-id">
+                        <p>Sedang diputar</p>
+                        <h3 id="indonesian-featured-title">Memuat video…</h3>
+                        <span id="indonesian-featured-context"></span>
+                    </div>
+                </div>
+                <div class="playlist-panel-id">
+                    <div class="playlist-panel-heading">
+                        <h3>Daftar video saya</h3>
+                        <span id="playlist-position" aria-live="polite"></span>
+                    </div>
+                    <ol id="indonesian-playlist" class="playlist-list-id" aria-label="Daftar video Bahasa Indonesia Aljohn"></ol>
+                    <a class="channel-link-id" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Buka kanal Aljohn Polyglot <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </section>
+
+        <figure class="cenderawasih-divider-id">
+            <img src="images/hero/cenderawasih-unity-generated.jpg" width="1857" height="879" alt="Ilustrasi dua burung Cenderawasih melintasi kepulauan pada malam hari" loading="lazy" decoding="async">
+            <figcaption>Banyak suara. Satu ruang untuk mendengarkan.</figcaption>
+        </figure>
+
+        <section class="section-id creators-section-id" id="kreator" aria-labelledby="judul-kreator">
+            <header class="section-heading-id section-heading-id--split">
+                <div>
+                    <p class="stage-label">Suara yang menemani perjalanan saya</p>
+                    <h2 id="judul-kreator">Dengarkan Indonesia dari banyak arah</h2>
+                </div>
+                <p>Musik membantu saya mengenali emosi dan pelafalan; percakapan panjang melatih telinga; keseharian menunjukkan bahasa sebagaimana benar-benar dipakai.</p>
+            </header>
+            <div class="creator-level-filter-id" aria-labelledby="creator-level-filter-label">
+                <p id="creator-level-filter-label">Saring menurut tingkat CEFR</p>
+                <div id="indonesian-creator-level-controls" class="creator-level-controls-id" role="group" aria-label="Tingkat CEFR kreator"></div>
+                <p id="indonesian-creator-level-status" class="creator-level-status-id" aria-live="polite">Semua tingkat ditampilkan.</p>
+            </div>
+            <div id="indonesian-creator-shelves" class="creator-shelves-id" aria-live="polite"></div>
+        </section>
+
+        <section class="books-section-id" id="buku-indonesia" aria-labelledby="judul-buku-indonesia">
+            <div class="books-inner-id">
+                <header class="books-heading-id">
+                    <h2 id="judul-buku-indonesia">Dua klasik Indonesia untuk dibaca perlahan</h2>
+                    <p><em>Bumi Manusia</em> dan <em>Sitti Nurbaya</em> membuka jalan menuju sejarah, masyarakat, dan bahasa sastra Indonesia. Rentang CEFR adalah panduan awal—pilih kisah yang membuatmu ingin terus membaca.</p>
+                </header>
+
+                <div class="books-stage-id">
+                    <div class="books-toolbar-id">
+                        <p id="petunjuk-buku-indonesia">Buka sampul untuk melihat ringkasan, tingkat yang disarankan, dan cara mendekati bahasanya.</p>
+                        <div class="books-controls-id" role="group" aria-label="Geser rak buku Indonesia">
+                            <button id="indonesian-books-previous" type="button" aria-label="Lihat buku sebelumnya"><span aria-hidden="true">←</span></button>
+                            <button id="indonesian-books-next" type="button" aria-label="Lihat buku berikutnya"><span aria-hidden="true">→</span></button>
+                        </div>
+                    </div>
+                    <ul id="indonesian-books-shelf" class="books-shelf-id" aria-describedby="petunjuk-buku-indonesia"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internal future KBRI story note: assets reserved in images/community/future-kbri-st-paul-qc/. Aljohn bought/contacted Pak Partogi, who contacted Aljohn about conducting a KBRI partnership with his alma mater, St. Paul QC. -->
+        <section class="community-section-id" id="komunitas" aria-labelledby="judul-komunitas">
+            <article class="bipa-feature-id" aria-labelledby="judul-bipa">
+                <div class="bipa-phone-id">
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1546482549789785%2F&amp;show_text=false&amp;width=267&amp;t=0" title="Aljohn mempromosikan kelas BIPA 2026" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="bipa-copy-id">
+                    <p class="stage-label stage-label--light">Kabar komunitas · Gelombang 1, 2026</p>
+                    <h2 id="judul-bipa">Membantu lebih banyak orang Filipina menemukan BIPA.</h2>
+                    <p>Ketika KBRI Manila membuka kelas Bahasa Indonesia gratis secara daring, saya ikut menyebarkan pengumumannya melalui halaman Facebook saya. Program ini mempertemukan pelajar dengan guru sungguhan dan jalur resmi untuk masuk lebih dalam ke bahasa serta budayanya.</p>
+                    <dl class="bipa-details-id">
+                        <div><dt>Pendaftaran</dt><dd>30 Januari–8 Februari 2026</dd></div>
+                        <div><dt>Kelas dimulai</dt><dd>14 Februari 2026</dd></div>
+                        <div><dt>Jadwal Sabtu</dt><dd>BIPA 1 &amp; 2 · 10.00–12.00<br>BIPA 4 · 13.00–15.00</dd></div>
+                        <div><dt>Format</dt><dd>Sepenuhnya daring</dd></div>
+                    </dl>
+                    <div class="community-actions-id">
+                        <a class="action action--cream" href="https://www.facebook.com/reel/1546482549789785" target="_blank" rel="noopener noreferrer">Tonton reel BIPA saya <span aria-hidden="true">↗</span></a>
+                        <a class="action action--line-light" href="https://www.facebook.com/AtdikbudManilaOfficial/" target="_blank" rel="noopener noreferrer">Ikuti pengumuman berikutnya <span aria-hidden="true">↗</span></a>
+                    </div>
+                    <p class="bipa-status-id">Masa pendaftaran ini telah berakhir. Ikuti laman resmi Atdikbud Manila untuk gelombang selanjutnya.</p>
+                </div>
+            </article>
+            <div class="community-copy-id">
+                <p class="stage-label stage-label--light">Manila · tempat bahasa menjadi pertemuan</p>
+                <h2 id="judul-komunitas">KBRI Manila membuka pintunya—dan saya masuk.</h2>
+                <p>Pada perayaan HUT RI ke-79, saya tidak hanya datang sebagai pelajar bahasa. Saya bertemu keluarga Indonesia–Filipina, mencicipi makanan, mendengarkan musik, dan naik ke panggung kompetisi menyanyi. Di ruang seperti inilah bahasa terasa hidup.</p>
+                <div class="community-milestone-id">
+                    <p>Lomba BIPA 2025 · 15 November · KBRI Manila</p>
+                    <h3>Juara 1 dalam kompetisi menyanyi Bahasa Indonesia.</h3>
+                    <p>Panggung ini merangkum banyak hal yang Bahasa Indonesia berikan kepada saya: latihan, musik, keberanian, dan sebuah komunitas yang ikut merayakannya.</p>
+                    <a href="https://youtu.be/Kit8Qx57zvA" target="_blank" rel="noopener noreferrer">Tonton vlog lengkap <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="community-actions-id">
+                    <a class="action action--cream" href="../../languagecenters.html#institute-kbri-manila">Lihat profil KBRI Manila</a>
+                    <a class="action action--line-light" href="https://www.kemlu.go.id/manila" target="_blank" rel="noopener noreferrer">Situs resmi <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+            <div class="media-carousel-id media-carousel-id--landscape" aria-roledescription="karusel" aria-label="Kegiatan Aljohn bersama komunitas Indonesia di Manila" data-media-carousel tabindex="0">
+                <button class="media-slide-id is-active" type="button" data-media-slide data-lightbox-src="images/community/bipa-2025-singing-awards-collage.jpg" data-lightbox-alt="Kolase Aljohn menerima sertifikat Juara 1 Lomba Bernyanyi BIPA 2025 di KBRI Manila">
+                    <img src="images/community/bipa-2025-singing-awards-collage.jpg" width="1080" height="1350" alt="Kolase Aljohn menerima sertifikat Juara 1 Lomba Bernyanyi BIPA 2025 di KBRI Manila" loading="lazy" decoding="async">
+                    <span>Juara 1 · Lomba Bernyanyi · 2025</span>
+                </button>
+                <button class="media-slide-id" type="button" data-media-slide aria-hidden="true" tabindex="-1" data-lightbox-src="images/community/bipa-2025-community-group.jpg" data-lightbox-alt="Aljohn bersama peserta dan penyelenggara Lomba BIPA 2025 di KBRI Manila">
+                    <img src="images/community/bipa-2025-community-group.jpg" width="1080" height="1350" alt="Aljohn bersama peserta dan penyelenggara Lomba BIPA 2025 di KBRI Manila" loading="lazy" decoding="async">
+                    <span>Ruang Nusantara · Makati · 2025</span>
+                </button>
+                <button class="media-slide-id" type="button" data-media-slide aria-hidden="true" tabindex="-1" data-lightbox-src="images/community/bipa-2025-awards-collage-2.jpg" data-lightbox-alt="Kolase momen pemberian penghargaan lain dalam Lomba BIPA 2025">
+                    <img src="images/community/bipa-2025-awards-collage-2.jpg" width="1080" height="1350" alt="Kolase momen pemberian penghargaan lain dalam Lomba BIPA 2025" loading="lazy" decoding="async">
+                    <span>Satu hari, banyak cerita · 2025</span>
+                </button>
+                <button class="media-slide-id" type="button" data-media-slide aria-hidden="true" tabindex="-1" data-lightbox-src="../../images/languagecenters/kbri_kemerdekaan_2024_group_pic_with_ambassador.jpg" data-lightbox-alt="Aljohn bersama Duta Besar Agus Widjojo dan para peserta perayaan HUT RI ke-79 di Manila">
+                    <img src="../../images/languagecenters/kbri_kemerdekaan_2024_group_pic_with_ambassador.jpg" width="4032" height="3024" alt="Aljohn bersama Duta Besar Agus Widjojo dan para peserta perayaan HUT RI ke-79 di Manila" loading="lazy" decoding="async">
+                    <span>HUT RI ke-79 · Manila</span>
+                </button>
+                <button class="media-slide-id" type="button" data-media-slide aria-hidden="true" tabindex="-1" data-lightbox-src="../../images/languagecenters/kbri_kemerdekaan_2024_awarding_kompetisi_nyanyi_juara 3.JPEG" data-lightbox-alt="Aljohn menerima penghargaan kompetisi menyanyi di perayaan KBRI Manila">
+                    <img src="../../images/languagecenters/kbri_kemerdekaan_2024_awarding_kompetisi_nyanyi_juara 3.JPEG" width="2048" height="1536" alt="Aljohn menerima penghargaan kompetisi menyanyi di perayaan KBRI Manila" loading="lazy" decoding="async">
+                    <span>Kompetisi menyanyi</span>
+                </button>
+                <button class="media-slide-id" type="button" data-media-slide aria-hidden="true" tabindex="-1" data-lightbox-src="../../images/languagecenters/kbri_kemerdekaan_2024_indo-filipino_family.JPEG" data-lightbox-alt="Aljohn bersama keluarga Indonesia–Filipina dalam perayaan KBRI Manila">
+                    <img src="../../images/languagecenters/kbri_kemerdekaan_2024_indo-filipino_family.JPEG" width="2048" height="1536" alt="Aljohn bersama keluarga Indonesia–Filipina dalam perayaan KBRI Manila" loading="lazy" decoding="async">
+                    <span>Keluarga dua negeri</span>
+                </button>
+                <div class="media-carousel-controls-id">
+                    <button type="button" data-media-previous aria-label="Foto komunitas sebelumnya">←</button>
+                    <p aria-live="polite"><span data-media-current>1</span> / <span>6</span></p>
+                    <button type="button" data-media-next aria-label="Foto komunitas berikutnya">→</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="tribute-section-id" id="penghormatan" aria-labelledby="judul-penghormatan">
+            <div class="tribute-stage-id">
+                <div class="media-carousel-id media-carousel-id--tribute" aria-roledescription="karusel" aria-label="Foto dan video penghormatan untuk Bapak Agus Widjojo" data-media-carousel tabindex="0">
+                <button class="media-slide-id is-active" type="button" data-media-slide data-lightbox-src="../../images/languagecenters/kbri_75_Anniversary_PH_INDO_BilateralRelations_Pic_with_Indonesian_Ambassador_AgusWidjojo_.jpg" data-lightbox-alt="Aljohn bersama Duta Besar Agus Widjojo pada peringatan 75 tahun hubungan Indonesia dan Filipina">
+                    <img src="../../images/languagecenters/kbri_75_Anniversary_PH_INDO_BilateralRelations_Pic_with_Indonesian_Ambassador_AgusWidjojo_.jpg" width="1536" height="2048" alt="Aljohn bersama Duta Besar Agus Widjojo pada peringatan 75 tahun hubungan Indonesia dan Filipina" loading="lazy" decoding="async">
+                    <span>75 tahun hubungan Indonesia–Filipina · Manila</span>
+                </button>
+                <div class="media-slide-id tribute-video-slide-id" data-media-slide aria-hidden="true" tabindex="-1">
+                    <div class="tribute-video-id">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F785094650650629%2F&amp;show_text=false&amp;width=267&amp;t=0" title="Video penghormatan Aljohn untuk Bapak Agus Widjojo" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <span>Video penghormatan · Aljohn Polyglot</span>
+                </div>
+                <div class="media-carousel-controls-id">
+                    <button type="button" data-media-previous aria-label="Media penghormatan sebelumnya">←</button>
+                    <p aria-live="polite"><span data-media-current>1</span> / <span>2</span></p>
+                    <button type="button" data-media-next aria-label="Media penghormatan berikutnya">→</button>
+                </div>
+                </div>
+                <div class="tribute-copy-id">
+                    <p class="tribute-name-id">Mengenang Bapak Agus Widjojo · 1947–2026</p>
+                    <h2 id="judul-penghormatan">“Saya akan meneruskan jembatan yang Bapak bangun.”</h2>
+                    <p>Suatu hari, saya datang ke sebuah acara Indonesia tanpa rencana. Bapak Agus Widjojo langsung membuat saya merasa diterima. Setiap kali kami bertemu lagi di berbagai acara, selalu ada kegembiraan—dan saya bisa merasakan sendiri ketajaman humornya.</p>
+                    <p>Di balik diplomat karismatik yang saya kenal, beliau juga seorang pemikir reformasi militer yang memikul sejarah berat dan ikut mendorong perubahan hubungan sipil–militer Indonesia. Video ini adalah penghormatan saya kepada sosok yang jauh lebih besar daripada jabatan duta besar.</p>
+                    <blockquote>Bapak Agus Widjojo, saya berkomitmen menjaga hubungan Indonesia dan Filipina tetap hidup.</blockquote>
+                    <div class="tribute-actions-id">
+                        <a class="source-link-id" href="https://lemhannas.go.id/publikasi/ppid/press-release-detail/259-letjen-tni-purn-agus-widjojo-berpulang-lemhannas-ri-berduka/en" target="_blank" rel="noopener noreferrer">Kenang jasa beliau di Lemhannas <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurant-places-section-id" id="tempat-makan" data-language-restaurant-shelf aria-labelledby="judul-tempat-makan">
+            <div class="restaurant-places-inner-id">
+                <header class="restaurant-places-heading">
+                    <h2 id="judul-tempat-makan">Tempat makan di dalam cerita video saya</h2>
+                    <p>Empat tempat makan ini ikut hadir dalam video Bahasa Indonesia saya. Citra Minang di PBCom Tower menjadi titik awalnya: video Bahasa Indonesia pertama saya direkam di sana.</p>
+                </header>
+                <div class="restaurant-places-rail" data-language-restaurant-rail aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="closing-section-id" aria-labelledby="judul-penutup">
+            <div class="closing-stage-id">
+                <div>
+                    <p class="stage-label stage-label--light">Catatan saya</p>
+                    <h2 id="judul-penutup">Saya belum selesai mendengarkan.</h2>
+                </div>
+                <p>Bahasa Indonesia memberi saya lebih dari kosakata. Ia memberi saya lagu untuk dinyanyikan, orang-orang untuk ditemui, dan sebuah jembatan yang ingin terus saya jaga antara Filipina dan Indonesia.</p>
+                <a class="action action--cream" href="#cerita">Kembali ke awal <span aria-hidden="true">↑</span></a>
+            </div>
+        </section>
     </main>
- <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
- <script>
-  let siteBasePath;
 
-  if (
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1' ||
-    window.location.protocol === 'file:'
-  ) {
-    siteBasePath = '/';
-  } else {
-    siteBasePath = '/';
-  }
+    <footer id="main-footer-placeholder"></footer>
 
-  console.log('Global siteBasePath set to:', siteBasePath);
-</script>
+    <div id="indonesian-book-modal" class="book-modal-id" hidden aria-hidden="true">
+        <div class="book-modal-backdrop-id" data-book-modal-close></div>
+        <article class="book-dialog-id" role="dialog" aria-modal="true" aria-labelledby="indonesian-book-modal-title" aria-describedby="indonesian-book-modal-description indonesian-book-modal-guidance" tabindex="-1">
+            <button class="book-dialog-close-id" type="button" aria-label="Tutup detail buku" data-book-modal-close data-book-modal-close-button>×</button>
+            <div class="book-dialog-cover-panel-id">
+                <img data-book-modal-cover src="/library/images/books/id/id_bumi_manusia.webp" width="387" height="583" alt="Sampul Bumi Manusia karya Pramoedya Ananta Toer" loading="lazy" decoding="async">
+                <div class="book-dialog-cover-fallback-id" data-book-modal-cover-fallback hidden aria-hidden="true"></div>
+                <p class="book-dialog-source-id" data-book-modal-source></p>
+            </div>
+            <div class="book-dialog-copy-id">
+                <p class="book-dialog-category-id" data-book-modal-category></p>
+                <h2 class="book-dialog-title-id" id="indonesian-book-modal-title" data-book-modal-title>Buku Bahasa Indonesia</h2>
+                <p class="book-dialog-author-id" data-book-modal-author></p>
+                <p class="book-dialog-level-id" data-book-modal-level></p>
+                <p class="book-dialog-description-id" id="indonesian-book-modal-description" data-book-modal-description></p>
+                <div class="book-dialog-guidance-id">
+                    <h3>Cara membacanya</h3>
+                    <p id="indonesian-book-modal-guidance" data-book-modal-guidance></p>
+                </div>
+                <div class="book-dialog-links-id" data-book-modal-links></div>
+            </div>
+        </article>
+    </div>
 
-<script src="../../js/navbar-loader.js" defer></script>
-<script src="../../js/footer-loader.js" defer></script>
-    <script>
-        // Mini Challenge Game Logic
-        const maintenanceWords = [
-            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
-            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
-            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
-            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
-            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
-            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
-            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
-            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
-            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
-            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
-        ];
-        let currentChallenge;
-        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
-        const cluesContainer = document.querySelector('.clues-container');
-        const languageGuessInput = document.getElementById('languageGuess');
-        const submitGuessBtn = document.getElementById('submitGuessBtn');
-        const newWordBtn = document.getElementById('newWordBtn');
-        const feedbackMessage = document.getElementById('feedbackMessage');
+    <div class="modal-id" id="creator-modal" role="dialog" aria-modal="true" aria-labelledby="creator-modal-title" hidden>
+        <div class="modal-backdrop-id" data-modal-close></div>
+        <div class="creator-dialog-id" role="document">
+            <button class="modal-close-id" type="button" aria-label="Tutup profil kreator" data-modal-close>×</button>
+            <div id="creator-modal-content"></div>
+        </div>
+    </div>
 
-        function setupNewMaintenanceChallenge() {
-            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
-            challengeWordDisplay.textContent = currentChallenge.word;
-            cluesContainer.innerHTML = '';
-            currentChallenge.clues.forEach((clueText, index) => {
-                const clueDiv = document.createElement('div');
-                clueDiv.classList.add('clue');
-                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
-                cluesContainer.appendChild(clueDiv);
-            });
-            feedbackMessage.textContent = ''; languageGuessInput.value = '';
-            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
-            languageGuessInput.focus(); newWordBtn.style.display = 'none';
-        }
-        if (submitGuessBtn) { // Check if elements exist (they should on this page)
-            submitGuessBtn.addEventListener('click', function() {
-                const userGuess = languageGuessInput.value.trim().toLowerCase();
-                const correctAnswer = currentChallenge.language.toLowerCase();
-                if (!userGuess) {
-                    feedbackMessage.textContent = "Please enter your language guess!";
-                    feedbackMessage.className = 'feedback-incorrect'; return;
-                }
-                if (userGuess === correctAnswer) {
-                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
-                    feedbackMessage.className = 'feedback-correct';
-                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
-                    newWordBtn.style.display = 'inline-block';
-                } else {
-                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
-                    feedbackMessage.className = 'feedback-incorrect';
-                    newWordBtn.style.display = 'inline-block'; // Show new word button even on incorrect guess
-                }
-            });
-            languageGuessInput.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
-            });
-            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
-            setupNewMaintenanceChallenge(); // Initialize
-        }
+    <div class="modal-id lightbox-id" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Foto diperbesar" hidden>
+        <div class="modal-backdrop-id" data-lightbox-close></div>
+        <div class="lightbox-dialog-id" role="document">
+            <button class="modal-close-id" type="button" aria-label="Tutup foto" data-lightbox-close>×</button>
+            <img id="lightbox-image" src="../../images/creators/creator-fallback.svg" width="480" height="480" alt="">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
 
-        // Copyright Year
-        const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
-
-        // Mobile Menu Toggle (assuming .menu-toggle and .nav-links structure from global nav)
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active'); // JS toggles this class
-                menuToggle.classList.toggle('active'); // For hamburger animation
-            });
-        }
-
-        // Desktop Dropdown Menu Logic
-        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
-        desktopDropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('a.dropbtn');
-            if (button) {
-                button.setAttribute('aria-haspopup', 'true');
-                button.setAttribute('aria-expanded', 'false');
-                button.addEventListener('click', function(event) {
-                    // For dropdowns where dropbtn itself is not a page link
-                    if (button.getAttribute('href') === 'javascript:void(0)' || button.getAttribute('href') === '#') {
-                        event.preventDefault();
-                    }
-                    // If it's a link to a page section (like index.html#languages), allow default but still open dropdown
-                    // For now, let's assume all dropbtns are primarily for toggling
-                    if (button.getAttribute('href').startsWith('#') && button.getAttribute('href') !== 'javascript:void(0)') {
-                        // If it's a fragment identifier for the same page, we might still want to prevent default and handle scroll
-                        // But for now, we focus on the toggle action
-                    } else {
-                         event.preventDefault(); // Prevent navigation for most dropbtn clicks
-                    }
-
-
-                    const isCurrentlyOpen = dropdown.classList.contains('open');
-                    desktopDropdowns.forEach(otherDd => {
-                        if (otherDd !== dropdown) {
-                            otherDd.classList.remove('open');
-                            const otherButton = otherDd.querySelector('a.dropbtn');
-                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    if (isCurrentlyOpen) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        dropdown.classList.add('open');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                    event.stopPropagation();
-                });
-            }
-        });
-        document.addEventListener('click', function(event) {
-            desktopDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove('open');
-                    const button = dropdown.querySelector('a.dropbtn');
-                    if (button) button.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    </script>
+    <script>const siteBasePath = '../../';</script>
+    <script src="../../js/navbar-loader.js"></script>
+    <script src="../../js/footer-loader.js"></script>
+    <script src="../../library/js/data/book_data.js"></script>
+    <script src="js/data/indonesian-restaurants-data.js"></script>
+    <script src="../shared/js/language-restaurants.js"></script>
+    <script type="module" src="js/indonesian-page.js"></script>
 </body>
 </html>

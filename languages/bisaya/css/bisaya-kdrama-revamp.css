@@ -414,3 +414,13 @@
     }
     /* ... other font size adjustments ... */
 }
+
+.viu-wordmark-immersive {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.2rem;
+    font: 900 1.35rem/1 Arial, sans-serif;
+    letter-spacing: -0.08em;
+    color: #111;
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T14:00:00+08:00",
+  "title": "Design System: Russian Living Print Archive",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Archive Paper", "canonical": "#e6d8be", "tonalRamp": ["#2a241a", "#4a3f2f", "#6d5f48", "#938169", "#b8a68b", "#d2c2a8", "#e6d8be", "#f7f0e3"] },
+      "paper-light": { "role": "neutral", "displayName": "Light Archive Paper", "canonical": "#f3ead7", "tonalRamp": ["#2d281f", "#514838", "#776b55", "#9f9175", "#c4b69b", "#ded2ba", "#f3ead7", "#fcf8ef"] },
+      "paper-dark": { "role": "neutral", "displayName": "Dark Archive Paper", "canonical": "#cbbb9e", "tonalRamp": ["#282219", "#463b2d", "#685947", "#897762", "#aa977e", "#cbbb9e", "#e3d7c2", "#f6efe4"] },
+      "ink": { "role": "neutral", "displayName": "Printer's Ink", "canonical": "#000002", "tonalRamp": ["#000002", "#151517", "#303033", "#515154", "#77777a", "#a2a2a5", "#d0d0d2", "#f2f2f3"] },
+      "oxidized-red": { "role": "primary", "displayName": "Oxidized Red", "canonical": "#932317", "tonalRamp": ["#2d0806", "#4c0f0b", "#68150f", "#7e1c13", "#932317", "#b95445", "#dd9586", "#f7ddd7"] },
+      "archive-teal": { "role": "secondary", "displayName": "Archive Teal", "canonical": "#124249", "tonalRamp": ["#061719", "#0b292d", "#124249", "#1d5d65", "#397981", "#70a0a5", "#b0cbcd", "#e2eeee"] },
+      "registration-mustard": { "role": "tertiary", "displayName": "Registration Mustard", "canonical": "#dab680", "tonalRamp": ["#2d210f", "#4c391c", "#70552d", "#957342", "#b8945d", "#dab680", "#edd3aa", "#faecd3"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Wide Display", "purpose": "Major Cyrillic statements and section titles only." },
+      "title": { "displayName": "Editorial Title", "purpose": "Hero thesis, featured records, and modal names." },
+      "body": { "displayName": "Russian Reading", "purpose": "Long Russian stories, descriptions, notes, and captions." },
+      "label": { "displayName": "Archive Label", "purpose": "Numbering, stamps, navigation, and controls." }
+    },
+    "shadows": [
+      { "name": "teal-plate", "value": "12px 12px 0 #124249", "purpose": "Hard offset behind the hero copy panel." },
+      { "name": "ink-plate", "value": "12px 12px 0 #000002", "purpose": "Hard offset behind the immersion manifesto." },
+      { "name": "red-hover-plate", "value": "8px 8px 0 #932317", "purpose": "Creator-card hover response." }
+    ],
+    "motion": [
+      { "name": "registration-reveal", "value": "650ms cubic-bezier(.2,.75,.2,1)", "purpose": "Single opening registration motion for the monumental Russian word." },
+      { "name": "state-change", "value": "150ms ease", "purpose": "Immediate hover and active feedback; removed under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "wide-to-laptop", "value": "1180px" },
+      { "name": "stacked", "value": "900px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Archive Action",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "Square red action with hard ink rule and mustard keyboard focus.",
+      "html": "<a class=\"ds-action\" href=\"#\">СМОТРЕТЬ ПЕРВУЮ ВСТРЕЧУ →</a>",
+      "css": ".ds-action{display:inline-flex;align-items:center;min-height:54px;padding:18px 20px;border:2px solid #000002;border-radius:0;color:#f3ead7;background:#932317;font:700 .68rem/1.2 Unbounded,sans-serif;letter-spacing:.08em;text-decoration:none}.ds-action:hover{background:#68150f}.ds-action:focus-visible{outline:4px solid #dab680;outline-offset:4px}"
+    },
+    {
+      "name": "Russian Chapter Navigation",
+      "kind": "nav",
+      "refersTo": "chapter-navigation",
+      "description": "Compact ink chapter bar with a mustard register mark and red active rule.",
+      "html": "<nav class=\"ds-nav\"><b>РУ / 01</b><a class=\"active\" href=\"#\">МОИ ВИДЕО</a><a href=\"#\">МОЙ ПУТЬ</a></nav>",
+      "css": ".ds-nav{display:flex;min-height:54px;border-block:2px solid #000002;color:#f3ead7;background:#000002;font:700 .68rem/1.2 Unbounded,sans-serif}.ds-nav b,.ds-nav a{display:flex;align-items:center;padding:0 18px;color:inherit;text-decoration:none}.ds-nav b{color:#000002;background:#dab680}.ds-nav a{position:relative}.ds-nav a.active:after{content:'';position:absolute;right:18px;bottom:7px;left:18px;height:3px;background:#932317}.ds-nav a:focus-visible{outline:4px solid #dab680;outline-offset:-4px}"
+    },
+    {
+      "name": "Playlist Ledger Row",
+      "kind": "custom",
+      "description": "Numbered media register with local thumbnail and active paper inversion.",
+      "html": "<button class=\"ds-ledger active\"><span>01</span><span class=\"ds-thumb\"></span><strong>НЕОЖИДАННЫЙ РАЗГОВОР</strong></button>",
+      "css": ".ds-ledger{display:grid;grid-template-columns:34px 76px 1fr;gap:14px;align-items:center;width:100%;min-height:94px;padding:12px 14px;border:0;border-bottom:1px solid #cbbb9e;color:#f3ead7;background:#000002;text-align:left;font-family:PT Sans,sans-serif}.ds-ledger.active{color:#000002;background:#f3ead7}.ds-thumb{display:block;width:76px;aspect-ratio:16/9;border:1px solid currentColor;background:#cbbb9e}.ds-ledger strong{font:700 .68rem/1.3 Unbounded,sans-serif}.ds-ledger:focus-visible{outline:4px solid #dab680;outline-offset:-4px}"
+    },
+    {
+      "name": "Reel Field Note",
+      "kind": "card",
+      "description": "A centered vertical 9:16 record inside a full-width snap point.",
+      "html": "<article class=\"ds-reel\"><header><span>REEL 01</span><strong>1000+ ЧАСОВ NBA</strong></header><div class=\"ds-media\">16:9 MEDIA</div><a href=\"#\">СМОТРЕТЬ ↗</a></article>",
+      "css": ".ds-reel{display:flex;flex-direction:column;width:min(100%,480px);border:2px solid #000002;border-radius:0;color:#000002;background:#e6d8be;font-family:PT Sans,sans-serif}.ds-reel header{display:grid;gap:8px;padding:15px 18px;border-bottom:2px solid #000002}.ds-reel header span{color:#932317;font:800 .65rem/1 Unbounded,sans-serif}.ds-media{display:grid;place-items:center;aspect-ratio:9/16;color:#f3ead7;background:#000002}.ds-reel a{padding:16px 18px;color:#f3ead7;background:#124249;font:700 .68rem/1.2 Unbounded,sans-serif;text-decoration:none}.ds-reel a:hover{background:#000002}.ds-reel a:focus-visible{outline:4px solid #dab680;outline-offset:-4px}"
+    },
+    {
+      "name": "Creator Archive Card",
+      "kind": "card",
+      "refersTo": "creator-card",
+      "description": "Square portrait record that opens a details dialog instead of navigating directly.",
+      "html": "<button class=\"ds-card\"><span class=\"ds-portrait\">01</span><strong>ВЗЯЛ МЯЧ</strong><span>Русскоязычный канал о НБА.</span><small>B1 · B2 · C1</small></button>",
+      "css": ".ds-card{display:grid;grid-template-rows:auto auto 1fr auto;gap:14px;width:260px;padding:0 0 18px;border:2px solid #000002;border-radius:0;color:#000002;background:#f3ead7;text-align:left;font-family:PT Sans,sans-serif}.ds-portrait{display:grid;place-items:end;aspect-ratio:1/.92;padding:10px;border-bottom:2px solid #000002;background:#cbbb9e;font:800 .68rem/1 Unbounded,sans-serif}.ds-card>strong,.ds-card>span:not(.ds-portrait){padding:0 18px}.ds-card small{margin:0 18px;padding-top:13px;border-top:1px solid #000002;color:#932317}.ds-card:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 #932317}.ds-card:focus-visible{outline:4px solid #dab680;outline-offset:4px}"
+    },
+    {
+      "name": "Visible Dialog Close",
+      "kind": "button",
+      "description": "Predictable square close action for every Russian overlay.",
+      "html": "<button class=\"ds-close\" aria-label=\"Закрыть\">×</button>",
+      "css": ".ds-close{display:grid;place-items:center;width:52px;height:52px;border:2px solid #000002;border-radius:0;color:#f3ead7;background:#932317;font:700 2rem/1 Unbounded,sans-serif}.ds-close:hover{color:#000002;background:#dab680}.ds-close:focus-visible{outline:4px solid #dab680;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Print Archive",
+    "overview": "This surface treats archival constructivist print as editorial grammar rather than political messaging. Oversized Cyrillic type, numbered ledgers, paper fields, registration marks, and hard ink rules organize Aljohn's real conversations, videos, and learning history. The mood is tactile, direct, and personal: a working language journal, not a themed costume.",
+    "keyCharacteristics": [
+      "Square, rule-bound composition with decisive red, teal, and mustard fields.",
+      "Russian-first copy and real Aljohn media before discovery content.",
+      "One dominant media action at a time: featured player, snap reel, or modal sample.",
+      "Restrained motion that reads like print registration and disappears under reduced-motion preferences."
+    ],
+    "rules": [
+      { "name": "The Four-Plate Rule", "body": "Red, teal, mustard, and black each need a job; do not scatter them as interchangeable decoration.", "section": "colors" },
+      { "name": "The Wide-Type Rule", "body": "Unbounded is for hierarchy and navigation, never for long prose.", "section": "typography" },
+      { "name": "The Printed-Plate Rule", "body": "A shadow must look like a second ink plate with a clear purpose; soft floating-card shadows are out of character.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do lead with Aljohn's first-person Russian story and real playable media.",
+      "Do keep the global navbar and the Russian chapter bar independently visible.",
+      "Do use local documentary imagery and embed provenance in every shipping raster.",
+      "Do keep horizontal media and creator tracks contained, labelled, and keyboard reachable.",
+      "Do preserve visible focus, reduced motion, and square close controls."
+    ],
+    "donts": [
+      "Don't use hammer-and-sickle motifs, political stars, leaders, soldiers, flags, military imagery, or state slogans.",
+      "Don't recolor another language page and call it Russian.",
+      "Don't turn every panel into a floating card, rounded pill, or decorative stamp.",
+      "Don't invent a personal note when Aljohn has not supplied one; keep the pending state honest.",
+      "Don't let generated imagery stand in for a real person, place, meeting, or collaboration."
+    ]
+  }
+}

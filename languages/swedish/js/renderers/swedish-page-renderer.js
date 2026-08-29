@@ -1,7 +1,5 @@
 // js/renderers/swedish-page-renderer.js
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Swedish Page Renderer (V-FINAL-FIXED: Popovers Restored, No Parallax, Modals OK) executing...');
-
     // Ensure swedishResourceData is available
     if (typeof swedishResourceData === 'undefined') {
         console.error('CRITICAL: swedishResourceData is UNDEFINED. Ensure swedish-page-data.js is loaded before this script.');
@@ -15,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- HELPER FUNCTIONS ---
     const createNode = (element) => document.createElement(element);
+    const fallbackImage = 'images/fallback-resource.svg';
 
     // --- "READ MORE" FUNCTIONALITY FOR FRAGMENTERAD VERKLIGHET ---
     const readMoreBtn = document.getElementById('read-more-narrative-btn');
@@ -36,32 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- FLIP CARD FUNCTIONALITY FOR VIDEO HIGHLIGHT ---
-    function initFlipCards() {
-        const flipCards = document.querySelectorAll('.interactive-card');
-        flipCards.forEach(card => {
-            const cardFront = card.querySelector('.card-front');
-            const flipBackButton = card.querySelector('.flip-back-btn');
-            const flipAction = () => {
-                card.classList.toggle('is-flipped');
-                if (card.classList.contains('is-flipped')) {
-                    const firstFocusableOnBack = card.querySelector('.card-back button, .card-back a');
-                    if (firstFocusableOnBack) firstFocusableOnBack.focus();
-                } else {
-                    card.focus();
-                }
-            };
-            if (cardFront) {
-                cardFront.addEventListener('click', (e) => { if (!e.target.closest('a, button:not(.flip-prompt)')) flipAction(); });
-                card.addEventListener('keydown', (e) => { if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === card && !card.classList.contains('is-flipped')) { e.preventDefault(); flipAction(); }});
-            }
-            if (flipBackButton) {
-                flipBackButton.addEventListener('click', (e) => { e.stopPropagation(); flipAction(); });
-            }
-        });
-    }
-    initFlipCards();
-
     // --- PARALLAX HERO SECTION (REMOVED) ---
     // const heroSection = document.getElementById('swedish-custom-hero');
     // if (heroSection) { ... parallax logic removed ... }
@@ -79,12 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
         popover.setAttribute('tabindex', '-1');
         let headerIconHTML = iconClass ? `<i class="${iconClass} popover-icon" style="color: ${iconColor};" aria-hidden="true"></i>` : '';
         popover.innerHTML = `
+            <button type="button" class="info-popover-close" aria-label="Stäng informationen"><i class="fas fa-times" aria-hidden="true"></i></button>
             <div class="info-popover-header">
                 ${headerIconHTML}
                 <h5 id="${triggerElement.id}-popover-title">${title}</h5>
             </div>
             <div class="info-popover-content">${contentHTML}</div>`;
         triggerElement.appendChild(popover);
+        popover.querySelector('.info-popover-close')?.addEventListener('click', event => {
+            event.stopPropagation();
+            popover.classList.remove('visible');
+            triggerElement.setAttribute('aria-expanded', 'false');
+            currentOpenPopover = null;
+            triggerElement.focus();
+        });
         return popover;
     }
     function togglePopover(triggerElement, popoverInstance) {
@@ -109,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // console.warn(`Info trigger not found: ${triggerId}`); // Keep commented unless debugging specific icon
             return;
         }
+        trigger.setAttribute('aria-expanded', 'false');
         let popoverElement = null;
         const handleTriggerAction = (event) => {
             event.stopPropagation();
@@ -160,24 +142,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- MODAL FUNCTIONS (Global for access from static HTML & this script) ---
     window.closeGenericModal = function() {
-        if (!modalPlaceholder) return;
-        const overlay = modalPlaceholder.querySelector('.modal-overlay');
-        if (overlay && overlay.classList.contains('visible')) {
-            overlay.classList.remove('visible');
-            const iframes = overlay.querySelectorAll('iframe');
-            iframes.forEach(iframe => { try { let src = iframe.src; iframe.src = ''; iframe.src = src; } catch (e) {} });
-            setTimeout(() => { if (modalPlaceholder) modalPlaceholder.innerHTML = ''; }, 300);
-        }
+        window.SwedishModalController?.close();
     };
 
     // MODAL FOR SCANDINAVIAN ENCOUNTERS (Corrected Content Order & Video)
-    window.openEncounterModalFromMain = function(itemData) {
+    window.openEncounterModalFromMain = function(itemData, triggerElement) {
         if (!modalPlaceholder || !itemData) { console.error("Modal Error: Encounter data missing for modal."); return; }
 
         let flagsHTML = '';
         if (itemData.countryCodes && Array.isArray(itemData.countryCodes)) {
+            const flagNames = { NO: 'Norsk flagga', DK: 'Dansk flagga', SE: 'Svensk flagga', EU: 'EU-flagga', FI: 'Finsk flagga' };
             flagsHTML = itemData.countryCodes.map(code =>
-                `<img src="https://flagcdn.com/h24/${code.toLowerCase()}.png" alt="${code}" class="title-inline-flag-img" style="height:1.1em; margin-right: 6px; vertical-align: -0.1em; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);">`
+                `<img src="images/flags/${code.toLowerCase()}.webp" width="40" height="28" alt="${flagNames[code] || code}" class="title-inline-flag-img">`
             ).join('');
         } else if (itemData.flags && Array.isArray(itemData.flags)) {
              flagsHTML = itemData.flags.map(flag => `<span class="flag-icon">${flag}</span>`).join(' ');
@@ -186,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const videoSectionHTML = itemData.sampleVideoEmbed ? `
             <div class="modal-video-embed-area">
                 <div class="video-embed-container">
-                    <iframe src="${itemData.sampleVideoEmbed}" title="${itemData.title || 'Video'} Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="${itemData.sampleVideoEmbed}" title="${itemData.title || 'Video'}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>` : ''; // Removed fallback message, video is primary content here
 
@@ -228,34 +204,30 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>`;
 
         const overlay = modalPlaceholder.querySelector('.modal-overlay');
-        setTimeout(() => {
-            if(overlay) overlay.classList.add('visible');
-        }, 10);
-        const closeButton = overlay?.querySelector('.modal-close-btn');
-        const firstFocusable = closeButton || overlay?.querySelector('iframe, button, [href]');
-        if(firstFocusable) firstFocusable.focus();
-        overlay?.addEventListener('click', e => { if (e.target === overlay) closeGenericModal(); });
-        closeButton?.addEventListener('click', closeGenericModal);
-        overlay?.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); closeGenericModal(); } });
+        window.SwedishModalController?.wireLocalImageFallback(overlay);
+        window.SwedishModalController?.open(overlay, {
+            trigger: triggerElement,
+            onClose: () => { if (modalPlaceholder) modalPlaceholder.innerHTML = ''; }
+        });
     };
 
-    window.openEncounterModalById = function(itemId) {
+    window.openEncounterModalById = function(itemId, triggerElement) {
         if (!swedishResourceData || !swedishResourceData.scandinavianEncounters) { console.error("Encounter data source missing."); return; }
         const itemData = swedishResourceData.scandinavianEncounters.find(item => item.id === itemId);
         if (itemData) {
             if (typeof openEncounterModalFromMain === 'function') {
-                openEncounterModalFromMain(itemData);
+                openEncounterModalFromMain(itemData, triggerElement);
             } else { console.error('CRITICAL: openEncounterModalFromMain is not defined.'); }
         } else { console.error(`Encounter data not found for ID: ${itemId}`); }
     };
 
     // MODAL FOR RESTAURANTS (No Tabs)
-    window.openRestaurantPHModalFromMain = function(itemData) {
+    window.openRestaurantPHModalFromMain = function(itemData, triggerElement) {
        if (!modalPlaceholder || !itemData) { console.error("Modal error: Restaurant data missing."); return; }
         let modalHeaderContent = `<div class="restaurant-ph-modal-header-text"><h2 id="restaurantModalTitle-${itemData.id}">${itemData.name || 'Restaurang'}</h2>`;
         if (itemData.fullAddress) modalHeaderContent += `<p class="restaurant-modal-address"><i class="fas fa-map-marked-alt"></i> ${itemData.fullAddress}</p>`;
         modalHeaderContent += `</div>`;
-        const modalImageHTML = itemData.cardImageSrc ? `<img src="${itemData.cardImageSrc}" alt="${itemData.name || ''}" class="modal-image restaurant-modal-image">` : '';
+        const modalImageHTML = itemData.cardImageSrc ? `<img src="${itemData.cardImageSrc}" data-local-fallback="${fallbackImage}" width="720" height="540" alt="${itemData.name || ''}" class="modal-image restaurant-modal-image" decoding="async">` : '';
         const longDescHTML = itemData.longDesc ? `<div class="modal-long-description-area"><h4>Om Restaurangen</h4><p>${itemData.longDesc.replace(/\n/g, '</p><p>')}</p></div>` : (itemData.shortDesc ? `<div class="modal-long-description-area"><p>${itemData.shortDesc}</p></div>` : '');
         const aljohnsEncounterHTML = itemData.aljohnsEncounter ? `<div class="modal-aljohns-take-container"><h4>Magnus Upplevelse</h4><div class="modal-aljohns-take">${itemData.aljohnsEncounter.replace(/\n/g, '<br>')}</div></div>` : '';
         let linksHTML = '';
@@ -281,13 +253,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>`;
         const overlay = modalPlaceholder.querySelector('.modal-overlay');
-        setTimeout(() => { if(overlay) overlay.classList.add('visible'); }, 10);
-        const closeButton = overlay?.querySelector('.modal-close-btn');
-        const firstFocusable = closeButton || overlay?.querySelector('button, [href]');
-        if(firstFocusable) firstFocusable.focus();
-        overlay?.addEventListener('click', e => { if (e.target === overlay) closeGenericModal(); });
-        closeButton?.addEventListener('click', closeGenericModal);
-        overlay?.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); closeGenericModal(); } });
+        window.SwedishModalController?.wireLocalImageFallback(overlay);
+        window.SwedishModalController?.open(overlay, {
+            trigger: triggerElement,
+            onClose: () => { if (modalPlaceholder) modalPlaceholder.innerHTML = ''; }
+        });
     };
 
     // --- APPLY THEMES TO STATIC SCANDINAVIAN ENCOUNTER CARDS ---
@@ -298,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const encountersData = swedishResourceData.scandinavianEncounters;
         if (!encountersData) return;
         cards.forEach(card => {
-            const cardIdFromHTML = card.dataset.id || card.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+            const cardIdFromHTML = card.dataset.id;
             if (cardIdFromHTML) {
                 const itemData = encountersData.find(item => item.id === cardIdFromHTML);
                 if (itemData) {
@@ -311,6 +281,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     else if (itemData.countryCodes?.includes('FI')) card.classList.add('finland-theme-card');
                 }
             }
+
+            const openCard = () => window.openEncounterModalById(cardIdFromHTML, card);
+            card.addEventListener('click', openCard);
+            card.addEventListener('keydown', event => {
+                if (event.target !== card || (event.key !== 'Enter' && event.key !== ' ')) return;
+                event.preventDefault();
+                openCard();
+            });
         });
     }
     applyEncounterCardThemes();
@@ -328,31 +306,30 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!itemData || typeof itemData.name === 'undefined') return;
             const card = createNode('article');
             card.className = 'restaurant-ph-card';
-            card.setAttribute('role', 'button'); card.setAttribute('tabindex', '0');
-            card.setAttribute('aria-label', `Läs mer om ${itemData.name}`);
             card.dataset.itemId = itemData.id;
 
             let linksHTML = '';
-            if (itemData.facebookLink) linksHTML += `<a href="${itemData.facebookLink}" class="btn-icon" target="_blank" rel="noopener noreferrer" aria-label="${itemData.name} Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>`;
-            if (itemData.websiteLink) linksHTML += `<a href="${itemData.websiteLink}" class="btn-icon" target="_blank" rel="noopener noreferrer" aria-label="${itemData.name} Webbplats" onclick="event.stopPropagation();"><i class="fas fa-globe"></i></a>`;
-            const cardImageSrc = itemData.cardImageSrc || '../images/placeholder_resource_card.png';
+            if (itemData.facebookLink) linksHTML += `<a href="${itemData.facebookLink}" class="btn-icon" target="_blank" rel="noopener noreferrer" aria-label="${itemData.name} Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>`;
+            if (itemData.websiteLink) linksHTML += `<a href="${itemData.websiteLink}" class="btn-icon" target="_blank" rel="noopener noreferrer" aria-label="${itemData.name} webbplats"><i class="fas fa-globe" aria-hidden="true"></i></a>`;
+            const cardImageSrc = itemData.cardImageSrc || fallbackImage;
             card.innerHTML = `
-                <div class="restaurant-ph-card-image-wrapper"><img src="${cardImageSrc}" alt="${itemData.name || ''}" class="restaurant-ph-card-image">
+                <div class="restaurant-ph-card-image-wrapper"><img src="${cardImageSrc}" data-local-fallback="${fallbackImage}" width="720" height="540" loading="lazy" decoding="async" alt="${itemData.name || ''}" class="restaurant-ph-card-image">
                     ${itemData.shortDesc ? `<p class="restaurant-ph-card-teaser">${itemData.shortDesc}</p>` : ''}</div>
                 <div class="restaurant-ph-card-content">
                     <h4>${itemData.name}</h4>
                     ${itemData.locationCity ? `<p class="restaurant-ph-card-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ${itemData.locationCity}</p>` : ''}
                     ${linksHTML ? `<div class="restaurant-ph-card-links">${linksHTML}</div>` : ''}
+                    <button type="button" class="card-details-button" aria-haspopup="dialog">Visa detaljer</button>
                 </div>`;
 
             const openModalAction = () => {
                 const currentItemData = swedishResourceData.swedishRestaurantsPH.find(r => r.id === card.dataset.itemId);
                 if (currentItemData && typeof openRestaurantPHModalFromMain === 'function') {
-                    openRestaurantPHModalFromMain(currentItemData);
+                    openRestaurantPHModalFromMain(currentItemData, card);
                 } else { console.error("Could not find item data or modal function for restaurant.");}
             };
             card.addEventListener('click', e => { if (!e.target.closest('a.btn-icon')) openModalAction(); });
-            card.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a.btn-icon')) { e.preventDefault(); openModalAction(); }});
+            window.SwedishModalController?.wireLocalImageFallback(card);
             gridContainer.appendChild(card);
         });
     }
@@ -360,5 +337,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- INITIAL PAGE RENDER CALLS ---
     renderMainSwedishRestaurantsPH();
 
-    console.log("Swedish page main renderer (COMPLETE V FINAL - Popovers, Modals Updated) initialized.");
 });

@@ -136,6 +136,38 @@
     display: inline-block;
     margin-left: 5px;
 }
+
+.chat-message.chat-message--error {
+    display: grid;
+    gap: 0.7rem;
+    color: #fff8dc;
+    background: #70402f;
+}
+
+.chat-error-copy {
+    display: block;
+}
+
+.chat-retry-button {
+    min-height: 40px;
+    justify-self: start;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid #fff8dc;
+    border-radius: 4px;
+    color: #3a2119;
+    background: #fff8dc;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.chat-retry-button:hover,
+.chat-retry-button:focus-visible {
+    color: #fff8dc;
+    background: transparent;
+    outline: 2px solid #d4a017;
+    outline-offset: 2px;
+}
 /* (Ensure .dot-elastic CSS is defined in global.css or here) */
 
 #chat-input-container {
@@ -173,6 +205,12 @@
 #send-chat-message-btn:hover {
     background-color: var(--ocean-blue-deep, #00425A);
     transform: scale(1.05);
+}
+
+#send-chat-message-btn:disabled,
+#user-chat-input-field:disabled {
+    cursor: wait;
+    opacity: 0.62;
 }
 #send-chat-message-btn i.fas { margin-right: 0; }
 

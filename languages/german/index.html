@@ -257,6 +257,31 @@
     </style>
 </head>
 <body class="maintenance-page-active">
+    <!--
+      FUTURE GERMAN PORTAL — DATA PASS ONLY AS OF 2026-08-29
+      Do not treat this maintenance screen as the German art direction and do not generate a finished UI during a research/curation pass.
+      Design the eventual portal deliberately with Aljohn in a separate Impeccable UI pass.
+
+      Prepared, currently unwired data:
+      - js/data/german-creators-data.json (complete creators and personalities; records remain eligible when personalComment is null)
+      - js/data/german-playlist-data.js (Aljohn's verified personal playlist)
+      - js/data/german-podcasts-data.js (privately frequency-ordered podcast research; never expose counts or rankings)
+      - js/data/german-learning-resources-data.js
+      - js/data/german-books-data.js (ID-only bridge to the canonical library catalogue)
+
+      Required future learning modules:
+      - Language Transfer — Complete German. Use the canonical Language Transfer/SoundCloud player, set
+        https://soundcloud.com/languagetransfer/sets/complete-german-more-on-the and first track
+        https://soundcloud.com/languagetransfer/01a. Preserve the honest note that the official course is unfinished.
+        Do not copy SoundCloud's generated internal player DOM; use its supported embed/oEmbed route.
+      - Linguno German: listening, conjugation, vocabulary, crossword, and study tools. Canonical data and URLs are in
+        js/data/german-learning-resources-data.js.
+      - Native German book resources are mandatory. Reuse canonical covers and bibliographic metadata from
+        ../../library/index.html, and queue German books discovered here back into that canonical library.
+
+      Curation reminder: Instagram-followed personalities are independent evidence even when Aljohn rarely watches them on
+      YouTube. Emilia & Letizia / Twins on Ice are already prepared from that Instagram signal.
+    -->
    <header id="main-header-placeholder"></header>
     <main class="main-maintenance">
         <div class="container-maintenance">

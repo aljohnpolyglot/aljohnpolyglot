@@ -31,6 +31,9 @@ function renderFrenchCuratedChannels() {
     const categoryById = new Map(data.categories.map(category => [category.id, category]));
     const channelById = new Map(data.channels.map(channel => [channel.id, channel]));
     const cefrLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    const shelfLeadOrder = {
+        personnalites: ['linh', 'jeck', 'pierre-garnier'],
+    };
     const state = {
         activeCategory: 'all',
         activeLevel: 'all',
@@ -213,6 +216,16 @@ function renderFrenchCuratedChannels() {
             const shelfChannels = filteredChannels.filter(channel => channel.categories.includes(category.id));
             if (shelfChannels.length === 0) return;
 
+            const leadOrder = shelfLeadOrder[category.id] || [];
+            shelfChannels.sort((left, right) => {
+                const leftIndex = leadOrder.indexOf(left.id);
+                const rightIndex = leadOrder.indexOf(right.id);
+                if (leftIndex === -1 && rightIndex === -1) return 0;
+                if (leftIndex === -1) return 1;
+                if (rightIndex === -1) return -1;
+                return leftIndex - rightIndex;
+            });
+
             fragment.appendChild(createShelf(category, shelfChannels));
             renderedShelfCount += 1;
         });
@@ -231,7 +244,7 @@ function renderFrenchCuratedChannels() {
         } else if (state.activeCategory !== 'all') {
             resultsStatus.textContent = categoryById.get(state.activeCategory)?.title || '';
         } else {
-            resultsStatus.textContent = 'Choisis une carte pour lire ma note et regarder une vidéo d’exemple.';
+            resultsStatus.textContent = 'Choisis une carte pour ouvrir sa fiche et regarder une vidéo d’exemple.';
         }
     };
 
@@ -295,11 +308,12 @@ function renderFrenchCuratedChannels() {
         const description = document.getElementById('curated-modal-description-fr');
         const longDescription = document.getElementById('curated-modal-long-description-fr');
         const comment = document.getElementById('curated-modal-comment-fr');
+        const personalNote = comment?.closest('.curated-channel-personal-note-fr');
         const video = document.getElementById('curated-modal-video-fr');
         const videoTitle = document.getElementById('curated-modal-video-title-fr');
         const platform = document.getElementById('curated-modal-platform-fr');
 
-        if (!image || !name || !description || !longDescription || !comment || !video || !videoTitle || !platform) return;
+        if (!image || !name || !description || !longDescription || !comment || !personalNote || !video || !videoTitle || !platform) return;
 
         state.modalTrigger = trigger;
         const profilePlatform = getProfilePlatform(channel);
@@ -311,7 +325,11 @@ function renderFrenchCuratedChannels() {
         name.textContent = channel.name;
         description.textContent = channel.shortDescription;
         longDescription.textContent = channel.longDescription;
-        comment.textContent = channel.aljohnComment;
+        const personalComment = typeof channel.aljohnComment === 'string'
+            ? channel.aljohnComment.trim()
+            : '';
+        comment.textContent = personalComment;
+        personalNote.hidden = personalComment.length === 0;
         video.src = `https://www.youtube.com/embed/${channel.sampleVideo.id}?rel=0`;
         video.title = channel.sampleVideo.title;
         videoTitle.textContent = channel.sampleVideo.title;

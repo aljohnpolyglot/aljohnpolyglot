@@ -1,450 +1,379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-      <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    <meta name="description" content="Il percorso italiano di Aljohn Polyglot: video, voci, musica, RaiPlay e comunità italiane nelle Filippine.">
+    <meta name="theme-color" content="#173f4b">
+    <title>Il mio studiolo italiano · Aljohn Polyglot</title>
     <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-red: #C8102E;
-            --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27); /* Gold-like yellow */
-            --dark-text: #2c3e50;
-            --light-text: #ffffff;
-            --light-bg: #f8f9fa; /* Used for header background */
-            --border-color: #e0e0e0;
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Open Sans', sans-serif;
-            --font-mono: 'Roboto Mono', monospace;
-            --tech-cyan: #00A9FF;
-            --deep-space-blue: #0a0f1a; /* Darker blue for contrast */
-            --maintenance-page-bg: #0d1424; /* Specific background for this page */
-            --maintenance-panel-bg: rgba(10, 25, 47, 0.9); /* Panel background */
-            --maintenance-border: rgba(0, 169, 255, 0.25);
-            --maintenance-text-light: #e0f2f7;
-            --maintenance-text-secondary: #a8c0d8;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body.maintenance-page-active { /* Add this class to body in HTML */
-            font-family: var(--font-secondary);
-            background-color: var(--maintenance-page-bg);
-            color: var(--maintenance-text-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
-            padding-top: 70px; /* For fixed header */
-        }
-
-        /* Header Styles (Ensure these align with your global styles.css for consistency) */
-        /* If these are already perfectly defined in styles.css and linked, you might not need to repeat all of them here */
-        header {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background-color: var(--light-bg); /* Light background for contrast */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header nav.container { /* This is the inner container for nav content */
-            width: 90%;
-            max-width: 1100px; /* Or your site's standard max-width */
-            margin: 0 auto; /* Centers the nav content within the full-width header */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
-        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-
-        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
-        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-
-        .nav-links li.dropdown { position: relative; }
-        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; /* Match link padding */ }
-        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--light-bg);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-            z-index: 1001;
-            border-radius: 0 0 6px 6px;
-            top: 100%;
-            left: 0; /* Aligns dropdown to the left of its parent li */
-            padding: 8px 0;
-            border: 1px solid var(--border-color);
-            border-top: none;
-            text-align: left; /* Ensures content within dropdown is left-aligned */
-        }
-        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
-        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
-        .nav-links li.dropdown.open .dropdown-content { display: block; } /* For JS toggle */
-
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
-        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
-        .nav-cta:hover::after { width: 0 !important; } /* Prevent underline on CTA button */
-
-
-        .menu-toggle { display: none; /* Handled by global styles.css for mobile */ }
-
-
-        main.main-maintenance {
-            flex-grow: 1;
-            display: flex; /* Use flex to center its child */
-            align-items: center; /* Vertically center */
-            justify-content: center; /* Horizontally center */
-            width: 100%;
-            padding: 40px 20px; /* Adjusted top padding is handled by body */
-            text-align: center; /* Center text within this main block */
-        }
-
-        .container-maintenance {
-            background-color: var(--maintenance-panel-bg);
-            padding: 35px 40px 45px;
-            border-radius: 12px;
-            box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
-            border: 1px solid var(--maintenance-border);
-            max-width: 750px;
-            width: 100%;
-            /* text-align: center; is inherited from main.main-maintenance */
-        }
-
-        .maintenance-icon-area { margin-bottom: 1.8rem; }
-        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .maintenance-icon-area .fa-tools { display: none; /* Hide if image is present */ font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .maintenance-message h1 {
-            font-family: var(--font-primary);
-            font-size: clamp(1.8rem, 5vw, 2.6rem);
-            color: var(--accent-yellow);
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-        .maintenance-message .subtitle {
-            font-family: var(--font-secondary);
-            font-size: 1.15rem;
-            color: var(--tech-cyan);
-            margin-bottom: 1.8rem;
-            font-weight: 600;
-        }
-
-        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
-        .maintenance-description strong { color: var(--maintenance-text-light); }
-
-        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
-        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
-        .mini-challenge .challenge-word-display {
-            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
-            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
-            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
-            font-weight: 500; letter-spacing: 1.5px;
-        }
-        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
-        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
-        .clue strong { color: var(--maintenance-text-light); }
-        .guess-input-area { margin-bottom: 1.8rem; }
-        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
-        #languageGuess {
-            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
-            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
-            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
-        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
-
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
-        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
-        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
-        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
-        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
-        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
-        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
-        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
-
-        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
-        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
-
-        /* Footer specific styles for dark theme */
-        footer {
-            background-color: var(--deep-space-blue);
-            color: var(--maintenance-text-secondary);
-            padding: 50px 0 30px;
-            font-size: 0.9rem;
-            border-top: 2px solid var(--tech-cyan);
-            width:100%;
-            margin-top: auto; /* Pushes footer to bottom if content is short */
-        }
-        footer .footer-content { /* Assuming .container class is used for width/centering */
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
-        }
-        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
-        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } /* From your main styles */
-        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
-        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
-        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
-        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
-        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
-        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
-
-        /* Responsive adjustments for maintenance page header/footer */
-        @media (max-width: 768px) {
-            body.maintenance-page-active {
-                padding-top: 60px; /* Adjust if mobile header height is different */
-            }
-            header nav.container {
-                height: 60px; /* Adjust if mobile header height is different */
-                /* If nav-links are hidden by default via main styles.css display:none, this is fine */
-                /* If they are not, and menu-toggle handles it, ensure menu-toggle is styled for this page */
-            }
-            .nav-links { /* This ensures mobile menu (if toggled by JS) behaves */
-                display: none; /* Initially hidden */
-                flex-direction: column;
-                position: absolute;
-                top: 100%; /* Position below header */
-                left: 0;
-                width: 100%;
-                background-color: var(--light-bg);
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-                padding: 10px 0;
-            }
-            .nav-links.active { display: flex; } /* JS adds 'active' to show */
-            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
-            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
-            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; /* Slightly different for contrast */}
-
-            .menu-toggle { display: block; /* Usually handled by global styles.css */ cursor:pointer; /* ... add your hamburger styles ... */ }
-
-
-            .container-maintenance { padding: 25px 20px 30px; }
-            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
-            .maintenance-message .subtitle { font-size: 1rem; }
-            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
-
-            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/page-language-italian.css">
+    <link rel="stylesheet" href="css/restaurants-style.css">
 </head>
-<body class="maintenance-page-active">
-   <header id="main-header-placeholder"></header>
-    <main class="main-maintenance">
-        <div class="container-maintenance">
-            <div class="maintenance-icon-area">
-                <img src="../../images/aljohn_scientist.png" alt="Aljohn working on updates">
-                <i class="fas fa-tools"></i>
-            </div>
-            <div class="maintenance-message">
-                <h1>System Upgrade in Progress!</h1>
-                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
-            </div>
-            <div class="maintenance-description">
-                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
-                <p>In the meantime, why not take a quick linguistic challenge?</p>
+<body>
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+    <header id="main-header-placeholder"></header>
+
+    <nav class="studiolo-nav" aria-label="Indice della pagina italiana">
+        <div class="studiolo-nav__track">
+            <a href="#storia">La mia storia</a>
+            <a href="#playlist">I miei video</a>
+            <a href="#language-transfer-italiano">Language Transfer</a>
+            <a href="#linguno-italiano">Linguno</a>
+            <a href="#podcast-italiani">Podcast</a>
+            <a href="#biblioteca">Biblioteca curata</a>
+            <a href="#libri-italiani">Libri</a>
+            <a href="#raiplay">RaiPlay</a>
+            <a href="#comunita">Comunità</a>
+            <a href="#ristoranti-italiani">A tavola</a>
+        </div>
+    </nav>
+
+    <main id="contenuto">
+        <section class="hero" id="storia" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Il quaderno italiano di Aljohn</p>
+                <h1 id="hero-title"><span>Il mio</span> studiolo italiano</h1>
+                <p class="hero-lede">L’italiano ha smesso di essere soltanto una lingua studiata da solo quando sono entrato nella vita culturale che la circonda: il mio tirocinio alla Philippine Italian Association, una lezione per il Dantedì e le tavole di conversazione di Dante Manila.</p>
+                <p class="hero-note">Questa pagina tiene insieme le mie conversazioni, le voci che seguo davvero e i luoghi filippini dove l’italiano è diventato incontro.</p>
+                <div class="hero-actions">
+                    <a class="button button--primary" href="#playlist">Guarda il mio percorso</a>
+                    <a class="text-link" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Il mio canale YouTube <span aria-hidden="true">↗</span></a>
+                </div>
             </div>
 
-            <div class="mini-challenge">
-                <h2>Linguistic Puzzle Break!</h2>
-                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
-                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
+            <section class="hero-gallery" aria-roledescription="carosello" aria-label="Momenti del percorso italiano di Aljohn" tabindex="0" data-hero-carousel>
+                <div class="hero-carousel-stage">
+                    <figure class="hero-photo is-active" data-hero-slide>
+                        <img src="../../images/languagecenters/pia_aljohn_dantedi_giving_lecture_3.jpg" alt="Aljohn tiene una lezione durante una celebrazione del Dantedì" fetchpriority="high">
+                        <figcaption><span>Dantedì 2025</span> Una lingua raccontata davanti a una sala</figcaption>
+                    </figure>
+                    <figure class="hero-photo" data-hero-slide aria-hidden="true">
+                        <img src="../../images/languagecenters/dante_lunch_languageexchange_2024_bgc_a_mano_restaurant.jpg" alt="Partecipanti a uno scambio linguistico italiano al ristorante A Mano" loading="lazy">
+                        <figcaption><span>Dante Manila</span> L’italiano continua a tavola</figcaption>
+                    </figure>
+                    <figure class="hero-photo" data-hero-slide aria-hidden="true">
+                        <img src="../../images/languagecenters/pia_aljohn_dantedi_group_pic_upstudents.jpg" alt="Aljohn con studenti dopo l’evento Dantedì" loading="lazy">
+                        <figcaption><span>Philippine Italian Association</span> Con gli studenti dopo l’incontro</figcaption>
+                    </figure>
+                </div>
+                <div class="hero-carousel-controls">
+                    <button id="hero-carousel-previous" type="button" aria-label="Mostra la fotografia precedente">
+                        <span aria-hidden="true">←</span>
+                    </button>
+                    <p class="hero-carousel-status" aria-live="polite"><span id="hero-carousel-current">1</span> <span aria-hidden="true">/</span> <span class="sr-only">di</span> <span id="hero-carousel-total">3</span></p>
+                    <button id="hero-carousel-next" type="button" aria-label="Mostra la fotografia successiva">
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+            </section>
+        </section>
 
-                <div class="clues-container">
-                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
-                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
-                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
+        <section class="personal-playlist section" id="playlist" aria-labelledby="playlist-title">
+            <header class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Archivio personale · in prima persona</p>
+                    <h2 id="playlist-title">L’italiano davanti alla camera</h2>
+                </div>
+                <p>Qui ci sono i miei video, separati dalla biblioteca degli altri creator. Scegli un episodio: il lettore e il contesto cambiano insieme.</p>
+            </header>
+
+            <div class="playlist-layout">
+                <div class="featured-video">
+                    <div class="video-frame">
+                        <iframe id="italian-featured-player" src="about:blank" title="Video italiano selezionato di Aljohn Polyglot" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="featured-video-copy">
+                        <p class="folio">Video selezionato</p>
+                        <h3 id="italian-featured-title">Caricamento della playlist…</h3>
+                        <p id="italian-featured-context"></p>
+                        <a id="italian-featured-link" class="text-link" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Apri questo video su YouTube <span aria-hidden="true">↗</span></a>
+                    </div>
                 </div>
 
-                <div class="guess-input-area">
-                    <label for="languageGuess">Your guessed language:</label>
-                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
+                <section class="playlist-index" aria-labelledby="playlist-index-title">
+                    <div class="playlist-index-heading">
+                        <p class="folio">Indice dei video</p>
+                        <h3 id="playlist-index-title">Scegli una conversazione</h3>
+                    </div>
+                    <div id="italian-playlist-list" class="playlist-list"></div>
+                    <div class="playlist-links">
+                        <a id="italian-full-playlist-link" href="https://www.youtube.com/playlist?list=PLHC88jnBSUqK-LD66Omr5EMZ9vtFMIbGh" target="_blank" rel="noopener noreferrer">Playlist completa</a>
+                        <a id="italian-channel-link" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Canale di Aljohn</a>
+                    </div>
+                </section>
+            </div>
+            <p id="italian-playlist-status" class="sr-only" aria-live="polite"></p>
+        </section>
+
+        <section class="language-transfer-section section" id="language-transfer-italiano" aria-labelledby="language-transfer-italiano-title">
+            <div class="language-transfer-shell">
+                <div class="language-transfer-copy">
+                    <p class="eyebrow">Metodo audio</p>
+                    <h2 id="language-transfer-italiano-title">Language Transfer: introduzione all’italiano</h2>
+                    <p>Una serie audio per seguire la logica dell’italiano con calma: ascolta una traccia, rispondi ad alta voce e lascia che ogni passaggio costruisca il successivo.</p>
+                    <a class="button button--light" href="https://soundcloud.com/languagetransfer/sets/introduction-to-italian" target="_blank" rel="noopener noreferrer">Apri la serie su SoundCloud <span aria-hidden="true">↗</span></a>
                 </div>
-                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
-                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
-                <div id="feedbackMessage"></div>
+                <div class="language-transfer-player">
+                    <iframe title="Introduction to Italian — Language Transfer" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/220248349&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true" width="100%" height="450" loading="lazy" scrolling="no" frameborder="no" allow="autoplay" aria-label="Lettore SoundCloud di Language Transfer in italiano"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="italian-practice-section section" id="linguno-italiano" aria-labelledby="linguno-italiano-title">
+            <div class="italian-practice-shell">
+                <div class="italian-practice-copy">
+                    <p class="eyebrow">Pratica mirata</p>
+                    <h2 id="linguno-italiano-title">Linguno per le coniugazioni</h2>
+                    <p>Per una sessione breve e concentrata, Linguno aiuta a lavorare sulle coniugazioni italiane con quiz mirati. È un complemento pratico tra un momento di ascolto e una conversazione.</p>
+                    <p>Scegli un tempo, un gruppo di verbi e un livello di difficoltà: dieci minuti bastano per individuare le forme che hanno ancora bisogno di attenzione.</p>
+                    <a class="button button--primary" href="https://www.linguno.com/conjugate/it/" target="_blank" rel="noopener noreferrer">Pratica l’italiano <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="italian-practice-visual">
+                    <img src="../../images/apps/linguno.webp" alt="Interfaccia di Linguno per esercitarsi con le coniugazioni" width="250" height="243" loading="lazy" decoding="async">
+                    <p>Un esercizio alla volta, con un obiettivo chiaro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="italian-podcasts-section section" id="podcast-italiani" aria-labelledby="italian-podcasts-title">
+            <header class="section-heading section-heading--split">
+                <div>
+                    <h2 id="italian-podcasts-title">Italiano nelle cuffie</h2>
+                </div>
+                <p>Interviste, psicologia, scienza, basket e cultura digitale: cinque formati nativi per scegliere non soltanto che cosa ascoltare, ma quanto ritmo e densità affrontare.</p>
+            </header>
+
+            <div class="podcast-shelf-toolbar">
+                <p id="italian-podcast-instructions">Scorri una copertina alla volta; ogni scheda indica formato, livello e condizioni reali dell’ascolto.</p>
+                <div class="podcast-shelf-controls" role="group" aria-label="Scorri i podcast italiani">
+                    <button id="italian-podcast-previous" type="button" aria-label="Mostra i podcast precedenti"><span aria-hidden="true">←</span></button>
+                    <button id="italian-podcast-next" type="button" aria-label="Mostra i podcast successivi"><span aria-hidden="true">→</span></button>
+                </div>
+            </div>
+            <div id="italian-podcast-shelf" class="italian-podcast-shelf" aria-describedby="italian-podcast-instructions"></div>
+            <p id="italian-podcast-status" class="sr-only" aria-live="polite"></p>
+        </section>
+
+        <section class="curated-library section" id="biblioteca" aria-labelledby="library-title">
+            <header class="section-heading section-heading--library">
+                <div>
+                    <p class="eyebrow">Biblioteca curata · altre voci</p>
+                    <h2 id="library-title">Voci a cui torno</h2>
+                </div>
+                <p>Persone e redazioni che ricorrono davvero nei miei ascolti: accenti, conversazioni, musica, curiosità e comicità da ritrovare quando voglio rientrare nell’italiano.</p>
+            </header>
+
+            <div class="library-tools" role="search" aria-label="Filtra la biblioteca italiana">
+                <label class="search-field">
+                    <span>Cerca per nome o tema</span>
+                    <input id="creator-search" type="search" autocomplete="off" placeholder="es. musica, scienza, accenti">
+                </label>
+                <div class="library-filter-groups">
+                    <div class="library-filter-group">
+                        <p id="creator-cefr-filter-label">Livello CEFR</p>
+                        <div id="creator-cefr-filters" class="creator-filters creator-cefr-filters" role="group" aria-labelledby="creator-cefr-filter-label"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="navigation-links">
-                <p>While this section is being polished, feel free to explore other parts of my world:</p>
-                <a href="../../index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
-                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
+            <p id="creator-results-status" class="results-status" aria-live="polite"></p>
+            <div id="creator-shelves" class="creator-shelves"></div>
+            <div id="creator-empty-state" class="empty-state" hidden>
+                <p>Nessuna voce corrisponde a questa ricerca.</p>
+                <button id="creator-reset" class="button button--ink" type="button">Azzera i filtri</button>
+            </div>
+            <noscript><p class="noscript-note">Attiva JavaScript per esplorare i profili e aprire le schede dettagliate.</p></noscript>
+        </section>
+
+        <section class="italian-books-section section" id="libri-italiani" aria-labelledby="italian-books-title">
+            <header class="section-heading section-heading--split">
+                <div>
+                    <h2 id="italian-books-title">Quattro classici da aprire con calma</h2>
+                </div>
+                <p>Pinocchio offre il primo passo; Dante, Manzoni e Machiavelli chiedono un ascolto interiore più lento. Le stesse edizioni e copertine continuano nella biblioteca generale.</p>
+            </header>
+
+            <div class="italian-books-folio">
+                <div class="italian-books-toolbar">
+                    <p id="italian-books-instructions">Scorri lo scaffale e apri una scheda per trovare livello, contesto, consiglio di lettura e formati disponibili.</p>
+                    <div class="italian-books-controls" role="group" aria-label="Scorri i libri italiani">
+                        <button id="italian-books-previous" type="button" aria-label="Mostra i libri precedenti">
+                            <span aria-hidden="true">←</span>
+                        </button>
+                        <button id="italian-books-next" type="button" aria-label="Mostra i libri successivi">
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </div>
+                <ul id="italian-books-shelf" class="italian-books-shelf" aria-describedby="italian-books-instructions"></ul>
+                <div class="italian-books-footer">
+                    <p id="italian-books-status" aria-live="polite">Caricamento dei libri italiani…</p>
+                    <a class="text-link" href="../../library/index.html?language=it#library-main-section">Esplora tutta la biblioteca italiana <span aria-hidden="true">↗</span></a>
+                </div>
+                <noscript><p class="noscript-note">Attiva JavaScript per visualizzare questo scaffale condiviso.</p></noscript>
+            </div>
+        </section>
+
+        <section class="raiplay-section section" id="raiplay" aria-labelledby="raiplay-title">
+            <div class="raiplay-mark" aria-hidden="true">Rai</div>
+            <div class="raiplay-intro">
+                <p class="eyebrow">Una finestra sulla TV italiana</p>
+                <h2 id="raiplay-title">RaiPlay, con una mappa prima di entrare</h2>
+                <p>RaiPlay riunisce dirette, replay, serie, film, documentari, concerti e contenuti didattici. Per chi studia fuori dall’Italia è preziosa, ma non tutto viaggia: le dirette, salvo RaiNews24, e parte del catalogo dipendono dai diritti disponibili nel proprio Paese.</p>
+                <a class="button button--light" href="https://www.raiplay.it/" target="_blank" rel="noopener noreferrer">Apri RaiPlay <span aria-hidden="true">↗</span></a>
+            </div>
+            <nav class="raiplay-routes" aria-label="Percorsi consigliati su RaiPlay">
+                <a href="https://www.raiplay.it/learning" target="_blank" rel="noopener noreferrer"><span>01</span><strong>Learning</strong><small>Lezioni, cultura e approfondimenti</small></a>
+                <a href="https://www.raiplay.it/film" target="_blank" rel="noopener noreferrer"><span>02</span><strong>Film</strong><small>Ascolto lungo con contesto visivo</small></a>
+                <a href="https://www.raiplay.it/guidatv" target="_blank" rel="noopener noreferrer"><span>03</span><strong>Guida TV / Replay</strong><small>Programmi recenti, quando i diritti lo permettono</small></a>
+            </nav>
+        </section>
+
+        <section class="community-section section" id="comunita" aria-labelledby="community-title">
+            <header class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Persone, gruppi, luoghi</p>
+                    <h2 id="community-title">L’italiano che esiste qui</h2>
+                </div>
+                <p>Una chat diventata meetup, un tirocinio diventato Dantedì e tavole di conversazione dove l’italiano ha preso una voce collettiva.</p>
+            </header>
+
+            <div id="italian-community-chapters" class="community-chapters"></div>
+        </section>
+
+        <section class="restaurant-places-section section" id="ristoranti-italiani" aria-labelledby="ristoranti-italiani-title" data-language-restaurant-shelf>
+            <header class="restaurant-places-heading">
+                <div>
+                    <h2 id="ristoranti-italiani-title">L’italiano continua a tavola</h2>
+                    <p>I ristoranti che compaiono nei miei video e nelle conversazioni della comunità: apri una scheda per ritrovare l’indirizzo, i contatti e l’episodio collegato.</p>
+                </div>
+                <span aria-hidden="true">Buon appetito</span>
+            </header>
+            <div class="restaurant-places-rail" data-language-restaurant-rail aria-live="polite"></div>
+        </section>
+
+        <section class="closing-note" aria-labelledby="closing-title">
+            <p class="eyebrow">Una raccolta ancora viva</p>
+            <h2 id="closing-title">Il mio modo di ricordare l’italiano.</h2>
+            <p>Questa raccolta cresce con le voci che ascolto, le conversazioni che mi restano e gli incontri che cambiano il modo in cui uso la lingua.</p>
+            <a class="button button--primary" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Continua sul mio canale</a>
+        </section>
+    </main>
+
+    <div id="creator-modal" class="creator-modal" hidden aria-hidden="true">
+        <div class="creator-modal-backdrop" data-modal-close></div>
+        <div class="creator-dialog" role="dialog" aria-modal="true" aria-labelledby="creator-modal-name" aria-describedby="creator-modal-description">
+            <button id="creator-modal-close" class="modal-close" type="button" aria-label="Chiudi la scheda del creator">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="creator-dialog-profile">
+                <img id="creator-modal-image" src="images/creators/podcast-italiano.jpg" alt="Immagine del creator selezionato">
+                <div>
+                    <p id="creator-modal-category" class="folio"></p>
+                    <h2 id="creator-modal-name">Creator</h2>
+                    <span id="creator-modal-platform" class="creator-dialog-platform" aria-label="Piattaforma del creator"></span>
+                    <p id="creator-modal-cefr" class="cefr-mark"></p>
+                </div>
+            </div>
+            <div class="creator-dialog-body">
+                <div class="creator-dialog-copy">
+                    <section aria-labelledby="creator-about-title">
+                        <h3 id="creator-about-title">La voce</h3>
+                        <p id="creator-modal-description"></p>
+                    </section>
+                    <section class="aljohn-note" aria-labelledby="creator-note-title">
+                        <p class="folio">Nota di Aljohn</p>
+                        <h3 id="creator-note-title">Perché è qui</h3>
+                        <p id="creator-modal-comment"></p>
+                    </section>
+                    <section aria-labelledby="creator-level-title">
+                        <h3 id="creator-level-title">Come ascoltarlo</h3>
+                        <p id="creator-modal-guidance"></p>
+                    </section>
+                    <div id="creator-modal-links" class="creator-modal-links"></div>
+                </div>
+                <div class="creator-dialog-video">
+                    <p class="folio">Un assaggio</p>
+                    <h3 id="creator-modal-video-title">Video di esempio</h3>
+                    <div class="video-frame">
+                        <iframe id="creator-modal-video" src="about:blank" title="Video di esempio del creator" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
- <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
-<script>
-  let siteBasePath;
+    </div>
 
-  if (
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1' ||
-    window.location.protocol === 'file:'
-  ) {
-    siteBasePath = '/';
-  } else {
-    siteBasePath = '/';
-  }
+    <div id="italian-book-modal" class="italian-book-modal" hidden aria-hidden="true">
+        <div class="italian-book-modal-backdrop" data-italian-book-modal-close></div>
+        <article class="italian-book-dialog" role="dialog" aria-modal="true" aria-labelledby="italian-book-modal-title" aria-describedby="italian-book-modal-description" tabindex="-1">
+            <button id="italian-book-modal-close" class="modal-close italian-book-modal-close" type="button" aria-label="Chiudi la scheda del libro">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="italian-book-dialog-cover">
+                <div class="italian-book-dialog-cover-frame">
+                    <img id="italian-book-modal-cover" src="/library/images/books/italian/pinocchio.webp" alt="Copertina del libro selezionato">
+                </div>
+                <p id="italian-book-modal-source">Biblioteca di Aljohn</p>
+            </div>
+            <div class="italian-book-dialog-copy">
+                <p id="italian-book-modal-category" class="folio"></p>
+                <h2 id="italian-book-modal-title">Libro italiano</h2>
+                <p id="italian-book-modal-author" class="italian-book-modal-author"></p>
+                <p id="italian-book-modal-level" class="italian-book-modal-level"></p>
+                <p id="italian-book-modal-description" class="italian-book-modal-description"></p>
+                <div class="italian-book-modal-guidance">
+                    <h3>Come affrontarlo</h3>
+                    <p id="italian-book-modal-guidance"></p>
+                </div>
+                <div id="italian-book-modal-links" class="italian-book-modal-links"></div>
+            </div>
+        </article>
+    </div>
 
-  console.log('Global siteBasePath set to:', siteBasePath);
-</script>
+    <div id="community-lightbox" class="community-lightbox" hidden aria-hidden="true">
+        <div class="community-lightbox-backdrop" data-lightbox-close></div>
+        <div class="community-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="community-lightbox-title">
+            <button id="community-lightbox-close" class="modal-close community-lightbox-close" type="button" aria-label="Chiudi l’immagine ingrandita">
+                <span aria-hidden="true">×</span>
+            </button>
+            <figure>
+                <img id="community-lightbox-image" src="../../images/groups/tropamici-meetup-group-photo.jpg" alt="Foto della comunità italiana">
+                <figcaption>
+                    <strong id="community-lightbox-title">Comunità italiana</strong>
+                    <span id="community-lightbox-caption"></span>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
 
-<script src="../../js/navbar-loader.js" defer></script>
-<script src="../../js/footer-loader.js" defer></script>
-    <script>
-        // Mini Challenge Game Logic
-        const maintenanceWords = [
-            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
-            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
-            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
-            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
-            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
-            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
-            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
-            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
-            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
-            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
-        ];
-        let currentChallenge;
-        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
-        const cluesContainer = document.querySelector('.clues-container');
-        const languageGuessInput = document.getElementById('languageGuess');
-        const submitGuessBtn = document.getElementById('submitGuessBtn');
-        const newWordBtn = document.getElementById('newWordBtn');
-        const feedbackMessage = document.getElementById('feedbackMessage');
+    <footer id="main-footer-placeholder"></footer>
 
-        function setupNewMaintenanceChallenge() {
-            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
-            challengeWordDisplay.textContent = currentChallenge.word;
-            cluesContainer.innerHTML = '';
-            currentChallenge.clues.forEach((clueText, index) => {
-                const clueDiv = document.createElement('div');
-                clueDiv.classList.add('clue');
-                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
-                cluesContainer.appendChild(clueDiv);
-            });
-            feedbackMessage.textContent = ''; languageGuessInput.value = '';
-            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
-            languageGuessInput.focus(); newWordBtn.style.display = 'none';
-        }
-        if (submitGuessBtn) { // Check if elements exist (they should on this page)
-            submitGuessBtn.addEventListener('click', function() {
-                const userGuess = languageGuessInput.value.trim().toLowerCase();
-                const correctAnswer = currentChallenge.language.toLowerCase();
-                if (!userGuess) {
-                    feedbackMessage.textContent = "Please enter your language guess!";
-                    feedbackMessage.className = 'feedback-incorrect'; return;
-                }
-                if (userGuess === correctAnswer) {
-                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
-                    feedbackMessage.className = 'feedback-correct';
-                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
-                    newWordBtn.style.display = 'inline-block';
-                } else {
-                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
-                    feedbackMessage.className = 'feedback-incorrect';
-                    newWordBtn.style.display = 'inline-block'; // Show new word button even on incorrect guess
-                }
-            });
-            languageGuessInput.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
-            });
-            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
-            setupNewMaintenanceChallenge(); // Initialize
-        }
-
-        // Copyright Year
-        const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
-
-        // Mobile Menu Toggle (assuming .menu-toggle and .nav-links structure from global nav)
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active'); // JS toggles this class
-                menuToggle.classList.toggle('active'); // For hamburger animation
-            });
-        }
-
-        // Desktop Dropdown Menu Logic
-        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
-        desktopDropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('a.dropbtn');
-            if (button) {
-                button.setAttribute('aria-haspopup', 'true');
-                button.setAttribute('aria-expanded', 'false');
-                button.addEventListener('click', function(event) {
-                    // For dropdowns where dropbtn itself is not a page link
-                    if (button.getAttribute('href') === 'javascript:void(0)' || button.getAttribute('href') === '#') {
-                        event.preventDefault();
-                    }
-                    // If it's a link to a page section (like index.html#languages), allow default but still open dropdown
-                    // For now, let's assume all dropbtns are primarily for toggling
-                    if (button.getAttribute('href').startsWith('#') && button.getAttribute('href') !== 'javascript:void(0)') {
-                        // If it's a fragment identifier for the same page, we might still want to prevent default and handle scroll
-                        // But for now, we focus on the toggle action
-                    } else {
-                         event.preventDefault(); // Prevent navigation for most dropbtn clicks
-                    }
-
-
-                    const isCurrentlyOpen = dropdown.classList.contains('open');
-                    desktopDropdowns.forEach(otherDd => {
-                        if (otherDd !== dropdown) {
-                            otherDd.classList.remove('open');
-                            const otherButton = otherDd.querySelector('a.dropbtn');
-                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    if (isCurrentlyOpen) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        dropdown.classList.add('open');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                    event.stopPropagation();
-                });
-            }
-        });
-        document.addEventListener('click', function(event) {
-            desktopDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove('open');
-                    const button = dropdown.querySelector('a.dropbtn');
-                    if (button) button.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    </script>
+    <script>let siteBasePath = "/";</script>
+    <script src="../../library/js/data/book_data.js"></script>
+    <script src="js/data/italian-books-data.js"></script>
+    <script src="js/data/italian-playlist-data.js"></script>
+    <script src="js/data/italian-restaurants-data.js"></script>
+    <script src="js/data/italian-podcasts-data.js"></script>
+    <script src="js/data/italian-curated-channels-data.js"></script>
+    <script src="js/data/italian-activity-creators-data.js"></script>
+    <script src="js/data/italian-instagram-creators-data.js"></script>
+    <script src="js/data/italian-personalities-data.js"></script>
+    <script src="js/data/italian-community-data.js"></script>
+    <script src="js/renderers/italian-playlist-renderer.js"></script>
+    <script src="js/renderers/italian-podcasts-renderer.js"></script>
+    <script src="js/renderers/italian-curated-library-renderer.js"></script>
+    <script src="js/renderers/italian-books-renderer.js"></script>
+    <script src="js/renderers/italian-community-renderer.js"></script>
+    <script src="../shared/js/language-restaurants.js"></script>
+    <script src="js/italian-page.js"></script>
+    <script src="../../js/navbar-loader.js" defer></script>
+    <script src="../../js/footer-loader.js" defer></script>
 </body>
 </html>

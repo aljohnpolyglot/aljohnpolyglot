@@ -216,17 +216,17 @@ ul.nav-links li.dropdown .dropbtn.active-dropdown i.fas.fa-caret-down {
     border: 1px solid var(--pirate-gold-darker);
     border-top: 3px solid var(--pirate-gold-accent); /* Gold accent on top of dropdown */
     top: 100%; /* Align with bottom of parent */
-    left: 50%;
+    left: 0;
     opacity: 0;
-    transform: translateX(-50%) translateY(5px); 
-    transform-origin: top center;
+    transform: translateY(5px);
+    transform-origin: top left;
     animation: slideDownFadeInDropdown 0.25s ease-out forwards;
     padding: 8px 0;
 }
 /* Keep your @keyframes fadeInDropdown or use this one: */
 @keyframes slideDownFadeInDropdown { 
-    from { opacity: 0; transform: translateX(-50%) translateY(0px); } /* Start from slight offset */
-    to { opacity: 1; transform: translateX(-50%) translateY(0); } 
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 ul.nav-links li.dropdown:hover .dropdown-content {

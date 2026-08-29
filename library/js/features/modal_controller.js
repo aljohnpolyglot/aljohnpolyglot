@@ -10,6 +10,8 @@ const modalBookDescription = $('#modal-book-description-text', modalOverlay);
 const modalAljohnsNotes = $('#modal-aljohns-notes-text', modalOverlay);
 const modalEpubBtn = $('#modal-epub-download-btn', modalOverlay);
 const modalPdfBtn = $('#modal-pdf-download-btn', modalOverlay);
+const modalLanguagePageLink = $('#modal-language-page-link', modalOverlay);
+let modalReturnFocus = null;
 
 function initializeModalController() {
     if (!modalOverlay || !closeModalBtn) {
@@ -18,6 +20,10 @@ function initializeModalController() {
     }
 
     closeModalBtn.addEventListener('click', closeBookModal);
+    modalBookCover.addEventListener('error', () => {
+        modalBookCover.src = '/library/images/assets/open_book_flipping_icon.png';
+        modalBookCover.alt = 'Book cover unavailable';
+    }, { once: true });
     modalOverlay.addEventListener('click', (event) => {
         // Close modal if clicked outside the content box
         if (event.target === modalOverlay) {
@@ -29,6 +35,24 @@ function initializeModalController() {
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
             closeBookModal();
+            return;
+        }
+
+        if (event.key === 'Tab' && modalOverlay.classList.contains('active')) {
+            const focusable = Array.from(modalOverlay.querySelectorAll(
+                'button:not([disabled]), a[href]:not([style*="display:none"]), [tabindex]:not([tabindex="-1"])'
+            )).filter((element) => element.offsetParent !== null);
+            if (!focusable.length) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
     });
 }
@@ -69,11 +93,24 @@ function openBookModal(bookId) {
         modalPdfBtn.style.display = 'none';
     }
 
+    if (modalLanguagePageLink && book.languagePageLink) {
+        modalLanguagePageLink.href = book.languagePageLink;
+        modalLanguagePageLink.style.display = 'inline-block';
+    } else if (modalLanguagePageLink) {
+        modalLanguagePageLink.style.display = 'none';
+    }
+
+    modalReturnFocus = document.activeElement;
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scroll
+    window.requestAnimationFrame(() => closeModalBtn.focus());
 }
 
 function closeBookModal() {
     modalOverlay.classList.remove('active');
     document.body.style.overflow = ''; // Restore background scroll
+    if (modalReturnFocus && typeof modalReturnFocus.focus === 'function') {
+        modalReturnFocus.focus();
+    }
+    modalReturnFocus = null;
 }

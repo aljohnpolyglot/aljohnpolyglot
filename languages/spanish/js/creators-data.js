@@ -1,9 +1,392 @@
 
 const creatorsData = [
     {
+        id: 'claudia-arenas',
+        name: 'Claudia Arenas',
+        profilePic: 'images/creators/claudia-arenas.jpg',
+        type: 'Cantante y compositora',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Pop y R&B de nueva generación, del escenario de OT 2025 a una carrera propia.',
+        longDesc: 'Cantante alicantina y finalista de Operación Triunfo 2025. Después de interpretar repertorio pop en las galas y en la gira del programa, inició su etapa en solitario con «Como un imán», una canción entre la balada y el R&B. Sus actuaciones, videoclips y entrevistas permiten escuchar una voz joven que alterna el lenguaje cotidiano con el vocabulario de la composición, la producción y la escena musical.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'o8norTDT-KM',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCsl7HowXw6wiun6sZdixXpw',
+            instagram: 'https://www.instagram.com/claudiaarenas/',
+            website: 'https://www.claudiaarenas.info/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'cris-lora',
+        name: 'Cris Lora',
+        profilePic: 'images/creators/cris-lora.jpg',
+        type: 'Cantante, bailarina y actriz',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'La ganadora de OT 2025 construye un pop físico, bailable y abierto a influencias internacionales.',
+        longDesc: 'Cristina Lora, artista sevillana y ganadora de Operación Triunfo 2025, combina canto, interpretación, baile y claqué. Su proyecto como Cris Lora arrancó con «E Un Delirio», un sencillo de pop contemporáneo con producción inspirada en el funk brasileño. Las actuaciones de la Academia muestran su trabajo vocal y escénico; sus entrevistas y piezas propias añaden lenguaje sobre coreografía, identidad artística y preparación de un lanzamiento.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'kbceGzbUlaA',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/@CRISLORAVEVO',
+            instagram: 'https://www.instagram.com/ot2025.cristina',
+            website: 'https://www.crislora.es/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'olivia-bay',
+        name: 'Olivia Bay',
+        profilePic: 'images/creators/olivia-bay.jpg',
+        type: 'Cantante y actriz de teatro musical',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Pop teatral y una presencia escénica formada entre teatro musical, La Voz Kids y OT 2025.',
+        longDesc: 'Cantante madrileña y segunda finalista de Operación Triunfo 2025. Su formación en artes escénicas y teatro musical se reconoce en interpretaciones que cuidan movimiento, personaje y voz. Tras el concurso publicó «Sábado noche», una pieza de pop escrita con varios compañeros de su edición. Para estudiantes, las galas ofrecen letras y dicción cantada; las entrevistas exigen seguir respuestas espontáneas a velocidad nativa.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'rwspXIvwHic',
+        aljohnsComment: null,
+        socialLinks: {
+            instagram: 'https://www.instagram.com/oliviabay_/',
+            youtube: 'https://www.youtube.com/channel/UCc1sAhdaLjfJi11X1awO-yg'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'ana-mena',
+        name: 'Ana Mena',
+        profilePic: 'images/creators/ana-mena-new.jpg',
+        type: 'Cantante, compositora y actriz',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Pop español de vocación mediterránea, con canciones, videoclips y entrevistas entre España e Italia.',
+        longDesc: 'Artista malagueña que comenzó en televisión y cine antes de consolidar una carrera de pop en España e Italia. Su catálogo mezcla pop urbano, melodías bailables y colaboraciones, mientras sus entrevistas hablan de escritura, dirección creativa y una trayectoria bilingüe. Las letras son accesibles desde nivel intermedio; las conversaciones promocionales avanzan a ritmo nativo y contienen vocabulario de industria musical.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: '52cnhvRR6h4',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/@AnaMenaMusic',
+            instagram: 'https://www.instagram.com/anamenaoficial/',
+            website: 'https://www.anamenamusic.com/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'abraham-mateo',
+        name: 'Abraham Mateo',
+        profilePic: 'images/creators/abraham-mateo-new.jpg',
+        type: 'Cantante, compositor y productor',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Pop latino creado desde la escritura, la producción y colaboraciones con artistas de distintos países.',
+        longDesc: 'Cantante y productor nacido en San Fernando, Cádiz. Además de interpretar su propio repertorio, compone y produce para otros artistas, por lo que sus entrevistas permiten entrar en el vocabulario del estudio, las colaboraciones y la construcción de canciones. Sus videoclips ofrecen estribillos claros y repetición útil; las conversaciones sin guion requieren un nivel intermedio alto.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'Jj9T-RC3OOQ',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/@AbrahamMateo',
+            instagram: 'https://www.instagram.com/abrahammateo/',
+            website: 'https://www.abrahammateoofficial.com/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'rosalia',
+        name: 'ROSALÍA',
+        profilePic: 'images/creators/rosalia.jpg',
+        type: 'Cantante, compositora y productora',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Una obra musical y visual que cruza flamenco, pop experimental, electrónica y ritmos urbanos.',
+        longDesc: 'Artista catalana cuya discografía trabaja el flamenco desde una mirada contemporánea y lo cruza con pop experimental, electrónica y música urbana. Sus videoclips exigen atender tanto a la letra como al lenguaje visual; sus entrevistas recorren composición, producción, referencias artísticas y decisiones de puesta en escena. La variedad de registros, acentos y juegos fonéticos la hace especialmente rica para oyentes avanzados.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: 'GkTWxDB21cA',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/@rosalia',
+            instagram: 'https://www.instagram.com/rosalia.vt/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'ferran-torres',
+        name: 'Ferran Torres',
+        profilePic: 'images/creators/ferran-torres.jpg',
+        type: 'Futbolista',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Fútbol de élite explicado desde entrenamientos, entrevistas y conversaciones de vestuario.',
+        longDesc: 'Delantero valenciano de la selección española con una trayectoria en clubes de máximo nivel. Las entrevistas deportivas permiten escuchar respuestas breves, humor entre compañeros y vocabulario sobre preparación, partidos, recuperación y vida de vestuario. El contexto visual ayuda, pero la velocidad, las elipsis y la jerga futbolística sitúan la escucha a partir de B2.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: 'D3VhCZiDZSY',
+        aljohnsComment: null,
+        socialLinks: { instagram: 'https://www.instagram.com/ferrantorres/' },
+        tags: ['deportes']
+    },
+    {
+        id: 'begona-vargas',
+        name: 'Begoña Vargas',
+        profilePic: 'images/creators/begona-vargas.jpg',
+        type: 'Actriz y cantante',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Entrevistas sobre interpretación, series y una nueva etapa musical bajo el nombre BEGOÑA.',
+        longDesc: 'Actriz madrileña conocida por ficciones como «Berlín» que en 2026 abrió una etapa musical propia como BEGOÑA. En entrevistas habla de construcción de personajes, rodajes, trabajo de reparto y del paso de la interpretación a la música. Es una escucha nativa con bromas, interrupciones y referencias a la industria audiovisual, recomendable desde B2.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: 'SXZeT01S72g',
+        aljohnsComment: null,
+        socialLinks: { instagram: 'https://www.instagram.com/begonavargas/' },
+        tags: ['personalidades']
+    },
+    {
+        id: 'marta-diaz',
+        name: 'Marta Díaz',
+        profilePic: 'images/creators/marta-diaz.jpg',
+        type: 'Creadora, modelo y empresaria',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Vida digital, moda, viajes y proyectos personales contados en vídeos, entrevistas y una docuserie.',
+        longDesc: 'Creadora sevillana vinculada a Madrid que pasó de YouTube y las redes sociales a proyectos de moda, empresa y la docuserie «La vida de Marta Díaz». Sus entrevistas mezclan vida profesional, exposición pública y preparación de nuevos retos. El tono coloquial, la velocidad y las referencias al ecosistema digital ofrecen una muestra clara del español joven de España.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: 'BtxFj2sEMOg',
+        aljohnsComment: null,
+        socialLinks: { instagram: 'https://www.instagram.com/martaa_diiaz/' },
+        tags: ['personalidades']
+    },
+    {
+        id: 'mar-lucas',
+        name: 'Mar Lucas',
+        profilePic: 'images/creators/mar-lucas.jpg',
+        type: 'Cantante y creadora digital',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Del contenido digital a un proyecto pop propio, con entrevistas abiertas sobre industria e inseguridades.',
+        longDesc: 'Creadora y cantante española que transformó una comunidad nacida en redes en un proyecto musical. Sus canciones y videoclips se complementan con entrevistas extensas sobre escritura, relaciones con la industria, presión pública e inseguridades. El registro es muy conversacional y contiene jerga de redes, por lo que funciona mejor desde B2.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: '2fFCtglLlkw',
+        aljohnsComment: null,
+        socialLinks: { instagram: 'https://www.instagram.com/marlucas/' },
+        tags: ['música']
+    },
+    {
+        id: 'judit-garuz',
+        name: 'Judit Garuz',
+        profilePic: 'images/creators/judit-garuz.jpg',
+        type: 'Cantante y compositora',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Una voz catalana de OT 2025 con repertorio pop, actuaciones en directo y composición propia.',
+        longDesc: 'Cantante catalana de Operación Triunfo 2025. En la Academia trabajó repertorio pop y mostró su faceta de compositora, mientras las entrevistas posteriores recorren el aprendizaje escénico y la construcción de una identidad fuera del programa. Las galas son accesibles con apoyo de la letra; las conversaciones espontáneas y el cambio ocasional entre castellano y catalán elevan la dificultad.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'VP9GvnJGM0o',
+        aljohnsComment: null,
+        socialLinks: { instagram: 'https://www.instagram.com/juditgaruz/' },
+        tags: ['música']
+    },
+    {
+        id: 'q-are',
+        name: 'Q_ARE',
+        profilePic: 'images/creators/q-are.jpg',
+        type: 'Boy band',
+        country: 'Chile',
+        flagCode: 'cl',
+        shortDesc: 'Pop chileno de formación grupal, coreografía precisa y una producción influida por el K-pop.',
+        longDesc: 'Boy band chilena formada por siete integrantes y construida alrededor del canto, el rap y el baile urbano. Lanzamientos como «PALA» combinan estribillos en español, coreografía y una puesta visual cercana al K-pop. Los videoclips son una entrada accesible por su repetición; entrevistas y contenido entre bastidores aportan español chileno rápido y vocabulario de ensayo y producción.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'gGbgocUZLB8',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UC80H8eRa-__9edhudJWrwqw',
+            instagram: 'https://www.instagram.com/q_are.official/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'jenny-luav',
+        name: 'Jenny Luav',
+        profilePic: 'images/creators/jenny-luav.jpg',
+        type: 'Políglota y creadora educativa',
+        country: 'México',
+        flagCode: 'mx',
+        shortDesc: 'Idiomas, viajes y humor cotidiano explicados por una políglota mexicana.',
+        longDesc: 'Jennifer Luévano, conocida como Jenny Luav, es una creadora de Aguascalientes que combina consejos prácticos de aprendizaje, comparaciones entre idiomas, pronunciación y escenas breves de humor. También documenta viajes y situaciones interculturales, de modo que su español pasa de explicaciones muy claras a un registro espontáneo y rápido. Los vídeos con texto en pantalla funcionan desde B1; sus conversaciones y relatos de viaje exigen mayor soltura.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'iW4mQGagf1U',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCDv_6m44lPHIIVWpYdj3eYA',
+            instagram: 'https://www.instagram.com/jennyluav/'
+        },
+        tags: ['input comprensible']
+    },
+    {
+        id: 'zach-morris',
+        name: 'Zach Morris',
+        profilePic: 'images/creators/zach-morris.jpg',
+        type: 'Creador de viajes y cultura latinoamericana',
+        country: 'Colombia',
+        flagCode: 'co',
+        shortDesc: 'Crónicas de viaje, choques culturales y vida cotidiana entre Colombia, Argentina y otros países de la región.',
+        longDesc: 'Creador estadounidense y ciudadano colombiano que construyó su canal alrededor de la vida cotidiana latinoamericana. Sus vídeos recorren barrios, comida, transporte, música, fútbol y diferencias culturales, a menudo mediante conversaciones con personas locales. Habla un español fluido con huellas de su aprendizaje y explica contexto para una audiencia internacional; esa mezcla ofrece una entrada amable desde B1, mientras las interacciones callejeras llegan a velocidad nativa.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'AWzLyk4Q4e0',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UC6MwGi30pqAmg2djWyksUBA',
+            website: 'https://www.zacmorris.com/'
+        },
+        tags: ['vlogs y viajes']
+    },
+    {
+        id: 'ouvill-live-music',
+        name: 'OuVill Live Music',
+        profilePic: 'images/creators/ouvill-live-music.jpg',
+        type: 'Archivo audiovisual de música en directo',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Conciertos completos y actuaciones en 4K grabadas en festivales y salas de Galicia.',
+        longDesc: 'Canal gallego dedicado a registrar música en directo en festivales, fiestas y salas de localidades como Vigo, Pontevedra, O Grove y Vilagarcía de Arousa. El catálogo reúne pop, rock, indie y música gallega con pocos cortes y una puesta centrada en el escenario. Es especialmente útil para seguir letras cantadas, presentaciones al público y expresiones propias del concierto; algunas actuaciones alternan castellano y gallego.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'S-vpYvdIm-I',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/@ouvill_live_music'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'bray-on',
+        name: 'Bray On',
+        profilePic: 'images/creators/bray-on.jpg',
+        type: 'Cantante y compositor',
+        country: 'Chile',
+        flagCode: 'cl',
+        shortDesc: 'Pop y balada romántica desde Chile, con versiones vocales, composiciones propias y actuaciones televisivas.',
+        longDesc: 'Brahiron Chávez, artista nacido en Antofagasta y criado en Taltal, desarrolla un repertorio de pop y balada romántica. Su carrera incluye versiones virales grabadas en espacios públicos, una etapa como vocalista de la agrupación La Noche, actuaciones televisivas y lanzamientos propios. Las canciones permiten trabajar dicción y frases emocionales; las entrevistas añaden español chileno y vocabulario sobre técnica vocal, escena y composición.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: '62sdKINEaBk',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCT6vxsQ9yPHfS7W_vdtEjrw',
+            website: 'https://www.brayonmusic.com/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'yorokobu',
+        name: 'Yorokobu',
+        profilePic: 'images/creators/yorokobu.jpg',
+        type: 'Revista de creatividad y diseño',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Historias visuales sobre creatividad, diseño, ideas, ciencia y nuevas maneras de vivir.',
+        longDesc: 'Publicación madrileña dedicada a creatividad, diseño, comunicación, innovación y comportamientos que transforman la vida cotidiana. Su canal convierte artículos e ideas editoriales en animación, entrevistas, pequeños documentales y piezas explicativas. La narración suele ser limpia y apoyada por la imagen, pero el vocabulario conceptual sobre diseño, sociedad y cultura la sitúa mejor desde B2.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: 'zkiggHizlY8',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCOZksTwxOigxnRtRw86CjFg',
+            website: 'https://yorokobu.es/'
+        },
+        tags: ['ciencia y educación']
+    },
+    {
+        id: 'urihoops',
+        name: 'Urihoops',
+        profilePic: 'images/creators/urihoops.jpg',
+        type: 'Canal de baloncesto',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Actualidad y análisis NBA en español, con fichajes, táctica, rendimiento y cultura de baloncesto.',
+        longDesc: 'Canal español de Oriol Puig dedicado al baloncesto y, de forma especial, a la NBA. Publica análisis de jugadores, movimientos de mercado, reconstrucciones de equipos, noticias y explicaciones apoyadas en estadísticas y secuencias de partido. La estructura visual ayuda a seguir el argumento, aunque el ritmo, las siglas y la jerga de posiciones, contratos y táctica recomiendan una escucha desde B2.',
+        cefr: ['B2', 'C1', 'C2'],
+        embeddedId: 'QMF2YXY5sgU',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCtbYDOYEESKF37YkW1aRrMA',
+            instagram: 'https://www.instagram.com/urihoops/'
+        },
+        tags: ['deportes']
+    },
+    {
+        id: 'emir-abdul-gani',
+        name: 'Emir Abdul Gani',
+        profilePic: 'images/creators/emir-abdul-gani.jpg',
+        type: 'Bailarín y coreógrafo',
+        country: 'Uruguay',
+        flagCode: 'uy',
+        shortDesc: 'Coreografías urbanas, clases multitudinarias y entrenamiento escénico desde una mirada rioplatense.',
+        longDesc: 'Bailarín, profesor y coreógrafo nacido en Montevideo. Sus vídeos reúnen coreografías de música urbana, ensayos con alumnos, clases abiertas y montajes concebidos para cámara; también ha trabajado en televisión como jurado y entrenador. El movimiento permite comprender la intención antes de dominar cada palabra, mientras instrucciones, entrevistas y conversaciones de clase exponen un español rioplatense rápido y muy coloquial.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'LKPvdwQpiBs',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCeKoSVLoLWJobkpbUNQ4zFQ',
+            instagram: 'https://www.instagram.com/emirabdulgani/'
+        },
+        tags: ['personalidades']
+    },
+    {
+        id: 'kevin-y-karla',
+        name: 'Kevin y Karla',
+        profilePic: 'images/creators/kevin-y-karla.jpg',
+        type: 'Dúo de pop',
+        country: 'Chile',
+        flagCode: 'cl',
+        shortDesc: 'Versiones cantadas en español que adaptan éxitos internacionales sin perder su melodía pop.',
+        longDesc: 'Dúo chileno formado por los hermanos Kevin y Karla Vásquez. Su canal creció con adaptaciones al español de canciones originalmente publicadas en inglés, además de repertorio propio y colaboraciones. Las letras mantienen melodías conocidas y ofrecen repetición, rima y correspondencias útiles para estudiantes; la interpretación cantada facilita el seguimiento desde B1, mientras entrevistas y contenido informal incorporan español chileno nativo.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: '8T_OrNyG-Rc',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCVOzuq0ougZtYwN5fBLsvng'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'javi-crespo',
+        name: 'Javicrespo',
+        profilePic: 'images/creators/javi-crespo.jpg',
+        type: 'Cantante y compositor',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Pop confesional después de OT 2025, con canciones propias y colaboraciones que abren una etapa en solitario.',
+        longDesc: 'Cantante cordobés de Operación Triunfo 2025 que publica su música como Javicrespo. Después de la Academia inició una etapa propia con «Rayito de luz», junto a Paula Koops, y «Si fuera por mí», además de mostrar el proceso de composición y la preparación de un proyecto más amplio. Los videoclips ofrecen letras claras y repetición; sus entrevistas recorren creación, identidad artística y expectativas de carrera a velocidad nativa.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'RiqHTuEaZPw',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UC3-nQ5x435mJ0hPbuPCrJ3g',
+            instagram: 'https://www.instagram.com/javicrespo/'
+        },
+        tags: ['música']
+    },
+    {
+        id: 'michelle-azpeitia',
+        name: 'Michelle Azpeitia',
+        profilePic: 'images/creators/michelle-azpeitia.jpg',
+        type: 'Cantante y compositora',
+        country: 'México',
+        flagCode: 'mx',
+        shortDesc: 'Pop mexicano entre lanzamientos en solitario, armonías de BOiFREND y una formación televisiva en La Voz.',
+        longDesc: 'Cantante mexicana que participó en La Voz México 2022 y más tarde desarrolló repertorio propio y trabajo grupal con BOiFREND. En su canal reúne actuaciones del concurso, canciones como «Amigos o Algo Más» y lanzamientos recientes como «Baby Ven» y «Fantasyland». El material cantado permite seguir estructuras repetidas desde B1; las piezas de proceso y las intervenciones espontáneas añaden vocabulario de grabación, interpretación y promoción musical.',
+        cefr: ['B1', 'B2', 'C1', 'C2'],
+        embeddedId: 'f7kAQpDA2qk',
+        aljohnsComment: null,
+        socialLinks: {
+            youtube: 'https://www.youtube.com/channel/UCvz-RSGNQjsav8XRaizG29Q',
+            instagram: 'https://www.instagram.com/michelleazpeitiaa/'
+        },
+        tags: ['música']
+    },
+    {
         id: 'clara-galle',
         name: 'Clara Galle',
-        profilePic: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQBlBI5KIYmVEiDsU7UYlWWm-5xuTLT3f5nLGKps2fd89zla6atyyS0iJYq5vm28rULVAK9IKra2MG1Ui5DNrfiSu5ca5ln3qbwoxvMspGwiQ',
+        profilePic: 'images/creators/clara-galle.webp',
         type: 'Actriz',
         country: 'España',
         flagCode: 'es',
@@ -11,7 +394,7 @@ const creatorsData = [
         longDesc: 'Clara Galle saltó a la fama internacional con su papel de Raquel en las películas de Netflix. Además de su trabajo como actriz, es muy activa en Instagram, donde comparte su día a día. Aparece en el videoclip "Tacones Rojos" de Sebastián Yatra.',
         cefr: ['B1', 'B2', 'C1', 'C2'],
         embeddedId: 'su-oUO30O_s', // Entrevista de Vogue
-        aljohnsComment: "¡Mi crush! La descubrí en 'Tacones Rojoss' de Yatra y desde entonces he visto todas sus películas. Literalmente la chica de mis sueños y además hace gimnasia. ¡No te olvides de ver Olympo! ",
+        aljohnsComment: "¡Mi crush! La descubrí en 'Tacones Rojoss' de Yatra y desde entonces he visto todas sus películas. Literalmente la chica de mis sueños y además hace gimnasia. ¡No te olvides de ver Olympo! La sigo y me parece muy guapa; en esta entrevista no aporté una anécdota cinematográfica adicional.",
         socialLinks: { instagram: 'https://www.instagram.com/claaragalle/?hl=es' },
         tags: ['personalidades']
     },
@@ -19,7 +402,7 @@ const creatorsData = [
     {
         id: 'charlyokei',
         name: 'Charlyokei',
-        profilePic: 'https://yt3.googleusercontent.com/pRSxNVCSqPExHBwiKgjmtWmKGBdVQ1jkqbs-zKJR7kEf3OxzzN6gEdaWK8aawJWqyHiqhBLb=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/charlyokei.jpg',
         type: 'Comedia / Entrevistas',
         country: 'España',
         flagCode: 'es',
@@ -34,7 +417,7 @@ const creatorsData = [
     {
         id: 'lynette-ladelfa',
         name: 'Lynette Ladelfa (K4OS)',
-        profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhX1LV16uKS40r7SVqbQSoD_t5IczLGZUqBw&s',
+        profilePic: 'images/creators/lynette-ladelfa.jpg',
         type: 'Artista / Influencer',
         country: 'Argentina',
         flagCode: 'ar',
@@ -49,7 +432,7 @@ const creatorsData = [
     {
         id: 'miriam-petricor',
         name: 'Miriam Petricor',
-        profilePic: 'https://www.l3tcraft.com/wp-content/uploads/2025/03/miriampetricor.webp', // Placeholder
+        profilePic: 'images/creators/miriam-petricor.webp',
         type: 'Streamer / Gaming',
         country: 'España',
         flagCode: 'es',
@@ -62,77 +445,77 @@ const creatorsData = [
         tags: ['gaming', 'personalidades']
     },
     {
-        id: 'clara-fernandez',
+    id: 'clara-fernandez',
         name: 'Clara Fernández',
-        profilePic: 'https://i.pinimg.com/736x/aa/f8/2f/aaf82f137573ebc653b3d31f16fe61b0.jpg',
+        profilePic: 'images/creators/clara-fernandez.jpg',
         type: 'Atleta (Salto con Pértiga)',
         country: 'España',
         flagCode: 'es',
         shortDesc: 'Atleta española de élite y una de las pertiguistas más populares en redes.',
         longDesc: 'Clara Fernández es una de las grandes promesas del atletismo español en la disciplina de salto con pértiga. Además de su carrera deportiva, es muy popular en redes sociales, donde comparte sus entrenamientos, viajes y su día a día.',
         cefr: ['B1', 'B2', 'C1', 'C2'],
-        embeddedId: null,
+        embeddedId: 'JlUDXABOU1Y',
         aljohnsComment: "Además de ser una atleta increíble, seguir a Clara en Instagram es una ventana a la vida y la disciplina de un deportista de élite. Muy inspirador jajaja. Acabo de darme cuenta de que el salto con pértiga es uno de mis deportes favoritos",
         socialLinks: {
             instagram: 'https://www.instagram.com/claraaafernandez/'
         },
-        tags: ['personalidades',]
+        tags: ['deportes']
     },
   
   
     {
         id: 'k4os-tau-rozzi',
         name: 'Tau Rozzy (K4OS)',
-        profilePic: 'https://www.famousbirthdays.com/headshots/mariana-taurozzi-1.jpg', // Placeholder
+        profilePic: 'images/creators/k4os-tau-rozzi.webp',
         type: 'Artista / Influencer',
         country: 'Argentina',
         flagCode: 'ar',
         shortDesc: 'La líder y rapera principal de K4OS, con un carisma arrollador.',
         longDesc: 'Mariana "Tau" Taurozzi es la líder y rapera principal de K4OS, marcando el ritmo y la actitud del grupo. Antes de K4OS, ya era una influencer y creadora de contenido muy popular, conocida por su humor y su conexión con la audiencia. Aporta una energía magnética y una gran presencia escénica al proyecto.',
         cefr: ['B1', 'B2', 'C1', 'C2'],
-        embeddedId: null,
+        embeddedId: '_PcDRHyGH8w',
         aljohnsComment: "Otra rubia de k4os. Mi segunda favorita junto a Lynette. Y para mi la más guapa del grupo",
         socialLinks: { instagram: 'https://www.instagram.com/taurozzy/?hl=es' },
-        tags: ['personalidades',]
+        tags: ['música']
     },
     {
     id: 'k4os-mechi-bitzer',
     name: 'Mechi Bitzer (K4OS)',
-    profilePic: 'https://images.genius.com/e079dfd90ef3409c952955ab4cb74b9c.736x736x1.jpg',
+    profilePic: 'images/creators/k4os-mechi-bitzer.jpg',
     type: 'Artista / Influencer',
     country: 'Argentina',
     flagCode: 'ar',
     shortDesc: 'Vocalista principal y bailarina del grupo de pop argentino K4OS.',
     longDesc: 'Mercedes "Mechi" Bitzer es conocida por su potente voz, siendo una de las vocalistas principales de K4OS. Antes de unirse al grupo, ya era una influencer reconocida, conectando con una gran audiencia a través de su carisma y contenido.',
     cefr: ['B1', 'B2', 'C1', 'C2'],
-    embeddedId: null,
+    embeddedId: 'jf6dKz521jY',
     aljohnsComment: "La voz de Mechi es increíble y tiene una presencia escénica espectacular. Es una parte fundamental del sonido de K4OS.",
     socialLinks: {
         instagram: 'https://www.instagram.com/mechibitzer/'
     },
-    tags: ['personalidades', 'música']
+    tags: ['música']
 },
 {
     id: 'k4os-ines-civit',
     name: 'Ine Civit (K4OS)',
-    profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX28J33stSZtiR0Ebl1UWL3r0RlC_VOvbJZw&s',
+    profilePic: 'images/creators/k4os-ines-civit.jpg',
     type: 'Artista / Cantautora',
     country: 'Argentina',
     flagCode: 'ar',
     shortDesc: 'Vocalista principal y compositora, con una increíble trayectoria como solista.',
     longDesc: 'Inés "Ine" Civit es una de las vocalistas principales y una talentosa compositora en K4OS. Antes de unirse al grupo, ya subía covers y canciones propias, y tuvo una memorable participación en Got Talent Argentina, donde demostró su enorme talento vocal.',
     cefr: ['B1', 'B2', 'C1', 'C2'],
-    embeddedId: 'video-id-aqui', // Puedes poner aquí el ID del vídeo de su audición en Got Talent
+    embeddedId: 'JiTca2m7xt0',
     aljohnsComment: "¡Vi su audición en Got Talent Argentina literalmente antes de que se uniera a K4OS y me siento increíblemente orgulloso! Sabía que tenía un talento especial. Verla ahora en el grupo es genial.",
     socialLinks: {
         instagram: 'https://www.instagram.com/inescivit/'
     },
-    tags: ['personalidades', 'música']
+    tags: ['música']
 },
     {
         id: 'alaska-uruguay',
         name: 'Alaska',
-        profilePic: 'https://yt3.googleusercontent.com/lKtnPWs5xaB6Gq8wePWTPOvFfJhzstEHJyTARvO6Z1kmop_hOPjZqolOTnP8kbXyW1iuezKGaPs=s120-c-k-c0x00ffffff-no-rj',
+        profilePic: 'images/creators/alaska-uruguay.jpg',
         type: 'Youtuber / Influencer',
         country: 'Uruguay',
         flagCode: 'uy',
@@ -147,7 +530,7 @@ const creatorsData = [
     {
         id: 'anna-cramling',
         name: 'Anna Cramling',
-        profilePic: 'https://yt3.googleusercontent.com/yRzFdfT4MGq3t1q6MQ-d3FaRIsjtX4uNt55B7WaSelVslqQVmD5OSPjTQs6TCKnRdGqhaCv-QA4=s160-c-k-c0x00ffffff-no-rj',
+        profilePic: 'images/creators/anna-cramling.jpg',
         type: 'Ajedrecista / Streamer',
         country: 'España',
         flagCode: 'es',
@@ -162,7 +545,7 @@ const creatorsData = [
     {
         id: 'rubius-z',
         name: 'Rubius Z',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n0Vd8NnC3LfY79I0ddwZ5N-Dw6NYyk7cQxL3t989gGdQ4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/rubius-z.jpg',
         type: 'Comedia / Reacciones',
         country: 'España',
         flagCode: 'es',
@@ -181,7 +564,7 @@ const creatorsData = [
     {
         id: 'dreaming-spanish',
         name: 'Dreaming Spanish',
-        profilePic: 'https://yt3.googleusercontent.com/7lhgWliLbYOvUOKhk7FVmSxUHaEcdeonmBhXnkMPbfI8M7w3nCG-8yaMC7WEEybLxfdO83zJow=s120-c-k-c0x00ffffff-no-rj',
+        profilePic: 'images/creators/dreaming-spanish.jpg',
         type: 'Canal de YouTube',
         country: 'España',
         flagCode: 'es',
@@ -194,12 +577,12 @@ const creatorsData = [
         tags: ['input comprensible']
     },
     {
-        id: 'easy-spanish',
+    id: 'easy-spanish',
         name: 'Easy Spanish',
-        profilePic: 'https://yt3.googleusercontent.com/67uro9RPZZ0_gMdRHQ7cK_OM2MOwiGSIOR6_UZ3cHMZUhrTqfjpNIb90g_rj3DjD9e3SIQWNWw=s120-c-k-c0x00ffffff-no-rj',
+        profilePic: 'images/creators/easy-spanish.jpg',
         type: 'Canal de YouTube',
-        country: 'Internacional',
-        flagCode: '', // Principalmente México, pero es internacional
+        country: 'Alemania',
+        flagCode: 'de',
         shortDesc: 'Escucha a hispanohablantes reales en las calles de México y España.',
         longDesc: 'Este canal te saca del aula y te lleva a las calles. A través de entrevistas a gente real sobre temas cotidianos, aprendes vocabulario útil y te acostumbras a diferentes acentos. Todos los vídeos tienen subtítulos en español e inglés.',
         cefr: ['A2', 'B1', 'B2'],
@@ -211,7 +594,7 @@ const creatorsData = [
     {
         id: 'butterfly-spanish',
         name: 'Butterfly Spanish',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mTnjLEffXjL6P_k0TXjSFVmZbglVLdoL9A2p4DVo8hqg=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/butterfly-spanish.jpg',
         type: 'Canal de YouTube',
         country: 'México',
         flagCode: 'mx',
@@ -223,10 +606,62 @@ const creatorsData = [
         socialLinks: { youtube: 'https://www.youtube.com/@ButterflySpanish', facebook: 'https://www.facebook.com/ButterflySpanish/' },
         tags: ['input comprensible']
     },
+    // --- ESTANTERÍA: PODCASTS ---
+    {
+        id: 'massiveball-podcast',
+        name: 'MassiveBall Podcast',
+        profilePic: 'images/creators/massiveball-podcast.jpg',
+        type: 'Podcast de NBA',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Mi podcast diario para el gimnasio. Me encantan sus debates en la offseason.',
+        longDesc: 'MassiveBall es un podcast de NBA en español diseñado para todos aquellos que buscan pasar un buen rato escuchando noticias, rumores y, sobre todo, mucha opinión sin filtros. Publican tres episodios semanales cubriendo toda la actualidad de la liga.',
+        cefr: ['C1', 'C2'],
+        embeddedId: 'Qkhwsi7Hpfs',
+        aljohnsComment: "Literalmente, escucho esto todos los días en el gimnasio. El contenido es 'peak', especialmente en la offseason cuando se ponen a debatir. ¡Me encanta! Es perfecto para escuchar español de España muy rápido y natural sobre un tema que me apasiona.",
+        socialLinks: {
+            spotify: 'https://open.spotify.com/show/5cFpt8nd2fI5T2EQX97AmS',
+            youtube: 'https://www.youtube.com/@MassiveBall'
+        },
+        tags: ['podcast']
+    },
+    {
+        id: 'a-vivir-que-son-dos-dias',
+        name: 'A vivir que son dos días',
+        profilePic: 'images/creators/a-vivir-que-son-dos-dias.webp',
+        type: 'Magacín radiofónico',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Las mañanas del fin de semana de la Cadena SER: actualidad, ciencia, cultura y conversación larga.',
+        longDesc: 'Magacín de la Cadena SER emitido los sábados y domingos. Alterna repaso de actualidad, entrevistas, ciencia, cultura, crónica local, humor y conversaciones de largo formato con colaboradores como Juan José Millás. Es radio para nativos: hay cambios de interlocutor, referencias implícitas y ritmos diversos, una inmersión especialmente útil desde C1.',
+        cefr: ['C1', 'C2'],
+        embeddedId: '62CbuDlm1NY',
+        aljohnsComment: null,
+        socialLinks: {
+            website: 'https://cadenaser.com/podcast/cadena-ser/a-vivir-que-son-dos-dias/321/p1/',
+            podcast: 'https://pocketcasts.com/podcast/a-vivir-que-son-dos-d%C3%ADas/dff8be30-64b8-012f-1599-525400c11844'
+        },
+        tags: ['podcast']
+    },
+    {
+        id: 'hoy-hablamos',
+        name: 'Hoy Hablamos',
+        profilePic: 'images/creators/hoy-hablamos.jpg',
+        type: 'Podcast diario',
+        country: 'España',
+        flagCode: 'es',
+        shortDesc: 'Un podcast diario de 10 minutos sobre temas variados para practicar tu escucha.',
+        longDesc: 'Este es probablemente el podcast más consistente para aprender español. Cada día, Roi y su equipo publican un episodio corto sobre gramática, cultura, noticias o expresiones. Es la rutina diaria perfecta para mantener el contacto con el idioma.',
+        cefr: ['B1', 'B2', 'C1'],
+        embeddedId: '7GP0DDUIRRA',
+        aljohnsComment: "Siempre escucho esto, los episodios son cortos y muy relevantes culturalmente. Te hace consciente de la cultura hispana.",
+        socialLinks: { website: 'https://www.hoyhablamos.com/', spotify: 'https://open.spotify.com/show/1puKUN2oF1M5DMt8o4M1bA' },
+        tags: ['podcast']
+    },
     {
         id: 'how-to-spanish-podcast',
         name: 'How to Spanish Podcast',
-        profilePic: 'https://yt3.googleusercontent.com/dNRiMBRQTc3gmzSEkEvC1QFndlNiCc8U1M3p3NLZDW7QsNp2rCcXM4HnfRrhRxxs3exRC5y_=s900-c-k-c0x00ffffff-no-rj',
+        profilePic: 'images/creators/how-to-spanish-podcast.jpg',
         type: 'Podcast / YouTube',
         country: 'México',
         flagCode: 'mx',
@@ -241,7 +676,7 @@ const creatorsData = [
     {
         id: 'linguriosa',
         name: 'Linguriosa',
-        profilePic: 'https://yt3.googleusercontent.com/NgumTy7L_gBrLECtbVOq2oeX7H5LNJp0BMlMOV_kGlVXG50Aw7Oifu4DYO-PlAe8GWHMqGbYtA=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/linguriosa.jpg',
         type: 'Canal de YouTube',
         country: 'España',
         flagCode: 'es',
@@ -256,7 +691,7 @@ const creatorsData = [
     {
         id: 'hola-spanish',
         name: 'Hola Spanish',
-        profilePic: 'https://yt3.googleusercontent.com/7B6zJMilOlWuhEc9Ox3z7iW30kEFsyx01iBGihVuFtWgJf9CNdqIno2EVfwqEN4xF7T3_vbY=s900-c-k-c0x00ffffff-no-rj',
+        profilePic: 'images/creators/hola-spanish.jpg',
         type: 'Canal de YouTube',
         country: 'Australia', // Creadora es de Chile, pero el canal se basa en Australia
         flagCode: 'au',
@@ -271,7 +706,7 @@ const creatorsData = [
     {
         id: 'bilingue-blogs',
         name: 'Bilingue Blogs',
-        profilePic: 'https://yt3.googleusercontent.com/qsliK8Ph3_endpIjq5usQfrcZQt2YC71v6VaRyrClCSlL8iWzRpcB4AK4vBLpr3cD3rAwLruzqA=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/bilingue-blogs.jpg',
         type: 'Canal de YouTube',
         country: 'Estados Unidos',
         flagCode: 'us',
@@ -286,7 +721,7 @@ const creatorsData = [
     {
         id: 'mr-salas',
         name: 'Mr. Salas',
-        profilePic: 'https://yt3.googleusercontent.com/8EWgoC40UrQ_iRmt1o_6FcV8FDzR4YXhEH0PKTVeIcwtHH6rMQmcNG7WrJcYZoHA4fjTetI5lw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/mr-salas.jpg',
         type: 'Profesor de Idiomas',
         country: 'México',
         flagCode: 'mx',
@@ -305,7 +740,7 @@ const creatorsData = [
     {
         id: 'luisito-comunica',
         name: 'Luisito Comunica',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nyXrAAt-FJ5azOAUoNd5Iw0aGQb-_b-SLSOkW0B_N2md4=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/luisito-comunica.jpg',
         type: 'Vlogger de Viajes',
         country: 'México',
         flagCode: 'mx',
@@ -320,7 +755,7 @@ const creatorsData = [
     {
         id: 'oscar-alejandro',
         name: 'Oscar Alejandro',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nsL-tY5exirfHXQNQvIYpFKvlBoecWRNzozDiVCrnvHIY=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/oscar-alejandro.jpg',
         type: 'Vlogger de Viajes',
         country: 'Venezuela',
         flagCode: 've',
@@ -335,7 +770,7 @@ const creatorsData = [
     {
         id: 'alex-tienda',
         name: 'Alex Tienda',
-        profilePic: 'https://yt3.googleusercontent.com/XmtDvQn2PXf6xdZ8HVcNXXloGcHRfrlkcCzRIBa-6xB-xwEqyRYrrBrYzlkb6x5JgzhX6oskWg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/alex-tienda.jpg',
         type: 'Documentalista / Viajero',
         country: 'México',
         flagCode: 'mx',
@@ -348,9 +783,9 @@ const creatorsData = [
         tags: ['vlogs y viajes', 'personalidades']
     },
     {
-        id: 'https://yt3.googleusercontent.com/ytc/AIdro_ljcyMAuj664amr8ywOWbqfsuuHSSdZxuVxwVY-zNbhxwI=s120-c-k-c0x00ffffff-no-rj',
+        id: 'jdaniel',
         name: 'JDaniel',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_ljcyMAuj664amr8ywOWbqfsuuHSSdZxuVxwVY-zNbhxwI=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/jdaniel.jpg',
         type: 'Vlogger de Entretenimiento',
         country: 'México',
         flagCode: 'mx',
@@ -365,7 +800,7 @@ const creatorsData = [
     {
         id: 'juanpa-zurita',
         name: 'Juanpa Zurita',
-        profilePic: 'https://yt3.googleusercontent.com/jTEv8fnZA5AmQIfTsExYxT8tKJmu3gHRsmcqovV1BLjDTqVy7mOJLsMAF0YyriMXkmPdDTbv=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/juanpa-zurita.jpg',
         type: 'Influencer / Vlogger',
         country: 'México',
         flagCode: 'mx',
@@ -380,7 +815,7 @@ const creatorsData = [
     {
         id: 'coreano-vlogs',
         name: 'Coreano Vlogs',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n80kOWZLU9ovto1Zalf82ORLRmtIB_8H-bZbCiwOkuJ_E=s120-c-k-c0x00ffffff-no-rj', // Usamos tu placeholder local
+        profilePic: 'images/creators/coreano-vlogs.jpg',
         type: 'Vlogger Cultural',
         country: 'México',
         flagCode: 'mx',
@@ -396,7 +831,7 @@ const creatorsData = [
     {
         id: 'mateo-y-lisanna',
         name: 'Mateo & Lisanna',
-        profilePic: 'https://yt3.googleusercontent.com/rbhBlMraJqyAzNAIFXc1huKjTH_zBq2LjbR4MmqfmU_xbochqolAFCi2WDGIZrtxhJ6oexW6Yn4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/mateo-y-lisanna.jpg',
         type: 'Vlog de Pareja Cultural',
         country: 'Argentina',
         flagCode: 'ar',
@@ -411,7 +846,7 @@ const creatorsData = [
     {
         id: 'chino-mexicano',
         name: 'CHINO MEXICANO',
-        profilePic: 'https://yt3.googleusercontent.com/zxLBOZbS8TXuIM_jGPDM7cMdnM4yLwuSFx-Ciw9TE-NXi1EWKF25vdTiSAmJvpfjirJKWBfUTqc=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/chino-mexicano.jpg',
         type: 'Vlogger Cultural',
         country: 'México',
         flagCode: 'mx',
@@ -426,7 +861,7 @@ const creatorsData = [
     {
         id: 'joss-and-janik',
         name: 'Joss and Janik',
-        profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_lMm9H_Cu9dncAUzGpXKKeC5yp0tje48yt46nIPuhhYMQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/joss-and-janik.jpg',
         type: 'Vlog de Pareja Viajera',
         country: 'México',
         flagCode: 'mx',
@@ -435,7 +870,7 @@ const creatorsData = [
         cefr: ['B1', 'B2'],
         embeddedId: '-yxHLvaGIJY',
         // aljohnsComment: "Me gusta ver sus vídeos para inspirarme para mis propios viajes. Joss tiene una forma de narrar muy agradable y fácil de seguir.",
-        socialLinks: { youtube: 'https://www.youtube.com/@JossandJanik', instagram: 'instagram.com/janikruehl',instagram: 'instagram.com/jossalm' },
+        socialLinks: { youtube: 'https://www.youtube.com/@JossandJanik', instagram: 'https://www.instagram.com/jossalm/' },
         tags: ['vlogs y viajes', 'personalidades']
     },
    
@@ -445,7 +880,7 @@ const creatorsData = [
 {
     id: 'aitana',
     name: 'Aitana',
-    profilePic: 'https://www.mundiario.com/media/mundiario/images/2020/05/16/2020051604154123207.png', // Placeholder
+    profilePic: 'images/creators/aitana.webp',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -453,14 +888,14 @@ const creatorsData = [
     longDesc: 'Aitana se convirtió en un fenómeno musical en España tras su paso por OT 2017. Su estilo ha evolucionado desde baladas pop a un sonido más electrónico y dance-pop. Sus letras sobre amor y desamor son perfectas para analizar vocabulario y expresiones coloquiales.',
     cefr: ['A2', 'B1', 'B2'],
     embeddedId: 'e8vI0pYLcYU', // Si Tú La Quieres con David Bisbal
-    aljohnsComment: "Aitana es una de mis artistas favoritas. Literalmente vi su temporada completa en Operación Triunfo. Estoy tan obsesionado con esta chica jajaja y'Vas a quedarte' es una de mis baladas preferidas. Me hace sentir que tuve una novie en España",
+    aljohnsComment: "Aitana es una de mis artistas favoritas. Literalmente vi su temporada completa en Operación Triunfo. Estoy tan obsesionado con esta chica jajaja y'Vas a quedarte' es una de mis baladas preferidas. Me hace sentir que tuve una novie en España. Me enorgullece también haber seguido a Aitana durante tanto tiempo y haber visto cómo ha evolucionado técnicamente, artísticamente y sobre el escenario. Mi conexión con ella está en acompañar ese crecimiento, no en una sola canción.",
     socialLinks: { youtube: 'https://www.youtube.com/channel/UCnJd-k_j1q0g_zL2D-eS-1g', instagram: 'https://www.instagram.com/aitanax/', spotify: 'https://open.spotify.com/artist/7eLcDZDYHXZCebtQmVFL25' },
     tags: ['música', 'personalidades']
 },
 {
     id: 'sebastian-yatra',
     name: 'Sebastián Yatra',
-    profilePic: 'https://yt3.googleusercontent.com/g2dG5kFUJ6hwgBq-DATUx5E3uBZk2LP_OrGnSkTL5em4wMypjjwkHGLHJT3p6QepcbtBqwNK=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/sebastian-yatra.jpg',
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
@@ -475,7 +910,7 @@ const creatorsData = [
 {
     id: 'joaquina',
     name: 'Joaquina',
-    profilePic: 'https://yt3.googleusercontent.com/YgskBD5s8Av9pfa-diEmhGKZez7NfVQ-SyQTs719Qybg90kc5Zr4fTfSCWndqf7IGj49tmOrng=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/joaquina.jpg',
     type: 'Artista Musical',
     country: 'Venezuela',
     flagCode: 've',
@@ -491,7 +926,7 @@ const creatorsData = [
 {
     id: 'k4os',
     name: 'K4OS',
-    profilePic: 'https://yt3.googleusercontent.com/8gOjAPErYBLjwAS477ioac7EAwzRCFlW8sGiZoM4o1oMXuRurDXKyDLxZDkIEYywNh6LubmUAGE=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/k4os.jpg',
     type: 'Banda Musical',
     country: 'Argentina',
     flagCode: 'ar',
@@ -506,7 +941,7 @@ const creatorsData = [
 {
     id: 'mafalda-cardenal',
     name: 'Mafalda Cardenal',
-    profilePic: 'https://yt3.googleusercontent.com/F_590W5WGhubCbcOWNgkeLf_Y5_hnILmMiuj7IS5WvS6oerK43YmzQtHKyP1yF1Pt_6v4ossGw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/mafalda-cardenal.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -521,7 +956,7 @@ const creatorsData = [
 {
     id: 'morat',
     name: 'Morat',
-    profilePic: 'https://yt3.googleusercontent.com/QriSdWHwiR7QoQ6yyckSU3HYcwZhzoPiMAchxBgEN2kx2pOT6_dqPDCh6N22XnxjWsjqcK7i_w=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/morat.jpg',
     type: 'Banda Musical',
     country: 'Colombia',
     flagCode: 'co',
@@ -536,7 +971,7 @@ const creatorsData = [
 {
     id: 'tini',
     name: 'TINI',
-    profilePic: 'https://yt3.googleusercontent.com/ogF62DLhgvyHFAwG8gdysKzI4a79RieBNRx86G4ju3R0QsNKiLLTiv937WUNztIdogG009XnLw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/tini.jpg',
     type: 'Artista Musical',
     country: 'Argentina',
     flagCode: 'ar',
@@ -551,7 +986,7 @@ const creatorsData = [
 {
     id: 'melani-garcia',
     name: 'Melani García',
-    profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDQkOG-2VaqVqdt34th5DaA5WIzocAnYPrGg&s', // Placeholder
+    profilePic: 'images/creators/melani-garcia.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -569,7 +1004,7 @@ const creatorsData = [
 {
     id: 'lasso',
     name: 'Lasso',
-    profilePic: 'https://yt3.googleusercontent.com/aSNjzv2dzcDcWWAqmaY82IQ4dTQxhj8wUQKZ0G9hmp2TF5YrKTR9-YoXnwGZfKIJc-y6S2lz7g=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/lasso.jpg',
     type: 'Artista Musical',
     country: 'Venezuela',
     flagCode: 've',
@@ -590,7 +1025,7 @@ const creatorsData = [
 {
     id: 'luis-fonsi',
     name: 'Luis Fonsi',
-    profilePic: 'https://yt3.googleusercontent.com/g2E8o8Oas493t9Hsj4LEsbKPm1A4JY4OEeolxEADoy4_9g-W_2LhMOHiq-iCsz5Z8z6P6Eox=s120-c-k-c0x00ffffff-no-rj',
+    profilePic: 'images/creators/luis-fonsi.jpg',
     type: 'Artista Musical',
     country: 'Puerto Rico',
     flagCode: 'pr',
@@ -609,7 +1044,7 @@ const creatorsData = [
 {
     id: 'emilia-mernes',
     name: 'Emilia',
-    profilePic: 'https://yt3.ggpht.com/-U-Tm-mL7kWGMyTtI_4c8ajnMgPCjxfJFoYHKiN3GpeNr3ezu7MKBDxd0n8TEAPom9RB9z-BCJc=s480-c-k-c0x00ffffff-no-rj',
+    profilePic: 'images/creators/emilia-mernes.jpg',
     type: 'Artista Musical',
     country: 'Argentina',
     flagCode: 'ar',
@@ -628,7 +1063,7 @@ const creatorsData = [
 {
     id: 'lola-indigo',
     name: 'Lola Indigo',
-    profilePic: 'https://yt3.googleusercontent.com/wK7WsAbShGd8Spq_LeNwqJacj5i_-WRtPNl2iiwGzy8XThbCghGw1gqG7oaKqeKP64l5fP_m=s120-c-k-c0x00ffffff-no-rj',
+    profilePic: 'images/creators/lola-indigo.jpg',
     type: 'Artista Musical / Bailarina',
     country: 'España',
     flagCode: 'es',
@@ -647,7 +1082,7 @@ const creatorsData = [
 {
     id: 'ela-taubert',
     name: 'Ela Taubert',
-    profilePic: 'https://yt3.googleusercontent.com/S2SapDtpjDRmV41QjQL5DF2kWW5ufYqUrrPMRCAd7Yb9loOzUsaw0n7JMm7MVUv_vn0P7PVzFA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/ela-taubert.jpg',
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
@@ -662,7 +1097,7 @@ const creatorsData = [
 {
     id: 'reik',
     name: 'Reik',
-    profilePic: 'https://yt3.googleusercontent.com/VUzA3Kdwxr15C9-GT-4ZvAqjY9zaYX9BbWvZpX98ROi51WVyA8PzRVtTx-faQZCVGHWFtdBLy2A=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/reik.jpg',
     type: 'Banda Musical',
     country: 'México',
     flagCode: 'mx',
@@ -670,7 +1105,7 @@ const creatorsData = [
     longDesc: 'Con una larga y exitosa trayectoria, Reik comenzó como un grupo de baladas pop y se ha reinventado en los últimos años al colaborar con grandes figuras del género urbano, manteniéndose relevante y en la cima de las listas de éxitos.',
     cefr: ['A2', 'B1'],
     embeddedId: 'JyqD_zfXfi8', // Ya Me Enteré
-    aljohnsComment: "Ernesto dijo que esta es su banda favorita en uno de mis videos y suena como Hale. 'Ya Me Enteré' es una de esas canciones que no puedes evitar cantar mientras llueve.",
+    aljohnsComment: "Ernesto dijo que esta es su banda favorita en uno de mis videos y suena como Hale. 'Ya Me Enteré' es una de esas canciones que no puedes evitar cantar mientras llueve. A mí también me gusta Reik; todavía recuerdo buscar de dónde era y descubrir que viene de Baja California.",
     socialLinks: { youtube: 'https://www.youtube.com/user/reik', instagram: 'https://www.instagram.com/reikmx/', spotify: 'https://open.spotify.com/artist/0vR2qb8m9WHeZ5ByCbimq2' },
     tags: ['música']
 },
@@ -680,7 +1115,7 @@ const creatorsData = [
 {
     id: 'marina-reche',
     name: 'Marina Reche',
-    profilePic: 'https://yt3.googleusercontent.com/bETwJfC3llVklFNG000bvMvZyg1-9vEteame9NNa8BJyK3TwP95NxprF8qATQGSk5mAgzkNSyQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/marina-reche.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -695,7 +1130,7 @@ const creatorsData = [
 {
     id: 'inigo-quintero',
     name: 'iñigo quintero',
-    profilePic: 'https://yt3.googleusercontent.com/c5UuM67QWcN4RkxPWLOUiAzy3CAx2R0CLsCe422_kPXaDksCM3uZfWjumTJ88_SF2yD0UvZHgg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/inigo-quintero.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -710,7 +1145,7 @@ const creatorsData = [
 {
     id: 'david-bisbal',
     name: 'David Bisbal',
-    profilePic: 'https://yt3.googleusercontent.com/3giHNJAoikRoAMjsdlClMkjKgE1YVYbv1D3dlzSrFeBJeZwp1NzUVaDVHRaBmz3OmVv9_ZKGaec=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/david-bisbal.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -718,7 +1153,7 @@ const creatorsData = [
     longDesc: 'Con una carrera de más de 20 años, David Bisbal es una de las figuras más reconocidas del pop español. Su estilo combina pop, flamenco y ritmos latinos, y es famoso por su increíble energía en el escenario.',
     cefr: ['B1', 'B2'],
     embeddedId: 'Iwz4P8HfGVM', // Dígale
-    aljohnsComment: "Un ícono de la música en español. Intenté copiar su forma de cantar, pero es muy difícil cuando no estás acostumbrado jajaja. Me gusta su colaboración con Aitana, mi frase favorita fue «si ella te quiere, que suerte tienes». Quiero golpear el suelo despues",
+    aljohnsComment: "Un ícono de la música en español. Intenté copiar su forma de cantar, pero es muy difícil cuando no estás acostumbrado jajaja. Me gusta su colaboración con Aitana, mi frase favorita fue «si ella te quiere, que suerte tienes». Quiero golpear el suelo despues. Como cantante filipino, al principio su forma de cantar, con influencia andaluza, me resultaba desconocida y difícil de imitar. Después de escucharlo y cantar con él repetidamente, muchas veces mientras corría o entrenaba, partes de ese estilo fueron volviéndose naturales en mi propia voz.",
     socialLinks: { youtube: 'https://www.youtube.com/user/davidbisbal', instagram: 'https://www.instagram.com/davidbisbal/', spotify: 'https://open.spotify.com/artist/5gOJTI4TusSENizxhcG7jB' },
     tags: ['música', 'personalidades']
 },
@@ -726,7 +1161,7 @@ const creatorsData = [
 {
     id: 'pablo-alboran',
     name: 'Pablo Alborán',
-    profilePic: 'https://yt3.googleusercontent.com/tf0UxRJ68s9ZtMDr-hJUMSIZ9R5LJTMTkhLnhSKy9fCCkiS_9-DCDcHgnDG1bSc-Dt4mHB4E=s176-c-k-c0x00ffffff-no-rj-mo', // Placeholder
+    profilePic: 'images/creators/pablo-alboran.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -734,14 +1169,14 @@ const creatorsData = [
     longDesc: 'Pablo Alborán ha dominado las listas de éxitos con su estilo romántico y su increíble talento vocal y compositivo. Sus canciones son conocidas por su intensidad emocional y arreglos musicales sofisticados.',
     cefr: ['B1', 'B2'],
     embeddedId: 'POP9_phDB2g', // Dónde está el amor
-    // aljohnsComment: "La voz de Pablo Alborán es simplemente espectacular. Sus canciones son perfectas para una tarde tranquila y para apreciar la belleza de las letras en español.",
+    aljohnsComment: "La voz de Pablo Alborán es simplemente espectacular. Sus canciones son perfectas para una tarde tranquila y para apreciar la belleza de las letras en español. Junto con Bisbal, Alborán me introdujo a una sensibilidad vocal española y andaluza que al principio me resultaba diferente de la tradición de baladas filipina con la que crecí. Escucharlos y cantar sus canciones repetidamente hizo que poco a poco me resultara más natural.",
     socialLinks: { youtube: 'https://www.youtube.com/@pabloalboran/featured', instagram: 'https://www.instagram.com/pabloalboran/', spotify: 'https://open.spotify.com/artist/5M9Bb4adKAgrOFOhc05Y50' },
     tags: ['música', 'personalidades']
 },
 {
     id: 'camilo',
     name: 'Camilo',
-    profilePic: 'https://yt3.googleusercontent.com/eXtviVpNjpPCi9txwmKBaGEPZYvA9DUug7WexZGCgHI2na2qXx5VrNdvsdEk-JJotLeM4Ks33g=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/camilo.jpg',
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
@@ -756,7 +1191,7 @@ const creatorsData = [
 {
     id: 'humbe',
     name: 'HUMBE',
-    profilePic: 'https://yt3.googleusercontent.com/EmHvm0L7UmVKZa6MOXVXq_02Eb8l14YmS1XGWJPsldVXyCZxNfbW_-IUKvF2fqe3wy4v5SdiqQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/humbe.jpg',
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
@@ -771,7 +1206,7 @@ const creatorsData = [
 {
     id: 'ana-sofi-w',
     name: 'Ana Sofi W.',
-    profilePic: 'https://yt3.googleusercontent.com/yr11NA8qDAzMjvxJ3UfIj52gda2df7JE-dfSn205g_vjlifNJhA76p38lHr4OYYf86fhyqb5=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/ana-sofi-w.jpg',
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
@@ -786,7 +1221,7 @@ const creatorsData = [
 {
     id: 'danna-paola',
     name: 'Danna Paola',
-    profilePic: 'https://yt3.googleusercontent.com/jaNsZsdPKk5NhhznIlvsY3IvzO8VXMaGDQKthrrYWMtC-rDcsHkVZ54V8eazh1asw3z02xRA_ZM=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/danna-paola.jpg',
     type: 'Artista Musical / Actriz',
     country: 'México',
     flagCode: 'mx',
@@ -801,7 +1236,7 @@ const creatorsData = [
 {
     id: 'ha-ash',
     name: 'Ha*Ash',
-    profilePic: 'https://yt3.googleusercontent.com/2FRL4XqHdtRsG4mH0Ji85SNemuqYW6-kJMkl4b-FU8mTHQb8ZE23IywXU4J2gRO3NmcDB0jy7w=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/ha-ash.jpg',
     type: 'Banda Musical',
     country: 'Estados Unidos',
     flagCode: 'us',
@@ -816,7 +1251,7 @@ const creatorsData = [
 {
     id: 'jesse-y-joy',
     name: 'Jesse & Joy',
-    profilePic: 'https://yt3.googleusercontent.com/4MfU2L38X1nye02j49JNjMYtPGjSoCNtrmKbBjAuC0BQTFZkGXQytta8chcGgm5fk2KHvHFP6Q=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/jesse-y-joy.jpg',
     type: 'Banda Musical',
     country: 'México',
     flagCode: 'mx',
@@ -831,7 +1266,7 @@ const creatorsData = [
 {
     id: 'cnco',
     name: 'CNCO',
-    profilePic: 'https://yt3.googleusercontent.com/gBS5sEUwSKYNS4uy1y9RI0CSW_o66UXoBPeDVwokgkKO4M7urnT3r2vzdsuXbcvAVndqKJvrzA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/cnco.jpg',
     type: 'Banda Musical',
     country: 'Estados Unidos',
     flagCode: 'us',
@@ -846,7 +1281,7 @@ const creatorsData = [
 {
     id: 'shakira',
     name: 'Shakira',
-    profilePic: 'https://yt3.googleusercontent.com/aFFxy2m2TB9dOJJEduJKEyAYsr79uE3ypQZLg-Jbc4TXlxsfCFoe7Ly3E3ou5sTPbglNiTyiKw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/shakira.jpg',
     type: 'Artista Musical',
     country: 'Colombia',
     flagCode: 'co',
@@ -862,7 +1297,7 @@ const creatorsData = [
 {
     id: 'luis-miguel',
     name: 'Luis Miguel',
-    profilePic: 'https://yt3.googleusercontent.com/n62oLwmiGp3ycFPjwCKgW_sHzuReHVv7sAVGVzFhOMebRQjZL0vU49SUPS4uMNBiP6H80H9AcSI=s176-c-k-c0x00ffffff-no-rj-mo', // Placeholder
+    profilePic: 'images/creators/luis-miguel.jpg',
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
@@ -892,7 +1327,7 @@ const creatorsData = [
 {
     id: 'jules',
     name: 'Jules',
-    profilePic: 'https://yt3.googleusercontent.com/EJU2F3EGFWiRUH6V-JyoDS-g9CM6Q-xJFkpc0-3I4LXj1Y5W33MNQ4En-5M3du5WDdtGobM9hwA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/jules.jpg',
     type: 'Artista Musical',
     country: 'México',
     flagCode: 'mx',
@@ -907,7 +1342,7 @@ const creatorsData = [
 {
     id: 'daniela-spalla',
     name: 'Daniela Spalla',
-    profilePic: 'https://yt3.googleusercontent.com/3XsVg6hVUzUNNKQZDw26ivr5bEbmKOLjxsjfkRWvcPsfvWdGpsVppKbpRPkwlBl5Puxxxu2EK84=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/daniela-spalla.jpg',
     type: 'Artista Musical',
     country: 'Argentina',
     flagCode: 'ar',
@@ -916,13 +1351,13 @@ const creatorsData = [
     cefr: ['B1', 'B2'],
     embeddedId: '0hSH_7t50Oc', // 200K
     aljohnsComment: "El estilo de Daniela es muy 'cool'. Su música tiene una onda retro que me encanta. Es genial para escuchar algo diferente dentro del pop en español.",
-    socialLinks: { youtube: 'https://www.youtube.com/channel/UCsth7qkR9ecjGZsiIbyecKQ', instagram: 'instagram.com/danielaspalla', spotify: 'https://open.spotify.com/intl-es/artist/2VSRhqonKsL7KRAIk8SMmt' },
+    socialLinks: { youtube: 'https://www.youtube.com/channel/UCsth7qkR9ecjGZsiIbyecKQ', instagram: 'https://www.instagram.com/danielaspalla/', spotify: 'https://open.spotify.com/intl-es/artist/2VSRhqonKsL7KRAIk8SMmt' },
     tags: ['música']
 },
 {
     id: 'pablo-lopez',
     name: 'Pablo López',
-    profilePic: 'https://yt3.googleusercontent.com/ga5IpA72PLCz9dwqCvd-OAoo-JjZmxfR3SazVWbjG2HjYyDIFKgYwdtvRO7h2xWftBljg0GI=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/pablo-lopez.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
@@ -942,7 +1377,7 @@ const creatorsData = [
 {
     id: 'operacion-triunfo',
     name: 'Operación Triunfo',
-    profilePic: 'https://yt3.ggpht.com/15_8uUNWBjdMLeNZ-MnLkij-veJE_msh3BpYtbZniqC_s7EwUVdSdBVepps4tsWQay6oM-0Y=s480-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/operacion-triunfo.jpg',
     type: 'Talent Show Musical',
     country: 'España',
     flagCode: 'es',
@@ -957,7 +1392,7 @@ const creatorsData = [
 {
     id: 'got-talent-espana',
     name: 'Got Talent España',
-    profilePic: 'https://yt3.ggpht.com/bAhvBpe5XKcmQEeJYFpuNNRhiZkZFjWhNkyiHKTjQxsrMLPxa7VKDG73YNqdlaRWd4J2ulN8JN8=s480-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/got-talent-espana.jpg',
     type: 'Talent Show',
     country: 'España',
     flagCode: 'es',
@@ -972,7 +1407,7 @@ const creatorsData = [
 {
     id: 'caso-cerrado',
     name: 'Caso Cerrado',
-    profilePic: 'https://yt3.ggpht.com/uUcNnhGzOrNGTMX_3EkbBdBsntMMIbx0Nf8AIF_KexolBXcPQ8gZpsijAQzkCYTvQGbMpItLLA=s176-c-k-c0x00ffffff-no-rj-mo', // Placeholder
+    profilePic: 'images/creators/caso-cerrado.jpg',
     type: 'Court Show / Talk Show',
     country: 'Estados Unidos',
     flagCode: 'us',
@@ -987,9 +1422,9 @@ const creatorsData = [
 {
     id: 'la-voz',
     name: 'La Voz',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_n7HMEc4AmKg7GKeB_1j8lkuXw8kPKOt2VapkAa6khcVw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/la-voz.jpg',
     type: 'Talent Show Musical',
-    country: 'Internacional',
+    country: 'España',
     flagCode: 'es', // Representativo de las versiones en español
     shortDesc: 'El formato de concurso de canto donde solo importa la voz. Visto a través de La Voz Global.',
     longDesc: 'El formato de "La Voz" consiste en audiciones a ciegas donde los coaches eligen a los concursantes solo por su talento vocal. El canal "La Voz Global" recopila actuaciones de las versiones de España, México, Argentina, etc., exponiéndote a una gran variedad de acentos.',
@@ -1002,7 +1437,7 @@ const creatorsData = [
 {
     id: 'el-hormiguero',
     name: 'El Hormiguero',
-    profilePic: 'https://yt3.googleusercontent.com/tiSMdQy5-FVYZt9MNg6DOajdbbqNNgFN0GS3y4pZ5CaJPiwVkwC2wpalV6M2G_OfVV1SHgqTA40=s900-c-k-c0x00ffffff-no-rj',
+    profilePic: 'images/creators/el-hormiguero.jpg',
     type: 'Talk Show / Entretenimiento',
     country: 'España',
     flagCode: 'es',
@@ -1017,50 +1452,13 @@ const creatorsData = [
     },
     tags: ['shows y tv']
 },
-    // --- ESTANTERÍA: PODCASTS ---
-    {
-        id: 'hoy-hablamos',
-        name: 'Hoy Hablamos',
-        profilePic: 'https://yt3.googleusercontent.com/nPHin-TnAFhrCENT-J7PGw4atvTAF5Af7v1guunwgekpWg9h4YEGt5U_zUpAtHeOT3nrzLsObg=s900-c-k-c0x00ffffff-no-rj',
-        type: 'Podcast Diario',
-        country: 'España',
-        flagCode: 'es',
-        shortDesc: 'Un podcast diario de 10 minutos sobre temas variados para practicar tu escucha.',
-        longDesc: 'Este es probablemente el podcast más consistente para aprender español. Cada día, Roi y su equipo publican un episodio corto sobre gramática, cultura, noticias o expresiones. Es la rutina diaria perfecta para mantener el contacto con el idioma.',
-        cefr: ['B1', 'B2', 'C1'],
-        embeddedId: null,
-        aljohnsComment: "Siempre escucho esto, los episodios son cortos y muy relevantes culturalmente. Te hace consciente de la cultura hispana.",
-        socialLinks: { website: 'https://www.hoyhablamos.com/', spotify: 'https://open.spotify.com/show/1puKUN2oF1M5DMt8o4M1bA' },
-        tags: ['podcast']
-    },
-    // =======================================================
-// ==         ADICIÓN A LA ESTANTERÍA DE PODCASTS         ==
-// =======================================================
-{
-    id: 'massiveball-podcast',
-    name: 'MassiveBall Podcast',
-    profilePic: 'https://i.scdn.co/image/ab67656300005f1ff3ff6983f6300dab14814420',
-    type: 'Podcast de NBA',
-    country: 'España',
-    flagCode: 'es',
-    shortDesc: 'Mi podcast diario para el gimnasio. Me encantan sus debates en la offseason.',
-    longDesc: 'MassiveBall es un podcast de NBA en español diseñado para todos aquellos que buscan pasar un buen rato escuchando noticias, rumores y, sobre todo, mucha opinión sin filtros. Publican tres episodios semanales cubriendo toda la actualidad de la liga.',
-    cefr: ['C1', 'C2'],
-    embeddedId: null, // No hay un vídeo principal, es un podcast
-    aljohnsComment: "Literalmente, escucho esto todos los días en el gimnasio. El contenido es 'peak', especialmente en la offseason cuando se ponen a debatir. ¡Me encanta! Es perfecto para escuchar español de España muy rápido y natural sobre un tema que me apasiona.",
-    socialLinks: {
-        spotify: 'https://open.spotify.com/show/5cFpt8nd2fI5T2EQX97AmS',
-        youtube: 'https://www.youtube.com/@MassiveBall' // También tienen canal de YouTube
-    },
-    tags: ['podcast', 'deportes']
-},
     // =======================================================
 // ==         ESTANTERÍA: CINE, SERIES Y CULTURA POP      ==
 // =======================================================
 {
     id: 'drossrotzank',
     name: 'DrossRotzank',
-    profilePic: 'https://yt3.ggpht.com/lDw6p4b679wYw835cmI6s5ahBciRjjqrIiLAEMXkl0CP5fdcn8kcl-sOdSO0tMtKi_F7UcqGkOg=s480-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/drossrotzank.jpg',
     type: 'Misterio y Cultura Pop',
     country: 'Venezuela',
     flagCode: 've',
@@ -1075,7 +1473,7 @@ const creatorsData = [
 {
     id: 'la-caja-geek',
     name: 'La Caja Geek',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mBqCM1Ir3S2eCrP_D9giLxyvLgh8fq9xK-RNx4JHFwwPg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/la-caja-geek.jpg',
     type: 'Cultura Geek',
     country: 'México',
     flagCode: 'mx',
@@ -1090,10 +1488,10 @@ const creatorsData = [
 {
     id: 'te-lo-voy-a-contar',
     name: 'Te lo voy a Contar',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nzxgMyEjd-TYZS_n-BEtjjhkevV4uD3jhIAY4F37G2kw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/te-lo-voy-a-contar.jpg',
     type: 'Resúmenes de Películas',
-    country: 'N/A',
-    flagCode: 'es', // Acento castellano
+    country: 'México',
+    flagCode: 'mx',
     shortDesc: 'Resúmenes de películas y series narrados de forma rápida y entretenida.',
     longDesc: 'Si quieres saber de qué trata una película sin verla, este canal te cuenta la trama completa en vídeos de 10 a 15 minutos, con un estilo de narración directo y humorístico. Genial para la comprensión auditiva a alta velocidad.',
     cefr: ['B2', 'C1'],
@@ -1106,7 +1504,7 @@ const creatorsData = [
 {
     id: 'netflix-espana',
     name: 'Netflix España',
-    profilePic: 'https://yt3.googleusercontent.com/92XDN_PhYnUbrZVz3wTm1-LnXQQTGB5ccZDswiJCBInenlH5oTwgn3Siow8Dx_sMAXrrBeMYels=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/netflix-espana.jpg',
     type: 'Plataforma de Streaming',
     country: 'España',
     flagCode: 'es',
@@ -1121,10 +1519,10 @@ const creatorsData = [
 {
     id: 'charlie-tales',
     name: 'CharlieTales',
-    profilePic: 'https://yt3.googleusercontent.com/Oi5tBI-bgjQxNaXEG1Ir-SIEgnbQdlGV71B-1UA1wiGqu3gb_nixlBt7RKC5etRgdPH14wsISQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/charlie-tales.jpg',
     type: 'Análisis de Cine y Series',
-    country: 'N/A',
-    flagCode: 'mx', // Acento mexicano
+    country: 'Ecuador',
+    flagCode: 'ec',
     shortDesc: 'Análisis y curiosidades sobre películas y series de zombies, terror y ciencia ficción.',
     longDesc: 'Charlie se especializa en desglosar series y películas, encontrando detalles ocultos, explicando finales y creando teorías. Su contenido sobre el universo de "The Walking Dead" y otras sagas de terror es muy popular.',
     cefr: ['B1', 'B2'],
@@ -1138,7 +1536,7 @@ const creatorsData = [
 {
     id: 'ale-marin',
     name: 'Ale Marin',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nrTdoB7uAEHIg3KEkwJxnm3pJlagy4FTITYPuxEMIcN1s=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/ale-marin.jpg',
     type: 'Crítica de Cultura Pop',
     country: 'Argentina',
     flagCode: 'ar',
@@ -1153,9 +1551,9 @@ const creatorsData = [
 {
     id: 'filmselect-espanol',
     name: 'FilmSelect Español',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_ldHAGvkoBMl3Eus_RIeKMeHJXcU1LExwv8ZSiw4exGRQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/filmselect-espanol.jpg',
     type: 'Tráileres de Películas',
-    country: 'Internacional',
+    country: 'España',
     flagCode: 'es', // Doblaje en español de España
     shortDesc: 'El lugar para encontrar los últimos tráileres de películas doblados al español.',
     longDesc: 'Este canal se dedica a publicar los tráileres más recientes de los grandes estrenos de Hollywood, doblados al castellano. Es un recurso excelente para una práctica de escucha rápida y para acostumbrarse a las voces de los actores de doblaje de España.',
@@ -1168,10 +1566,10 @@ const creatorsData = [
 {
     id: 'coffe-tv',
     name: 'CoffeTV',
-    profilePic: 'https://yt3.ggpht.com/N3lLQr2sGYJtXlICzcj2T64qs6hr0HngFhPo-3CrTHutgvrSPHvUNohLdYZUItbDyO5xy09UhFQ=s480-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/coffe-tv.jpg',
     type: 'Análisis de Cine',
-    country: 'N/A',
-    flagCode: 'mx', // Acento mexicano
+    country: 'Argentina',
+    flagCode: 'ar',
     shortDesc: 'Reseñas, análisis y resúmenes de películas y sagas clásicas y modernas.',
     longDesc: 'CoffeTV ofrece un análisis profundo y bien editado de películas populares, desde sagas como Spider-Man hasta clásicos del cine. Sus vídeos exploran la narrativa, los personajes y los temas de las películas de una forma muy amena.',
     cefr: ['B1', 'B2'],
@@ -1183,10 +1581,10 @@ const creatorsData = [
 {
     id: 'resumen-de-peliculas',
     name: 'Resumen de Peliculas',
-    profilePic: 'https://yt3.googleusercontent.com/HOaX9yXHXKPO6mMnTi-YbOjRL8-ijS9-Y4w3ag6eUgP6NyA-rzqMh54usNHBzgRwQqp4e9rXv5s=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/resumen-de-peliculas.jpg',
     type: 'Resúmenes de Películas',
-    country: 'N/A',
-    flagCode: 'latam', // Acento latino neutro
+    country: 'Argentina',
+    flagCode: 'ar',
     shortDesc: 'Resúmenes rápidos y directos de todo tipo de películas.',
     longDesc: 'Como su nombre indica, este canal se especializa en contar la trama de películas en vídeos cortos. Es otro gran recurso para practicar la comprensión auditiva a alta velocidad y para ponerte al día con películas que no has visto.',
     cefr: ['B2', 'C1'],
@@ -1198,10 +1596,10 @@ const creatorsData = [
 {
     id: 'yo-te-cuento',
     name: 'Yo te Cuento',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_lhCkmprd0Ba-epezmWxoFOBBcGyGt1QzsCym52Lsde-NY=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/yo-te-cuento.jpg',
     type: 'Narración de Historias',
-    country: 'N/A',
-    flagCode: 'es', // Acento castellano
+    country: 'México',
+    flagCode: 'mx',
     shortDesc: 'Un canal que narra historias de películas, series y a veces casos reales.',
     longDesc: 'Este canal se enfoca en el "storytelling", narrando no solo resúmenes de películas, sino a veces desglosando personajes o contando historias interesantes relacionadas con el mundo del entretenimiento. La narración suele ser clara y bien estructurada.',
     cefr: ['B1', 'B2'],
@@ -1218,7 +1616,7 @@ const creatorsData = [
 {
     id: 'enchufetv',
     name: 'enchufetv',
-    profilePic: 'https://yt3.googleusercontent.com/z31XZpAba74_y9imjnAtkGqHxnw-pyiJ51ewXSYS1k2iP78UXmmiUl558lUnCSP-sbEGInFBOg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/enchufetv.jpg',
     type: 'Canal de Sketches',
     country: 'Ecuador',
     flagCode: 'ec',
@@ -1233,7 +1631,7 @@ const creatorsData = [
 {
     id: 'casi-creativo',
     name: 'Casi Creativo',
-    profilePic: 'https://yt3.googleusercontent.com/BKQ3-8AYb3e6BScwLIe-oULU7xZP63O5oZ_7B8pPkzZCI9Dv2jqYGYh65GTjGUr8cWbZtFv3=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/casi-creativo.jpg',
     type: 'Animación / Comedia',
     country: 'España',
     flagCode: 'es',
@@ -1248,14 +1646,14 @@ const creatorsData = [
 {
     id: 'bob-esponja-espanol',
     name: 'Bob Esponja en Español',
-    profilePic: 'https://yt3.googleusercontent.com/Oar4N0Zohj8UF3SrUgTOONsrUBuwBsSFfcGiPza40WjE_U7iayoqK_4Jv75FN7RnJw-j9D7rSQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/bob-esponja-espanol.jpg',
     type: 'Animación (Doblaje)',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Estados Unidos',
+    flagCode: 'us',
     shortDesc: 'El clásico de Nickelodeon con su doblaje oficial al español latino.',
     longDesc: 'Las aventuras del personaje más optimista de Fondo de Bikini. Ver dibujos animados que ya conoces en español es una de las mejores formas de empezar a aprender vocabulario de forma pasiva y divertida.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'z85iAp9xegY', // Placeholder
+    embeddedId: 'z85iAp9xegY',
     aljohnsComment: "Un clásico es un clásico. El doblaje latino de Bob Esponja es legendario y es perfecto para principiantes-intermedios porque ya conoces la historia y los chistes.",
     socialLinks: { youtube: 'https://www.youtube.com/@bobesponjaespanol' },
     tags: ['comedia y animación']
@@ -1263,14 +1661,14 @@ const creatorsData = [
 {
     id: 'cartoon-network-la',
     name: 'Cartoon Network LA',
-    profilePic: 'https://yt3.googleusercontent.com/lm-5-P5HrE2c_06yry1C1F7r6pNJemvQ-8gT2iejSCglKpBFCtq51L7SEXn9bmaAg_a6O-_lMQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/cartoon-network-la.jpg',
     type: 'Animación (Doblaje)',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Estados Unidos',
+    flagCode: 'us',
     shortDesc: 'El canal oficial para Latinoamérica con clips de tus series animadas favoritas.',
     longDesc: 'Encuentra clips y episodios de series icónicas como "Hora de Aventura", "Un Show Más", "Las Chicas Superpoderosas" y muchas más, todas con el doblaje latinoamericano de alta calidad.',
     cefr: ['A2', 'B1', 'B2'],
-    embeddedId: 'fjdjSgBOUXQ', // Placeholder
+    embeddedId: 'fjdjSgBOUXQ',
     // aljohnsComment: "La fuente de muchos de mis dibujos animados favoritos. El doblaje latino es de altísima calidad y es genial para escuchar una gran variedad de voces y entonaciones.",
     socialLinks: { youtube: 'https://www.youtube.com/@CartoonLA' },
     tags: ['comedia y animación']
@@ -1278,14 +1676,14 @@ const creatorsData = [
 {
     id: 'el-increible-mundo-de-gumball-la',
     name: 'El Increíble Mundo de Gumball',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nPaQ9FwJY6vUKfmEB2kTuksOvurjLCVIMeWvpBYyIh9Y4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/el-increible-mundo-de-gumball-la.jpg',
     type: 'Animación (Doblaje)',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Estados Unidos',
+    flagCode: 'us',
     shortDesc: 'Las surrealistas y divertidísimas aventuras de Gumball y Darwin en Elmore.',
     longDesc: 'Esta serie es conocida por su humor rápido, inteligente y a menudo meta-referencial. El doblaje latino captura perfectamente la energía de la serie, aunque el ritmo de los diálogos puede ser un desafío.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'QyZAzUNvtjU', // Placeholder
+    embeddedId: 'QyZAzUNvtjU',
     // aljohnsComment: "El humor de Gumball es de otro nivel: muy rápido e inteligente. Es un buen reto para la comprensión auditiva y para aprender chistes y juegos de palabras.",
     socialLinks: { youtube: 'https://www.youtube.com/@elincreiblemundodegumballl3700' },
     tags: ['comedia y animación']
@@ -1293,14 +1691,14 @@ const creatorsData = [
 {
     id: 'nickelodeon-espanol',
     name: 'Nickelodeon en Español',
-    profilePic: 'https://yt3.googleusercontent.com/TkRcvDMDc-jWlHshfP4EhMRHmCrtd8m07AJU8sB6aEOv4Sz7ejJAYs9a8X8qO0HWpUjxra6XcQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/nickelodeon-espanol.jpg',
     type: 'Animación y Shows (Doblaje)',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Estados Unidos',
+    flagCode: 'us',
     shortDesc: 'Contenido oficial de las series más populares de Nickelodeon en español latino.',
     longDesc: 'Desde "The Loud House" hasta "Henry Danger", este canal ofrece clips y episodios de las series live-action y animadas de Nickelodeon, todas dobladas al español.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'CEq6_qnZgO4', // Placeholder
+    embeddedId: 'CEq6_qnZgO4',
     aljohnsComment: "Otro canal de la infancia. Genial para contenido fácil de entender y familiar, tanto animado como con actores reales.",
     socialLinks: { youtube: 'https://www.youtube.com/@MyChannel-t2r' },
     tags: ['comedia y animación',]
@@ -1308,14 +1706,14 @@ const creatorsData = [
 {
     id: 'nick-jr-espanol',
     name: 'Nick Jr. en Español',
-    profilePic: 'https://yt3.googleusercontent.com/wUWyGv46U00GhFatzYf9puzh7UOwbyn3c5Wz1cv6-lF3mJyLTW0eFZ1gfeZnRcon1SudXPZiBc4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/nick-jr-espanol.jpg',
     type: 'Animación Preescolar (Doblaje)',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Estados Unidos',
+    flagCode: 'us',
     shortDesc: 'Dibujos animados para los más pequeños, ideal para principiantes absolutos.',
     longDesc: 'Con series como "Paw Patrol" y "Dora la Exploradora", este canal está diseñado para niños en edad preescolar. El lenguaje es simple, lento, claro y repetitivo, lo que lo convierte en el recurso perfecto para tus primeras horas de escucha en español.',
     cefr: ['A1', 'A2'],
-    embeddedId: 'LwQR1adrAvU', // Placeholder
+    embeddedId: 'LwQR1adrAvU',
     aljohnsComment: "¡No hay vergüenza en empezar aquí! El español de Nick Jr. está diseñado para ser entendido.",
     socialLinks: { youtube: 'https://www.youtube.com/@NickJrEspanol' },
     tags: ['comedia y animación']
@@ -1323,14 +1721,14 @@ const creatorsData = [
 {
     id: 'supa-strikas-espanol',
     name: 'Supa Strikas Español',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_k45TKb2sEpgH2XcfiR05be_i3tD0xY316NqKP--7NUZvY=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/supa-strikas-espanol.jpg',
     type: 'Animación (Doblaje)',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Sudáfrica',
+    flagCode: 'za',
     shortDesc: 'Una serie animada de acción y fútbol con doblaje en español latino.',
     longDesc: 'Sigue las aventuras del mejor equipo de fútbol del mundo, los Supa Strikas, mientras viajan por el globo y se enfrentan a rivales tramposos y desafíos increíbles. El lenguaje es directo y fácil de seguir.',
     cefr: ['A2', 'B1'],
-    embeddedId: 'mNB25Y9-IZE', // Placeholder
+    embeddedId: 'mNB25Y9-IZE',
     aljohnsComment: "Fútbol y animación, una gran combinación. Es muy entretenida y la terminología deportiva es útil si te gustan los deportes.",
     socialLinks: { youtube: 'https://www.youtube.com/c/SupaStrikasEspa%C3%B1ol' },
     tags: ['comedia y animación',]
@@ -1338,14 +1736,14 @@ const creatorsData = [
 {
     id: 'preguntas-incomodas',
     name: 'Preguntas Incómodas',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_m6_ekRCmmBWuke2FE0CvX7EJtkLE_hv3iJyxhTmwYSBLA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/preguntas-incomodas.jpg',
     type: 'Comedia / Entrevistas en la Calle',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Entrevistas callejeras con preguntas atrevidas y respuestas espontáneas.',
     longDesc: 'Este canal se basa en el humor de las entrevistas en la calle, haciendo preguntas incómodas o absurdas a la gente para capturar sus reacciones genuinas. Es perfecto para escuchar español de la calle sin filtros, con mucha jerga y acento de España.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'oaZ6qJPcOtc', // Placeholder
+    embeddedId: 'oaZ6qJPcOtc',
     // aljohnsComment: "Este canal es muy gracioso. Las reacciones de la gente son espontáneas y te expones al tipo de conversaciones y bromas que realmente escucharías en la calle en España.",
     socialLinks: { youtube: 'https://www.youtube.com/@5preguntasincomodas' },
     tags: ['comedia y animación']
@@ -1356,7 +1754,7 @@ const creatorsData = [
 {
     id: 'drafteados',
     name: 'Drafteados',
-    profilePic: 'https://yt3.googleusercontent.com/1VJMK1i3gxPeYhFBGRQPizIh48yRe7_P8bsQu6EAmoJ74Xzn72mD6unV4dqpEaB8VsB57ANPjQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/drafteados.jpg',
     type: 'Análisis de Baloncesto',
     country: 'España',
     flagCode: 'es',
@@ -1371,7 +1769,7 @@ const creatorsData = [
 {
     id: 'leandro-carranza-nba',
     name: 'Leandro Carranza - Análisis NBA',
-    profilePic: 'https://yt3.googleusercontent.com/-f89jQNw7iQ8SATbrTkxlcHtyel2et_irdlTuk9sHKpMzD_4rT_YR47c871f-yX1pOUdnlP6dg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/leandro-carranza-nba.jpg',
     type: 'Análisis de Baloncesto',
     country: 'España',
     flagCode: 'es',
@@ -1386,7 +1784,7 @@ const creatorsData = [
 {
     id: 'nba-en-espanol',
     name: 'NBA En Español',
-    profilePic: 'https://yt3.googleusercontent.com/RzYLhAETU1zGO1rnPUtnDG8MdRdvWJAJNF-4mpCBgGbnuLjiNIxkdwdpQrnq-5pzzWeWq8B3e3c=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/nba-en-espanol.jpg',
     type: 'Canal Oficial de Deportes',
     country: 'Estados Unidos',
     flagCode: 'us',
@@ -1401,10 +1799,10 @@ const creatorsData = [
 {
     id: 'maxi-yt-basket',
     name: 'Maxi YT Basket',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_md10IphCQhYWcgpns5WUzyKToseM-u4ROVGlbS0filv9wT=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/maxi-yt-basket.jpg',
     type: 'Baloncesto / Streams',
-    country: 'N/A',
-    flagCode: 'latam', // Acento latino
+    country: 'Uruguay',
+    flagCode: 'uy',
     shortDesc: 'Noticias, análisis y, sobre todo, directos reaccionando a los partidos de la NBA.',
     longDesc: 'Maxi ofrece un punto de vista apasionado sobre la actualidad de la NBA, realizando streams en vivo durante los partidos, analizando jugadas y comentando las últimas noticias de la liga desde la perspectiva de un fan.',
     cefr: ['B2', 'C1'],
@@ -1416,14 +1814,14 @@ const creatorsData = [
 {
     id: 'cosas-del-basket',
     name: 'Cosas del Basket',
-    profilePic: 'https://yt3.googleusercontent.com/MQtkicTBGjeT1_nQ8AWqLbzlq79JlYBceQOJNc3m6fNUf9snk2FgkNCVyLnN3zANJ9SfUb5kst8=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/cosas-del-basket.jpg',
     type: 'Cultura de Baloncesto',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Explora la cultura, las historias y las curiosidades de la NBA.',
     longDesc: 'Este canal va más allá de los resultados para explorar las historias detrás de los jugadores, los equipos y los momentos icónicos de la liga, conectando con el lado más humano y cultural del baloncesto.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'qEhYr3kLVtk', // Placeholder
+    embeddedId: 'qEhYr3kLVtk',
     aljohnsComment: "No todo son estadísticas y partidos. Este canal cuenta las historias que hacen grande a la NBA. Muy interesante y con un español muy claro.",
     socialLinks: { youtube: 'https://www.youtube.com/@CosasdelBasket' },
     tags: ['deportes']
@@ -1431,7 +1829,7 @@ const creatorsData = [
 {
     id: 'juanposite',
     name: 'Juanposite',
-    profilePic: 'https://yt3.googleusercontent.com/ejjoP5LhXDp2WXRCodaqbscxCCB0ePGMQr91k-3u99TEwSquXxr0uVCW8EllWeeowkniQuKR=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/juanposite.jpg',
     type: 'Baloncesto / Creatividad',
     country: 'Argentina',
     flagCode: 'ar',
@@ -1446,14 +1844,14 @@ const creatorsData = [
 {
     id: 'dame-time-nba',
     name: 'Dame Time NBA',
-    profilePic: 'https://yt3.googleusercontent.com/VZuu9_KLFl07TaB5DaRdIO2Okp6cwDK4yrMh21FmE8sth653iO5r6zH2KPCw28dQCoCzzR3xUA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/dame-time-nba.jpg',
     type: 'Baloncesto / Highlights',
-    country: 'N/A',
-    flagCode: 'latam',
+    country: 'España',
+    flagCode: 'es',
     shortDesc: 'Canal dedicado a los momentos más decisivos y espectaculares de la NBA.',
     longDesc: 'Como su nombre indica, este canal se centra en los "clutch moments", las jugadas espectaculares y los resúmenes de las mejores actuaciones individuales. Es pura adrenalina de baloncesto.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'TYBlBs3P4aY', // Placeholder
+    embeddedId: 'TYBlBs3P4aY',
     aljohnsComment: "Para cuando solo quieres ver las mejores jugadas y los momentos más emocionantes. Rápido, directo y muy entretenido.",
     socialLinks: { youtube: 'https://www.youtube.com/@DameTimeNBA' },
     tags: ['deportes']
@@ -1461,7 +1859,7 @@ const creatorsData = [
 {
     id: 'fc-barcelona',
     name: 'FC Barcelona',
-    profilePic: 'https://yt3.googleusercontent.com/cDEk-OSzBJyOQxccA7yKAVbpP5o0Szuall20QOSBT2s5SJwY1ejDrhzjX72uV6Ft8SIfEbhiGw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/fc-barcelona.jpg',
     type: 'Canal Oficial de Fútbol',
     country: 'España',
     flagCode: 'es',
@@ -1476,7 +1874,7 @@ const creatorsData = [
 {
     id: 'athlean-x-espanol',
     name: 'ATHLEAN-X Español',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mPbH9OszxbzygpfFs4i6WQFG8OwgitzmeLV8BKSpBH9cg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/athlean-x-espanol.jpg',
     type: 'Fitness y Entrenamiento',
     country: 'Estados Unidos',
     flagCode: 'us',
@@ -1495,7 +1893,7 @@ const creatorsData = [
 {
     id: 'ibai',
     name: 'Ibai',
-    profilePic: 'https://yt3.googleusercontent.com/alZ--DxDJfYQLF9UZ7s8q2tytDyFniBoj0-8bH27Ew5QTX5o3ultBNmfJmFqc05V2Wax-nkFKX8=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/ibai.jpg',
     type: 'Streamer / Entretenimiento',
     country: 'España',
     flagCode: 'es',
@@ -1504,20 +1902,20 @@ const creatorsData = [
     cefr: ['B1', 'C2'],
     embeddedId: 'lSm4QZqN8cA', // Reaccionando a MrBeast
     aljohnsComment: "Ibai es simplemente Ibai. Es increíblemente divertido. Su español es muy rápido, lleno de jerga de España y expresiones del momento, por lo que es un desafío de nivel muy alto, pero te ríes sin parar. ¡parece como un gigante en clash of clans",
-    socialLinks: { youtube: 'https://yt3.ggpht.com/alZ--DxDJfYQLF9UZ7s8q2tytDyFniBoj0-8bH27Ew5QTX5o3ultBNmfJmFqc05V2Wax-nkFKX8=s176-c-k-c0x00ffffff-no-rj-mo', instagram: 'https://www.instagram.com/ibaillanos' },
+    socialLinks: { youtube: 'https://www.youtube.com/@IbaiLlanos', instagram: 'https://www.instagram.com/ibaillanos' },
     tags: ['gaming', 'personalidades',]
 },
 {
     id: 'juegagerman',
     name: 'JuegaGerman',
-    profilePic: 'https://yt3.googleusercontent.com/vOsrLzWD4z1dbr470nEXydi3Kb55jW6YqcpQiq1LHyj9IvElga7zBHEfqFZvC26BRKmQimEbiA=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/juegagerman.jpg',
     type: 'Gaming',
     country: 'Chile',
     flagCode: 'cl',
     shortDesc: 'El icónico canal de gaming del legendario youtuber chileno Germán Garmendia.',
     longDesc: 'Uno de los canales de gaming más grandes de habla hispana. Germán juega una amplia variedad de videojuegos, desde títulos de terror hasta los últimos lanzamientos populares, siempre con su característico humor y energía arrolladora.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'F81wlI9iEpw', // Placeholder
+    embeddedId: 'F81wlI9iEpw',
     aljohnsComment: "este chico es como popular en la década de 2010 de youtube, pero yo no sabia español aquel tiempo jajaja",
     socialLinks: { youtube: 'https://www.youtube.com/@JuegaGerman', instagram: 'https://www.instagram.com/germangarmendia' },
     tags: ['gaming']
@@ -1525,14 +1923,14 @@ const creatorsData = [
 {
     id: 'aircriss',
     name: 'Aircriss',
-    profilePic: 'https://yt3.googleusercontent.com/CH2h7f_dcyv5_ycYk2NjGMRcPiGvsSjBTudON67GjtgCCjGRxg4Rz80JoipUBuz45atf-PY4-xE=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/aircriss.jpg',
     type: 'Gaming / Fortnite',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Creador de contenido español enfocado principalmente en NBA2k.',
     longDesc: 'Aircriss es conocido en la comunidad de 2k por sus gameplays, sus análisis de las nuevas temporadas y su contenido entretenido relacionado con el juego.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'lySnsq5XjC0', // Placeholder
+    embeddedId: 'lySnsq5XjC0',
     aljohnsComment: "mi youtuber de 2k en español",
     socialLinks: { youtube: 'https://www.youtube.com/@Aircriss', instagram: 'https://www.instagram.com/aircriss' },
     tags: ['gaming']
@@ -1540,14 +1938,14 @@ const creatorsData = [
 {
     id: 'parafantastico',
     name: 'Parafantástico',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_lGh7j7xwAx_bT5NHG9k1nQMEVu-1slU139tIMPWMMSD4w=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/parafantastico.jpg',
     type: 'Gaming / Terror',
     country: 'Uruguay', 
     flagCode: 'uy',
     shortDesc: 'Canal dedicado a gameplays de videojuegos de terror y misterio.',
     longDesc: 'Si te gusta pasar miedo, este es tu canal. Se especializa en jugar a los últimos lanzamientos de terror, creando una atmósfera de suspense y capturando todos los sustos. La narración es muy inmersiva.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'osnXSI6hXZk', // Placeholder
+    embeddedId: 'osnXSI6hXZk',
     // aljohnsComment: "Me encanta el terror, y ver a alguien más asustarse es muy divertido.",
     socialLinks: { youtube: 'https://www.youtube.com/c/Parafant%C3%A1stico/videos' },
     tags: ['gaming']
@@ -1555,7 +1953,7 @@ const creatorsData = [
 {
     id: 'reydama',
     name: 'Reydama',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mQcAF5h5IrDEnEegnVXaVoSCkwb_LT_62vsIxWp8xtrg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/reydama.jpg',
     type: 'Gaming / Ajedrez',
     country: 'España',
     flagCode: 'es',
@@ -1570,7 +1968,7 @@ const creatorsData = [
 {
     id: 'rey-enigma',
     name: 'Rey Enigma',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_kTu7ZL5ZR2EeI1H5CZzLpaQ3GTjqbIva8Ry323qw1CLw=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/rey-enigma.jpg',
     type: 'Ajedrez',
     country: 'España',
     flagCode: 'es',
@@ -1590,14 +1988,14 @@ const creatorsData = [
 {
     id: 'el-robot-de-platon',
     name: 'El Robot de Platón',
-    profilePic: 'https://yt3.googleusercontent.com/CxYPLJIYQoaeqm-OzonZcBIqxj-vwcOPLT1usmshE9eJfblCdkT2PG-52VIHtBGeAjsrdcL1TQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/el-robot-de-platon.jpg',
     type: 'Divulgación Científica',
     country: 'Perú',
     flagCode: 'pe',
     shortDesc: 'Divulgación científica para mentes curiosas, presentado por Aldo Bartra.',
     longDesc: 'Este canal explora una gran variedad de temas científicos, desde la física cuántica hasta la biología evolutiva, con el objetivo de fomentar el pensamiento crítico y la curiosidad por la ciencia. Aldo tiene un estilo de narración muy característico.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'hen2JOxe4hw', // Placeholder
+    embeddedId: 'hen2JOxe4hw',
     aljohnsComment: "Me gusta ver estas cosas de ciencia para ser honesto y estoy feliz de que puedo ver contenidoes como de Startalk aqui. Tambien la forma en que Aldo explica la ciencia es genial y te expone en los vocabularios scientificos. ",
     socialLinks: { youtube: 'https://www.youtube.com/@ElRobotdePlaton' },
     tags: ['ciencia y educación']
@@ -1605,14 +2003,14 @@ const creatorsData = [
 {
     id: 'xpresstv',
     name: 'XpressTV',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_kxpiPFQS7Byi4sxqaOLw6r5CTi40PjocaTr3GoBz2IFws=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/xpresstv.jpg',
     type: 'Tops y Curiosidades',
     country: 'México',
     flagCode: 'mx',
     shortDesc: 'Famoso por sus listas y tops de curiosidades presentados a gran velocidad.',
     longDesc: 'Este canal es conocido por su formato de "Cosas que no sabías", donde condensa una gran cantidad de información y datos interesantes en vídeos cortos y muy editados. El ritmo es muy rápido.',
     cefr: ['B1', 'B2', 'C1'],
-    embeddedId: 'g8FaY2OeI-Y', // Placeholder
+    embeddedId: 'g8FaY2OeI-Y',
     aljohnsComment: "Algunos contenidos que veo cuando no sé qué ver, ¡además también aprenderás algo nuevo!",
     socialLinks: { youtube: 'https://www.youtube.com/@XpressTV', instagram: 'https://www.instagram.com/soyxpresstv' },
     tags: ['ciencia y educación']
@@ -1621,7 +2019,7 @@ const creatorsData = [
 {
     id: 'curiosidades-con-mike',
     name: 'Curiosidades con Mike',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mlP0iGoRv9nSFCr3YD9mCbTvj3EjZXFK4iD0F-qbgZK3w=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/curiosidades-con-mike.jpg',
     type: 'Curiosidades y Entretenimiento',
     country: 'México',
     flagCode: 'mx',
@@ -1637,10 +2035,10 @@ const creatorsData = [
 {
     id: 'naisekai',
     name: 'Naisekai',
-    profilePic: 'https://yt3.googleusercontent.com/NcTr6CLea_J6_c9TqOo4BoRZAQoCzz16uQg7R86AmzsLRX3U_ekHlyOtciNeZQYeRTDK4CMMzQ=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/naisekai.jpg',
     type: 'Animación / Filosofía',
-    country: 'N/A',
-    flagCode: 'es', // Acento castellano
+    country: 'Argentina',
+    flagCode: 'ar',
     shortDesc: 'La aclamada serie animada "Un Mundo Sin..." que explora escenarios hipotéticos.',
     longDesc: 'Este canal es famoso por su serie de vídeos "Un Mundo Sin...", donde exploran de forma creativa y filosófica cómo sería nuestro mundo sin cosas que damos por sentadas, como los espejos, las mentiras o la muerte. La narración es clara y el concepto es brillante.',
     cefr: ['B1', 'B2'],
@@ -1652,7 +2050,7 @@ const creatorsData = [
 {
     id: 'jaime-altozano',
     name: 'Jaime Altozano',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nnVrR67UL430sxJX4ECFGbboInInGC5bx55iOUEiEa_Dc=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/jaime-altozano.jpg',
     type: 'Análisis Musical',
     country: 'España',
     flagCode: 'es',
@@ -1667,14 +2065,14 @@ const creatorsData = [
 {
     id: 'la-gata-de-schrodinger',
     name: 'La Gata de Schrödinger',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nR0p3hS9xcykGlDnLFVwug2dC04lE9a-5rF6Zl4QAM0HM=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/la-gata-de-schrodinger.jpg',
     type: 'Divulgación Científica',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Ciencia, escepticismo y pensamiento crítico con un toque de humor.',
     longDesc: 'Rocío Vidal, la creadora, aborda temas científicos y desmiente pseudociencias con rigor y un estilo muy directo y entretenido. Sus vídeos son una herramienta fantástica para desarrollar un pensamiento crítico.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'Ubune6Yjm7Q', // Placeholder
+    embeddedId: 'Ubune6Yjm7Q',
     aljohnsComment: "Me encanta su enfoque escéptico y basado en la evidencia. Es genial para aprender a argumentar y debatir en español sobre temas complejos.",
     socialLinks: { youtube: 'https://www.youtube.com/@LaGatadeSchrodinger', instagram: 'https://www.instagram.com/lagatadeschrodinger' },
     tags: ['ciencia y educación']
@@ -1682,14 +2080,14 @@ const creatorsData = [
 {
     id: 'blippi-espanol',
     name: 'Blippi Español',
-    profilePic: 'https://yt3.googleusercontent.com/RQ4LjKgLBSwR1mIshax6lqKftx4KsqAK19ec7Z4j7TkgUJvVP7ayGIUO0PdMsonYYGxrsByI=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/blippi-espanol.jpg',
     type: 'Contenido Infantil Educativo',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Estados Unidos',
+    flagCode: 'us',
     shortDesc: 'Vídeos educativos para niños que exploran el mundo de una forma divertida.',
     longDesc: 'Blippi es un personaje enérgico que visita lugares como museos, fábricas y parques de juegos para enseñar a los niños sobre colores, números y cómo funcionan las cosas. El lenguaje es extremadamente simple y repetitivo, ideal para principiantes absolutos.',
     cefr: ['A1', 'A2'],
-    embeddedId: 'NiZ_GyrVSHU', // Placeholder
+    embeddedId: 'NiZ_GyrVSHU',
     aljohnsComment: "El español de Blippi es perfecto para tus primeras horas de escucha. Es lento, claro y siempre está explicando lo que ve. ¡Es como una clase de vocabulario en el mundo real!",
     socialLinks: { youtube: 'https://www.youtube.com/c/BlippiEspa%C3%B1ol' },
     tags: ['comedia y animación']
@@ -1697,14 +2095,14 @@ const creatorsData = [
 {
     id: 'martta-sanz',
     name: 'Martta Sanz',
-    profilePic: 'https://yt3.googleusercontent.com/y33N3wu6JAD-JAvTMdYGBN_ycIvYPU9bOxGJWBhuOW1zejRXBXggAINcV9UlOFLFoXr868p6Eyg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/martta-sanz.jpg',
     type: 'Artista Musical',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Artista alicantina de 21 años ha estado intrigada por el mundo del arte desde muy pequeña.',
     longDesc: 'La artista alicantina de 21 años ha estado intrigada por el mundo del arte desde muy pequeña. Estudiando artes escénicas y sonido directo.',
     cefr: ['B2', 'C1'],
-    embeddedId: '_6iRNSOmwjo', // Placeholder
+    embeddedId: '_6iRNSOmwjo',
     // aljohnsComment: "Martta es muy graciosa y su contenido es muy auténtico. Es una ventana directa al humor y al español coloquial de los jóvenes en España.",
      socialLinks: { youtube: 'https://www.youtube.com/@MarttaSanz', instagram: 'https://www.instagram.com/martasanzg' },
     tags: ['música', 'personalidades']
@@ -1731,7 +2129,7 @@ const creatorsData = [
 {
     id: 'dr-la-rosa',
     name: 'DR LA ROSA',
-    profilePic: 'https://yt3.googleusercontent.com/4XzGgPmez1JUP6EhJPtAYim9gQ6UdFEnbTmV0OOXdEDqi0IERRz1MDyefq9A-CLz7g0NFnrN=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/dr-la-rosa.jpg',
     type: 'Salud y Estilo de Vida',
     country: 'Mexico',
     flagCode: 'mx',
@@ -1746,7 +2144,7 @@ const creatorsData = [
 {
     id: 'emprende-aprendiendo',
     name: 'Emprende Aprendiendo',
-    profilePic: 'https://yt3.googleusercontent.com/fw-a4FuH73f_H8nardyZcAjQq0UfZ9GCVwhSFYDMjKJ1oGVzHQR7UNZEYOonDPNbIPL9WF7pww=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/emprende-aprendiendo.jpg',
     type: 'Emprendimiento y Negocios',
     country: 'España',
     flagCode: 'es',
@@ -1761,7 +2159,7 @@ const creatorsData = [
 {
     id: 'visualpolitik',
     name: 'VisualPolitik',
-    profilePic: 'https://yt3.googleusercontent.com/_zZ528oc8q2tnbZK_TVahY9w6faJYlk1_2u7GVptJmERHDTPIUCU59hNnmmn0nk5hFpDk243=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/visualpolitik.jpg',
     type: 'Geopolítica y Economía',
     country: 'España',
     flagCode: 'es',
@@ -1776,7 +2174,7 @@ const creatorsData = [
 {
     id: 'academiaplay',
     name: 'Academia Play',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_k2bPSMlnDgdsm4BALq7trCbWOdnf7bvBLEKjHO1KRwuj4=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/academiaplay.jpg',
     type: 'Educación / Historia',
     country: 'España',
     flagCode: 'es',
@@ -1791,14 +2189,14 @@ const creatorsData = [
 {
     id: 'que-pasaria-si',
     name: 'Qué pasaría si',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_nUKPabRC3krlzhKs64Fvocj55MS2pkjmCdY4PkXHvCxg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/que-pasaria-si.jpg',
     type: 'Escenarios Hipotéticos',
-    country: 'Internacional',
-    flagCode: '',
+    country: 'Canadá',
+    flagCode: 'ca',
     shortDesc: 'Explora las respuestas a las preguntas hipotéticas más locas y fascinantes.',
     longDesc: 'La versión en español del popular canal "What If". Cada vídeo explora un escenario hipotético, como "¿Qué pasaría si cayeras en un agujero negro?", y lo explica con animaciones y datos científicos de una manera muy entretenida.',
     cefr: ['B1', 'B2'],
-    embeddedId: 'QxQNlPwy-hQ', // Placeholder
+    embeddedId: 'QxQNlPwy-hQ',
     aljohnsComment: "Si conoces el canal «what if» , este es su canal en español. Es una locura que el termino «what if » no tenga traduccion en español no? jajaja.",
     socialLinks: { youtube: 'https://www.youtube.com/@Quepasaria' },
     tags: ['ciencia y educación']
@@ -1806,22 +2204,22 @@ const creatorsData = [
 {
     id: 'adaneo-oficial',
     name: 'adaneo Oficial',
-    profilePic: 'https://yt3.googleusercontent.com/cxLs9u5UHgIWPkOctc3pkHsdQ-c6ej7judOGVA0jToqzaqamxM1XhtL4L3OLkv-UTtmDG56wkg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
-    type: 'Gaming / Entretenimiento',
-    country: 'N/A',
-    flagCode: 'mx', // Acento mexicano
-    shortDesc: 'Adaneo Oficial es un canal que ofrece diversión y comedia sana para toda la familia. ',
-    longDesc: 'Adaneo Oficial es un canal que ofrece diversión y comedia sana para toda la familia. ',
+    profilePic: 'images/creators/adaneo-oficial.jpg',
+    type: 'Comedia familiar / Sketches',
+    country: 'México',
+    flagCode: 'mx',
+    shortDesc: 'Sketches familiares con personajes recurrentes, bromas, retos y pequeñas historias cotidianas.',
+    longDesc: 'Canal mexicano de comedia familiar con un elenco de personajes recurrentes. Sus vídeos largos siguen situaciones de vacaciones, escuela y convivencia —incluidas las historias de Ángela, las Mi-Hadas y La Muñeca—, mientras los Shorts condensan bromas, retos, fútbol y escenas domésticas. El diálogo rápido, las voces de personaje y las reacciones exageradas ofrecen una práctica de español coloquial mexicano para oyentes intermedios.',
     cefr: ['B2', 'C1'],
-    embeddedId: 'm4NB48UV3SA', // Placeholder
+    embeddedId: 'm4NB48UV3SA',
     aljohnsComment: "Los conocí en un servidor de discord en español cuando yo estaba comenzando, son muy amables y me animaron a hablar más.",
     socialLinks: { youtube: 'https://www.youtube.com/@adaneoOficial' },
-    tags: ['gaming'] // Lo movemos a gaming
+    tags: ['comedia y animación']
 },
 {
     id: 'cdeciencia',
     name: 'CdeCiencia',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_l9rmItabl-zw-33MhJFtsZmmVcHKkVBf3cyEI304cTYO8=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/cdeciencia.jpg',
     type: 'Divulgación Científica',
     country: 'España',
     flagCode: 'es',
@@ -1836,14 +2234,14 @@ const creatorsData = [
 {
     id: 'demas6basket',
     name: 'demas6Basket',
-    profilePic: 'https://yt3.googleusercontent.com/DrcjCLBOSNtu5sHbI1vBAjDd05He9X7XHBXiv8B0MbKHE32oDsCpbzN6TOknYGbm9AYSyg_v0g=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/demas6basket.jpg',
     type: 'Deportes / Baloncesto',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Análisis, opinión y noticias sobre la NBA desde una perspectiva europea.',
     longDesc: 'Este canal ofrece un punto de vista diferente sobre la NBA, a menudo con un enfoque en los jugadores europeos. Sus análisis son detallados y su contenido es muy apreciado por los fans más hardcore del baloncesto.',
     cefr: ['C1', 'C2'],
-    embeddedId: 'QQKchf95VJg', // Placeholder
+    embeddedId: 'QQKchf95VJg',
     // aljohnsComment: "Otro canal de baloncesto que sigo. El acento castellano y el vocabulario técnico lo hacen un buen desafío para la escucha.",
     socialLinks: { youtube: 'https://www.youtube.com/@demas6Basket' },
     tags: ['deportes'] // Lo movemos a deportes
@@ -1857,7 +2255,7 @@ const creatorsData = [
 {
     id: 'polyglotpanda',
     name: 'PolyglotPanda',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_lp5IKQWTrpmXPfbr1HKakphH1BSG3Mh4BhOLfd7lJzDLE=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/polyglotpanda.jpg',
     type: 'Canal de YouTube',
     country: 'España',
     flagCode: 'es',
@@ -1872,14 +2270,14 @@ const creatorsData = [
 {
     id: 'spanish-after-hours',
     name: 'Spanish After Hours',
-    profilePic: 'https://yt3.googleusercontent.com/ytc/AIdro_mVj71zoI7A_MvdVp6FpREpxTlwXYchggPY54YQf_f9Rg=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/spanish-after-hours.jpg',
     type: 'Podcast / YouTube',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Conversaciones naturales y sin guion para estudiantes de nivel intermedio.',
     longDesc: 'Este podcast se centra en conversaciones 100% en español sobre temas interesantes y cotidianos. El ritmo es más lento que el de un nativo hablando rápido, lo que lo hace perfecto para la transición al contenido avanzado.',
     cefr: ['A2', 'B1', 'B2'],
-    embeddedId: 'xglEjH0Ue8o', // Placeholder
+    embeddedId: 'xglEjH0Ue8o',
     aljohnsComment: "habla muy despacio, lo cual es perfecto para principiantes.",
     socialLinks: { youtube: 'https://www.youtube.com/@SpanishAfterHours' },
     tags: ['input comprensible', 'podcast']
@@ -1893,7 +2291,7 @@ const creatorsData = [
 {
     id: 'aitana-bonmati',
     name: 'Aitana Bonmatí',
-    profilePic: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQDkGBZnL0aELre-jUyZ0dkJV9UlOdKdGahUdLOrQ-rtBO4D-BkeOhuTT5ZsBOYrEX1qaXJwyTpFd9A-h_1qf5bm0efXvOdRzi3TGAZWb51hFxheN1o091Y_UYPkmZeK_BLdew1XxfuVP1Q',
+    profilePic: 'images/creators/aitana-bonmati.webp',
     type: 'Futbolista',
     country: 'España',
     flagCode: 'es',
@@ -1903,73 +2301,73 @@ const creatorsData = [
     embeddedId: '8arTde5VJsU',
     aljohnsComment: "Una jugadora increíble. Es inspirador ver su dominio en el campo. La sigo para no perderme nada del Barça Femení.",
     socialLinks: { instagram: 'https://www.instagram.com/aitanabonmati' },
-    tags: ['personalidades', ]
+    tags: ['deportes']
 },
 {
     id: 'alexia-putellas',
     name: 'Alexia Putellas',
-    profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCm4O6cvidwbxUJBXaJ-vrbNFYa1i4BDVy-v8lrqsra4KgkDEwQroUMZTDUsl8NNIhCqi3zxF8xhV3zNy74_7bB9UcDbgD9kTF4Zg1ZCjmXw',
+    profilePic: 'images/creators/alexia-putellas.webp',
     type: 'Futbolista',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'Doble ganadora del Balón de Oro y capitana del FC Barcelona. Un ícono del fútbol.',
     longDesc: 'Alexia es una de las figuras más importantes de la historia del fútbol femenino. Su liderazgo y talento la han convertido en una leyenda. Sus entrevistas y publicaciones muestran el lado profesional del deporte de élite.',
     cefr: ['C1', 'C2'],
-    embeddedId: null,
+    embeddedId: 'WaKiU417zm4',
     aljohnsComment: "La Reina",
     socialLinks: { instagram: 'https://www.instagram.com/alexiaputellas' },
-    tags: ['personalidades']
+    tags: ['deportes']
 },
 
 {
     id: 'lamine-yamal',
     name: 'Lamine Yamal',
-    profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9SM2jPEPoIBj2DmEnUa3Z16mU3cZcraumA&s', // Placeholder
+    profilePic: 'images/creators/lamine-yamal.jpg',
     type: 'Futbolista',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'La joven superestrella del FC Barcelona y la Selección Española.',
     longDesc: 'Con solo 16 años, Lamine Yamal se ha convertido en una de las mayores promesas del fútbol mundial. Su talento y desparpajo en el campo son espectaculares. Seguir su carrera desde ahora es presenciar el nacimiento de una leyenda.',
     cefr: ['C1', 'C2'],
-    embeddedId: null,
+    embeddedId: 'BiuoqGc9Tb8',
     aljohnsComment: "Es una locura lo bueno que es a su edad. ¡El futuro del Barça! la pregunta es: ¿es que va superar a messi? sólo el tiempo lo dirá",
     socialLinks: { instagram: 'https://www.instagram.com/lamineyamal' },
-    tags: ['personalidades']
+    tags: ['deportes']
 },
 {
     id: 'pedri',
     name: 'Pedri',
-    profilePic: 'https://img.a.transfermarkt.technology/portrait/big/683840-1744278342.jpg?lm=1', // Placeholder
+    profilePic: 'images/creators/pedri.webp',
     type: 'Futbolista',
     country: 'España',
     flagCode: 'es',
     shortDesc: 'El "mago" del centro del campo del FC Barcelona.',
     longDesc: 'Pedro González López, conocido como Pedri, es famoso por su increíble visión de juego, control del balón y elegancia. Es uno de los centrocampistas con más talento de su generación.',
     cefr: ['C1', 'C2'],
-    embeddedId: null,
+    embeddedId: 'RfUmXvigzcg',
     // aljohnsComment: "La clase que tiene Pedri para jugar es de otro mundo. Verlo jugar es disfrutar del fútbol arte.",
     socialLinks: { instagram: 'https://www.instagram.com/pedri' },
-    tags: ['personalidades']
+    tags: ['deportes']
 },
 {
     id: 'julian-alvarez',
     name: 'Julián Álvarez',
-    profilePic: 'https://img.a.transfermarkt.technology/portrait/big/576024-1684920938.jpg?lm=1', // Placeholder
+    profilePic: 'images/creators/julian-alvarez.webp',
     type: 'Futbolista',
     country: 'Argentina',
     flagCode: 'ar',
     shortDesc: 'Delantero campeón del mundo con Argentina y estrella del Manchester City.',
     longDesc: 'Apodado "La Araña", Julián Álvarez es conocido por su increíble ética de trabajo, su inteligencia en el campo y su capacidad para presionar y marcar goles. Es una pieza clave tanto en su club como en la selección argentina.',
     cefr: ['C1', 'C2'],
-    embeddedId: null,
+    embeddedId: 'rWtUcXaGYsY',
     aljohnsComment: "lo mas guapo del argentina",
     socialLinks: { instagram: 'https://www.instagram.com/juliaanalvarez' },
-    tags: ['personalidades']
+    tags: ['deportes']
 },
 {
     id: 'edurne',
     name: 'Edurne',
-    profilePic: 'https://yt3.googleusercontent.com/g2-owCCfgDA-UdP5r4MfzLPCQWW6mxihv7vYyadOZNXkOvZZFkyYlszzu7RKAg4i0iYHfJDe=s120-c-k-c0x00ffffff-no-rj', // Placeholder
+    profilePic: 'images/creators/edurne.jpg',
     type: 'Cantante / Presentadora',
     country: 'España',
     flagCode: 'es',
