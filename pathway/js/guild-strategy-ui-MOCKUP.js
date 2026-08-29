@@ -198,8 +198,8 @@ function populateToolModal_MOCKUP(toolData) {
         bodyHTML += `<p class="tool-rating-wrapper"><strong>Guild Rating:</strong> <span class="rating rating-${ratingClass}">${toolData.rating}</span></p>`;
     }
     bodyHTML += toolData.description || "<p>No specific details available.</p>";
-    if (toolData.url) {
-        bodyHTML += `<p class="tool-link-wrapper"><a href="${toolData.url}" target="_blank" class="btn btn-guild-primary">Visit Tool Shrine</a></p>`;
+    if (toolData.reviewUrl) {
+        bodyHTML += `<p class="tool-link-wrapper"><a href="${toolData.reviewUrl}" class="btn btn-guild-primary">View review</a></p>`;
     }
     toolModalBodyEl.innerHTML = bodyHTML;
 

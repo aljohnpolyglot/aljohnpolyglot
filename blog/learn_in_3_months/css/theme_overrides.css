@@ -76,10 +76,11 @@
         background-color: var(--theme-biotech-green); /* Ensure underline is green */
     }
     .page-theme-biotech-dark .dropdown-content { /* Mobile dropdown content area */
-        background-color: transparent; /* Inherits from .nav-links */
+        background-color: var(--theme-dark-bg-mid, #0a2e1a);
+        backdrop-filter: none;
     }
     .page-theme-biotech-dark .dropdown-content a {
-        color: var(--theme-soft-mint-text);
+        color: var(--theme-brighter-mint-text, #e0f9ee);
         border-bottom-color: var(--theme-card-border);
     }
     .page-theme-biotech-dark .dropdown-content a:hover {
@@ -94,13 +95,14 @@
 
 /* Dropdown Content on Desktop */
 .page-theme-biotech-dark .dropdown-content {
-    background-color: var(--theme-dark-bg-mid); /* Dark dropdown */
+    background-color: var(--theme-dark-bg-mid, #0a2e1a);
+    backdrop-filter: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     border: 1px solid var(--theme-card-border);
     border-top: none; /* Usually connects to navbar */
 }
 .page-theme-biotech-dark .dropdown-content a {
-    color: var(--theme-soft-mint-text);
+    color: var(--theme-brighter-mint-text, #e0f9ee);
     padding-bottom: 10px;
 }
 .page-theme-biotech-dark .dropdown-content a::after {

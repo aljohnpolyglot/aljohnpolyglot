@@ -105,11 +105,18 @@
 .app-preview-logo-index.tech-theme { /* Add 'tech-theme' */
     width: 48px;
     height: 48px;
+    display: block;
     object-fit: contain;
     flex-shrink: 0;
     border-radius: 6px; /* Slightly less rounded */
+    background: rgba(255, 255, 255, 0.08);
     /* Optional: Add a subtle glow or border to logos */
     /* filter: drop-shadow(0 0 3px rgba(0, 169, 255, 0.5)); */
+}
+.app-preview-logo-index.tech-theme.app-logo-fallback {
+    padding: 8px;
+    background: #0b1a33;
+    border: 1px solid rgba(0, 169, 255, 0.45);
 }
 .app-preview-title-group-index.tech-theme h3 { /* Add 'tech-theme' */
     font-family: var(--font-primary);

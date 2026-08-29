@@ -1014,8 +1014,7 @@ body.apps-tech-theme footer .copyright #current-year {
             const toggleButton = targetAppCardElement.querySelector('.toggle-details-btn');
 
             if (detailsDiv && !detailsDiv.classList.contains('details-visible') && toggleButton) {
-                // This part is now handled by the main script.js toggle functionality.
-                // We just ensure the parent category is open.
+                toggleButton.click();
             }
 
             // Wait for details to potentially open/render then scroll
@@ -1052,6 +1051,18 @@ body.apps-tech-theme footer .copyright #current-year {
                 }
             }
         });
+
+        function openReviewFromHash() {
+            if (!window.location.hash) return;
+
+            const targetAppCard = document.querySelector(window.location.hash);
+            if (targetAppCard && targetAppCard.classList.contains('app-card-container')) {
+                openAndScrollToApp(targetAppCard);
+            }
+        }
+
+        openReviewFromHash();
+        window.addEventListener('hashchange', openReviewFromHash);
 
         // The individual app card toggle functionality (View Details/Hide Details)
         // should be handled by your main script.js, as it's a general UI pattern.

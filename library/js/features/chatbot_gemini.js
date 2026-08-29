@@ -7,7 +7,16 @@ const chatLogDisplayGlobal = document.getElementById('chat-log-display');
 const languageFilterSelect = document.getElementById('language-filter');
 
 // --- API Configuration ---
-const GEMINI_API_URL = 'https://my-gemini-proxy.mogatas-princealjohn-05082003.workers.dev';
+// The proxy may use the model query parameter to select its upstream model. Keeping
+// the production model here makes client/server migration intent explicit and singular.
+const GEMINI_CLIENT_CONFIG = Object.freeze({
+    endpoint: 'https://my-gemini-proxy.mogatas-princealjohn-05082003.workers.dev',
+    model: 'gemini-3.7-flash',
+    maxAttempts: 4,
+    baseDelayMs: 900,
+    maxDelayMs: 8000,
+    timeoutMs: 30000
+});
 
 // --- Chat Configuration ---
 const MAX_HISTORY_TO_SEND = 10;
@@ -17,6 +26,8 @@ const LOCAL_STORAGE_KEY_PREFIX = 'geminiChatHistory_';
 // --- Global State ---
 let chatHistory = [];
 let currentCharacterLanguageCode = 'default_captain_aljohn'; // Default if no language filter
+let requestInFlight = false;
+let failedTurn = null;
 
 // --- Helper: createElement (ensure globally available) ---
 function createElement(tag, classNames = [], attributes = {}, textContent = '') {
@@ -58,15 +69,12 @@ function initializeChatbot() {
     
     loadAndRenderHistory(); // Load history and potentially show greeting
 
-    console.log("Chatbot initialized. Using API URL:", GEMINI_API_URL);
-    console.log("Chatbot: Current context for history:", currentCharacterLanguageCode);
 }
 
 function handleLanguageFilterChange() {
     if (languageFilterSelect) {
         currentCharacterLanguageCode = languageFilterSelect.value || 'default_captain_aljohn';
     }
-    console.log("Chatbot: Language filter changed. New context:", currentCharacterLanguageCode);
     loadAndRenderHistory();
 }
 
@@ -106,9 +114,7 @@ function loadAndRenderHistory() {
         chatHistory.forEach(message => {
             appendMessageToChatLog(message.text, message.role === 'user' ? 'user' : 'character', false, true);
         });
-        console.log(`Chatbot: Loaded ${chatHistory.length} messages for ${currentCharacterLanguageCode}`);
     } else {
-        console.log(`Chatbot: No history for ${currentCharacterLanguageCode}. Displaying initial greeting.`);
         // Display initial greeting if no history
         let greetingMessage = "Ahoy! How can I help ye today?"; // Default general greeting
         let activeCharacterForGreeting = null;
@@ -134,8 +140,25 @@ function loadAndRenderHistory() {
 
 
 async function handleSendMessage() {
+    if (requestInFlight) return;
     const userMessageText = chatInputField.value.trim();
     if (!userMessageText) return;
+
+    await submitUserTurn(userMessageText, { appendUserMessage: true });
+}
+
+function setChatBusy(isBusy) {
+    requestInFlight = isBusy;
+    sendChatMessageBtn.disabled = isBusy;
+    chatInputField.disabled = isBusy;
+    if (languageFilterSelect) languageFilterSelect.disabled = isBusy;
+    chatLogDisplayGlobal.setAttribute('aria-busy', isBusy ? 'true' : 'false');
+}
+
+async function submitUserTurn(userMessageText, options = {}) {
+    if (requestInFlight) return;
+    const appendUserMessage = options.appendUserMessage !== false;
+    const turnContextCode = options.contextCode || currentCharacterLanguageCode;
 
     // If the chat log only contains the initial greeting, clear it before adding user message
     // This prevents the greeting from becoming part of the saved history.
@@ -143,17 +166,18 @@ async function handleSendMessage() {
                                    chatLogDisplayGlobal.children[0].classList.contains('character') &&
                                    chatHistory.length === 0; // Check internal history too
 
-    if (firstMessageIsGreeting) {
+    if (appendUserMessage && firstMessageIsGreeting) {
         chatLogDisplayGlobal.innerHTML = ''; // Clear the visual greeting
     }
 
-    appendMessageToChatLog(userMessageText, 'user');
-    chatHistory.push({ role: 'user', text: userMessageText });
-    saveHistory();
+    if (appendUserMessage) {
+        appendMessageToChatLog(userMessageText, 'user');
+        chatHistory.push({ role: 'user', text: userMessageText });
+        saveHistory();
+    }
 
     chatInputField.value = '';
-    chatInputField.focus();
-    sendChatMessageBtn.disabled = true;
+    setChatBusy(true);
 
     let activeCharacter = null;
     if (window.libraryCharacters && languageFilterSelect) {
@@ -187,13 +211,29 @@ async function handleSendMessage() {
         
         chatHistory.push({ role: 'model', text: botResponseText });
         saveHistory();
+        failedTurn = null;
 
     } catch (error) {
-        console.error("Chatbot: Error in handleSendMessage (Gemini interaction):", error);
-        updateLastCharacterMessage(`Avast, me circuits seem to be crossed! (${error.message || 'Please try again.'})`);
+        failedTurn = { text: userMessageText, contextCode: turnContextCode };
+        console.error('Chatbot request failed', {
+            status: error.status || null,
+            retryable: Boolean(error.retryable),
+            attempts: error.attempts || GEMINI_CLIENT_CONFIG.maxAttempts,
+            name: error.name
+        });
+        renderRetryMessage(error);
     } finally {
-        sendChatMessageBtn.disabled = false;
+        setChatBusy(false);
+        chatInputField.focus();
     }
+}
+
+async function retryFailedTurn() {
+    if (!failedTurn || requestInFlight || failedTurn.contextCode !== currentCharacterLanguageCode) return;
+    await submitUserTurn(failedTurn.text, {
+        appendUserMessage: false,
+        contextCode: failedTurn.contextCode
+    });
 }
 function constructGeminiRequestPayload(currentUserMessageText, character, availableBooks = [], conversationHistory = []) {
     let responseLanguageName = "English";
@@ -282,34 +322,110 @@ CONVERSATION HISTORY (if any):`;
     };
 }
 
+class ChatbotRequestError extends Error {
+    constructor(message, options = {}) {
+        super(message);
+        this.name = 'ChatbotRequestError';
+        this.status = options.status || null;
+        this.retryable = Boolean(options.retryable);
+        this.retryAfterMs = options.retryAfterMs || 0;
+        this.attempts = options.attempts || 1;
+    }
+}
+
+function getGeminiRequestUrl() {
+    const url = new URL(GEMINI_CLIENT_CONFIG.endpoint);
+    url.searchParams.set('model', GEMINI_CLIENT_CONFIG.model);
+    return url.toString();
+}
+
+function getRetryAfterMs(response) {
+    const value = response.headers.get('Retry-After');
+    if (!value) return 0;
+    const seconds = Number(value);
+    if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000);
+    const dateValue = Date.parse(value);
+    return Number.isNaN(dateValue) ? 0 : Math.max(0, dateValue - Date.now());
+}
+
+function waitForRetry(delayMs) {
+    return new Promise(resolve => window.setTimeout(resolve, delayMs));
+}
+
+function getBackoffDelay(attempt, retryAfterMs = 0) {
+    if (retryAfterMs > 0) return Math.min(retryAfterMs, GEMINI_CLIENT_CONFIG.maxDelayMs);
+    const exponential = GEMINI_CLIENT_CONFIG.baseDelayMs * (2 ** attempt);
+    const jitter = Math.random() * GEMINI_CLIENT_CONFIG.baseDelayMs * 0.35;
+    return Math.min(exponential + jitter, GEMINI_CLIENT_CONFIG.maxDelayMs);
+}
+
 async function getGeminiResponse(requestPayload) {
-    // ... (Same as your last robust version - logging, error handling, parsing response)
-    try {
-        const response = await fetch(GEMINI_API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(requestPayload)
-        });
-        if (!response.ok) {
-            let errorData = { error: { message: `API request failed with status ${response.status}.` } };
-            try { errorData = await response.json(); } catch (e) { console.warn("Could not parse error JSON from API"); }
-            console.error("Chatbot: Gemini API Error Response Body:", errorData);
-            throw new Error(errorData.error?.message || `API request failed with status ${response.status}`);
-        }
-        const data = await response.json();
-        if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
-            return data.candidates[0].content.parts[0].text;
-        } else {
-            console.warn("Chatbot: Gemini API response did not contain expected text structure:", data);
+    let lastError = null;
+
+    for (let attempt = 0; attempt < GEMINI_CLIENT_CONFIG.maxAttempts; attempt += 1) {
+        const controller = new AbortController();
+        const timeoutId = window.setTimeout(() => controller.abort(), GEMINI_CLIENT_CONFIG.timeoutMs);
+
+        try {
+            const response = await fetch(getGeminiRequestUrl(), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestPayload),
+                signal: controller.signal
+            });
+
+            if (!response.ok) {
+                const retryable = response.status === 408 || response.status === 429 || response.status >= 500;
+                throw new ChatbotRequestError(
+                    retryable
+                        ? 'The library assistant is temporarily unavailable.'
+                        : 'The library assistant could not process this message.',
+                    {
+                        status: response.status,
+                        retryable,
+                        retryAfterMs: getRetryAfterMs(response),
+                        attempts: attempt + 1
+                    }
+                );
+            }
+
+            const data = await response.json();
+            const responseText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (responseText) return responseText;
+
             const finishReason = data.candidates?.[0]?.finishReason;
             if (finishReason) return `Me compass spun wildly! (Reason: ${finishReason}). Try a different tack?`;
             if (data.promptFeedback?.blockReason) return `Avast! My message in a bottle was returned (Reason: ${data.promptFeedback.blockReason}).`;
-            return "I received a peculiar signal... but no clear message.";
+            throw new ChatbotRequestError('The library assistant returned an unreadable response.', {
+                retryable: false,
+                attempts: attempt + 1
+            });
+        } catch (error) {
+            const normalizedError = error.name === 'AbortError'
+                ? new ChatbotRequestError('The library assistant took too long to answer.', {
+                    retryable: true,
+                    attempts: attempt + 1
+                })
+                : error instanceof ChatbotRequestError
+                    ? error
+                    : new ChatbotRequestError('The library assistant could not be reached.', {
+                        retryable: true,
+                        attempts: attempt + 1
+                    });
+
+            lastError = normalizedError;
+            const hasAnotherAttempt = attempt + 1 < GEMINI_CLIENT_CONFIG.maxAttempts;
+            if (!normalizedError.retryable || !hasAnotherAttempt) throw normalizedError;
+            await waitForRetry(getBackoffDelay(attempt, normalizedError.retryAfterMs));
+        } finally {
+            window.clearTimeout(timeoutId);
         }
-    } catch (error) {
-        console.error("Chatbot: Error during fetch to Gemini:", error);
-        throw error;
     }
+
+    throw lastError || new ChatbotRequestError('The library assistant is unavailable.', {
+        retryable: true,
+        attempts: GEMINI_CLIENT_CONFIG.maxAttempts
+    });
 }
 
 function appendMessageToChatLog(text, sender, isThinking = false, isHistory = false) {
@@ -343,6 +459,28 @@ function updateLastCharacterMessage(text) {
     } else {
         appendMessageToChatLog(text, 'character');
     }
+    chatLogDisplayGlobal.scrollTop = chatLogDisplayGlobal.scrollHeight;
+}
+
+function renderRetryMessage(error) {
+    if (!chatLogDisplayGlobal) return;
+    const thinkingMessage = chatLogDisplayGlobal.querySelector('.chat-message.character.thinking');
+    const message = thinkingMessage || appendMessageToChatLog('', 'character');
+    message.classList.remove('thinking');
+    message.classList.add('chat-message--error');
+    message.replaceChildren();
+
+    const errorText = createElement(
+        'span',
+        ['chat-error-copy'],
+        {},
+        error.retryable
+            ? 'The library assistant is temporarily unavailable. Your message is saved.'
+            : 'The library assistant could not process that message. Your message is still saved.'
+    );
+    const retryButton = createElement('button', ['chat-retry-button'], { type: 'button' }, 'Try again');
+    retryButton.addEventListener('click', retryFailedTurn);
+    message.append(errorText, retryButton);
     chatLogDisplayGlobal.scrollTop = chatLogDisplayGlobal.scrollHeight;
 }
 

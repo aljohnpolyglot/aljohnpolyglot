@@ -1,42 +1,9 @@
 
 const allAppData = [
     {
-        id: "app-polyglotconnect",
-        name: "Polyglot Connect",
-        logoUrl: "https://polyglotconnect.club/images/polyglot_connect_logo.png",
-        tagline: "The social club I built so we can finally stop practicing and start connecting",
-        myTake: "This is a 10/10 because I'm biased as hell and I built it from scratch. Yes, I wrote every line of code here. That's why I disappeared for a month because I was sick of language apps treating fluency like a checklist. I remembered how ChatGPT's voice feature skyrocketed my progress because it gave me a space to just *talk*. But AI is a tool; real fluency is forged in human connection. So I built the space I needed, and the space I know you need. Polyglot Connect is a living social club. It's where you get real reps with people, in real time, without the pressure. We have voice calls, group chats, AI analysis to break down your conversations, and instant dictionaries. This is where you go from knowing a language to *living* it. Once you get comfortable here, talking to natives in the real world will feel insanely easy. This is the solution.",
-        rating: 10,
-        pros: [
-            "Built by a language learner, for language learners, with obsessive attention to detail.",
-            "Focuses on real-time human connection (text, voice, group chats) to build confidence.",
-            "Integrated AI provides instant feedback, analysis, and recaps on your conversations.",
-            "Live voice calls and voice memos to simulate real-world speaking practice.",
-            "Features like an in-chat dictionary and user dossiers remove friction from learning.",
-            "A dedicated space to find your 'vibe' and connect with like-minded people."
-        ],
-        cons: [
-            "As a new platform, the user base is growing (so join and help build the community!).",
-            "Best features are unlocked with a subscription (but there's a free tier to start).",
-            "It's a web app, so a dedicated mobile app experience is on the future roadmap."
-        ],
-        websiteUrl: "https://polyglotconnect.club/",
-        androidUrl: null, // As it's a web app for now
-        iosUrl: null,     // As it's a web app for now
-        windowsUrl: "https://polyglotconnect.club/",
-        // fullResourcePageUrl: "https://polyglotconnect.club/",
-        cefrSuitability: { A1: "Low", A2: "Medium", B1: "High", B2: "High", C1: "High", C2: "High" },
-        immersionTypes: ["Speaking", "Writing", "Listening", "Language Exchange"],
-        primaryCategories: ["Language Exchange", "Social Platform", "AI Tutor"],
-        skillFocus: ["Conversational Fluency", "Speaking Confidence", "Active Output", "Real-time Interaction", "Cultural Exchange"],
-        cost: "Freemium",
-        platforms: ["Web"],
-        tags: ["conversation practice", "speaking practice", "language exchange", "social learning", "community", "voice chat", "ai feedback", "must-have", "aljohn original"]
-    },
-    {
         id: "app-migaku",
         name: "Migaku",
-        logoUrl: "https://avatars.githubusercontent.com/u/52677511?s=200&v=4",
+        logoUrl: "images/apps/migaku.webp",
         tagline: "The ultimate toolkit for deep immersion learning.",
         myTake: "This is a 10/10, no question. My progress in German went from a crawl to a full-on sprint because of Migaku. The process is just freakin' insane. You're watching YouTube, you hear a sentence you want to learn, and making a perfect Anki card is literally just a few clicks. It pulls the audio, the subtitle, the translation, and a screenshot for you. It completely removes the friction from active immersion. Before I even commit to watching a full video, I can use their extension to preview my comprehension level, which is a massive time-saver. The community is great, and the developers are incredibly hands-on; I've chatted with them, and their responsiveness is unheard of. I recently ran out of my trial, and I already feel the difference. If you have the money to invest in a tool that will give you a serious, almost unfair, advantage in language learning, this is it. I can't recommend it enough.",
         rating: 10,
@@ -69,7 +36,7 @@ const allAppData = [
     {
         id: "app-anki",
         name: "Anki / AnkiDroid",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Anki-icon.svg/2048px-Anki-icon.svg.png",
+        logoUrl: "images/apps/anki.webp",
         tagline: "The Flashcard app to never forget what you learned.",
         myTake: "Do you always forget what you've studied? It's probably because you're not using this app. Anki is a flashcard app, and everything you learn should be put here so you never forget it. It's not just a normal flashcard app; it follows an algorithm called \"spaced repetition,\" which is scientifically proven. It helps solidify our learnings from short-term to long-term memory. Based on my experience, it's very effective. This is the #1 app I can't live without. It's the cornerstone for vocabulary and concept memorization across all my languages. You should be making your own cards from day one, adding words and example sentences from your reading and listening.",
         rating: 10,
@@ -92,7 +59,7 @@ const allAppData = [
     {
         id: "app-chatgpt",
         name: "ChatGPT",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png",
+        logoUrl: "images/apps/chatgpt.webp",
         tagline: "Your versatile AI language-learning partner & tutor.",
         myTake: "If I could give more than 10 stars, this would be it. It's indispensable. For beginners, it can generate reading materials. For intermediate learners, it's a speaking partner. For advanced users, it can pose complex 'Miss Universe-style' questions to hone command of the language. I use its voice feature daily; it's like having a personal tutor on call, which skyrocketed my progress because I no longer 'needed' to talk to real people for initial practice. It's also crucial for my writing practice – when I can't figure out how to say something for my daily diary, I ask ChatGPT for phrasing ideas or to check my grammar. It helps bridge the gap between passive knowledge and active production, generating prompts, rephrasing sentences, or explaining complex grammar. It's one of my 'two wives' in language learning for active engagement and refinement.",
         rating: 10,
@@ -114,7 +81,7 @@ const allAppData = [
     {
         id: "app-youtube",
         name: "YouTube",
-        logoUrl: "https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png",
+        logoUrl: "images/apps/youtube.webp",
         tagline: "Your free ticket to infinite language immersion.",
         myTake: "This is another app I'd give more than 10 stars. Why complicate finding materials? Everything is here. Beginner? Watch lectures and tutorials. Intermediate/Advanced? Immerse in native content. You can choose videos based on your interests, so you're never bored. Spending time on this platform alone will take you places. Auto-subtitles are great for following along (use target language subs!). Create separate YouTube accounts for each language to train the algorithm effectively. It's the 'All-Encompassing Mother of Authentic Input', one of my 'two wives' that shows me the world in the language.",
         rating: 10,
@@ -136,7 +103,7 @@ const allAppData = [
     {
         id: "app-readera",
         name: "ReadEra",
-        logoUrl: "https://play-lh.googleusercontent.com/qw8lAHXaZodAE4c3D1Jkia3V8Np-PxTnyQpUIx439ibABba0L50TVKI4jfY4N4QwzAA",
+        logoUrl: "images/apps/readera.webp",
         tagline: "Your all-in-one offline reading companion.",
         myTake: "Actually, any ebook reader is fine, but this is what I personally use. And if there are words I don't know, it has a built-in translator (I don't know if it only works on Android). You can also highlight phrases or words depending on how you use it. Its interface is easy and intuitive. And if you like audio while reading, it also has a voice feature so you can hear the language while reading it. Perfect for my strategy of reading familiar books (like Harry Potter) in my target language in the beginner stages, and any native content later on.",
         rating: 10,
@@ -158,7 +125,7 @@ const allAppData = [
     {
         id: "app-pocketcasts",
         name: "Pocket Casts",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pocket_Casts_icon.svg/2048px-Pocket_Casts_icon.svg.png",
+        logoUrl: "images/apps/pocketcasts.webp",
         tagline: "Your go-to app for multilingual podcast immersion.",
         myTake: "This is my personal podcast player. Its competitors are Spotify and YouTube Music, but Spotify needs internet and doesn't allow downloads (for free tier). YouTube Music has a difficult interface. But Pocket Casts is very intuitive to use. It also tracks your listening hours so you have data on how long your immersion has been so far. Almost all podcasts available on other platforms are here too. I discovered this recently since Google Podcasts was discontinued, and I'm glad I found it. You can also play it in the background if you want to do laundry or cook while studying. Essential for my 'dead time' immersion strategy.",
         rating: 10,
@@ -180,7 +147,7 @@ const allAppData = [
     {
         id: "app-deepl",
         name: "DeepL Translator",
-        logoUrl: "https://cdn.worldvectorlogo.com/logos/deepl-1.svg",
+        logoUrl: "images/apps/deepl.svg",
         tagline: "Your ultimate companion for accurate translations.",
         myTake: "For me, this is the best translator because it's incredibly accurate, and its translations don't look awkward. The only disadvantage is that it has fewer languages (though they add more with every update), and it needs Wi-Fi because you can't download language files like Google Translate. But overall, this is where I get the sentences I imitate. It's 9 stars because ChatGPT is still different for translating informal language. DeepL is very formal, same as Google Translate. So if you want street language, this isn't perfect. I use it when writing my essays in my target language to check phrasing or find technical jargon.",
         rating: 10,
@@ -202,7 +169,7 @@ const allAppData = [
     {
         id: "app-languagetransfer",
         name: "Language Transfer",
-        logoUrl: "https://play-lh.googleusercontent.com/upG4JV3kjl9LDKjhgONsmboRlAnsfJJsuMc_XeUm_q7ft6erVMfIWyunNfoLjMqB93I",
+        logoUrl: "images/apps/languagetransfer.webp",
         tagline: "The best free audio courses for understanding language structure.",
         myTake: "This is the perfect app for beginners. It's like having a one-on-one teacher who teaches you the basics of a language. It explains the root of each word and how grammar works. You'll also learn cultural insights about the language you're studying, so it's perfect. If you're a beginner, you can do this while multitasking to save time. The only downside is it covers few languages. But since most of you are learning French or Spanish, this is just right. I completed the Spanish course in just three days and it was incredibly effective.",
         rating: 10,
@@ -224,7 +191,7 @@ const allAppData = [
     {
         id: "app-urbanvpn",
         name: "UrbanVPN",
-        logoUrl: "https://i0.wp.com/up4pc.com/wp-content/uploads/2025/01/urban.up4pc.com_.png.png",
+        logoUrl: "images/apps/urbanvpn.webp",
         tagline: "Your Free Gateway to Geo-Restricted Language Immersion.",
         myTake: "I'm just inserting this app, especially for PC users. I've tried many VPN services, but this is the only one that's truly free for many useful locations. With this VPN, I can access other sites to get more resources. For example, if it's Spanish, you can watch RTVE, which is like Netflix but Spanish. In the Philippines, it's equivalent to iWantTFC or Vivamax. It's not required, but if you're bored with YouTube and want different content or to access content you can't easily find, you need this.",
         rating: 10,
@@ -246,7 +213,7 @@ const allAppData = [
     {
         id: "app-linguno",
         name: "Linguno",
-        logoUrl: "../../images/logo_linguno.png",
+        logoUrl: "images/apps/linguno.webp",
         tagline: "Your ultimate adaptive conjugation and vocabulary coach.",
         myTake: "Most underrated app ever! Perfect for those who struggle to memorize conjugations! If you use it, you'll master them quickly. Why? Unlike Duolingo, this actually targets your weaknesses. So if you make a mistake, it will repeat until you get it right. It's frustrating at first, but that's how it is in the beginning. Once you rank high here, conjugating becomes very easy for you, almost without thinking. It's a key tool for drilling specific grammar points actively.",
         rating: 10,
@@ -268,7 +235,7 @@ const allAppData = [
     {
         id: "app-reversocontext",
         name: "Reverso Context",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Reverso_logo.jpg/1200px-Reverso_logo.jpg",
+        logoUrl: "images/apps/reversocontext.webp",
         tagline: "Your all-in-one toolkit for contextual translations and language resources.",
         myTake: "If you're studying a language, you probably need a grammar resource. For me, this is truly the best app. It's perfect for conjugation lists, vocabulary, synonyms, grammar checker, translator, or anything you can think of. Once you get the hang of it, you won't switch to another source because it's truly complete. The millions of example sentences are invaluable for understanding how words are used in real life. It's 9 stars because there are some paid features, but they aren't necessary or a hindrance to your learning. Everything you need is already free here.",
         rating: 9,
@@ -290,7 +257,7 @@ const allAppData = [
     {
         id: "app-googletranslate",
         name: "Google Translate",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Google_Translate_logo.svg/1024px-Google_Translate_logo.svg.png",
+        logoUrl: "images/apps/googletranslate.webp",
         tagline: "Your versatile and widely accessible language companion.",
         myTake: "This is probably the most famous translator in the world. Its biggest advantage is that you can download language files to use it offline. That's good for people like me who don't buy mobile data. However, the translations here are very program-based and not human-based, so the translations aren't really great, especially for little nuances. I rarely use it because DeepL is much better. But if a language isn't on DeepL, I go straight to Google Translate.",
         rating: 8,
@@ -312,7 +279,7 @@ const allAppData = [
     {
         id: "app-memrise",
         name: "Memrise",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/en/3/39/Memrise-new-logo.png",
+        logoUrl: "images/apps/memrise.webp",
         tagline: "Your vocabulary building companion with mnemonics.",
         myTake: "It's okay for learning vocabulary. The good thing here is it uses spaced-repetition, which is a good algorithm for maintaining vocabulary. And it's not as complicated as Duolingo. But there's a lot of inaccessible content, such as paid lessons, so that's also a downside. Good for initial exposure to words but less effective for deep, contextual understanding compared to Anki with self-made cards.",
         rating: 5,
@@ -334,7 +301,7 @@ const allAppData = [
     {
         id: "app-duolingo",
         name: "Duolingo",
-        logoUrl: "https://cdn.jim-nielsen.com/ios/512/duolingo-2019-01-02.png?rf=1024",
+        logoUrl: "images/apps/duolingo.webp",
         tagline: "Your casual and gamified language introduction.",
         myTake: "It's okay for beginners and its game structure is good for initial exposure. But it has too many unnecessary things that aren't needed to learn a language effectively. And words you already know well, you still have to repeat instead of progressing to the next level. So it's slow for progress. It's like it's babying the learner. It also lacks real-world context, which is necessary for language learning. Use it very briefly for the first few lessons of a brand new language, then move on quickly to more robust methods.",
         rating: 4,
@@ -356,7 +323,7 @@ const allAppData = [
     {
         id: "app-languagereactor",
         name: "Language Reactor",
-        logoUrl: "https://lh3.googleusercontent.com/aPSUr3UYCdrkrGEIJu_5RubORwHcRiQEaiRKAPx68BeJ7963d31hIzZamn8HninChHNh-CIFWuRFj2cocG-2ojxl7oE=s120",
+        logoUrl: "images/apps/languagereactor.webp",
         tagline: "Your immersive companion for learning with videos.",
         myTake: "Speaking of YouTube, when you use subtitles, you often need to go to Google Translate to find the meaning of a word. With Language Reactor, you just hover your mouse over a word, and the translation appears. This saves a lot of time switching from one app to another. If you're a beginner, you can also see the translation of the whole phrase below to compare and contrast. But if you're a bit advanced, you can also blur it to make it more challenging. Then, if you don't understand the context, you can look at the translation. Aside from YouTube, it also works on Netflix and other streaming platforms, turning passive watching into active learning.",
         rating: 10,
@@ -378,7 +345,7 @@ const allAppData = [
     {
         id: "app-clozemaster",
         name: "ClozeMaster",
-        logoUrl: "https://play-lh.googleusercontent.com/OnFqiujFXmyzOvkmaCzPDPHPnN9-mcM9hBwQPLAXy3lESDbkHqXQTRRzfJvchwDkNds=w240-h480-rw",
+        logoUrl: "images/apps/clozemaster.webp",
         tagline: "Your Contextual Vocabulary Builder through Gap-Fill.",
         myTake: "This used to be one of my favorite apps. This is where I first truly exposed myself to context because you fill in the blanks for the word that fits the sentence. So you really need to have an idea of what the words mean. It has two modes: multiple choice or you type the word yourself. When you're a bit more advanced, just use the typing mode. It's incredibly good. But I stopped using it when they imposed a limit of 30 exercises a day and then required payment. That's why it's only 6 stars now. It used to be a solid 10 stars for me; I used it all the time.",
         rating: 6,
@@ -400,7 +367,7 @@ const allAppData = [
     {
         id: "app-italki",
         name: "iTalki",
-        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Italki-logo-2023.png",
+        logoUrl: "images/apps/italki.webp",
         tagline: "Find your perfect language tutor for personalized lessons.",
         myTake: "For me, iTalki is truly the best for finding real teachers trained to teach languages. From beginner to advanced, you will be guided. The methods vary based on your level. The only catch is you have to pay. But it's relatively cheap (e.g., ~250 pesos per 30 minutes, varies by tutor). And the great thing is, it's anytime you want! Just book a schedule that fits you. Your payment is really worth it here, especially if you find the perfect teacher. The only hard part is that the quality of your learning really depends on the teacher, so it's trial and error. It's also available in most languages you can think of. (Promo Code: ALJOHN for $5 free on first $10 purchase - *note this may be outdated*).",
         rating: 10,
@@ -422,7 +389,7 @@ const allAppData = [
     {
         id: "app-tandem",
         name: "Tandem",
-        logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ-w0GNMvwhnXn9oHi0j8RKlt_vq6-DMeGqw&s",
+        logoUrl: "images/apps/tandem.webp",
         tagline: "Your global language exchange partner community.",
         myTake: "For me, this is also where my speaking skills were really honed. Unlike Discord's server limits sometimes, Tandem connects you directly with individuals. You can also create your own 'parties' (group voice calls) if others are full. That's what's great about it because you can jump straight into conversations. Most of the people I became close to here, I met in parties through voice calls. That's its difference from HelloTalk, where you often have to approach through chat, which can be a bit awkward. Great for real-world practice.",
         rating: 9, // Your text says 10, but table says 9. Going with table.
@@ -444,7 +411,7 @@ const allAppData = [
     {
         id: "app-languagesloth", // Assuming this is the Discord server
         name: "Language Sloth Discord Server",
-        logoUrl: "https://styles.redditmedia.com/t5_5gtap7/styles/communityIcon_mx50us3tmet91.png", // Official Discord logo might be better: https://cdn.logo.com/hotlink-ok/logo-social.png
+        logoUrl: "images/apps/languagesloth.webp", // Official Discord logo might be better: https://cdn.logo.com/hotlink-ok/logo-social.png
         tagline: "Your vibrant language learning community on Discord.",
         myTake: "This is truly my happy place when I practice languages. You just need to know what timezone your target language is active in. And people are very friendly. Just enter the voice room for the language you want to practice, and then, just talk. I spent hundreds of hours on this server, and this is where I really honed my speaking skills. But it's 9 stars because sometimes the server is full, or specific language rooms might be quiet or you might feel out of place (OP) because you're new.",
         rating: 9,
@@ -466,7 +433,7 @@ const allAppData = [
     {
         id: "app-gliglish",
         name: "Gliglish",
-        logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_EG7va_DHNEdjYthmQY520wIEiWO1fdqAeg&s", // Consider official logo if available
+        logoUrl: "images/apps/gliglish.webp", // Consider official logo if available
         tagline: "Your AI conversation partner for practicing real-world scenarios.",
         myTake: "This is good if you don't have money for a teacher to practice your language. You can practice in various situations here, like in a cafe, school, library, etc. It also has a voice feature you can use with your mic if you're lazy to type. The best part is, it's really for language learners, and the virtual teacher will correct your grammar mistakes. However, we need to remember this is just AI, and it's still different if a real person is teaching you. But I really recommend using this before you try to speak with real native speakers for initial confidence building.",
         rating: 10,
@@ -488,7 +455,7 @@ const allAppData = [
     {
         id: "app-polyai", // SpeakMaster
         name: "PolyAI (SpeakMaster AI)",
-        logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNgr2cyzDsrVIPn_-ul9FzrWecnzNXfK8s0w&s",
+        logoUrl: "images/apps/polyai.webp",
         tagline: "Your AI conversation partner with diverse characters.",
         myTake: "If you want to practice your language skills, this is okay! You can chat with your favorite characters, from cartoons like Spongebob to your favorite movie characters or even celebrities. This app is available in major Romance and Asian languages. There's even Tagalog! Your conversational skills will surely be honed here. But I only give it 7 stars because you're just talking to AI, and human interaction is still better. Also, this app isn't really for language learning, so it won't correct your mistakes. More for fun, lower-pressure practice.",
         rating: 7,
@@ -510,7 +477,7 @@ const allAppData = [
     {
         id: "app-hellotalk",
         name: "HelloTalk",
-        logoUrl: "https://play-lh.googleusercontent.com/_n5qVwKyfl5QiJjyZiTvTM8z4WN63Da8EAhRUkKtLMjIZ3aHNkAXlvF89V_uzYMQxg",
+        logoUrl: "images/apps/hellotalk.webp",
         tagline: "Your social language practice and exchange platform.",
         myTake: "This is good for those looking for language partners. It's really like social media disguised as a language app where you can see their posts ('Moments') and message them. This app is really okay, but there are too many flirty people, so it's only 6 stars. It can be harder to jump straight into voice calls compared to Tandem's 'parties' as it often starts with text chat, which can feel awkward if you primarily want speaking practice. Still a decent option if you're patient.",
         rating: 6,
@@ -532,7 +499,7 @@ const allAppData = [
     {
         id: "app-radiogarden",
         name: "Radio Garden",
-        logoUrl: "https://play-lh.googleusercontent.com/07lewhVI4GklVBi_ehhOXxmB_bPaWWTiyqHAlQP6VsYD7h9R4d8hskNAy4SCOx0leNx-",
+        logoUrl: "images/apps/radiogarden.webp",
         tagline: "Your interactive global radio tuner for live immersion.",
         myTake: "If you want to practice listening, you can access almost all radio stations in the world here by spinning a globe. All you need is Wi-Fi, and you're good to go. But the hard part is finding a radio station that's consistently in your target language and engaging. Often, you can't fully immerse because some stations also play American music or have lots of ads. So, that can also slow down your progress instead of listening to your full target language. It's great for passive background exposure to the sounds and rhythm, though.",
         rating: 8,
@@ -555,7 +522,7 @@ const allAppData = [
     {
         id: "immersivetranslate",
         name: "Immersive Translate (Browser Extension/Tool)",
-        logoUrl: "https://play-lh.googleusercontent.com/2fO3QcwZqGMEO5LKBbzzqaTPJQrZ1bMMT4blE3LWMLdmuUfAbTUzf60rCZi9l3twzDt7=w240-h480-rw", // User provided
+        logoUrl: "images/apps/immersivetranslate.webp", // User provided
         tagline: "Read ANY Book or Webpage in Your Target Language, Instantly.",
         myTake: "This is an absolute GOLDMINE, a 10-star tool for me, especially when I can't find a book directly in my target language. I just find an English EPUB or website, run it through Immersive Translate, and I can read it in my target language with dual-language views or click-to-translate. It has massively expanded the sheer volume of reading material available to me, ensuring I'm never choosy about content and can always be immersed. This is crucial from A2 (if your English is good enough to understand the source) all the way to C2. No more wasted time searching for perfectly graded readers; this tool helps make *any* content comprehensible. It was part of my strategy for writing academic papers in my target language and then translating them.",
         rating: 10,
@@ -577,7 +544,7 @@ const allAppData = [
     {
         id: "webtoon",
         name: "WEBTOON",
-        logoUrl: "https://cdn.worldvectorlogo.com/logos/webtoon-logo.svg", // User provided
+        logoUrl: "images/apps/webtoon.svg", // User provided
         tagline: "Engaging Digital Comics for Immersive Reading in Many Languages.",
         myTake: "This is pure gold, a 10-star resource for me, usable from A1 all the way to C2 depending on the story and your approach. The visual context from the comics makes understanding so much easier, especially for beginners. There's a vast library with unique stories in many languages, so you're learning with content you genuinely enjoy. The only 'downside' is you can't copy-paste text easily, so you have to manually type unknown words into a translator – but honestly, that can actually reinforce your learning! It was one of my core tools from the very beginning.",
         rating: 10,

@@ -3,7 +3,6 @@
 /* ==========================================================================
    NAVBAR THEME OVERRIDES (for .page-theme-biotech-dark)
    ========================================================================== */
-   ========================================================================== */
 :root {
     /* Core Aljohn Colors (Original - Kept for reference) */
     --aljohn-original-primary-red: #C8102E;
@@ -23,6 +22,8 @@
     --theme-dark-bg-base: #040f0a;       /* Base dark background */
     --theme-dark-bg-gradient-start: #040f0a;
     --theme-dark-bg-gradient-mid: #0a2e1a;
+    --theme-dark-bg-mid: var(--theme-dark-bg-gradient-mid);
+    --theme-dark-bg-mid-rgb: 10, 46, 26;
     --theme-dark-bg-gradient-end: #104527;
     --theme-deepest-bg-contrast: #020805; /* For text on light accents */
 
@@ -129,10 +130,11 @@
         background-color: var(--theme-biotech-green); /* Ensure underline is green */
     }
     .page-theme-biotech-dark .dropdown-content { /* Mobile dropdown content area */
-        background-color: transparent; /* Inherits from .nav-links */
+        background-color: var(--theme-dark-bg-mid, #0a2e1a);
+        backdrop-filter: none;
     }
     .page-theme-biotech-dark .dropdown-content a {
-        color: var(--theme-soft-mint-text);
+        color: var(--theme-brighter-mint-text, #e0f9ee);
         border-bottom-color: var(--theme-card-border);
     }
     .page-theme-biotech-dark .dropdown-content a:hover {
@@ -147,13 +149,14 @@
 
 /* Dropdown Content on Desktop */
 .page-theme-biotech-dark .dropdown-content {
-    background-color: var(--theme-dark-bg-mid); /* Dark dropdown */
+    background-color: var(--theme-dark-bg-mid, #0a2e1a);
+    backdrop-filter: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     border: 1px solid var(--theme-card-border);
     border-top: none; /* Usually connects to navbar */
 }
 .page-theme-biotech-dark .dropdown-content a {
-    color: var(--theme-soft-mint-text);
+    color: var(--theme-brighter-mint-text, #e0f9ee);
     padding-bottom: 10px;
 }
 .page-theme-biotech-dark .dropdown-content a::after {

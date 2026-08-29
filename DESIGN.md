@@ -1,5 +1,5 @@
 ---
-name: "Mon coin français — L’atlas cousu"
+name: "Mon parcours en français — L’atlas cousu"
 description: "A stitched documentary atlas for Aljohn’s personal French-learning library."
 colors:
   indigo-950: "#111820"
@@ -140,7 +140,7 @@ components:
     height: "min(92dvh, 58rem)"
 ---
 
-# Design System: Mon coin français — L’atlas cousu
+# Design System: Mon parcours en français — L’atlas cousu
 
 ## Overview
 
@@ -280,6 +280,10 @@ Playable modules join a real featured embed to a stitched list. The selected lis
 ### Resource Albums
 
 Resource spotlights alternate a large documentary photograph and a linen story folio. Albums keep one active photograph in the inline viewport; square previous/next controls sit over the image, captions remain honest, and a compact live counter reports position. The photograph itself is the lightbox trigger.
+
+### Restaurant Addresses
+
+Restaurant shelves use a local, verified brand mark or storefront sign as the card image so each place is recognizable before opening it. The accessible details folio keeps the separate documentary venue or food photograph at full size, followed by address, contact details, verified social links, and Aljohn’s related video when one exists. Brand assets and documentary photographs remain separate dataset fields; neither role uses an Aljohn video thumbnail.
 
 ### Modal and Lightbox
 

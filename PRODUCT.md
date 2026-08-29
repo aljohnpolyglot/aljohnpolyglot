@@ -14,7 +14,7 @@ Visitors use the French page to discover videos, creators, cultural centres, com
 
 ## Product Purpose
 
-`Mon coin français` is Aljohn's public personal notebook for French. It brings together his own videos, the creators he genuinely follows, and the places and communities that made French part of his life in Manila and Cebu.
+`Mon parcours en français` is Aljohn's public personal notebook for French. It brings together his own videos, the creators he genuinely follows, and the places and communities that made French part of his life in Manila and Cebu.
 
 Success means a visitor can understand Aljohn's relationship with French and leave with one concrete, trustworthy way to watch, practise, visit, or meet people.
 
@@ -40,7 +40,7 @@ The experience must work as a public website on desktop and mobile. Visitors can
 
 ## Brand Commitments
 
-The product name is `Mon coin français`, presented as part of Aljohn Polyglot's personal website. The voice is French, first-person, warm, specific, and grounded in lived experience. The page must remain recognisably francophone while avoiding decorative clichés and generic AI-generated catalogue language.
+The product name is `Mon parcours en français`, presented as part of Aljohn Polyglot's personal website. The voice is French, first-person, warm, specific, and grounded in lived experience. The page must remain recognisably francophone while avoiding decorative clichés and generic AI-generated catalogue language.
 
 Personal curation made with taste, memory, and heart is a binding identity constraint. Neutral descriptions and Aljohn's personal comments must remain distinct, editable, and honest about the evidence available.
 

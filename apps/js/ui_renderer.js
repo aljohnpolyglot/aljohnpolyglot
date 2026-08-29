@@ -29,6 +29,18 @@ function getCategoryIcon(categoryOrTypeName) {
     return '<i class="fas fa-tag"></i>';
 }
 
+const UNIVERSAL_APP_LOGO_FALLBACK = 'images/apps/app-fallback.svg';
+
+function wireUniversalAppLogo(image) {
+    if (!image || image.dataset.logoFallbackReady === 'true') return;
+    image.dataset.logoFallbackReady = 'true';
+    image.addEventListener('error', () => {
+        if (!image.src.endsWith('/images/apps/app-fallback.svg')) {
+            image.src = UNIVERSAL_APP_LOGO_FALLBACK;
+        }
+    });
+}
+
 function renderAppCards(appsToRender, currentFilters) {
     const appGrid = document.getElementById('app-grid');
     if (!appGrid) return;
@@ -79,7 +91,7 @@ function renderAppCards(appsToRender, currentFilters) {
 
         card.innerHTML = `
             <div class="app-card-header">
-                <img src="${app.logoUrl}" alt="${app.name} Logo" class="app-card-logo">
+                <img src="${app.logoUrl || UNIVERSAL_APP_LOGO_FALLBACK}" width="48" height="48" loading="lazy" decoding="async" alt="${app.name} logo" class="app-card-logo">
                 <div class="app-card-title-section">
                     <h3>${app.name}</h3>
                     <div class="rating-stars-card">${cardRatingStars} <span class="rating-numeric">(${app.rating}/10)</span></div>
@@ -93,10 +105,11 @@ function renderAppCards(appsToRender, currentFilters) {
             <div class="app-card-buttons">
                 <button class="app-card-details-btn" data-app-id="${app.id}">View Details</button>
                 ${app.fullResourcePageUrl && app.fullResourcePageUrl.trim() !== "" ?
-                `<a href="${app.fullResourcePageUrl}" target="_blank" class="app-card-full-review-btn">Aljohn's Full Review <i class="fas fa-external-link-alt"></i></a>` : ''}
+                `<a href="${app.fullResourcePageUrl}" target="_blank" rel="noopener noreferrer" class="app-card-full-review-btn">Aljohn's Full Review <i class="fas fa-external-link-alt"></i></a>` : ''}
             </div>
         `;
         appGrid.appendChild(card);
+        wireUniversalAppLogo(card.querySelector('.app-card-logo'));
     });
 }
 
@@ -104,8 +117,10 @@ function populateModal(appData) {
     if (!appData) return;
 
     // Populate modal header elements
-    document.getElementById('modal-app-logo').src = appData.logoUrl;
-    document.getElementById('modal-app-logo').alt = `${appData.name} Logo`;
+    const modalLogo = document.getElementById('modal-app-logo');
+    modalLogo.src = appData.logoUrl || UNIVERSAL_APP_LOGO_FALLBACK;
+    modalLogo.alt = `${appData.name} logo`;
+    wireUniversalAppLogo(modalLogo);
     document.getElementById('modal-app-name').textContent = appData.name;
     document.getElementById('modal-app-tagline').textContent = appData.tagline;
     document.getElementById('modal-app-rating').innerHTML = `${displayStarRating(appData.rating, 10)} (${appData.rating}/10)`;
@@ -169,11 +184,11 @@ function populateModal(appData) {
     // Populate Links
     const linksContainer = document.getElementById('modal-app-links');
     linksContainer.innerHTML = '';
-    if (appData.websiteUrl) linksContainer.innerHTML += `<a href="${appData.websiteUrl}" target="_blank" class="btn-link btn-website"><i class="fas fa-globe"></i> Website</a>`;
-    if (appData.androidUrl) linksContainer.innerHTML += `<a href="${appData.androidUrl}" target="_blank" class="btn-link btn-platform"><i class="fab fa-android"></i> Android</a>`;
-    if (appData.iosUrl) linksContainer.innerHTML += `<a href="${appData.iosUrl}" target="_blank" class="btn-link btn-platform"><i class="fab fa-apple"></i> iOS</a>`;
-    if (appData.windowsUrl) linksContainer.innerHTML += `<a href="${appData.windowsUrl}" target="_blank" class="btn-link btn-platform"><i class="fab fa-windows"></i> Windows</a>`;
+    if (appData.websiteUrl) linksContainer.innerHTML += `<a href="${appData.websiteUrl}" target="_blank" rel="noopener noreferrer" class="btn-link btn-website"><i class="fas fa-globe"></i> Website</a>`;
+    if (appData.androidUrl) linksContainer.innerHTML += `<a href="${appData.androidUrl}" target="_blank" rel="noopener noreferrer" class="btn-link btn-platform"><i class="fab fa-android"></i> Android</a>`;
+    if (appData.iosUrl) linksContainer.innerHTML += `<a href="${appData.iosUrl}" target="_blank" rel="noopener noreferrer" class="btn-link btn-platform"><i class="fab fa-apple"></i> iOS</a>`;
+    if (appData.windowsUrl) linksContainer.innerHTML += `<a href="${appData.windowsUrl}" target="_blank" rel="noopener noreferrer" class="btn-link btn-platform"><i class="fab fa-windows"></i> Windows</a>`;
     if (appData.fullResourcePageUrl && appData.fullResourcePageUrl.trim() !== "") {
-        linksContainer.innerHTML += `<a href="${appData.fullResourcePageUrl}" target="_blank" class="btn-link btn-full-review">Aljohn's Full Review <i class="fas fa-arrow-right"></i></a>`;
+        linksContainer.innerHTML += `<a href="${appData.fullResourcePageUrl}" target="_blank" rel="noopener noreferrer" class="btn-link btn-full-review">Aljohn's Full Review <i class="fas fa-arrow-right"></i></a>`;
     }
 }

@@ -179,16 +179,16 @@ ul.nav-links li.dropdown:hover .dropbtn i.fas.fa-caret-down { transform: rotate(
     border-radius: 0 0 6px 6px;
     border: 1px solid var(--guild-gold-deep, #b8860b);
     border-top: none;
-    top: calc(100% + 5px);
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100%;
+    left: 0;
+    transform: translateY(0);
     padding-top: 8px;
     padding-bottom: 8px;
     opacity: 0;
-    transform-origin: top center;
+    transform-origin: top left;
     animation: fadeInDropdown 0.3s ease-out forwards;
 }
-@keyframes fadeInDropdown { from { opacity: 0; transform: translateX(-50%) translateY(-10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+@keyframes fadeInDropdown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 
 ul.nav-links li.dropdown:hover .dropdown-content {
     display: block;
