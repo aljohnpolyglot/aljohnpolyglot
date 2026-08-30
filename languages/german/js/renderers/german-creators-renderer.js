@@ -14,6 +14,7 @@ const CATEGORY_NOTES = {
   'Turnen & Tischtennis': 'Technik, Wettkampf und Sportalltag aus zwei präzisen Disziplinen.',
   'Wohnen & Design': 'Grundrisse, Häuser und konkrete Sprache rund ums Wohnen.'
 };
+const CATEGORY_PRIORITY = ['Deutsch lernen', 'Sport & Basketball'];
 
 const LINK_LABELS = {
   youtube: ['YouTube', 'fa-brands fa-youtube'],
@@ -66,7 +67,15 @@ export async function renderGermanCreators() {
   const institutionIds = ['goethe-institut-philippinen', 'germany-in-the-philippines'];
   const institutions = institutionIds.map(id => allCreators.find(creator => creator.id === id)).filter(Boolean);
   const creators = allCreators.filter(creator => !institutionIds.includes(creator.id));
-  const categories = [...new Set(creators.map(creator => creator.category).filter(Boolean))];
+  const categories = [...new Set(creators.map(creator => creator.category).filter(Boolean))]
+    .sort((a, b) => {
+      const aPriority = CATEGORY_PRIORITY.indexOf(a);
+      const bPriority = CATEGORY_PRIORITY.indexOf(b);
+      if (aPriority < 0 && bPriority < 0) return 0;
+      if (aPriority < 0) return 1;
+      if (bPriority < 0) return -1;
+      return aPriority - bPriority;
+    });
   let lastTrigger = null;
 
   const setModalImageFallback = image => {
