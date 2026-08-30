@@ -1,475 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Upgrade! Language Lab Under Construction | Aljohn Polyglot</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-      <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aljohns persönlicher Weg zum Deutschen: sein deutsches Video, ein klarer Lernweg, Bücher und kuratierte deutschsprachige Stimmen.">
+    <meta name="theme-color" content="#0a0b0e">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="Mein Weg zum Deutschen | Aljohn Polyglot">
+    <meta property="og:description" content="Ein persönliches deutsches Sprachportal mit Video, Lernressourcen, Büchern und kuratierten Stimmen.">
+    <meta property="og:url" content="https://aljohnpolyglot.com/languages/german/">
+    <meta property="og:image" content="https://aljohnpolyglot.com/languages/german/images/hero/aljohn-german-meetup.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Mein Weg zum Deutschen | Aljohn Polyglot</title>
+    <link rel="canonical" href="https://aljohnpolyglot.com/languages/german/">
     <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-red: #C8102E;
-            --primary-blue: #003087;
-            --accent-yellow: lch(86.93% 87.16 91.27); /* Gold-like yellow */
-            --dark-text: #2c3e50;
-            --light-text: #ffffff;
-            --light-bg: #f8f9fa; /* Used for header background */
-            --border-color: #e0e0e0;
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Open Sans', sans-serif;
-            --font-mono: 'Roboto Mono', monospace;
-            --tech-cyan: #00A9FF;
-            --deep-space-blue: #0a0f1a; /* Darker blue for contrast */
-            --maintenance-page-bg: #0d1424; /* Specific background for this page */
-            --maintenance-panel-bg: rgba(10, 25, 47, 0.9); /* Panel background */
-            --maintenance-border: rgba(0, 169, 255, 0.25);
-            --maintenance-text-light: #e0f2f7;
-            --maintenance-text-secondary: #a8c0d8;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body.maintenance-page-active { /* Add this class to body in HTML */
-            font-family: var(--font-secondary);
-            background-color: var(--maintenance-page-bg);
-            color: var(--maintenance-text-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300A9FF' fill-opacity='0.04'%3E%3Cpath d='M0 25h50M25 0v50M12.5 0v50M37.5 0v50M0 12.5h50M0 37.5h50' stroke-width='0.5'/%3E%3Cpath d='M0 0h50v50H0z' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
-            padding-top: 70px; /* For fixed header */
-        }
-
-        /* Header Styles (Ensure these align with your global styles.css for consistency) */
-        /* If these are already perfectly defined in styles.css and linked, you might not need to repeat all of them here */
-        header {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background-color: var(--light-bg); /* Light background for contrast */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header nav.container { /* This is the inner container for nav content */
-            width: 90%;
-            max-width: 1100px; /* Or your site's standard max-width */
-            margin: 0 auto; /* Centers the nav content within the full-width header */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
-        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
-
-        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
-        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-
-        .nav-links li.dropdown { position: relative; }
-        .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-flex; align-items:center; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; padding-bottom: 5px; /* Match link padding */ }
-        .nav-links .dropbtn i.fa-caret-down { font-size: 0.8em; margin-left: 4px; }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--light-bg);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-            z-index: 1001;
-            border-radius: 0 0 6px 6px;
-            top: 100%;
-            left: 0; /* Aligns dropdown to the left of its parent li */
-            padding: 8px 0;
-            border: 1px solid var(--border-color);
-            border-top: none;
-            text-align: left; /* Ensures content within dropdown is left-aligned */
-        }
-        .dropdown-content a { color: var(--dark-text); padding: 10px 18px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
-        .dropdown-content a:hover { background-color: #e9ecef; color: var(--primary-red); }
-        .nav-links li.dropdown.open .dropdown-content { display: block; } /* For JS toggle */
-
-        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; font-size:0.9rem !important; }
-        .nav-cta:hover { background-color: #A8001D; color: var(--light-text) !important;}
-        .nav-cta:hover::after { width: 0 !important; } /* Prevent underline on CTA button */
-
-
-        .menu-toggle { display: none; /* Handled by global styles.css for mobile */ }
-
-
-        main.main-maintenance {
-            flex-grow: 1;
-            display: flex; /* Use flex to center its child */
-            align-items: center; /* Vertically center */
-            justify-content: center; /* Horizontally center */
-            width: 100%;
-            padding: 40px 20px; /* Adjusted top padding is handled by body */
-            text-align: center; /* Center text within this main block */
-        }
-
-        .container-maintenance {
-            background-color: var(--maintenance-panel-bg);
-            padding: 35px 40px 45px;
-            border-radius: 12px;
-            box-shadow: 0 0 40px rgba(0, 169, 255, 0.15), 0 0 15px rgba(0, 169, 255, 0.1);
-            border: 1px solid var(--maintenance-border);
-            max-width: 750px;
-            width: 100%;
-            /* text-align: center; is inherited from main.main-maintenance */
-        }
-
-        .maintenance-icon-area { margin-bottom: 1.8rem; }
-        .maintenance-icon-area img { max-width: 160px; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .maintenance-icon-area .fa-tools { display: none; /* Hide if image is present */ font-size: 4rem; color: var(--accent-yellow); animation: spin 8s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .maintenance-message h1 {
-            font-family: var(--font-primary);
-            font-size: clamp(1.8rem, 5vw, 2.6rem);
-            color: var(--accent-yellow);
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-        .maintenance-message .subtitle {
-            font-family: var(--font-secondary);
-            font-size: 1.15rem;
-            color: var(--tech-cyan);
-            margin-bottom: 1.8rem;
-            font-weight: 600;
-        }
-
-        .maintenance-description { font-size: 1.05rem; color: var(--maintenance-text-secondary); margin-bottom: 2.8rem; line-height: 1.75; }
-        .maintenance-description strong { color: var(--maintenance-text-light); }
-
-        .mini-challenge { margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px dashed var(--maintenance-border); }
-        .mini-challenge h2 { font-family: var(--font-primary); color: var(--maintenance-text-light); font-size: 1.6rem; margin-bottom: 1rem; }
-        .mini-challenge .challenge-word-display {
-            font-family: var(--font-mono); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--accent-yellow);
-            background-color: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px;
-            margin: 0.5rem auto 1.8rem; display: inline-block; border: 1px solid rgba(255,215,0,0.4);
-            font-weight: 500; letter-spacing: 1.5px;
-        }
-        .clues-container { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.8rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;}
-        .clue { background-color: rgba(0, 169, 255, 0.07); padding: 12px 18px; border-radius: 6px; border-left: 3px solid var(--tech-cyan); font-size: 0.95rem; color: var(--maintenance-text-secondary); }
-        .clue strong { color: var(--maintenance-text-light); }
-        .guess-input-area { margin-bottom: 1.8rem; }
-        .guess-input-area label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--maintenance-text-light); }
-        #languageGuess {
-            padding: 12px 18px; border-radius: 6px; border: 1px solid var(--maintenance-border);
-            background-color: rgba(0, 15, 30, 0.75); color: var(--maintenance-text-light);
-            font-size: 1rem; width: 100%; max-width: 320px; font-family: var(--font-secondary);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        #languageGuess::placeholder { color: rgba(168, 192, 216, 0.5); }
-        #languageGuess:focus { outline: none; border-color: var(--accent-yellow); box-shadow: 0 0 12px rgba(255,215,0,0.35); }
-
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; font-size: 1rem; margin: 8px; border: 2px solid transparent; }
-        .btn-primary { background-color: var(--accent-yellow); color: var(--deep-space-blue); border-color: var(--accent-yellow); }
-        .btn-primary:hover { background-color: lch(90% 90 91.27); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(255,215,0,0.2); }
-        .btn-secondary { background-color: transparent; color: var(--accent-yellow); border-color: var(--accent-yellow); }
-        .btn-secondary:hover { background-color: var(--accent-yellow); color: var(--deep-space-blue); transform: translateY(-2px); }
-        #feedbackMessage { margin-top: 1.2rem; font-weight: bold; min-height: 1.6em; font-size: 1.05rem; }
-        .feedback-correct { color: #2dce89; text-shadow: 0 0 5px rgba(45,206,137,0.5); }
-        .feedback-incorrect { color: #FF6347; text-shadow: 0 0 5px rgba(255,99,71,0.5); }
-
-        .navigation-links { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--maintenance-border); }
-        .navigation-links p { margin-bottom: 1.2rem; color: var(--maintenance-text-secondary); }
-
-        /* Footer specific styles for dark theme */
-        footer {
-            background-color: var(--deep-space-blue);
-            color: var(--maintenance-text-secondary);
-            padding: 50px 0 30px;
-            font-size: 0.9rem;
-            border-top: 2px solid var(--tech-cyan);
-            width:100%;
-            margin-top: auto; /* Pushes footer to bottom if content is short */
-        }
-        footer .footer-content { /* Assuming .container class is used for width/centering */
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
-        }
-        footer .footer-logo { display: flex; align-items: center; text-decoration: none; }
-        footer .footer-logo .logo-img { border-color: var(--accent-yellow); } /* From your main styles */
-        footer .footer-logo span { font-family: var(--font-primary); font-size: 1.3rem; color: var(--maintenance-text-light); }
-        footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 25px; margin:0; padding:0; list-style:none; }
-        footer .footer-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-        footer .footer-links a:hover { color: var(--accent-yellow); text-decoration:underline; }
-        footer .social-links a { color: var(--maintenance-text-secondary); text-decoration: none; font-size: 1.6rem; margin-left: 18px; transition: color 0.3s ease, transform 0.2s ease; }
-        footer .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
-        footer .copyright { text-align: center; border-top: 1px solid var(--maintenance-border); padding-top: 1.8rem; margin-top: 1.8rem; font-size: 0.85rem; color: rgba(168, 192, 216, 0.7); }
-
-        /* Responsive adjustments for maintenance page header/footer */
-        @media (max-width: 768px) {
-            body.maintenance-page-active {
-                padding-top: 60px; /* Adjust if mobile header height is different */
-            }
-            header nav.container {
-                height: 60px; /* Adjust if mobile header height is different */
-                /* If nav-links are hidden by default via main styles.css display:none, this is fine */
-                /* If they are not, and menu-toggle handles it, ensure menu-toggle is styled for this page */
-            }
-            .nav-links { /* This ensures mobile menu (if toggled by JS) behaves */
-                display: none; /* Initially hidden */
-                flex-direction: column;
-                position: absolute;
-                top: 100%; /* Position below header */
-                left: 0;
-                width: 100%;
-                background-color: var(--light-bg);
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-                padding: 10px 0;
-            }
-            .nav-links.active { display: flex; } /* JS adds 'active' to show */
-            .nav-links li { margin: 10px 0; width:100%; text-align:center;}
-            .nav-links a, .nav-links .dropbtn { width:100%; justify-content: center; }
-            .dropdown-content { position: static; box-shadow:none; border:none; background-color: #f0f0f0; /* Slightly different for contrast */}
-
-            .menu-toggle { display: block; /* Usually handled by global styles.css */ cursor:pointer; /* ... add your hamburger styles ... */ }
-
-
-            .container-maintenance { padding: 25px 20px 30px; }
-            .maintenance-message h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
-            .maintenance-message .subtitle { font-size: 1rem; }
-            .mini-challenge .challenge-word-display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
-
-            footer .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
-        }
-    </style>
+    <link rel="preload" as="image" href="images/hero/aljohn-german-meetup.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/page-language-german.css">
 </head>
-<body class="maintenance-page-active">
+<body class="german-page">
     <!--
-      FUTURE GERMAN PORTAL — DATA PASS ONLY AS OF 2026-08-29
-      Do not treat this maintenance screen as the German art direction and do not generate a finished UI during a research/curation pass.
-      Design the eventual portal deliberately with Aljohn in a separate Impeccable UI pass.
-
-      Prepared, currently unwired data:
-      - js/data/german-creators-data.json (complete creators and personalities; records remain eligible when personalComment is null)
-      - js/data/german-playlist-data.js (Aljohn's verified personal playlist)
-      - js/data/german-podcasts-data.js (privately frequency-ordered podcast research; never expose counts or rankings)
-      - js/data/german-learning-resources-data.js
-      - js/data/german-books-data.js (ID-only bridge to the canonical library catalogue)
-
-      Required future learning modules:
-      - Language Transfer — Complete German. Use the canonical Language Transfer/SoundCloud player, set
-        https://soundcloud.com/languagetransfer/sets/complete-german-more-on-the and first track
-        https://soundcloud.com/languagetransfer/01a. Preserve the honest note that the official course is unfinished.
-        Do not copy SoundCloud's generated internal player DOM; use its supported embed/oEmbed route.
-      - Linguno German: listening, conjugation, vocabulary, crossword, and study tools. Canonical data and URLs are in
-        js/data/german-learning-resources-data.js.
-      - Native German book resources are mandatory. Reuse canonical covers and bibliographic metadata from
-        ../../library/index.html, and queue German books discovered here back into that canonical library.
-
-      Curation reminder: Instagram-followed personalities are independent evidence even when Aljohn rarely watches them on
-      YouTube. Emilia & Letizia / Twins on Ice are already prepared from that Instagram signal.
+    THESIS: Aljohns vertrautes Sprachportal wird von der wörtlichen V-Naht des Deutschland-Trikots von 1990 geordnet; es verweigert die austauschbare Flaggenhaut ebenso wie den Sportshop.
+    OWN-WORLD: Optisch weißes Trikotgewebe, echtes Schwarz, Signalrot und Trophäengold treffen auf kondensierte Sporttypografie, klare Leseschrift, Nähte und horizontale Regalspuren.
+    STORY: Besucher verstehen zuerst Aljohns reale deutsche Begegnung, sehen sein einziges deutsches Video und gehen dann weiter zu Lernmitteln, Büchern und eigenständigen Stimmen-Regalen.
+    FIRST VIEWPORT: Unter globaler und lokaler Navigation teilt sich die Bühne in persönliche Geschichte und echten Videoplayer; dazwischen schneidet ein übergroßes schwarzes, rotes und goldenes V durch die Fläche.
+    FORM: category-standard familiar language portal; user-selected comp `.impeccable/mocks/german-familiar-portal-selected.webp`; seed e37d0638.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
     -->
-   <header id="main-header-placeholder"></header>
-    <main class="main-maintenance">
-        <div class="container-maintenance">
-            <div class="maintenance-icon-area">
-                <img src="../../images/aljohn_scientist.png" alt="Aljohn working on updates">
-                <i class="fas fa-tools"></i>
-            </div>
-            <div class="maintenance-message">
-                <h1>System Upgrade in Progress!</h1>
-                <p class="subtitle">Aljohn's Language Lab is Currently Under Construction</p>
-            </div>
-            <div class="maintenance-description">
-                <p>Don't worry, I'm busy brewing up some exciting new content and features for this corner of the Polyglot-verse! It'll be back online, better than ever, very soon.</p>
-                <p>In the meantime, why not take a quick linguistic challenge?</p>
-            </div>
+    <a class="skip-link-de" href="#main-content">Zum Inhalt springen</a>
+    <header id="main-header-placeholder"></header>
 
-            <div class="mini-challenge">
-                <h2>Linguistic Puzzle Break!</h2>
-                <p>This word means something like "to build" or "to create".<br>Can you guess which language it's from?</p>
-                <div class="challenge-word-display" id="challengeWordDisplay">MEMBANGUN</div>
-
-                <div class="clues-container">
-                    <div class="clue" id="clue1"><strong>Clue 1:</strong> My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.</div>
-                    <div class="clue" id="clue2"><strong>Clue 2:</strong> I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.</div>
-                    <div class="clue" id="clue3"><strong>Clue 3:</strong> Think "Selamat Pagi," "Terima Kasih," and islands like Bali or Java.</div>
-                </div>
-
-                <div class="guess-input-area">
-                    <label for="languageGuess">Your guessed language:</label>
-                    <input type="text" id="languageGuess" name="languageGuess" placeholder="e.g., French, Spanish...">
-                </div>
-                <button id="submitGuessBtn" class="btn btn-primary">Submit Guess</button>
-                <button id="newWordBtn" class="btn btn-secondary" style="display: none;">New Word Puzzle!</button>
-                <div id="feedbackMessage"></div>
-            </div>
-
-            <div class="navigation-links">
-                <p>While this section is being polished, feel free to explore other parts of my world:</p>
-                <a href="../../index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Aljohn Polyglot Home</a>
-                <a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> My YouTube Channel</a>
-            </div>
+    <nav class="chapter-nav-de" aria-label="Kapitel der deutschen Seite">
+        <a class="chapter-mark-de" href="#uebersicht" aria-label="Zur Übersicht">
+            <span class="flag-de" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>Deutsch</span>
+        </a>
+        <div class="chapter-track-de">
+            <a href="#uebersicht" aria-current="location">Übersicht</a>
+            <a href="#meine-videos">Meine Videos</a>
+            <a href="#lernweg">Lernweg</a>
+            <a href="#extra-deutsch">Extr@</a>
+            <a href="#buecher">Bücher</a>
+            <a href="#stimmen">Stimmen</a>
+            <a href="#institutionen">Institutionen</a>
+            <a href="#schluss">Weiter</a>
         </div>
+        <a class="chapter-channel-de" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Kanal <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    </nav>
+
+    <main id="main-content" class="german-main">
+        <section id="uebersicht" class="hero-de" aria-labelledby="hero-title-de">
+            <div class="hero-story-de">
+                <h1 id="hero-title-de">Mein Weg zum Deutschen</h1>
+                <div class="hero-stripe-de" aria-hidden="true"></div>
+                <p>Mein erstes Gespräch auf Deutsch in den Philippinen begann ausgerechnet bei einem spanischen Sprachstammtisch. Dort traf ich Alex, der zwischen Sprachen wechselte, und Francis, mit dem ich hier zum ersten Mal Deutsch sprach.</p>
+                <p>Diese Begegnung zeigt, wie ich Sprachen am liebsten lerne: zuhören, ausprobieren, Fehler zulassen und echte Gespräche suchen.</p>
+                <div class="hero-actions-de">
+                    <a class="button-de button-primary-de" href="#meine-videos"><i class="fa-solid fa-play" aria-hidden="true"></i> Video ansehen</a>
+                    <a class="button-de button-quiet-de" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Mein Kanal <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+
+            <div class="hero-chevron-de" aria-hidden="true">
+                <span class="chevron-black-de"></span>
+                <span class="chevron-red-de"></span>
+                <span class="chevron-gold-de"></span>
+            </div>
+
+            <div id="meine-videos" class="hero-video-de" aria-labelledby="personal-video-heading-de">
+                <div class="featured-player-de">
+                    <iframe id="german-featured-player" src="https://www.youtube.com/embed/05cY5vrtXu0?rel=0&amp;list=PLHC88jnBSUqIHoAHrUt_vBVPHDtM_x604" title="Aljohns deutsches Video" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="featured-copy-de" aria-live="polite" aria-atomic="true">
+                    <h2 id="personal-video-heading-de">This Indonesian Polyglot HUMILIATED Me in 8 Languages (I Rage Quit)</h2>
+                    <div class="featured-meta-de"><span id="german-video-meta">15:49 · 7. August 2025</span><a id="german-playlist-link" href="https://www.youtube.com/watch?v=05cY5vrtXu0&amp;list=PLHC88jnBSUqIHoAHrUt_vBVPHDtM_x604" target="_blank" rel="noopener noreferrer">Playlist öffnen <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </div>
+                <ol id="german-playlist-list" class="playlist-list-de" aria-label="Aljohns deutsche Playlist"></ol>
+                <noscript><p class="noscript-de"><a href="https://www.youtube.com/watch?v=05cY5vrtXu0&amp;list=PLHC88jnBSUqIHoAHrUt_vBVPHDtM_x604">Video auf YouTube ansehen</a></p></noscript>
+            </div>
+        </section>
+
+        <section class="route-de" aria-labelledby="route-heading-de">
+            <header class="section-heading-de route-heading-de">
+                <h2 id="route-heading-de">Starte deine Reise</h2>
+            </header>
+            <div class="route-track-de">
+                <a href="#complete-german" class="route-link-de">
+                    <i class="fa-solid fa-headphones" aria-hidden="true"></i>
+                    <span><strong>Complete German</strong><small>Geführter Audiokurs für Strukturen und Lautdenken.</small></span>
+                    <b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+                </a>
+                <a href="#linguno" class="route-link-de">
+                    <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                    <span><strong>Linguno</strong><small>Hören, konjugieren und Wörter im Satz üben.</small></span>
+                    <b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+                </a>
+                <a href="#extra-deutsch" class="route-link-de">
+                    <i class="fa-solid fa-tv" aria-hidden="true"></i>
+                    <span><strong>Extr@</strong><small>13 kurze Sitcom-Folgen mit sichtbarem Alltagskontext.</small></span>
+                    <b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+                </a>
+                <a href="#buecher" class="route-link-de">
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    <span><strong>Bücher</strong><small>Von sichtbarer Handlung zu dichter Originalsprache.</small></span>
+                    <b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+                </a>
+                <a href="#stimmen" class="route-link-de">
+                    <i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>
+                    <span><strong>Stimmen</strong><small>Deutsch in Sport, Alltag, Medien und Kultur.</small></span>
+                    <b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+                </a>
+            </div>
+        </section>
+
+        <section id="lernweg" class="learning-de" aria-labelledby="learning-heading-de">
+            <div class="section-heading-de section-heading-left-de">
+                <h2 id="learning-heading-de">Hören, denken, anwenden</h2>
+                <p>Zwei Werkzeuge, zwei unterschiedliche Aufgaben: erst Strukturen hörend aufbauen, dann einzelne Schwierigkeiten gezielt üben.</p>
+            </div>
+
+            <article id="complete-german" class="learning-module-de learning-audio-de">
+                <div class="learning-copy-de">
+                    <span class="module-mark-de"><i class="fa-solid fa-headphones" aria-hidden="true"></i></span>
+                    <h3>Complete German</h3>
+                    <p>Language Transfer entwickelt deutsche Strukturen in einem geführten Gespräch. Der offizielle Kurs ist noch unvollendet; die vorhandenen Lektionen eignen sich für den Einstieg und bewusstes Lautdenken.</p>
+                    <p class="practice-note-de"><strong>So nutze ich ihn:</strong> Eine Lektion am Stück hören, Antworten laut formulieren und denselben Track später noch einmal spielen.</p>
+                    <div class="module-actions-de">
+                        <a class="button-de button-primary-de" href="https://soundcloud.com/languagetransfer/sets/complete-german-more-on-the" target="_blank" rel="noopener noreferrer">Alle Tracks <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        <a class="button-de button-quiet-de" href="https://www.languagetransfer.org/german" target="_blank" rel="noopener noreferrer">Zum Kurs</a>
+                    </div>
+                </div>
+                <div class="soundcloud-frame-de">
+                    <iframe title="Complete German von Language Transfer" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/157713757&amp;color=%23b40a0d&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true" width="100%" height="450" loading="eager" scrolling="no" frameborder="0" allow="autoplay"></iframe>
+                </div>
+            </article>
+
+            <article id="linguno" class="learning-module-de learning-practice-de">
+                <div class="linguno-visual-de">
+                    <img src="../../images/apps/linguno-german-jersey.png" width="1254" height="1254" loading="lazy" decoding="async" alt="Runder Linguno-Pinguin im weißen Deutschland-Trikot mit schwarzem, rotem und goldenem V-Motiv">
+                    <span aria-hidden="true">A1–C1</span>
+                </div>
+                <div class="learning-copy-de">
+                    <h3>Linguno Deutsch</h3>
+                    <p>Adaptive Hörübungen, Konjugation in vollständigen Sätzen, Wortlisten, Kreuzworträtsel und ein Nachschlagewerk machen Linguno zum kompakten Trainingsplatz zwischen zwei längeren Immersionsphasen.</p>
+                    <p class="practice-note-de"><strong>Für eine kurze Einheit:</strong> Erst ein Hörniveau wählen und danach dieselben problematischen Wörter oder Verbformen gezielt wiederholen.</p>
+                    <div class="module-actions-de">
+                        <a class="button-de button-primary-de" href="https://www.linguno.com/language/ger/" target="_blank" rel="noopener noreferrer">Deutsch üben <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        <a class="button-de button-quiet-de" href="https://www.linguno.com/practice/listening/demo/?lang=ger" target="_blank" rel="noopener noreferrer">Hörübung testen</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="extra-deutsch" class="extra-de" aria-labelledby="extra-heading-de">
+            <div class="section-heading-de section-heading-left-de">
+                <h2 id="extra-heading-de">Extr@ auf Deutsch</h2>
+                <p>Die Sitcom setzt Alltagssprache in sichtbare Situationen: Wohnung, Freundschaft, Missverständnisse und wiederkehrende Wendungen. Wähle eine der 13 Folgen und bleibe im selben Player.</p>
+            </div>
+            <div class="extra-layout-de">
+                <div class="extra-player-column-de">
+                    <div class="featured-player-de extra-player-frame-de">
+                        <iframe id="extra-player-de" src="https://www.youtube.com/embed/6jrm6f9aS9k?rel=0&amp;list=PLtLp08LfvxttE4NbSXMYf9zl328IQ4FAP" title="Extr@ auf Deutsch" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="extra-player-meta-de" aria-live="polite" aria-atomic="true">
+                        <div><p>Aktuelle Folge</p><h3 id="extra-title-de">Extr@ auf Deutsch — Folge 1</h3></div>
+                        <span id="extra-meta-de">24:01</span>
+                    </div>
+                    <a id="extra-youtube-link-de" class="button-de button-quiet-de" href="https://www.youtube.com/watch?v=6jrm6f9aS9k&amp;list=PLtLp08LfvxttE4NbSXMYf9zl328IQ4FAP" target="_blank" rel="noopener noreferrer">Playlist auf YouTube <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+                <div class="extra-list-shell-de">
+                    <div class="extra-list-heading-de"><h3>Folge wählen</h3><span>Deutsch im Kontext</span></div>
+                    <ol id="extra-playlist-list-de" class="extra-playlist-list-de" aria-label="Folgen von Extr@ auf Deutsch"></ol>
+                </div>
+            </div>
+            <noscript><p class="noscript-de"><a href="https://www.youtube.com/watch?v=6jrm6f9aS9k&amp;list=PLtLp08LfvxttE4NbSXMYf9zl328IQ4FAP">Extr@ auf Deutsch auf YouTube öffnen</a></p></noscript>
+        </section>
+
+        <section id="buecher" class="books-de" aria-labelledby="books-heading-de">
+            <div class="section-heading-de section-heading-left-de">
+                <h2 id="books-heading-de">Deutsch zwischen zwei Buchdeckeln</h2>
+                <p>Diese Auswahl beginnt mit sichtbarer Handlung und führt zu anspruchsvoller literarischer und philosophischer Sprache. Öffne ein Buch für Niveau, Einordnung und verfügbare Formate.</p>
+            </div>
+            <div class="shelf-control-row-de">
+                <p id="books-instructions-de">Mit den Pfeilen oder horizontal durch die Bücher blättern.</p>
+                <div class="shelf-buttons-de" role="group" aria-label="Bücher durchblättern">
+                    <button id="books-prev-de" type="button" aria-label="Vorherige Bücher"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                    <button id="books-next-de" type="button" aria-label="Nächste Bücher"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <ul id="books-shelf-de" class="books-shelf-de" aria-describedby="books-instructions-de"></ul>
+            <p id="books-status-de" class="surface-status-de" role="status">Bücher werden geladen …</p>
+        </section>
+
+        <section id="stimmen" class="creators-de" aria-labelledby="creators-heading-de">
+            <div class="creator-heading-row-de">
+                <div class="section-heading-de section-heading-left-de">
+                    <h2 id="creators-heading-de">Deutsch hat viele Stimmen</h2>
+                    <p>Jedes Thema behält sein eigenes Regal. Wähle ein Niveau, ohne Sport, Musik, Nachrichten und Alltag in ein einziges Raster zu mischen.</p>
+                </div>
+                <label class="cefr-filter-de" for="creator-level-de">
+                    <span>GER-Niveau</span>
+                    <select id="creator-level-de" aria-describedby="creator-filter-status-de">
+                        <option value="all" selected>Alle Niveaus</option>
+                        <option value="A1">A1</option>
+                        <option value="A2">A2</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>
+                    </select>
+                </label>
+            </div>
+            <p id="creator-filter-status-de" class="surface-status-de" role="status" aria-live="polite">Die Regale werden geladen …</p>
+            <div id="creator-shelves-de" class="creator-shelves-de"></div>
+            <div id="creator-empty-de" class="empty-state-de" hidden>
+                <h3>Für dieses Niveau ist gerade kein Regal sichtbar.</h3>
+                <p>Wähle „Alle Niveaus“, um die vollständige Auswahl wieder zu öffnen.</p>
+                <button id="creator-reset-de" class="button-de button-primary-de" type="button">Alle Niveaus zeigen</button>
+            </div>
+        </section>
+
+        <section id="institutionen" class="institutions-de" aria-labelledby="institutions-heading-de">
+            <div class="section-heading-de section-heading-left-de">
+                <h2 id="institutions-heading-de">Deutsch zwischen den Philippinen und Deutschland</h2>
+                <p>Diese beiden offiziellen Anlaufstellen stehen bewusst außerhalb der Creator-Regale. Das Goethe-Institut führt zu Sprache und Kultur; die Deutsche Botschaft ordnet Austausch und Beziehungen zwischen beiden Ländern ein.</p>
+            </div>
+            <div id="institution-cards-de" class="institution-cards-de"></div>
+        </section>
+
+        <section id="schluss" class="closing-de" aria-labelledby="closing-heading-de">
+            <div class="closing-chevron-de" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="closing-copy-de">
+                <h2 id="closing-heading-de">Der nächste Satz darf noch holpern.</h2>
+                <p>Mein erstes deutsches Gespräch hier war nicht perfekt — und genau deshalb war es echt. Ich möchte weiter zuhören, sprechen, korrigieren und Menschen begegnen, die dem Deutschen ihre eigene Stimme geben.</p>
+                <a class="button-de button-primary-de" href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer">Meine Reise weiterverfolgen <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+        </section>
     </main>
- <div id="main-footer-placeholder"></div> <!-- REPLACE YOUR OLD FOOTER WITH THIS -->
- <script>
-  let siteBasePath;
 
-  if (
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1' ||
-    window.location.protocol === 'file:'
-  ) {
-    siteBasePath = '/';
-  } else {
-    siteBasePath = '/';
-  }
+    <div id="creator-modal-de" class="modal-de" hidden aria-hidden="true">
+        <div class="modal-backdrop-de" data-creator-close></div>
+        <article class="modal-dialog-de creator-dialog-de" role="dialog" aria-modal="true" aria-labelledby="creator-modal-title-de" aria-describedby="creator-modal-description-de creator-modal-guidance-de" tabindex="-1">
+            <div class="modal-stripe-de" aria-hidden="true"></div>
+            <button id="creator-modal-close-de" class="modal-close-de" type="button" aria-label="Creator-Fenster schließen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            <div class="creator-modal-profile-de">
+                <img id="creator-modal-image-de" src="images/creators/creator-fallback.svg" width="360" height="360" alt="">
+                <div>
+                    <p id="creator-modal-category-de"></p>
+                    <h2 id="creator-modal-title-de">Deutschsprachige Stimme</h2>
+                    <p id="creator-modal-level-de"></p>
+                    <a id="creator-modal-credit-de" class="creator-image-credit-de" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+                </div>
+            </div>
+            <div class="creator-modal-copy-de">
+                <p id="creator-modal-description-de"></p>
+                <div id="creator-modal-personal-de" class="personal-note-de" hidden>
+                    <h3>Aljohns Notiz</h3>
+                    <p id="creator-modal-personal-copy-de"></p>
+                </div>
+                <div class="listening-note-de">
+                    <h3>Hörhinweis</h3>
+                    <p id="creator-modal-guidance-de"></p>
+                </div>
+            </div>
+            <div class="creator-modal-media-de">
+                <h3>Ein Beispiel zum Reinhören</h3>
+                <div class="modal-video-de">
+                    <iframe id="creator-modal-video-de" src="about:blank" title="Beispielvideo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p id="creator-video-unavailable-de" hidden>Für diese Stimme ist derzeit kein überprüftes Video verfügbar. Die offiziellen Links bleiben zugänglich.</p>
+                </div>
+                <div id="creator-modal-links-de" class="modal-links-de"></div>
+            </div>
+        </article>
+    </div>
 
-  console.log('Global siteBasePath set to:', siteBasePath);
-</script>
+    <div id="book-modal-de" class="modal-de" hidden aria-hidden="true">
+        <div class="modal-backdrop-de" data-book-close></div>
+        <article class="modal-dialog-de book-dialog-de" role="dialog" aria-modal="true" aria-labelledby="book-modal-title-de" aria-describedby="book-modal-description-de book-modal-guidance-de" tabindex="-1">
+            <div class="modal-stripe-de" aria-hidden="true"></div>
+            <button id="book-modal-close-de" class="modal-close-de" type="button" aria-label="Buchfenster schließen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            <div class="book-modal-cover-de"><img id="book-modal-image-de" src="../../library/images/books/de/de_grimms_maerchen.webp" width="720" height="934" alt=""></div>
+            <div class="book-modal-copy-de">
+                <p id="book-modal-category-de">Deutsches Buch</p>
+                <h2 id="book-modal-title-de">Grimms Märchen</h2>
+                <p id="book-modal-author-de"></p>
+                <p id="book-modal-level-de"></p>
+                <p id="book-modal-description-de"></p>
+                <div class="reading-note-de">
+                    <h3>So kannst du anfangen</h3>
+                    <p id="book-modal-guidance-de"></p>
+                </div>
+                <div id="book-modal-links-de" class="modal-links-de"></div>
+            </div>
+        </article>
+    </div>
 
-<script src="../../js/navbar-loader.js" defer></script>
-<script src="../../js/footer-loader.js" defer></script>
-    <script>
-        // Mini Challenge Game Logic
-        const maintenanceWords = [
-            { word: "MEMBANGUN", language: "Indonesian", clues: ["My language is an Austronesian tongue, spoken by over 200 million people in a vast archipelago.", "I am known for my relatively simple grammar (no noun genders or verb conjugations for tense!) making me inviting for learners.", "Think 'Selamat Pagi,' 'Terima Kasih,' and islands like Bali or Java."] },
-            { word: "COSTRUIRE", language: "Italian", clues: ["I am the language of Dante, Da Vinci, and decadent pasta dishes. My words often end melodically.", "From Roman engineering marvels to Renaissance masterpieces, my speakers have always been master builders.", "Think 'Ciao,' 'Grazie,' and a city famous for its leaning tower."] },
-            { word: "CONSTRUIR", language: "Spanish", clues: ["From ancient pyramids in the Americas to Gaudi's Sagrada Familia, my speakers have a rich history of creation.", "I am spoken across many continents, known for my rolled 'r's and vibrant cultures.", "Think 'Hola,' 'Gracias,' and famous architects like Santiago Calatrava."] },
-            { word: "CONSTRUIRE", language: "French", clues: ["My speakers are famed for their elegant architecture, from Gothic cathedrals to the Eiffel Tower.", "I am a global language of diplomacy, fashion, and fine cuisine.", "Think 'Bonjour,' 'Merci,' and iconic structures along the Seine river."] },
-            { word: "BAUEN", language: "German", clues: ["Known for precision engineering and magnificent castles, my speakers value structure and order.", "From Bauhaus design to advanced automotive technology, innovation is key in my heartland.", "Think 'Guten Tag,' 'Danke,' and the Brandenburg Gate."] },
-            { word: "СТРОИТЬ (Stroit')", language: "Russian", clues: ["My script is Cyrillic, and my speakers have constructed everything from onion-domed cathedrals to vast space stations.", "From the Kremlin to intricate metro stations, grand structures define many of my cities.", "Think 'Privet,' 'Spasibo,' and the vastness of Siberia."] },
-            { word: "BYGGA", language: "Swedish", clues: ["My speakers are known for minimalist design, flat-pack furniture, and a strong focus on sustainability.", "From Viking longhouses to modern eco-friendly architecture, functionality is key.", "Think 'Hej,' 'Tack,' and the land of the Nobel Prize."] },
-            { word: "PAGTAYO / PAGBUO", language: "Tagalog", clues: ["From ancient rice terraces carved into mountains to modern skyscrapers in bustling cities, my speakers are resilient builders.", "As the national language of an archipelagic nation, I incorporate words from many influences.", "Think 'Kamusta,' 'Salamat,' and the iconic bahay kubo."] },
-            { word: "PAGGAWA / PAGTUKOD", language: "Cebuano", clues: ["Spoken in the central islands of the Philippines, my speakers have a rich maritime history and traditions of community building.", "From historic churches to vibrant local markets, my spirit is found in communal creation.", "Think 'Maayong buntag,' 'Daghang salamat,' and the Magellan's Cross."] },
-            { word: "CONSTRUIR", language: "Portuguese", clues: ["From colonial architecture in Brazil to intricate tilework in Lisbon, my speakers have left their mark across continents.", "The language of explorers who 'built' new trade routes and connections across the globe.", "Think 'Olá,' 'Obrigado,' and the colorful streets of Salvador or Porto."] }
-        ];
-        let currentChallenge;
-        const challengeWordDisplay = document.getElementById('challengeWordDisplay');
-        const cluesContainer = document.querySelector('.clues-container');
-        const languageGuessInput = document.getElementById('languageGuess');
-        const submitGuessBtn = document.getElementById('submitGuessBtn');
-        const newWordBtn = document.getElementById('newWordBtn');
-        const feedbackMessage = document.getElementById('feedbackMessage');
+    <div id="main-footer-placeholder"></div>
 
-        function setupNewMaintenanceChallenge() {
-            currentChallenge = maintenanceWords[Math.floor(Math.random() * maintenanceWords.length)];
-            challengeWordDisplay.textContent = currentChallenge.word;
-            cluesContainer.innerHTML = '';
-            currentChallenge.clues.forEach((clueText, index) => {
-                const clueDiv = document.createElement('div');
-                clueDiv.classList.add('clue');
-                clueDiv.innerHTML = `<strong>Clue ${index + 1}:</strong> ${clueText}`;
-                cluesContainer.appendChild(clueDiv);
-            });
-            feedbackMessage.textContent = ''; languageGuessInput.value = '';
-            submitGuessBtn.disabled = false; languageGuessInput.disabled = false;
-            languageGuessInput.focus(); newWordBtn.style.display = 'none';
-        }
-        if (submitGuessBtn) { // Check if elements exist (they should on this page)
-            submitGuessBtn.addEventListener('click', function() {
-                const userGuess = languageGuessInput.value.trim().toLowerCase();
-                const correctAnswer = currentChallenge.language.toLowerCase();
-                if (!userGuess) {
-                    feedbackMessage.textContent = "Please enter your language guess!";
-                    feedbackMessage.className = 'feedback-incorrect'; return;
-                }
-                if (userGuess === correctAnswer) {
-                    feedbackMessage.textContent = `Correcto! "${currentChallenge.word}" is ${currentChallenge.language}! The lab will be back online soon!`;
-                    feedbackMessage.className = 'feedback-correct';
-                    submitGuessBtn.disabled = true; languageGuessInput.disabled = true;
-                    newWordBtn.style.display = 'inline-block';
-                } else {
-                    feedbackMessage.textContent = `Not quite this time! "${currentChallenge.word}" isn't from ${languageGuessInput.value}. Try a new puzzle or explore the site!`;
-                    feedbackMessage.className = 'feedback-incorrect';
-                    newWordBtn.style.display = 'inline-block'; // Show new word button even on incorrect guess
-                }
-            });
-            languageGuessInput.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' && !submitGuessBtn.disabled) { submitGuessBtn.click(); }
-            });
-            newWordBtn.addEventListener('click', setupNewMaintenanceChallenge);
-            setupNewMaintenanceChallenge(); // Initialize
-        }
-
-        // Copyright Year
-        const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
-
-        // Mobile Menu Toggle (assuming .menu-toggle and .nav-links structure from global nav)
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active'); // JS toggles this class
-                menuToggle.classList.toggle('active'); // For hamburger animation
-            });
-        }
-
-        // Desktop Dropdown Menu Logic
-        const desktopDropdowns = document.querySelectorAll('header .nav-links > li.dropdown');
-        desktopDropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('a.dropbtn');
-            if (button) {
-                button.setAttribute('aria-haspopup', 'true');
-                button.setAttribute('aria-expanded', 'false');
-                button.addEventListener('click', function(event) {
-                    // For dropdowns where dropbtn itself is not a page link
-                    if (button.getAttribute('href') === 'javascript:void(0)' || button.getAttribute('href') === '#') {
-                        event.preventDefault();
-                    }
-                    // If it's a link to a page section (like index.html#languages), allow default but still open dropdown
-                    // For now, let's assume all dropbtns are primarily for toggling
-                    if (button.getAttribute('href').startsWith('#') && button.getAttribute('href') !== 'javascript:void(0)') {
-                        // If it's a fragment identifier for the same page, we might still want to prevent default and handle scroll
-                        // But for now, we focus on the toggle action
-                    } else {
-                         event.preventDefault(); // Prevent navigation for most dropbtn clicks
-                    }
-
-
-                    const isCurrentlyOpen = dropdown.classList.contains('open');
-                    desktopDropdowns.forEach(otherDd => {
-                        if (otherDd !== dropdown) {
-                            otherDd.classList.remove('open');
-                            const otherButton = otherDd.querySelector('a.dropbtn');
-                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    if (isCurrentlyOpen) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        dropdown.classList.add('open');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                    event.stopPropagation();
-                });
-            }
-        });
-        document.addEventListener('click', function(event) {
-            desktopDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove('open');
-                    const button = dropdown.querySelector('a.dropbtn');
-                    if (button) button.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    </script>
+    <script>window.siteBasePath = '/';</script>
+    <script type="module" src="js/german-page.js"></script>
 </body>
 </html>

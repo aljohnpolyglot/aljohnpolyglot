@@ -5,6 +5,6 @@ Estas imagens foram fornecidas por Aljohn na pasta Downloads para um futuro mód
 | Arquivo local | Arquivo fornecido | Uso futuro documentado |
 | --- | --- | --- |
 | `angolan-event-interview-blue-suit.jpg` | `angola2.jpg` | Registro de encontro e gravação de entrevista em português. |
-| `angolan-event-group-portrait.jpg` | `angolaneventwithcreatormechyiforgotthespelling.jpg` | Registro coletivo de encontro da comunidade angolana; a identidade não confirmada da participante não foi publicada. |
+| `angolan-event-group-portrait.jpg` | `angolaneventwithcreatormechyiforgotthespelling.jpg` | Registro coletivo com a criadora angolana Melly Chi durante uma gala africana nas Filipinas. |
 | `angolan-portuguese-interview.jpg` | `angolaportugueseinterview.jpg` | Registro de entrevista em português. |
 | `calvin-castiel-with-aljohn.jpg` | `calvin.jpg` | Registro de Calvin Castiel com Aljohn e outro participante. |

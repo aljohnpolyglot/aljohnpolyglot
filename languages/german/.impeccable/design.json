@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-30T14:38:45.9371329+08:00",
+  "title": "Design System: Trikot-Schneise",
+  "extensions": {
+    "colorMeta": {
+      "display-ink": {
+        "role": "neutral",
+        "displayName": "Display Ink",
+        "canonical": "#07080b",
+        "tonalRamp": ["#07080b", "#202126", "#3b3d43", "#5b5d64", "#808188", "#a8a9ae", "#d2d2d5", "#f3f3f4"]
+      },
+      "jersey-black": {
+        "role": "primary",
+        "displayName": "Jersey Black",
+        "canonical": "#0a0b0e",
+        "tonalRamp": ["#0a0b0e", "#232429", "#3e4046", "#5e6067", "#83848b", "#aaaaaf", "#d3d4d6", "#f4f4f5"]
+      },
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "#b40a0d",
+        "tonalRamp": ["#340103", "#610305", "#8d0608", "#b40a0d", "#d6383b", "#e97678", "#f2afb0", "#fde6e6"]
+      },
+      "signal-red-deep": {
+        "role": "primary",
+        "displayName": "Deep Signal Red",
+        "canonical": "#8f0709",
+        "tonalRamp": ["#2b0102", "#520204", "#760406", "#8f0709", "#b53537", "#d16d6f", "#e8aaab", "#f9e4e4"]
+      },
+      "trophy-gold": {
+        "role": "secondary",
+        "displayName": "Trophy Gold",
+        "canonical": "#eaae0a",
+        "tonalRamp": ["#3b2b00", "#6c4d00", "#9d7300", "#c89400", "#eaae0a", "#f3ca55", "#f8df98", "#fff4d5"]
+      },
+      "jersey-paper": {
+        "role": "neutral",
+        "displayName": "Jersey Paper",
+        "canonical": "#f8f8f8",
+        "tonalRamp": ["#262626", "#4b4b4b", "#727272", "#9a9a9a", "#bfbfbf", "#dddddd", "#efefef", "#f8f8f8"]
+      },
+      "optic-white": {
+        "role": "neutral",
+        "displayName": "Optic White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#282828", "#505050", "#787878", "#a0a0a0", "#c4c4c4", "#dedede", "#f0f0f0", "#ffffff"]
+      },
+      "mesh-soft": {
+        "role": "neutral",
+        "displayName": "Mesh Soft",
+        "canonical": "#efefec",
+        "tonalRamp": ["#252524", "#494948", "#6e6e6c", "#969694", "#b9b9b6", "#d2d2cf", "#e5e5e2", "#f7f7f4"]
+      },
+      "card-rule": {
+        "role": "neutral",
+        "displayName": "Card Rule",
+        "canonical": "#d7d7d3",
+        "tonalRamp": ["#222221", "#434342", "#666664", "#8b8b88", "#adadaa", "#c6c6c2", "#d7d7d3", "#f2f2ef"]
+      },
+      "muted-graphite": {
+        "role": "neutral",
+        "displayName": "Muted Graphite",
+        "canonical": "#52545a",
+        "tonalRamp": ["#17181b", "#2d2f34", "#44464c", "#5d5f66", "#7b7d84", "#a0a1a6", "#cacace", "#f0f0f1"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Athletic Display", "purpose": "The opening statement and singular high-impact titles." },
+      "headline": { "displayName": "Chapter Headline", "purpose": "Major uppercase section and closing titles." },
+      "title": { "displayName": "Editorial Title", "purpose": "Creator names and compact card titles." },
+      "body": { "displayName": "German Reading Body", "purpose": "Narrative, learning guidance, shelf notes, and modal copy." },
+      "label": { "displayName": "Jersey Label", "purpose": "Navigation, categories, controls, CEFR framing, and state." }
+    },
+    "shadows": [
+      { "name": "surface-lift", "value": "0 14px 38px rgba(7, 8, 11, 0.12)", "purpose": "Lift the featured personal player from the knit field." },
+      { "name": "module-lift", "value": "0 16px 42px rgba(7, 8, 11, 0.08)", "purpose": "Separate learning and Extr@ modules without turning every card into a floating tile." },
+      { "name": "book-lift", "value": "0 18px 30px rgba(7, 8, 11, 0.16)", "purpose": "Give local book covers physical presence on the shelf." },
+      { "name": "card-response", "value": "0 16px 30px rgba(7, 8, 11, 0.12)", "purpose": "Show creator hover state alongside a small vertical lift." },
+      { "name": "overlay-lift", "value": "0 28px 90px rgba(0, 0, 0, 0.42)", "purpose": "Separate creator and book folios from the dark backdrop." },
+      { "name": "jersey-cut", "value": "drop-shadow(12px 12px 22px rgba(7, 8, 11, 0.14))", "purpose": "Give the desktop V cut a physical edge over the mesh." }
+    ],
+    "motion": [
+      { "name": "state-ease", "value": "160–220ms ease-out", "purpose": "Buttons, cards, images, and active navigation respond immediately." },
+      { "name": "jersey-reveal", "value": "760ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single opening reveal for the nested hero V." },
+      { "name": "reduced-motion", "value": "0.001ms", "purpose": "Effectively removes smooth scrolling, transitions, and animation when reduced motion is requested." }
+    ],
+    "breakpoints": [
+      { "name": "intermediate-rail", "value": "1180px" },
+      { "name": "stack", "value": "900px" },
+      { "name": "compact", "value": "600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary German Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main next action on light or black jersey fields.",
+      "html": "<a class=\"ds-de-button ds-de-button-primary\" href=\"#\">Video ansehen</a>",
+      "css": ".ds-de-button{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid transparent;border-radius:12px;font-family:'Barlow Condensed DE',sans-serif;font-size:.94rem;font-weight:700;letter-spacing:.035em;line-height:1.1;text-decoration:none;text-transform:uppercase;transition:transform 160ms ease-out,background-color 160ms ease-out,box-shadow 160ms ease-out}.ds-de-button-primary{background:#b40a0d;color:#fff;box-shadow:0 8px 20px rgba(180,10,13,.24)}.ds-de-button-primary:hover{transform:translateY(-2px);background:#8f0709;box-shadow:0 12px 26px rgba(143,7,9,.26)}.ds-de-button:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    },
+    {
+      "name": "Quiet German Action",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "A secondary action that keeps the white jersey field dominant.",
+      "html": "<a class=\"ds-de-button ds-de-button-quiet\" href=\"#\">Mein Kanal</a>",
+      "css": ".ds-de-button{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:12px;font-family:'Barlow Condensed DE',sans-serif;font-size:.94rem;font-weight:700;letter-spacing:.035em;line-height:1.1;text-decoration:none;text-transform:uppercase;transition:transform 160ms ease-out,background-color 160ms ease-out}.ds-de-button-quiet{border:1px solid #bcbdbf;background:rgba(255,255,255,.7);color:#07080b}.ds-de-button-quiet:hover{transform:translateY(-2px);border-color:#0a0b0e;background:#fff}.ds-de-button:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    },
+    {
+      "name": "German Chapter Navigation",
+      "kind": "nav",
+      "refersTo": "chapter-navigation",
+      "description": "The centered sticky chapter bar below the shared site navigation.",
+      "html": "<nav class=\"ds-de-nav\" aria-label=\"Kapitel der deutschen Seite\"><a aria-current=\"location\" href=\"#\">Übersicht</a><a href=\"#\">Meine Videos</a><a href=\"#\">Lernweg</a><a href=\"#\">Stimmen</a></nav>",
+      "css": ".ds-de-nav{height:64px;display:flex;justify-content:center;overflow-x:auto;background:rgba(248,248,248,.98);border-bottom:1px solid #d7d7d3}.ds-de-nav a{position:relative;min-width:max-content;display:grid;place-items:center;padding:0 20px;color:#07080b;font-family:'Barlow Condensed DE',sans-serif;font-size:.84rem;font-weight:700;letter-spacing:.025em;text-decoration:none;text-transform:uppercase}.ds-de-nav a::after{content:'';position:absolute;right:16px;bottom:0;left:16px;height:4px;background:#b40a0d;transform:scaleX(0);transition:transform 180ms ease-out}.ds-de-nav a:hover::after,.ds-de-nav a[aria-current='location']::after{transform:scaleX(1)}.ds-de-nav a:focus-visible{outline:3px solid #eaae0a;outline-offset:-5px}"
+    },
+    {
+      "name": "German Learning Route",
+      "kind": "card",
+      "refersTo": "route-card",
+      "description": "A compact route into one learning or discovery chapter.",
+      "html": "<a class=\"ds-de-route\" href=\"#\"><span><strong>Complete German</strong><small>Geführter Audiokurs für Strukturen und Lautdenken.</small></span></a>",
+      "css": ".ds-de-route{position:relative;min-height:168px;display:grid;align-items:start;padding:22px 18px 30px;overflow:hidden;border:1px solid #d7d7d3;border-radius:14px;background:rgba(255,255,255,.86);color:#07080b;text-decoration:none;transition:transform 160ms ease-out,box-shadow 160ms ease-out,border-color 160ms ease-out}.ds-de-route::after{content:'';position:absolute;right:0;bottom:0;left:0;height:6px;background:linear-gradient(90deg,#0a0b0e 0 44%,#b40a0d 44% 72%,#eaae0a 72% 100%)}.ds-de-route strong{display:block;margin-bottom:8px;font-family:'Barlow Condensed DE',sans-serif;font-size:1.18rem;line-height:1;text-transform:uppercase}.ds-de-route small{display:block;color:#52545a;font-family:'Barlow DE',sans-serif;font-size:.8rem;line-height:1.42}.ds-de-route:hover{transform:translateY(-4px);border-color:#bcbdbf;box-shadow:0 13px 30px rgba(7,8,11,.1)}.ds-de-route:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    },
+    {
+      "name": "German CEFR Select",
+      "kind": "input",
+      "description": "The all-levels-default native filter for declared creator ranges.",
+      "html": "<label class=\"ds-de-filter\"><span>GER-Niveau</span><select><option selected>Alle Niveaus</option><option>B1</option><option>C1</option></select></label>",
+      "css": ".ds-de-filter{display:grid;gap:6px;min-width:190px;color:#52545a;font-family:'Barlow Condensed DE',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.ds-de-filter select{min-height:48px;padding:8px 42px 8px 13px;border:1px solid #d7d7d3;border-radius:10px;background:#fff;color:#07080b;font-family:'Barlow DE',sans-serif;font-size:1rem;font-weight:600;text-transform:none}.ds-de-filter select:hover{border-color:#bcbdbf}.ds-de-filter select:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    },
+    {
+      "name": "German Creator Card",
+      "kind": "card",
+      "refersTo": "creator-card",
+      "description": "A uniform square-portrait card inside one independent thematic shelf.",
+      "html": "<button class=\"ds-de-creator\" type=\"button\"><span class=\"ds-de-creator-image\" aria-hidden=\"true\"></span><span class=\"ds-de-creator-copy\"><small>Sport &amp; Basketball</small><strong>Deutschsprachige Stimme</strong><span>B1–C1 <b>Details</b></span></span></button>",
+      "css": ".ds-de-creator{width:272px;display:grid;grid-template-rows:auto minmax(132px,1fr);padding:0;overflow:hidden;border:1px solid #d7d7d3;border-radius:14px;background:#fff;color:#07080b;text-align:left;cursor:pointer;transition:transform 170ms ease-out,box-shadow 170ms ease-out,border-color 170ms ease-out}.ds-de-creator-image{position:relative;display:block;aspect-ratio:1;background:#efefec}.ds-de-creator-image::after{content:'';position:absolute;right:0;bottom:0;left:0;height:7px;background:linear-gradient(90deg,#0a0b0e 0 44%,#b40a0d 44% 72%,#eaae0a 72% 100%)}.ds-de-creator-copy{min-height:132px;display:grid;grid-template-rows:auto minmax(2.8rem,1fr) auto;gap:10px;padding:16px}.ds-de-creator-copy small{color:#8f0709;font-family:'Barlow Condensed DE',sans-serif;font-weight:700;letter-spacing:.05em;text-transform:uppercase}.ds-de-creator-copy strong{align-self:center;font-family:'Barlow Condensed DE',sans-serif;font-size:1.52rem;line-height:.98}.ds-de-creator-copy>span{display:flex;justify-content:space-between;color:#52545a;font-family:'Barlow DE',sans-serif;font-size:.78rem}.ds-de-creator:hover{transform:translateY(-4px);border-color:#bcbdbf;box-shadow:0 16px 30px rgba(7,8,11,.12)}.ds-de-creator:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    },
+    {
+      "name": "German Institution Feature",
+      "kind": "custom",
+      "description": "A large official-profile feature kept outside the creator shelves.",
+      "html": "<button class=\"ds-de-institution\" type=\"button\"><span class=\"ds-de-institution-image\" aria-hidden=\"true\"></span><span class=\"ds-de-institution-copy\"><small>Sprache &amp; Kultur</small><strong>Goethe-Institut Philippinen</strong><span>Offizielle Anlaufstelle für Sprache und Kultur.</span><b>B1–C1 · Details öffnen</b></span></button>",
+      "css": ".ds-de-institution{width:min(720px,100%);min-height:440px;display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);padding:0;overflow:hidden;border:1px solid #d7d7d3;border-radius:16px;background:#0a0b0e;color:#fff;text-align:left;cursor:pointer;transition:transform 170ms ease-out,box-shadow 170ms ease-out}.ds-de-institution-image{position:relative;display:block;min-height:330px;background:#9bd009}.ds-de-institution-image::after{content:'';position:absolute;right:0;bottom:0;left:0;height:9px;background:linear-gradient(90deg,#0a0b0e 0 44%,#b40a0d 44% 72%,#eaae0a 72% 100%)}.ds-de-institution-copy{align-self:center;display:grid;gap:14px;padding:36px}.ds-de-institution-copy small{color:#b40a0d;font-family:'Barlow Condensed DE',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.ds-de-institution-copy strong{font-family:'Barlow Condensed DE',sans-serif;font-size:3rem;line-height:.94;text-transform:uppercase}.ds-de-institution-copy>span{color:#ededed;font-family:'Barlow DE',sans-serif;line-height:1.5}.ds-de-institution-copy b{padding-top:14px;border-top:1px solid rgba(127,128,132,.35);font-family:'Barlow DE',sans-serif;font-size:.82rem}.ds-de-institution:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(7,8,11,.12)}.ds-de-institution:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    },
+    {
+      "name": "German Modal Folio",
+      "kind": "custom",
+      "refersTo": "modal-folio",
+      "description": "The three-panel creator details folio with a persistent stripe and visible close control.",
+      "html": "<article class=\"ds-de-modal\"><span class=\"ds-de-modal-stripe\" aria-hidden=\"true\"></span><button class=\"ds-de-modal-close\" type=\"button\" aria-label=\"Fenster schließen\">×</button><section class=\"ds-de-modal-profile\"><strong>Deutschsprachige Stimme</strong></section><section class=\"ds-de-modal-copy\">Beschreibung und Hörhinweis</section><section class=\"ds-de-modal-media\">Beispiel zum Reinhören</section></article>",
+      "css": ".ds-de-modal{position:relative;width:min(1120px,100%);display:grid;grid-template-columns:minmax(250px,.72fr) minmax(300px,1fr) minmax(360px,1.18fr);overflow:hidden;border-radius:16px;background:#f8f8f8;color:#07080b;box-shadow:0 28px 90px rgba(0,0,0,.42);font-family:'Barlow DE',sans-serif}.ds-de-modal-stripe{grid-column:1/-1;height:10px;background:linear-gradient(90deg,#0a0b0e 0 45%,#b40a0d 45% 72%,#eaae0a 72% 100%)}.ds-de-modal-close{position:absolute;top:24px;right:20px;width:44px;height:44px;border:1px solid #d7d7d3;border-radius:11px;background:#fff;color:#07080b;font-size:1.4rem;cursor:pointer}.ds-de-modal-profile,.ds-de-modal-copy,.ds-de-modal-media{padding:48px}.ds-de-modal-profile{background:#0a0b0e;color:#fff}.ds-de-modal-profile strong{display:block;margin-top:40px;font-family:'Barlow Condensed DE',sans-serif;font-size:2.5rem;line-height:.95;text-transform:uppercase}.ds-de-modal-copy{background:rgba(255,255,255,.68)}.ds-de-modal-media{background:#efefec}.ds-de-modal-close:hover{color:#b40a0d}.ds-de-modal-close:focus-visible{outline:3px solid #eaae0a;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Trikot-Schneise",
+    "overview": "The German surface translates the black, red, and trophy-gold V of the 1990 Germany football jersey into an editorial reading system. The V is literal in the opening cut, then returns as thin seams, shelf markers, media rules, modal headers, and the closing field. Optic-white knit texture keeps the physical reference present without turning the page into a sports shop or a flag-colored template.\n\nThe interface remains a familiar language portal: Aljohn's story and verified personal video lead, focused learning modules follow, and books, creators, and institutions retain recognizable browsing patterns. The jersey world supplies hierarchy and continuity while real videos, local portraits, official profile marks, book covers, and resource imagery remain the evidence.",
+    "keyCharacteristics": [
+      "Optic-white performance-knit fields cut by black, red, and trophy-gold V geometry.",
+      "Self-hosted condensed athletic display type paired with a calmer German reading face.",
+      "A persistent two-navbar structure with a centered chapter track on wide screens.",
+      "Rounded editorial cards and modules with thin gray rules rather than a hard-edged sports dashboard.",
+      "Independent horizontal shelves with contained overflow, visible controls, and square creator imagery.",
+      "Immediate component states plus one opening chevron reveal that disappears under reduced motion."
+    ],
+    "rules": [
+      { "name": "The Three-Stripe Rule", "body": "When the signature seam appears, its order stays black, red, then gold. Do not reorder the bands or let one hue stand in for the whole V.", "section": "colors" },
+      { "name": "The Gold Is Functional Rule", "body": "Gold may finish the jersey motif and mark focus or selection. It does not become a broad decorative background outside the Linguno training field.", "section": "colors" },
+      { "name": "The Evidence Keeps Its Color Rule", "body": "Do not tint thumbnails, portraits, official profile marks, book covers, or resource artwork to force them into the palette.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Barlow Condensed DE directs and labels; Barlow DE explains. Long copy never moves into the condensed display face.", "section": "typography" },
+      { "name": "The Two-Navbar Rule", "body": "The shared navbar and the German chapter bar remain separately visible and vertically offset at every shipped width; neither replaces or covers the other.", "section": "layout" },
+      { "name": "The Shelf Owns Its Overflow Rule", "body": "Each route, book, creator, or institution row scrolls inside its own bounded track. The document itself never scrolls horizontally.", "section": "layout" },
+      { "name": "The Category Stays Intact Rule", "body": "CEFR filtering may hide cards and empty shelves, but the default view preserves every visible creator category as its own labeled row.", "section": "layout" },
+      { "name": "The Hierarchy Earns Shadow Rule", "body": "Resting cards begin with a rule and white surface. Strong shadow is reserved for featured media, lifted books, responsive hover state, and overlays.", "section": "elevation" },
+      { "name": "The V Is the Signature Rule", "body": "Use the literal nested V for decisive transitions and the thin three-stripe rule for repetition. Do not scatter unrelated flag blocks or sports emblems across the interface.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep the black-red-gold V as the page's structural seam, not merely a colored accent.",
+      "Do preserve both navigation layers and derive sticky offsets from their real shipped heights.",
+      "Do keep Aljohn's personal player, Extr@, books, creator shelves, and institutions as distinct modules.",
+      "Do keep every long shelf bounded, snap-aligned, and independently scrollable.",
+      "Do preserve local media, adjacent provenance metadata, meaningful alternatives, intrinsic dimensions, and fallbacks.",
+      "Do preserve the gold focus outline, reduced-motion behavior, dialog focus management, and explicit unavailable-video state."
+    ],
+    "donts": [
+      "Don't turn the surface into a sports shop, team dashboard, equipment wall, or generic flag skin.",
+      "Don't introduce official football logos or additional sports branding; the jersey V and knit material already carry the reference.",
+      "Don't flatten creator categories into one grid or mix the two institutions back into general creator shelves.",
+      "Don't replace the real featured player, the Extr@ episode list, or local thumbnail previews with generic embeds or text-only rows.",
+      "Don't tint or generate identity media when verified documentary or official assets exist.",
+      "Don't add broad entrance animation; the single jersey-cut reveal is the only opening gesture and must respect reduced motion."
+    ]
+  }
+}
