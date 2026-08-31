@@ -1,4 +1,4 @@
-window.INDONESIAN_PODCASTS = [
+export const indonesianPodcasts = [
     {
         id: "endgame-with-gita-wirjawan",
         title: "Endgame with Gita Wirjawan",
@@ -18,12 +18,48 @@ window.INDONESIAN_PODCASTS = [
                 url: "https://pocketcasts.com/podcast/endgame-with-gita-wirjawan/2b9e6c00-ba1d-0138-e6e8-0acc26574db2"
             },
             {
+                label: "Dengarkan di Spotify",
+                url: "https://open.spotify.com/show/72q1XjiuFViF2tx7IbQ5X5"
+            },
+            {
                 label: "Halaman podcast resmi",
                 url: "https://podcasters.spotify.com/pod/show/endgameid"
             },
             {
                 label: "Situs Endgame",
                 url: "https://endgame.id/"
+            }
+        ]
+    },
+    {
+        id: "close-the-door",
+        title: "Close The Door",
+        publisher: "Deddy Corbuzier",
+        language: "Bahasa Indonesia",
+        format: "Wawancara panjang · berita dan tokoh publik",
+        levels: ["B2", "C1", "C2"],
+        cefr: "B2–C2",
+        image: "images/podcasts/close-the-door.jpg",
+        imageAlt: "Sampul podcast Close The Door dengan mikrofon di atas latar merah",
+        description: "Deddy Corbuzier menghadirkan percakapan panjang bersama tokoh publik dari dunia hiburan, olahraga, kesehatan, agama, politik, dan isu sosial. Episode-episodenya membahas kabar terkini, pengalaman pribadi narasumber, serta perdebatan yang sedang ramai di Indonesia.",
+        guidance: "Pilih episode dengan tamu atau isu yang sudah dikenal agar konteksnya lebih mudah diikuti. Percakapan berlangsung cepat dan spontan, dengan slang Jakarta, humor, interupsi, serta kosakata topikal; B2 cocok untuk menangkap gagasan utama, sedangkan C1–C2 membantu mengikuti nuansa dan perdebatan tanpa bantuan.",
+        personalNote: null,
+        links: [
+            {
+                label: "Dengarkan di Pocket Casts",
+                url: "https://pocketcasts.com/podcast/close-the-door/2cb0a470-404d-0138-9749-0acc26574db2"
+            },
+            {
+                label: "Dengarkan di Spotify",
+                url: "https://open.spotify.com/show/71jARxgs0KxOwArI0K4C7T"
+            },
+            {
+                label: "Tonton di YouTube",
+                url: "https://www.youtube.com/@corbuzier"
+            },
+            {
+                label: "Dengarkan di Apple Podcasts",
+                url: "https://podcasts.apple.com/us/podcast/close-the-door/id1501525576"
             }
         ]
     },
@@ -44,6 +80,10 @@ window.INDONESIAN_PODCASTS = [
             {
                 label: "Dengarkan di Pocket Casts",
                 url: "https://pocketcasts.com/podcast/merry-riana/0ba74a80-9f89-0137-4056-0acc26574db2"
+            },
+            {
+                label: "Dengarkan di Spotify",
+                url: "https://open.spotify.com/show/3k9TRIB64J7uXfzSjCOjpm"
             },
             {
                 label: "Halaman podcast resmi",

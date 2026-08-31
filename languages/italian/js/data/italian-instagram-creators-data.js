@@ -37,6 +37,7 @@
             links: [
                 { label: 'Instagram', url: 'https://www.instagram.com/francesca_michielin/' },
                 { label: 'Canale YouTube', url: 'https://www.youtube.com/@FrancescaMVEVO' },
+                { label: 'Profilo Spotify', url: 'https://open.spotify.com/artist/4jFlmD92WULLlaRS8Cj6QS' },
             ],
         },
         {

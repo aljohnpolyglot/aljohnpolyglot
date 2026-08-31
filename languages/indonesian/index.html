@@ -39,6 +39,7 @@
         <div class="chapter-nav-track">
             <a href="#cerita">Cerita saya</a>
             <a href="#video-saya">Video saya</a>
+            <a href="#podcast">Podcast</a>
             <a href="#kreator">Kreator</a>
             <a href="#buku-indonesia">Buku</a>
             <a href="#komunitas">KBRI Manila</a>
@@ -134,6 +135,24 @@
             <img src="images/hero/cenderawasih-unity-generated.jpg" width="1857" height="879" alt="Ilustrasi dua burung Cenderawasih melintasi kepulauan pada malam hari" loading="lazy" decoding="async">
             <figcaption>Banyak suara. Satu ruang untuk mendengarkan.</figcaption>
         </figure>
+
+        <section class="section-id podcasts-section-id" id="podcast" aria-labelledby="judul-podcast">
+            <header class="section-heading-id section-heading-id--split">
+                <div>
+                    <p class="stage-label stage-label--light">Percakapan panjang · Bahasa Indonesia</p>
+                    <h2 id="judul-podcast">Masuk lebih dalam lewat podcast</h2>
+                </div>
+                <p>Wawancara panjang memberi waktu untuk mengenali ritme, slang, argumen, dan cara para tamu bercerita tanpa naskah.</p>
+            </header>
+            <div class="podcast-toolbar-id">
+                <p id="petunjuk-podcast">Geser rak atau gunakan tombol panah. <span id="indonesian-podcast-status" aria-live="polite"></span></p>
+                <div class="shelf-controls-id" role="group" aria-label="Geser rak podcast Indonesia">
+                    <button class="shelf-control-id" id="indonesian-podcast-previous" type="button" aria-label="Lihat podcast sebelumnya" aria-controls="indonesian-podcast-shelf"><span aria-hidden="true">←</span></button>
+                    <button class="shelf-control-id" id="indonesian-podcast-next" type="button" aria-label="Lihat podcast berikutnya" aria-controls="indonesian-podcast-shelf"><span aria-hidden="true">→</span></button>
+                </div>
+            </div>
+            <div id="indonesian-podcast-shelf" class="podcast-shelf-id" role="list" tabindex="0" aria-labelledby="judul-podcast" aria-describedby="petunjuk-podcast"></div>
+        </section>
 
         <section class="section-id creators-section-id" id="kreator" aria-labelledby="judul-kreator">
             <header class="section-heading-id section-heading-id--split">
@@ -297,6 +316,14 @@
     </main>
 
     <footer id="main-footer-placeholder"></footer>
+
+    <div class="modal-id" id="indonesian-podcast-modal" role="dialog" aria-modal="true" aria-labelledby="indonesian-podcast-modal-title" aria-describedby="indonesian-podcast-modal-description indonesian-podcast-modal-guidance" hidden>
+        <div class="modal-backdrop-id" data-podcast-modal-close></div>
+        <div class="podcast-dialog-id" role="document">
+            <button class="modal-close-id" type="button" aria-label="Tutup detail podcast" data-podcast-modal-close>×</button>
+            <div id="indonesian-podcast-modal-content"></div>
+        </div>
+    </div>
 
     <div id="indonesian-book-modal" class="book-modal-id" hidden aria-hidden="true">
         <div class="book-modal-backdrop-id" data-book-modal-close></div>

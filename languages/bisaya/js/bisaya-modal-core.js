@@ -34,12 +34,14 @@ function initializeModalCore() {
 
 
     function openModal() {
+        modalElement.removeAttribute('hidden');
         modalElement.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
         modalElement.style.display = 'none';
+        modalElement.setAttribute('hidden', '');
         document.body.style.overflow = '';
         clearModalContent();
     }

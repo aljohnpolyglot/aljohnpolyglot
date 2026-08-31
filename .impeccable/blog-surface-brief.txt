@@ -1,0 +1,7 @@
+Mode: Read. Scope: replace the visual world of blog.html and the Polyglot Papers preview inside index.html while preserving the article dataset, filtering, sorting, search, global navigation/footer loaders, article links, and homepage context.
+
+Audience job: quickly understand what Polyglot Papers contains, identify a useful essay, narrow the archive by topic or language, and begin reading. Primary action: open a paper. Proof/content: the four real published articles and their existing local cover assets.
+
+Chosen direction: Language Lab Foldout, approved from .impeccable/mocks/polyglot-papers-01-language-lab-foldout.png. Cobalt instruction-manual fields, compressed display type, bright paper workspace, red selection blocks, yellow inventory accents, measurement marks, and one clean featured-to-index reading path. The homepage preview folds the same selected paper into a compact band.
+
+Memorable moment: the giant cobalt masthead folds directly into the latest-paper workspace. Constraints: no green biotech, terminal jargon, invented metrics, generic card wall, page overflow, or replacement of unrelated homepage sections.

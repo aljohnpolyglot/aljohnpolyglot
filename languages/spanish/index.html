@@ -81,7 +81,7 @@
         <div class="hero-gallery-column">
             <div class="hero-gallery-heading">
                 <span>Momentos del camino</span>
-                <span id="hero-carousel-count" class="hero-carousel-count">01 / 14</span>
+                <span id="hero-carousel-count" class="hero-carousel-count">01 / 19</span>
             </div>
             <div class="hero-photo-frame">
                 <div id="hero-carousel-container" class="hero-carousel" aria-label="Galería de momentos de mi camino con el español">
@@ -216,12 +216,12 @@
                     <img src="images/spotlights/linguno_feature.png" alt="Interfaz de práctica de Linguno" class="feature-image">
                 </div>
                 <div class="spotlight-details">
-                     <a href="https://www.linguno.com/" target="_blank" class="spotlight-logo-link">
+                     <a href="https://www.linguno.com/language/esp/" target="_blank" class="spotlight-logo-link">
                         <img src="images/spotlights/linguno_logo.png" alt="Logo de Linguno" class="spotlight-logo">
                     </a>
                     <h3 class="spotlight-title">Linguno</h3>
                     <p class="spotlight-description">Mi herramienta preferida para practicar conjugaciones y vocabulario de forma gamificada.</p>
-                    <a href="https://www.linguno.com/conjugate/es/" target="_blank" class="button-link">Practicar Conjugaciones</a>
+                    <a href="https://www.linguno.com/language/esp/" target="_blank" class="button-link">Practicar Conjugaciones</a>
                 </div>
             </div>
         </article>
@@ -511,6 +511,12 @@
                 <p class="shelf-description">Si eres principiante, te recomiendo empezar aquí. Estos canales están diseñados para ser entendidos fácilmente.</p>
                 <div id="shelf-comprehensible-input" class="shelf-container"></div>
             </article>
+
+            <!-- Podcast shelf: dedicated listening surface, directly after the beginner shelf. -->
+            <section id="spanish-podcasts" class="content-shelf podcast-shelf" aria-labelledby="podcast-shelf-title">
+                <h2 id="podcast-shelf-title"><i class="fas fa-podcast" aria-hidden="true"></i> Podcasts</h2>
+                <div id="shelf-podcasts" class="podcast-shelf-rail" role="list" tabindex="0"></div>
+            </section>
             
             <!-- Estantería de Creadores de Contenido y Vlogs -->
             <article class="content-shelf">
@@ -522,12 +528,6 @@
             <article class="content-shelf">
                 <h3><i class="fas fa-music"></i> Música</h3>
                 <div id="shelf-music" class="shelf-container"></div>
-            </article>
-            
-            <!-- Nueva Estantería de Podcasts -->
-            <article class="content-shelf">
-                <h3><i class="fas fa-podcast"></i> Podcasts</h3>
-                <div id="shelf-podcasts" class="shelf-container"></div>
             </article>
             
             <article class="content-shelf">
@@ -654,6 +654,15 @@
         </div>
     </div>
     <div id="creator-modal-overlay"></div>
+</div>
+
+<!-- Modal de detalles de podcast -->
+<div id="podcast-modal" class="podcast-modal-overlay hidden" aria-hidden="true">
+    <div class="podcast-modal-backdrop" data-podcast-modal-close></div>
+    <div class="podcast-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="podcast-modal-title" aria-describedby="podcast-modal-description podcast-modal-guidance">
+        <button type="button" class="podcast-modal-close" data-podcast-modal-close aria-label="Cerrar detalles del podcast">×</button>
+        <div id="podcast-modal-content"></div>
+    </div>
 </div>
     <!-- =================================== -->
     <!--  MODAL PARA SUGERENCIAS DE LA COMUNIDAD  -->
@@ -784,6 +793,8 @@
 <script src="js/community-picks-data.js"></script>
 <script src="js/community-picks-loader.js"></script>
 <script src="js/creators-data.js"></script> <!-- Crearemos este a continuación -->
+<script src="js/podcasts-data.js"></script>
+<script src="js/podcasts-loader.js"></script>
 <script src="js/creators-loader.js"></script>
 <script src="js/hero-loader.js"></script>
 <script src="js/hero-data.js"></script>

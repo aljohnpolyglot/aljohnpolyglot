@@ -23,19 +23,8 @@ window.frenchStudyKitData = {
             service: 'Google Drive',
         },
         {
-            id: 'french-linguno',
-            step: '3',
-            action: 'Pratiquer',
-            name: 'Linguno pour les conjugaisons',
-            description: "Pour une séance courte et ciblée, Linguno permet de travailler les conjugaisons françaises sous forme de quiz. Je l'utilise comme complément pratique entre deux moments d'écoute ou de conversation. Choisis un temps, un groupe de verbes et un niveau de difficulté : dix minutes suffisent pour repérer les formes qui demandent encore de l'attention.",
-            href: 'https://www.linguno.com/conjugate/fr/',
-            linkLabel: 'Pratiquer le français',
-            icon: 'fa-solid fa-pen-to-square',
-            service: 'Linguno',
-        },
-        {
             id: 'french-conjugation-map',
-            step: '4',
+            step: '3',
             action: 'Réviser',
             name: 'Carte des temps et conjugaisons',
             description: 'Une grande feuille de référence qui met côte à côte indicatif, subjonctif, conditionnel, impératif, participes et exemples de terminaisons.',
@@ -45,4 +34,10 @@ window.frenchStudyKitData = {
             service: 'Google Sheets',
         },
     ],
+    linguno: {
+        title: 'Linguno pour les conjugaisons',
+        description: "Pour une séance courte et ciblée, Linguno permet de travailler les conjugaisons françaises sous forme de quiz. Je l'utilise comme complément pratique entre deux moments d'écoute ou de conversation. Choisis un temps, un groupe de verbes et un niveau de difficulté : dix minutes suffisent pour repérer les formes qui demandent encore de l'attention.",
+        href: 'https://www.linguno.com/language/fra/',
+        linkLabel: 'Pratiquer le français',
+    },
 };

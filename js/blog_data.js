@@ -2,6 +2,32 @@
 
 const blogPostsData = [
     {
+        id: "daily-routine-i-actually-used",
+        title: "Aljohn's Daily Immersion System",
+        date: "2025-05-31",
+        author: "Aljohn Polyglot",
+        categories: ["Study Methods", "Learning Strategy", "Language Notes"],
+        languageFocus: ["Multi-Language Focus"],
+        tags: ["daily routine", "immersion", "Anki", "reading", "listening", "speaking", "sleep"],
+        excerpt: "The hour-by-hour immersion system I used: recall, writing, reading, movement, native video, speaking, and sleep.",
+        link: "blog/daily-routine/index.html",
+        featuredImage: "images/blog/daily-routine.svg",
+        readTime: "Approx. 18 min read"
+    },
+    {
+        id: "iceberg-theory",
+        title: "Stop! You Are Learning Languages Wrong!",
+        date: "2026-08-31",
+        author: "Aljohn Polyglot",
+        categories: ["Learning Strategy", "Cultural Immersion", "Language Notes"],
+        languageFocus: ["Multi-Language Focus", "Tagalog", "French", "Spanish", "Indonesian"],
+        tags: ["iceberg theory", "cultural fluency", "belonging", "CEFR", "immersion", "shared context"],
+        excerpt: "Grammar and CEFR levels are only the visible tip. Descend through ten layers of slang, behavior, memory, media, and cultural belonging.",
+        link: "blog/iceberg-theory/index.html",
+        featuredImage: "images/blog/iceberg-theory.svg",
+        readTime: "Approx. 12 min read"
+    },
+    {
         id: "learn-in-3-months", // Unique identifier
         title: "Learning a Language in 3 Months: Method and Expectations",
         date: "2024-05-17", // Use YYYY-MM-DD for easy sorting. Replace with actual publish date.
@@ -15,6 +41,19 @@ const blogPostsData = [
         // For "Most Popular" (future feature - can be updated dynamically or manually)
         views: 1500, // Example view count
         readTime: "Approx. 15 min read" // Example read time
+    },
+    {
+        id: "roadmap-i-actually-use",
+        title: "The Roadmap I Actually Use to Learn Languages",
+        date: "2025-05-17",
+        author: "Aljohn Polyglot",
+        categories: ["Study Methods", "Learning Strategy", "Language Notes"],
+        languageFocus: ["Multi-Language Focus"],
+        tags: ["roadmap", "CEFR", "immersion", "Anki", "comprehensible input", "advanced fluency"],
+        excerpt: "What to focus on as a beginner, what changes at the intermediate stage, and how to refine a language once you can already use it.",
+        link: "blog/roadmap-to-fluency/index.html",
+        featuredImage: "pathway/assets/roadmap-map.webp",
+        readTime: "Approx. 14 min read"
     },
     // --- FUTURE POSTS WILL GO HERE ---
     // Example of a future post structure:
@@ -55,6 +94,7 @@ const filterCategories = [
     "All Articles", // Default option
     "Study Methods",
     "Learning Strategy",
+    "Cultural Immersion",
     "Language Notes",
     "Other"
 ];

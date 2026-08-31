@@ -1,0 +1,39 @@
+{
+  "title": "Choose the exact coaching composition",
+  "question": "The visual world is locked. Which responsive composition should become the build contract?",
+  "options": [
+    {
+      "id": "balanced-split",
+      "label": "Balanced Split",
+      "kicker": "YOUR DIRECTION",
+      "lineage": "the composition you selected",
+      "thesis": "Offer and coach own the opening; proof arrives immediately beneath them.",
+      "palette": ["#ffffff", "#102a56", "#d13b35", "#f4c430"],
+      "materials": ["clean editorial grid", "portrait photography", "quiet cards"],
+      "viewport": "A fluid two-column hero gives equal authority to the offer and Aljohn, followed by a wide proof row inside the first viewport.",
+      "risk": "The clearest and calmest composition, but the proof is one reading beat later.",
+      "comp": ".impeccable/mocks/decision/coaching-category-standard.png"
+    },
+    {
+      "id": "proof-first",
+      "label": "Proof First",
+      "thesis": "L.A.’s transformation earns the promise before the visitor reaches the second fold.",
+      "palette": ["#ffffff", "#102a56", "#d13b35", "#f4c430"],
+      "materials": ["clean editorial grid", "portrait photography", "measured timeline"],
+      "viewport": "A fluid 38/62 split keeps the offer and booking action on the left while the playable case study dominates the right.",
+      "risk": "Aljohn’s authority is deliberately quieter so the evidence can lead.",
+      "comp": ".impeccable/mocks/coaching-standard-proof-first.png"
+    },
+    {
+      "id": "coach-first",
+      "label": "Coach First",
+      "thesis": "Aljohn, the plan, and the evidence share one editorial stage before a decisive booking rail.",
+      "palette": ["#ffffff", "#102a56", "#d13b35", "#f4c430"],
+      "materials": ["clean editorial grid", "portrait photography", "quiet dividers"],
+      "viewport": "A full-width title opens into a fluid 34/28/38 stage: coach portrait, coaching plan, and proof video side by side.",
+      "risk": "The information density is highest and needs the most disciplined mobile reflow.",
+      "comp": ".impeccable/mocks/coaching-standard-coach-first.png"
+    }
+  ],
+  "steer": true
+}

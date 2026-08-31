@@ -93,7 +93,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['star-academy-alumni'],
             sampleVideo: { id: 'RcFbfDJi3t4', title: 'Pierre Garnier raconte les coulisses de son premier album — BFMTV' },
-            links: { instagram: 'https://www.instagram.com/pierregarniermusique/', youtube: 'https://www.youtube.com/@PierreGarnierVEVO-cf1gi' },
+            links: { instagram: 'https://www.instagram.com/pierregarniermusique/', youtube: 'https://www.youtube.com/@PierreGarnierVEVO-cf1gi', spotify: 'https://open.spotify.com/artist/07UyhXWf7aDbvCZKhTKCpr' },
         }),
         frenchCreator({
             id: 'helena',
@@ -106,7 +106,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['star-academy-alumni'],
             sampleVideo: { id: 'bE7jFJHoHY4', title: 'Héléna — Aimée pour de vrai (paroles)' },
-            links: { instagram: 'https://www.instagram.com/helena_blly/' },
+            links: { instagram: 'https://www.instagram.com/helena_blly/', spotify: 'https://open.spotify.com/artist/6M0dlWzmJ9Z81JM2WpHbsC' },
         }),
         frenchCreator({
             id: 'lenie',
@@ -470,7 +470,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites'],
             sampleVideo: { id: '2szqiHykCJk', title: 'Vianney — Pour de vrai (clip officiel)' },
-            links: { instagram: 'https://www.instagram.com/vianney/', youtube: 'https://www.youtube.com/@vianneymusique' },
+            links: { instagram: 'https://www.instagram.com/vianney/', youtube: 'https://www.youtube.com/@vianneymusique', spotify: 'https://open.spotify.com/artist/4Nrd0CtP8txoQhnnlRA6V6' },
         }),
         frenchCreator({
             id: 'louane',
@@ -483,7 +483,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites'],
             sampleVideo: { id: 'Pj2DTSLcNnI', title: 'Louane — maman, performance Eurovision 2025' },
-            links: { instagram: 'https://www.instagram.com/watchoutforthetornado/' },
+            links: { instagram: 'https://www.instagram.com/watchoutforthetornado/', spotify: 'https://open.spotify.com/artist/7wjeXCtRND2ZdKfMJFu6JC' },
         }),
         frenchCreator({
             id: 'joyce-jonathan',
@@ -496,7 +496,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites'],
             sampleVideo: { id: '46yPGJCeJq4', title: 'Joyce Jonathan — Tant pis (clip officiel)' },
-            links: { instagram: 'https://www.instagram.com/joycejonathan/' },
+            links: { instagram: 'https://www.instagram.com/joycejonathan/', spotify: 'https://open.spotify.com/artist/25eQCECJH4VTpBYV9jhpyE' },
         }),
 
         frenchCreator({
@@ -1008,7 +1008,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: '1w3VV-ji4h8', title: 'Angèle reprend « Pour que tu m’aimes encore » — France Inter' },
-            links: { instagram: 'https://www.instagram.com/angele_vl/', youtube: 'https://www.youtube.com/@angelevl' },
+            links: { instagram: 'https://www.instagram.com/angele_vl/', youtube: 'https://www.youtube.com/@angelevl', spotify: 'https://open.spotify.com/artist/3QVolfxko2UyCOtexhVTli' },
         }),
         frenchCreator({
             id: 'soprano',
@@ -1021,7 +1021,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: 'h7oEuaQqJpU', title: 'Soprano — Forrest (clip officiel)' },
-            links: { instagram: 'https://www.instagram.com/sopranopsy4/', youtube: 'https://www.youtube.com/@soprano' },
+            links: { instagram: 'https://www.instagram.com/sopranopsy4/', youtube: 'https://www.youtube.com/@soprano', spotify: 'https://open.spotify.com/artist/2RJBv9wXbW6m539q9NOfW1' },
         }),
         frenchCreator({
             id: 'vitaa',
@@ -1034,7 +1034,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: 'Wz86pFtHZqI', title: 'Vitaa & Slimane — Ça va ça vient' },
-            links: { instagram: 'https://www.instagram.com/vitaa/', youtube: 'https://www.youtube.com/channel/UC6atFS0kNdJR-EuSa_I1Kkw' },
+            links: { instagram: 'https://www.instagram.com/vitaa/', youtube: 'https://www.youtube.com/channel/UC6atFS0kNdJR-EuSa_I1Kkw', spotify: 'https://open.spotify.com/artist/0Ntl0oWMPWfBOoi9Qcr9ht' },
         }),
         frenchCreator({
             id: 'slimane',
@@ -1047,7 +1047,7 @@ window.frenchCuratedChannelsData = {
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: 'uKwzC0kGwEY', title: '« Avant toi » repris en finale de The Voice' },
-            links: { instagram: 'https://www.instagram.com/slimane/', youtube: 'https://www.youtube.com/@slimane_music' },
+            links: { instagram: 'https://www.instagram.com/slimane/', youtube: 'https://www.youtube.com/@slimane_music', spotify: 'https://open.spotify.com/artist/4OV6uYSnHxSYkjDYuBVBUz' },
         }),
         frenchCreator({
             id: 'inoxtag',

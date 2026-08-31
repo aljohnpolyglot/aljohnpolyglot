@@ -20,6 +20,11 @@ window.frenchPodcastsData = [
                 href: 'https://shows.acast.com/les-actus-du-jour-hugo-decrypte',
                 icon: 'fa-solid fa-arrow-up-right-from-square',
             },
+            {
+                label: 'Écouter sur Spotify',
+                href: 'https://open.spotify.com/show/6y1PloEyNsCNJH9vHias4T',
+                icon: 'fa-brands fa-spotify',
+            },
         ],
     },
     {
@@ -43,6 +48,11 @@ window.frenchPodcastsData = [
                 href: 'https://shows.acast.com/inpower',
                 icon: 'fa-solid fa-arrow-up-right-from-square',
             },
+            {
+                label: 'Écouter sur Spotify',
+                href: 'https://open.spotify.com/show/3opdiAI6ViHZm1odnEdl9q',
+                icon: 'fa-brands fa-spotify',
+            },
         ],
     },
     {
@@ -65,6 +75,11 @@ window.frenchPodcastsData = [
                 label: 'Écouter sur France Inter',
                 href: 'https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles',
                 icon: 'fa-solid fa-radio',
+            },
+            {
+                label: 'Écouter sur Spotify',
+                href: 'https://open.spotify.com/show/2mgIj1Y64XTLJT2Ax9rYEx',
+                icon: 'fa-brands fa-spotify',
             },
         ],
     },

@@ -85,6 +85,18 @@ components:
     padding: "0.85rem 1rem"
     height: "76px"
     width: "100%"
+  podcast-card:
+    backgroundColor: "{colors.warm-cream}"
+    textColor: "{colors.deep-ink}"
+    rounded: "{rounded.stage-square}"
+    padding: "0"
+    width: "clamp(250px, 25vw, 320px)"
+  podcast-modal:
+    backgroundColor: "{colors.warm-cream}"
+    textColor: "{colors.deep-ink}"
+    rounded: "{rounded.stage-square}"
+    width: "min(1050px, 100%)"
+    height: "calc(100dvh - clamp(1.2rem, 5vw, 4rem))"
   creator-level-filter:
     backgroundColor: "{colors.twilight-sea}"
     textColor: "{colors.warm-cream}"
@@ -141,7 +153,7 @@ components:
 
 The Indonesian page is a cinematic stage spread across an inhabited archipelago. Its visual world is twilight sea, red-white signals, bamboo warmth, concert-poster type, rehearsal-pass controls, local photographs, and documentary sequencing. The composition may carry the depth and wonder of a fantasy landscape, but it is an original Indonesian–Filipino expression rather than an imitation of, or branded reference to, Wonderland.
 
-The story moves in a deliberate sequence: Aljohn's reason for learning, his own videos, the voices he listens to, a canonical Indonesian bookshelf, BIPA and KBRI Manila, a tribute to Bapak Agus Widjojo, the food places featured in his videos, then a quiet first-person closing. Wonder is the threshold; real people, media, and community records are the evidence. Bahasa Indonesia is the primary visitor language.
+The story moves in a deliberate sequence: Aljohn's reason for learning, his own videos, a dedicated podcast shelf for longer listening, the voices he listens to, a canonical Indonesian bookshelf, BIPA and KBRI Manila, a tribute to Bapak Agus Widjojo, the food places featured in his videos, then a quiet first-person closing. Wonder is the threshold; real people, media, and community records are the evidence. Bahasa Indonesia is the primary visitor language.
 
 **Key Characteristics:**
 
@@ -149,7 +161,7 @@ The story moves in a deliberate sequence: Aljohn's reason for learning, his own 
 - Red, cream, amber, and turquoise act like stage signals against deep teal-black fields.
 - Heavy Chivo headlines have concert-poster scale; Commissioner carries the story; Saira Condensed operates the controls.
 - Real photographs appear in framed, one-at-a-time narratives with literal arrow controls.
-- Aljohn's personal player, creator shelves, BIPA/KBRI story, memorial, and final venue shelf remain visually and conceptually separate.
+- Aljohn's personal player, compact podcast shelf, creator shelves, BIPA/KBRI story, memorial, and final venue shelf remain visually and conceptually separate.
 - Square edges, hard color bands, borders, and crops create depth; generic floating-card decoration does not.
 
 ### Documentary boundary and generated-asset provenance
@@ -163,7 +175,7 @@ Generated scenery must never replace or be confused with evidence. Christian Bau
 
 ### Finish status
 
-The code and scoped system are documented, but the in-app browser was unavailable for the required rendered review. The finish verdict is **RECAPTURE**: browser QA must be recaptured at wide desktop, intermediate/laptop, and narrow mobile widths before the surface can receive a final visual-acceptance verdict. The recapture must include the full page, both navigation layers, hero and media carousel states, playlist selection, every CEFR filter state and rendered creator shelf, creator modal with and without an Aljohn note, Indonesian bookshelf and book modal, venue shelf and venue modal, lightbox, long content, external actions, focus states, and reduced-motion behavior.
+The code and scoped system are documented, but the in-app browser was unavailable for the required rendered review. The finish verdict is **RECAPTURE**: browser QA must be recaptured at wide desktop, intermediate/laptop, and narrow mobile widths before the surface can receive a final visual-acceptance verdict. The recapture must include the full page, both navigation layers, hero and media carousel states, playlist selection, the podcast shelf at desktop/laptop/mobile widths, podcast arrow and keyboard scrolling, a long-content podcast modal with and without an Aljohn note, every CEFR filter state and rendered creator shelf, creator modal with and without an Aljohn note, Indonesian bookshelf and book modal, venue shelf and venue modal, lightbox, long content, external actions, focus states, and reduced-motion behavior. This checklist records unverified states; it does not constitute visual acceptance.
 
 ## Colors
 
@@ -219,14 +231,16 @@ The page uses full-bleed color and image fields around a consistent 1200px edito
 
 The first viewport is a centered two-column stage, at most 1440px wide: approximately 0.92fr story and 1.08fr real-photo contact sheet over a full-bleed generated blue-hour archipelago. Display type stops at 6rem with a -0.04em tracking floor so the headline remains dramatic without colliding with the carousel. The contact sheet is intentionally a carousel despite its name: only one Christian Bautista photograph is exposed at a time, inside a strong cream frame and red control base. Its stage adopts the active photograph's intrinsic ratio and uses `object-fit: contain`; cropping documentary photographs to force one shared frame is forbidden.
 
-The playlist uses a wide featured 16:9 player beside a vertically scrollable numbered list inside the 1200px stage. The creator chapter, story strip, KBRI composition, and closing note also use this measure so their text and media remain connected on ultrawide displays. The closing note owns a dedicated inner grid: a minimum 390px statement column, a flexible supporting paragraph, and an action that drops to its own row at intermediate widths. The creator chapter places a square-edged CEFR control band before the shelves; it filters cards in place while preserving each category as its own row and hiding only rows with no match. Creator categories each own an independent horizontal shelf with `clamp(280px, 28vw, 330px)` cards, scroll snapping, overscroll containment, and literal previous/next controls. The BIPA announcement and KBRI documentary chapter remain broad but bounded. The final memorial uses the 1200px stage to pair its long-form tribute with one carousel containing the portrait and vertical tribute reel before the dark closing panel.
+The playlist uses a wide featured 16:9 player beside a vertically scrollable numbered list inside the 1200px stage. Immediately after it, the podcast chapter forms its own night-colored listening stage before the creator library. Its compact horizontal shelf uses square cover-led cards at `clamp(250px, 25vw, 320px)`, one-card snap points, contained inline overscroll, a thin visible scrollbar, and literal previous/next controls. Cards keep only publisher and CEFR, title, format, and a details action beneath the square local cover; descriptions and listening guidance do not expand the shelf.
+
+The creator chapter, story strip, KBRI composition, and closing note also use the 1200px measure so their text and media remain connected on ultrawide displays. The closing note owns a dedicated inner grid: a minimum 390px statement column, a flexible supporting paragraph, and an action that drops to its own row at intermediate widths. The creator chapter places a square-edged CEFR control band before the shelves; it filters cards in place while preserving each category as its own row and hiding only rows with no match. Creator categories each own an independent horizontal shelf with `clamp(280px, 28vw, 330px)` cards, scroll snapping, overscroll containment, and literal previous/next controls. The BIPA announcement and KBRI documentary chapter remain broad but bounded. The final memorial uses the 1200px stage to pair its long-form tribute with one carousel containing the portrait and vertical tribute reel before the dark closing panel.
 
 ### Responsive behavior
 
 - **Above 1050px:** Preserve the two-column hero, player/list console, BIPA feature, broad KBRI composition, bounded creator stage, and two-column tribute composition.
 - **1050px and below:** The playlist and community stack; the BIPA feature becomes single-column; the tribute carousel and copy stack cleanly; the closing becomes two columns.
-- **780px and below:** The hero, story strip, split headings, BIPA feature, creator modal, tribute, and closing become single-column. The hero contact sheet moves below the copy; shelf headings reorganize without losing arrow controls. The chapter bar remains horizontally scrollable.
-- **520px and below:** Actions become full width, playlist thumbnails reduce to 72 × 50px, creator cards become `min(82vw, 290px)`, BIPA details become one column, media heights tighten, and the tribute becomes one column. Tap targets remain at least 44px.
+- **780px and below:** The hero, story strip, split headings, BIPA feature, podcast modal, creator modal, tribute, and closing become single-column. The hero contact sheet moves below the copy; podcast cards become `min(72vw, 310px)` and shelf headings reorganize without losing arrow controls. The chapter bar remains horizontally scrollable.
+- **520px and below:** Actions become full width, playlist thumbnails reduce to 72 × 50px, podcast cards become `min(82vw, 285px)`, creator cards become `min(82vw, 290px)`, BIPA details become one column, media heights tighten, and the tribute becomes one column. Podcast modal links stack full-width, its cover column clears the visible close button, and all tap targets remain at least 44px.
 
 ### Dual-navigation offset
 
@@ -274,6 +288,14 @@ Aljohn's work lives in a dedicated featured player and numbered clickable list. 
 
 No canonical public playlist URL was verified at ship time, so this module is an intentional list of verified public videos from Aljohn's official channel rather than a generic playlist embed. When updating it, verify public availability and relevance, save each recognizable thumbnail under `images/videos/`, preserve intrinsic dimensions and alternative text, and keep the official channel CTA.
 
+### Podcast shelf and details modal
+
+The dedicated podcast chapter sits between Aljohn's personal playlist and the creator library. It uses a full-width Twilight Sea field with a bounded 1200px stage, a cream square-card shelf, red bottom rails, and amber hover/focus edges. Every compact card leads with a durable local square cover and shows only publisher with CEFR, title, format, and **Lihat detail**; the whole card is a named button that opens the modal instead of navigating directly to a platform.
+
+The shelf is a contained horizontal scroller with snap points, touch/trackpad support, a visible thin scrollbar, and literal previous/next buttons whose disabled state reflects the scroll limits. When the shelf itself has focus, Left/Right moves one card and Home/End moves to the bounds. Announce arrow movement politely without exposing listening counts or private ordering evidence. Smooth shelf movement becomes immediate under `prefers-reduced-motion`.
+
+The details modal owns the long neutral description, listening guidance, optional Aljohn note, and verified external listening links. Its desktop layout pairs a square cover on a Twilight Sea media pane with the cream copy pane; at 780px it stacks to one column, and at 520px external actions become full-width. The note panel is omitted when its dataset field is blank. Keep the visible top-right ×, opaque backdrop, internal vertical scrolling, Escape and intended-backdrop closing, Tab focus trapping, body-scroll lock, and focus restoration to the invoking card. External anchors remain genuine links and must not be intercepted by card or backdrop handlers.
+
 ### Creator shelves and modal
 
 `js/data/indonesian-creators-data.json` stores `categories` plus creator records with identity, country, category fields, CEFR range, local image and alt text, neutral descriptions, `personalComment`, listening guidance, sample video, and verified links. `indonesian-creator-renderer.js` renders every complete verified record. A blank `personalComment` remains `null`; the modal simply omits the note panel instead of inventing a relationship or exposing editorial placeholder copy.
@@ -317,6 +339,7 @@ Reduced-motion mode disables smooth document scrolling, carousel fades, and imag
 - **Do** preserve local, verified documentary photography for every real person, creator, event, institution, and collaboration.
 - **Do** keep every photo narrative one image at a time with literal arrows, position status, keyboard support, and the existing lightbox path where supplied.
 - **Do** maintain the personal playlist as a real featured player with local thumbnail previews and data-driven notes.
+- **Do** keep the compact podcast shelf between the personal playlist and creator library, with local square covers, literal arrows, contained scrolling, and long copy reserved for its accessible modal.
 - **Do** keep creator categories as independent shelves and neutral creator copy visibly separate from Aljohn's documented note.
 - **Do** preserve the measured two-navbar offsets, 44px controls, visible focus, reduced-motion behavior, focus trapping, and focus restoration.
 - **Do** treat **RECAPTURE** as an open finish gate until the unavailable in-app browser review is completed at desktop, laptop, and mobile widths.
@@ -328,5 +351,6 @@ Reduced-motion mode disables smooth document scrolling, carousel fades, and imag
 - **Don't** expose all photographs as a collage or grid merely because the hero component is called a contact sheet.
 - **Don't** publish a learning tool, media recommendation, or resource card without Aljohn's explicit approval; dormant CSS is not content approval.
 - **Don't** add a generic YouTube playlist embed, remote thumbnail hotlinks, incomplete creator cards, public ranking metadata, or visitor-facing catalogue statistics.
+- **Don't** expand podcast cards into long-description panels, bury podcasts in the creator grid, or let external platform links replace the details modal.
 - **Don't** flatten creator shelves, hide the visible ×, weaken external modal actions, or let either navigation layer cover the other.
 - **Don't** introduce rounded bento cards, pills, glassmorphism, or generic soft shadows that dilute the stage-and-poster grammar.

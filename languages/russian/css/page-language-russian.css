@@ -178,6 +178,7 @@ body.russian-page {
 .openrussian-section-ru,
 .immersion-section-ru,
 .books-section-ru,
+.podcasts-section-ru,
 .creators-section-ru,
 .closing-section-ru {
     width: min(100%, 1680px);
@@ -1182,6 +1183,7 @@ body.russian-page > footer {
     .openrussian-section-ru,
     .immersion-section-ru,
     .books-section-ru,
+    .podcasts-section-ru,
     .creators-section-ru { padding-inline: 14px; }
     .section-head-ru h2 { font-size: clamp(2rem, 11vw, 3.3rem); }
     .featured-caption-ru { grid-template-columns: 1fr; gap: 12px; }
@@ -1250,6 +1252,75 @@ body.russian-page > footer {
 .films-shelf-ru{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(260px,23vw,320px);gap:20px;min-width:0;margin:0;padding:clamp(20px,3vw,38px);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-color:var(--ru-teal) var(--ru-paper-dark);list-style:none}.film-item-ru{min-width:0;scroll-snap-align:start}.film-card-ru{display:grid;grid-template-rows:auto 1fr;height:100%;border:2px solid var(--ru-ink);color:var(--ru-ink);background:var(--ru-paper);text-decoration:none;transition:transform 160ms ease,box-shadow 160ms ease}.film-card-ru:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--ru-red)}.film-card-ru:focus-visible{outline:4px solid var(--ru-mustard);outline-offset:4px}.film-poster-ru{position:relative;display:block;aspect-ratio:2/3;overflow:hidden;border-bottom:2px solid var(--ru-ink);background:#111}.film-poster-ru img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}.film-level-badge-ru{position:absolute;top:10px;right:10px;padding:6px 10px;border:2px solid var(--ru-ink);background:var(--ru-mustard);font:800 .72rem/1 var(--ru-display);color:var(--ru-ink)}.film-copy-ru{display:flex;flex-direction:column;gap:10px;padding:18px}.film-tag-ru{color:var(--ru-red);font:700 .65rem/1.2 var(--ru-display);letter-spacing:.08em;text-transform:uppercase}.film-copy-ru strong{font:700 1.05rem/1.25 var(--ru-display);letter-spacing:-.02em}.film-copy-ru p{margin:0;font-size:.95rem;line-height:1.45;opacity:.9}.film-watch-btn-ru{margin-top:auto;padding-top:12px;border-top:1px solid var(--ru-ink);font:700 .75rem/1 var(--ru-display);color:var(--ru-teal)}
 @media (max-width:640px){.films-section-ru{padding-inline:14px}.films-shelf-ru{grid-auto-columns:min(78vw,290px);padding:16px}.films-register-head-ru span{display:none}}
 @media (prefers-reduced-motion:reduce){.film-card-ru{transition:none}.film-card-ru:hover{transform:none}}
+
+/* Russian podcast shelf: compact cards, long copy in the dialog. */
+.podcasts-section-ru { padding: clamp(76px, 9vw, 150px) clamp(18px, 4.5vw, 76px); background: var(--ru-paper-light); }
+.podcasts-register-ru { max-width: 1500px; margin-inline: auto; border: 3px solid var(--ru-ink); background: var(--ru-paper); box-shadow: 12px 12px 0 var(--ru-red); }
+.podcasts-register-head-ru { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 76px; padding: 14px 20px; border-bottom: 3px solid var(--ru-ink); color: var(--ru-paper-light); background: var(--ru-teal); }
+.podcasts-register-head-ru p { margin: 0 0 4px; color: var(--ru-mustard); font: 700 .72rem/1.2 var(--ru-display); letter-spacing: .12em; }
+.podcasts-register-head-ru span { font-size: .9rem; opacity: .85; }
+.podcast-controls-ru { display: flex; gap: 8px; }
+.podcast-controls-ru button { display: grid; place-items: center; width: 48px; height: 46px; border: 2px solid var(--ru-ink); color: var(--ru-ink); background: var(--ru-paper-light); font: 700 1.3rem/1 var(--ru-display); cursor: pointer; }
+.podcast-controls-ru button:hover:not(:disabled) { color: var(--ru-paper-light); background: var(--ru-red); }
+.podcast-controls-ru button:disabled { cursor: not-allowed; opacity: .45; }
+.podcast-shelf-ru { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(250px, 25vw, 320px); gap: 20px; min-width: 0; margin: 0; padding: clamp(20px, 3vw, 38px); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-color: var(--ru-teal) var(--ru-paper-dark); }
+.podcast-shelf-ru:focus-visible { outline: 4px solid var(--ru-mustard); outline-offset: -4px; }
+.podcast-card-ru { min-width: 0; scroll-snap-align: start; }
+.podcast-card-trigger-ru { display: grid; grid-template-rows: auto 1fr; width: 100%; min-height: 100%; padding: 0; border: 2px solid var(--ru-ink); color: var(--ru-ink); text-align: left; background: var(--ru-paper-light); cursor: pointer; transition: transform 160ms ease, box-shadow 160ms ease; }
+.podcast-card-trigger-ru:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--ru-red); }
+.podcast-card-trigger-ru:focus-visible { outline: 4px solid var(--ru-mustard); outline-offset: 4px; }
+.podcast-cover-ru { display: block; aspect-ratio: 1; overflow: hidden; border-bottom: 2px solid var(--ru-ink); background: var(--ru-paper-dark); }
+.podcast-cover-ru img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.08); }
+.podcast-card-copy-ru { display: flex; flex-direction: column; gap: 10px; padding: 18px; }
+.podcast-card-meta-ru { display: flex; justify-content: space-between; gap: 10px; color: var(--ru-red); font: 700 .64rem/1.2 var(--ru-display); letter-spacing: .06em; text-transform: uppercase; }
+.podcast-card-title-ru { margin: 0; font: 700 1.05rem/1.25 var(--ru-display); letter-spacing: -.02em; overflow-wrap: anywhere; }
+.podcast-card-format-ru { margin: 0; font-size: .92rem; line-height: 1.35; opacity: .85; }
+.podcast-card-action-ru { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--ru-ink); color: var(--ru-teal); font: 700 .72rem/1 var(--ru-display); }
+
+.podcast-modal-ru { position: fixed; z-index: 2060; inset: 0; display: grid; place-items: center; padding: clamp(10px, 3vw, 42px); opacity: 0; transition: opacity 150ms ease; }
+.podcast-modal-ru[hidden] { display: none; }
+.podcast-modal-ru.is-open { opacity: 1; }
+.podcast-backdrop-ru { position: absolute; inset: 0; background: rgba(0, 0, 2, .84); }
+.podcast-dialog-ru { position: relative; width: min(1040px, 100%); max-height: min(90vh, 900px); border: 3px solid var(--ru-ink); color: var(--ru-ink); background: var(--ru-paper-light); box-shadow: 14px 14px 0 var(--ru-red); overflow: hidden; }
+.podcast-close-ru { position: absolute; z-index: 2; top: 12px; right: 12px; display: grid; place-items: center; width: 52px; height: 52px; border: 2px solid var(--ru-ink); color: var(--ru-paper-light); background: var(--ru-red); font: 700 2rem/1 var(--ru-display); cursor: pointer; }
+.podcast-close-ru:hover { color: var(--ru-ink); background: var(--ru-mustard); }
+.podcast-modal-scroll-ru { max-height: min(90vh, 900px); overflow-y: auto; overscroll-behavior: contain; padding: clamp(24px, 5vw, 64px); }
+.podcast-modal-head-ru { display: grid; grid-template-columns: minmax(180px, .35fr) minmax(0, .65fr); gap: clamp(24px, 4vw, 52px); align-items: center; margin: 0 56px 30px 0; }
+.podcast-modal-head-ru img { width: 100%; height: auto; max-height: 62vh; border: 2px solid var(--ru-ink); object-fit: contain; background: var(--ru-paper-dark); }
+.podcast-modal-kicker-ru { margin: 0 0 12px; color: var(--ru-red); font: 700 .68rem/1.2 var(--ru-display); letter-spacing: .12em; text-transform: uppercase; }
+.podcast-modal-head-ru h2 { margin: 0 0 12px; font: 800 clamp(2rem, 4.5vw, 4.8rem)/.98 var(--ru-display); letter-spacing: -.06em; overflow-wrap: anywhere; }
+.podcast-modal-publisher-ru { margin: 0 0 16px; font-size: 1.08rem; }
+.podcast-modal-description-ru { max-width: 72ch; margin: 0 0 26px; font-size: 1.12rem; }
+.podcast-guidance-ru { margin: 0 0 28px; padding: 20px; border-left: 8px solid var(--ru-teal); background: var(--ru-paper); }
+.podcast-guidance-ru > p:first-child, .podcast-sample-ru > p:first-child { margin: 0 0 8px; color: var(--ru-teal); font: 700 .66rem/1.2 var(--ru-display); letter-spacing: .08em; }
+.podcast-guidance-ru > p:last-child { margin: 0; }
+.podcast-sample-ru { border: 2px solid var(--ru-ink); }
+.podcast-sample-ru > p:first-child { padding: 14px 16px; margin: 0; border-bottom: 2px solid var(--ru-ink); color: var(--ru-red); }
+.podcast-sample-frame-ru { display: grid; place-items: center; min-height: 100px; padding: 24px; color: var(--ru-paper-light); background: var(--ru-ink); text-align: center; }
+.podcast-modal-links-ru { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.podcast-modal-links-ru a { display: inline-flex; align-items: center; min-height: 48px; padding: 14px 17px; border: 2px solid var(--ru-ink); color: var(--ru-paper-light); background: var(--ru-teal); font: 700 .7rem/1.2 var(--ru-display); text-decoration: none; }
+.podcast-modal-links-ru a:hover { background: var(--ru-ink); }
+body.podcast-modal-open-ru { overflow: hidden; }
+
+@media (max-width: 640px) {
+    .podcasts-section-ru { padding-inline: 14px; }
+    .podcasts-register-head-ru { align-items: flex-start; }
+    .podcasts-register-head-ru span { display: none; }
+    .podcast-shelf-ru { grid-auto-columns: min(78vw, 286px); padding: 16px; }
+    .podcast-modal-ru { padding: 8px; }
+    .podcast-dialog-ru { max-height: 95vh; box-shadow: 7px 7px 0 var(--ru-red); }
+    .podcast-modal-scroll-ru { max-height: 95vh; padding: 72px 18px 28px; }
+    .podcast-modal-head-ru { grid-template-columns: 104px minmax(0, 1fr); gap: 18px; margin: 0 0 26px; align-items: center; }
+    .podcast-modal-head-ru h2 { font-size: clamp(1.45rem, 8vw, 2.55rem); }
+    .podcast-modal-description-ru { font-size: 1rem; }
+    .podcast-modal-links-ru { display: grid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .podcast-card-trigger-ru, .podcast-modal-ru { transition: none; }
+    .podcast-card-trigger-ru:hover { transform: none; }
+    .podcast-shelf-ru { scroll-behavior: auto; }
+}
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }

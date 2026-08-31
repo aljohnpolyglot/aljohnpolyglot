@@ -15,7 +15,8 @@ const creatorsData = [
         socialLinks: {
             youtube: 'https://www.youtube.com/channel/UCsl7HowXw6wiun6sZdixXpw',
             instagram: 'https://www.instagram.com/claudiaarenas/',
-            website: 'https://www.claudiaarenas.info/'
+            website: 'https://www.claudiaarenas.info/',
+            spotify: 'https://open.spotify.com/artist/24wta7UgS2WWnMg1p7T8Po'
         },
         tags: ['música']
     },
@@ -34,7 +35,8 @@ const creatorsData = [
         socialLinks: {
             youtube: 'https://www.youtube.com/@CRISLORAVEVO',
             instagram: 'https://www.instagram.com/ot2025.cristina',
-            website: 'https://www.crislora.es/'
+            website: 'https://www.crislora.es/',
+            spotify: 'https://open.spotify.com/artist/6qksD3IxPOFl23vSKcwmvi'
         },
         tags: ['música']
     },
@@ -52,7 +54,8 @@ const creatorsData = [
         aljohnsComment: null,
         socialLinks: {
             instagram: 'https://www.instagram.com/oliviabay_/',
-            youtube: 'https://www.youtube.com/channel/UCc1sAhdaLjfJi11X1awO-yg'
+            youtube: 'https://www.youtube.com/channel/UCc1sAhdaLjfJi11X1awO-yg',
+            spotify: 'https://open.spotify.com/artist/1TCsZD6VL7dZpIdDXXjJfb'
         },
         tags: ['música']
     },
@@ -71,7 +74,8 @@ const creatorsData = [
         socialLinks: {
             youtube: 'https://www.youtube.com/@AnaMenaMusic',
             instagram: 'https://www.instagram.com/anamenaoficial/',
-            website: 'https://www.anamenamusic.com/'
+            website: 'https://www.anamenamusic.com/',
+            spotify: 'https://open.spotify.com/artist/6k8mwkKJKKjBILo7ypBspl'
         },
         tags: ['música']
     },
@@ -90,7 +94,8 @@ const creatorsData = [
         socialLinks: {
             youtube: 'https://www.youtube.com/@AbrahamMateo',
             instagram: 'https://www.instagram.com/abrahammateo/',
-            website: 'https://www.abrahammateoofficial.com/'
+            website: 'https://www.abrahammateoofficial.com/',
+            spotify: 'https://open.spotify.com/artist/2bxxlINUlcMQQb39K7IopR'
         },
         tags: ['música']
     },
@@ -108,7 +113,8 @@ const creatorsData = [
         aljohnsComment: null,
         socialLinks: {
             youtube: 'https://www.youtube.com/@rosalia',
-            instagram: 'https://www.instagram.com/rosalia.vt/'
+            instagram: 'https://www.instagram.com/rosalia.vt/',
+            spotify: 'https://open.spotify.com/artist/7ltDVBr6mKbRvohxheJ9h1'
         },
         tags: ['música']
     },
@@ -169,7 +175,7 @@ const creatorsData = [
         cefr: ['B2', 'C1', 'C2'],
         embeddedId: '2fFCtglLlkw',
         aljohnsComment: null,
-        socialLinks: { instagram: 'https://www.instagram.com/marlucas/' },
+        socialLinks: { instagram: 'https://www.instagram.com/marlucas/', spotify: 'https://open.spotify.com/artist/7K5OqI5GnphpZMfIRs2UsI' },
         tags: ['música']
     },
     {
@@ -184,7 +190,7 @@ const creatorsData = [
         cefr: ['B1', 'B2', 'C1', 'C2'],
         embeddedId: 'VP9GvnJGM0o',
         aljohnsComment: null,
-        socialLinks: { instagram: 'https://www.instagram.com/juditgaruz/' },
+        socialLinks: { instagram: 'https://www.instagram.com/juditgaruz/', spotify: 'https://open.spotify.com/artist/1HB71oMDYTSa72MItBPeou' },
         tags: ['música']
     },
     {
@@ -201,14 +207,15 @@ const creatorsData = [
         aljohnsComment: null,
         socialLinks: {
             youtube: 'https://www.youtube.com/channel/UC80H8eRa-__9edhudJWrwqw',
-            instagram: 'https://www.instagram.com/q_are.official/'
+            instagram: 'https://www.instagram.com/q_are.official/',
+            spotify: 'https://open.spotify.com/artist/1tg6SNEx6wOz4muQiXLBwI'
         },
         tags: ['música']
     },
     {
         id: 'jenny-luav',
         name: 'Jenny Luav',
-        profilePic: 'images/creators/jenny-luav.jpg',
+        profilePic: 'images/creators/jenny-luav-profile.jpg',
         type: 'Políglota y creadora educativa',
         country: 'México',
         flagCode: 'mx',
@@ -226,7 +233,7 @@ const creatorsData = [
     {
         id: 'zach-morris',
         name: 'Zach Morris',
-        profilePic: 'images/creators/zach-morris.jpg',
+        profilePic: 'images/creators/zach-morris-profile.jpg',
         type: 'Creador de viajes y cultura latinoamericana',
         country: 'Colombia',
         flagCode: 'co',
@@ -244,7 +251,7 @@ const creatorsData = [
     {
         id: 'ouvill-live-music',
         name: 'OuVill Live Music',
-        profilePic: 'images/creators/ouvill-live-music.jpg',
+        profilePic: 'images/creators/ouvill-live-music-profile.jpg',
         type: 'Archivo audiovisual de música en directo',
         country: 'España',
         flagCode: 'es',
@@ -261,7 +268,7 @@ const creatorsData = [
     {
         id: 'bray-on',
         name: 'Bray On',
-        profilePic: 'images/creators/bray-on.jpg',
+        profilePic: 'images/creators/bray-on-profile.jpg',
         type: 'Cantante y compositor',
         country: 'Chile',
         flagCode: 'cl',
@@ -272,14 +279,15 @@ const creatorsData = [
         aljohnsComment: null,
         socialLinks: {
             youtube: 'https://www.youtube.com/channel/UCT6vxsQ9yPHfS7W_vdtEjrw',
-            website: 'https://www.brayonmusic.com/'
+            website: 'https://www.brayonmusic.com/',
+            spotify: 'https://open.spotify.com/artist/3U9Tg0j1kKxOz4bNYZuXvN'
         },
         tags: ['música']
     },
     {
         id: 'yorokobu',
         name: 'Yorokobu',
-        profilePic: 'images/creators/yorokobu.jpg',
+        profilePic: 'images/creators/yorokobu-profile.jpg',
         type: 'Revista de creatividad y diseño',
         country: 'España',
         flagCode: 'es',
@@ -297,7 +305,7 @@ const creatorsData = [
     {
         id: 'urihoops',
         name: 'Urihoops',
-        profilePic: 'images/creators/urihoops.jpg',
+        profilePic: 'images/creators/urihoops-profile.jpg',
         type: 'Canal de baloncesto',
         country: 'España',
         flagCode: 'es',
@@ -315,7 +323,7 @@ const creatorsData = [
     {
         id: 'emir-abdul-gani',
         name: 'Emir Abdul Gani',
-        profilePic: 'images/creators/emir-abdul-gani.jpg',
+        profilePic: 'images/creators/emir-abdul-gani-profile.jpg',
         type: 'Bailarín y coreógrafo',
         country: 'Uruguay',
         flagCode: 'uy',
@@ -333,7 +341,7 @@ const creatorsData = [
     {
         id: 'kevin-y-karla',
         name: 'Kevin y Karla',
-        profilePic: 'images/creators/kevin-y-karla.jpg',
+        profilePic: 'images/creators/kevin-y-karla-profile.jpg',
         type: 'Dúo de pop',
         country: 'Chile',
         flagCode: 'cl',
@@ -343,7 +351,8 @@ const creatorsData = [
         embeddedId: '8T_OrNyG-Rc',
         aljohnsComment: null,
         socialLinks: {
-            youtube: 'https://www.youtube.com/channel/UCVOzuq0ougZtYwN5fBLsvng'
+            youtube: 'https://www.youtube.com/channel/UCVOzuq0ougZtYwN5fBLsvng',
+            spotify: 'https://open.spotify.com/artist/5NrtQbgh8tQQj74tV2LCCS'
         },
         tags: ['música']
     },
@@ -361,7 +370,8 @@ const creatorsData = [
         aljohnsComment: null,
         socialLinks: {
             youtube: 'https://www.youtube.com/channel/UC3-nQ5x435mJ0hPbuPCrJ3g',
-            instagram: 'https://www.instagram.com/javicrespo/'
+            instagram: 'https://www.instagram.com/javicrespo/',
+            spotify: 'https://open.spotify.com/artist/7E7nZ0jJEFOkZhEyz4RPMN'
         },
         tags: ['música']
     },
@@ -508,7 +518,8 @@ const creatorsData = [
     embeddedId: 'JiTca2m7xt0',
     aljohnsComment: "¡Vi su audición en Got Talent Argentina literalmente antes de que se uniera a K4OS y me siento increíblemente orgulloso! Sabía que tenía un talento especial. Verla ahora en el grupo es genial.",
     socialLinks: {
-        instagram: 'https://www.instagram.com/inescivit/'
+        instagram: 'https://www.instagram.com/inescivit/',
+        spotify: 'https://open.spotify.com/artist/5BGjmK22XzmISJn5TzcRZ0'
     },
     tags: ['música']
 },
@@ -997,7 +1008,8 @@ const creatorsData = [
     aljohnsComment: "Muy underratedpara mí. Es increíblemente talentosa. La he seguido desde 'Tu Cara Me Suena' y estoy muy feliz de que haya ganado allí.",
     socialLinks: {
         youtube: 'https://www.youtube.com/channel/UC92FpZGq_VQgpiEHNF1aVaQ',
-        instagram: 'https://www.instagram.com/melani_official_/'
+        instagram: 'https://www.instagram.com/melani_official_/',
+        spotify: 'https://open.spotify.com/artist/1Y0sVnJwuQC20TPl7K7Pxc'
     },
     tags: ['música', 'personalidades']
 },
@@ -1321,7 +1333,7 @@ const creatorsData = [
 //     cefr: ['A2', 'B1'],
 //     embeddedId: 'IKA74Y_b8ZE', // Te vi venir
 //     aljohnsComment: "Las canciones de Sin Bandera son pura poesía. Son perfectas para aprender vocabulario romántico y para dedicar. Cantan de forma lenta y muy clara.",
-//     socialLinks: { youtube: 'https://www.youtube.com/channel/UCf53Y5g6r-uAa3fEXz_Al2A', instagram: 'https://www.instagram.com/sinbandera/', spotify: 'https://open.spotify.com/artist/7xeM7V594211ZpbUH8BTcr' },
+//     socialLinks: { youtube: 'https://www.youtube.com/channel/UCf53Y5g6r-uAa3fEXz_Al2A', instagram: 'https://www.instagram.com/sinbandera/', spotify: 'https://open.spotify.com/artist/7xeM7V59cA1X8GKyKKQV87' },
 //     tags: ['música']
 // },
 {
@@ -2104,7 +2116,7 @@ const creatorsData = [
     cefr: ['B2', 'C1'],
     embeddedId: '_6iRNSOmwjo',
     // aljohnsComment: "Martta es muy graciosa y su contenido es muy auténtico. Es una ventana directa al humor y al español coloquial de los jóvenes en España.",
-     socialLinks: { youtube: 'https://www.youtube.com/@MarttaSanz', instagram: 'https://www.instagram.com/martasanzg' },
+     socialLinks: { youtube: 'https://www.youtube.com/@MarttaSanz', instagram: 'https://www.instagram.com/martasanzg', spotify: 'https://open.spotify.com/artist/1CPRjRyTqc1WT3CctaYtuq' },
     tags: ['música', 'personalidades']
 },
 
@@ -2376,7 +2388,7 @@ const creatorsData = [
     cefr: ['B2', 'C1'],
     embeddedId: 'cnp33b3t3CA',
     aljohnsComment: "David de Gea es un tipo con mucha suerte",
-    socialLinks: { instagram: 'https://www.instagram.com/edurnity' },
+    socialLinks: { instagram: 'https://www.instagram.com/edurnity', spotify: 'https://open.spotify.com/artist/1RpT4SSsNAr0JaSvvwNkgh' },
     tags: ['personalidades', 'música',]
 },
 

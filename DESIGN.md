@@ -15,6 +15,14 @@ colors:
   stitch-light: "rgba(226, 216, 199, 0.82)"
   stitch-dark: "rgba(138, 43, 31, 0.74)"
   focus: "#ffd668"
+  pp-cobalt: "#0645d8"
+  pp-cobalt-deep: "#0336ad"
+  pp-red: "#df2b1f"
+  pp-yellow-focus: "#ffdb00"
+  pp-ink: "#11151a"
+  pp-muted: "#5e6670"
+  pp-paper: "#fbfbfa"
+  pp-line: "#cfd4da"
 typography:
   display:
     fontFamily: "Barlow Condensed, sans-serif"
@@ -51,6 +59,18 @@ typography:
     fontSize: "clamp(1.35rem, 2.5vw, 2.25rem)"
     fontWeight: 600
     lineHeight: 1
+    letterSpacing: "normal"
+  pp-display:
+    fontFamily: "PP Condensed, Arial Narrow, sans-serif"
+    fontSize: "clamp(4rem, 8vw, 6rem)"
+    fontWeight: 700
+    lineHeight: 0.85
+    letterSpacing: "-0.03em"
+  pp-body:
+    fontFamily: "PP Body, Arial, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.55
     letterSpacing: "normal"
 rounded:
   square: "0"
@@ -138,6 +158,34 @@ components:
     rounded: "{rounded.square}"
     width: "min(96vw, 88rem)"
     height: "min(92dvh, 58rem)"
+  pp-search-field:
+    backgroundColor: "#ffffff"
+    textColor: "{colors.pp-ink}"
+    typography: "{typography.pp-body}"
+    rounded: "{rounded.square}"
+    padding: "0 1rem"
+    height: "3.625rem"
+  pp-filter-tab:
+    backgroundColor: "{colors.pp-paper}"
+    textColor: "{colors.pp-ink}"
+    typography: "{typography.pp-display}"
+    rounded: "{rounded.square}"
+    padding: "0.65rem 1rem"
+    height: "2.875rem"
+  pp-filter-tab-active:
+    backgroundColor: "{colors.pp-red}"
+    textColor: "#ffffff"
+    typography: "{typography.pp-display}"
+    rounded: "{rounded.square}"
+    padding: "0.65rem 1rem"
+    height: "2.875rem"
+  pp-paper-action:
+    backgroundColor: "{colors.pp-red}"
+    textColor: "#ffffff"
+    typography: "{typography.pp-display}"
+    rounded: "{rounded.square}"
+    padding: "0.65rem 1rem"
+    height: "3rem"
 ---
 
 # Design System: Mon parcours en français — L’atlas cousu
@@ -310,3 +358,38 @@ Motion is restrained: state changes use 180–220ms, cloth-like transforms use `
 - **Don't** combine creator categories into a single mixed shelf or replace one-photo carousels with crowded contact sheets.
 - **Don't** use Caveat for functional controls, metadata, or long-form body copy.
 - **Don't** hide focus outlines or rely on motion to communicate state.
+
+## Scoped Surface: Polyglot Papers — Language Lab Foldout
+
+This contract applies only to `blog.html` and `#polyglot-papers-preview` in `index.html`, implemented by `css/polyglot-papers-preview.css`, `js/blog_main.js`, and `js/homepage_blog_preview.js`. It extends the project with a separate editorial visual world and does not replace or dilute the French `L’atlas cousu` system above. The approved visual authority is `.impeccable/mocks/polyglot-papers-01-language-lab-foldout.png`.
+
+**Creative North Star: "Language Lab Foldout"**
+
+Polyglot Papers behaves like an instruction-manual archive: a decisive cobalt masthead folds into a bright paper workspace, then resolves one featured essay into compact indexed rows. Measurement marks, red selection blocks, and a small yellow inventory accent provide the laboratory character. Real article titles, excerpts, dates, categories, reading times, links, and local cover assets remain the content authority.
+
+### Palette and Type
+
+- **Cobalt** (`#0645d8`) establishes mastheads, numbered references, and the homepage archive action; **Deep Cobalt** (`#0336ad`) is the darker supporting blue.
+- **Selection Red** (`#df2b1f`) marks active filters and primary paper actions. **Inventory Yellow / Focus** (`#ffdb00`) is reserved for small instructional accents and the visible focus outline.
+- **Ink** (`#11151a`), **Muted** (`#5e6670`), **Paper** (`#fbfbfa`), and **Line** (`#cfd4da`) create a flat, high-contrast editorial workspace.
+- `PP Condensed` is the local alias for bold Barlow Condensed and owns display headings, labels, indexes, and controls. `PP Body` is the local alias for regular Barlow and owns search, metadata, excerpts, and supporting copy.
+
+### Layout and Geometry
+
+- Geometry is square. Use rules, color fields, and contained folds for separation; do not introduce rounded cards, pills, soft card shadows, or a generic card wall.
+- The archive follows one reading path: cobalt masthead and search, compact filter controls, one 16:9 featured cover with editorial copy, then numbered index rows.
+- Filter rows stay in a single contained horizontal scroller. Controls remain at least 44px high, and the document itself must not overflow horizontally.
+- The homepage preview is a compact fold rather than a second archive: its selected feature sits beside recent indexed rows and a single archive action.
+- At 980px and below, the featured archive and homepage preview become one-column compositions. At 700px and below, the masthead fold, title, feature, index metadata, and homepage feature stack; the homepage section uses `scroll-margin-top: 76px` to clear the fixed shared navbar.
+
+### Components and States
+
+- Search is a square white field inside the cobalt masthead, with an explicit accessible label and yellow `:focus-within` border.
+- Topic and language filters expose pressed state with `aria-pressed`; the selected tab reverses to red with white text. Sorting remains a native square select, reset restores the default archive state and returns focus to search, and the live result count announces changes.
+- Paper actions are square red controls. The featured action includes the only motion detail: a restrained arrow translation on hover. `prefers-reduced-motion: reduce` removes that transition.
+- Covers stay at 16:9 with meaningful alternative text. Failed images are removed without breaking the reading path.
+- Preserve the shared navbar and footer loaders, the existing article dataset, and every real destination link. The homepage fold must remain isolated from unrelated homepage sections.
+
+**The One Fold Rule.** Lead with one featured paper and quieter indexed rows. Never flatten the archive into equal-weight cards.
+
+**The Measured Motion Rule.** Motion is limited to the paper-action arrow microinteraction and must disappear under reduced-motion preferences.

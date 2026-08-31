@@ -345,7 +345,11 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
         <div class="carousel-container-bisaya podcast-section-spotify-theme" id="podcast-carousel-container"> <!-- Added spotify theme class here -->
             <h3><i class="fab fa-spotify podcast-spotify-icon"></i> Mga Podcast Nga Makalingaw!</h3> <!-- Changed icon for Spotify theme -->
             <p>Kung pirmi kang on-the-go or ganahan lang ka maminaw samtang magtrabaho, kaning mga Bisaya podcast ay para nimo!</p>
-            <div class="horizontal-scroll-wrapper" id="podcast-scroll-wrapper">
+            <div class="podcast-shelf-controls" aria-label="Kontrol sa podcast shelf">
+                <button type="button" id="podcast-previous" aria-label="Balik sa miaging podcast">←</button>
+                <button type="button" id="podcast-next" aria-label="Sunod nga podcast">→</button>
+            </div>
+            <div class="horizontal-scroll-wrapper" id="podcast-scroll-wrapper" tabindex="0" aria-label="Mga podcast nga Bisaya">
                 <!-- Podcast cards will be inserted here by JS -->
             </div>
         </div>
@@ -541,7 +545,7 @@ Kamusta mo diha! Aljohn ni, gikan man ko sa Cotcot, Liloan, Cebu! Kaning Binisay
     <footer id="main-footer-placeholder"></footer>
 
   <!-- Modal Structure (Universal for Creators/Podcasts) -->
-<div id="bisaya-item-modal" class="modal-bisaya">
+<div id="bisaya-item-modal" class="modal-bisaya" role="dialog" aria-modal="true" aria-labelledby="modal-item-name" hidden>
     <div class="modal-content-bisaya"> <!-- JS will add .creator-modal-theme or .podcast-spotify-modal-theme here -->
         <button class="close-modal-bisaya" aria-label="Close modal">×</button>
         

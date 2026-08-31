@@ -578,17 +578,17 @@
 /* (Usamos :nth-child para aplicar los colores de forma cíclica) */
 
 /* Estantería 1, 4, 7, etc. (Rojo) */
-.content-shelf:nth-child(3n + 1) {
+article.content-shelf:nth-of-type(3n + 1) {
     background-color: #ba1f2f; /* RTVE Red */
 }
 
 /* Estantería 2, 5, 8, etc. (Morado) */
-.content-shelf:nth-child(3n + 2) {
+article.content-shelf:nth-of-type(3n + 2) {
     background-color: #551857; /* RTVE Purple */
 }
 
 /* Estantería 3, 6, 9, etc. (Naranja) */
-.content-shelf:nth-child(3n + 3) {
+article.content-shelf:nth-of-type(3n + 3) {
     background-color: #e86230; /* RTVE Orange */
 }
 
@@ -960,4 +960,83 @@
     height: auto;
     border-radius: 4px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* --- Estantería compacta de podcasts --- */
+.content-shelf.podcast-shelf {
+    background: #16434c;
+    color: #fff8ef;
+}
+.podcast-shelf h2 {
+    margin: 0 0 1.25rem;
+    color: #f5d9a6;
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+}
+.podcast-card-trigger:focus-visible, .podcast-modal-close:focus-visible, .podcast-modal-links a:focus-visible { outline: 3px solid #b8863b; outline-offset: 3px; }
+.podcast-shelf-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 260px);
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding: .25rem .2rem .8rem;
+}
+.podcast-card { scroll-snap-align: start; min-width: 0; }
+.podcast-card-trigger {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    border: 1px solid rgba(245,217,166,.55);
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: left;
+    background: #fff8ef;
+    color: #2d1d24;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(51, 18, 32, .12);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.podcast-card-trigger:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(51, 18, 32, .18); }
+.podcast-card-trigger img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #eadfd1; }
+.podcast-card-body { display: grid; gap: .45rem; padding: .9rem 1rem 1rem; }
+.podcast-card-title { font-family: "Bodoni Moda", Georgia, serif; font-size: 1.25rem; line-height: 1.1; color: #16434c; }
+.podcast-card-meta, .podcast-card-format { font-size: .86rem; line-height: 1.35; color: #5b4650; }
+.podcast-card-action { color: #16434c; font-weight: 700; margin-top: .2rem; }
+
+/* --- Modal de detalles de podcast --- */
+.podcast-modal-overlay { position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center; padding: clamp(.75rem, 3vw, 2rem); }
+.podcast-modal-overlay.hidden { display: none; }
+.podcast-modal-backdrop { position: absolute; inset: 0; background: rgba(31, 12, 22, .72); }
+.podcast-modal-dialog { position: relative; width: min(980px, 100%); max-height: min(760px, calc(100vh - 2rem)); overflow: auto; overscroll-behavior: contain; border: 1px solid rgba(109,24,51,.22); border-radius: 18px; background: #fff8ef; color: #2d1d24; box-shadow: 0 24px 70px rgba(20, 6, 13, .36); padding: clamp(1.1rem, 3vw, 2rem); }
+.podcast-modal-close { position: absolute; top: .8rem; right: .9rem; z-index: 2; display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid rgba(109,24,51,.25); border-radius: 50%; background: #6d1833; color: #fff8ef; font-size: 1.5rem; line-height: 1; cursor: pointer; box-shadow: 0 6px 14px rgba(51,18,32,.2); }
+.podcast-modal-close:hover { background: #4f1025; }
+.podcast-modal-layout { display: grid; grid-template-columns: minmax(170px, 230px) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.25rem); align-items: center; }
+.podcast-modal-layout > img { width: 100%; height: auto; max-height: min(28rem, 62vh); object-fit: contain; align-self: center; border-radius: 12px; background: #eadfd1; box-shadow: 0 12px 28px rgba(51, 18, 32, .14); }
+.podcast-modal-details h2 { margin: 0 2.5rem .35rem 0; color: #6d1833; font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.05; }
+.podcast-modal-meta { color: #6d1833; font-weight: 700; margin: 0 0 1rem; }
+.podcast-modal-details p { line-height: 1.6; max-width: 65ch; margin-top: .65rem; }
+.podcast-modal-details h3 { margin: 1.2rem 0 .25rem; color: #6d1833; font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; }
+.podcast-modal-note { border-left: 3px solid #b8863b; padding-left: .9rem; font-style: italic; }
+.podcast-modal-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.podcast-modal-links a { display: inline-flex; padding: .55rem .8rem; border: 1px solid #6d1833; border-radius: 999px; color: #6d1833; font-weight: 700; text-decoration: none; }
+.podcast-modal-links a:hover { background: #6d1833; color: #fff8ef; }
+.podcast-modal-media { grid-column: 2; width: 100%; max-height: 300px; aspect-ratio: 16 / 9; margin-top: .25rem; background: #2d1d24; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 28px rgba(51, 18, 32, .16); }
+.podcast-modal-media iframe { width: 100%; height: 100%; border: 0; }
+.podcast-modal-media p { color: #fff8ef; padding: 1rem; }
+@media (max-width: 680px) {
+    .podcast-shelf-rail { grid-auto-columns: minmax(74vw, 280px); }
+    .podcast-modal-layout { grid-template-columns: 1fr; }
+    .podcast-modal-layout > img { width: min(230px, 70vw); }
+    .podcast-modal-media { grid-column: auto; max-height: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .podcast-card-trigger { transition: none; }
+    .podcast-shelf-rail { scroll-behavior: auto; }
 }

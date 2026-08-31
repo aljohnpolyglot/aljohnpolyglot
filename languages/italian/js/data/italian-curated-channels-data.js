@@ -200,7 +200,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "PWu71JMwGWE", title: "La notte" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/arisamusic/" },
-                { label: "Video ufficiale", url: "https://www.youtube.com/watch?v=PWu71JMwGWE" }
+                { label: "Video ufficiale", url: "https://www.youtube.com/watch?v=PWu71JMwGWE" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/25x6MD0spNNS7z93Sat30K" }
             ]
         },
         {
@@ -217,7 +218,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "FpOEN93LX-E", title: "La solitudine" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/laurapausini/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UC2ScTcowKLzbyCl8ogJ_KKg" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UC2ScTcowKLzbyCl8ogJ_KKg" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/2e4nwiX8ZCU09LGLOpeqTH" }
             ]
         },
         {
@@ -234,7 +236,7 @@ window.ITALIAN_CURATED_LIBRARY = {
             personalComment: "Per me Ultimo non è soltanto un cantante: è un poeta. Il modo in cui scrive di vita, memoria, amore ed esperienza umana mi ha toccato profondamente. Una sua canzone mi ha fatto piangere; nelle sue parole sento il peso della poesia, non quello di un normale testo pop.",
             levelGuidance: "Da B1 per seguire il senso generale e i ritornelli; B2—C1 per metafore, immagini e sfumature della scrittura.",
             sampleVideo: { id: "BhKjcaWbJXQ", title: "Ultimo — Cascare nei tuoi occhi" },
-            links: [{ label: "Canale YouTube", url: "https://www.youtube.com/channel/UCpprts-5FuflykTdxedP1oQ" }]
+            links: [{ label: "Canale YouTube", url: "https://www.youtube.com/channel/UCpprts-5FuflykTdxedP1oQ" }, { label: "Profilo Spotify", url: "https://open.spotify.com/artist/3hN3iJMbbBmqBSAMx5veDa" }]
         },
         {
             id: "marco-mengoni",
@@ -250,7 +252,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "unRjK82bDLw", title: "L’essenziale" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/mengonimarcoofficial/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCXMcRVDuAyWMRpJUpc0mRDw" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCXMcRVDuAyWMRpJUpc0mRDw" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/3xGlLcG9CUrs5MvFkSLOS5" }
             ]
         },
         {
@@ -267,7 +270,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "qz88Dx-_lA4", title: "Bellissima" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/naliannalisa/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCh2p-kfRziVuL4UJiHnyxYQ" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCh2p-kfRziVuL4UJiHnyxYQ" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/0EqkKYDK9EkKY5N7zU3FPv" }
             ]
         },
         {
@@ -284,7 +288,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "qU-KFzHN1wM", title: "Incoscienti giovani" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/achilleidol/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCBn0LqkY6sTa1iw-NQOGEbA" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCBn0LqkY6sTa1iw-NQOGEbA" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/0lI3rF4hi4op6UxqlLHPzv" }
             ]
         },
         {
@@ -301,7 +306,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "psiytW9Or2s", title: "La noia" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/angelinamango_/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCb6_9_Z8QQSEVqvA0GOdTJQ" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCb6_9_Z8QQSEVqvA0GOdTJQ" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/1A6HBLulvBFzNtlMb7b08f" }
             ]
         },
         {
@@ -318,7 +324,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "wMohbrKCAkM", title: "Due" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/elodie/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UC9C9A0BYvdGO_I1IwctjWGg" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UC9C9A0BYvdGO_I1IwctjWGg" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/7GgpsUpkj3olseoaTY7TEY" }
             ]
         },
         {
@@ -335,7 +342,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "-ixB0yDkLO4", title: "La cura per me" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/giorgia/" },
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCi-894TFnzQcFTlicV1Priw" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCi-894TFnzQcFTlicV1Priw" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/0gm1lHoOXAdy5OB4AwFYRr" }
             ]
         },
         {
@@ -352,7 +360,8 @@ window.ITALIAN_CURATED_LIBRARY = {
             sampleVideo: { id: "vVOKri62-pU", title: "La chitarra della Apple?" },
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/@pietromorello99" },
-                { label: "Instagram", url: "https://www.instagram.com/pietro_morello_/" }
+                { label: "Instagram", url: "https://www.instagram.com/pietro_morello_/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/0S5mTrgm7qRrGQWSTaXnVl" }
             ]
         },
         {

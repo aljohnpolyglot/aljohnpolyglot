@@ -1011,6 +1011,74 @@ body.swedish-modal-open {
     }
 }
 
+/* Compact podcast cards; long copy lives in the dialog. */
+#language-page-swedish #swedish-resources #top-podcasts-grid .swedish-podcast-card {
+    flex: 0 0 clamp(230px, 27vw, 280px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+#language-page-swedish .swedish-podcast-card-trigger {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 14px;
+    color: var(--sw-text-on-yellow);
+    text-align: left;
+    background: var(--sw-flag-yellow);
+    border: 2px solid var(--sw-accent-yellow-darker);
+    border-radius: var(--sw-radius-lg);
+    box-shadow: var(--sw-shadow-md);
+    cursor: pointer;
+    transition: transform var(--sw-transition-speed) ease, box-shadow var(--sw-transition-speed) ease;
+}
+#language-page-swedish .swedish-podcast-card-trigger:hover { transform: translateY(-4px); box-shadow: 0 7px 20px rgba(var(--sw-flag-yellow-rgb), .35); }
+#language-page-swedish .swedish-podcast-card-trigger:focus-visible { outline: 3px solid var(--sw-flag-blue); outline-offset: 4px; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-image-new {
+    width: 100%; height: auto; aspect-ratio: 1; margin: 0; border: 0; border-radius: var(--sw-radius-md); object-fit: cover;
+}
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-meta { font-size: .75rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; opacity: .78; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-name-new { margin: 0; color: var(--sw-text-on-yellow); font-size: 1.12rem; line-height: 1.2; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-format { display: -webkit-box; overflow: hidden; min-height: 2.6em; color: var(--sw-text-on-yellow); font-size: .84rem; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-button-new { margin-top: auto; color: var(--sw-text-on-blue); background: var(--sw-flag-blue); border-radius: var(--sw-radius-xl); padding: 7px 12px; font-size: .8rem; font-weight: 700; }
+
+#language-page-swedish .swedish-podcast-modal[hidden] { display: none; }
+#language-page-swedish .swedish-podcast-modal { position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center; padding: 20px; }
+#language-page-swedish .swedish-podcast-modal.is-open { animation: swedishPodcastFade .2s ease-out both; }
+#language-page-swedish .swedish-podcast-modal__backdrop { position: absolute; inset: 0; background: rgba(4, 16, 28, .82); }
+#language-page-swedish .swedish-podcast-modal__dialog { position: relative; width: min(900px, 100%); max-height: min(760px, calc(100dvh - 40px)); overflow: auto; padding: clamp(20px, 4vw, 38px); color: var(--sw-text-primary); background: var(--sw-bg-tertiary); border: 1px solid var(--sw-border-color); border-radius: var(--sw-radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+#language-page-swedish .swedish-podcast-modal__close { position: absolute; top: 12px; right: 14px; z-index: 1; width: 42px; height: 42px; color: var(--sw-text-primary); background: var(--sw-bg-secondary); border: 1px solid var(--sw-border-color); border-radius: 50%; font-size: 1.7rem; line-height: 1; cursor: pointer; }
+#language-page-swedish .swedish-podcast-modal__close:focus-visible { outline: 3px solid var(--sw-flag-yellow); outline-offset: 3px; }
+#language-page-swedish .swedish-podcast-modal__layout { display: grid; grid-template-columns: minmax(180px, 280px) minmax(0, 1fr); gap: clamp(20px, 4vw, 38px); align-items: center; }
+#language-page-swedish .swedish-podcast-modal__cover { width: 100%; height: auto; max-height: 62vh; object-fit: contain; align-self: center; border-radius: var(--sw-radius-md); }
+#language-page-swedish .swedish-podcast-modal__body h2 { margin: 0 0 12px; color: var(--sw-text-primary); font-size: clamp(1.7rem, 4vw, 2.4rem); }
+#language-page-swedish .swedish-podcast-modal__eyebrow { margin: 0 0 8px; color: var(--sw-flag-yellow); font-size: .8rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+#language-page-swedish .swedish-podcast-modal__description, #language-page-swedish .swedish-podcast-modal__guidance { color: var(--sw-text-secondary); line-height: 1.65; }
+#language-page-swedish .swedish-podcast-modal__note { margin: 18px 0; padding: 14px 16px; background: var(--sw-bg-secondary); border-radius: var(--sw-radius-md); }
+#language-page-swedish .swedish-podcast-modal__note p { margin: 6px 0 0; line-height: 1.6; }
+#language-page-swedish .swedish-podcast-modal__video { aspect-ratio: 16 / 9; margin-top: 20px; overflow: hidden; border-radius: var(--sw-radius-md); background: #000; }
+#language-page-swedish .swedish-podcast-modal__video iframe { width: 100%; height: 100%; border: 0; }
+#language-page-swedish .swedish-podcast-modal__unavailable { margin-top: 20px; padding: 14px; color: var(--sw-text-secondary); background: var(--sw-bg-secondary); border-radius: var(--sw-radius-md); }
+#language-page-swedish .swedish-podcast-modal__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+#language-page-swedish .swedish-podcast-modal__links a { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 14px; color: var(--sw-text-on-blue); background: var(--sw-flag-blue); border-radius: var(--sw-radius-xl); font-weight: 700; text-decoration: none; }
+#language-page-swedish .swedish-podcast-modal__links a:focus-visible { outline: 3px solid var(--sw-flag-yellow); outline-offset: 3px; }
+body.swedish-podcast-modal-open { overflow: hidden; }
+@keyframes swedishPodcastFade { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 640px) {
+    #language-page-swedish #swedish-resources #top-podcasts-grid .swedish-podcast-card { flex-basis: min(78vw, 278px); }
+    #language-page-swedish .swedish-podcast-modal { padding: 10px; }
+    #language-page-swedish .swedish-podcast-modal__dialog { max-height: calc(100dvh - 20px); padding: 20px 16px; }
+    #language-page-swedish .swedish-podcast-modal__layout { grid-template-columns: 1fr; }
+    #language-page-swedish .swedish-podcast-modal__cover { width: min(230px, 70vw); margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish .swedish-podcast-card-trigger, #language-page-swedish .swedish-podcast-modal.is-open { transition: none; animation: none; }
+}
+
 /* Shared Swedish chapter bar: the global site header remains the first layer. */
 .swedish-page-active {
     --language-section-nav-height: 54px;

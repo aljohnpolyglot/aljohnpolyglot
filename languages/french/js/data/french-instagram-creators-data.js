@@ -21,7 +21,7 @@
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: 'qcA07gL7WEw', title: 'M. Pokora — Les planètes (clip officiel)' },
-            links: { instagram: 'https://www.instagram.com/mattpokora/', youtube: 'https://www.youtube.com/user/mpofficial' },
+            links: { instagram: 'https://www.instagram.com/mattpokora/', youtube: 'https://www.youtube.com/user/mpofficial', spotify: 'https://open.spotify.com/artist/6euPnGzBlDysAC5ecVguNZ' },
         },
         {
             id: 'kendji',
@@ -35,7 +35,7 @@
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: '4ySIi8EtEQg', title: 'Kendji Girac — Si seulement… (clip officiel)' },
-            links: { instagram: 'https://www.instagram.com/kendji/', youtube: 'https://www.youtube.com/@KendjiGirac' },
+            links: { instagram: 'https://www.instagram.com/kendji/', youtube: 'https://www.youtube.com/@KendjiGirac', spotify: 'https://open.spotify.com/artist/4IS4EyXNmiI2w5SRCjMtEF' },
         },
         {
             id: 'amel-bent',
@@ -49,7 +49,7 @@
             levels: ['A2', 'B1', 'B2'],
             categories: ['personnalites', 'musique'],
             sampleVideo: { id: 'Uzuspeneepc', title: 'Amel Bent — Ton nom (clip officiel)' },
-            links: { instagram: 'https://www.instagram.com/amelbent/', youtube: 'https://www.youtube.com/@amelbentvideo' },
+            links: { instagram: 'https://www.instagram.com/amelbent/', youtube: 'https://www.youtube.com/@amelbentvideo', spotify: 'https://open.spotify.com/artist/15jZ8OLtnGATWHlQkltG7f' },
         },
         {
             id: 'danse-avec-les-stars',

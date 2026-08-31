@@ -1,0 +1,8 @@
+{
+  "prompt": "Use case: text-localization. Asset type: truth correction to the user's selected German language-portal composition. Edit target: the supplied german-canon web UI mockup. Preserve the full split-hero composition, exact navigation, typography scale, spacing, chevron geometry, white ground, featured-video image, card count, and every visual detail. Make only these text/content corrections: (1) replace the body paragraph under 'MEIN WEG ZUM DEUTSCHEN' with 'Meine Videos, Begegnungen und Ressourcen auf meinem Weg zum Deutschen.'; (2) replace the third learning-path card title 'PODCASTS' with 'MUSIK' and its description with 'Songs und Stimmen für deinen deutschen Wortschatz.' Keep all other text and imagery unchanged. Do not add or remove UI elements. No logo changes, no watermark.\n",
+  "createdAt": "2026-08-30T04:24:45.661Z",
+  "role": "composition-comp",
+  "approved": true,
+  "output": ".impeccable/mocks/german-familiar-portal-selected.webp",
+  "references": [".impeccable/mocks/decision/german-canon.webp"]
+}

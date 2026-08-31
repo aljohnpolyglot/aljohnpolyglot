@@ -23,7 +23,8 @@
             sampleVideo: { id: "__F1tdt_sJs", title: "Un anno di SMILE!" },
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/@andreacerrato" },
-                { label: "Instagram", url: "https://www.instagram.com/andcerrato/" }
+                { label: "Instagram", url: "https://www.instagram.com/andcerrato/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/3DqKEMI2QFZlZARJeE0EPN" }
             ]
         },
         {
@@ -39,7 +40,8 @@
             levelGuidance: "Da A2 per seguire ritornelli e parole ricorrenti; B1—B2 per strofe veloci, linguaggio colloquiale e passaggi dal canto al parlato.",
             sampleVideo: { id: "X_05BcnQU0U", title: "Il filo rosso — dal vivo a Milano" },
             links: [
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCZiqJUM_3lMb2oBdNp0uHIQ" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCZiqJUM_3lMb2oBdNp0uHIQ" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/7GacyaFUp0qkEJglERX9N7" }
             ]
         },
         {
@@ -57,7 +59,8 @@
             sampleVideo: { id: "K4cPTgkYG9c", title: "Ovunque sarai" },
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/@iramaofficial" },
-                { label: "Instagram", url: "https://www.instagram.com/irama.plume/" }
+                { label: "Instagram", url: "https://www.instagram.com/irama.plume/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/5iot8OPcosJN9nCl7I5SdK" }
             ]
         },
         {
@@ -73,7 +76,8 @@
             levelGuidance: "Da A2 per ritornelli e lyric video; B1—B2 per seguire immagini emotive, pronuncia cantata e ritmo dei live.",
             sampleVideo: { id: "tRP08h4RJ00", title: "Ho un amico — lyric video" },
             links: [
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCX3CyDro7Y_xioth1PiM_fA" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCX3CyDro7Y_xioth1PiM_fA" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/25u1DN0MwQVSav4XoJS7hl" }
             ]
         },
         {
@@ -89,7 +93,8 @@
             levelGuidance: "Da B1 per i brani con testo chiaro; B2—C1 per metafore, interviste e lessico legato a memoria, cinema e composizione.",
             sampleVideo: { id: "vJVGUGNAc88", title: "Lo ricordo io per te" },
             links: [
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UChOHBb6xzm4DOKI1-mr2gpg" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UChOHBb6xzm4DOKI1-mr2gpg" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/1CF7hrTuWgErEa6HBFJ8d3" }
             ]
         },
         {
@@ -105,7 +110,8 @@
             levelGuidance: "Da A2 per ritornelli e lessico emotivo frequente; B1—B2 per seguire l’intero racconto e le sfumature della pronuncia cantata.",
             sampleVideo: { id: "G-crmJGZwNU", title: "Non esisti" },
             links: [
-                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCgFC9y87e-cDbelKbKGPdog" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCgFC9y87e-cDbelKbKGPdog" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/5Imsy0ZXNi7uWLJpP5dZ8b" }
             ]
         },
         {
@@ -121,7 +127,8 @@
             levelGuidance: "Da A2 per i ritornelli e il lessico sentimentale; B1—B2 per strofe narrative, tempi del passato e immagini figurate.",
             sampleVideo: { id: "zmXOx-MGDAc", title: "Non ti dimentico" },
             links: [
-                { label: "Canale YouTube", url: "https://www.youtube.com/@rockmoda" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/@rockmoda" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/34LniBXZel58HhcdIX0ysN" }
             ]
         },
         {
@@ -153,7 +160,8 @@
             levelGuidance: "Da A2 per i ritornelli e i visual; B1—B2 per seguire strofe rappate, metafore e cambi di velocità.",
             sampleVideo: { id: "yXbx3xtxyjc", title: "Sempre un po’ di te" },
             links: [
-                { label: "Canale YouTube", url: "https://www.youtube.com/@MRRAINOFFICIALCHANNEL" }
+                { label: "Canale YouTube", url: "https://www.youtube.com/@MRRAINOFFICIALCHANNEL" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/59MLbXG0jLVwJup3KAd6m1" }
             ]
         },
         {
@@ -171,7 +179,8 @@
             sampleVideo: { id: "CSO-TtXAFk4", title: "Si è spenta anche la luna — lyric video" },
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/@EmanueleAloia" },
-                { label: "Instagram", url: "https://www.instagram.com/emanuele.aloia/" }
+                { label: "Instagram", url: "https://www.instagram.com/emanuele.aloia/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/3vkFU3DBYyYBSUt323pj76" }
             ]
         },
         {
@@ -189,7 +198,8 @@
             sampleVideo: { id: "QfX0cxlOIIw", title: "Atlantide — Radio2 Live" },
             links: [
                 { label: "Instagram", url: "https://www.instagram.com/_sarahtoscano_/" },
-                { label: "Profilo su Witty TV", url: "https://www.wittytv.it/allievi2/sarah/" }
+                { label: "Profilo su Witty TV", url: "https://www.wittytv.it/allievi2/sarah/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/3dsL845RhsJDZPc7BdGsN5" }
             ]
         },
         {
@@ -226,7 +236,8 @@
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/@antoniaofficialchannel" },
                 { label: "Instagram", url: "https://www.instagram.com/antonianocca/" },
-                { label: "Profilo su Witty TV", url: "https://www.wittytv.it/allievi2/antonia/" }
+                { label: "Profilo su Witty TV", url: "https://www.wittytv.it/allievi2/antonia/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/7FHXOCS4B6dXsf5x3KmRr0" }
             ]
         },
         {
@@ -263,7 +274,8 @@
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/channel/UCOShtIyN-jiiPNQbY9vOabw" },
                 { label: "Instagram", url: "https://www.instagram.com/_nicolofilippucci_/" },
-                { label: "Profilo su Witty TV", url: "https://www.wittytv.it/allievi2/nicolo-2/" }
+                { label: "Profilo su Witty TV", url: "https://www.wittytv.it/allievi2/nicolo-2/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/5v11UeQ72AbrburRA8fkMi" }
             ]
         },
         {
@@ -282,7 +294,8 @@
             links: [
                 { label: "Canale YouTube", url: "https://www.youtube.com/@Luk3official" },
                 { label: "Instagram", url: "https://www.instagram.com/luk3official_/" },
-                { label: "Amici su Witty TV", url: "https://www.wittytv.it/amici/luk3-e-il-quarto-eliminato-di-amici-24/" }
+                { label: "Amici su Witty TV", url: "https://www.wittytv.it/amici/luk3-e-il-quarto-eliminato-di-amici-24/" },
+                { label: "Profilo Spotify", url: "https://open.spotify.com/artist/0whO28HUyJLt9F0bLNzqU1" }
             ]
         }
     );

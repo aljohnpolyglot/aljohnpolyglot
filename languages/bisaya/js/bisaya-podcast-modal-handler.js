@@ -1,88 +1,68 @@
-// js/bisaya-podcast-modal-handler.js
-
+// Accessible podcast details for the shared Bisaya/Cebuano modal.
 function initializePodcastModalHandler() {
-    console.log("BISAYA PODCAST MODAL HANDLER (Spotify Theme): Initializing...");
+    const modal = document.getElementById('bisaya-item-modal');
+    const content = modal?.querySelector('.modal-content-bisaya');
+    const closeButton = modal?.querySelector('.close-modal-bisaya');
+    const image = document.getElementById('modal-item-image');
+    const title = document.getElementById('modal-item-name');
+    const body = document.getElementById('modal-item-long-desc');
+    const cta = document.getElementById('modal-item-cta');
+    const social = document.getElementById('modal-creator-social-actions');
+    if (!modal || !content || !closeButton || !image || !title || !body) return;
 
-    if (!window.BisayaModalCore) {
-        console.error("BISAYA PODCAST MODAL HANDLER: BisayaModalCore is not available.");
-        return;
-    }
-
-    const modal = window.BisayaModalCore.getModalElement();
-    const modalItemImage = document.getElementById('modal-item-image');
-    const modalItemName = document.getElementById('modal-item-name');
-    const modalItemInfoContainer = modal.querySelector('.modal-item-info-header'); // To set data-host
-    const modalItemLongDesc = document.getElementById('modal-item-long-desc');
-    const modalItemCta = document.getElementById('modal-item-cta'); // This is THE button now for Spotify
-
-    // Elements to explicitly HIDE for this specific podcast modal theme
-    const modalVideoEmbedsContainer = document.getElementById('modal-video-embeds-container');
-    const modalItemTags = modal.querySelector('.modal-item-tags');
-    const creatorSocialActionsContainer = document.getElementById('modal-creator-social-actions');
-
-
-    function populatePodcastModalSpotify(podcast) {
-        if (!podcast) {
-            console.warn("BISAYA PODCAST MODAL HANDLER: No podcast data provided.");
-            window.BisayaModalCore.clear(); // Clear to show default loading state
-            return;
-        }
-
-        window.BisayaModalCore.clear(); // Start with a clean slate from core
-        window.BisayaModalCore.applyTheme('podcast-spotify-modal-theme'); // Apply Spotify-like theme
-
-        // Populate Podcast Specific Content
-        if (modalItemImage && podcast.coverSrc) {
-            modalItemImage.src = podcast.coverSrc;
-            modalItemImage.alt = podcast.altText || podcast.title;
-        }
-        if (modalItemName && podcast.title) {
-            modalItemName.textContent = podcast.title;
-        }
-        // For the "Podcast by Host Name" subtitle in CSS
-        if (modalItemInfoContainer && podcast.hosts) { // Assuming podcast data has a 'hosts' string
-            modalItemInfoContainer.setAttribute('data-host', ` by ${podcast.hosts}`);
-        } else if (modalItemInfoContainer) {
-            modalItemInfoContainer.removeAttribute('data-host');
-        }
-        
-        if (modalItemLongDesc) {
-            if (podcast.longDesc) {
-                modalItemLongDesc.innerHTML = `<p>${podcast.longDesc.replace(/\n/g, '</p><p>')}</p>`;
-            } else {
-                modalItemLongDesc.innerHTML = "<p>Wala pay dugang detalye para aning podcast.</p>";
-            }
-        }
-
-        // Explicitly hide elements not used in this Spotify podcast modal theme
-        if (modalVideoEmbedsContainer) modalVideoEmbedsContainer.style.display = 'none';
-        if (modalItemTags) modalItemTags.style.display = 'none';
-        if (creatorSocialActionsContainer) creatorSocialActionsContainer.style.display = 'none';
-
-        // Setup the single "Listen on Spotify" CTA using the #modal-item-cta element
-        if (modalItemCta) {
-            if (podcast.platformLinks && podcast.platformLinks.spotify) {
-                modalItemCta.href = podcast.platformLinks.spotify;
-                modalItemCta.target = '_blank';
-                modalItemCta.innerHTML = `<i class="fab fa-spotify"></i> Paminaw sa Spotify`;
-                modalItemCta.className = 'btn-spotify-listen'; // CSS class for Spotify green button styling
-                modalItemCta.style.display = 'inline-flex';
-            } else {
-                modalItemCta.style.display = 'none'; // Hide CTA if no Spotify link
-            }
-        }
-        window.BisayaModalCore.open();
-    }
-
-    // Expose the function
-    window.BisayaPodcastModal = {
-        populateAndShow: populatePodcastModalSpotify
+    let previousFocus = null;
+    const focusables = () => [...modal.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')];
+    const close = () => {
+        modal.style.display = 'none';
+        modal.setAttribute('hidden', '');
+        content.classList.remove('podcast-spotify-modal-theme');
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        if (previousFocus?.isConnected) previousFocus.focus();
     };
+    const open = (podcast) => {
+        if (!podcast) return;
+        previousFocus = document.activeElement;
+        content.classList.remove('creator-modal-theme');
+        content.classList.add('podcast-spotify-modal-theme');
+        image.src = podcast.coverSrc || 'images/podcasts/bisaya_podcasts_ph_cover.jpg';
+        image.alt = podcast.altText || podcast.title;
+        image.width = 640; image.height = 640;
+        title.textContent = podcast.title;
+        const platformLabels = {
+            spotify: 'Paminaw sa Spotify',
+            apple: 'Paminaw sa Apple Podcasts',
+            youtube: 'Tan-awa sa YouTube',
+            pocketcasts: 'Paminaw sa Pocket Casts',
+            pocketCasts: 'Paminaw sa Pocket Casts',
+            website: 'Bisitaha ang opisyal nga website'
+        };
+        const links = Object.entries(podcast.platformLinks || {}).filter(([, href]) => href).map(([platform, href]) => {
+            const label = platformLabels[platform] || `Opisyal nga ${platform}`;
+            return `<a class="podcast-modal-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label} para sa ${podcast.title}">${label} ↗</a>`;
+        }).join('');
+        body.innerHTML = `<p>${podcast.longDesc || podcast.shortDesc || ''}</p>${podcast.guidance ? `<h4>Giunsa pagpaminaw</h4><p>${podcast.guidance}</p>` : ''}${links ? `<div class="podcast-modal-links" aria-label="Mga opisyal nga link">${links}</div>` : '<p class="podcast-modal-unavailable">Wala pay nakumpirmang opisyal nga link sa pagpaminaw.</p>'}`;
+        if (cta) cta.style.display = 'none';
+        if (social) social.style.display = 'none';
+        modal.removeAttribute('hidden');
+        modal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+    };
+
+    closeButton.addEventListener('click', close);
+    modal.addEventListener('click', (event) => { if (event.target === modal) close(); });
+    modal.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+        if (event.key !== 'Tab') return;
+        const items = focusables(); if (!items.length) return;
+        const first = items[0]; const last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+    window.BisayaPodcastModal = { populateAndShow: open, close };
 }
 
-// Initialize when script loads
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializePodcastModalHandler);
-} else {
-    initializePodcastModalHandler();
-}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializePodcastModalHandler);
+else initializePodcastModalHandler();

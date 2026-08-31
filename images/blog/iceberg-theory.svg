@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Stop! You Are Learning Languages Wrong!</title>
+  <desc id="desc">A code-drawn iceberg descending through ten levels of language and cultural belonging.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#168fc8"/><stop offset="1" stop-color="#020711"/></linearGradient>
+    <clipPath id="ice"><path d="M1160 75 1080 190 985 330 845 356 914 488 855 612 960 725 1025 840H1296L1370 715 1450 596 1380 482 1455 356 1330 328 1260 190Z"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="#06101a"/>
+  <rect x="800" width="800" height="900" fill="url(#sea)"/>
+  <g clip-path="url(#ice)">
+    <rect x="800" y="60" width="800" height="100" fill="#f7fdff"/>
+    <rect x="800" y="160" width="800" height="100" fill="#e4f6fb"/>
+    <rect x="800" y="260" width="800" height="96" fill="#c8eaf4"/>
+    <rect x="800" y="356" width="800" height="86" fill="#1485b8"/>
+    <rect x="800" y="442" width="800" height="86" fill="#0c6d9d"/>
+    <rect x="800" y="528" width="800" height="84" fill="#095885"/>
+    <rect x="800" y="612" width="800" height="74" fill="#07456e"/>
+    <rect x="800" y="686" width="800" height="70" fill="#053355"/>
+    <rect x="800" y="756" width="800" height="67" fill="#03223d"/>
+    <rect x="800" y="823" width="800" height="77" fill="#020d1b"/>
+  </g>
+  <path d="M800 356Q900 336 1000 356T1200 356T1400 356T1600 356" fill="none" stroke="#e9f7fb" stroke-width="7"/>
+  <g font-family="Arial Narrow, sans-serif" font-weight="700" fill="#e9f7fb" text-anchor="middle">
+    <text x="1160" y="414" font-size="28">4</text><text x="1160" y="497" font-size="28">5</text><text x="1160" y="582" font-size="28">6</text><text x="1160" y="662" font-size="28">7</text><text x="1160" y="733" font-size="28">8</text><text x="1160" y="802" font-size="28">9</text><text x="1160" y="870" font-size="28">10</text>
+  </g>
+  <g font-family="Arial Narrow, sans-serif" font-weight="700" fill="#06101a" text-anchor="middle"><text x="1160" y="138" font-size="28">1</text><text x="1160" y="238" font-size="28">2</text><text x="1160" y="328" font-size="28">3</text></g>
+  <text x="88" y="156" fill="#c83725" font-family="Arial Narrow, sans-serif" font-size="132" font-weight="900">STOP!</text>
+  <text x="88" y="262" fill="#e9f7fb" font-family="Arial Narrow, sans-serif" font-size="92" font-weight="900">YOU ARE LEARNING</text>
+  <text x="88" y="354" fill="#e9f7fb" font-family="Arial Narrow, sans-serif" font-size="92" font-weight="900">LANGUAGES WRONG!</text>
+  <rect x="88" y="405" width="460" height="8" fill="#f4b51e"/>
+  <text x="88" y="490" fill="#bfeafa" font-family="Arial, sans-serif" font-size="34">Language is an iceberg.</text>
+  <text x="88" y="542" fill="#bfeafa" font-family="Arial, sans-serif" font-size="34">You are only seeing the tip.</text>
+  <rect x="88" y="625" width="430" height="95" fill="#f4b51e"/>
+  <text x="303" y="688" fill="#06101a" font-family="Arial Narrow, sans-serif" font-size="48" font-weight="900" text-anchor="middle">BEGIN THE DIVE ↓</text>
+  <text x="88" y="812" fill="#e9f7fb" font-family="Arial, sans-serif" font-size="24">THE ICEBERG THEORY · ALJOHN POLYGLOT</text>
+</svg>

@@ -62,7 +62,7 @@ const bisayaCreators = [
     {
         id: 'bisayang-panda',
         name: 'Bisayang Panda',
-        profilePic: 'https://yt3.googleusercontent.com/CAjicOufEHeCr0oxqwZ9PFGdqfUtsCo8SUoVmxas1vKPXX9ZmoH_jp1ZFw5wA4WFB8M04kdx8Q=s900-c-k-c0x00ffffff-no-rj', // Placeholder
+        profilePic: 'images/creators/bisayang-panda.jpg',
         altText: 'Bisayang Panda - Cebuano Language Teacher',
         categoryTags: ['learning', 'education', 'culture'],
         regionTag: 'Davao',
@@ -106,7 +106,7 @@ const bisayaCreators = [
     {
         id: 'ms-cynthia',
         name: 'Ms. Cynthia',
-        profilePic: 'https://yt3.googleusercontent.com/ZiF-gyi7IqKI7NrXT6ImT_viUMUXxBLA2YJBrPYrH9TWCtxiyM1O5aUScJCVR2cew43VkJluUJ8=s160-c-k-c0x00ffffff-no-rj', // Use actual: https://yt3.googleusercontent.com/ZiF-gyi7IqKI7NrXT6ImT_viUMUXxBLA2YJBrPYrH9TWCtxiyM1O5aUScJCVR2cew43VkJluUJ8=s160-c-k-c0x00ffffff-no-rj
+        profilePic: 'images/creators/ms-cynthia.jpg',
         altText: 'Ms. Cynthia - Boholana Cooking & Lifestyle Vlogger',
         categoryTags: ['cooking', 'lifestyle', 'provincial'],
         regionTag: 'Bohol',
@@ -125,7 +125,7 @@ const bisayaCreators = [
     {
         id: 'lk-fam',
         name: 'LK Fam (Laag Kagay-an)',
-        profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kIrUCWij1tCzJrRgabPWrdETI000IPN8gA&s',
+        profilePic: 'images/creators/lk-fam.jpg',
         altText: 'LK Fam - Cagayan de Oro Food and Travel',
         categoryTags: ['travel', 'food', 'vlog'],
         regionTag: 'CDO',
@@ -146,7 +146,7 @@ const bisayaCreators = [
     {
         id: 'al-moralde',
         name: 'Al Moralde',
-        profilePic: 'https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/al-moralde-SSo6y',
+        profilePic: 'images/creators/al-moralde.jpg',
         altText: 'Al Moralde - Bisaya Musician and Content Creator',
         categoryTags: ['music', 'vlog', 'comedy', 'skit'],
         regionTag: 'Cebu',
@@ -166,7 +166,8 @@ const bisayaCreators = [
     {
         id: 'dansoy-vlogs',
         name: 'Dansoy Vlogs',
-        profilePic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2wTbG4wxIWI75sEL9HhyAdm83w3FElHIIfw&s',
+        // No stable official portrait was verifiable; keep the card on the local fallback until one is sourced.
+        profilePic: '../../images/creators/creator-fallback.svg',
         altText: 'Dansoy Vlogs - Bisaya Comedy and Lifestyle Vlogger',
         categoryTags: ['comedy', 'lifestyle', 'vlog'],
         regionTag: 'Cebu', // From Bohol, but part of Cebu-based BisayaSquad
@@ -601,8 +602,10 @@ const bisayaPodcasts = [
     {
         id: 'barok-takya',
         title: 'Barok and Takya Bisaya Podcast',
-        coverSrc: 'https://i.scdn.co/image/ab6765630000ba8a03d570c10feff07b3f9fff69',
+        coverSrc: 'images/podcasts/barok_takya_cover.jpg',
         altText: 'Barok and Takya Bisaya Podcast Cover Art',
+        publisher: 'Barok ug Takya', format: 'Panaghisgot sa pamilya ug kultura', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Natural ug bibo ang Binisaya, nga naay humor ug mga panultihon; sugdi sa pamilyar nga hilisgutan aron masundan ang paspas nga estorya.', personalNote: null,
         shortDesc: "Lively couple Barok and Takya, talks about Filipino society and culture in Bisaya.",
         longDesc: "Maminaw ta sa top Filipino Podcast sa Cebuano language, Barok and Takya Bisaya Podcast! Kining bibo nga magtiayon, si Barok ug Takya, maghisgot bahin sa mga butang nga importante sa daghang Pinoy: pamilya, tradisyon, ug kulturang Pinoy. Makalingaw sila nga pares nga makapakatawa nimo samtang magtudlo'g bag-ong insights sa Filipino values.",
         platformLinks: {
@@ -617,6 +620,8 @@ const bisayaPodcasts = [
         title: 'Dili Ni Advice',
         coverSrc: 'images/podcasts/dili_ni_advice_cover.jpg',
         altText: 'Dili Ni Advice Podcast Cover Art',
+        publisher: 'Darling ug Kringkay', format: 'Chika sa katilingban ug pop culture', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Relaks nga panag-istorya apan puno sa slang ug paspas nga tubag; maayo kini kung kaya na nimo ang adlaw-adlaw nga Binisaya.', personalNote: null,
         shortDesc: "Hosted by Darling and Kringkay, two millennials from Davao City discussing modern society...",
         longDesc: "Ang Dili Ni Advice kay Bisaya podcast nila Darling ug Kringkay, duha ka millennial gikan sa Davao City. Kada semana, maghisgot sila unsay init—o dili—sa modernong katilingban ug pop culture. Murag chika lang sa imong mga amiga! Relaxed ug relatable kaayo.",
         platformLinks: {
@@ -629,6 +634,8 @@ const bisayaPodcasts = [
         title: 'Storyang Kinabuhi (Bisaya Podcast)',
         coverSrc: 'images/podcasts/storyang_kinabuhi_cover.jpg',
         altText: 'Storyang Kinabuhi Podcast Cover Art',
+        publisher: 'Ador Flores', format: 'Kinabuhi, career ug pinansya', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Lawom ang mga diskusyon ug usahay teknikal ang pinulongan sa trabaho ug kwarta; paminaw og hinay ug balika ang lisod nga bahin.', personalNote: null,
         shortDesc: "Hosted by Ador Flores, talking about life, career, relationships, finances, ug uban pa!",
         longDesc: "Ang Storyang Kinabuhi kay Bisaya Podcast ni Ador Flores diin maghisgot sila bahin sa kinabuhi, career, relasyon, kwarta, ug uban pa. Mga lawom nga diskusyon ug mga debate nga makapahunahuna gyud nimo og maayo. Great for deep thinking!",
         platformLinks: {
@@ -640,6 +647,8 @@ const bisayaPodcasts = [
         title: 'Bisaya Podcasts PH',
         coverSrc: 'images/podcasts/bisaya_podcasts_ph_cover.jpg',
         altText: 'Bisaya Podcasts PH Cover Art',
+        publisher: 'Bisaya Podcasts PH', format: 'Komunidad ug taas nga panag-istorya', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Kasagaran taas ang episode ug nagkalainlain ang bisita; pilia ang topiko nga pamilyar aron dili mawala ang konteksto.', personalNote: null,
         shortDesc: "Aims to unite Bisaya Podcasts around the world. Features long episodes.",
         longDesc: "Hello! Welcome sa Bisaya Podcasts PH! Lisod mangita og Bisaya podcasts, ug mas lisod mangita og audience. Kini nga podcast, gusto i-unite ang mga Bisaya Podcasts para dali ra ta mag-connect. Usually tag-duha ka oras ang episode, perfect pang-binge!",
         platformLinks: {
@@ -651,6 +660,8 @@ const bisayaPodcasts = [
         title: 'KATIKaran',
         coverSrc: 'images/podcasts/katikaran_cover.jpg',
         altText: 'KATIKaran Podcast Cover Art',
+        publisher: 'KATIKaran', format: 'Mga istorya sa Bisaya Gen Z', levels: ['B1', 'B2'], cefr: 'B1–B2',
+        guidance: 'Mas gaan ug mas bag-o ang bokabularyo, apan makadungog gihapon ka og slang ug code-switching; maayo para sa tunga-tungang tigpaminaw.', personalNote: null,
         shortDesc: "Dive into the vibrant world of Bisaya Gen Z stories, dreams, and daily adventures.",
         longDesc: "Suhira ang madasigon nga kalibutan sa mga Bisaya Gen Z samtang mag-share sila'g mga estorya, damgo, ug adlaw-adlaw nga laag. Gisaulog nila ang atong kultura ug nagtukod og taytayan tali sa mga henerasyon. Join for laughs, insights, and heartwarming tales—tanan sa Binisaya!",
         platformLinks: {
@@ -662,6 +673,8 @@ const bisayaPodcasts = [
         title: 'Unsa’y Cheka Sa Parlor',
         coverSrc: 'images/podcasts/unsay_cheka_cover.jpg',
         altText: 'Unsa’y Cheka Sa Parlor Podcast Cover Art',
+        publisher: 'Lyle Go ug Shaneee', format: 'Chika, queer culture ug humor', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Paspas, kataw-anan, ug daghan og pinulongang pang-komunidad; gamita ang transcript o subtitle kung bag-o pa ang slang.', personalNote: null,
         shortDesc: "Hosted by Lyle Go and Shaneee, inspired by Bisaya gay lingo for 'What's the tea?'",
         longDesc: "Ang UCSP, o Unsa'y Cheka Sa Parlor?, usa ka podcast inspired sa sikat nga phrase sa Bisaya gay lingo. Hosted by Lyle Go ug Shaneee, murag 'What's the tea?' sa English. Expect lots of fun and juicy chika!",
         platformLinks: {
@@ -673,6 +686,8 @@ const bisayaPodcasts = [
         title: 'Pagilok Bisaya The Podcast',
         coverSrc: 'images/podcasts/pagilok_bisaya_cover.jpg',
         altText: 'Pagilok Bisaya The Podcast Cover Art',
+        publisher: 'Pagilok Bisaya', format: 'Audio drama, horror ug misteryo', levels: ['B1', 'B2'], cefr: 'B1–B2',
+        guidance: 'Ang pagsaysay kasagarang klaro, apan ang sound effects ug dramatikong tono mahimong makapalisod sa unang pagpaminaw; sugdi sa mubo nga episode.', personalNote: null,
         shortDesc: "Mga sugilanon nga binisaya nga nagdala'g pagilok sa imahinasyon. Audio drama.",
         longDesc: "Pagilok Bisaya! Mga sugilanon nga binisaya nga magdala'g kurog ug pagilok sa inyong imahinasyon. Kini usa ka audio drama podcast, perfect para sa mga ganahan og horror ug true crime type nga mga estorya.",
         platformLinks: {
@@ -684,6 +699,8 @@ const bisayaPodcasts = [
         title: 'SweeTo - A Bisayang VA Podcast',
         coverSrc: 'images/podcasts/sweeto_cover.jpg',
         altText: 'SweeTo - A Bisayang VA Podcast Cover Art',
+        publisher: 'Tony ug Sween', format: 'Virtual assistant nga trabaho ug kinabuhi', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Binisaya nga sagolan og English ug bokabularyo sa remote work; paminaw una sa mga topikong pamilyar sa imong trabaho.', personalNote: null,
         shortDesc: "Tony and his wife, Sween, talking about the life of a Virtual Assistant - raw and unfiltered.",
         longDesc: "Sila si Tony ug iyang asawa nga si Sween, maghisgot bahin sa kinabuhi sa usa ka Virtual Assistant—raw and unfiltered. Dili sila magduha-duha ug Binisaya na naay gamayng English. Helpful kaayo para sa mga aspiring VAs!",
         platformLinks: {
@@ -695,6 +712,8 @@ const bisayaPodcasts = [
         title: 'Storytelling with Ziwi (Bisaya Podcast)',
         coverSrc: 'images/podcasts/storytelling_ziwi_cover.jpg',
         altText: 'Storytelling with Ziwi Podcast Cover Art',
+        publisher: 'Ziwi', format: 'Personal nga estorya ug leksyon sa kinabuhi', levels: ['B1', 'B2'], cefr: 'B1–B2',
+        guidance: 'Daw chika sa amiga ang dagan ug kasagarang sayon sundon; maayo para sa pagpaminaw sa adlaw-adlaw nga Binisaya.', personalNote: null,
         shortDesc: "A podcast about random stories. Ziwi talks about her personal experiences and life lessons.",
         longDesc: "Usa ka podcast bahin sa mga random nga estorya. Si Ziwi mag-share sa iyang mga personal nga kasinatian ug mga leksyon sa kinabuhi. Murag chika lang sa imong amiga, #ChikaMinute style. Relaxed ug relatable!",
         platformLinks: {
@@ -706,6 +725,8 @@ const bisayaPodcasts = [
         title: 'Bisaya Talks!',
         coverSrc: 'images/podcasts/bisaya_talks_cover.jpg',
         altText: 'Bisaya Talks! Podcast Cover Art',
+        publisher: 'Bisaya Talks!', format: 'Kinabuhi, kasinatian ug humor', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Sagol ang seryoso ug binugoy nga estorya, nga usahay paspas ang banat; pamilyari ang mga pulong sa adlaw-adlaw nga pakig-istorya.', personalNote: null,
         shortDesc: "A podcast exclusive to all BisDak people. Talks about life learning experiences nga naay pagka binugoy.",
         longDesc: "Ang 'Bisaya Talks!' kay podcast para gyud sa tanang BisDak! Maghisgot sila bahin sa mga life learning experiences nga naay sagol pagka-binugoy. Lingaw ug naay makutlo nga pagtulun-an.",
         platformLinks: {
@@ -717,6 +738,8 @@ const bisayaPodcasts = [
         title: 'Bisdakball',
         coverSrc: 'images/podcasts/bisdakball_cover.jpg',
         altText: 'Bisdakball Podcast Cover Art',
+        publisher: 'Bisdakball', format: 'Basketbol ug komentaryo sa Binisaya', levels: ['B2', 'C1'], cefr: 'B2–C1',
+        guidance: 'Daghan og termino sa basketball ug paspas nga komentaryo; makatabang ang pagtan-aw sa dula samtang nagpaminaw.', personalNote: null,
         shortDesc: "Storya lang tag basketball ani tibuok adlaw! Para sa mga Bisdak nga adik sa basketball.",
         longDesc: "Kung adik ka sa basketball sama nako, para gyud ni nimo! Ang Bisdakball kay podcast nga puro hisgot bahin sa basketball, sa Binisaya nga pinulongan. Perfect para sa mga basketball addicts nga Bisdak! Sayang lang kay murag ni-undang na sila, pero ang mga daan nga episodes, sulit gihapon paminawon.",
         platformLinks: {

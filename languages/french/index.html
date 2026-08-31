@@ -49,6 +49,7 @@
                     <a href="#bibliotheque">Créateurs</a>
                     <a href="#extra-francais">Playlists</a>
                     <a href="#atelier-francais">Étudier</a>
+                    <a href="#linguno-francais">Linguno</a>
                     <a href="#language-transfer-fr">Language Transfer</a>
                     <a href="#livres-francais">Livres</a>
                     <a href="#podcasts-francais">Podcasts</a>
@@ -151,7 +152,7 @@
             <div class="container-fr">
                 <div class="section-heading study-kit-heading-fr">
                     <h2 id="study-kit-heading-fr">Mon kit d’étude</h2>
-                    <p>Les quatre points d’entrée que j’ai réunis ici forment un même parcours : retrouver les supports, écouter les pistes de la méthode, pratiquer les conjugaisons, puis vérifier un temps ou une terminaison.</p>
+                    <p>Les trois points d’entrée que j’ai réunis ici forment un même parcours : retrouver les supports, écouter les pistes de la méthode, puis vérifier un temps ou une terminaison.</p>
                 </div>
                 <div id="french-study-kit-fr"></div>
                 <noscript>
@@ -161,6 +162,13 @@
                         <a href="https://docs.google.com/spreadsheets/d/1r_ChFFktV-o8TBEZ3KFYpISQeuKadktV8kXXilTNu-c/edit?gid=554078650#gid=554078650">Ouvrir la carte des conjugaisons</a>
                     </div>
                 </noscript>
+            </div>
+        </section>
+
+        <section id="linguno-francais" class="section-fr french-linguno-section-fr" aria-labelledby="linguno-francais-heading">
+            <div class="container-fr">
+                <div id="french-linguno-fr" class="french-linguno-shell-fr"></div>
+                <noscript><p class="noscript-card-fr"><a href="https://www.linguno.com/language/fra/" target="_blank" rel="noopener noreferrer">Pratiquer le français sur Linguno</a></p></noscript>
             </div>
         </section>
 
@@ -221,7 +229,7 @@
 
                 <div class="french-podcasts-folio-fr">
                     <div class="french-podcasts-rail-header-fr">
-                        <p id="french-podcasts-instructions-fr">Fais défiler les émissions, puis choisis la plateforme d’écoute dans chaque fiche.</p>
+                        <p id="french-podcasts-instructions-fr">Fais défiler les émissions, puis ouvre une fiche pour lire le résumé et choisir ta plateforme d’écoute.</p>
                         <div class="french-podcasts-controls-fr" role="group" aria-label="Faire défiler les podcasts">
                             <button id="french-podcasts-prev-fr" type="button" aria-label="Voir les podcasts précédents">
                                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
@@ -231,7 +239,7 @@
                             </button>
                         </div>
                     </div>
-                    <ul id="french-podcasts-shelf-fr" class="french-podcasts-shelf-fr" aria-describedby="french-podcasts-instructions-fr"></ul>
+                    <ul id="french-podcasts-shelf-fr" class="french-podcasts-shelf-fr" tabindex="0" aria-describedby="french-podcasts-instructions-fr" aria-label="Podcasts français"></ul>
                 </div>
 
                 <noscript><p class="noscript-card-fr">Active JavaScript pour parcourir ce rayon, ou ouvre directement <a href="https://pocketcasts.com/podcast/hugod%C3%A9crypte-actus-et-interviews/8f36f930-4ee1-0139-3394-0acc26574db2" target="_blank" rel="noopener noreferrer">HugoDécrypte sur Pocket Casts</a>.</p></noscript>
@@ -423,6 +431,16 @@
                 </div>
                 <div id="french-book-modal-links-fr" class="french-book-modal-links-fr"></div>
             </div>
+        </article>
+    </div>
+
+    <div id="french-podcast-modal-fr" class="french-podcast-modal-fr" hidden aria-hidden="true">
+        <div class="french-podcast-modal-backdrop-fr" data-french-podcast-modal-close></div>
+        <article class="french-podcast-modal-dialog-fr" role="dialog" aria-modal="true" aria-labelledby="french-podcast-modal-title-fr" aria-describedby="french-podcast-modal-description-fr french-podcast-modal-guidance-fr" tabindex="-1">
+            <button id="french-podcast-modal-close-fr" class="french-podcast-modal-close-fr" type="button" aria-label="Fermer la fiche du podcast">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div id="french-podcast-modal-content-fr" class="french-podcast-modal-content-fr"></div>
         </article>
     </div>
 

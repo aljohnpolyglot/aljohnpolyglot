@@ -360,6 +360,21 @@
     background-color: #1ed760; transform: scale(1.04);
 }
 
+/* Podcast details keep the shelf compact; full copy lives here. */
+.modal-bisaya[hidden] { display: none; }
+.podcast-spotify-modal-theme { max-width: 640px; max-height: min(86vh, 720px); }
+.podcast-spotify-modal-theme .modal-header-bisaya { align-items: center; }
+.podcast-spotify-modal-theme .modal-item-image-bisaya { width: 112px; height: 112px; border-radius: 8px; object-fit: cover; }
+.podcast-spotify-modal-theme .modal-body-bisaya { overflow-y: auto; }
+.podcast-modal-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.14); }
+.podcast-modal-link { color: var(--sinulog-white); background: var(--sinulog-teal); border-radius: 999px; padding: .55rem .8rem; font-size: .8rem; font-weight: 700; text-decoration: none; }
+.podcast-modal-link:hover, .podcast-modal-link:focus-visible { background: var(--sinulog-yellow); color: var(--sinulog-dark-charcoal); }
+.podcast-modal-unavailable { color: var(--sinulog-light-gray); font-style: italic; }
+@media (max-width: 600px) {
+    .podcast-spotify-modal-theme .modal-header-bisaya { flex-direction: row; text-align: left; }
+    .podcast-spotify-modal-theme .modal-item-image-bisaya { width: 78px; height: 78px; }
+}
+
 /* Responsive for modals */
 @media (max-width: 768px) {
     .modal-content-bisaya { max-width: 90vw; max-height: 88vh; }

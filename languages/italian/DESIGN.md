@@ -24,7 +24,7 @@ The Italian page is Aljohn's personal Renaissance studiolo: a warm, collected ro
 ## Page composition
 
 1. Shared global navbar, followed by the sticky local studiolo index.
-2. First-person story hero with one visible photograph in a three-slide carousel.
+2. First-person story hero with one visible photograph in a compact carousel.
 3. Aljohn's featured YouTube player with a clickable playlist beside it.
 4. A short listening/learning bridge.
 5. An independent horizontal podcast folio for native listening, kept separate from creator cards and ordered through private listening evidence without exposing that signal.

@@ -95,6 +95,23 @@ window.languageRestaurantShelfConfig = {
                 { label: "Instagram · @mangiamomakati", url: "https://www.instagram.com/mangiamomakati/" }
             ],
             videoUrl: null
+        },
+        {
+            id: "a-mano-bgc",
+            name: "a mano",
+            city: "Bonifacio Global City · Taguig",
+            image: "../../images/languagecenters/dante_lunch_languageexchange_2024_bgc_a_mano_restaurant.jpg",
+            imageAlt: "Tavolata all’interno del ristorante a mano a Bonifacio Global City",
+            summary: "Pasta fresca, pizza e cucina italiana fatta a mano nel cuore di BGC.",
+            description: "A mano propone pasta fresca, pizza neo-napoletana e piatti italiani realizzati con attenzione artigianale. La sede di BGC si trova al One Bonifacio High Street, nel cuore di Taguig.",
+            address: "Ground Floor, Unit LG22, One Bonifacio High Street, Bonifacio Global City, Taguig City",
+            contact: "+63 917 712 9952",
+            links: [
+                { label: "Sito ufficiale", url: "https://www.afhospitality.com/" },
+                { label: "Facebook · a mano", url: "https://www.facebook.com/amano.ph/" },
+                { label: "Instagram · @amano.ph", url: "https://www.instagram.com/amano.ph/" }
+            ],
+            videoUrl: null
         }
     ]
 };

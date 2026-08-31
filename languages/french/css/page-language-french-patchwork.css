@@ -114,6 +114,10 @@ html {
     order: 40;
 }
 
+.french-main > #linguno-francais {
+    order: 45;
+}
+
 .french-main > #livres-francais {
     order: 50;
 }
@@ -1796,7 +1800,7 @@ html {
 
 @media (min-width: 761px) {
     .curated-channel-browser-fr {
-        margin-top: -8rem !important;
+        margin-top: 1.5rem !important;
     }
 
     .atlas-hero-grid-fr {

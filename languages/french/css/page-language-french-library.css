@@ -84,8 +84,100 @@
 }
 
 #atelier-francais,
+#linguno-francais,
 #livres-francais {
     scroll-margin-top: 8rem;
+}
+
+.french-linguno-section-fr {
+    color: var(--fr-linen-100);
+    background: var(--fr-indigo-900) var(--fr-denim-texture) repeat;
+    border-top: 2px dashed var(--fr-stitch-dark);
+    border-bottom: 2px dashed var(--fr-stitch-dark);
+}
+
+.french-linguno-shell-fr {
+    display: grid;
+    grid-template-columns: minmax(18rem, 0.9fr) minmax(15rem, 1.1fr);
+    align-items: stretch;
+    border: 2px dashed var(--fr-stitch-light);
+    background: var(--fr-indigo-950);
+    box-shadow: 14px 16px 0 rgba(7, 16, 25, 0.25);
+}
+
+.french-linguno-copy-fr {
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 1rem;
+    padding: clamp(1.6rem, 4vw, 3.8rem);
+    background: var(--fr-indigo-900) var(--fr-denim-texture) repeat;
+    border-right: 2px dashed var(--fr-stitch-light);
+}
+
+.french-linguno-copy-fr > i {
+    display: grid;
+    width: 3.7rem;
+    height: 3.7rem;
+    place-items: center;
+    color: var(--fr-focus);
+    font-size: 1.2rem;
+    border: 2px solid var(--fr-focus);
+    border-radius: 50%;
+}
+
+.french-linguno-copy-fr h2 {
+    max-width: 13ch;
+    margin: 0;
+    color: var(--fr-linen-100);
+    font-family: var(--fr-label-font);
+    font-size: clamp(2.25rem, 4.5vw, 4.3rem);
+    font-weight: 700;
+    line-height: 0.95;
+}
+
+.french-linguno-copy-fr p {
+    max-width: 38rem;
+    margin: 0;
+    color: rgba(226, 216, 199, 0.86);
+    line-height: 1.7;
+}
+
+.french-linguno-visual-fr {
+    display: grid;
+    min-height: 18rem;
+    place-items: center;
+    align-content: center;
+    gap: 1rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    color: var(--fr-indigo-900);
+    background: var(--fr-linen-200) var(--fr-linen-texture) repeat;
+}
+
+.french-linguno-visual-fr img {
+    width: min(100%, 250px);
+    height: auto;
+}
+
+.french-linguno-visual-fr p {
+    margin: 0;
+    color: var(--fr-indigo-800);
+    font-family: var(--fr-label-font);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .french-linguno-shell-fr {
+        grid-template-columns: 1fr;
+    }
+
+    .french-linguno-copy-fr {
+        border-right: 0;
+        border-bottom: 2px dashed var(--fr-stitch-light);
+    }
 }
 
 .study-kit-section-fr {

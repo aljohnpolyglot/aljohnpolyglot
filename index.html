@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/polyglot-papers-preview.css">
-    <link rel="stylesheet" href="css/pathway-preview.css">
     <link rel="stylesheet" href="css/core-toolkit-preview.css">
-    <link rel="stylesheet" href="css/routine-preview.css">
     <link rel="stylesheet" href="css/languagecenters-index-preview.css">
     <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
     <link id="app-logo-fallback-asset" rel="preload" as="image" href="images/apps/app-fallback.svg" type="image/svg+xml">
@@ -20,6 +18,14 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
+    <!--
+    THESIS: The homepage preview is the compact fold of the Polyglot Papers language-lab archive, refusing a detached grid of glowing teaser cards.
+    OWN-WORLD: Cobalt instruction fields, bright paper, near-black ink, brick-red selection blocks, yellow inventory marks, compressed display type, measurement rules, and square controls.
+    STORY: Visitors encounter the current featured paper, scan three more real essays, and open the archive without losing the homepage flow.
+    FIRST VIEWPORT: Outside this scoped module the homepage is unchanged; inside it, a blue masthead joins one white featured-paper band and a compact row index with the archive action at the reading edge.
+    FORM: Language Lab Foldout, grounded direction 5, seed 6bfdb5f1; approved comp .impeccable/mocks/polyglot-papers-01-language-lab-foldout.png.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
   <header id="main-header-placeholder"></header>
 
     <main>
@@ -130,81 +136,20 @@
 <!-- The Polyglot Papers - Blog Preview Section -->
 <section id="polyglot-papers-preview" class="polyglot-papers-preview content-section">
     <div class="container">
-        <span class="papers-eyebrow">Declassified Intel</span>
-        <h2 class="section-title">The Polyglot Papers</h2>
-        <p class="section-subtitle">
-            Groundbreaking research, field-tested methodologies, and critical analyses from the frontiers of accelerated language acquisition.
-            Explore my latest dispatches.
-        </p>
-
-        <!-- Featured Article Slot -->
-        <div id="featuredPostSlot" class="featured-post-slot">
-            <!-- "Learn in 3 Months" article will be injected here by JS -->
-        </div>
-
-        <!-- Grid for Other Recent Posts -->
-        <div id="recentPostsGrid" class="papers-teasers-grid recent-posts-grid">
-            <!-- Other recent blog post cards will be injected here by JS -->
-            <!-- Fallback static content if JS fails or for initial render (optional) -->
-            <!--
-            <div class="paper-teaser-card static-fallback">
-                <div class="paper-icon"><i class="fas fa-spinner fa-spin"></i></div>
-                <h3>Loading Latest Dispatches...</h3>
-                <p>Fetching the newest intel from the Polyglot Papers archive.</p>
+        <div class="home-papers-foldout">
+            <div class="home-papers-foldout__masthead">
+                <h2>The Polyglot Papers</h2>
+                <p>Articles on language learning, study habits, and practical progress.</p>
             </div>
-            -->
-        </div>
-
-        <div class="cta-center" style="margin-top: 3.5rem;">
-            <a href="blog.html" class="btn btn-primary btn-papers-cta">
-                <i class="fas fa-archive"></i> Access Full Research Archive
-            </a>
+            <div class="home-papers-foldout__content">
+                <div id="featuredPostSlot" class="featured-post-slot" aria-live="polite"></div>
+                <div id="recentPostsGrid" class="recent-posts-grid"></div>
+                <a href="blog.html" class="home-papers-archive-link">Browse all papers</a>
+            </div>
         </div>
     </div>
 </section>
 <!--End of Polyglot Papers Preview-->
-<section id="pathway" class="pathway-section-preview content-section">
-    <div class="container">
-        <h2 class="section-title">Your <span class="highlight-text-alt">Roadmap</span> to Legendary Fluency</h2>
-        <p class="section-subtitle">This ain't no random stroll, adventurer! My journey follows a sacred, battle-tested map. Behold a glimpse of its wisdom! For the full, illuminated scrolls and strategy, you must venture forth...</p>
-
-        <div class="pathway-preview-steps-container">
-            <div class="pathway-preview-step scroll-bg">
-                <div class="step-header">
-                    <!-- Emblem image removed, as it's now part of the section background concept -->
-                    <h3>Beginner's Grove (A1-A2)</h3>
-                </div>
-                <p class="step-goal"><strong>Quest:</strong> Forge your foundation, gather 1000+ words, and master the art of comprehension.</p>
-                <p class="step-focus"><strong>Ancient Wisdom:</strong> Focus on <span class="highlight-focus">Input & Exposure</span>. Output can wait.</p>
-            </div>
-
-            <div class="pathway-preview-step scroll-bg">
-                <div class="step-header">
-                    <!-- Emblem image removed -->
-                    <h3>City of Immersion (B1-B2)</h3>
-                </div>
-                <p class="step-goal"><strong>Quest:</strong> Dive into native realms, let the language flow, and expand your lexicon to 2500+ words.</p>
-                <p class="step-focus"><strong>Ancient Wisdom:</strong> Embrace <span class="highlight-focus">Massive Input</span>. Gentle output begins.</p>
-            </div>
-
-            <div class="pathway-preview-step scroll-bg">
-                <div class="step-header">
-                    <!-- Emblem image removed -->
-                    <h3>C2 Citadel (C1-C2)</h3>
-                </div>
-                <p class="step-goal"><strong>Quest:</strong> Ascend to mastery, command nuance, and speak with native-like confidence.</p>
-                <p class="step-focus"><strong>Ancient Wisdom:</strong> Perfect thy <span class="highlight-focus">Output & Polish</span> all skills.</p>
-            </div>
-        </div>
-
-        <div class="cta-center">
-            <a href="pathway/index.html" class="btn btn-primary btn-pathway-cta">
-                <i class="fas fa-scroll"></i> Unfurl the Full Ancient Map!
-            </a>
-        </div>
-    </div>
-    </section>
-
       <!--  Core Toolkit Sneak Peek Section -->
         <section id="core-toolkit-preview" class="core-toolkit-preview-section content-section tech-theme">
             <div class="container">
@@ -340,44 +285,6 @@
             </div>
         </section>
 <!--End of Toolkit-->
-<!-- Daily Immersion System Preview Section -->
-        <section id="routine-preview" class="routine-preview-section">
-            <div class="container">
-                <span class="routine-eyebrow">The Engine of Fluency</span>
-                <h2 class="section-title-dark">Unlock My <span class="highlight-accent">12-Hour Daily Immersion System</span></h2>
-                <p class="section-subtitle-dark">
-                    This isn't just a schedule; it's the relentless, all-consuming blueprint I forged to master 11 languages.
-                    Discover the hour-by-hour breakdown, the mindset, and the core principles behind hyper-accelerated language acquisition.
-                    It's intense, it's demanding, but the results speak for themselves.
-                </p>
-                <div class="routine-preview-content">
-                    <div class="routine-preview-text">
-                        <h3>What You'll Discover:</h3>
-                        <ul>
-                            <li><i class="fas fa-moon"></i> The 2 AM Power Block: Maximizing peak mental clarity.</li>
-                            <li><i class="fas fa-headphones-alt"></i> "Dead Time" Annihilation: Turning exercise & chores into immersion.</li>
-                            <li><i class="fab fa-youtube"></i> Active Video Immersion: Techniques for YouTube & native streaming.</li>
-                            <li><i class="fas fa-comments"></i> Strategic Output: When and how to practice speaking.</li>
-                            <li><i class="fas fa-brain"></i> The Science of Sacrifice: Understanding the true cost of rapid fluency.</li>
-                        </ul>
-                        <div class="routine-preview-cta">
-                            <a href="routine.html" class="btn btn-primary btn-routine-cta">
-                                <i class="fas fa-bolt"></i> Uncover the Full System
-                            </a>
-                            <a href="https://www.youtube.com/embed/ht9q5ENjlV4" target="_blank" class="btn btn-outline btn-routine-cta-alt">
-                                <i class="fab fa-youtube"></i> Watch the Video Overview
-                            </a>
-                        </div>
-                    </div>
-                    <div class="routine-preview-visual">
-                        <!-- You can use an illustrative image here, or a stylized graphic -->
-                        <!-- For example, a collage of app icons, or a stylized clock/brain graphic -->
-                        <img src="images/aljohn_scientist.png" alt="Visual representation of Aljohn's daily language immersion routine">
-                        <!-- Placeholder for the visual: <div class="visual-placeholder"></div> -->
-                    </div>
-                </div>
-            </div>
-        </section>
  <!--Cultural Institutes Sections-->
    <section id="cultural-institutes" class="cultural-institutes-preview-section content-section">
     <div class="container">
@@ -414,6 +321,8 @@
                     <div class="friend-card" data-video-id="oDoST-RuizU"><a href="https://www.youtube.com/@jonguer123" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/mV5FQYQS10MeRdi-WY7BxhMO37i8ZCrqV61pqzdfky1APRC2_s2TtIbovzQE4TE0uP5O0vdW=s120-c-k-c0x00ffffff-no-rj" alt="Jonathan Guerrero Profile"><h4>Jonathan Guerrero</h4></a><div class="video-preview-container"></div><p>Underrated Filipino polyglot sharing skills.</p><div class="friend-languages" aria-label="Languages: Tagalog, English, Spanish, Portuguese, Russian"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"><img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" title="Russian"></div></div>
                     <div class="friend-card" data-video-id="CF3RExvS3_8"><a href="https://www.tiktok.com/@luisaguilarph" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="images/luis_aguilar.jpg" alt="Luis Aguilar PH Profile"><h4>Luis Aguilar PH (TikTok)</h4></a><div class="video-preview-container"></div><p>Mexican friend in the Philippines.</p><div class="friend-languages" aria-label="Location: Mexico, Philippines, English"><img src="https://flagcdn.com/w40/mx.png" alt="Mexico Flag" title="Mexico"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"></div></div>
                     <div class="friend-card" data-video-id="ik5oUOY63o0"><a href="https://www.youtube.com/@torchfamilymusic" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.ggpht.com/ic30Ti9eLmPQdAvKVND8QhIIBTl_5F3Tk3XNY4c1BEFoBBgeH9Bjar_KTtV9VVVTaLluiUPYRg=s176-c-k-c0x00ffffff-no-rj-mo" alt="Torch Family Music Profile"><h4>Torch Family Music</h4></a><div class="video-preview-container"></div><p>American family loving OPM!</p><div class="friend-languages" aria-label="Focus: OPM, USA, Philippines"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="USA"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="OPM Focus"></div></div>
+                    <div class="friend-card" data-video-id="2MYSQ4MUwh8"><a href="https://www.youtube.com/channel/UCKMU-I4eYw-D9QF1YdUMUlw" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="languages/portuguese/images/community/calvin-castiel.jpg" alt="Calvin Castiel Profile"><h4>Calvin Castiel</h4></a><div class="video-preview-container"></div><p>Angolan creator in the Philippines sharing conversations across cultures.</p><div class="friend-languages" aria-label="Connections: Angola, Philippines, Portuguese"><img src="https://flagcdn.com/w40/ao.png" alt="Angola Flag" title="Angola"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Philippines"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"></div></div>
+                    <div class="friend-card" data-video-id="1Me1in8m5Es"><a href="https://www.youtube.com/@melly_chi" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="images/creators/melly-chi.jpg" width="900" height="900" alt="Melly Chi Profile"><h4>Melly Chi</h4></a><div class="video-preview-container"></div><p>Angolan creator and friend living in the Philippines</p><div class="friend-social-links" aria-label="Melly Chi social profiles"><a href="https://www.instagram.com/melly__chi/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Melly Chi on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a><a href="https://www.youtube.com/@melly_chi" target="_blank" rel="noopener noreferrer" aria-label="Melly Chi on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a><a href="https://www.facebook.com/people/Melly-chi-official/61583623772616/" target="_blank" rel="noopener noreferrer" aria-label="Melly Chi on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div><div class="friend-languages" aria-label="Connections: Angola, Philippines, Portuguese"><img src="https://flagcdn.com/w40/ao.png" alt="Angola Flag" title="Angola"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Philippines"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"></div></div>
                     <div class="friend-card" data-video-id="-pIWjBCl22Y"><a href="https://www.youtube.com/@theuruguayanpolyglot8706" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/qrxy45U7jvwl5s6LQBopx6NTKK7ad0lrNOqRMqbzXLfg_VFM2UR5hoVKzfmwyc60DWdlC8EE9Ek=s120-c-k-c0x00ffffff-no-rj" alt="The Uruguayan Polyglot Profile"><h4>The Uruguayan Polyglot</h4></a><div class="video-preview-container"></div><p>Polyglot from Uruguay (9 languages).</p><div class="friend-languages" aria-label="Languages: UY, ES, CA, EN, DE, IT, SV, FR, RU, PT"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Catalonia.svg/128px-Flag_of_Catalonia.svg.png" alt="Catalan Flag" title="Catalan" style="width:30px; height:20px;"><img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" title="English"><img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" title="German"><img src="https://flagcdn.com/w40/it.png" alt="Italy Flag" title="Italian"><img src="https://flagcdn.com/w40/se.png" alt="Sweden Flag" title="Swedish"><img src="https://flagcdn.com/w40/fr.png" alt="France Flag" title="French"><img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" title="Russian"><img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" title="Portuguese"></div></div>
                     <div class="friend-card" data-video-id="rvqjN9Z2G1s"><a href="https://www.youtube.com/@FayMoTube" target="_blank" rel="noopener noreferrer" class="friend-profile-link"><img src="https://yt3.googleusercontent.com/dTBJnRoh8Kor8yNymmbmSYZ8b58fDap-WLWkAOose0s1wshUlTLdBRztoWNpKbk9NN9IZE22=s120-c-k-c0x00ffffff-no-rj" alt="FayMoTube Profile"><h4>Fay Mo</h4></a><div class="video-preview-container"></div><p>Filipino creator sharing fun Omegle content and his own learning journey.</p><div class="friend-languages" aria-label="Languages: Tagalog, English, Spanish"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines Flag" title="Tagalog"><img src="https://flagcdn.com/w40/us.png" alt="USA Flag" title="English"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" title="Spanish"></div></div>
                 </div>

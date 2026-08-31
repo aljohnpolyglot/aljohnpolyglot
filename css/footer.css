@@ -104,10 +104,12 @@ footer, .site-footer {
 }
 
 .social-links a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     color: var(--footer-social-icon-color, var(--fallback-text-muted));
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     margin-left: 15px; /* Space between social icons */
     transition: color 0.3s ease, transform 0.2s ease;
 }

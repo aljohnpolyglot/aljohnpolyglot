@@ -212,3 +212,32 @@
     background-color: #0DAAA6; /* A slightly lighter/different teal for hover */
 }
 /* End of Custom Scrollbar Styles for Podcast Section */
+
+/* Compact, cover-led podcast shelf */
+#podcast-carousel-container .horizontal-scroll-wrapper {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    padding: .5rem .25rem 1.25rem;
+    gap: 1rem;
+}
+.podcast-shelf-item { flex: 0 0 clamp(220px, 27vw, 280px); scroll-snap-align: start; min-width: 0; }
+.podcast-card-spotify {
+    display: block; width: 100%; aspect-ratio: auto; padding: 0; border: 0; text-align: left;
+    color: var(--sinulog-white); background: var(--sinulog-dark-gray); border-radius: 10px; overflow: hidden;
+    cursor: pointer; box-shadow: var(--box-shadow-medium); transform: none;
+}
+.podcast-card-spotify:hover, .podcast-card-spotify:focus-visible { transform: translateY(-3px); box-shadow: var(--box-shadow-strong); }
+.podcast-card-spotify:focus-visible { outline: 3px solid var(--sinulog-mango-yellow); outline-offset: 3px; }
+.podcast-card-cover { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.podcast-card-copy { display: grid; gap: .3rem; padding: .8rem .9rem 1rem; }
+.podcast-card-copy strong { font: 700 1rem/1.25 var(--font-secondary-heading); }
+.podcast-card-copy > span:not(.podcast-card-cefr):not(.podcast-card-details) { color: var(--sinulog-light-gray); font-size: .8rem; }
+.podcast-card-cefr { color: var(--sinulog-yellow); font-size: .75rem; font-weight: 700; letter-spacing: .04em; }
+.podcast-card-details { color: var(--sinulog-white); font-size: .78rem; font-weight: 700; margin-top: .3rem; }
+.podcast-shelf-controls { display: flex; justify-content: flex-end; gap: .5rem; margin: -.25rem 0 .5rem; }
+.podcast-shelf-controls button { width: 2.3rem; height: 2.3rem; border: 1px solid var(--sinulog-teal); border-radius: 50%; background: transparent; color: var(--sinulog-dark-charcoal); font-size: 1.2rem; cursor: pointer; }
+.podcast-shelf-controls button:hover, .podcast-shelf-controls button:focus-visible { background: var(--sinulog-teal); color: var(--sinulog-white); }
+@media (prefers-reduced-motion: reduce) { .podcast-card-spotify { transition: none; } }

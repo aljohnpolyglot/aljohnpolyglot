@@ -1,7 +1,9 @@
 import { indonesianPlaylist } from "./data/indonesian-playlist-data.js";
 import { indonesianBooks } from "./data/indonesian-books-data.js";
+import { indonesianPodcasts } from "./data/indonesian-podcasts-data.js";
 import { renderPlaylist } from "./renderers/indonesian-playlist-renderer.js";
 import { renderIndonesianBooks } from "./renderers/indonesian-books-renderer.js";
+import { renderIndonesianPodcasts } from "./renderers/indonesian-podcasts-renderer.js";
 import { renderCreatorShelves } from "./renderers/indonesian-creator-renderer.js";
 
 function syncNavigationOffsets() {
@@ -208,6 +210,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         context: document.getElementById("indonesian-featured-context"),
         position: document.getElementById("playlist-position")
     });
+
+    try {
+        renderIndonesianPodcasts({
+            podcasts: indonesianPodcasts,
+            shelf: document.getElementById("indonesian-podcast-shelf"),
+            previousButton: document.getElementById("indonesian-podcast-previous"),
+            nextButton: document.getElementById("indonesian-podcast-next"),
+            status: document.getElementById("indonesian-podcast-status"),
+            modal: document.getElementById("indonesian-podcast-modal"),
+            modalContent: document.getElementById("indonesian-podcast-modal-content")
+        });
+    } catch (error) {
+        console.error(error);
+        showRenderError(document.getElementById("indonesian-podcast-shelf"), "Rak podcast belum dapat dimuat. Silakan muat ulang halaman ini.");
+    }
 
     renderIndonesianBooks({
         books: indonesianBooks,

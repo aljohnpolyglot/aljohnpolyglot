@@ -51,6 +51,30 @@ const heroGalleryData = [
         description: 'En el meetup de Spanish for Filipinos en Luneta, junto al reconocido historiador Xiao Chua. Uniendo idioma e historia.'
     },
     {
+        id: 'hero-luneta-meetup-group-selfie',
+        src: 'images/hero/luneta-meetup-group-selfie.webp',
+        width: 1600,
+        height: 1200,
+        alt: 'Aljohn con otros participantes del meetup de español en Luneta',
+        description: 'Un momento de amistad con otros participantes del meetup de español en Luneta.'
+    },
+    {
+        id: 'hero-luneta-meetup-outdoor-group',
+        src: 'images/hero/luneta-meetup-outdoor-group.webp',
+        width: 1600,
+        height: 1200,
+        alt: 'Aljohn y el grupo del meetup de español reunidos en Luneta',
+        description: 'El grupo se reúne en Luneta para seguir practicando español juntos.'
+    },
+    {
+        id: 'hero-luneta-meetup-pavilion-selfie',
+        src: 'images/hero/luneta-meetup-pavilion-selfie.webp',
+        width: 832,
+        height: 419,
+        alt: 'Aljohn con un compañero durante el meetup de español en Luneta',
+        description: 'Una selfie durante el meetup de español en Luneta.'
+    },
+    {
         id: 'hero-barca-party',
         src: 'images/hero/aljohn_realmadrid_vs_barca_party.jpg',
         width: 1440,
@@ -65,6 +89,22 @@ const heroGalleryData = [
         height: 1536,
         alt: 'Foto de grupo del Club de Hispano-Hablantes en el Día del Libro',
         description: 'Celebrando el Día del Libro en el Instituto Cervantes. La literatura es una puerta de entrada a la cultura.'
+    },
+    {
+        id: 'hero-cervantes-pelicula-2024-screening',
+        src: 'images/hero/cervantes-pelicula-2024-screening.webp',
+        width: 1600,
+        height: 1200,
+        alt: 'Aljohn frente a la pantalla del festival de cine Película 2024',
+        description: 'En Película 2024, el festival de cine español del Instituto Cervantes de Manila.'
+    },
+    {
+        id: 'hero-cervantes-pelicula-2024-cinema',
+        src: 'images/hero/cervantes-pelicula-2024-cinema.webp',
+        width: 1200,
+        height: 1600,
+        alt: 'Aljohn en el cine durante el festival Película 2024',
+        description: 'Otra noche de cine español con el Instituto Cervantes de Manila durante Película 2024.'
     },
     {
         id: 'hero-sff-eric',

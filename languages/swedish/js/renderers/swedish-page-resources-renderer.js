@@ -7,12 +7,78 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const modalPlaceholder = document.getElementById('resource-modal-placeholder');
+    const podcastModal = document.getElementById('swedish-podcast-modal');
+    const podcastModalContent = document.getElementById('swedish-podcast-modal-content');
+    let podcastModalTrigger = null;
+    let podcastModalKeydown = null;
     if (!modalPlaceholder) {
         console.error("CRITICAL: Modal placeholder 'resource-modal-placeholder' not found (from resources-renderer)!");
     }
 
     const createNode = (element) => document.createElement(element);
     const append = (parent, el) => parent.appendChild(el);
+
+    function podcastFocusable() {
+        return Array.from(podcastModal?.querySelectorAll('button, a[href], iframe') || [])
+            .filter(el => !el.disabled && el.offsetParent !== null);
+    }
+
+    function closeSwedishPodcastModal() {
+        if (!podcastModal || podcastModal.hidden) return;
+        podcastModal.hidden = true;
+        podcastModal.classList.remove('is-open');
+        document.body.classList.remove('swedish-podcast-modal-open');
+        if (podcastModalKeydown) document.removeEventListener('keydown', podcastModalKeydown);
+        podcastModalKeydown = null;
+        const frame = podcastModal.querySelector('iframe');
+        if (frame) frame.removeAttribute('src');
+        if (podcastModalTrigger?.isConnected) podcastModalTrigger.focus({ preventScroll: true });
+        podcastModalTrigger = null;
+    }
+
+    function openSwedishPodcastModal(itemData, trigger) {
+        if (!podcastModal || !podcastModalContent || !itemData) return;
+        podcastModalTrigger = trigger || document.activeElement;
+        const title = itemData.name || itemData.title || 'Podcast';
+        const levels = (itemData.cefrLevels || []).map(level => typeof level === 'object' ? level.level : level).filter(Boolean).map(String);
+        const cefr = levels.length ? `${levels[0]}–${levels[levels.length - 1]}` : 'Nivå ej angiven';
+        const links = [itemData.podcastLink && { href: itemData.podcastLink, text: 'Lyssna på podden' }, itemData.spotifyLink && { href: itemData.spotifyLink, text: 'Lyssna på Spotify' }, itemData.websiteLink && { href: itemData.websiteLink, text: 'Besök webbplatsen' }].filter(Boolean);
+        const sample = itemData.sampleVideoEmbed ? `<div class="swedish-podcast-modal__video"><iframe src="${itemData.sampleVideoEmbed}" title="Exempel från ${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>` : '<p class="swedish-podcast-modal__unavailable">Inget verifierat provavsnitt är tillgängligt just nu.</p>';
+        podcastModalContent.innerHTML = `
+            <div class="swedish-podcast-modal__layout">
+                <img class="swedish-podcast-modal__cover" src="${itemData.imageSrc || 'images/fallback-resource.svg'}" data-local-fallback="images/fallback-resource.svg" width="480" height="480" loading="lazy" decoding="async" alt="Omslag för ${title}">
+                <div class="swedish-podcast-modal__body">
+                    <p class="swedish-podcast-modal__eyebrow">${itemData.host || 'Svensk podcast'} · ${cefr}</p>
+                    <h2 id="swedish-podcast-modal-title">${title}</h2>
+                    <p class="swedish-podcast-modal__description">${itemData.longDesc || itemData.shortDesc || ''}</p>
+                    ${itemData.durationNote ? `<p class="swedish-podcast-modal__guidance"><strong>Lyssning:</strong> ${itemData.durationNote}</p>` : ''}
+                    ${itemData.strengths?.length ? `<p class="swedish-podcast-modal__guidance"><strong>Du tränar på:</strong> ${itemData.strengths.join(' · ')}</p>` : ''}
+                    ${itemData.aljohnsNote || itemData.aljohnsTake ? `<aside class="swedish-podcast-modal__note"><strong>Magnus tipsar</strong><p>${itemData.aljohnsNote || itemData.aljohnsTake}</p></aside>` : ''}
+                    ${sample}
+                    ${links.length ? `<div class="swedish-podcast-modal__links">${links.map(link => `<a href="${link.href}" target="_blank" rel="noopener noreferrer">${link.text} ↗</a>`).join('')}</div>` : ''}
+                </div>
+            </div>`;
+        podcastModal.hidden = false;
+        podcastModal.classList.add('is-open');
+        document.body.classList.add('swedish-podcast-modal-open');
+        window.SwedishModalController?.wireLocalImageFallback(podcastModal);
+        const closeButton = podcastModal.querySelector('.swedish-podcast-modal__close');
+        closeButton?.focus({ preventScroll: true });
+        podcastModalKeydown = event => {
+            if (event.key === 'Escape') { event.preventDefault(); closeSwedishPodcastModal(); return; }
+            if (event.key !== 'Tab') return;
+            const focusables = podcastFocusable();
+            if (!focusables.length) return;
+            const first = focusables[0], last = focusables[focusables.length - 1];
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        };
+        document.addEventListener('keydown', podcastModalKeydown);
+    }
+
+    podcastModal?.addEventListener('click', event => {
+        if (event.target.closest('[data-swedish-podcast-close]')) closeSwedishPodcastModal();
+    });
 
     // --- ORIGINAL CATEGORY CONTENT STORAGE ---
     const originalResourceCategoryContent = {};
@@ -319,21 +385,21 @@ function openSpecificResourceModal(itemData, category) {
             card.dataset.cefrLevels = "";
         }
 
-        card.innerHTML = `
-            <img src="${podcastData.imageSrc || '../images/placeholder_resource_card.png'}" alt="${podcastData.name}" class="podcast-card-image-new">
+        const levels = (podcastData.cefrLevels || []).map(level => typeof level === 'object' ? level.level : level).filter(Boolean).map(String);
+        const cefr = levels.length ? `${levels[0]}–${levels[levels.length - 1]}` : 'Nivå ej angiven';
+        const trigger = createNode('button');
+        trigger.type = 'button';
+        trigger.className = 'swedish-podcast-card-trigger';
+        trigger.setAttribute('aria-haspopup', 'dialog');
+        trigger.innerHTML = `
+            <img src="${podcastData.imageSrc || 'images/fallback-resource.svg'}" data-local-fallback="images/fallback-resource.svg" width="480" height="480" loading="lazy" decoding="async" alt="Omslag för ${podcastData.name}" class="podcast-card-image-new">
+            <span class="podcast-card-meta">${podcastData.host || 'Svensk podcast'} · ${cefr}</span>
             <h4 class="podcast-card-name-new">${podcastData.name}</h4>
-            <p class="podcast-card-shortdesc-new">${podcastData.shortDesc || 'Klicka för mer info...'}</p>
-            <a href="${podcastData.podcastLink || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-primary podcast-card-button-new" onclick="event.stopPropagation();">Lyssna här</a>`;
-
-        card.addEventListener('click', e => {
-            if (e.target.closest('a.podcast-card-button-new')) return;
-            try {
-                const itemDataForModal = JSON.parse(card.dataset.item);
-                openSpecificResourceModal(itemDataForModal, 'top-podcasts');
-            } catch (parseError) {
-                console.error("Error parsing podcast data for modal:", parseError, card.dataset.item);
-            }
-        });
+            <span class="podcast-card-format">${podcastData.format || podcastData.shortDesc || 'Svensk podcast'}</span>
+            <span class="podcast-card-button-new">Visa detaljer <span aria-hidden="true">→</span></span>`;
+        trigger.addEventListener('click', () => openSwedishPodcastModal(podcastData, trigger));
+        card.appendChild(trigger);
+        window.SwedishModalController?.wireLocalImageFallback(card);
         return card;
     }
 
@@ -383,6 +449,8 @@ function openSpecificResourceModal(itemData, category) {
             const maxScroll = Math.max(0, gridContainer.scrollWidth - gridContainer.clientWidth);
             previousButton.disabled = gridContainer.scrollLeft <= 2;
             nextButton.disabled = gridContainer.scrollLeft >= maxScroll - 2;
+            previousButton.setAttribute('aria-disabled', String(previousButton.disabled));
+            nextButton.setAttribute('aria-disabled', String(nextButton.disabled));
         };
 
         const scheduleControlUpdate = () => {
@@ -400,6 +468,11 @@ function openSpecificResourceModal(itemData, category) {
             previousButton.addEventListener('click', () => moveShelf(-1));
             nextButton.addEventListener('click', () => moveShelf(1));
             gridContainer.addEventListener('scroll', scheduleControlUpdate, { passive: true });
+            gridContainer.addEventListener('keydown', event => {
+                if (event.key !== 'Home' && event.key !== 'End') return;
+                event.preventDefault();
+                gridContainer.scrollTo({ left: event.key === 'Home' ? 0 : gridContainer.scrollWidth, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
+            });
             window.addEventListener('resize', scheduleControlUpdate);
             gridContainer.dataset.shelfControlsBound = 'true';
         }

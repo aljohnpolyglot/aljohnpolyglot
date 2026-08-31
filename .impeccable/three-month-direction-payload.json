@@ -1,0 +1,106 @@
+{
+  "title": "Choose the three-month article's visual world",
+  "question": "How should 500 focused hours compressed into 90 days feel? Lock a world, steer it, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Fluency Protocol",
+      "kicker": "THE ROLL",
+      "lineage": "laboratory notebooks and experimental protocols",
+      "thesis": "The three-month claim becomes a transparent experiment whose inputs, assumptions, and result the reader can pressure-test.",
+      "palette": ["#F2E9D8", "#101820", "#164E9A", "#E84B2C", "#F5C842"],
+      "materials": ["graph paper", "stamped results", "annotation ink", "photocopied evidence"],
+      "viewport": "A full-height protocol sheet opens with 500 HOURS ÷ 90 DAYS = 5H 34M/DAY, Aljohn's portrait clipped beside the formula, and a live compression slider embedded in the page rather than inside a dashboard card.",
+      "risk": "Can feel clinical if Aljohn's first-person voice and humor do not keep breaking through the measurements.",
+      "raised": [
+        {"from": "brick instructions", "raise": "Every claim now resolves into a numbered, visible step rather than a decorative section."},
+        {"from": "film cutting bench", "raise": "One fixed 90-day progress rail controls the whole reading journey."},
+        {"from": "festival hoarding", "raise": "The calculator result receives one deliberately calm, high-contrast field amid denser evidence."}
+      ],
+      "comp": ".impeccable/mocks/decision/three-month-protocol.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "The 90-Day Training Camp",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "boxing-gym round clocks, coach clipboards, and training logs",
+      "thesis": "Learning in three months is framed as an intense but adjustable training camp, not a miracle shortcut.",
+      "palette": ["#0C1116", "#F2EFE6", "#E8472F", "#F4C842", "#3B82A0"],
+      "materials": ["rubber floor", "chalkboard", "score clock", "taped training plan"],
+      "viewport": "A giant 90-day clock and 500-hour training prescription dominate the first screen; the reader sets daily training time immediately and sees the finish date move.",
+      "risk": "The most familiar direction, and its intensity can accidentally turn honest expectations into hustle culture.",
+      "comp": ".impeccable/mocks/decision/three-month-training-camp.png"
+    },
+    {
+      "id": "challenger-brick",
+      "label": "Build Fluency, Step by Step",
+      "verdict": "competitive",
+      "lineage": "brick build-instruction books",
+      "thesis": "Hours, practice, immersion, and feedback become pieces assembled in strict order.",
+      "palette": ["#AEE1FF", "#111111", "#E53935", "#FFCD00", "#FFFFFF"],
+      "materials": ["instruction paper", "plastic pieces", "stud grid", "1:1 call-outs"],
+      "viewport": "The opening formula is an exploded four-piece build; scrolling clicks each new piece into the 90-day plan while the calculator previews the completed model.",
+      "case": "Product clarity is excellent; adult readers may identify less strongly with a toy-instruction world than with a real study protocol.",
+      "risk": "Can trivialize the sacrifice and uncertainty in Aljohn's actual experience.",
+      "comp": ".impeccable/mocks/decision/three-month-brick.png",
+      "hero": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions.webp"
+    },
+    {
+      "id": "challenger-zine",
+      "label": "The No-Bullshit Study Zine",
+      "verdict": "competitive",
+      "lineage": "hand-drawn technical zines",
+      "thesis": "A friend with a marker dismantles the three-month claim in plain language, one annotated spread at a time.",
+      "palette": ["#FFF8E8", "#111111", "#FFE84D", "#F76AAE", "#2DD4BF"],
+      "materials": ["cream paper", "marker ink", "highlighter swipes", "lined note paper"],
+      "viewport": "The formula is scrawled across a two-page spread with Aljohn's notes, a stopwatch diagram, and the first calculator control highlighted like the line that matters.",
+      "case": "Audience identification is high and the voice feels human; its informal drawing language gives up some authority on research-heavy passages.",
+      "risk": "Can become cute or visually noisy when the article needs sober numerical clarity.",
+      "comp": ".impeccable/mocks/decision/three-month-zine.png",
+      "hero": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer.webp"
+    },
+    {
+      "id": "challenger-film",
+      "label": "The Cutting Bench",
+      "verdict": "declined",
+      "lineage": "film cutting-bench select rails",
+      "thesis": "Ninety days scrub past as frames, with deliberate hours selected and wasted time hanging below as trims.",
+      "palette": ["#050505", "#F56B21", "#F7F4EA"],
+      "materials": ["film grain", "grease pencil", "tape flags"],
+      "viewport": "A horizontal 90-frame rail crosses the hero and the stopping point is marked by tape.",
+      "case": "The progress rail is powerful, but editing vocabulary obscures the language-learning mechanism.",
+      "risk": "The metaphor requires explanation before it helps.",
+      "kept": "One persistent progress rail now paces the assigned protocol.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp"
+    },
+    {
+      "id": "challenger-miura",
+      "label": "The Deployed Schedule",
+      "verdict": "declined",
+      "lineage": "Miura-fold deployable sheets",
+      "thesis": "Changing one daily-hours input expands or compresses the entire learning schedule.",
+      "palette": ["#FAFAF7", "#1B1B1B", "#D4AF37", "#DCEFFA"],
+      "materials": ["scored paper", "gold foil", "crease diagrams"],
+      "viewport": "A compact 90-day packet unfolds into the full plan as the reader drags one control.",
+      "case": "The responsive mechanism is elegant, but the abstract paper geometry weakens immediate comprehension.",
+      "risk": "Beautiful before it is useful.",
+      "kept": "The calculator propagates one input across every result in real time.",
+      "hero": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-miura-orbit-sheet-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A polished long-form learning article with a portrait hero, research callouts, clean charts, and a calculator card.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB", "#F59E0B"],
+    "materials": ["clean editorial grid", "portrait photography", "soft chart color"],
+    "viewport": "Headline, concise deck, Aljohn portrait, and one blue calculator button above a conventional article column.",
+    "risk": "Clear and familiar, but interchangeable with thousands of language-learning blogs.",
+    "comp": ".impeccable/mocks/decision/three-month-canon.png"
+  },
+  "steer": true
+}

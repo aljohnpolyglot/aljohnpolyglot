@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return; // Saltar este creador si no tiene tags
             }
             creator.tags.forEach(tag => {
+                if (tag === 'podcast') return;
                 if (shelves[tag]) {
                     const card = createCreatorCard(creator);
                     shelves[tag].appendChild(card);
@@ -87,9 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     
         // --- NUEVO: Elemento de la bandera ---
-        const flagElement = creator.flagCode 
-            ? `<img src="https://flagcdn.com/w40/${creator.flagCode}.png" alt="Bandera de ${creator.country}" class="card-flag">`
-            : ''; // Si no hay flagCode, no se añade nada.
+        const flagElement = ''; // Las banderas externas se omiten en favor de activos locales.
     
         card.innerHTML = `
             ${flagElement} 
@@ -111,9 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. MANEJAR EL MODAL ---
     function openCreatorModal(creator) {
     // --- NUEVO: Elemento de la bandera para el modal ---
-    const modalFlagElement = creator.flagCode 
-        ? `<img src="https://flagcdn.com/w40/${creator.flagCode}.png" alt="Bandera de ${creator.country}" class="modal-flag">`
-        : '';
+    const modalFlagElement = ''; // Las banderas externas se omiten en favor de activos locales.
         
     // --- Rellenar información básica, AHORA INCLUYE LA BANDERA ---
     document.getElementById('modal-creator-img').src = creator.profilePic;
@@ -161,7 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const linksContainer = document.getElementById('modal-creator-links');
         linksContainer.innerHTML = Object.entries(creator.socialLinks).map(([platform, url]) => {
             const iconClass = platform === 'website' ? 'fas fa-globe' : `fab fa-${platform}`;
-            return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline"><i class="${iconClass}"></i> ${platform.charAt(0).toUpperCase() + platform.slice(1)}</a>`;
+            const labels = { spotify: 'Escuchar en Spotify', youtube: 'Ver en YouTube', instagram: 'Ver en Instagram', facebook: 'Ver en Facebook', website: 'Visitar sitio web' };
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline"><i class="${iconClass}"></i> ${labels[platform] || platform.charAt(0).toUpperCase() + platform.slice(1)}</a>`;
         }).join('');
         
         // --- Mostrar modal ---

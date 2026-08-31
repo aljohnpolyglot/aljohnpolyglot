@@ -1,6 +1,7 @@
 function renderFrenchStudyKit() {
     const container = document.getElementById('french-study-kit-fr');
     const resources = window.frenchStudyKitData?.resources;
+    const linguno = window.frenchStudyKitData?.linguno;
 
     if (!container) return;
 
@@ -22,7 +23,7 @@ function renderFrenchStudyKit() {
             <div class="study-kit-intro-fr">
                 <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
                 <div>
-                    <h3>Un seul atelier, quatre gestes</h3>
+                    <h3>Un seul atelier, trois gestes</h3>
                     <p>Les documents restent chez Google : cette page sert de table de travail pour retrouver rapidement le bon point d’entrée.</p>
                 </div>
             </div>
@@ -48,6 +49,22 @@ function renderFrenchStudyKit() {
             </ol>
         </article>
     `;
+
+    const lingunoContainer = document.getElementById('french-linguno-fr');
+    if (lingunoContainer && linguno) {
+        lingunoContainer.innerHTML = `
+            <div class="french-linguno-copy-fr">
+                <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                <h2 id="linguno-francais-heading">${escapeHtml(linguno.title)}</h2>
+                <p>${escapeHtml(linguno.description)}</p>
+                <a class="btn-fr primary" href="${escapeHtml(linguno.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(linguno.linkLabel)} <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="french-linguno-visual-fr">
+                <img src="../../images/apps/linguno-french.png" alt="Mascotte pingouin de Linguno portant un béret rouge avec un sac de baguettes" width="1254" height="1254" loading="lazy" decoding="async">
+                <p>Une forme à la fois, un objectif précis.</p>
+            </div>
+        `;
+    }
 }
 
 window.renderFrenchStudyKit = renderFrenchStudyKit;

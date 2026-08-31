@@ -5,6 +5,8 @@ export const russianPodcastsData = [
     publisher: 'Макс Коршунов и Дима Герчиков',
     format: 'НБА · разговорный разбор',
     levels: ['B2', 'C1'],
+    cefr: 'B2–C1',
+    personalNote: null,
     coverImage: 'images/podcasts/kakogo-herro.webp',
     coverAlt: 'Обложка баскетбольного подкаста Kakogo Herro?!',
     description: 'Макс Коршунов и Дима Герчиков обсуждают НБА через новости, обмены, тактику и форму конкретных игроков и команд. Выпуски идут как свободный разговор двух ведущих: с быстрыми реакциями, спором и баскетбольным сленгом.',
@@ -12,6 +14,7 @@ export const russianPodcastsData = [
     links: {
       pocketCasts: 'https://pocketcasts.com/podcast/kakogo-herro/27175160-a381-013a-d89a-0acc26574db2',
       official: 'https://kakogoherrore.mave.digital/',
+      spotify: 'https://open.spotify.com/show/28Nqw1WPYO98fOGV4msy4V',
     },
   },
   {
@@ -20,6 +23,8 @@ export const russianPodcastsData = [
     publisher: 'Студия «Либо/Либо» · Самат Галимов',
     format: 'Технологии · интервью и нарратив',
     levels: ['B2', 'C1'],
+    cefr: 'B2–C1',
+    personalNote: null,
     coverImage: 'images/podcasts/zapusk-zavtra.webp',
     coverAlt: 'Пиксельная обложка технологического подкаста «Запуск завтра»',
     description: 'Самат Галимов разбирает технологии вместе с разработчиками, исследователями и предпринимателями. В архиве есть интервью, истории компаний и технологий, новости и нарративные выпуски об ИИ, безопасности, интернете, работе в IT и цифровой культуре.',
@@ -27,6 +32,7 @@ export const russianPodcastsData = [
     links: {
       pocketCasts: 'https://pocketcasts.com/podcast/%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0/a1ad4af0-f370-0137-b711-0acc26574db2',
       official: 'https://zapuskzavtra.com/',
+      spotify: 'https://open.spotify.com/show/6eZ2zcnLuwcJwKDAit0lY7',
     },
   },
   {
@@ -35,6 +41,8 @@ export const russianPodcastsData = [
     publisher: 'Елена Мицкевич',
     format: 'Психология · монолог и интервью',
     levels: ['B2', 'C1'],
+    cefr: 'B2–C1',
+    personalNote: null,
     coverImage: 'images/podcasts/ty-eto-vazhno.webp',
     coverAlt: 'Иллюстрированная обложка подкаста «Ты — это важно»',
     description: 'Практикующий психолог Елена Мицкевич говорит о любви к себе, ответственности, отношениях и бережном отношении к психическому здоровью. Короткие авторские выпуски чередуются с длинными беседами о личном опыте и пути гостей в психотерапии.',
@@ -42,6 +50,7 @@ export const russianPodcastsData = [
     links: {
       pocketCasts: 'https://pocketcasts.com/podcast/%D1%82%D1%8B-%D1%8D%D1%82%D0%BE-%D0%B2%D0%B0%D0%B6%D0%BD%D0%BE/04081920-b4fa-0139-f5f3-0acc26574db2',
       official: 'https://elens-way.mave.digital/',
+      spotify: 'https://open.spotify.com/show/1z9ERW9uGobYaM7AVzbJsf',
     },
   },
 ];

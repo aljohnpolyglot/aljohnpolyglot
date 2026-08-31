@@ -5,6 +5,8 @@ import { createRussianCreatorModal } from './russian-modal-controller.js';
 import { initializeOpenRussian } from './renderers/russian-openrussian-renderer.js';
 import { initializeRussianBookshelf } from './renderers/russian-books-renderer.js';
 import { russianFilmsData } from './data/russian-films-data.js';
+import { russianPodcastsData } from './data/russian-podcasts-data.js';
+import { renderRussianPodcasts } from './renderers/russian-podcasts-renderer.js';
 
 function initializeFilms() {
   const shelf = document.querySelector('#russian-films-grid');
@@ -105,6 +107,14 @@ function initializePage() {
   initializeOpenRussian();
   initializeRussianBookshelf();
   initializeFilms();
+  renderRussianPodcasts({ podcasts: russianPodcastsData,
+    shelf: document.querySelector('#russian-podcast-shelf'),
+    previousButton: document.querySelector('#russian-podcast-previous'),
+    nextButton: document.querySelector('#russian-podcast-next'),
+    status: document.querySelector('#russian-podcast-status'),
+    modal: document.querySelector('#russian-podcast-modal'),
+    modalContent: document.querySelector('#russian-podcast-modal-content')
+  });
   renderRussianPlaylist(russianPlaylist, {
     list: document.querySelector('#russian-playlist-list'),
     player: document.querySelector('#russian-featured-player'),

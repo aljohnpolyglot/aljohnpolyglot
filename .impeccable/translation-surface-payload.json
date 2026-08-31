@@ -1,0 +1,43 @@
+{
+  "title": "Choose how the translation conveyor leads",
+  "question": "All three preserve the current navy/cyan/yellow translation engine. Choose the composition that should govern the polish.",
+  "options": [
+    {
+      "id": "dual-lane-workbench",
+      "label": "Dual-Lane Workbench",
+      "kicker": "THE ROLL",
+      "lineage": "the existing translation engine, organized as a working language desk",
+      "thesis": "Source language arrives above; clear English or Tagalog leaves below, with the engine visibly doing the routing.",
+      "palette": ["#081a38", "#00a9ff", "#ffdb00", "#ffffff", "#c8102e"],
+      "materials": ["deep navy control surface", "cyan signal lines", "crisp flag tiles"],
+      "viewport": "A 40/60 opening: concise offer and quote action on the left, two horizontal language lanes and the translation engine on the right; the conveyor continues into the service scope below.",
+      "risk": "Can feel like software if the human service copy becomes secondary.",
+      "comp": ".impeccable/mocks/decision/translation-dual-lane-workbench.png"
+    },
+    {
+      "id": "center-stage-engine",
+      "label": "Center-Stage Engine",
+      "lineage": "a disciplined evolution of the page already on screen",
+      "thesis": "The current centered promise and full-width flag conveyor stay intact, but hierarchy, spacing, and the transition into services become deliberate.",
+      "palette": ["#0a1934", "#00a9ff", "#ffdb00", "#f7f9fc", "#c8102e"],
+      "materials": ["midnight field", "glowing engine glass", "quiet white service ledger"],
+      "viewport": "Centered headline, proof-aware service copy, yellow quote action, then one clean full-width conveyor with the engine at its center; a three-part benefit rail begins the second fold.",
+      "risk": "Closest to the incumbent, so the lower page must be polished firmly to avoid feeling like only a better hero.",
+      "comp": ".impeccable/mocks/decision/translation-center-stage-engine.png"
+    },
+    {
+      "id": "conveyor-journey",
+      "label": "Conveyor Journey",
+      "lineage": "the existing engine extended into the page's real Portuguese-to-Tagalog case study",
+      "thesis": "The conveyor becomes the page's reading spine: request, clarify, translate, review, and deliver.",
+      "palette": ["#07172f", "#00a9ff", "#ffdb00", "#ffffff", "#c8102e"],
+      "materials": ["navy routing track", "cyan station markers", "document-paper proof panels"],
+      "viewport": "Offer copy and CTA sit above a conveyor with five named stations; the real Portuguese podcast-to-Tagalog proof panel enters immediately below without changing the page's facts.",
+      "risk": "The process can overpower the simpler request-a-quote job if every station competes equally.",
+      "comp": ".impeccable/mocks/decision/translation-conveyor-journey.png"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "steer": true
+}

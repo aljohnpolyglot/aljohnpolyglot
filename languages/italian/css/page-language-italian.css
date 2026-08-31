@@ -400,6 +400,7 @@ a {
     border: 0;
     background: var(--italy-paper-deep);
     opacity: 0;
+    visibility: hidden;
     transform: scale(1.025);
     pointer-events: none;
     transition: opacity 420ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -408,6 +409,7 @@ a {
 .hero-photo.is-active {
     z-index: 1;
     opacity: 1;
+    visibility: visible;
     transform: scale(1);
     pointer-events: auto;
 }
@@ -444,6 +446,17 @@ a {
     font-size: 0.67rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+}
+
+.hero-photo figcaption a {
+    color: inherit;
+    font-weight: 700;
+    text-underline-offset: 0.2em;
+}
+
+.hero-photo figcaption a span {
+    font-size: inherit;
+    letter-spacing: 0;
 }
 
 .hero-carousel-controls {
@@ -2712,6 +2725,248 @@ body.italian-book-modal-open {
         width: 48px;
         height: 48px;
         margin: 0;
+    }
+}
+
+/* Compact podcast folio: the shelf is a doorway; prose lives in the dialog. */
+.italian-podcast-shelf {
+    grid-auto-columns: clamp(15.5rem, 24vw, 20rem);
+    gap: 1rem;
+    padding-bottom: 0.8rem;
+}
+
+.italian-podcast-card {
+    display: block;
+    min-height: 0;
+    background: var(--italy-paper);
+    box-shadow: 0 12px 24px rgba(53, 42, 27, 0.1);
+}
+
+.italian-podcast-card::after {
+    inset: 0.45rem;
+}
+
+.italian-podcast-card__trigger {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.italian-podcast-card__trigger:focus-visible {
+    outline: 3px solid var(--italy-gold);
+    outline-offset: -3px;
+}
+
+.italian-podcast-card__trigger > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    min-height: 0;
+    object-fit: cover;
+}
+
+.italian-podcast-card__copy {
+    gap: 0.35rem;
+    padding: 1rem 1.15rem 1.25rem;
+}
+
+.italian-podcast-card__metadata,
+.italian-podcast-card__format,
+.italian-podcast-card__action {
+    display: block;
+}
+
+.italian-podcast-card__metadata {
+    font-size: 0.68rem;
+}
+
+.italian-podcast-card__title {
+    display: block;
+    margin-top: 0.1rem;
+    font-family: var(--italy-display);
+    font-size: 1.75rem;
+    line-height: 1.05;
+}
+
+.italian-podcast-card__format {
+    color: var(--italy-muted);
+    font-size: 0.92rem;
+    line-height: 1.25;
+}
+
+.italian-podcast-card__action {
+    margin-top: 0.55rem;
+    color: var(--italy-oxblood);
+    font-family: var(--italy-smallcaps);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.italian-podcast-card__description,
+.italian-podcast-card__guidance,
+.italian-podcast-card__links {
+    display: none;
+}
+
+.italian-podcast-modal[hidden] {
+    display: none;
+}
+
+.italian-podcast-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10010;
+    display: grid;
+    padding: clamp(0.75rem, 3vw, 2.5rem);
+    place-items: center;
+}
+
+.italian-podcast-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 22, 22, 0.84);
+    backdrop-filter: blur(7px);
+}
+
+.italian-podcast-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(900px, calc(100vw - 1.5rem));
+    max-height: calc(100vh - 1.5rem);
+    overflow: auto;
+    border: 1px solid var(--italy-gold-light);
+    color: var(--italy-ink);
+    background: var(--italy-paper);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.44);
+    scrollbar-gutter: stable;
+}
+
+.italian-podcast-dialog::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    z-index: -1;
+    border: 1px solid rgba(173, 131, 56, 0.48);
+    pointer-events: none;
+}
+
+.italian-podcast-modal-close {
+    position: sticky;
+    top: 0.8rem;
+    z-index: 2;
+    margin: 0.8rem 0.8rem -3.8rem auto;
+}
+
+.italian-podcast-modal-layout {
+    display: grid;
+    min-width: 0;
+    grid-template-columns: minmax(13rem, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(1.5rem, 4vw, 3.25rem);
+    align-items: center;
+    padding: clamp(1.75rem, 5vw, 4rem);
+}
+
+.italian-podcast-modal-layout > img {
+    width: 100%;
+    height: auto;
+    max-height: min(30rem, 62vh);
+    object-fit: contain;
+    border: 5px solid #fff7e8;
+    outline: 1px solid var(--italy-gold-light);
+    background: #fff7e8;
+}
+
+.italian-podcast-modal-copy {
+    display: grid;
+    min-width: 0;
+    align-content: start;
+    gap: 1rem;
+}
+
+.italian-podcast-modal-copy .folio {
+    margin: 0;
+    color: var(--italy-oxblood);
+}
+
+.italian-podcast-modal-copy h2 {
+    margin: 0;
+    color: var(--italy-fresco-deep);
+    font-family: var(--italy-display);
+    font-size: clamp(2.4rem, 6vw, 4.3rem);
+    font-weight: 400;
+    line-height: 0.98;
+}
+
+.italian-podcast-modal-format {
+    margin: -0.35rem 0 0;
+    color: var(--italy-oxblood);
+    font-family: var(--italy-smallcaps);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.italian-podcast-modal-copy > p:not(.folio):not(.italian-podcast-modal-format),
+.italian-podcast-modal-copy h3 {
+    margin: 0;
+}
+
+.italian-podcast-modal-note {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-left: 3px solid var(--italy-oxblood);
+    color: var(--italy-ink);
+    background: rgba(126, 40, 49, 0.07);
+}
+
+.italian-podcast-modal-copy > p:not(.folio):not(.italian-podcast-modal-format) {
+    color: var(--italy-muted);
+}
+
+.italian-podcast-modal-copy h3 {
+    padding-top: 1rem;
+    border-top: 1px solid var(--italy-rule);
+    font-size: 1.45rem;
+}
+
+.italian-podcast-modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.15rem;
+    padding-top: 0.5rem;
+}
+
+.italian-podcast-modal-links a {
+    color: var(--italy-oxblood);
+    font-family: var(--italy-smallcaps);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-underline-offset: 0.25em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+    .italian-podcast-shelf {
+        grid-auto-columns: min(78vw, 18rem);
+    }
+
+    .italian-podcast-modal-layout {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1.5rem;
+    }
+
+    .italian-podcast-modal-layout > img {
+        width: min(100%, 14rem);
     }
 }
 

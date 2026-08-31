@@ -44,6 +44,7 @@
             <a href="#immersion">Погружение</a>
             <a href="#films">Кинозал</a>
             <a href="#books">Книги</a>
+            <a href="#podcasts">Подкасты</a>
             <a href="#creators">Авторы</a>
             <a href="#closing">Дальше</a>
         </div>
@@ -272,6 +273,29 @@
             </div>
         </section>
 
+        <section id="podcasts" class="podcasts-section-ru" aria-labelledby="podcasts-heading-ru">
+            <header class="section-head-ru">
+                <div>
+                    <p class="section-index-ru">ГЛАВА 06 / ПОДКАСТЫ</p>
+                    <h2 id="podcasts-heading-ru">Слушать длинные разговоры</h2>
+                </div>
+                <p>Три русскоязычных шоу для дней, когда хочется идти глубже: спорт, технологии и разговор о себе.</p>
+            </header>
+            <div class="podcasts-register-ru">
+                <div class="podcasts-register-head-ru">
+                    <div>
+                        <p>ПОДКАСТЫ / B2–C1</p>
+                        <span id="russian-podcast-status" role="status">Загружаю подкасты…</span>
+                    </div>
+                    <div class="podcast-controls-ru">
+                        <button id="russian-podcast-previous" type="button" aria-label="Прокрутить подкасты назад">←</button>
+                        <button id="russian-podcast-next" type="button" aria-label="Прокрутить подкасты вперёд">→</button>
+                    </div>
+                </div>
+                <div id="russian-podcast-shelf" class="podcast-shelf-ru" role="list" tabindex="0" aria-labelledby="podcasts-heading-ru" aria-describedby="russian-podcast-status"></div>
+            </div>
+        </section>
+
         <section id="creators" class="creators-section-ru" aria-labelledby="creators-heading-ru">
             <header class="section-head-ru">
                 <div>
@@ -383,6 +407,40 @@
                         <p id="russian-book-modal-guidance"></p>
                     </section>
                     <div id="russian-book-modal-links" class="book-modal-links-ru"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="russian-podcast-modal" class="podcast-modal-ru" hidden>
+        <div class="podcast-backdrop-ru" data-podcast-modal-close></div>
+        <section class="podcast-dialog-ru" role="dialog" aria-modal="true" aria-labelledby="russian-podcast-modal-title" aria-describedby="russian-podcast-modal-description russian-podcast-modal-guidance">
+            <button class="podcast-close-ru" type="button" data-podcast-modal-close aria-label="Закрыть сведения о подкасте">×</button>
+            <div class="podcast-modal-scroll-ru">
+                <div id="russian-podcast-modal-content">
+                <header class="podcast-modal-head-ru">
+                    <img id="russian-podcast-modal-cover" src="images/podcasts/kakogo-herro.webp" alt="" width="480" height="480">
+                    <div>
+                        <p id="russian-podcast-modal-format" class="podcast-modal-kicker-ru"></p>
+                        <h2 id="russian-podcast-modal-title"></h2>
+                        <p id="russian-podcast-modal-publisher" class="podcast-modal-publisher-ru"></p>
+                        <p id="russian-podcast-modal-level" class="creator-level-ru"></p>
+                    </div>
+                </header>
+                <p id="russian-podcast-modal-description" class="podcast-modal-description-ru"></p>
+                <section class="podcast-guidance-ru" aria-labelledby="russian-podcast-guidance-heading">
+                    <p id="russian-podcast-guidance-heading">КАК СЛУШАТЬ</p>
+                    <p id="russian-podcast-modal-guidance"></p>
+                </section>
+                <section id="russian-podcast-modal-note" class="creator-note-ru" aria-labelledby="russian-podcast-note-heading" hidden>
+                    <p id="russian-podcast-note-heading">ЗАМЕТКА АЛДЖОНА</p>
+                    <blockquote id="russian-podcast-modal-note-copy"></blockquote>
+                </section>
+                <section class="podcast-sample-ru" aria-labelledby="russian-podcast-sample-heading">
+                    <p id="russian-podcast-sample-heading">ПРИМЕР ВЫПУСКА</p>
+                    <div id="russian-podcast-modal-sample" class="podcast-sample-frame-ru"></div>
+                </section>
+                <div id="russian-podcast-modal-links" class="podcast-modal-links-ru"></div>
                 </div>
             </div>
         </section>

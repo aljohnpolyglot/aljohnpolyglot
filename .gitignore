@@ -66,6 +66,13 @@ MANIFEST
 
 # Private local curation exports (never deploy or commit)
 /local-data/
+/catalog-handoff/
+/instagram-repair/
+/youtube-liked-data/
+/data/
+/_script-backups/
+/creator-human-review.json
+/creator-curation-8-language-report.md
 
 # Local browser QA caches and disposable captures
 /.impeccable/*profile*/
