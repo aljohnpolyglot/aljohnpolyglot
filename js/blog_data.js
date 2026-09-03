@@ -2,6 +2,19 @@
 
 const blogPostsData = [
     {
+        id: "spaced-repetition-memory-forest",
+        title: "Grow a Language You Won't Forget",
+        date: "2026-08-31",
+        author: "Aljohn Polyglot",
+        categories: ["Study Methods", "Learning Strategy", "Language Notes"],
+        languageFocus: ["Multi-Language Focus"],
+        tags: ["spaced repetition", "vocabulary", "memory", "review schedule", "active recall"],
+        excerpt: "Why vocabulary behaves like a living forest—and a visual guide to planting, recalling, and strengthening each word.",
+        link: "blog/spacedrepetition.html",
+        featuredImage: "blog/spaced-repetition/images/memory-forest-thumbnail.png",
+        readTime: "Approx. 9 min read"
+    },
+    {
         id: "daily-routine-i-actually-used",
         title: "Aljohn's Daily Immersion System",
         date: "2025-05-31",
