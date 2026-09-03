@@ -35,6 +35,7 @@ The first wheel/touch movement crosses a bright, physical waterline. The sky col
 - Media: one inline, code-native SVG iceberg supplies all ten individually focusable and clickable strata. The supplied infographic PNGs inform the hierarchy and proportions but do not appear in the page. Aljohn's supplied CEFR-versus-Iceberg Drake meme appears once as an editorial interlude before the dive.
 - Motion: scroll progress translates the continuous strata and waterline; active text and route stop update with IntersectionObserver; reduced-motion preserves the entire reading order without transforms.
 - Semantics: all ten levels are structured HTML with headings, descriptions, examples, and accessible anchor navigation. The imagery is supportive, never the only copy.
+- Editorial primer: the CEFR comparison is centered in a restrained reading column, with the heading and explanation in one continuous sequence before the table. Its hierarchy supports long-form reading rather than resembling separate social-post slides.
 
 ## Constraints
 

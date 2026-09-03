@@ -7,6 +7,7 @@
 	"name": "my-gemini-proxy",
 	"main": "src/index.js",
 	"compatibility_date": "2025-10-11",
+	"placement": { "mode": "smart" },
 	"observability": {
 		"enabled": true
 	}

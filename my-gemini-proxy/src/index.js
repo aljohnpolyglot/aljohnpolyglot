@@ -1,3 +1,5 @@
+let keyCursor = 0;
+
 export default {
 	async fetch(request, env) {
 	  // --- CORS Configuration ---
@@ -39,20 +41,31 @@ export default {
   
 	  // --- POST Request Handler (Main Logic) ---
 	  if (request.method === 'POST') {
-		const GEMINI_API_KEY = env.GEMINI_API_KEY;
-		if (!GEMINI_API_KEY) {
+		const apiKeys = [
+		  ...(env.GEMINI_API_KEYS || '').split(','),
+		  env.GEMINI_API_KEY,
+		  ...Array.from({ length: 8 }, (_, index) => env[`GEMINI_API_KEY_${index + 1}`])
+		].map(key => key?.trim()).filter((key, index, keys) => key && keys.indexOf(key) === index);
+		if (!apiKeys.length) {
 		  console.error("FATAL: GEMINI_API_KEY secret not found.");
 		  return Response.json({ error: "API key not configured on the server." }, { status: 500, headers: corsHeaders });
 		}
-  
-		const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-  
+		const model = /^[a-z0-9.-]+$/.test(new URL(request.url).searchParams.get('model') || '')
+		  ? new URL(request.url).searchParams.get('model')
+		  : 'gemini-2.5-flash';
+		const body = await request.arrayBuffer();
+	  
 		try {
-		  const geminiResponse = await fetch(GEMINI_URL, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: request.body,
-		  });
+		  let geminiResponse;
+		  for (let attempt = 0; attempt < apiKeys.length; attempt += 1) {
+			const index = (keyCursor + attempt) % apiKeys.length;
+			const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKeys[index]}`;
+			geminiResponse = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body });
+			if (geminiResponse.ok || (geminiResponse.status !== 408 && geminiResponse.status !== 429 && geminiResponse.status < 500)) {
+			  keyCursor = (index + 1) % apiKeys.length;
+			  break;
+			}
+		  }
   
 		  // **IMPROVED DEBUGGING:** Check if Google returned an error
 		  if (!geminiResponse.ok) {
