@@ -4,8 +4,8 @@
 
 - **Selected direction:** Memory Forest (`spaced-repetition-03-memory-forest.png`)
 - **Premise:** Vocabulary behaves like a living forest. Recall strengthens roots; missed reviews expose weak growth without punishing the learner.
-- **Visual language:** deep botanical black-green, chlorophyll green, soil brown, field-note cream, coral review pulses, hard rules, tree-ring notation, and condensed editorial type.
-- **Composition:** a decisive forest-observatory hero; a scroll-driven memory nursery; cream editorial explanations; generated lifecycle sprite art; and the original WIP tree art presented as a single-stage field specimen rather than a card grid.
+- **Visual language:** deep botanical black-green, natural leaf greens, soil and root browns, field-note cream, coral review pulses, hard rules, tree-ring notation, and condensed editorial type. Lifecycle art avoids neon, purple, and magenta casts.
+- **Composition:** a decisive forest-observatory hero; a verified research comparison immediately after it; a scroll-driven memory nursery; cream editorial explanations; generated lifecycle sprite art; and the original WIP tree art presented as a single-stage field specimen rather than a card grid.
 - **Interaction:** scrolling advances one neutral example word through reviews on days 1, 3, 7, 14, and 30; scrolling upward reverses the same sequence. A separate missed-review case decays and restores with the reader's position.
 - **Motion:** short sprite-frame growth and decay, review pulses, and one top-down scale transition. No looping ambience, parallax, canvas, gradients, glass, rounded app UI, or decorative motion without state meaning.
 - **Truth constraints:** no invented user totals or performance claims. The experience is an explanatory simulation, not a spaced-repetition program or data-entry tool.
@@ -18,8 +18,8 @@
 | --- | --- | --- |
 | Global navigation | Existing shared white Aljohn navbar | Shared template loader |
 | Hero copy | Monumental two-tone condensed headline with one coral planting action | HTML/CSS |
-| Growth specimen | Three generated lifecycle stages rising above a shared soil cutaway | Transparent Sprite Forge frames + inline SVG roots |
-| Root network | Visible roots and coral review nodes | Inline SVG |
+| Study comparison | Thirteen widely spaced review sessions versus twenty-six frequent sessions, based on Bahrick et al.'s nine-year vocabulary study | Semantic HTML/CSS bar comparison + DOI link |
+| Growth specimen | Three generated lifecycle stages aligned to one shared soil horizon; the subject grows naturally while the frame remains fixed | Transparent Sprite Forge frames |
 | Living forest | One word visibly maturing through six frames | Transparent Sprite Forge frames + native JavaScript |
 | Review timeline | Six labeled moments plus a 30-day calendar synchronized with tree growth | HTML/CSS + native JavaScript |
 | Missed-review case | Reversible decay from healthy canopy to a dormant bare tree | Transparent Sprite Forge frames + scroll progress |
@@ -29,7 +29,7 @@
 
 Approval: Aljohn selected `spaced-repetition-03-memory-forest.png` after seeing all three directions. Direction seed: `df9ad045`; form position: 3.
 
-The twelve-frame lifecycle sheet and four-frame aerial forest sheet were generated with built-in ImageGen, converted to transparent local frames by the installed Agent Sprite Forge processor, checked for complete non-empty output frames, and stored as local PNGs with embedded prompt provenance. Raw working sheets and QC metadata remain private under `local-data/`.
+The twelve-frame lifecycle sequence was generated as two coherent six-frame batches, converted to transparent local frames by the installed Agent Sprite Forge processor, and checked for complete non-empty output, edge clearance, palette fit, stable grounding, and meaningful subject-scale progression from sapling to mature tree. The four-frame aerial forest sheet follows the same local-asset workflow. Raw working sheets and QC metadata remain private under `local-data/`.
 
 ## Motion thesis
 

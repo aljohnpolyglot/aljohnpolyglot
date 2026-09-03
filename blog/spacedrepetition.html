@@ -6,9 +6,6 @@
   <meta name="description" content="Aljohn Polyglot's practical guide to spaced repetition, with an animated memory forest and review timeline.">
   <title>Grow a Language You Won't Forget — Aljohn Polyglot</title>
   <link rel="icon" href="../images/channel_profile_aljohn_polyglot.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="spaced-repetition/css/memory-forest.css">
@@ -36,12 +33,12 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title">Grow a language<br><span>you won't forget.</span></h1>
-          <p class="hero-deck">A word is fragile when you first meet it. Recall it at the right moment, and its roots grow deeper every time.</p>
+          <p class="hero-deck">Studied it already—so why do you keep forgetting it? A word is fragile when you first meet it. Recall it at the right moment, and its roots grow deeper every time.</p>
           <div class="hero-actions">
             <a class="button button-coral" href="#nursery">Plant the first word</a>
             <a class="text-link" href="#field-notes">Read the method</a>
           </div>
-          <p class="byline">By Aljohn Polyglot · August 31, 2026</p>
+          <p class="byline">By Aljohn Polyglot · June 2, 2025</p>
           <img class="hero-mobile-sprite" src="spaced-repetition/images/sprites/tree-lifecycle/lifecycle-4.png" width="384" height="384" alt="">
         </div>
 
@@ -56,29 +53,36 @@
             <img class="hero-tree stage-two" src="spaced-repetition/images/sprites/tree-lifecycle/lifecycle-4.png" width="384" height="384" alt="">
             <img class="hero-tree stage-three" src="spaced-repetition/images/sprites/tree-lifecycle/lifecycle-6.png" width="384" height="384" alt="">
           </div>
-          <div class="soil-cutaway">
-            <svg viewBox="0 0 900 220" role="presentation">
-              <path class="root" d="M110 22c30 32 12 54 52 78s70 4 101 49 78 21 118 52"/>
-              <path class="root" d="M425 8c-12 48 26 55 8 91s31 48 16 102"/>
-              <path class="root" d="M714 12c8 39-31 61-2 92s-21 61-49 88"/>
-              <path class="root root-fine" d="M162 100c44-22 74-18 111 10M433 99c-53-7-84 14-115 47M712 104c48-12 86 7 119 45"/>
-              <path class="root root-fine" d="M110 42c-44 30-62 63-76 117M157 98c-3 44 20 76 9 116M425 63c44 21 69 52 94 104M450 127c-39 16-62 43-78 83M714 64c-51 17-78 49-103 105M742 112c15 31 42 53 72 83"/>
-              <circle class="review-node" cx="162" cy="100" r="7"/>
-              <circle class="review-node" cx="433" cy="99" r="7"/>
-              <circle class="review-node" cx="712" cy="104" r="7"/>
-            </svg>
-          </div>
+          <div class="soil-cutaway"></div>
           <div class="observatory-legend"><span>New</span><span>Developing</span><span>Rooted</span></div>
         </div>
+      </section>
+
+      <section class="study-comparison" aria-labelledby="study-title">
+        <div class="study-comparison-copy">
+          <h2 id="study-title">More reviews are not always better.</h2>
+          <p>A nine-year vocabulary study compared different review schedules. Thirteen sessions spaced 56 days apart produced retention comparable to 26 sessions spaced 14 days apart. The longer schedule took more patience, but only half as many review sessions.</p>
+          <a href="https://doi.org/10.1111/j.1467-9280.1993.tb00571.x" target="_blank" rel="noopener noreferrer">Read the vocabulary study ↗</a>
+        </div>
+        <figure class="study-bars">
+          <figcaption><strong>Comparable long-term retention</strong><span>Same destination. Different workload.</span></figcaption>
+          <div class="study-bar-chart" role="img" aria-label="Thirteen review sessions spaced 56 days apart produced retention comparable to twenty-six sessions spaced 14 days apart.">
+            <div class="study-bar"><b>13</b><i aria-hidden="true"></i><span>56-day gaps</span></div>
+            <div class="study-bar is-double"><b>26</b><i aria-hidden="true"></i><span>14-day gaps</span></div>
+          </div>
+          <p><b>½ the sessions</b><span>with comparable retention</span></p>
+        </figure>
       </section>
 
       <section class="field-notes" id="field-notes" aria-labelledby="field-title">
         <div class="field-copy">
           <h2 id="field-title">Review before the trail disappears.</h2>
-          <p class="lead">I used spaced repetition to manage more than 20,000 words across 11 languages. The idea is simple: test yourself after longer and longer gaps instead of rereading the same material in one sitting.</p>
+          <p class="lead">I used spaced repetition to manage more than 20,000 words across 11 languages. I logged them in a flashcard app so the number was measurable and I stayed accountable. The idea is simple: test yourself after longer and longer gaps instead of rereading everything in one sitting.</p>
           <div class="note-columns">
             <p><strong>New knowledge is a sapling.</strong> It needs attention soon. If you wait too long, recall collapses; if you review constantly, you spend time on words that are already stable.</p>
             <p><strong>Retrieval is the work.</strong> Seeing the answer is not the same as producing it. Try to remember first, then reveal the answer and schedule the next encounter.</p>
+            <p><strong>Cramming grows fast, then fades.</strong> It can feel solid at first, but the memory is still weak. The goal is not merely to know something today; it is to retrieve it after the gap widens.</p>
+            <p><strong>Mature knowledge stands alone.</strong> After enough successful recalls, the memory can survive a much longer interval—like a rooted tree that no longer needs daily watering.</p>
           </div>
         </div>
         <figure class="curve-figure">
@@ -108,12 +112,12 @@
               <title id="forest-svg-title">Spaced repetition tree-growth simulation</title>
               <desc id="forest-svg-desc">One new word grows from a fragile sprout into a rooted tree as five reviews are completed over thirty days.</desc>
               <path class="forest-horizon" d="M0 415c128-32 240 22 365-9s243-3 535-20V520H0Z"/>
-              <g id="simulation-pulses" class="simulation-pulses"><circle cx="450" cy="394" r="10"/><circle cx="395" cy="447" r="7"/><circle cx="513" cy="444" r="7"/></g>
               <image id="simulation-tree" class="simulation-tree" href="spaced-repetition/images/sprites/tree-lifecycle/lifecycle-1.png" x="258" y="128" width="384" height="384" preserveAspectRatio="xMidYMid meet"/>
-              <text id="simulation-event-day" class="simulation-word" x="450" y="92" text-anchor="middle">DAY 0</text>
-              <text id="simulation-event-status" class="simulation-meaning" x="450" y="119" text-anchor="middle">PLANTED</text>
+              <rect class="simulation-status-plate" x="185" y="0" width="530" height="158"/>
+              <text id="simulation-event-day" class="simulation-word" x="450" y="64" text-anchor="middle">DAY 0</text>
+              <text id="simulation-event-status" class="simulation-meaning" x="450" y="91" text-anchor="middle">PLANTED</text>
+              <foreignObject x="200" y="108" width="500" height="50"><p xmlns="http://www.w3.org/1999/xhtml" id="simulation-caption" class="simulation-state-caption">A new word begins as a fragile sprout.</p></foreignObject>
             </svg>
-            <figcaption id="simulation-caption">A new word begins as a fragile sprout.</figcaption>
           </figure>
 
           <aside class="simulation-timeline" aria-labelledby="timeline-title">
@@ -142,19 +146,42 @@
           <div class="missed-stage">
             <div class="missed-copy">
               <h2 id="missed-title">What if you never return?</h2>
-              <p>The word is not erased in one dramatic moment. Its route back becomes quieter, slower, and harder to find.</p>
-              <p id="missed-caption" class="state-caption">The memory is still within reach.</p>
+              <p>After a week of review, the memory is stronger—but it is still a sapling. Miss the next returns and its route back becomes quieter, slower, and harder to find.</p>
             </div>
             <figure class="missed-visual">
               <svg viewBox="0 0 720 520" role="img" aria-labelledby="missed-svg-title missed-svg-desc">
-                <title id="missed-svg-title">A memory fading without review</title>
-                <desc id="missed-svg-desc">As the reader scrolls, a healthy young tree loses its leaves and its roots fade. Scrolling upward restores it.</desc>
+                <title id="missed-svg-title">A young memory fading after a missed review</title>
+                <desc id="missed-svg-desc">As the reader scrolls, a seven-day sapling loses its leaves and its roots fade. Scrolling upward restores it.</desc>
                 <path class="missed-ground" d="M0 395c170-30 332 24 720-13V520H0Z"/>
                 <image id="missed-tree" class="missed-tree" href="spaced-repetition/images/sprites/tree-lifecycle/lifecycle-7.png" x="168" y="110" width="384" height="384" preserveAspectRatio="xMidYMid meet"/>
-                <text id="missed-day" class="missed-day" x="360" y="72" text-anchor="middle">DAY 1</text>
-                <text class="missed-status" x="360" y="105" text-anchor="middle">NO REVIEW</text>
+                <text id="missed-day" class="missed-day" x="360" y="72" text-anchor="middle">DAY 7</text>
+                <text id="missed-status" class="missed-status is-reviewed" x="360" y="105" text-anchor="middle">REVIEWED</text>
+                <foreignObject x="110" y="122" width="500" height="64"><p xmlns="http://www.w3.org/1999/xhtml" id="missed-caption" class="visual-state-caption is-reviewed">The memory is still within reach.</p></foreignObject>
               </svg>
               <figcaption><span>Strong trace</span><span>Fading trace</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="missed-review recovery-review" aria-labelledby="recovery-title">
+        <div class="missed-scroll" id="recovery-scroll-story">
+          <div class="missed-stage" id="recovery-stage">
+            <div class="missed-copy">
+              <h2 id="recovery-title">What if you return late?</h2>
+              <p>Missing Day 10 does not kill the memory. Review it on Day 11, shorten the next interval, and the sapling can recover.</p>
+            </div>
+            <figure class="missed-visual">
+              <svg viewBox="0 0 720 520" role="img" aria-labelledby="recovery-svg-title recovery-svg-desc">
+                <title id="recovery-svg-title">A late review rescuing a young memory</title>
+                <desc id="recovery-svg-desc">A seven-day sapling wilts after its Day 10 review is missed, then recovers when recalled on Day 11.</desc>
+                <path class="missed-ground" d="M0 395c170-30 332 24 720-13V520H0Z"/>
+                <image id="recovery-tree" class="missed-tree" href="spaced-repetition/images/sprites/tree-lifecycle/lifecycle-7.png" x="168" y="110" width="384" height="384" preserveAspectRatio="xMidYMid meet"/>
+                <text id="recovery-day" class="missed-day" x="360" y="72" text-anchor="middle">DAY 7</text>
+                <text id="recovery-status" class="missed-status is-reviewed" x="360" y="105" text-anchor="middle">REVIEWED</text>
+                <foreignObject x="110" y="122" width="500" height="64"><p xmlns="http://www.w3.org/1999/xhtml" id="recovery-caption" class="visual-state-caption is-reviewed">The Day 7 review is still holding.</p></foreignObject>
+              </svg>
+              <figcaption><span>Missed once</span><span>Recovered by recall</span></figcaption>
             </figure>
           </div>
         </div>
@@ -209,13 +236,13 @@
       <section class="method" aria-labelledby="method-title">
         <div class="method-intro">
           <h2 id="method-title">Four moves. No ritual.</h2>
-          <p>You can use paper cards, Anki, Migaku, or the forest above. The tool matters less than honest recall and sensible timing.</p>
+          <p>You can use paper cards or a spaced-repetition app such as Anki or Migaku. An app can schedule the intervals automatically; the part you cannot automate is honest recall.</p>
         </div>
         <ol class="method-steps">
-          <li><span>01</span><div><h3>Capture context</h3><p>Save a word from something you actually read, heard, or wanted to say.</p></div></li>
-          <li><span>02</span><div><h3>Recall first</h3><p>Hide the answer. Produce the meaning, sound, or sentence before checking.</p></div></li>
-          <li><span>03</span><div><h3>Judge honestly</h3><p>Remembered means usable without a hint. If not, mark it forgotten and shorten the interval.</p></div></li>
-          <li><span>04</span><div><h3>Return later</h3><p>Let successful words wait longer. Spend today's attention on memories that actually need it.</p></div></li>
+          <li><span>01</span><div><h3>Capture context</h3><p>Turn a new word or grammar rule into a card using the sentence, audio, or situation where you found it.</p></div></li>
+          <li><span>02</span><div><h3>Recall first</h3><p>Review it the next day. Hide the answer and retrieve the meaning, sound, or sentence before checking.</p></div></li>
+          <li><span>03</span><div><h3>Extend success</h3><p>If you remember it without a hint, let the card return after three days, then a week, then a month.</p></div></li>
+          <li><span>04</span><div><h3>Shorten failure</h3><p>If you forget it, return to a shorter interval. That is not failure; it is the signal that this memory needs more frequent care.</p></div></li>
         </ol>
       </section>
 

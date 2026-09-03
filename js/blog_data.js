@@ -4,7 +4,7 @@ const blogPostsData = [
     {
         id: "spaced-repetition-memory-forest",
         title: "Grow a Language You Won't Forget",
-        date: "2026-08-31",
+        date: "2025-06-02",
         author: "Aljohn Polyglot",
         categories: ["Study Methods", "Learning Strategy", "Language Notes"],
         languageFocus: ["Multi-Language Focus"],
