@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">App logo unavailable</title>
+  <desc id="description">Universal blue application tile.</desc>
+  <rect width="512" height="512" rx="96" fill="#0b1a33"/>
+  <rect x="96" y="96" width="320" height="320" rx="72" fill="#00aef3"/>
+  <path d="M176 256h160M256 176v160" stroke="#fff" stroke-width="40" stroke-linecap="round"/>
+</svg>

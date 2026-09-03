@@ -1,0 +1,569 @@
+
+/* --- Estilos Generales de la Sección --- */
+#spotlights-start-here {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.spotlights-main-title {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 3.5rem;
+}
+
+.spotlight-container {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 3rem;
+}
+
+.spotlight-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin-top: 3.5rem;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.spotlight-content {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    gap: 3rem;
+    margin: 2rem;
+}
+
+/* --- Layout Alterno (Mágico) --- */
+.spotlight-card:nth-child(even) .spotlight-content {
+    flex-direction: row-reverse;
+}
+
+.spotlight-visual, .spotlight-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.spotlight-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centra los elementos (logo, botón) horizontalmente */
+    text-align: center;  /* Centra el texto (título, descripción) */
+}
+.spotlight-logo {
+    max-width: 180px;
+   
+    transition: transform 0.3s ease;
+}
+#spotlight-rtve > div > div.spotlight-details > a.spotlight-logo-link > img {
+   margin: 1rem;
+   transform: scale(0.9);
+}
+#spotlight-rtve > div > div.spotlight-details > a.spotlight-logo-link > img:hover{
+    transform: scale(1.05);
+ }
+.spotlight-logo-link:hover .spotlight-logo {
+    transform: scale(1.05);
+}
+
+.spotlight-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-transform: none;
+}
+
+.spotlight-description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 350px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+/* --- Spotlight Card: Language Transfer --- */
+#spotlight-lt {
+    background-color: #f5f5f5; /* Gris claro */
+    color: #333;
+}
+#spotlight-lt .spotlight-title {
+    color: #000;
+}
+#spotlight-lt .button-link {
+    background-color: #ff5500;
+    color: #fff;
+}
+#spotlight-lt .button-link:hover {
+    background-color: #e64a00;
+}
+#spotlight-lt .spotlight-visual iframe {
+    border-radius: 8px;
+}
+
+/* ============================================== */
+/* ==      CSS DE REEMPLAZO PARA RTVE          == */
+/* ============================================== */
+
+/* --- Spotlight Card: RTVE --- */
+#spotlight-rtve {
+    /* Fondo oscuro para un look de cine y para integrar pósters oscuros */
+    background-color: #151515;
+    color: #fff;
+}
+#spotlight-rtve .spotlight-title {
+    color: #fff;
+}
+#spotlight-rtve .spotlight-description {
+    color: #e0e0e0;
+}
+#spotlight-rtve .button-link {
+    background-color: #ff5500;
+    color: #fff;
+}
+#spotlight-rtve .button-link:hover {
+    background-color: #e64a00;
+}
+#spotlight-rtve .rtve-spotlight-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+#spotlight-rtve .rtve-crosslink {
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+}
+#spotlight-rtve .rtve-crosslink:hover {
+    color: #151515;
+    background: #fff;
+}
+
+/* Contenedor principal de los pósters */
+#spotlight-rtve .series-recommendations {
+    display: flex;
+    justify-content: center; /* Centra los pósters si hay espacio */
+    align-items: center; /* Alinea verticalmente */
+    gap: 2.5rem; /* Espacio entre los pósters */
+}
+
+/* Enlace que envuelve cada póster */
+#spotlight-rtve .series-item {
+    flex-basis: 180px; /* Ancho base para cada póster */
+    flex-shrink: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border: none; /* Quitamos el borde del enlace */
+}
+
+/* El contenedor mágico que fuerza la proporción correcta */
+#spotlight-rtve .poster-container {
+    position: relative;
+    width: 100%;
+    /* Proporción de póster de cine (aprox. 1:1.4) */
+    /* Se puede usar aspect-ratio o el padding-top hack. Usemos aspect-ratio que es más moderno. */
+    aspect-ratio: 1000 / 1428; 
+    border-radius: 8px;
+    overflow: hidden; /* Esconde cualquier parte de la imagen que se salga */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* La imagen del póster dentro del contenedor */
+#spotlight-rtve .poster-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+}
+
+/* Efecto hover para indicar que es clickeable */
+#spotlight-rtve .series-item:hover .poster-container {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(216, 26, 40, 0.3); /* Sombra roja sutil */
+}
+
+/* --- Spotlight Card: SpanishDict --- */
+#spotlight-spanishdict {
+    background-color: #eef7ff; /* Azul muy claro */
+}
+#spotlight-spanishdict .spotlight-visual {
+    align-items: center; /* Centrar el logo */
+}
+#spotlight-spanishdict .spotlight-title {
+    color: #0b5087; /* Azul oscuro del texto */
+}
+#spotlight-spanishdict .button-link {
+    background-color: #00a4e8; /* Azul brillante */
+    color: #fff;
+}
+#spotlight-spanishdict .button-link:hover {
+    background-color: #008cc9;
+}
+
+
+/* --- Spotlight Card: Linguno --- */
+#spotlight-linguno {
+    background-color:#009ab1; /* Morado oscuro/carbón */
+    color: #e0e0e0;
+}
+#spotlight-linguno .spotlight-title {
+    color: #fff;
+}
+#spotlight-linguno .button-link {
+    background-color: #006f7f; /* Verde brillante de Linguno */
+    color: #fff;
+}
+#spotlight-linguno .button-link:hover {
+    background-color: #43a047;
+}
+#spotlight-linguno .feature-image {
+    border-radius: 8px;
+}
+#spotlight-linguno > div > div.spotlight-details > a.spotlight-logo-link > img {
+   max-width: 100px;
+}
+
+
+/* --- Spotlight Card: EliteTorrent --- */
+#spotlight-elitetorrent {
+    background-color: #282b2f; /* Azul grisáceo oscuro */
+    color: #fff;
+}
+#spotlight-elitetorrent .spotlight-title {
+    color: #3498db; /* Azul claro de acento */
+}
+#spotlight-elitetorrent .button-link {
+    background-color: #3498db;
+    color: #fff;
+}
+#spotlight-elitetorrent .button-link:hover {
+    background-color: #2980b9;
+}
+#spotlight-elitetorrent a {
+    border-bottom: none;
+}
+#spotlight-elitetorrent .movie-recommendations {
+    display: flex;
+    gap: 1rem;
+}
+#spotlight-elitetorrent .movie-item img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+#spotlight-elitetorrent .movie-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+#spotlight-elitetorrent > div > div.spotlight-details > a.spotlight-logo-link > img {
+  max-width: 400px;
+}
+/* ============================================== */
+/* ==       CSS DE REEMPLAZO (QUITA LÍNEA)     == */
+/* ============================================== */
+
+.spotlight-logo-link {
+    border-bottom: none; /* Anula el borde inferior heredado */
+    display: inline-block; /* Asegura que el contenedor se ajuste al logo */
+}
+
+.spotlight-logo-link:hover {
+    border-bottom: none; /* También lo anula en el hover */
+}
+/* ============================================== */
+/* ==      CSS ADICIONAL (RESPONSIVIDAD)       == */
+/* ============================================== */
+
+@media (max-width: 768px) {
+
+    /* --- Ajustes Generales para Móvil --- */
+    .spotlights-main-title {
+        font-size: 2.6rem; /* Título un poco más pequeño */
+    }
+
+    .spotlight-content {
+        /* Cambia la dirección de flex a columna en pantallas pequeñas */
+        flex-direction: column !important; /* !important anula el row-reverse de los pares */
+        padding: 3rem; /* Menos padding en los lados */
+        gap: 2rem;
+      
+    }
+
+    .spotlight-details, .spotlight-visual {
+        /* Ambos bloques ahora ocupan el ancho completo */
+        width: 100%;
+    }
+
+    .spotlight-title {
+        font-size: 2.4rem;
+    }
+
+    .spotlight-description {
+        font-size: 1.5rem;
+        max-width: 100%; /* Permite que la descripción ocupe todo el ancho */
+    }
+
+    /* --- Ajustes Específicos por Tarjeta en Móvil --- */
+
+    /* Language Transfer: la descripción va primero para dar contexto al player */
+    #spotlight-lt .spotlight-content {
+        flex-direction: column-reverse !important;
+    }
+
+    /* RTVE: los pósters se ven mejor apilados que lado a lado */
+    #spotlight-rtve .series-recommendations {
+        gap: 2rem;
+    }
+    #spotlight-rtve .series-item {
+        flex-basis: 45%; /* Cada póster ocupa casi la mitad del espacio */
+    }
+    #spotlight-rtve .rtve-spotlight-actions {
+        width: 100%;
+    }
+    #spotlight-rtve .rtve-spotlight-actions .button-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* SpanishDict: el logo grande se ve mejor encima del texto */
+    #spotlight-spanishdict .spotlight-content {
+        flex-direction: column-reverse !important;
+    }
+    #spotlight-spanishdict .spotlight-logo {
+        max-width: 150px; /* Logo un poco más pequeño */
+    }
+
+    /* Linguno: la imagen de feature va encima para mostrar la app */
+    #spotlight-linguno .spotlight-content {
+        flex-direction: column-reverse !important;
+    }
+    
+    /* EliteTorrent: los pósters de películas se mantienen en cuadrícula de 2x2 */
+    #spotlight-elitetorrent .movie-recommendations {
+        width: 100%;
+    }
+
+}
+/* --- Estilos para los Encabezados de Sección --- */
+.spotlights-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    margin-top: 3.5rem;
+}
+
+.spotlights-main-title {
+    margin-bottom: 1rem; /* Menos margen inferior para que esté más cerca del subtítulo */
+}
+
+.spotlights-subtitle {
+    font-size: 1.8rem;
+    color: #737578; /* Gris medio */
+    max-width: 600px; /* Evita que el texto sea demasiado ancho en pantallas grandes */
+    margin: 0 auto; /* Centra el subtítulo */
+    line-height: 1.5;
+}
+
+/* ======================================================= */
+/* ==       NUEVOS ESTILOS (SPOTLIGHT: WEBTOON)         == */
+/* ======================================================= */
+
+/* --- Spotlight Card: WEBTOON --- */
+#spotlight-webtoon {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    color: #000;
+}
+#spotlight-webtoon .spotlight-title {
+    color: #00d564; /* Verde característico de WEBTOON */
+}
+#spotlight-webtoon .button-link {
+    background-color: #00d564;
+    color: #fff;
+}
+#spotlight-webtoon .button-link:hover {
+    background-color: #00b856;
+}
+
+/* Contenedor de las portadas de los webtoons */
+#spotlight-webtoon .webtoon-recommendations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+#spotlight-webtoon .webtoon-item img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+#spotlight-webtoon .webtoon-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ======================================================= */
+/* ==       NUEVOS ESTILOS (SPOTLIGHT: ANKI)            == */
+/* ======================================================= */
+
+/* --- Spotlight Card: Anki --- */
+#spotlight-anki {
+    background-color: #f0f8ff; /* Azul cielo muy pálido, color "papel" */
+    color: #333;
+}
+#spotlight-anki .spotlight-title {
+    color: #0073cf; /* Azul característico de Anki */
+}
+#spotlight-anki .button-link {
+    background-color: #0073cf;
+    color: #fff;
+}
+#spotlight-anki .button-link:hover {
+    background-color: #005b9f;
+}
+
+/* Contenedor de las tarjetas de ejemplo */
+#spotlight-anki .anki-sample-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Estilo de cada tarjeta de ejemplo */
+.anki-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 280px;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.anki-card .card-front, .anki-card .card-back {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.anki-card .card-front {
+    color: #444;
+}
+
+.anki-card .card-back {
+    color: #0073cf;
+    font-weight: 700;
+    border-top: 2px solid #f0f0f0; /* Línea separadora */
+}
+
+/* Efecto de "stack" y hover interactivo */
+.anki-card:nth-child(1) { transform: rotate(-3deg); }
+.anki-card:nth-child(2) { transform: rotate(2deg) scale(1.02); z-index: 2; }
+.anki-card:nth-child(3) { transform: rotate(-2deg); }
+
+#spotlight-anki .anki-sample-cards:hover .anki-card {
+    transform: rotate(0) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.spotlight-logo-link.anki-logo .spotlight-logo {
+    width: 80px; /* or any size you want */
+   margin:-3rem;
+}
+/* ======================================================= */
+/* ==   BLOQUE DE REEMPLAZO (CSS DEL LIBRO DE OLLY)     == */
+/* ======================================================= */
+
+/* --- Spotlight Card: Olly Richards' Book (Versión Corregida) --- */
+#spotlight-olly {
+    background-color: #124267;
+    color: #fff;
+}
+
+/* 
+ * >>>>> CAMBIO CLAVE AQUÍ <<<<<
+ * Hacemos que la columna visual sea un contenedor flex para centrar su contenido.
+*/
+#spotlight-olly .spotlight-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spotlight-olly .spotlight-title {
+    color: #F4D22D; 
+    font-family: 'Roboto Slab', serif;
+}
+#spotlight-olly .spotlight-description {
+    color: #e0e0e0;
+    font-style: italic;
+    border-left: 3px solid #F57222;
+    padding-left: 1.5rem;
+    max-width: 450px;
+}
+
+/* Contenedor de la imagen del libro (sin cambios) */
+#spotlight-olly .olly-book-container {
+    padding: 1rem;
+}
+#spotlight-olly .olly-book-container img {
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+#spotlight-olly .olly-book-container:hover img {
+    transform: rotate(3deg) scale(1.05);
+}
+
+/* Lista de características del libro (sin cambios) */
+#spotlight-olly .olly-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    max-width: 350px;
+}
+#spotlight-olly .olly-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+#spotlight-olly .olly-features .fa-check-circle {
+    color: #F57222;
+}
+
+/* Botón "Ver en Amazon" (sin cambios) */
+#spotlight-olly .button-link {
+    background-color: #F57222;
+    color: #fff;
+}
+#spotlight-olly .button-link:hover {
+    background-color: #d15b13;
+}

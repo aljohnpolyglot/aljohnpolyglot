@@ -1,0 +1,133 @@
+{
+  "title": "Choose the world for the Iceberg Theory",
+  "question": "The essay must remain a literal scrollable iceberg. Lock the Filipino visual system around that dive, take the calmer alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Deep Route",
+      "kicker": "THE ROLL",
+      "lineage": "hand-painted Philippine jeepney route boards and destination placards",
+      "thesis": "The reader rides a Filipino route downward, with every cultural layer becoming the next stop beneath the waterline.",
+      "palette": ["#05080d", "#1268b3", "#45c8ef", "#e2432f", "#f2c230", "#f0ead8"],
+      "materials": ["painted route plates", "chrome trim", "documentary collage", "deep ocean photography"],
+      "viewport": "A confrontational left-hand manifesto, a literal iceberg occupying the center, and a ten-stop jeepney route rail descending at the right; Begin the dive sits above the waterline.",
+      "risk": "The vernacular density must never make the essay feel like a novelty attraction.",
+      "raised": [
+        {"from": "Monochrome proof", "raise": "Every manifesto claim is immediately proved by a visible iceberg layer."},
+        {"from": "Bauhaus workshop", "raise": "The depth rail uses uncompromising alignment and a strict level geometry."},
+        {"from": "Cathode stack", "raise": "All ten depths remain present while the active one strikes forward."},
+        {"from": "Orizuru sequence", "raise": "The whole article behaves as one continuous descent rather than disconnected sections."}
+      ],
+      "comp": ".impeccable/mocks/decision/iceberg-assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "The Cultural Dive Log",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "oceanographic field logs, dive slates, and bathymetric survey charts",
+      "thesis": "A scientific dive log measures what CEFR cannot, recording language as cultural depth rather than a score.",
+      "palette": ["#06131e", "#0e3450", "#1e7899", "#d9f2ef", "#ff6b4a"],
+      "materials": ["waterproof dive slate", "bathymetric contours", "survey annotations", "submerged photography"],
+      "viewport": "A full-height iceberg cross-section carries the ten levels while a calm field-note column frames Aljohn’s thesis and a depth gauge marks the current layer.",
+      "risk": "It is the most familiar and expected interpretation of an iceberg essay.",
+      "comp": ".impeccable/mocks/decision/iceberg-pick.png"
+    },
+    {
+      "id": "challenger-film",
+      "label": "The Cultural Cut",
+      "verdict": "competitive",
+      "lineage": "film cutting benches and perforated work-print rails",
+      "thesis": "Each level is one frame in a cultural reel, with the visible tip exposed and the deeper context hanging below the cut.",
+      "palette": ["#050505", "#f05a1f", "#f4efe6", "#153d5b"],
+      "materials": ["film grain", "perforated rail", "grease-pencil marks", "ocean footage"],
+      "viewport": "The headline occupies a black cutting bench while a vertical ten-frame iceberg strip scrubs through Tagalog culture; the stopped layer is marked by a folded tape flag.",
+      "case": "It preserves the sequential dive and speaks to Aljohn’s video world, but the editing metaphor competes with the literal iceberg.",
+      "risk": "The film grammar can overpower the essay’s cultural thesis.",
+      "comp": ".impeccable/mocks/decision/iceberg-film.png",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail.webp"
+    },
+    {
+      "id": "challenger-brick",
+      "label": "Fluency, Built in Ten Layers",
+      "verdict": "competitive",
+      "lineage": "brick build-instruction books and exploded assembly steps",
+      "thesis": "The iceberg assembles level by level, revealing that technical mastery is only the third piece in a ten-part cultural structure.",
+      "palette": ["#9bd8f6", "#0d64b5", "#e53935", "#ffd126", "#111111"],
+      "materials": ["instruction-page blue", "black keylines", "numbered call-outs", "exploded layer diagrams"],
+      "viewport": "An exploded iceberg fills the page as levels one through ten click downward into place beside concise instruction call-outs.",
+      "case": "Its hierarchy is exceptionally clear, but its toy-like optimism does not fully match the manifesto’s confrontational voice.",
+      "risk": "The subject may feel simplified when the deepest layers should feel emotionally heavy.",
+      "comp": ".impeccable/mocks/decision/iceberg-brick.png",
+      "hero": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions.webp"
+    },
+    {
+      "id": "challenger-monochrome",
+      "label": "Claim / Proof",
+      "verdict": "declined",
+      "lineage": "monochrome claim-and-proof product publishing",
+      "thesis": "Every sentence about fluency is paired with the exact iceberg layer that proves it.",
+      "palette": ["#fafafa", "#111111", "#6f8f28"],
+      "materials": ["neutral paper", "hairline grids", "untinted evidence"],
+      "viewport": "A restrained essay column alternates with precise iceberg evidence panels.",
+      "case": "It wins clarity but erases the Filipino cultural world that makes the theory specific.",
+      "kept": "Every claim remains attached to visible evidence.",
+      "risk": "The theory would look interchangeable with any strategy article.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-monochrome-product-marketing-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/digital-design-canon-monochrome-product-marketing.webp"
+    },
+    {
+      "id": "challenger-bauhaus",
+      "label": "Point, Line, Depth",
+      "verdict": "declined",
+      "lineage": "Bauhaus foundation-course exercises",
+      "thesis": "Ten cultural layers become a strict compositional study in visible and submerged planes.",
+      "palette": ["#f7f4ec", "#111111", "#d9342b", "#f4c62b", "#1c5cb8"],
+      "materials": ["worktable paper", "primary geometry", "baseline grid"],
+      "viewport": "A waterline divides a geometric field while ten numbered planes descend below it.",
+      "case": "The structure is clear, but abstraction strips away the media and memory that form Aljohn’s evidence.",
+      "kept": "The level rail inherits its strict alignment and decisive hierarchy.",
+      "risk": "The cultural examples become symbols instead of lived material."
+    },
+    {
+      "id": "challenger-cathode",
+      "label": "The Struck Depth",
+      "verdict": "declined",
+      "lineage": "cathode numeral stacks behind bronze anode gauze",
+      "thesis": "All ten levels remain ghosted in the deep while the reader’s current depth strikes forward.",
+      "palette": ["#06111a", "#f47b20", "#e9dfca"],
+      "materials": ["bronze gauze", "afterglow", "blue-black bench felt"],
+      "viewport": "Ten giant ghost numerals recede through water behind a single active orange depth.",
+      "case": "The active-state idea is strong, but the electronic world has no honest connection to Filipino cultural belonging.",
+      "kept": "All ten levels stay visible while one active depth moves forward.",
+      "risk": "It reads as a technical instrument rather than Aljohn’s personal manifesto."
+    },
+    {
+      "id": "challenger-origami",
+      "label": "One Sheet, Ten Folds",
+      "verdict": "declined",
+      "lineage": "a single washi sheet transformed through sequential folds",
+      "thesis": "One language self transforms continuously from vocabulary into cultural instinct.",
+      "palette": ["#c83b32", "#f3eee2", "#17130f", "#c7a344"],
+      "materials": ["fibrous paper", "crease lines", "sumi annotations"],
+      "viewport": "A single folded iceberg sheet opens downward through ten recoverable states.",
+      "case": "Continuity is valuable, but the Japanese material world conflicts with the Philippine subject.",
+      "kept": "The article becomes one uninterrupted transformation rather than ten cards.",
+      "risk": "The carrier creates cultural confusion."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A polished long-form essay with a sticky table of contents and one static iceberg figure.",
+    "palette": ["#ffffff", "#121826", "#2563eb"],
+    "materials": ["clean article grid", "single editorial illustration"],
+    "viewport": "A centered headline, author metadata, introduction, and a static iceberg graphic below the fold.",
+    "risk": "Clear and familiar, but it abandons the requested feeling of physically descending through the theory.",
+    "comp": ".impeccable/mocks/decision/iceberg-canon.png"
+  },
+  "steer": true
+}

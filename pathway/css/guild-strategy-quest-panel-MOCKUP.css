@@ -1,0 +1,439 @@
+/* --- css/guild-strategy-quest-panel-MOCKUP.css --- */
+
+/* Styles for the main right panel holding dynamic quest content */
+.quest-display-panel-MOCKUP {
+    /* Styles from layout CSS. */
+}
+
+/* Placeholder content */
+.quest-display-panel-MOCKUP .panel-content-MOCKUP.placeholder-active-MOCKUP {
+    background-color: var(--guild-content-bg);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--guild-text-subtle);
+    padding: 15px;
+    box-sizing: border-box;
+}
+/* --- From guild-strategy-quest-panel-MOCKUP.css --- */
+
+/* Placeholder content when no phase is selected (child of .quest-display-panel-MOCKUP) */
+.quest-display-panel-MOCKUP .panel-content-MOCKUP.placeholder-active-MOCKUP {
+    background-color: var(--guild-content-bg); /* Or transparent if .quest-display-panel has the bg */
+    border-radius: inherit; /* Inherit from parent if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%; /* Fill .quest-display-panel-MOCKUP if it's the placeholder's direct parent */
+    /* max-width: 550px; /* Max width for the placeholder content itself - REMOVED, let it be smaller by its children */
+    margin: auto; /* Center it if its parent is flex/grid and allows centering */
+    text-align: center;
+    color: var(--guild-text-subtle);
+    padding: 30px 20px; /* Increased overall padding for breathing room */
+    box-sizing: border-box;
+    /* For fade-in if used */
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+.quest-display-panel-MOCKUP .panel-content-MOCKUP.placeholder-active-MOCKUP.visible {
+    opacity: 1;
+}
+
+.quest-display-panel-MOCKUP .panel-content-MOCKUP.hidden-placeholder {
+    display: none;
+}
+
+.placeholder-image-MOCKUP {
+    /* Make the image smaller and give it more space */
+    max-width: clamp(120px, 30vw, 200px); /* SMALLER: Min 120px, 30% of viewport width, max 200px */
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7; /* Slightly more visible if desired */
+    margin-bottom: 25px; /* More space below the image */
+    border-radius: 4px; /* Optional subtle rounding */
+    /* box-shadow: 0 2px 5px rgba(var(--guild-black-rgb), 0.08); /* Optional subtle shadow */
+}
+
+.quest-display-panel-MOCKUP .panel-content-MOCKUP h2 {
+    font-family: var(--font-guild-panel-title); /* Or var(--font-guild-heading) for less emphasis */
+    color: var(--guild-header-on-light);
+    /* Make title smaller and adjust line height for compactness */
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem); /* SMALLER */
+    line-height: 1.3;
+    margin-top: 0; /* Remove default top margin if any */
+    margin-bottom: 10px; /* More space between title and paragraph */
+    font-weight: 600; /* Or 500 for lighter */
+}
+
+.quest-display-panel-MOCKUP .panel-content-MOCKUP p {
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem); /* SMALLER */
+    line-height: 1.5;
+    color: var(--guild-text-subtle); /* Keep subtle or make slightly darker if needed */
+    max-width: 380px; /* Constrain paragraph width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0; /* Remove default bottom margin if any */
+}
+/* Active Phase Content Styling */
+.quest-phase-content-MOCKUP {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 15px; /* Internal padding for the content area */
+    box-sizing: border-box;
+    position: relative;
+}
+.quest-phase-content-MOCKUP.hidden-phase-content { display: none !important; }
+
+
+/* 1. Visual Header */
+.quest-visual-header-with-toolkit-MOCKUP {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 10px auto;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(var(--guild-black-rgb), 0.1);
+    height: 0;
+    /* --- SETTING PADDING-BOTTOM AS PER YOUR REQUEST --- */
+    padding-bottom: 92%; /* Makes the container nearly square */
+}
+
+.quest-main-illustration-MOCKUP {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Adjust as needed to frame the illustration */
+    border-radius: inherit;
+}
+
+/* Phase Title Banner */
+.quest-title-banner-overlay-MOCKUP {
+    position: absolute;
+    top: 10px; /* Adjust based on the tall 95% header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(200px, 35%, 320px);
+    z-index: 3;
+}
+.quest-title-banner-image-MOCKUP {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(1px 1px 2px rgba(var(--guild-black-rgb), 0.35));
+}
+
+/* Toolkit Cluster */
+.toolkit-cluster-overlay-MOCKUP {
+    position: absolute;
+    /* --- ADJUSTED TOOLKIT POSITION based on very tall header --- */
+    bottom: 10px;  /* STARTING POINT for a 95% tall header.
+                      If header is 750px wide * 0.95 = 712.5px tall,
+                      bottom: 20px means toolkit is 20px from that bottom edge.
+                      You'll need to adjust this significantly to place it where you want
+                      on such a tall image backdrop. Try much larger values like 100px, 150px, etc.
+                      to move it "up" from the bottom of the 95% tall container.
+                   */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94%;
+    max-width: 700px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolkit-title-graphic-MOCKUP {
+    width: clamp(180px, 30%, 280px);
+    margin-bottom: 8px;
+}
+.toolkit-title-graphic-MOCKUP img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(1px 1px 2px rgba(var(--guild-black-rgb), 0.35));
+}
+
+/* Horizontal Scroll for Tool Cards */
+.tools-horizontal-scroll-wrapper-MOCKUP {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 0;
+    background-color: rgba(var(--guild-content-bg-rgb), 0.0);
+    border-radius: 3px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--guild-wood-medium-rgb), 0.7) transparent;
+    display: flex;
+    justify-content: flex-start;
+}
+.tools-horizontal-scroll-wrapper-MOCKUP::-webkit-scrollbar { height: 4px; }
+.tools-horizontal-scroll-wrapper-MOCKUP::-webkit-scrollbar-track { background: transparent; }
+.tools-horizontal-scroll-wrapper-MOCKUP::-webkit-scrollbar-thumb { background: rgba(var(--guild-wood-medium-rgb), 0.6); border-radius: 2px; }
+.tools-horizontal-scroll-wrapper-MOCKUP::-webkit-scrollbar-thumb:hover { background: var(--guild-gold-accent); }
+
+.tools-grid-MOCKUP.horizontal-layout-MOCKUP {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    min-width: min-content;
+    padding: 2px 5px;
+}
+
+/* TOOL CARD & ICON SIZES */
+.tool-card-MOCKUP {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(var(--guild-content-border-rgb), 0.6);
+    border-radius: 5px;
+    padding: 8px 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    box-shadow: 0 1px 3px rgba(var(--guild-black-rgb), 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tool-card-MOCKUP:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 3px 6px rgba(var(--guild-black-rgb), 0.18);
+    border-color: var(--guild-gold-accent);
+    background-color: rgba(255, 255, 255, 1);
+}
+.tool-card-MOCKUP .tool-icon {
+    max-width: 50px;
+    max-height: 48px;
+    object-fit: contain;
+    margin-bottom: 7px;
+}
+.tool-card-MOCKUP .tool-name {
+    font-family: var(--font-guild-body);
+    font-size: 0.5rem;
+    color: #383838;
+    font-weight: 500;
+    line-height: 1.2;
+    word-break: break-word;
+    max-height: 2.5em;
+    overflow: hidden;
+    margin-top: auto;
+}
+.tool-card-MOCKUP .tool-name small { display: none; }
+
+
+/* Info Tabs - Sits below the visual header */
+.quest-info-tabs-MOCKUP {
+    margin-top: 4px;
+    border-top: 1px solid rgba(var(--guild-content-border-rgb), 0.7);
+    padding: 10px 0 5px 0;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 750px; /* Max width of the tabs section */
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100px; /* Prevents height jumps. Adjust to your tallest tab's content height. */
+    box-sizing: border-box; /* Padding included in width/max-width */
+}
+.tab-nav-MOCKUP { display: flex; justify-content: flex-start; gap: 8px; margin-bottom: 10px; padding-left: 0; }
+.tab-button-MOCKUP { font-family: var(--font-tab-button); border: 1px solid #D0C8BB; padding: 5px 12px; cursor: pointer; font-size: 0.75rem; font-weight: 500; border-radius: 14px; transition: all 0.2s ease; }
+.tab-button-MOCKUP:not(.active) { background-color: #E9E4D9; color: var(--guild-text-subtle); border-color: #D0C8BB;}
+.tab-button-MOCKUP:not(.active):hover { background-color: #e0dacd; border-color: #c0b8aa; }
+.tab-button-MOCKUP.active { background-color: var(--guild-gold-accent); color: var(--guild-bg-dark) !important; border-color: var(--guild-gold-deep); font-weight: 600; }
+
+.tab-content-MOCKUP {
+    display: none;
+    padding: px 2px 2px 2px;
+    animation: tabFadeIn 0.3s ease-out forwards;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents content from expanding this container horizontally */
+    /* --- ADDED --- */
+    width: 100%; /* Ensure it tries to fill its parent (.quest-info-tabs-MOCKUP) width-wise, respecting parent's max-width */
+}
+.tab-content-MOCKUP.active {
+    display: block;
+}
+.tab-content-inner-MOCKUP {
+    padding: 0;
+    /* --- ADDED --- */
+    /* This ensures that if the inner content is text, it respects the container boundaries. */
+    max-width: 100%; /* Content inside here should not exceed the width of .tab-content-MOCKUP */
+}
+
+.tab-content-title-MOCKUP {
+    font-family: var(--font-guild-content-heading);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--guild-header-on-light);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    /* --- ADDED --- */
+    word-break: break-word; /* If title is very long */
+    overflow-wrap: break-word;
+}
+.tab-content-title-MOCKUP i.fas { margin-right: 6px; color: var(--guild-gold-deep); font-size: 1em; }
+
+.tab-content-MOCKUP ul { list-style: none; padding-left: 0; margin: 0; }
+.tab-content-MOCKUP ul li {
+    margin-bottom: 4px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+.tab-content-MOCKUP ul li::before { content: '✧'; font-size: 0.9em; color: var(--guild-gold-accent); position: absolute; left: 0px; top: 2px; }
+
+.tab-content-MOCKUP p {
+    margin: 0 0 6px 0;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+.tab-content-MOCKUP strong { color: var(--guild-header-on-light); }
+
+
+/* Final Wisdom/Warning Boards */
+.quest-phase-content-MOCKUP.final-board-style-MOCKUP { padding: 20px; }
+/* ... (rest of final board styles) ... */
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1024px) { /* Tablet: Content takes more width within the panel */
+    .quest-phase-content-MOCKUP {
+        /* max-width is now controlled by parent .quest-display-panel-MOCKUP taking 1fr.
+           This .quest-phase-content-MOCKUP will fill that. */
+        /* If you had a fixed max-width like 780px for desktop, remove or adjust for tablet */
+        /* max-width: 95%; /* Example if you want some internal padding from panel edges */
+        padding: 12px; /* Adjust padding for tablet view */
+    }
+
+    /* Adjust visual header aspect ratio if 95% padding-bottom is too tall for tablet view */
+    .quest-visual-header-with-toolkit-MOCKUP {
+        /* max-width: 100%; /* It will naturally be 100% of its parent .quest-phase-content-MOCKUP */
+        padding-bottom: 70%; /* EXAMPLE: Less tall aspect ratio for tablet */
+                               /* You'll need to adjust toolkit 'bottom' position accordingly */
+        margin-bottom: 8px;
+    }
+    .toolkit-cluster-overlay-MOCKUP {
+        bottom: 20px; /* EXAMPLE: Adjust if header height changes */
+        /* max-width: 90%; /* Relative to its parent .quest-visual-header... */
+    }
+
+    /* Tool cards might need to be slightly smaller if space is tighter */
+    .tool-card-MOCKUP {
+        width: 90px;  /* Example */
+        height: 75px; /* Example */
+    }
+    .tool-card-MOCKUP .tool-icon {
+        max-width: 45px; /* Example */
+        max-height: 42px;/* Example */
+    }
+
+    /* Tab buttons and content text can be slightly smaller */
+    .tab-button-MOCKUP { font-size: 0.7rem; padding: 4px 10px; }
+    .tab-content-title-MOCKUP { font-size: 0.85rem; }
+    .tab-content-MOCKUP ul li, .tab-content-MOCKUP p { font-size: 0.75rem; }
+
+    /* Final boards on tablet */
+    .final-board-content-wrapper-MOCKUP { max-width: 90%; }
+    #phase-wisdom-content-MOCKUP .final-board-character-MOCKUP { max-height: 220px; }
+    #phase-warning-content-MOCKUP .final-board-character-MOCKUP { max-width: 220px; max-height: 220px; }
+}
+
+
+@media (max-width: 768px) { /* Mobile */
+    .quest-phase-content-MOCKUP {
+        padding: 10px; /* Tighter padding for mobile */
+        overflow-y: auto; /* Ensure scrolling is enabled for content overflow */
+    }
+
+    .quest-visual-header-with-toolkit-MOCKUP {
+        /* max-width: 100%; /* Already will be by default */
+        padding-bottom: 65%; /* EXAMPLE: Adjust aspect ratio for mobile, less extreme than 95% */
+                               /* If keeping 95%, toolkit positioning will be critical */
+        margin-bottom: 15px; /* More space below header before tabs */
+    }
+    .quest-title-banner-overlay-MOCKUP {
+        top: 8px;
+        width: clamp(180px, 45%, 280px); /* Adjust banner size */
+    }
+    .toolkit-cluster-overlay-MOCKUP {
+        bottom: 60px; /* EXAMPLE: Must be adjusted based on new header height */
+        width: 95%;
+    }
+    .toolkit-title-graphic-MOCKUP {
+        width: clamp(150px, 40%, 240px);
+    }
+
+    /* Tool cards smaller for mobile */
+    .tools-grid-MOCKUP.horizontal-layout-MOCKUP { gap: 8px; }
+    .tool-card-MOCKUP {
+        width: 75px;
+        height: 60px;
+        padding: 6px 4px;
+    }
+    .tool-card-MOCKUP .tool-icon {
+        max-width: 32px;
+        max-height: 30px;
+        margin-bottom: 5px;
+    }
+    .tool-card-MOCKUP .tool-name { font-size: 0.5rem; }
+
+    /* Tabs smaller for mobile */
+    .quest-info-tabs-MOCKUP { margin-top: 8px; min-height: 70px; }
+    .tab-nav-MOCKUP { gap: 5px; margin-bottom: 6px;}
+    .tab-button-MOCKUP { font-size: 0.65rem; padding: 3px 8px; }
+    .tab-content-MOCKUP { padding-top: 6px; }
+    .tab-content-title-MOCKUP { font-size: 0.8rem; margin-bottom: 6px; }
+    .tab-content-MOCKUP ul li, .tab-content-MOCKUP p { font-size: 0.7rem; line-height: 1.5; }
+
+    /* Final boards on mobile */
+    .final-board-content-wrapper-MOCKUP { padding: 12px; }
+    #phase-wisdom-content-MOCKUP .final-board-character-MOCKUP { max-height: 180px; }
+    #phase-warning-content-MOCKUP .final-board-character-MOCKUP { max-width: 180px; max-height: 180px; }
+    .final-board-title-area-MOCKUP { font-size: clamp(1.1rem, 2.5vw, 1.5rem); margin-bottom: 12px; }
+    .final-board-text-MOCKUP { font-size: clamp(0.75rem, 1.5vw, 0.85rem); }
+}
+
+@media (max-width: 480px) { /* Very small mobile screens */
+    .quest-phase-content-MOCKUP { padding: 8px; }
+
+    .quest-visual-header-with-toolkit-MOCKUP {
+        padding-bottom: 90%; /* EXAMPLE */
+    }
+    .toolkit-cluster-overlay-MOCKUP {
+        bottom: 10px; /* EXAMPLE */
+        width: 98%; /* Almost full width */
+    }
+     .tools-grid-MOCKUP.horizontal-layout-MOCKUP { gap: 6px; padding: 2px; }
+    .tool-card-MOCKUP {
+        width: 65px;
+        height: 55px;
+        padding: 5px 3px;
+    }
+    .tool-card-MOCKUP .tool-icon {
+        max-width: 28px;
+        max-height: 26px;
+        margin-bottom: 4px;
+    }
+    .tool-card-MOCKUP .tool-name { font-size: 0.45rem; }
+
+    .tab-button-MOCKUP { font-size: 0.6rem; padding: 2px 6px; }
+}

@@ -1,0 +1,7 @@
+Using the referenced selected Dashboard Theater mockup only as the visual reference, create a standalone reusable ornamental frame asset for a 16:9 embedded video player.
+
+ISOLATE ONLY THE FRAME: a premium restored Philippine jeepney dashboard surround made of polished and brushed stainless steel tubing, dark warm wood inserts, rivets, brackets, and sparse hand-painted hot-pink, orange, cream, and tiny navy pinstriping. Preserve the same confident material richness and symmetrical dashboard architecture from the reference.
+
+The center must be one very large, perfectly clean 16:9 rectangular opening filled with a single flat chroma-key magenta color #FF00FF, with crisp uninterrupted edges so it can be removed cleanly. Everything outside the physical chrome-and-wood frame must also be the same flat #FF00FF. The frame should occupy only a moderate border around the opening so the video remains dominant. No glass, no shadows or reflections crossing the center opening.
+
+ABSOLUTELY NO navbar, no page background, no video thumbnail, no people, no faces, no play icon, no chevrons, no typography, no words, no letters, no signs, no UI controls, no decorative sidebar, no duplicate inner panels. One isolated front-facing frame, centered, orthographic, production asset quality, crisp edges, photoreal material detail, landscape PNG.

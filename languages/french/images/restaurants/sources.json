@@ -1,0 +1,34 @@
+{
+  "paris-delice.webp": {
+    "source": "https://www.parisdelice.com.ph/media/wysiwyg/parisdelice/slides/pd-carousel-june-2025-1.jpg",
+    "asset": "official restaurant website photograph"
+  },
+  "paris-crepes.webp": {
+    "source": "https://i0.wp.com/travelwithkarla.com/wp-content/uploads/2023/10/SM-City-Tanza-19.png?resize=840%2C473&ssl=1",
+    "asset": "Paris Crêpes counter photograph from Travel with Karla"
+  },
+  "la-vie-parisienne.webp": {
+    "source": "https://sugbo.ph/wp-content/uploads/2024/04/Most-Artistic-Dining-Spots-In-Ceby-La-Vie-5-1024x683.jpg",
+    "asset": "venue photograph credited to La Vie Parisienne by Sugbo.ph"
+  },
+  "crepe-glazik.webp": {
+    "source": "https://primer.ph/eat/wp-content/uploads/sites/2/2026/04/Crepe-Glazik.jpeg",
+    "asset": "restaurant interior photograph from Philippine Primer"
+  },
+  "paris-delice-logo.webp": {
+    "source": "https://www.parisdelice.com.ph/skin/frontend/parisdelice/main/images/parisdelicelogo.png",
+    "asset": "official Paris Délice website logo supplied by Aljohn"
+  },
+  "paris-crepes-logo.webp": {
+    "source": "https://www.facebook.com/ParisCrepesSMDasmarinas/",
+    "asset": "official Paris Crêpes Facebook profile logo, downloaded and stored locally"
+  },
+  "la-vie-parisienne-logo.webp": {
+    "source": "https://www.facebook.com/laparisiennecebu/",
+    "asset": "official La Vie Parisienne Cebu Facebook profile logo, downloaded and stored locally"
+  },
+  "crepe-glazik-logo.webp": {
+    "source": "https://www.facebook.com/crepeglazik/",
+    "asset": "official Crêpe Glazik Facebook profile logo, downloaded and stored locally"
+  }
+}

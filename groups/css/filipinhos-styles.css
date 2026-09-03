@@ -1,0 +1,268 @@
+/* Filipinhos: Brazilian-modernist geometry, not the Italian editorial surface. */
+.community-theme-filipinhos {
+    background: #e7f0e7;
+}
+
+.community-theme-filipinhos .community-subnav {
+    border-bottom-color: #f3c720;
+    background: #153f78;
+}
+
+.community-theme-filipinhos .community-subnav a::after {
+    background: #f3c720;
+}
+
+.community-theme-filipinhos .filipinhos-hero {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: minmax(0, 1.08fr) minmax(460px, 0.92fr);
+    gap: clamp(3rem, 5vw, 5rem);
+    padding-right: max(1.5rem, calc((100% - 1380px) / 2));
+    padding-left: max(1.5rem, calc((100% - 1380px) / 2));
+    color: #fff;
+    background: #0f6a3b;
+}
+
+.community-theme-filipinhos .filipinhos-hero::before {
+    width: 31%;
+    height: 43%;
+    background: #f3c720;
+}
+
+.community-theme-filipinhos .filipinhos-hero::after {
+    right: 8%;
+    width: 26%;
+    height: 24%;
+    background: #153f78;
+}
+
+.community-theme-filipinhos .community-hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 47rem;
+}
+
+.community-theme-filipinhos .community-hero-copy .community-eyebrow {
+    color: #f3c720;
+}
+
+.community-theme-filipinhos .community-detail-hero h1 {
+    color: #fff;
+    margin-bottom: 1.15rem;
+    font-size: clamp(3.8rem, 6vw, 6.25rem);
+    letter-spacing: -0.04em;
+}
+
+.community-theme-filipinhos .community-hero-lede {
+    max-width: 40ch;
+    font-size: clamp(1.15rem, 1.7vw, 1.65rem);
+    line-height: 1.38;
+}
+
+.community-theme-filipinhos .community-hero-detail {
+    max-width: 43rem;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.community-theme-filipinhos .community-hero-copy .community-button {
+    border-color: #f3c720;
+    color: #153f78;
+    background: #f3c720;
+}
+
+.community-theme-filipinhos .community-hero-copy .community-text-link {
+    color: #fff;
+}
+
+.community-theme-filipinhos .filipinhos-brand {
+    width: min(32rem, 100%);
+    margin: 0;
+    border-color: #f3c720;
+    box-shadow: 14px 14px 0 #153f78;
+}
+
+.community-theme-filipinhos .filipinhos-hero-art {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+@media (max-width: 1150px) {
+    .community-theme-filipinhos .filipinhos-hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .community-theme-filipinhos .community-hero-copy {
+        max-width: 52rem;
+    }
+
+    .community-theme-filipinhos .filipinhos-hero-art {
+        width: min(760px, 100%);
+        margin: 0 auto;
+    }
+}
+
+.community-theme-filipinhos .mentor-chapter {
+    position: relative;
+    width: min(1240px, calc(100% - 3rem));
+    margin-top: clamp(4rem, 8vw, 8rem);
+    margin-bottom: clamp(4rem, 8vw, 8rem);
+    padding: clamp(2rem, 5vw, 5rem);
+    background: #fffbed;
+    box-shadow: 18px 18px 0 #153f78;
+}
+
+.community-theme-filipinhos .mentor-portrait::before {
+    inset: -0.8rem 0.8rem 0.8rem -0.8rem;
+    background: #f3c720;
+}
+
+.community-theme-filipinhos .mentor-portrait img {
+    border: 0;
+    box-shadow: none;
+}
+
+.community-theme-filipinhos .mentor-copy h2 {
+    color: #153f78;
+}
+
+.community-theme-filipinhos .filipinhos-video-chapter {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 27rem);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+    padding: clamp(4.5rem, 8vw, 8rem) max(1.25rem, calc((100vw - 1240px) / 2));
+    color: #f8fbf6;
+    background:
+        linear-gradient(135deg, rgba(8, 80, 50, 0.96), rgba(5, 42, 109, 0.95)),
+        radial-gradient(circle at 20% 20%, rgba(255, 223, 45, 0.26), transparent 36%);
+}
+
+.community-theme-filipinhos .filipinhos-video-copy {
+    max-width: 43rem;
+}
+
+.community-theme-filipinhos .filipinhos-video-copy h2 {
+    max-width: 13ch;
+    margin: 0.4rem 0 1.4rem;
+    color: #ffdf2d;
+    font: 750 clamp(2.35rem, 3.8vw, 3.6rem) / 0.98 "Bricolage Grotesque", sans-serif;
+    letter-spacing: -0.055em;
+}
+
+.community-theme-filipinhos .filipinhos-video-copy p:not(.community-eyebrow) {
+    max-width: 60ch;
+    color: rgba(248, 251, 246, 0.82);
+}
+
+.community-theme-filipinhos .filipinhos-video-copy .community-text-link {
+    display: inline-flex;
+    margin-top: 1rem;
+    color: #ffdf2d;
+}
+
+.community-theme-filipinhos .filipinhos-video-frame {
+    position: relative;
+    width: min(100%, 26.25rem);
+    aspect-ratio: 420 / 747;
+    justify-self: end;
+    overflow: hidden;
+    border: 0.45rem solid #ffdf2d;
+    border-radius: 1.5rem;
+    background: #f8fbf6;
+    box-shadow: 1.25rem 1.25rem 0 #f24726;
+}
+
+.community-theme-filipinhos .filipinhos-video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.community-theme-filipinhos .community-practice {
+    width: 100%;
+    max-width: none;
+    padding-right: max(1.5rem, calc((100% - 1320px) / 2));
+    padding-left: max(1.5rem, calc((100% - 1320px) / 2));
+    border-top: 0;
+    background: #f3c720;
+}
+
+.community-theme-filipinhos .community-practice .community-eyebrow {
+    color: #153f78;
+}
+
+.community-theme-filipinhos .community-practice .community-section-heading h2 {
+    max-width: 16ch;
+    color: #0a4e2b;
+}
+
+.community-theme-filipinhos .community-practice .community-section-heading > p,
+.community-theme-filipinhos .community-practice .community-principles p {
+    color: rgba(19, 39, 29, 0.76);
+}
+
+.community-theme-filipinhos .community-practice .community-principles {
+    border-top-color: rgba(19, 39, 29, 0.35);
+}
+
+.community-theme-filipinhos .community-practice .community-principles li {
+    border-bottom-color: rgba(19, 39, 29, 0.35);
+}
+
+.community-theme-filipinhos .community-practice .community-principles li > span {
+    color: #153f78;
+}
+
+.community-theme-filipinhos .community-join {
+    color: #fff;
+    background: #153f78;
+}
+
+.community-theme-filipinhos .community-join .community-eyebrow {
+    color: #f3c720;
+}
+
+.community-theme-filipinhos .community-join-copy > p:not(.community-eyebrow) {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.community-theme-filipinhos .community-join .community-button {
+    border-color: #f3c720;
+    color: #153f78;
+    background: #f3c720;
+}
+
+@media (max-width: 1000px) {
+    .community-theme-filipinhos .filipinhos-hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .community-theme-filipinhos .filipinhos-video-chapter {
+        grid-template-columns: 1fr;
+    }
+
+    .community-theme-filipinhos .filipinhos-video-frame {
+        justify-self: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .community-theme-filipinhos .filipinhos-hero {
+        padding-right: 1.15rem;
+        padding-left: 1.15rem;
+    }
+
+    .community-theme-filipinhos .mentor-chapter {
+        width: calc(100% - 2rem);
+        padding: 1.4rem;
+        box-shadow: 10px 10px 0 #153f78;
+    }
+
+    .community-theme-filipinhos .community-practice {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}

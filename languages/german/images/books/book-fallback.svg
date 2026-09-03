@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 680" role="img" aria-labelledby="title desc">
+  <title id="title">Deutsches Buch</title>
+  <desc id="desc">Neutrale Ersatzgrafik für ein deutsches Buch</desc>
+  <rect width="480" height="680" rx="18" fill="#f8f8f8"/>
+  <rect x="28" y="28" width="424" height="624" rx="12" fill="none" stroke="#0a0b0e" stroke-width="8"/>
+  <path d="M28 180 240 320 452 180v58L240 378 28 238Z" fill="#0a0b0e"/>
+  <path d="M28 226 240 366 452 226v46L240 412 28 272Z" fill="#b40a0d"/>
+  <path d="M28 264 240 404 452 264v38L240 442 28 302Z" fill="#eaae0a"/>
+  <text x="240" y="560" fill="#0a0b0e" font-family="sans-serif" font-size="44" font-weight="700" text-anchor="middle">DEUTSCH</text>
+</svg>

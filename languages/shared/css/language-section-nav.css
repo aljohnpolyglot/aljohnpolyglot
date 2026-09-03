@@ -1,0 +1,140 @@
+.language-section-nav {
+    --language-global-nav-height: 70px;
+    --language-section-nav-height: 54px;
+    --language-section-nav-bg: #071b2a;
+    --language-section-nav-text: #ffffff;
+    --language-section-nav-muted: rgba(255, 255, 255, 0.7);
+    --language-section-nav-accent: #d91f32;
+    --language-section-nav-active-bg: #d91f32;
+    position: sticky;
+    top: var(--language-global-nav-height);
+    z-index: 900;
+    width: 100%;
+    min-width: 0;
+    margin-top: var(--language-global-nav-height);
+    color: var(--language-section-nav-text);
+    background: var(--language-section-nav-bg);
+    border-block: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+    isolation: isolate;
+}
+
+.language-section-nav__viewport {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.language-section-nav__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.language-section-nav__list {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: max-content;
+    min-width: max-content;
+    min-height: var(--language-section-nav-height);
+    margin: 0 auto;
+    padding: 0 16px;
+    list-style: none;
+}
+
+.language-section-nav__item {
+    display: flex;
+    min-width: 0;
+}
+
+.language-section-nav__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--language-section-nav-height);
+    padding: 0 18px;
+    border: 0;
+    color: var(--language-section-nav-muted);
+    font: 800 13px/1.1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0.065em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+
+.language-section-nav__link::after {
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+    left: 16px;
+    height: 3px;
+    background: var(--language-section-nav-accent);
+    content: "";
+    opacity: 0;
+    transform: scaleX(0.35);
+    transform-origin: center;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.language-section-nav__link:hover {
+    color: var(--language-section-nav-text);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.language-section-nav__link[aria-current="location"] {
+    color: var(--language-section-nav-text);
+    background: var(--language-section-nav-active-bg);
+}
+
+.language-section-nav__link[aria-current="location"]::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.language-section-nav__link:focus-visible {
+    z-index: 1;
+    outline: 3px solid var(--language-section-nav-accent);
+    outline-offset: -4px;
+}
+
+.has-language-section-nav main [id] {
+    scroll-margin-top: calc(var(--language-global-nav-height, 70px) + var(--language-section-nav-height, 54px) + 18px);
+}
+
+.spanish-page.has-language-section-nav #hero-banner {
+    margin-top: 0;
+}
+
+.bisaya-page.has-language-section-nav #aljohn-bisaya-world {
+    padding-top: 0;
+}
+
+@media (max-width: 760px) {
+    .language-section-nav {
+        --language-section-nav-height: 50px;
+    }
+
+    .language-section-nav__list {
+        justify-content: flex-start;
+        margin-inline: 0;
+        padding-inline: max(10px, env(safe-area-inset-left));
+    }
+
+    .language-section-nav__link {
+        min-width: 44px;
+        padding-inline: 14px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .language-section-nav__link,
+    .language-section-nav__link::after {
+        transition: none;
+    }
+}

@@ -1,0 +1,522 @@
+/* apps/css/apps_header_footer_overrides.css */
+/* Contains base styles for header/footer, themed for apps.html */
+
+/* --- :ROOT Variables specific to these overrides (optional, can use global ones) --- */
+/* You can define fallbacks here if needed, but ideally, your main apps_navigator.css :root is sufficient */
+
+/* ============================================================ */
+/* === HEADER STYLES (Adapted from navbar.css for Tech Theme) === */
+/* ============================================================ */
+
+body.apps-tech-theme .tech-theme-header-placeholder > header {
+    background-color: var(--deep-space-blue, #070d1f); /* Darker, techy background */
+    box-shadow: 0 2px 10px rgba(0, 169, 255, 0.15), /* Cyan glow shadow */
+                inset 0 -1px 0 rgba(0, 169, 255, 0.2); /* Subtle bottom border line */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 70px; /* Match your original header height */
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder > header.scrolled {
+    background-color: rgba(7, 13, 31, 0.9); /* Slightly transparent dark blue on scroll */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 3px 12px rgba(0, 169, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 169, 255, 0.25);
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder > header nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0; /* Keep consistent padding */
+    height: 100%; /* Ensure nav takes full height of header */
+    max-width: 1200px; /* Example, ensure consistent with your global container */
+    margin: 0 auto;    /* Center container */
+   padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 0; /* Or match original if it was intended to be different but still fit */
+    padding-right: 0; /* Or match original */
+    /* Alternatively, if you want some padding but less than 20px: */
+    /* padding: 0.8rem 10px; */
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder .logo-img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--tech-cyan, #00A9FF);
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder .logo-text {
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--tech-cyan, #00A9FF);
+    text-shadow: 0 0 8px rgba(0, 169, 255, 0.4);
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Align items vertically */
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li {
+    margin-left: 20px;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn {
+    text-decoration: none;
+    color: var(--tech-medium-text, #a8c0d8);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer; /* For dropbtn */
+    background: none;  /* For dropbtn */
+    border: none;     /* For dropbtn */
+    font-family: inherit; /* For dropbtn */
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a::after,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-yellow, #FFD700);
+    transition: width 0.3s ease;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a:hover,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a.active-link,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown:hover > .dropbtn, /* Use > for direct child */
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn:focus,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn.active-link {
+    color: var(--accent-yellow, #FFD700);
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a:hover::after,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a.active-link::after,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown:hover > .dropbtn::after,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn:focus::after,
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn.active-link::after {
+    width: 100%;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder .nav-cta {
+    background-color: var(--accent-yellow, #FFD700); /* Changed CTA to yellow to stand out */
+    color: var(--deep-space-blue, #070d1f) !important;
+    padding: 8px 18px !important;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder .nav-cta:hover {
+    background-color: lch(90% 90 90); /* Brighter yellow on hover */
+    color: var(--deep-space-blue, #070d1f) !important;
+    transform: translateY(-2px);
+}
+body.apps-tech-theme .tech-theme-header-placeholder .nav-cta::after {
+    display: none;
+}
+
+/* Dropdown Menu Content */
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--midnight-blue, #0e1a35);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1001;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid var(--tech-border-strong, rgba(0,169,255,0.4));
+    border-top: none;
+    top: 100%;
+    left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown:hover > div.dropdown-content {
+    display: block;
+}
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a {
+    color: var(--tech-light-text, #e0f2f7); /* Light text for dark dropdown */
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500; /* Adjusted from 600 for less emphasis */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* padding-bottom needs to be consistent with base a if ::after is used for underline */
+}
+/* Remove ::after underline for dropdown items if not desired, or style it */
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a::after {
+   /* background-color: var(--accent-yellow); */ /* Or remove if no underline */
+   display: none; /* Example: No underline for dropdown items */
+}
+
+
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a:hover {
+    background-color: var(--panel-bg-opaque, #101e3a);
+    color: var(--accent-yellow, #FFD700);
+}
+body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a.active-link {
+    background-color: var(--panel-bg-opaque, #101e3a);
+    color: var(--accent-yellow, #FFD700);
+    font-weight: 700;
+}
+
+/* Hamburger Menu Icon */
+body.apps-tech-theme .tech-theme-header-placeholder .menu-toggle {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+body.apps-tech-theme .tech-theme-header-placeholder .hamburger,
+body.apps-tech-theme .tech-theme-header-placeholder .hamburger::before,
+body.apps-tech-theme .tech-theme-header-placeholder .hamburger::after {
+    width: 25px;
+    height: 3px;
+    background-color: var(--tech-medium-text, #a8c0d8);
+    position: relative;
+    transition: all 0.3s linear;
+}
+body.apps-tech-theme .tech-theme-header-placeholder .hamburger::before { content: ''; position: absolute; top: -8px; }
+body.apps-tech-theme .tech-theme-header-placeholder .hamburger::after { content: ''; position: absolute; top: 8px; }
+
+/* Active Hamburger (X) */
+body.apps-tech-theme .tech-theme-header-placeholder .menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+body.apps-tech-theme .tech-theme-header-placeholder .menu-toggle.active .hamburger::before {
+    transform: rotate(45deg) translate(5px, 6px);
+    background-color: var(--tech-cyan, #00A9FF);
+}
+body.apps-tech-theme .tech-theme-header-placeholder .menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -6px);
+    background-color: var(--tech-cyan, #00A9FF);
+}
+
+
+/* Responsive Mobile Header Styles */
+@media (max-width: 768px) {
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Height of the header */
+        left: 0;
+        background-color: var(--deep-space-blue, #070d1f);
+        box-shadow: 0 5px 15px rgba(0, 169, 255, 0.1);
+        padding-bottom: 1rem;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links.active {
+        display: flex;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a,
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn { /* Style dropbtn too */
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid var(--tech-border-color, rgba(0,169,255,0.25));
+        color: var(--tech-medium-text, #a8c0d8); /* Ensure text is visible */
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li:last-child a {
+        border-bottom: none;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a:hover::after,
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links a.active-link::after,
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn:hover::after,
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn.active-link::after {
+        width: 40%;
+        left: 30%;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder .nav-cta {
+        margin: 1rem auto;
+        display: inline-block;
+        padding: 10px 25px !important;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder .menu-toggle {
+        display: block;
+    }
+
+    /* Mobile Dropdown Content */
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent !important; /* Inherit from parent .nav-links */
+        padding-top: 0;
+        padding-bottom: 0;
+        min-width: 100%;
+        border: none !important; /* Remove borders for mobile dropdown */
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+        opacity: 0;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content.show-mobile {
+        opacity: 1;
+        /* max-height will be set by JS */
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a {
+        padding: 0.8rem 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--tech-border-light, rgba(0,169,255,0.15)); /* Lighter border for mobile dropdown items */
+        color: var(--tech-light-text, #e0f2f7); /* Ensure text is light on dark mobile menu */
+    }
+     body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a:hover {
+        background-color: rgba(0, 169, 255, 0.1) !important;
+        color: var(--accent-yellow, #FFD700) !important;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links li.dropdown > div.dropdown-content a:last-child {
+         border-bottom: 1px solid var(--tech-border-light, rgba(0,169,255,0.15)); /* Consistent border */
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn i.fa-caret-down {
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+    body.apps-tech-theme .tech-theme-header-placeholder ul.nav-links .dropbtn.mobile-dropdown-open i.fa-caret-down {
+        transform: rotate(-180deg);
+    }
+}
+
+
+/* =========================================================== */
+/* === FOOTER STYLES (Adapted from footer.css for Tech Theme) === */
+/* =========================================================== */
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer {
+    background-color: var(--deep-space-blue, #070d1f);
+    color: var(--tech-dim-text, #7a8c99);
+    padding: 40px 0 20px; /* Adjusted from 50px 0 30px for consistency */
+    font-size: 0.9rem;
+    font-family: var(--font-secondary); /* Using tech theme secondary font */
+    line-height: 1.6;
+    border-top: 2px solid var(--tech-cyan, #00A9FF);
+    box-shadow: 0 -5px 20px rgba(0, 169, 255, 0.15);
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .container { /* Assuming footer content is wrapped in .container */
+    max-width: 1200px; /* Consistent container width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Consistent padding */
+    padding-right: 20px;
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Changed to center for better vertical alignment */
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    margin-bottom: 2rem; /* From your original footer.css */
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-logo {
+    display: flex; /* Changed from inline-flex for consistency */
+    align-items: center;
+    text-decoration: none;
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-logo .logo-img {
+    height: 40px; /* Slightly adjusted from original footer.css */
+    width: 40px;
+    margin-right: 12px; /* Adjusted */
+    border: 2px solid var(--tech-cyan, #00A9FF); /* Tech theme border */
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.9); /* Ensure logo is visible */
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-logo span {
+    font-family: var(--font-primary);
+    font-size: 1.3rem; /* Consistent with your original footer.css */
+    font-weight: 700; /* Added for consistency */
+    color: var(--tech-light-text, #e0f2f7);
+    text-shadow: 0 0 5px rgba(0, 169, 255, 0.2);
+    white-space: nowrap;
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer nav.footer-links { /* Target nav if present */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Added for better gap control */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px; /* vertical and horizontal gap */
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer nav.footer-links a {
+    color: var(--tech-medium-text, #a8c0d8);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    margin: 0; /* Remove margin as gap is handled by flex */
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 3px;
+}
+body.apps-tech-theme .tech-theme-footer-placeholder > footer nav.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-yellow, #FFD700);
+    transition: width 0.3s ease;
+}
+
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer nav.footer-links a:hover {
+    color: var(--accent-yellow, #FFD700);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+body.apps-tech-theme .tech-theme-footer-placeholder > footer nav.footer-links a:hover::after {
+    width: 100%;
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .social-links {
+    display: flex; /* Added for gap control */
+    align-items: center;
+    gap: 18px; /* Space between social icons */
+    margin-left: auto; /* Push to right if space allows on desktop */
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .social-links a {
+    display: inline-block;
+    color: var(--tech-medium-text, #a8c0d8);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    line-height: 1;
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .social-links a:hover {
+    color: var(--accent-yellow, #FFD700);
+    transform: scale(1.15) translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-bottom {
+    width: 100%;
+    border-top: 1px solid var(--tech-border-color, rgba(0, 169, 255, 0.2));
+    padding-top: 25px; /* Increased from 1.5rem */
+    margin-top: 25px;  /* Increased from 1.5rem */
+    font-size: 0.85em;
+    color: var(--tech-dim-text, #7a8c99); /* Dimmer tech copyright */
+    letter-spacing: 0.5px;
+}
+body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-bottom p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Footer Adjustments for Tech Theme */
+@media (max-width: 768px) {
+    body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem; /* Adjusted from 1rem */
+    }
+    body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-content > div,
+    body.apps-tech-theme .tech-theme-footer-placeholder > footer .footer-content > nav.footer-links { /* More specific */
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1rem; /* Keep consistent spacing */
+    }
+    body.apps-tech-theme .tech-theme-footer-placeholder > footer .social-links {
+        justify-content: center; /* Center social icons */
+        margin-left: 0; /* Reset margin-left */
+        margin-top: 0.5rem;
+    }
+   
+}
+
+/* Container for centering content */
+.footer-content .container,
+.footer-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Flex container for footer sections */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer Sections */
+.footer-content > div,
+.footer-content > nav { /* Include nav if links are in nav */
+    flex: 1 1 auto; /* Allow shrinking/growing, basis auto */
+    /* min-width: 150px; /* Adjust as needed */
+    padding: 0 10px; /* Add padding to prevent touching */
+}
+/* Ensure logo/social don't take excessive space if middle links wrap */
+.footer-logo { flex-grow: 0; }
+.social-links { flex-grow: 0; text-align: right;} /* Align social icons right */
+
+
+/* Footer Logo Styling */
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    color: var(--light-text, var(--fallback-light-text));
+    font-weight: 600;
+    text-decoration: none;
+    /* margin-bottom: 10px; /* Removed, rely on flex gap */
+}
+
+.footer-logo .logo-img {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid var(--accent-yellow, var(--fallback-accent-yellow));
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.footer-logo span {
+    font-family: var(--font-primary, var(--fallback-font-primary));
+    font-size: 1.2rem;
+    white-space: nowrap;
+}

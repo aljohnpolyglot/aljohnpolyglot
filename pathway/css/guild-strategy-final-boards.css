@@ -1,0 +1,200 @@
+/* --- Add or Revise these in guild-strategy-quest-panel-MOCKUP.css --- */
+
+/*
+   General Styling for Final Boards (Wisdom & Warning)
+*/
+
+.quest-phase-content-MOCKUP.final-board-style-MOCKUP {
+    padding: 20px 10px; /* Reduced side padding slightly more */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: var(--guild-panel-bg-alt, var(--guild-panel-bg));
+    border: 1px solid var(--guild-panel-border-alt, var(--guild-panel-border));
+    /* Prevent horizontal scroll on the main phase content if its child tries to overflow */
+    overflow-x: hidden;
+}
+
+.final-board-content-wrapper-MOCKUP {
+    max-width: 600px; /* Further reduced max-width for compactness */
+    width: 100%; /* Will try to fill parent up to max-width */
+    padding: 15px;
+    background-color: rgba(var(--guild-black-rgb), 0.05);
+    border-radius: 6px;
+    box-shadow: inset 0 0 10px rgba(var(--guild-black-rgb), 0.1),
+                0 1px 5px rgba(var(--guild-black-rgb), 0.08);
+    /* --- ADDED to prevent its children from causing horizontal scroll --- */
+    overflow-x: hidden;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+.final-board-character-MOCKUP {
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(var(--guild-black-rgb), 0.15);
+    object-fit: contain;
+    max-width: 100%; /* Ensure image itself doesn't break out of its sizing */
+}
+
+/* Wisdom Board image (side_by_side.png) */
+#phase-wisdom-content-MOCKUP .final-board-character-MOCKUP {
+    /* max-width: 100%; /* Already set above */
+    max-height: 240px; /* Further reduced max-height */
+}
+
+/* Warning Board image */
+#phase-warning-content-MOCKUP .final-board-character-MOCKUP {
+    max-width: 250px; /* Further reduced max-width */
+    max-height: 250px; /* Further reduced max-height */
+}
+
+.final-board-title-area-MOCKUP {
+    font-family: var(--font-guild-panel-title);
+    font-size: clamp(1.25rem, 2.8vw, 1.7rem); /* Slightly smaller */
+    /* --- CORRECTED: Explicit light color for the title --- */
+    color: var(--guild-header-on-dark, var(--guild-text-header, #e0d6c9)); /* Use a light variable */
+    margin-top: 0;
+    margin-bottom: 18px; /* Adjusted */
+    padding-bottom: 8px; /* Adjusted */
+    border-bottom: 1.5px solid var(--guild-gold-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%; /* Ensure it takes full width of its wrapper */
+    box-sizing: border-box; /* Include padding/border in width */
+}
+#phase-wisdom-content-MOCKUP .final-board-title-area-MOCKUP {
+    margin-top: 15px; /* If image is first on wisdom board */
+}
+
+
+.final-board-title-area-MOCKUP i.fas {
+    font-size: 0.8em;
+    color: var(--guild-gold-accent);
+    line-height: 1;
+}
+
+.final-board-text-MOCKUP {
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem); /* Slightly smaller */
+    line-height: 1.6;
+    color: var(--guild-text-on-dark, #d0c8bb); /* Ensure good contrast */
+    text-align: left;
+    width: 100%; /* Take full width available in wrapper */
+    box-sizing: border-box;
+}
+
+.final-board-text-MOCKUP p,
+.final-board-text-MOCKUP ul {
+    /* --- ADDED to prevent text itself from breaking bounds --- */
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.final-board-text-MOCKUP p {
+    margin-bottom: 12px; /* Reduced */
+}
+.final-board-text-MOCKUP p:last-child {
+    margin-bottom: 0;
+}
+
+.final-board-text-MOCKUP ul {
+    list-style: none;
+    padding-left: 5px;
+    margin: 12px 0; /* Reduced */
+}
+.final-board-text-MOCKUP ul li {
+    margin-bottom: 7px; /* Reduced */
+    padding-left: 25px; /* Adjusted */
+    position: relative;
+    color: var(--guild-text-on-dark-secondary, #b0a89a);
+}
+.final-board-text-MOCKUP ul li i.fas {
+    position: absolute;
+    left: 0;
+    top: 2px; /* Adjusted */
+    color: var(--guild-gold-accent);
+    font-size: 0.9em;
+    width: 18px; /* Adjusted */
+    text-align: center;
+}
+.final-board-text-MOCKUP strong {
+    font-family: var(--font-guild-heading, var(--font-main));
+    font-weight: 600;
+    color: var(--guild-header-on-dark-strong, var(--guild-text-header, #e0d6c9));
+}
+
+/* CTA for Wisdom Board */
+#phase-wisdom-content-MOCKUP .final-board-text-MOCKUP p:last-of-type {
+    font-family: var(--font-guild-heading, var(--font-main));
+    font-size: 1em; /* Reduced */
+    color: var(--guild-gold-accent);
+    text-align: center;
+    margin-top: 18px; /* Reduced */
+    font-weight: bold;
+}
+
+/* Centering the button on the Warning board */
+#phase-warning-content-MOCKUP .final-board-text-MOCKUP {
+    /* This parent having text-align: center will center the inline-block button */
+    text-align: center;
+}
+.final-board-style-MOCKUP .btn-guild-caution {
+    display: inline-block; /* Allows text-align:center on parent to work */
+    margin-top: 18px; /* Reduced */
+    padding: 7px 16px; /* Reduced */
+    font-size: 0.8rem; /* Reduced */
+    /* ... other button styles ... */
+}
+
+/* Specific Warning Board Text Paragraph Styling */
+#phase-warning-content-MOCKUP .final-board-text-MOCKUP p {
+    border-left: 3px solid var(--guild-red-accent);
+    padding-left: 10px; /* Reduced */
+    background-color: rgba(var(--guild-red-accent-rgb), 0.03);
+    border-radius: 0 3px 3px 0;
+    text-align: left; /* Text inside the p itself is left-aligned */
+    /* margin-left/right: auto and max-width:90% can be tricky if parent is already text-align:center.
+       Let's rely on the parent .final-board-text-MOCKUP having text-align:center
+       and the <p> just taking the width it needs. */
+    display: inline-block; /* To make it shrink-wrap its content if parent is text-align:center */
+    width: auto;          /* Let content determine width up to parent limits */
+    max-width: 100%;      /* But don't exceed the parent's width */
+    margin-bottom: 10px;
+}
+/* If you want the p tags in the warning to stack and be centered,
+   their parent .final-board-text-MOCKUP needs text-align:center,
+   and the p tags should be display:block with margin: auto or display:table.
+   Given they have a left border, inline-block within a text-align:center parent
+   might be the easiest way to center them as blocks.
+*/
+
+
+/* Responsive adjustments for final boards */
+@media (max-width: 600px) {
+    .quest-phase-content-MOCKUP.final-board-style-MOCKUP {
+        padding: 15px 8px;
+    }
+    .final-board-content-wrapper-MOCKUP {
+        padding: 12px;
+        max-width: 95%; /* Allow more width on small screens relative to panel */
+    }
+    #phase-wisdom-content-MOCKUP .final-board-character-MOCKUP {
+        max-height: 200px;
+    }
+    #phase-warning-content-MOCKUP .final-board-character-MOCKUP {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .final-board-title-area-MOCKUP {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        margin-bottom: 12px;
+    }
+    .final-board-text-MOCKUP {
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    }
+}

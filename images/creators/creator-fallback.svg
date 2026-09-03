@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-labelledby="title description">
+  <title id="title">Creator portrait unavailable</title>
+  <description id="description">A neutral illustrated portrait used when a local creator image cannot load.</description>
+  <rect width="480" height="480" fill="#173f4b"/>
+  <circle cx="240" cy="176" r="86" fill="#dfcfac"/>
+  <path d="M82 430c18-105 77-158 158-158s140 53 158 158" fill="#dfcfac"/>
+  <path d="M35 35h410v410H35z" fill="none" stroke="#d2b66e" stroke-width="8"/>
+</svg>

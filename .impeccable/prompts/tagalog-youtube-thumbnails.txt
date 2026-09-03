@@ -1,0 +1,1 @@
+Downloaded unchanged from the official YouTube thumbnail endpoint for the corresponding Aljohn Polyglot video ID. Editorial source asset; do not generate, crop, or alter the thumbnail. Source pattern: https://i.ytimg.com/vi/{videoId}/maxresdefault.jpg

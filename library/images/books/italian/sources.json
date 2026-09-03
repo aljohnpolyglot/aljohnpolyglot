@@ -1,0 +1,20 @@
+{
+  "assets": {
+    "divina-commedia.webp": {
+      "source": "https://www.gutenberg.org/ebooks/1012",
+      "rights": "Project Gutenberg public-domain ebook artwork"
+    },
+    "pinocchio.webp": {
+      "source": "https://www.gutenberg.org/ebooks/52484",
+      "rights": "Project Gutenberg public-domain ebook artwork"
+    },
+    "promessi-sposi.webp": {
+      "source": "https://commons.wikimedia.org/wiki/File:I_promessi_sposi_-_2nd_edition_cover.jpg",
+      "rights": "Public Domain Mark; see source page"
+    },
+    "il-principe.webp": {
+      "source": "https://commons.wikimedia.org/wiki/File:Machiavelli_Principe_Cover_Page.jpg",
+      "rights": "Public domain; see source page"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+/* css/pathway-preview.css */
+/* --- Pathway Section Preview (index.html) --- */
+.pathway-section-preview {
+    background-image: url('../images/pathway_epic_journey_bg.png'); /* Path relative to CSS file */
+    background-size: cover;       /* You want to keep this */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;  /* CRUCIAL: Ensures background scrolls with THIS section */
+    padding: 80px 0;              /* Adjust top/bottom padding as desired */
+    position: relative;             /* Good for stacking context if needed, and for ::before/::after */
+    overflow: hidden;               /* Helps clip anything trying to escape its bounds */
+    /* NO margin-bottom here, let the next section's margin-top handle spacing */
+}
+
+/* Semi-transparent overlay to improve text readability over the complex background */
+.pathway-section-preview::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(42, 31, 19, 0.5); /* Example overlay from previous */
+    z-index: 1; /* Overlay sits on top of the background image WITHIN this section */
+}
+
+.pathway-section-preview .container {
+    position: relative; /* Content within container sits on top of the section's ::before */
+    z-index: 2;
+}
+
+/* Adjust title/subtitle colors for readability over the new background & overlay */
+.pathway-section-preview .section-title {
+    color: #FAF0E6; /* Light parchment color for strong contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for readability */
+}
+.pathway-section-preview .section-title .highlight-text-alt {
+    font-family: 'MedievalSharp', cursive;
+    color: #FFD700; /* Bright Gold for highlight */
+    /* text-shadow: 1px 1px 2px #4A3B2A; */
+}
+
+.pathway-section-preview .section-subtitle {
+    font-family: 'Metamorphous', cursive;
+    color: #E0D6C3; /* Lighter parchment/stone for subtitle */
+    font-size: 1.2rem; /* Slightly larger for readability */
+    margin-bottom: 3.5rem; /* Increased margin */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    line-height: 1.7;
+}
+
+/* Styles for the "scroll" cards */
+.pathway-preview-steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem; /* Increased gap */
+    margin-bottom: 4rem; /* Increased margin */
+}
+
+.pathway-preview-step {
+    background-color: rgba(250, 240, 230, 0.92); /* Light parchment with high opacity */
+    padding: 25px 20px;
+    border-radius: 10px;
+    border: 2px solid #C1A87C;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), /* Darker shadow for pop */
+                0 0 0 5px rgba(250, 240, 230, 0.92),
+                0 0 0 7px #C1A87C;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pathway-preview-step:hover {
+    transform: translateY(-10px) scale(1.03); /* More pronounced hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+                0 0 0 5px rgba(250, 240, 230, 0.95),
+                0 0 0 7px #B8860B;
+}
+
+/* step-header and h3 will inherit color, ensure they are readable against card background */
+.pathway-preview-step .step-header {
+    margin-bottom: 15px;
+    /* If you decide to keep small Font Awesome icons on cards: */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+/* If you re-add FA icons to cards: */
+/* .pathway-preview-step .step-icon-fa { ... existing styles ... } */
+
+.pathway-preview-step h3 {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.7rem; /* Slightly larger */
+    color: #4A3B2A;
+    margin-bottom: 10px;
+}
+
+.pathway-preview-step .step-goal {
+    font-size: 0.95rem;
+    color: #3D2B1F;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+.pathway-preview-step .step-goal strong {
+    color: #800000;
+    font-family: 'Metamorphous', cursive;
+}
+
+.pathway-preview-step .step-focus {
+    font-size: 0.9rem;
+    color: #6B4F2E;
+    font-style: italic;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed #C1A87C;
+}
+.pathway-preview-step .step-focus strong {
+    font-style: normal;
+    color: #556B2F;
+}
+.pathway-preview-step .highlight-focus {
+    font-weight: bold;
+    color: var(--primary-red);
+    font-style: normal;
+}
+
+
+.pathway-section-preview .btn-pathway-cta {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.15rem; /* Slightly larger button text */
+    padding: 14px 35px; /* Larger button */
+    background-color: var(--accent-yellow);
+    color: var(--dark-text);
+    border: 2px solid var(--dark-text);
+    border-radius: 8px; /* Slightly more rounded to match theme */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.pathway-section-preview .btn-pathway-cta:hover {
+    background-color: var(--primary-red);
+    color: var(--light-text);
+    border-color: var(--primary-red);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.pathway-section-preview .btn-pathway-cta i {
+    margin-right: 10px;
+    transform: rotate(-15deg);
+}

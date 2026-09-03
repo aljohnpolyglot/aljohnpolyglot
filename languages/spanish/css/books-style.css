@@ -1,0 +1,186 @@
+
+/* --- Estilo para la Estantería de Libros --- */
+
+/* La clase .shelf-container ya está definida en mock-style.css, aquí solo añadimos especificidad */
+#shelf-books .book-card {
+    flex: 0 0 180px; /* Hacemos las tarjetas de libros un poco más estrechas */
+    text-align: center;
+    position: relative;
+}
+
+#shelf-books .book-card:focus-visible,
+.modal-close-button:focus-visible,
+#modal-book-links .button-link:focus-visible {
+    outline: 3px solid #d25000;
+    outline-offset: 4px;
+}
+
+#shelf-books .book-card .card-image {
+    height: 250px; /* Altura fija para las portadas */
+    object-fit: cover;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+#shelf-books .card-content {
+    padding-top: 1.5rem;
+}
+
+#shelf-books .card-title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    /* Limitar el título a 2 líneas para uniformidad */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 3.6rem; /* 1.4rem * 1.3 * 2 líneas */
+}
+
+#shelf-books .card-subtitle {
+    font-size: 1.2rem;
+}
+
+/* --- Placa de Nivel CEFR --- */
+.cefr-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #d25000; /* Naranja RTVE */
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* --- Estilo para el Modal de Libros --- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    gap: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close-button:hover {
+    color: #494847;
+}
+
+.modal-left {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.modal-left img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.modal-right {
+    flex: 1;
+}
+
+#modal-book-title {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+}
+
+#modal-book-author {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #737578;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+#modal-book-cefr {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d25000;
+    margin-bottom: 2rem;
+}
+
+#modal-book-long-desc {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+#modal-book-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#modal-book-links .button-link {
+    display: inline-block;
+    background-color: #494847;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    border: none;
+    text-decoration: none;
+}
+
+#modal-book-links .button-link:hover {
+    background-color: #f56b0d;
+}
+
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+    }
+    #modal-book-title {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    #modal-book-author {
+    font-size: 1.5rem;
+}   
+}

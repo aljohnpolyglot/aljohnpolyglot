@@ -1,0 +1,1042 @@
+
+/*
+   ====================================================================
+   Proyecto: El Español con Aljohn - Estilos para Creadores y Recursos
+   Versión: 2.0 (Mejorada y Profesionalizada)
+   Autor: IA Asistente
+   Fecha: 2023-10-27
+   --------------------------------------------------------------------
+   Objetivo:
+   Este archivo CSS define los estilos para las tarjetas de creadores y
+   el modal de detalles que aparece al interactuar con ellas. Se ha
+   refinado para mejorar la estética, la usabilidad y la profesionalidad,
+   manteniendo estrictamente la paleta de colores original y la estructura
+   HTML existente.
+
+   Mejoras Clave Implementadas:
+   - **Organización y Comentarios:** Estructura clara con encabezados y
+     comentarios explicativos para cada sección y propiedad importante.
+   - **Efectos Hover Mejorados:** Transiciones más suaves y efectos visuales
+     sutiles (escalado, elevación, cambio de color) para una experiencia
+     de usuario más atractiva en tarjetas, botones e íconos.
+   - **Detalles de la Tarjeta:** Ajustes en el `cefr-badge` para hacerlo
+     más prominente y estético, y refinamiento del área de detalles al
+     pasar el ratón.
+   - **Modal de Detalles Profesional:** Mejora de la presentación del modal,
+     incluyendo un botón de cierre más interactivo, sombras más pronunciadas,
+     y un estilo consistente para los enlaces externos y la sección "Mi Opinión".
+   - **Consistencia de Paleta:** Se ha garantizado que todos los nuevos estilos
+     o modificaciones utilicen exclusivamente los colores ya definidos en el
+     documento original, respetando la solicitud de "no cambiar la paleta".
+   - **Diseño Responsivo Básico:** Inclusión de media queries para asegurar
+     que las tarjetas y el modal se adapten mejor a diferentes tamaños de pantalla.
+   ====================================================================
+*/
+
+/* --- Base Styles & Reusable Components --- */
+
+/* Estilos para el botón de cerrar en modales */
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #777; /* Color de texto suave */
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0.5rem; /* Aumentar el área de clic para facilitar la interacción */
+    line-height: 1; /* Asegurar alineación vertical del ícono */
+    z-index: 10; /* Asegurar que esté por encima de otros elementos del modal */
+}
+
+.modal-close-btn:hover {
+    color: #0d47a1; /* Usamos el azul existente para un feedback visual al pasar el ratón */
+    transform: rotate(90deg); /* Efecto sutil de rotación al pasar el ratón */
+}
+
+.modal-close-btn:focus {
+    outline: 2px solid #0d47a1; /* Contorno accesible para el enfoque del teclado */
+    outline-offset: 2px; /* Pequeño espacio entre el contorno y el botón */
+    border-radius: 4px; /* Un poco de redondez al outline */
+}
+
+/* Estilos base para botones delineados (usados en enlaces externos del modal) */
+.btn-outline {
+    display: inline-flex; /* Permite alinear el ícono y el texto */
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre el ícono y el texto */
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #0d47a1; /* Borde con el color azul de la paleta */
+    border-radius: 8px; /* Bordes ligeramente redondeados para un aspecto moderno */
+    background-color: transparent;
+    color: #0d47a1; /* Color de texto inicial del botón */
+    font-weight: 600;
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    white-space: nowrap; /* Evita que el texto del botón se rompa en varias líneas */
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background-color: #0d47a1; /* Fondo azul al pasar el ratón o enfocar */
+    color: white; /* Texto blanco para un contraste nítido */
+    transform: translateY(-2px); /* Efecto de "lift" sutil para indicar interactividad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    outline: none; /* Elimina el outline por defecto en el hover/focus si ya tenemos uno visual */
+}
+
+/* --- Estilos de la Tarjeta del Creador --- */
+.creator-card {
+    scroll-snap-align: start; /* Cada tarjeta se alinea al inicio del área de desplazamiento */
+    flex: 0 0 220px; /* Tamaño base de la tarjeta, manteniendo el original */
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave para un efecto de elevación */
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido que se expande no desborde antes del hover */
+    cursor: pointer;
+    z-index: 1; /* Permite que la tarjeta se eleve visualmente al hacer hover sobre otras */
+    /* Transiciones para la altura, transformación y sombra */
+    max-height: 280px; /* Altura inicial de la tarjeta */
+    transition: max-height 0.4s ease-out, transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.3s;
+    /* La transición de z-index con delay asegura que el cambio ocurra DESPUÉS de la animación */
+}
+
+.creator-card:hover {
+    max-height: 400px; /* Altura expandida al hacer hover */
+    transform: translateY(-8px); /* Levantar la tarjeta un poco más para un efecto "flotante" */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra más pronunciada al elevarse */
+    z-index: 2; /* Llevar la tarjeta al frente cuando se interactúa con ella */
+    outline: 2px solid #0d47a1; /* Contorno visual para enfocar y destacar la tarjeta activa */
+    outline-offset: 2px; /* Pequeño espacio entre el contorno y el borde de la tarjeta */
+    transition: max-height 0.4s ease-out, transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+    /* Eliminar el delay de z-index para que el cambio ocurra INMEDIATAMENTE al hacer hover */
+}
+
+.card-visible-area {
+    text-align: center;
+    position: relative; /* Necesario para posicionar el badge CEFR de forma absoluta */
+}
+
+.creator-card .card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ajusta la imagen sin distorsionar su proporción */
+    border-top-left-radius: 12px; /* Redondear solo las esquinas superiores */
+    border-top-right-radius: 12px;
+}
+
+.creator-card .card-content {
+    padding: 1rem;
+    position: relative; /* Necesario para posicionar el badge CEFR */
+}
+
+.creator-card .card-title {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.creator-card .cefr-badge {
+    position: absolute;
+    top: -1.5rem; /* Ajuste para que el badge se vea más prominentemente fuera de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d47a1; /* Color azul, inalterable, según la paleta original */
+    color: white;
+    padding: 0.4rem 0.8rem; /* Relleno para que se vea como un "badge" profesional */
+    border-radius: 5px; /* Bordes ligeramente redondeados para el badge */
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra sutil para darle profundidad al badge */
+    white-space: nowrap; /* Evita que el texto del badge se rompa en varias líneas */
+}
+
+/* Detalles que aparecen al hacer hover */
+.card-hover-details {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(10px); /* Empieza un poco más abajo para un efecto de entrada */
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; /* Transición para la opacidad y el movimiento */
+    text-align: center;
+}
+
+.creator-card:hover .card-hover-details {
+    opacity: 1; /* Se vuelve visible al pasar el ratón */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+.card-hover-details p {
+    font-size: 1.1rem; /* Ligeramente más pequeño para mejor ajuste en el espacio limitado */
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1.2rem; /* Espacio extra al final del párrafo antes de los íconos */
+}
+
+.card-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem; /* Espacio entre íconos */
+    font-size: 1.8rem; /* Tamaño de íconos ligeramente ajustado para equilibrio */
+    color: #777;
+}
+
+.card-social-icons i {
+    transition: color 0.2s ease, transform 0.2s ease; /* Añadir transición para hover en íconos individuales */
+}
+
+.card-social-icons i:hover {
+    color: #0d47a1; /* Color azul al pasar el ratón, inalterable */
+    transform: scale(1.1); /* Efecto de crecimiento sutil al pasar el ratón */
+}
+
+/* CTA (Call To Action) en la parte inferior de la tarjeta */
+.card-cta {
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+    text-align: center;
+    padding: 0.9rem; /* Ligeramente más padding para un área de clic más cómoda */
+    font-weight: 700;
+    font-size: 1.2rem; /* Ligeramente más pequeño para el CTA, manteniendo legibilidad */
+    color: #333;
+    border-top: 1px solid #e0e0e0; /* Borde superior sutil */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transición para el efecto hover */
+}
+
+.creator-card:hover .card-cta {
+    background-color: #e0e0e0; /* Fondo más oscuro al pasar el ratón para indicar interactividad */
+    color: #0d47a1; /* Texto azul al pasar el ratón, utilizando el color de la paleta */
+}
+
+
+/* --- Estilos del Modal del Creador --- */
+
+.creator-modal-overlay {
+    position: fixed; /* Fijo en la pantalla para cubrir todo el viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente para el overlay */
+    backdrop-filter: blur(8px); /* Efecto de desenfoque en el fondo para una estética moderna */
+    z-index: 2000; /* Un z-index alto para asegurar que el modal esté por encima de todo el contenido */
+    display: flex; /* Usamos flexbox para centrar el contenido del modal */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Relleno alrededor del modal para que no toque los bordes de la pantalla */
+    opacity: 0; /* Inicialmente invisible */
+    visibility: hidden; /* Empieza completamente invisible y no interactuable */
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transición para la opacidad con un delay para visibility */
+    overflow-y: auto; /* Permitir scroll si el contenido del overlay es más grande que la ventana (raro, pero seguro) */
+}
+
+/* ESTA ES LA REGLA CLAVE QUE HACE VISIBLE EL MODAL */
+.creator-modal-overlay:not(.hidden) {
+    opacity: 1; /* Se vuelve opaco al mostrarse */
+    visibility: visible; /* Se vuelve visible */
+    transition: opacity 0.3s ease, visibility 0s; /* Elimina el delay de visibility al mostrarse */
+}
+
+/* El contenido principal del modal */
+#creator-modal .modal-content {
+    background-color: #fff; /* Fondo blanco para el contenido del modal */
+    color: #333; /* Color de texto principal */
+    padding: 2.5rem;
+    border-radius: 12px; /* Bordes redondeados */
+    max-width: 900px; /* Ligeramente más ancho para mejor legibilidad del contenido extenso */
+    width: 100%;
+    max-height: 90vh; /* Máxima altura del 90% del viewport para dejar espacio */
+    overflow-y: auto; /* Permite scroll interno si el contenido es demasiado largo */
+    position: relative;
+    transform: translateY(30px); /* Empieza un poco más abajo para un efecto de entrada "slide-up" */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el movimiento y la sombra */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); /* Sombra más definida para el modal, dándole profundidad */
+
+}
+
+.creator-modal-overlay:not(.hidden) .modal-content {
+    transform: translateY(0); /* Vuelve a su posición original al mostrarse */
+}
+
+/* Nota: La regla '.creator-modal-overlay.hidden { display: none; }' del original
+   puede no ser estrictamente necesaria si la gestión de visibilidad es solo con 'visibility',
+   pero se mantiene por si el JS la utiliza de forma específica para rendimiento. */
+.creator-modal-overlay.hidden { display: none; }
+
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal-image {
+    width: 140px; /* Ligeramente más grande para mayor impacto visual */
+    height: 140px;
+    border-radius: 15px; /* Más redondeado para una apariencia suave */
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra mejorada para la imagen del creador */
+    border: 3px solid #f8f9fa; /* Borde sutil alrededor de la imagen para separarla del fondo */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 140px;
+}
+
+#creatorModalTitle {
+    font-family: 'Roboto Slab', serif; /* Mantener la fuente original */
+    font-size: 3rem; /* Título un poco más grande para el modal */
+    color: #333;
+    line-height: 1.2;
+}
+
+.modal-main-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Aumento de espacio entre las secciones principales del modal */
+    padding: 2rem;
+}
+
+.video-embed-container {
+    aspect-ratio: 16/9; /* Mantiene la proporción de video estándar */
+    background-color: #000; /* Fondo negro para el video */
+    border-radius: 8px; /* Bordes redondeados para el contenedor de video */
+    overflow: hidden; /* Asegura que el iframe respete el border-radius */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra sutil para el video */
+}
+
+.video-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Eliminar borde del iframe */
+}
+
+.modal-long-description-area h4,
+.modal-cefr-details-area h4,
+#modal-aljohns-take-container h4,
+.modal-external-links-area h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem; /* Títulos de sección un poco más grandes */
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555; /* Color ligeramente más oscuro para los títulos de sección */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0; /* <-- CHANGED: Thinner border to match screenshot */
+    padding-bottom: 0.8rem; /* Más padding para el borde, mejor separación visual */
+    letter-spacing: 0.05em; /* Espaciado de letras sutil para un toque profesional */
+}
+.modal-long-description-area p {
+    font-size: 1.15rem; /* Tamaño de texto base para descripciones largas */
+    line-height: 1.7; /* Mayor interlineado para mejor legibilidad */
+    color: #444;
+}
+
+/* Puntos de Nivel CEFR */
+.cefr-dots-container {
+    display: flex;
+    gap: 0.7rem; /* Más espacio entre los puntos de nivel */
+    justify-content: center; /* Centrar los puntos dentro de su contenedor */
+    flex-wrap: wrap; /* Permitir que los puntos se envuelvan a la siguiente línea si no hay espacio */
+}
+
+.cefr-level-dot {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px; /* Tamaño unificado para los puntos */
+    height: 35px;
+    border-radius: 50%; /* Puntos perfectamente redondos */
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para los puntos */
+}
+
+.cefr-level-dot.present {
+    background-color: #4caf50; /* Verde, inalterable (color original) */
+    color: white;
+}
+
+.cefr-level-dot.not-present {
+    background-color: #e0e0e0; /* Gris, inalterable (color original) */
+    color: #999;
+}
+
+.cefr-level-dot:hover {
+    transform: translateY(-3px) scale(1.05); /* Efecto de "lift" y ligero crecimiento al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra más pronunciada al hacer hover */
+}
+/* Opinión de Aljohn */
+.modal-aljohns-take {
+    background-color: #eef7ff; /* Azul claro, inalterable (color original) */
+    border-left: 4px solid #00a4e8; /* Borde con el color azul de la paleta */
+    padding: 1.5rem; /* Relleno interior */
+    border-radius: 8px; /* Bordes redondeados */
+    font-style: italic;
+    color: #333;
+    line-height: 1.4; /* Espaciado de línea para legibilidad */
+    font-size: 1.15rem; /* Tamaño de fuente para el texto de opinión */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+
+/* Icono de cita para la opinión de Aljohn (restaurado según la captura de pantalla) */
+.modal-aljohns-take::before {
+    content: "\f10d"; /* Código de Font Awesome para "quote-left" */
+    font-family: "Font Awesome 5 Free"; /* Asegúrate de que Font Awesome esté cargado */
+    font-weight: 900; /* Para el estilo "solid" de Font Awesome */
+    position: absolute;
+    top: 1rem; /* Posición vertical del icono */
+    left: 1rem; /* Posición horizontal del icono */
+    font-size: 2.5rem; /* Tamaño del icono */
+    color: rgba(0, 164, 232, 0.2); /* Versión translúcida del azul de borde para un efecto sutil */
+    opacity: 0.8; /* Ligeramente más opaco para ser visible pero no dominante */
+    z-index: 0; /* Asegura que el icono esté debajo del texto */
+}
+
+/* Ajuste del padding para el párrafo dentro de la opinión para no solaparse con el icono */
+.modal-aljohns-take p {
+    position: relative; /* Asegura que el texto esté por encima del pseudo-elemento */
+    z-index: 1; /* Asegura que el texto esté por encima del pseudo-elemento */
+    padding-left: 2.5rem; /* Espacio para que el texto no se solape con el icono de cita */
+}
+
+/* Enlaces externos */
+.modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem; /* Más espacio entre los botones de enlace */
+    justify-content: center; /* Centrar los botones de enlace */
+    margin-bottom: 3rem;
+}
+
+
+/* ======================================================= */
+/* ==      ESTILOS DE LAS ESTANTERÍAS DE CONTENIDO      == */
+/* == (Sección que utiliza la paleta de colores RTVE)   == */
+/* ==   Estas secciones se mantienen tal como estaban   == */
+/* ==   con ligeros ajustes para responsividad y texto. == */
+/* ======================================================= */
+
+/* --- Fondo Principal de la Sección de Estanterías --- */
+#content-shelves {
+    background-color: #f1f0ef; /* El color de fondo principal que pediste */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    /* Añadir un poco de espacio en los lados para tablets/móviles */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Título y descripción generales de la sección de estanterías */
+#content-shelves > h2 {
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#content-shelves > p {
+    font-size: 1.3rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto; /* Centrar y añadir margen inferior */
+    line-height: 1.6;
+}
+#creator-modal .modal-header {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 2rem;
+    
+}
+#creatorModalTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center both name and flag */
+    gap: 0.25rem; /* small space between name and flag */
+}
+
+#creatorModalTitle .creator-name {
+    font-size: inherit; /* keep h2's size */
+    font-weight: bold;
+}
+
+#creatorModalTitle .creator-flag img {
+    width: 50px;
+    height: auto;
+    margin-top: 3rem;
+}
+
+/* Estilo para el contenedor de las tarjetas dentro de cada estantería */
+/* Estilo para el contenedor de las tarjetas dentro de cada estantería */
+.shelf-container {
+    /* Asegura un padding horizontal adecuado para el área de scroll */
+    padding: 2rem 1rem 3.5rem 1rem; /* Top, Right, Bottom, Left */
+    /* Asegúrate de que este padding sea consistente con el 'scroll-padding' */
+
+    /* El 'scroll-padding' debe coincidir con el padding horizontal del 'shelf-container' */
+    scroll-padding-left: 1rem; /* Asegura que el snap deje 1rem de espacio a la izquierda */
+    scroll-padding-right: 1rem; /* Asegura que el snap deje 1rem de espacio a la derecha */
+
+    /* Asegura que el shelf-container no exceda un ancho máximo, y se centre */
+    width: 100%; /* Ocupa el 100% del ancho disponible de su padre (.content-shelf) */
+    max-width: 1200px; /* Puedes ajustar este valor si tu contenido principal tiene otro max-width */
+    margin: 0 auto; /* Centra el shelf-container dentro de .content-shelf */
+
+    /* Estas reglas ya las tenías y son correctas para el scroll horizontal: */
+    flex-wrap: nowrap;
+    gap: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    align-items: flex-start;
+}
+
+/* Optional: Hide scrollbar for aesthetic purposes while keeping functionality */
+/* You can uncomment this if you prefer a 'cleaner' look without a visible scrollbar */
+/*
+.shelf-container::-webkit-scrollbar {
+    display: none; // For Webkit browsers (Chrome, Safari)
+}
+.shelf-container {
+    -ms-overflow-style: none;  // For IE and Edge
+    scrollbar-width: none;  // For Firefox
+}
+*/
+/* Custom Scrollbar Styles for the Modal (Webkit Browsers - Chrome, Safari, Edge) */
+#creator-modal .modal-content::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+#creator-modal .modal-content::-webkit-scrollbar-track {
+    background: #f8f9fa; /* Fondo del "carril" de la barra de desplazamiento (gris muy claro) */
+    border-radius: 5px; /* Bordes redondeados para el track */
+}
+
+#creator-modal .modal-content::-webkit-scrollbar-thumb {
+    background-color: #0d47a1; /* Color del "pulgar" de la barra de desplazamiento (azul) */
+    border-radius: 5px; /* Bordes redondeados para el pulgar */
+    border: 2px solid #f8f9fa; /* Borde del pulgar para que se separe del track */
+}
+
+#creator-modal .modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: #0b3e8c; /* Color más oscuro del azul al pasar el ratón */
+}
+
+/* Custom Scrollbar Styles for Firefox */
+#creator-modal .modal-content {
+    scrollbar-width: thin; /* 'auto' or 'thin' - makes the scrollbar thinner */
+    scrollbar-color: #0d47a1 #f8f9fa; /* thumb color track color */
+}
+/* --- Estilos de Cada Estantería (Shelf) --- */
+.content-shelf {
+    /* Eliminamos el truco 'margin: 0 -100%; padding-left: 100%; padding-right: 100%;' */
+    /* Este truco empujaba el contenido interno fuera del área visible al inicio del scroll. */
+    margin: 0; /* Elimina cualquier margen negativo */
+    padding: 2.5rem 0; /* Mantiene el padding vertical original */
+
+    /* Para que el fondo de la estantería siga siendo de borde a borde,
+       usamos 'width: 100vw' y centramos el elemento.
+       Asegúrate de que no haya otros elementos con 'width: 100vw'
+       que puedan causar problemas de desbordamiento horizontal global. */
+    width: 100vw; /* Hace que el elemento ocupe todo el ancho del viewport */
+    position: relative; /* Necesario para 'left' y 'transform' */
+    left: 50%; /* Mueve el borde izquierdo al centro del viewport */
+    transform: translateX(-50%); /* Mueve el elemento hacia la izquierda el 50% de su propio ancho para centrarlo */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el 'width: 100vw' */
+
+    /* Mantén estas reglas existentes, son para la alineación del contenido interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos internos (título, subtítulo, shelf-container) */
+}
+
+
+/* Título de cada estantería */
+.content-shelf h3 {
+    color: #fff; /* Títulos de estantería en blanco para que resalten */
+    font-size: 2.6rem; /* Ligeramente más grande */
+    text-align: center;
+    margin-bottom: 2.5rem; /* Más espacio */
+    padding-top: 1.5rem; /* Espacio para el título desde arriba */
+    padding-bottom: 0.5rem;
+}
+
+/* Subtítulo específico para la estantería de "Input Comprensible" */
+.content-shelf.special-shelf p {
+    color: #555; /* Texto blanco ligeramente transparente */
+    font-size: 1rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+}
+
+/* --- Ciclo de Colores de Fondo para las Estanterías (RTVE Palette) --- */
+/* (Usamos :nth-child para aplicar los colores de forma cíclica) */
+
+/* Estantería 1, 4, 7, etc. (Rojo) */
+article.content-shelf:nth-of-type(3n + 1) {
+    background-color: #ba1f2f; /* RTVE Red */
+}
+
+/* Estantería 2, 5, 8, etc. (Morado) */
+article.content-shelf:nth-of-type(3n + 2) {
+    background-color: #551857; /* RTVE Purple */
+}
+
+/* Estantería 3, 6, 9, etc. (Naranja) */
+article.content-shelf:nth-of-type(3n + 3) {
+    background-color: #e86230; /* RTVE Orange */
+}
+
+/* shelf description color fff */
+.shelf-description {
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+    text-align: center;
+    
+}
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    .card-hover-details {
+        display: none;
+    }
+
+    #creatorModalTitle .creator-flag img {
+        margin: 0.3rem;
+        transform: scale(0.8);
+        margin-top: 0;
+    }
+    .modal-header {
+       gap: 0.5rem;
+   margin-bottom: 0;
+    }
+   .shelf-description   {
+    max-width: 80%;
+   }
+   .modal-content   {
+    gap: 0;
+   }
+    .card-cta{
+        display: none;
+    }
+    .shelf-container {
+        padding: 3rem 0 3.5rem 0; /* <-- ADJUSTED: Added padding-bottom for scrollbar visibility */
+        scroll-snap-type: x mandatory;  /* Activa el 'scroll-snap' en el eje X, haciendo que las tarjetas se 'enganchen' al scroll */
+        scroll-padding: 0 1rem;        /* Espacio de relleno para el área de desplazamiento, para evitar que el contenido se corte en los bordes */
+   margin-left: 3rem;
+   max-width: 85%;
+    }
+    .creator-card {
+    
+        max-width: 280px; /* Para evitar que crezcan demasiado en pantallas intermedias */
+        margin-left: 1rem;
+        margin-right: 1rem;
+      
+      
+    }
+    .creator-card:hover .card-hover-details {
+      display: none;
+    }
+    .content-shelf.special-shelf p {
+      display: none;
+    }
+    .content-shelf.special-shelf h3 {
+      display: none;
+    }
+    .content-shelf.special-shelf .card-social-icons {
+      display: none;
+    }
+    #creator-modal .modal-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .creator-card:hover {
+        max-height: 380px; /* Ajuste de altura en hover para pantallas más pequeñas */
+    }
+
+    .creator-card .card-image {
+        height: 150px; /* Imágenes ligeramente más pequeñas en móviles */
+
+    }
+
+    .creator-card .card-title {
+        font-size: 1.4rem;
+    }
+
+    .card-hover-details p {
+        font-size: 1rem;
+    }
+
+    .card-social-icons {
+        font-size: 1.6rem;
+        gap: 1rem;
+    }
+
+    .card-cta {
+        font-size: 1.1rem;
+    }
+
+    /* Modal Responsivo */
+    #creator-modal .modal-content {
+        padding: 1.5rem; /* Menos padding en pantallas pequeñas */
+        max-width: 120%; /* Ocupa casi todo el ancho disponible */
+        max-height: 100%;
+    }
+
+    .modal-image {
+        width: 100px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #creatorModalTitle {
+        font-size: 2.2rem;
+    }
+
+    .modal-main-content-area {
+        gap: 0.5rem; /* Reducir el espacio entre secciones del modal */
+        margin-top: 0;
+    }
+
+    .modal-long-description-area h4,
+    .modal-cefr-details-area h4,
+    #modal-aljohns-take-container h4,
+    .modal-external-links-area h4 {
+        font-size: 1.3rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .modal-long-description-area p {
+        font-size: 1rem;
+    }
+
+    .cefr-level-dot {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .modal-aljohns-take {
+        padding: 1.2rem;
+    }
+    .modal-aljohns-take::before {
+        font-size: 2rem;
+        top: 0.8rem;
+        left: 0.8rem;
+    }
+    .modal-aljohns-take p {
+        padding-left: 2rem;
+    }
+    .modal-links {
+        flex-direction: row; /* Apilar los botones de enlace en pantallas pequeñas */
+        align-items: center; /* Centrar los botones apilados */
+    }
+    .btn-outline {
+        width: 100%; /* Botones de enlace ocupan todo el ancho disponible */
+        max-width: 250px; /* Limitar el ancho máximo para que no sean demasiado grandes */
+    }
+    #content-shelves > h2 {
+        font-size: 2.5rem;
+    }
+    .content-shelf h3 {
+        font-size: 2rem;
+    }
+}
+
+/* 3. Refinamientos Específicos para Pantallas Pequeñas (por ejemplo, móviles en horizontal o tablets pequeñas) */
+@media (max-width: 768px) {
+    /* Modal: Asegura un margen adecuado para el contenido del modal */
+    #creator-modal .modal-content {
+        max-width: calc(100% - 2rem); /* El modal ocupará el 100% del ancho menos 1rem de margen a cada lado */
+    }
+
+    /* Modal: Ajuste del botón de cerrar para pantallas más pequeñas */
+    .modal-close-btn {
+        font-size: 1.8rem;
+        top: 0.8rem;
+        right: 0.8rem;
+    }
+
+    /* Sección Principal: Añadir padding horizontal al texto descriptivo */
+    #content-shelves > p {
+        padding: 0 1rem; /* Añade un padding lateral al párrafo principal de la sección */
+    }
+
+    /* Títulos de Estantería: Reducción de tamaño para tabletas */
+    .content-shelf h3 {
+        font-size: 2.2rem;
+    }
+}
+
+/* 4. Refinamientos Específicos para Pantallas Muy Pequeñas (Smartphones) */
+@media (max-width: 480px) {
+    /* Tarjetas del Creador: Ajustes para que ocupen la mayor parte del ancho de la pantalla */
+    .creator-card {
+    
+        max-width: 320px; /* Límite de ancho para que no se hagan excesivamente grandes en algunos dispositivos */
+        max-height: 350px; /* Ajuste de altura inicial para tarjetas en pantallas muy pequeñas */
+        /* Se eliminó 'margin: 0 auto;' ya que 'scroll-snap-align' maneja mejor la alineación para el scroll horizontal */
+    }
+
+    .creator-card:hover {
+        max-height: 380px; /* Ajuste de altura al pasar el ratón */
+    }
+
+    /* Tarjeta: Altura de la imagen */
+    .creator-card .card-image {
+        height: 120px; /* Altura de imagen más pequeña */
+    }
+
+    /* Tarjeta: Título del creador */
+    .creator-card .card-title {
+        font-size: 1.3rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+
+    /* Tarjeta: Badge CEFR */
+    .cefr-badge {
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+        top: -1.2rem;
+    }
+
+    /* Tarjeta: Detalles al hacer hover */
+    .card-hover-details {
+        padding: 0 0.8rem 0.8rem 0.8rem; /* Relleno más ajustado */
+    }
+
+    .card-hover-details p {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Tarjeta: Íconos sociales */
+    .card-social-icons {
+        font-size: 1.4rem;
+        gap: 0.6rem;
+    }
+
+    /* Tarjeta: Botón CTA */
+    .card-cta {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    /* Modal: Compactar aún más el contenido */
+    #creator-modal .modal-content {
+        padding: 0.8rem;
+        border-radius: 6px;
+        transform: translateY(0px);
+    }
+
+    /* Modal: Botón de cerrar */
+    .modal-close-btn {
+        font-size: 1.5rem;
+        top: 0.3rem;
+        right: 0.3rem;
+    }
+
+    /* Modal: Imagen del creador */
+    .modal-image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Modal: Título del creador */
+    #creatorModalTitle {
+        font-size: 1.8rem;
+    }
+
+    /* Modal: Área de contenido principal */
+    .modal-main-content-area {
+        padding: 0.8rem;
+        gap: 1.5rem;
+    }
+
+    /* Modal: Títulos de sección dentro del modal */
+    .modal-long-description-area h4,
+    .modal-cefr-details-area h4,
+    #modal-aljohns-take-container h4,
+    .modal-external-links-area h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.3rem;
+    }
+
+    /* Modal: Párrafos de descripción */
+    .modal-long-description-area p {
+        font-size: 0.9rem;
+    }
+
+    /* Modal: Puntos de nivel CEFR */
+    .cefr-level-dot {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+
+    /* Modal: Sección de "Mi Opinión" */
+    .modal-aljohns-take {
+        padding: 0.8rem;
+    }
+    .modal-aljohns-take::before {
+        font-size: 1.5rem;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+    .modal-aljohns-take p {
+        padding-left: 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Modal: Enlaces externos */
+    .modal-creator-links{
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: row;
+    }
+    .btn-outline {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        max-width: 80px;
+    }
+
+    /* Sección Principal: Título general */
+    #content-shelves > h2 {
+        font-size: 2rem;
+    }
+    /* Sección Principal: Párrafo descriptivo */
+    #content-shelves > p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    /* Estanterías: Títulos individuales */
+    .content-shelf h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    /* Estanterías: Subtítulo de estantería especial */
+    .content-shelf.special-shelf p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+}
+/* ======================================================= */
+/* ==       NUEVOS ESTILOS (BANDERAS EN TARJETA Y MODAL)    == */
+/* ======================================================= */
+
+/* --- Bandera en la Tarjeta Principal --- */
+.card-flag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px; /* Ancho fijo */
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    z-index: 5; /* Asegura que esté por encima de la imagen principal */
+}
+
+/* --- Bandera en el Header del Modal --- */
+.modal-header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-flag {
+    width: 32px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* --- Estantería compacta de podcasts --- */
+.content-shelf.podcast-shelf {
+    background: #16434c;
+    color: #fff8ef;
+}
+.podcast-shelf h2 {
+    margin: 0 0 1.25rem;
+    color: #f5d9a6;
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+}
+.podcast-card-trigger:focus-visible, .podcast-modal-close:focus-visible, .podcast-modal-links a:focus-visible { outline: 3px solid #b8863b; outline-offset: 3px; }
+.podcast-shelf-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 260px);
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding: .25rem .2rem .8rem;
+}
+.podcast-card { scroll-snap-align: start; min-width: 0; }
+.podcast-card-trigger {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    border: 1px solid rgba(245,217,166,.55);
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: left;
+    background: #fff8ef;
+    color: #2d1d24;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(51, 18, 32, .12);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.podcast-card-trigger:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(51, 18, 32, .18); }
+.podcast-card-trigger img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #eadfd1; }
+.podcast-card-body { display: grid; gap: .45rem; padding: .9rem 1rem 1rem; }
+.podcast-card-title { font-family: "Bodoni Moda", Georgia, serif; font-size: 1.25rem; line-height: 1.1; color: #16434c; }
+.podcast-card-meta, .podcast-card-format { font-size: .86rem; line-height: 1.35; color: #5b4650; }
+.podcast-card-action { color: #16434c; font-weight: 700; margin-top: .2rem; }
+
+/* --- Modal de detalles de podcast --- */
+.podcast-modal-overlay { position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center; padding: clamp(.75rem, 3vw, 2rem); }
+.podcast-modal-overlay.hidden { display: none; }
+.podcast-modal-backdrop { position: absolute; inset: 0; background: rgba(31, 12, 22, .72); }
+.podcast-modal-dialog { position: relative; width: min(980px, 100%); max-height: min(760px, calc(100vh - 2rem)); overflow: auto; overscroll-behavior: contain; border: 1px solid rgba(109,24,51,.22); border-radius: 18px; background: #fff8ef; color: #2d1d24; box-shadow: 0 24px 70px rgba(20, 6, 13, .36); padding: clamp(1.1rem, 3vw, 2rem); }
+.podcast-modal-close { position: absolute; top: .8rem; right: .9rem; z-index: 2; display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid rgba(109,24,51,.25); border-radius: 50%; background: #6d1833; color: #fff8ef; font-size: 1.5rem; line-height: 1; cursor: pointer; box-shadow: 0 6px 14px rgba(51,18,32,.2); }
+.podcast-modal-close:hover { background: #4f1025; }
+.podcast-modal-layout { display: grid; grid-template-columns: minmax(170px, 230px) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.25rem); align-items: center; }
+.podcast-modal-layout > img { width: 100%; height: auto; max-height: min(28rem, 62vh); object-fit: contain; align-self: center; border-radius: 12px; background: #eadfd1; box-shadow: 0 12px 28px rgba(51, 18, 32, .14); }
+.podcast-modal-details h2 { margin: 0 2.5rem .35rem 0; color: #6d1833; font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.05; }
+.podcast-modal-meta { color: #6d1833; font-weight: 700; margin: 0 0 1rem; }
+.podcast-modal-details p { line-height: 1.6; max-width: 65ch; margin-top: .65rem; }
+.podcast-modal-details h3 { margin: 1.2rem 0 .25rem; color: #6d1833; font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; }
+.podcast-modal-note { border-left: 3px solid #b8863b; padding-left: .9rem; font-style: italic; }
+.podcast-modal-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.podcast-modal-links a { display: inline-flex; padding: .55rem .8rem; border: 1px solid #6d1833; border-radius: 999px; color: #6d1833; font-weight: 700; text-decoration: none; }
+.podcast-modal-links a:hover { background: #6d1833; color: #fff8ef; }
+.podcast-modal-media { grid-column: 2; width: 100%; max-height: 300px; aspect-ratio: 16 / 9; margin-top: .25rem; background: #2d1d24; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 28px rgba(51, 18, 32, .16); }
+.podcast-modal-media iframe { width: 100%; height: 100%; border: 0; }
+.podcast-modal-media p { color: #fff8ef; padding: 1rem; }
+@media (max-width: 680px) {
+    .podcast-shelf-rail { grid-auto-columns: minmax(74vw, 280px); }
+    .podcast-modal-layout { grid-template-columns: 1fr; }
+    .podcast-modal-layout > img { width: min(230px, 70vw); }
+    .podcast-modal-media { grid-column: auto; max-height: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .podcast-card-trigger { transition: none; }
+    .podcast-shelf-rail { scroll-behavior: auto; }
+}

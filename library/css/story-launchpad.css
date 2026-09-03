@@ -1,0 +1,246 @@
+/* ======================================================== */
+/* === Captain Aljohn's Treasure Isles - Revised Layout === */
+/* ======================================================== */
+
+#treasure-isles-stories-section {
+    background-image: url('../images/assets/your_sunrise_beach_background.jpg'); 
+    background-size: cover;
+    background-position: center bottom; 
+    padding: clamp(30px, 5vh, 40px) var(--page-padding, 20px);
+    margin-top: 35px;
+    border-top: 3px solid var(--sunrise-orange-glow, #FFCC5C);
+    border-bottom: 3px solid var(--sunrise-orange-glow, #FFCC5C);
+    position: relative;
+    overflow-x: hidden; 
+}
+
+/* Optional overlay for text readability */
+#treasure-isles-stories-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.1) 100%); /* Darker at bottom if sand is very light */
+    z-index: 0; 
+    pointer-events: none;
+}
+
+#treasure-isles-stories-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Main Two-Column Layout Wrapper --- */
+.treasure-isles-layout-wrapper {
+    display: flex;
+    align-items: center; 
+    gap: clamp(20px, 3vw, 40px);
+    max-width: 1100px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Left Column: Title, Subtitle, and Carousel */
+.treasure-isles-content-column {
+    flex: 1 1 60%; 
+    min-width: 0; 
+    display: flex; 
+    flex-direction: column; /* Stack title block and carousel wrapper */
+    align-items: center; /* Center title block and carousel wrapper */
+    text-align: center; /* Default text align for this column */
+}
+
+/* Title and Subtitle Area (Now INSIDE the left column) */
+#treasure-isles-stories-section .treasure-isles-title-container {
+    width: 100%; /* Take full width of content column */
+    max-width: 600px; /* Max width for readability of title/subtitle */
+    margin-bottom: clamp(20px, 3vh, 30px); /* Space before carousel */
+    /* padding: 0; /* Removed side padding, column handles it */
+}
+
+#treasure-isles-stories-section .section-title { /* "Captain Aljohn's Treasure Isles" */
+    font-family: var(--font-pirate-display, 'Pirata One', cursive);
+    color: var(--ink-black, #3a2d22); 
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem); /* Adjusted size */
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+    line-height: 1.2;
+}
+
+#treasure-isles-stories-section .treasure-isles-subtitle {
+    font-family: var(--font-pirate-serif, 'IM Fell English SC', serif); 
+    color: var(--ink-on-parchment, #5f4c3b);
+    font-size: clamp(0.9rem, 2vw, 1.05rem); /* Slightly smaller for balance */
+    line-height: 1.5;
+    /* max-width: 100%; /* Takes width of its title-container */
+    margin: 0 auto; /* Already centered by title-container */
+    padding: 8px; 
+    background-color: rgba(255,253,247,0.5); /* Slightly less opaque backing */
+    border: 1px dotted var(--pirate-wood-medium, #8d6e63);
+    border-radius: var(--border-radius-small); /* Slightly smaller radius */
+}
+
+/* Story Carousel Wrapper (within the left column) */
+.story-carousel-wrapper { 
+    position: relative;
+    width: 90%; 
+    max-width: 90%; /* Allow it to use full width of content column */
+    margin: 0; /* No auto margin needed if content-column centers it */
+}
+
+/* ... ( .story-carousel-container, .story-book-item, .story-cover-img, 
+         .story-language-info, .carousel-arrow styles remain THE SAME as previous correct version) ... */
+/* I will paste them again for completeness of this section's CSS */
+
+.story-carousel-container { /* #olly-stories-carousel */
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: clamp(12px, 1.5vw, 18px); 
+    padding: 15px 5px; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+}
+.story-carousel-container::-webkit-scrollbar { display: none; }
+
+.story-book-item { 
+    flex: 0 0 auto; 
+    width: 100px; 
+    text-align: center;
+    text-decoration: none; 
+    transition: transform 0.2s ease-out;
+    scroll-snap-align: center; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+.story-book-item:hover {
+    transform: scale(1.05);
+}
+
+.story-book-item .story-cover-img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: var(--border-radius-main);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1); 
+    margin-bottom: 0; 
+}
+
+.story-book-item .story-language-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.7rem; 
+    font-weight: 600;
+    color: var(--ink-on-parchment, #4a3f33); 
+    font-family: var(--font-pirate-sans);
+    padding: 4px 8px; 
+    background-color: rgba(var(--pirate-gold-accent-rgb, 241, 196, 15), 0.2); 
+    border-radius: 0 0 var(--border-radius-main) var(--border-radius-main); 
+    width: 100%; 
+    box-sizing: border-box;
+    margin-top: -1px; 
+    border-top: 1px solid rgba(var(--pirate-gold-accent-rgb, 241, 196, 15), 0.4);
+}
+.story-book-item .story-language-info .flag-icon { 
+    width: 14px; 
+    height: auto;
+    border-radius: 1px;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    background-color: rgba(var(--pirate-wood-medium-rgb, 109, 76, 65), 0.8); 
+    color: var(--pirate-gold-accent, #f1c40f);
+    border: 1px solid var(--pirate-gold-darker, #c07900);
+    font-size: 1.3rem; 
+    width: 36px; 
+    height: 36px; 
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.carousel-arrow:hover {
+    background-color: var(--pirate-wood-dark, #4e342e);
+}
+.carousel-arrow.prev { left: -15px; }
+.carousel-arrow.next { right: -15px; }
+.carousel-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+
+
+/* Right Column: Treasure Chest Visual (styles remain largely the same) */
+.treasure-isles-visual-column {
+    flex: 1 1 35%; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-left: 10px; /* Reduced padding from carousel if needed */
+    align-self: center; /* Try to vertically align chest with content column */
+}
+
+#main-treasure-chest-image {
+    max-width: 100%;
+    width: clamp(220px, 100%, 380px); /* Can be a bit larger now */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3));
+}
+
+
+/* --- Responsive for Treasure Isles Two-Column Layout --- */
+@media (max-width: 900px) { /* Adjusted breakpoint for stacking */
+    .treasure-isles-layout-wrapper {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    /* Order: Title, Subtitle, Treasure Chest, Carousel */
+    #treasure-isles-stories-section .treasure-isles-title-container {
+        order: 1;
+        width: 100%; /* Title container takes full width */
+        max-width: 90%; /* Max width of title/subtitle block */
+    }
+    .treasure-isles-visual-column {
+        order: 2; 
+        width: 60%; 
+        max-width: 280px; /* Adjusted max size */
+        padding-left: 0; 
+        margin-top: 15px; /* Space after subtitle */
+        margin-bottom: 20px; 
+    }
+    .treasure-isles-content-column { /* This only wraps the carousel now on mobile */
+        order: 3; 
+        width: 100%; 
+        margin-top: 0; /* No extra margin if visual column already provided it */
+    }
+    .story-carousel-wrapper {
+        max-width: 100%; 
+        padding: 0 25px; /* Give space for arrows inside wrapper */
+        box-sizing: border-box;
+    }
+    .carousel-arrow.prev { left: 0px; } 
+    .carousel-arrow.next { right: 0px; }
+}
+
+@media (max-width: 480px) {
+    #treasure-isles-stories-section .section-title { font-size: 1.5rem; }
+    #treasure-isles-stories-section .treasure-isles-subtitle { font-size: 0.8rem; padding: 6px; }
+    
+    .story-carousel-container { gap: 8px; padding: 10px 25px; }
+    .story-book-item { width: 80px; }
+    .story-book-item .story-cover-img { height: 120px; }
+
+    .treasure-isles-visual-column { width: 60%; max-width: 200px; }
+    .carousel-arrow { width: 28px; height: 28px; font-size: 1rem; }
+}

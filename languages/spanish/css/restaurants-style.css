@@ -1,0 +1,323 @@
+#lugares-para-hablar-espanol {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(6rem, 9vw, 10rem) 0;
+    overflow: clip;
+    color: #fff4df;
+    background:
+        radial-gradient(circle at 84% 24%, rgba(214, 43, 35, 0.26), transparent 29%),
+        linear-gradient(116deg, #160b0d 0%, #341017 58%, #190a0d 100%);
+    border-top: 1px solid rgba(242, 189, 88, 0.48);
+    border-bottom: 1px solid rgba(242, 189, 88, 0.48);
+}
+
+#lugares-para-hablar-espanol::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -18rem;
+    bottom: -28rem;
+    width: 70rem;
+    height: 70rem;
+    border: 1px solid rgba(242, 189, 88, 0.18);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 4rem rgba(242, 189, 88, 0.025);
+}
+
+.restaurant-places-inner.container {
+    padding-block: 0;
+}
+
+.restaurant-places-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(26rem, 1.1fr);
+    gap: clamp(3rem, 7vw, 9rem);
+    align-items: end;
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(242, 189, 88, 0.55);
+}
+
+.restaurant-places-heading h2 {
+    max-width: 13ch;
+    margin: 0;
+    padding: 0;
+    color: #fff4df;
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-size: clamp(4.2rem, 6vw, 7.2rem);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    text-transform: none;
+    border: 0;
+}
+
+.restaurant-places-heading p {
+    max-width: 65ch;
+    margin: 0;
+    color: #f0dbcb;
+    font-size: 1.8rem;
+    line-height: 1.65;
+}
+
+.restaurant-places-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(28rem, 34rem);
+    gap: 2rem;
+    min-width: 0;
+    padding: 0.4rem 0 2rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-color: #d62b23 #fff4df;
+    scrollbar-width: thin;
+}
+
+.restaurant-place-card {
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.restaurant-place-card__trigger {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    color: #160b0d;
+    text-align: left;
+    background: #fff4df;
+    border: 1px solid #f2bd58;
+    border-radius: 14px;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
+    cursor: pointer;
+    transition: transform 220ms ease-out, box-shadow 220ms ease-out;
+}
+
+.restaurant-place-card__trigger:hover {
+    box-shadow: 0 28px 58px rgba(0, 0, 0, 0.44);
+    transform: translateY(-5px);
+}
+
+.restaurant-place-card__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #fff4df;
+}
+
+.restaurant-place-card__media::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 5px;
+    background: linear-gradient(90deg, #d62b23 0 62%, #f2bd58 62% 74%, #4a0d16 74%);
+}
+
+.restaurant-place-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.restaurant-place-card__copy {
+    display: grid;
+    align-content: start;
+    min-height: 22rem;
+    padding: 2rem 2.1rem 2.2rem;
+}
+
+.restaurant-place-card__city,
+.restaurant-place-card__action {
+    color: #9f171f;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.restaurant-place-card__name {
+    margin: 0.55rem 0 0.9rem;
+    color: #341017;
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+.restaurant-place-card__summary {
+    color: #624951;
+    font-size: 1.55rem;
+    line-height: 1.5;
+}
+
+.restaurant-place-card__action {
+    align-self: end;
+    margin-top: 1.7rem;
+    color: #4a0d16;
+    text-decoration: underline;
+    text-decoration-color: #d62b23;
+    text-underline-offset: 0.35em;
+}
+
+.restaurant-place-overlay {
+    position: fixed;
+    z-index: 20000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 4vw, 4rem);
+    overflow-y: auto;
+    background: rgba(15, 5, 8, 0.9);
+}
+
+.restaurant-place-dialog {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(30rem, 0.9fr) minmax(0, 1.1fr);
+    width: min(104rem, 100%);
+    max-height: calc(100svh - 2rem);
+    overflow-y: auto;
+    color: #160b0d;
+    background: #fff4df;
+    border: 1px solid #f2bd58;
+    border-radius: 14px;
+    box-shadow: 0 34px 86px rgba(0, 0, 0, 0.52);
+}
+
+.restaurant-place-dialog__close {
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    right: 1rem;
+    display: grid;
+    width: 4.6rem;
+    height: 4.6rem;
+    place-items: center;
+    padding: 0;
+    color: #fff4df;
+    font-size: 3rem;
+    line-height: 1;
+    background: #9f171f;
+    border: 1px solid #f2bd58;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.restaurant-place-dialog__media {
+    min-height: 100%;
+    background: #4a0d16;
+}
+
+.restaurant-place-dialog__media img {
+    width: 100%;
+    height: 100%;
+    min-height: 40rem;
+    object-fit: cover;
+}
+
+.restaurant-place-dialog__body {
+    min-width: 0;
+    padding: clamp(3rem, 6vw, 6rem);
+}
+
+.restaurant-place-dialog__title {
+    margin: 0 5rem 0.6rem 0;
+    color: #341017;
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-size: clamp(4rem, 5vw, 6rem);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+}
+
+.restaurant-place-dialog__city {
+    margin: 0 0 2rem;
+    color: #9f171f;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.restaurant-place-dialog__description {
+    max-width: 65ch;
+    margin: 0 0 2.4rem;
+    color: #624951;
+    font-size: 1.7rem;
+    line-height: 1.65;
+}
+
+.restaurant-place-dialog__address,
+.restaurant-place-dialog__contact {
+    padding: 1.4rem 0;
+    border-top: 1px solid rgba(74, 13, 22, 0.22);
+}
+
+.restaurant-place-dialog__label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #9f171f;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.restaurant-place-dialog__address p,
+.restaurant-place-dialog__contact p {
+    margin: 0;
+    font-size: 1.65rem;
+    overflow-wrap: anywhere;
+}
+
+.restaurant-place-dialog__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2rem;
+}
+
+.restaurant-place-dialog__link {
+    min-height: 4.6rem;
+    padding: 1rem 1.35rem;
+    color: #fff4df;
+    font-size: 1.5rem;
+    background: #4a0d16;
+    border: 1px solid #4a0d16;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.restaurant-place-dialog__link:hover {
+    color: #4a0d16;
+    background: transparent;
+}
+
+@media (max-width: 760px) {
+    .restaurant-places-heading {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .restaurant-places-rail {
+        grid-auto-columns: min(84vw, 32rem);
+    }
+
+    .restaurant-place-dialog {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-place-dialog__media img {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .restaurant-place-card__trigger {
+        transition: none;
+    }
+}

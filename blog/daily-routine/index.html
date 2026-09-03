@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljohn's Daily Immersion System | Polyglot Papers</title>
+    <link rel="canonical" href="/blog/daily-routine/index.html">
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Main site styles -->
+    <link rel="icon" href="/images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* --- Global Variables (from your styles.css, ensure they are loaded or defined here) --- */
+        :root {
+            --primary-red: #C8102E;
+            --primary-blue: #003087;
+            --accent-yellow: #FFD700;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --light-text: #ffffff;
+            --border-color: #e0e0e0; /* Default border */
+            --timeline-border-color: #444; /* Darker border for timeline elements */
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+
+        /* Reset some global styles if they conflict with page structure */
+        body { margin: 0; font-family: var(--font-secondary); line-height: 1.7; color: var(--dark-text); background-color: #fff; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        main { padding-top: 70px; /* Account for fixed header */ }
+
+        /* --- Header (Copied from your styles.css for standalone demo) --- */
+        header { background-color: var(--light-text); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: background-color 0.3s ease; }
+        header.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        header nav { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; height: 70px; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; border: 2px solid var(--primary-blue); }
+        .logo-text { font-family: var(--font-primary); font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active-link { color: var(--primary-red); }
+        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+        .nav-cta { background-color: var(--primary-red); color: var(--light-text) !important; padding: 8px 18px !important; border-radius: 25px; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .nav-cta:hover { background-color: #A8001D; transform: translateY(-2px); color: var(--light-text) !important; }
+        .nav-cta::after { display: none; }
+        .menu-toggle { display: none; padding: 12px; border: 0; background: transparent; cursor: pointer; } .hamburger { width: 25px; height: 3px; background-color: var(--dark-text); position: relative; transition: all 0.3s linear; } .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 25px; height: 3px; background-color: var(--dark-text); transition: all 0.3s linear; } .hamburger::before { top: -8px; } .hamburger::after { top: 8px; }
+        .nav-links li.dropdown { position: relative; } .nav-links .dropbtn { cursor: pointer; background: none; border: none; font-family: inherit; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 1001; border-radius: 0 0 4px 4px; top: 100%; left: 0; padding: 5px 0; }
+        .dropdown-content a { color: var(--dark-text); padding: 10px 16px; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 600; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dropdown-content a:hover { background-color: var(--light-bg); color: var(--primary-red); }
+        .nav-links li.dropdown:hover .dropdown-content { display: block; }
+
+
+        /* --- Routine Page Specific Styles --- */
+        .routine-hero { position: relative; min-height: calc(100svh - 70px); padding: clamp(4rem, 9vw, 8rem) 0 4rem; background: #071321; color: var(--light-text); overflow: hidden; }
+        .routine-hero::before { content: '12'; position: absolute; right: -2vw; bottom: -12vw; color: transparent; font: 700 clamp(20rem, 48vw, 46rem)/.72 var(--font-primary); letter-spacing: -.12em; -webkit-text-stroke: 1px rgba(255,255,255,.08); pointer-events: none; }
+        .routine-hero::after { content: ''; position: absolute; width: min(58vw, 820px); aspect-ratio: 1; right: -14%; top: -42%; border: 1px solid rgba(255,215,0,.25); border-radius: 50%; box-shadow: 0 0 0 80px rgba(255,215,0,.025), 0 0 0 160px rgba(255,215,0,.018); pointer-events: none; }
+        .routine-hero .container { position: relative; z-index: 1; max-width: 1240px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); }
+        .hero-text-content { min-width: 0; text-align: left; }
+        .hero-video-content { min-width: 0; max-width: none; }
+        .paper-label { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem 1rem; margin: 0 0 1.5rem; color: #9db1c2; font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+        .paper-label span { color: var(--accent-yellow); }
+        .routine-hero h1 { max-width: 10ch; margin: 0 0 1.5rem; font-family: var(--font-primary); font-size: clamp(3.3rem, 7.8vw, 7.4rem); line-height: .88; letter-spacing: -.07em; text-transform: uppercase; }
+        .routine-hero .highlight-text { display: block; color: var(--accent-yellow); }
+        .routine-hero p.hero-subtitle { max-width: 58ch; margin: 0 0 2rem; color: #bdcbd7; font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.75; }
+        .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+        .routine-hero .btn { margin: 0; border-radius: 0; }
+        .routine-hero .btn-primary { background: var(--accent-yellow); border-color: var(--accent-yellow); color: #071321; }
+        .routine-hero .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; border-radius: 0; }
+        .routine-hero .btn-outline:hover { background-color: #fff; border-color: #fff; color: #071321; }
+        .hero-schedule { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid rgba(255,255,255,.18); border-left: 1px solid rgba(255,255,255,.18); }
+        .hero-schedule div { padding: 1rem; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); }
+        .hero-schedule strong { display: block; color: #fff; font: 700 clamp(1.1rem, 2vw, 1.5rem)/1 var(--font-primary); }
+        .hero-schedule span { display: block; margin-top: .45rem; color: #8fa4b4; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+        .video-field-label { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-top: 3px solid var(--primary-red); color: #b8c8d4; font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+        .video-field-label span:first-child { color: var(--accent-yellow); }
+        .hero-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.25); box-shadow: 18px 18px 0 rgba(0,48,135,.42); }
+        .hero-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .hero-video-caption { margin: 1.5rem 0 0; padding-left: 1rem; border-left: 2px solid var(--accent-yellow); color: #9db1c2; font-size: .82rem; line-height: 1.6; }
+
+        .interactive-breakdown { padding: 60px 0; background: linear-gradient(to bottom, #0a0f1a 0%, #182848 20%, #33658A 40%, #F6AE2D 60%, #F26419 75%, #2F4858 90%, #0a0f1a 100%); color: #e0e0e0; }
+        /* General Section Styling adapted for dark/light sections */
+        .section-title { font-family: var(--font-primary); font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; margin-bottom: 1rem; position: relative; padding-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; margin-right: 1rem; margin-top: 0.5rem; font-size: 0.95rem; border: 2px solid transparent; cursor: pointer; }
+        .btn-primary { background-color: var(--accent-yellow); color: var(--dark-text); border-color: var(--accent-yellow); }
+        .btn-primary:hover { background-color: #e6c300; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-outline { background-color: transparent; color: var(--dark-text); border: 2px solid var(--dark-text); } /* Default for light sections */
+        .routine-hero .btn-outline, .interactive-breakdown .btn-outline {color: var(--accent-yellow); border-color: var(--accent-yellow); } /* For dark sections */
+        .routine-hero .btn-outline:hover, .interactive-breakdown .btn-outline:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
+        .cta-center { text-align: center; margin-top: 2.5rem; }
+
+        .interactive-breakdown .section-title { color: var(--accent-yellow); }
+        .interactive-breakdown .section-title::after { background-color: var(--primary-red); }
+        .interactive-breakdown .section-subtitle { color: #c0c0d0; }
+
+        .timeline { position: relative; max-width: 800px; margin: 3rem auto 0; padding: 0; list-style: none; }
+        .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 30px; width: 4px; background: var(--primary-blue); border-radius: 2px; }
+        .timeline-item { margin-bottom: 30px; position: relative; padding-left: 70px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-marker { position: absolute; left: 10px; top: 5px; width: 40px; height: 40px; border-radius: 50%; background: var(--primary-red); border: 3px solid #0a0f1a; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--light-text); font-size: 1.2rem; }
+        .timeline-item[data-color="dark-blue"] .timeline-marker { background-color: #0d1b2a; border: 3px solid var(--accent-yellow);}
+        .timeline-item[data-color="yellow"] .timeline-marker { background-color: var(--accent-yellow); color: var(--dark-text); border: 3px solid #0a0f1a; }
+        .timeline-item[data-color="red"] .timeline-marker { background-color: var(--primary-red); border: 3px solid #0a0f1a;}
+        .timeline-item[data-color="blue"] .timeline-marker { background-color: var(--primary-blue); border: 3px solid #0a0f1a;}
+        .timeline-item[data-color="brown"] .timeline-marker { background-color: #774936; border: 3px solid #0a0f1a;}
+
+        .timeline-card { background: rgba(20, 30, 50, 0.7); backdrop-filter: blur(8px); border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+        .timeline-header { padding: 1.2rem 1.5rem; display: flex; flex-direction: column; }
+        .timeline-header h3 { font-family: var(--font-primary); font-size: 1.4rem; margin: 0 0 0.3rem 0; color: var(--light-text); display: flex; align-items: center; }
+        .timeline-header h3 i { margin-right: 10px; font-size: 1.3rem; width: 25px; text-align: center; color: var(--accent-yellow); }
+        .timeline-item[data-color="yellow"] .timeline-header h3 i { color: var(--primary-blue); }
+        .timeline-item[data-color="red"] .timeline-header h3 i { color: var(--accent-yellow); }
+        .timeline-header .time-display { font-size: 0.9rem; font-weight: 600; color: var(--accent-yellow); margin-bottom: 0.5rem; display: block; }
+        .timeline-header .summary-text { font-size: 1rem; color: #c0c0d0; line-height: 1.5; margin-bottom: 0.8rem; }
+        .details-toggle { background: none; border: 1px solid var(--accent-yellow); color: var(--accent-yellow); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease; align-self: flex-start; }
+        .details-toggle:hover { background-color: var(--accent-yellow); color: var(--dark-text); }
+        .details-toggle .fas { margin-left: 5px; transition: transform 0.3s ease-out; }
+
+        .timeline-details { /* Main content area that animates */
+            max-height: 0;
+            overflow: hidden;
+            background-color: rgba(15, 25, 45, 0.7);
+            transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
+            padding: 0 1.5rem; /* Horizontal padding is static, vertical animates with padding-top/bottom */
+        }
+        .timeline-item.active .timeline-details {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-top: 1px solid rgba(30, 40, 60, 0.8);
+        }
+
+        /* STYLES FOR STATIC SUB-SECTIONS (NO LONGER NESTED ACCORDIONS) */
+        .sub-section-block {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.15);
+        }
+        .sub-section-block:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .sub-section-header h4 { /* Styling for the static sub-section titles */
+            font-family: var(--font-primary);
+            font-size: 1.15rem;
+            color: var(--accent-yellow);
+            margin: 0 0 0.75rem 0;
+        }
+        .sub-section-content .detail-block {} /* No specific styles needed, inherits */
+
+        .detail-block p, .detail-block ul { font-size: 0.95rem; line-height: 1.7; color: #d0d0e0; margin-bottom: 0.5rem; }
+        .detail-block ul { list-style: disc; padding-left: 20px; }
+        .detail-block strong { color: var(--light-text); font-weight: 600; }
+        .tool-highlight, a.tool-highlight { background-color: #3a3a6a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: var(--accent-yellow); font-size: 0.9em; text-decoration: none; border-bottom: 1px dashed var(--accent-yellow); }
+        a.tool-highlight:hover { background-color: var(--accent-yellow); color: #3a3a6a; border-bottom-color: #3a3a6a; }
+        .detail-block .beginner-tip { background-color: rgba(255, 215, 0, 0.1); border-left: 3px solid var(--accent-yellow); padding: 0.8rem 1rem; margin-top: 0.8rem; border-radius: 4px; font-size: 0.9rem; }
+        .detail-block .beginner-tip strong { color: var(--accent-yellow); }
+
+        /* Responsive Styles (Mobile nav included here for completeness) */
+        @media (max-width: 992px) {
+            .routine-hero { min-height: auto; }
+            .routine-hero .container { grid-template-columns: 1fr; }
+            .hero-text-content { order: 1; }
+            .hero-video-content { order: 2; width: 100%; max-width: 720px; margin-top: 1rem; }
+        }
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; } .timeline-item { padding-left: 50px; } .timeline-marker { left: 0; width: 40px; height: 40px; }
+            .timeline-header h3 { font-size: 1.2rem; } .timeline-header .summary-text { font-size: 0.9rem; }
+            .routine-hero { padding-top: 4rem; } .routine-hero h1 { font-size: clamp(3rem, 15vw, 5.2rem); }
+            .hero-schedule { grid-template-columns: 1fr; }
+            .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 70px; left: 0; background-color: var(--light-text); box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding-bottom: 1rem; }
+            .nav-links.active { display: flex; } .nav-links li { margin: 0; width: 100%; text-align: center; } .nav-links a { display: block; padding: 1rem; border-bottom: 1px solid var(--border-color); } .nav-links li:last-child a { border-bottom: none; } .menu-toggle { display: block; }
+            .menu-toggle.active .hamburger { background-color: transparent; } .menu-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); } .menu-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+            .dropdown-content { position: static; box-shadow: none; border-radius: 0; background-color: transparent; padding:0; min-width: 100%; } .dropdown-content a { padding: 1rem; text-align: center; border-bottom: 1px solid var(--border-color); } .dropdown-content a:last-child { border-bottom: 1px solid var(--border-color); }
+        }
+
+        /* Polyglot Papers field manual: principles, tools, and cost */
+        .philosophy-section, .toolkit-section, .sacrifice-section { padding: clamp(4.5rem, 8vw, 7.5rem) 0; }
+        .philosophy-section .container, .toolkit-section .container, .sacrifice-section .container { max-width: 1180px; }
+        .philosophy-section .section-title, .toolkit-section .section-title, .sacrifice-section .section-title { margin-inline: 0; max-width: 900px; text-align: left; }
+        .philosophy-section .section-title::after, .toolkit-section .section-title::after, .sacrifice-section .section-title::after { margin-left: 0; }
+        .philosophy-section .section-subtitle, .toolkit-section .section-subtitle, .sacrifice-section .section-subtitle { margin-inline: 0; max-width: 760px; text-align: left; }
+
+        .philosophy-section { position: relative; overflow: hidden; color: #edf5fb; background: #071321; border-top: 1px solid rgba(255,255,255,.08); }
+        .philosophy-section::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 0 64%, rgba(255,195,0,.07) 64% 64.2%, transparent 64.2%), radial-gradient(circle at 85% 12%, rgba(52,152,219,.18), transparent 28%); }
+        .philosophy-section .container { position: relative; }
+        .philosophy-section .section-title { color: #fff; }
+        .philosophy-section .section-title::after { background: var(--accent-yellow); }
+        .philosophy-section .section-subtitle { color: #b9c9d7; }
+        .core-formula { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; margin: clamp(2rem, 5vw, 3.5rem) 0; border-block: 1px solid rgba(255,255,255,.22); }
+        .formula-term { display: grid; place-items: center; min-height: 112px; padding: 1.25rem; color: #fff; font-family: var(--font-primary); font-size: clamp(1.05rem, 2vw, 1.5rem); font-weight: 700; letter-spacing: .04em; text-align: center; text-transform: uppercase; }
+        .formula-operator { display: grid; place-items: center; color: var(--accent-yellow); font: 700 2rem/1 var(--font-primary); }
+        .formula-term:last-child { color: #071321; background: var(--accent-yellow); }
+        .philosophy-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.18); border-left: 1px solid rgba(255,255,255,.18); }
+        .philosophy-point { min-width: 0; padding: clamp(1.5rem, 4vw, 2.5rem); border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); }
+        .philosophy-point--loop { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.4fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        .philosophy-point h4 { margin: 0 0 .75rem; color: #fff; font-family: var(--font-primary); font-size: clamp(1.35rem, 2.3vw, 2rem); }
+        .philosophy-point p { color: #becbd6; line-height: 1.75; }
+        .principle-metric { display: flex; align-items: baseline; gap: .65rem; margin-bottom: 1.5rem; color: var(--accent-yellow); text-transform: uppercase; }
+        .principle-metric strong { font: 700 clamp(3.6rem, 8vw, 6.8rem)/.8 var(--font-primary); letter-spacing: -.06em; }
+        .principle-metric span { max-width: 8ch; font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
+        .hour-ruler { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-top: 1.75rem; }
+        .hour-ruler span { height: 8px; background: var(--primary-red); }
+        .hour-ruler span:nth-child(n+6) { background: var(--accent-yellow); }
+        .speed-equation { display: flex; align-items: center; gap: clamp(.6rem, 2vw, 1.25rem); margin-bottom: 1.75rem; color: #fff; font-family: var(--font-primary); font-weight: 700; }
+        .speed-equation strong { font-size: clamp(1.8rem, 4vw, 3.2rem); line-height: .9; }
+        .speed-equation span { color: var(--accent-yellow); font-size: 1.5rem; }
+        .speed-equation small { display: block; color: #9eb0bf; font-family: var(--font-secondary); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; }
+        .engagement-loop { display: flex; align-items: center; min-width: 0; overflow-x: auto; padding: 1rem 0; scrollbar-width: thin; }
+        .loop-node { flex: 0 0 auto; padding: .75rem 1rem; border: 1px solid rgba(255,255,255,.25); color: #fff; font-weight: 700; white-space: nowrap; }
+        .loop-node:nth-of-type(3) { color: #071321; background: var(--accent-yellow); border-color: var(--accent-yellow); }
+        .loop-arrow { flex: 0 0 32px; height: 1px; background: rgba(255,255,255,.45); position: relative; }
+        .loop-arrow::after { content: ''; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid rgba(255,255,255,.7); border-right: 1px solid rgba(255,255,255,.7); transform: rotate(45deg); }
+
+        .toolkit-section { color: #17202a; background-color: #f3efe6; background-image: linear-gradient(rgba(8,45,78,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(8,45,78,.055) 1px, transparent 1px); background-size: 28px 28px; }
+        .toolkit-section .section-title { color: var(--primary-blue); }
+        .toolkit-section .section-title::after { background: var(--primary-red); }
+        .toolkit-section .section-subtitle { color: #4a5762; }
+        .toolkit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(2rem, 5vw, 3.5rem); border-top: 2px solid #17202a; border-left: 1px solid rgba(23,32,42,.24); }
+        .tool-item { min-width: 0; min-height: 96px; padding: 1rem 1.15rem; border-right: 1px solid rgba(23,32,42,.24); border-bottom: 1px solid rgba(23,32,42,.24); color: #17202a; background: rgba(255,255,255,.68); display: grid; grid-template-columns: 48px minmax(0,1fr) 18px; align-items: center; gap: 1rem; text-decoration: none; transition: background-color .2s ease, color .2s ease; }
+        .tool-item:hover, .tool-item:focus-visible { color: #fff; background: var(--primary-blue); outline: none; }
+        .tool-icon { width: 48px; height: 48px; display: grid; place-items: center; background: #fff; border: 1px solid rgba(23,32,42,.15); }
+        .tool-item img.app-icon-small { width: 34px; height: 34px; object-fit: contain; }
+        .tool-icon--dual { grid-template-columns: repeat(2, 1fr); padding: 4px; }
+        .tool-icon--dual img.app-icon-small { width: 22px; height: 22px; }
+        .tool-copy { min-width: 0; }
+        .tool-copy strong { display: block; font-family: var(--font-primary); font-size: 1rem; line-height: 1.2; }
+        .tool-copy small { display: block; margin-top: .3rem; color: #66717a; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .tool-item:hover .tool-copy small, .tool-item:focus-visible .tool-copy small { color: #cadbec; }
+        .tool-arrow { position: relative; width: 16px; height: 16px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
+        .tool-arrow::after { content: ''; position: absolute; top: 7px; right: -2px; width: 20px; height: 1px; background: currentColor; transform: rotate(-45deg); transform-origin: right; }
+        .toolkit-section .cta-center { text-align: left; }
+
+        .sacrifice-section { position: relative; color: #f7f0e5; background: linear-gradient(145deg, #641827 0%, #25111a 38%, #071321 100%); overflow: hidden; }
+        .sacrifice-section::after { content: ''; position: absolute; width: min(54vw, 720px); aspect-ratio: 1; right: -18%; bottom: -62%; border: 1px solid rgba(255,195,0,.4); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,195,0,.035), 0 0 0 140px rgba(255,195,0,.025); }
+        .sacrifice-section .container { position: relative; z-index: 1; }
+        .sacrifice-section .section-title { color: #fff; max-width: 720px; font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1; }
+        .sacrifice-section .section-title::after { background: var(--accent-yellow); }
+        .sacrifice-section .section-subtitle { color: #e2cdd0; }
+        .sacrifice-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: clamp(2rem, 6vw, 6rem); align-items: end; margin-top: clamp(2.5rem, 6vw, 5rem); }
+        .sacrifice-section .quote { position: relative; margin: 0; padding: clamp(1.75rem, 4vw, 3rem) 0 clamp(1.75rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3.5rem); border-left: 4px solid var(--accent-yellow); }
+        .sacrifice-section blockquote { margin: 0; color: #fff; font-family: var(--font-primary); font-size: clamp(1.65rem, 3.5vw, 3.2rem); font-weight: 700; line-height: 1.12; letter-spacing: -.02em; }
+        .sacrifice-section figcaption { margin-top: 1.5rem; color: var(--accent-yellow); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .sacrifice-closing { padding-bottom: .5rem; }
+        .sacrifice-closing p { margin: 0 0 1.75rem; color: #e2cdd0; line-height: 1.75; }
+        .sacrifice-section .btn-outline { color: #071321; background: var(--accent-yellow); border-color: var(--accent-yellow); }
+        .sacrifice-section .btn-outline:hover { color: #071321; background: #fff; border-color: #fff; }
+
+        @media (max-width: 900px) {
+            .toolkit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .sacrifice-layout { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .core-formula { grid-template-columns: 1fr; }
+            .formula-term { min-height: 76px; }
+            .formula-operator { min-height: 42px; }
+            .philosophy-points, .toolkit-grid { grid-template-columns: 1fr; }
+            .philosophy-point--loop { grid-column: auto; grid-template-columns: 1fr; }
+            .speed-equation { flex-wrap: wrap; }
+            .engagement-loop { margin-inline: -1rem; padding-inline: 1rem; }
+        }
+        .cta-section { position: relative; color: #071321; padding: clamp(5rem, 11vw, 10rem) 0; text-align: left; background: var(--accent-yellow); overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; width: min(70vw, 920px); aspect-ratio: 1; right: -25%; top: -65%; border: 1px solid rgba(7,19,33,.28); border-radius: 50%; box-shadow: 0 0 0 70px rgba(7,19,33,.035), 0 0 0 140px rgba(7,19,33,.025); }
+        .cta-section .container { position: relative; max-width: 1180px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: clamp(2rem, 7vw, 7rem); align-items: end; }
+        .cta-section h2 { min-width: 0; max-width: 8ch; margin: 0; font-family: var(--font-primary); font-size: clamp(3.5rem, 7vw, 7rem); line-height: .85; letter-spacing: -.075em; text-transform: uppercase; }
+        .cta-section p { max-width: 680px; margin: 0; color: #25303a; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.75; }
+        .cta-support { min-width: 0; }
+        .cta-section .btn { margin: 0; border-radius: 0; white-space: nowrap; }
+        .cta-support .btn { margin-top: 2rem; }
+        .btn-accent { background-color: #071321; color: #fff; border-color: #071321; }
+        .btn-accent:hover { background-color: var(--primary-red); border-color: var(--primary-red); color: #fff; transform: translateY(-3px); box-shadow: 8px 8px 0 rgba(7,19,33,.18); }
+        @media (max-width: 760px) {
+            .cta-section .container { grid-template-columns: 1fr; align-items: start; }
+            .cta-section .btn { white-space: normal; }
+        }
+        footer { background-color: var(--dark-text); color: rgba(255, 255, 255, 0.7); padding: 40px 0 20px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .footer-logo { display: flex; align-items: center; color: var(--light-text); font-weight: 600; text-decoration: none; }
+        .footer-logo .logo-img { border-color: var(--accent-yellow); } .footer-logo span { font-family: var(--font-primary); font-size: 1.2rem; }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s ease; } .footer-links a:hover { color: var(--light-text); }
+        .social-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 1.5rem; margin-left: 15px; transition: color 0.3s ease, transform 0.2s ease; }
+        .social-links a:hover { color: var(--accent-yellow); transform: scale(1.1); }
+        .copyright { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 1.5rem; margin-top: 1.5rem; }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/index.html" class="logo-link">
+                <img src="/images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img">
+                <span class="logo-text">Aljohn Polyglot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html#about">About</a></li>
+                <li class="dropdown">
+                    <a href="/index.html#languages" class="dropbtn">Languages <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/languages/tagalog/index.html">Tagalog</a>
+                        <a href="/languages/cebuano/index.html">Cebuano</a>
+                        <a href="/languages/english/index.html">English</a>
+                        <a href="/languages/spanish/index.html">Spanish</a>
+                        <a href="/languages/french/index.html">French</a>
+                        <a href="/languages/indonesian/index.html">Indonesian</a>
+                        <a href="/languages/italian/index.html">Italian</a>
+                        <a href="/languages/portuguese/index.html">Portuguese</a>
+                        <a href="/languages/russian/index.html">Russian</a>
+                        <a href="/languages/swedish/index.html">Swedish</a>
+                        <a href="/languages/german/index.html">German</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/index.html#playlists" class="dropbtn">Videos <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                     <div class="dropdown-content">
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqI16_hXQTexcWl2Ts2O0I1t" target="_blank" rel="noopener noreferrer">OmeTV</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLrstLe9lQq9XY3qC-WSFld" target="_blank" rel="noopener noreferrer">Collaborations</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqIKE4b2wL1SO6kkCqj74Y1s" target="_blank" rel="noopener noreferrer">Polyglot Talks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqLShytjDmapvUieK3YjDBRE" target="_blank" rel="noopener noreferrer">Learning Methods</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqKUjtmfx_8g-0Bg0Kq5IS2P" target="_blank" rel="noopener noreferrer">Polyglot Shocks</a>
+                        <a href="https://www.youtube.com/playlist?list=PLHC88jnBSUqL2xzWbp8y-Lz-WrxSfErbx" target="_blank" rel="noopener noreferrer">Filipinos Speak...</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/index.html#resources" class="dropbtn active-parent">Resources <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/blog.html">Polyglot Papers Blog</a>
+                        <a href="/blog/roadmap-to-fluency/index.html">Roadmap</a>
+                        <a href="/apps.html">Essential Apps & Tools</a>
+                        <a href="/blog/daily-routine/index.html" class="active-link">Daily Routine</a>
+                        <a href="/index.html#cultural-institutes">Language & Culture Centers</a>
+                        <!-- Add library.html link if it exists at this level or ../library.html if at root -->
+                        <!-- <a href="library.html">My Library</a> -->
+                    </div>
+                </li>
+                 <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services <i class="fas fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/services/coaching/coaching.html">Language Coaching</a>
+                        <a href="/services/translation/translation.html">Translation</a>
+                    </div>
+                </li>
+                <li><a href="/shop/shop.html">Shop</a></li>
+                <li><a href="/FAQ.html">FAQ</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer" class="nav-cta">YouTube Channel</a></li>
+            </ul>
+            <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="routine-hero" class="routine-hero">
+            <div class="container">
+                <div class="hero-text-content">
+                    <p class="paper-label"><span>Polyglot Papers</span> Daily Routine · Study System</p>
+                    <h1>The <span class="highlight-text">12-Hour</span> Immersion Engine</h1>
+                    <p class="hero-subtitle">This is the relentless twelve-hour routine I used while learning 11 languages by 21, built to pursue hyper-fluency in 1–3 months with both speed and profound depth. It moves from recall to reading, listening, speaking, and sleep, with each block preparing me for the next. The system can reshape how you learn, but this all-consuming pace demands everything.</p>
+                    <div class="hero-actions"><a href="#routine-breakdown" class="btn btn-primary">See the hour-by-hour routine</a><a href="/blog.html" class="btn btn-outline">Browse Polyglot Papers</a></div>
+                    <div class="hero-schedule" aria-label="Daily schedule summary"><div><strong>02:00</strong><span>Wake</span></div><div><strong>12 hours</strong><span>Focused immersion</span></div><div><strong>18:00</strong><span>Sleep</span></div></div>
+                </div>
+                <div class="hero-video-content">
+                    <div class="video-field-label"><span>Original routine video</span><span>Watch the system</span></div>
+                    <div class="hero-video-wrapper">
+                         <iframe src="https://www.youtube.com/embed/ht9q5ENjlV4" title="Aljohn Polyglot's Daily Routine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p class="hero-video-caption">The complete system, explained in my own words.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="routine-breakdown" class="interactive-breakdown">
+            <div class="container">
+                <h2 class="section-title">How the day moves, hour by hour</h2>
+                <p class="section-subtitle">The sequence matters as much as the total time. I begin with demanding recall, carry the language into movement and media, switch to output when input fatigue arrives, and finish with quieter reading before eight hours of sleep. Every panel starts collapsed; open any block for the full method and beginner adjustments. If a panel does not open fully, click it again and reopen it.</p>
+
+                <div class="timeline">
+                    <!-- Morning Power Block -->
+                    <div class="timeline-item" data-color="dark-blue">
+                        <div class="timeline-marker"><i class="fas fa-moon"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">2:00 AM - 5:00 AM (3 hours)</span>
+                                <h3><i class="fas fa-brain"></i>Recall, write, then read</h3>
+                                <p class="summary-text">The first three hours form one loop: retrieve yesterday's language, use it in writing, then collect fresh context while reading.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header">
+                                        <h4>2:00 AM: Wake Up & Sleep Tracking ⏰</h4>
+                                    </div>
+                                    <div class="sub-section-content">
+                                        <div class="detail-block"><p><strong>Why:</strong> At 2:00 AM, the house is quiet and my mind is fresh enough for the hardest task of the day: active recall. Starting here also protects the study block from the interruptions that arrive later.</p><p><strong>Tool:</strong> <a href="https://www.sleepcycle.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Sleep Cycle app</a> (or similar). High-quality sleep is non-negotiable because the brain consolidates memories while I rest. A consistent sleep and wake time helps me protect the eight hours behind this early start.</p></div>
+                                    </div>
+                                </div>
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>2:00 AM - ~2:30 AM: Anki Review 📲</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Digital flashcards using a Spaced Repetition System (SRS). I review various card types: basic vocabulary (often with pictures), full sentences I've encountered (for grammar/usage), and cloze deletion cards (fill-in-the-blanks).</p><p><strong>Why:</strong> The brain is sharpest after sleep, ideal for the demanding task of recall. SRS shows cards just before you'd forget them, forcing stronger memory connections. It's incredibly efficient.</p><p><strong>My Method:</strong> Organized decks per language: 'Core' (individual vocab from immersion) and 'Output' (sentences to translate into target language). At my peak, I added <strong>50-100 new cards daily</strong>, plus all reviews.</p><p><strong>Tools:</strong> <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Anki</a> (Desktop), <a href="https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-highlight">AnkiDroid</a> (Mobile).</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Start with 10-20 new Anki cards a day. Consistency is far more important than volume initially. Build the habit.</p></div></div>
+                                </div>
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>~2:30 AM - ~3:00 AM: Diary Writing ✍️</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Writing a daily recap, random thoughts, opinions, or descriptions in my target language. The content doesn't matter as much as the act of production.</p><p><strong>Why:</strong> Immediately solidifies vocabulary and structures from Anki. It's crucial practice for formulating thoughts and bridges the gap between passive knowledge and active use before attempting fluent speech.</p><p><strong>Tools:</strong> Any note-taking app. Use <a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer" class="tool-highlight">DeepL</a> or <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">ChatGPT</a> for quick lookups if stuck, but try to produce first.</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Don't aim for perfection! Just get your thoughts down. Consistency trumps perfect grammar at this stage. This now takes me about 15 mins.</p></div></div>
+                                </div>
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>~3:00 AM - 5:00 AM: First Reading Session & Breakfast 🥣📚</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Immersive reading combined with my first meal to maximize time.</p><p><strong>Why:</strong> Eating doesn't require intense focus, so it's efficiently paired with comprehensible input through reading. Active reading builds vocabulary and internalizes sentence structures naturally.</p><p><strong>My Method:</strong> Read actively. When an unknown word appears, I tap it for a quick translation (in-app feature), then copy the word AND the full sentence it came from into my Anki 'Core' deck. Context is vital.</p><p><strong>Tools:</strong> <a href="https://play.google.com/store/apps/details?id=org.readera&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-highlight">ReadEra app</a> (for EPUB/PDF, has tap-to-translate). E-books.</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Start with books you know well in your native language (e.g., Harry Potter). This way, plot familiarity lets you focus on deciphering the language. Then move to topics that genuinely interest you.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transition / Buffer -->
+                    <div class="timeline-item" data-color="blue">
+                        <div class="timeline-marker"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">5:00 AM - 5:30 AM (30 mins)</span>
+                                <h3><i class="fas fa-coffee"></i>Reset before movement</h3>
+                                <p class="summary-text">A short break separates three hours of desk work from exercise and gives my attention time to reset.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Transition and mental reset ⚙️</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>Why:</strong> I use these thirty minutes to hydrate, prepare my workout gear, and let the first study block end cleanly.</p><p>The mental reset prevents burnout and helps me maintain focus across the long day. I may also use it for a quick chore or to plan the next block.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calisthenics + Podcast Listening -->
+                    <div class="timeline-item" data-color="brown">
+                        <div class="timeline-marker"><i class="fas fa-dumbbell"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">~5:30 AM - 8:00 AM (2.5 hours)</span>
+                                <h3><i class="fas fa-headphones-alt"></i>Exercise with podcasts</h3>
+                                <p class="summary-text">Movement rests my eyes while podcasts keep the target language present through sound, rhythm, and repeated phrases.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Exercise and audio immersion 🎧🏋️‍♂️</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> I treat exercise, commuting, and chores that do not demand full concentration as usable “dead time” for audio immersion.</p><p><strong>Why:</strong> This block trains my ear on the sounds, rhythm, and flow of the language while giving me a break from reading. Repeated words and phrases begin to stand out naturally, turning potentially wasted time into productive exposure.</p><p><strong>My Method:</strong> I choose comprehensible input slightly above my current level, where I can follow the main idea without understanding every detail.</p><p><strong>Tools:</strong> <a href="https://play.google.com/store/apps/details?id=au.com.shiftyjelly.pocketcasts" target="_blank" rel="noopener noreferrer" class="tool-highlight">Pocket Casts app</a> (offline downloads are key). Earbuds.</p><p class="beginner-tip"><strong>Beginner Tip:</strong> Look for a learner podcast such as Duolingo Podcasts. Many include transcripts for reading along or reviewing later. You do not need to understand everything at first.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Immersion: Active Watching -->
+                    <div class="timeline-item" data-color="yellow">
+                        <div class="timeline-marker"><i class="fas fa-tv"></i></div>
+                         <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">8:00 AM - 12:00 PM (4 hours)</span>
+                                <h3><i class="fab fa-youtube"></i>Watch native media actively</h3>
+                                <p class="summary-text">With my ear already warmed up, I move into the day's longest block of native video and focused listening.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                 <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Active video immersion 📺</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> This block is flexible but intense: I choose target-language video that genuinely interests me, then engage actively enough to notice unfamiliar words, sentence patterns, pronunciation, and cultural context.</p><p><strong>Why:</strong> The images help me follow natural speech, intonation, and cultural nuance at native speed. After the podcast block trains my ear without visual support, video lets sound and context reinforce each other.</p><p><strong>My Method:</strong></p><ul><li>Start with <a href="https://www.languagereactor.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Language Reactor</a> for dual subtitles in the target language plus my native language or English, then move toward target-language subtitles only.</li><li>Explore native streaming sites such as rtve.es, france.tv, and Kinostar.me, using a VPN such as <a href="https://www.urban-vpn.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">UrbanVPN</a> or NordVPN when regional access requires one.</li><li>Take notes on useful vocabulary and interesting sentence structures for later review in Anki.</li><li>Create <strong>separate Google or YouTube accounts for each language</strong>. This trains the algorithm to supply relevant native content and keeps the immersion focused.</li></ul><p class="beginner-tip"><strong>Beginner Tip:</strong> Start with learner content or children's shows when native material is too fast, then raise the difficulty as comprehension grows.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flexible Interactions: Speaking Output -->
+                    <div class="timeline-item" data-color="red">
+                        <div class="timeline-marker"><i class="fas fa-comments"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">12:00 PM - 4:00 PM (4 hours, flexible)</span>
+                                <h3><i class="fas fa-users"></i>Turn input into output</h3>
+                                <p class="summary-text">When several hours of watching become tiring, speaking and writing reveal what I can actually produce.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Active Output & Connection 🗣️💬</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> I use the language through live or simulated conversation, writing, and short video journals. The timing stays flexible because I switch into output when my attention for input begins to fade.</p><p><strong>Why:</strong> Speaking and writing force me to retrieve words, build sentences, practice conversational flow, discover hidden gaps, and build confidence. Output solidifies what I learned through input and makes it practical.</p><p><strong>My Methods & Tools:</strong></p><ul><li>Use <a href="https://www.tandem.net/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Tandem</a> or <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Discord</a>, including the Language Sloth server, for casual text and voice exchanges.</li><li>Book structured practice or conversation through <a href="https://www.italki.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">iTalki</a>. My code ALJOHN gives the first 50 users $5 credit on a first $10 purchase.</li><li>Use <a href="https://gliglish.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Gliglish</a> or <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">ChatGPT</a> for low-pressure roleplay and immediate feedback.</li><li>For the “30 Day Record Yourself Challenge,” I record myself speaking, upload each entry to a private Telegram channel, and use it for review and progress tracking. My version takes about fifteen minutes.</li></ul><p class="beginner-tip"><strong>Beginner Tip:</strong> Aim for communication first. Mistakes show you what to study next, and native speakers are usually very encouraging.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Second Reading Session -->
+                    <div class="timeline-item" data-color="blue">
+                        <div class="timeline-marker"><i class="fas fa-book-reader"></i></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">~4:00 PM - 6:00 PM (Flexible up to 2 hours)</span>
+                                <h3><i class="fas fa-book-open"></i>Return to quiet reading</h3>
+                                <p class="summary-text">The final study block lowers the intensity while giving the day's vocabulary one more meaningful context.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Winding Down with Words 📚🌙</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>What:</strong> Another session of focused reading, similar to the morning block but generally with less intensity as the day winds down.</p><p><strong>Why:</strong> Provides a final dose of comprehensible input. Reading is a calmer activity that can naturally lead to sleepiness, aiding the transition to rest. Continues vocabulary exposure and pattern recognition.</p><p><strong>My Method:</strong> Read topics of interest in the target language. The duration is flexible; I read until my body signals it's time to wind down, often falling asleep with my phone/reader. No strict target, just consistent exposure.</p><p><strong>Tools:</strong> <a href="https://play.google.com/store/apps/details?id=org.readera&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="tool-highlight">ReadEra app</a> or physical books.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sleep & Consolidation -->
+                    <div class="timeline-item" data-color="dark-blue">
+                        <div class="timeline-marker"><i class="fas fa-bed"></i></div>
+                         <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="time-display">~6:00 PM - 2:00 AM (8 hours)</span>
+                                <h3><i class="fas fa-power-off"></i>Protect eight hours of sleep</h3>
+                                <p class="summary-text">The 6:00 PM bedtime is what makes the 2:00 AM start possible and closes the daily cycle.</p>
+                                <button class="details-toggle"><i class="fas fa-chevron-down"></i> View Main Details</button>
+                            </div>
+                            <div class="timeline-details">
+                                <div class="sub-section-block">
+                                    <div class="sub-section-header"><h4>Sleep and consolidation 😴🧠</h4></div>
+                                    <div class="sub-section-content"><div class="detail-block"><p><strong>Why:</strong> This early bedtime follows directly from the 2:00 AM wake-up. Sufficient, high-quality sleep is non-negotiable for memory consolidation: during sleep, the brain processes and stores the large amount of information absorbed during the day. Cutting it short sabotages learning, attention, and recall.</p><p><strong>My Method:</strong> I adhere strictly to a 6:00 PM bedtime for a full eight hours of rest, minimizing light and noise pollution so I can wake naturally—or with a gentle alarm—at 2:00 AM feeling refreshed and ready for another cycle.</p><p><strong>Tool:</strong> A consistent schedule, a dark room, and the <a href="https://www.sleepcycle.com/" target="_blank" rel="noopener noreferrer" class="tool-highlight">Sleep Cycle app</a> for tracking quality.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End .timeline -->
+                 <div class="cta-center" style="margin-top: 3rem;">
+                    <p style="font-size: 1.1rem; color: #e0e0e0; margin-bottom:1rem;">This system yields almost <strong>12 hours</strong> of focused language immersion daily (minus breaks).</p>
+                    <p style="font-size: 1rem; color: #c0c0d0;">The discipline is demanding, but the blocks connect because each changes the kind of attention I use. Choosing enjoyable books, videos, podcasts, and conversations—and connecting with friends—helps the routine become a lifestyle instead of a chore.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy, Toolkit, Sacrifice, CTA sections (HTML structure is the same, ensure content is there) -->
+        <section class="philosophy-section">
+            <div class="container">
+                <h2 class="section-title">Why the sequence works for me</h2>
+                <p class="section-subtitle">The schedule combines a large amount of input with focused recall, regular output, feedback, and enough sleep to repeat the work the next day.</p>
+                <div class="core-formula" aria-label="Massive Input plus Focused Intensity plus Strategic Output">
+                    <div class="formula-term">Massive Input</div><div class="formula-operator" aria-hidden="true">+</div>
+                    <div class="formula-term">Focused Intensity</div><div class="formula-operator" aria-hidden="true">+</div>
+                    <div class="formula-term">Strategic Output</div>
+                </div>
+                <div class="philosophy-points">
+                    <article class="philosophy-point">
+                        <div class="principle-metric"><strong>500+</strong><span>focused active hours</span></div>
+                        <h4>The 500-hour target</h4>
+                        <p>I use roughly 500+ hours of focused, active engagement as the target for deep proficiency: thinking in the language and understanding almost everything. Active reading, listening, recall, and use matter here; passive listening alone is insufficient for speed.</p>
+                        <div class="hour-ruler" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                    </article>
+                    <article class="philosophy-point">
+                        <div class="speed-equation" aria-label="10 to 12 hours per day times about 50 days equals about 500 hours">
+                            <strong>10–12<small>hours / day</small></strong><span aria-hidden="true">×</span><strong>~50<small>days</small></strong><span aria-hidden="true">=</span><strong>~500<small>hours</small></strong>
+                        </div>
+                        <h4>Intensity shortens the calendar</h4>
+                        <p>At 10–12+ hours of quality immersion each day, 500 hours takes about 50 days. That concentration of hours is the “secret” behind the 1–3 month fluency target. Five minutes a day cannot reach this kind of goal on the same timeline, though a smaller daily commitment can use the method over a longer period.</p>
+                    </article>
+                    <article class="philosophy-point philosophy-point--loop">
+                        <div><h4>Active Engagement Loop</h4><p>The cycle of Reading, Listening (Comprehensible Input), Anki (Spaced Repetition), Writing, and Speaking creates a powerful feedback loop that accelerates acquisition and retention.</p></div>
+                        <div class="engagement-loop" aria-label="Reading, then Listening, then Anki, then Writing, then Speaking">
+                            <span class="loop-node">Reading</span><span class="loop-arrow" aria-hidden="true"></span><span class="loop-node">Listening</span><span class="loop-arrow" aria-hidden="true"></span><span class="loop-node">Anki</span><span class="loop-arrow" aria-hidden="true"></span><span class="loop-node">Writing</span><span class="loop-arrow" aria-hidden="true"></span><span class="loop-node">Speaking</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="toolkit-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">The tools behind each block</h2>
+                <p class="section-subtitle">Each tool solves one specific problem in the routine: remembering, reading, listening, watching, speaking, or checking a phrase.</p>
+                <div class="toolkit-grid">
+                    <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/anki.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>Anki/AnkiDroid</strong><small>Spaced repetition</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://play.google.com/store/apps/details?id=org.readera&amp;hl=en&amp;gl=US" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/readera.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>ReadEra</strong><small>Immersive reading</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://play.google.com/store/apps/details?id=au.com.shiftyjelly.pocketcasts" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/pocketcasts.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>Pocket Casts</strong><small>Audio immersion</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://www.languagereactor.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/languagereactor.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>Language Reactor</strong><small>Active watching</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://www.urban-vpn.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/urbanvpn.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>VPN (UrbanVPN, etc.)</strong><small>Regional access</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://www.tandem.net/" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/tandem.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>Tandem / Discord</strong><small>Language exchange</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://www.italki.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/italki.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>iTalki</strong><small>Live tutoring</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://gliglish.com/" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon tool-icon--dual"><img src="/images/apps/gliglish.webp" alt="" class="app-icon-small"><img src="/images/apps/chatgpt.webp" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>Gliglish / ChatGPT</strong><small>AI speaking</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                    <a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer" class="tool-item"><span class="tool-icon"><img src="/images/apps/deepl.svg" alt="" class="app-icon-small"></span><span class="tool-copy"><strong>DeepL</strong><small>Translation</small></span><span class="tool-arrow" aria-hidden="true"></span></a>
+                </div>
+                <div class="cta-center"><a href="/apps.html" class="btn btn-primary">See My Full Toolkit Review</a></div>
+            </div>
+        </section>
+        <section class="sacrifice-section">
+            <div class="container">
+                <h2 class="section-title">What this intensity costs</h2>
+                <p class="section-subtitle">A twelve-hour routine controls the shape of the entire day and can fundamentally reshape how you exist around a language. The speed comes from giving study time that would otherwise go to work, entertainment, errands, relationships, or other goals; that trade-off requires relentless effort and sacrifice.</p>
+                <div class="sacrifice-layout">
+                    <figure class="quote"><blockquote>"This path, this pursuit of rapid fluency, demands everything... It is a brutal, fundamental reshaping of identity."</blockquote><figcaption>— Aljohn Polyglot, "The Devil Within"</figcaption></figure>
+                    <div class="sacrifice-closing"><p>The routine explains the speed more honestly than talent does. It records how I arranged my days when language learning had the highest priority, and the relentless effort and sacrifice that choice demanded.</p><a href="https://drive.google.com/file/d/1VgUrm_uor-gFGzvUDQ5UKgZ4cbZe0lpe/view?usp=drive_link" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Read the full story behind the routine</a></div>
+                </div>
+            </div>
+        </section>
+        <section id="cta" class="cta-section your-journey-section">
+            <div class="container">
+                <h2>Build a schedule you can repeat</h2>
+                <div class="cta-support"><p>My twelve-hour version was designed for speed. You can keep the same progression—recall, input, output, and rest—at a scale that fits your life. The useful routine is the one you can return to tomorrow.</p><a href="https://www.youtube.com/@aljohnpolyglot?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Follow my journey on YouTube</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+         <div class="container">
+             <div class="footer-content">
+                  <div class="footer-logo"><img src="/images/channel_profile_aljohn_polyglot.png" alt="Aljohn Polyglot Logo" class="logo-img"><span>Aljohn Polyglot</span></div>
+                 <nav class="footer-links"><a href="/index.html#about">About</a><a href="/blog/roadmap-to-fluency/index.html">Roadmap</a> <a href="/blog.html">Blog</a><a href="/apps.html">Resources</a><a href="mailto:aljohnpolyglot.business@gmail.com">Contact</a></nav>
+                  <div class="social-links"><a href="https://www.youtube.com/@aljohnpolyglot" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="Aljohn Polyglot on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a><a href="https://www.facebook.com/aljohnpolyglotsasasasa" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Aljohn Polyglot on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+             </div>
+             <p class="copyright">© <span id="current-year">2024</span> Aljohn Polyglot. All rights reserved.</p>
+         </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Standard Setup (Menu, Header, Copyright, Scroll Animations) ---
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    const isOpen = navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                    menuToggle.setAttribute('aria-expanded', String(isOpen));
+                });
+            }
+            const header = document.querySelector('header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
+
+            const scrollElements = document.querySelectorAll('.interactive-breakdown, .philosophy-section, .toolkit-section, .sacrifice-section, .your-journey-section');
+            const elementInView = (el, dividend = 1) => { if (!el) return false; const elementTop = el.getBoundingClientRect().top; return ( elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend ); };
+            const displayScrollElement = (element) => { if (element) element.classList.add('visible'); };
+            const handleScrollAnimation = () => { scrollElements.forEach((el) => { if (elementInView(el, 1.25)) { displayScrollElement(el); } }); };
+            window.addEventListener('scroll', handleScrollAnimation);
+            handleScrollAnimation();
+
+            // --- SIMPLIFIED Accordion Logic (Only Main Items are Interactive) ---
+            const mainTimelineItems = document.querySelectorAll('.timeline-item');
+
+            mainTimelineItems.forEach((item, index) => {
+                const mainHeaderButton = item.querySelector('.details-toggle');
+                const mainDetails = item.querySelector('.timeline-details'); // This is the direct child that animates
+                const mainToggleIcon = mainHeaderButton ? mainHeaderButton.querySelector('.fas') : null;
+
+                // Initialize ALL main items as CLOSED
+                if (item && mainDetails && mainToggleIcon) {
+                    const panelId = `routine-details-${index + 1}`;
+                    mainDetails.id = panelId;
+                    mainHeaderButton.setAttribute('aria-controls', panelId);
+                    item.classList.remove('active');
+                    mainHeaderButton.setAttribute('aria-expanded', 'false');
+                    mainDetails.hidden = true;
+                    mainToggleIcon.classList.remove('fa-chevron-up');
+                    mainToggleIcon.classList.add('fa-chevron-down');
+                    mainDetails.style.maxHeight = '0px';
+                    // Ensure padding is also 0 when closed for a clean collapse
+                    // CSS will handle padding transition if .timeline-item.active .timeline-details has it
+                    if (!item.classList.contains('active')) {
+                        mainDetails.style.paddingTop = '0';
+                        mainDetails.style.paddingBottom = '0';
+                    }
+                }
+
+                if (mainHeaderButton && mainDetails && mainToggleIcon) {
+                    mainHeaderButton.addEventListener('click', () => {
+                        const isActive = item.classList.toggle('active');
+                        mainHeaderButton.setAttribute('aria-expanded', String(isActive));
+
+                        if (isActive) {
+                            // Opening:
+                            mainDetails.hidden = false;
+                            mainDetails.style.display = 'block'; // Make sure it's not display:none
+                            // Restore the open-state padding before measuring so it is
+                            // included in the animated height (the old order clipped it).
+                            mainDetails.style.paddingTop = '';
+                            mainDetails.style.paddingBottom = '';
+                            // Temporarily remove transition for measurement
+                            const originalTransition = mainDetails.style.transition;
+                            mainDetails.style.transition = 'none';
+                            mainDetails.style.maxHeight = 'none'; // Let it calculate its full height
+                            const scrollHeight = mainDetails.scrollHeight;
+                            mainDetails.style.maxHeight = '0px'; // Set back to 0px
+                            mainDetails.offsetHeight; // Force reflow
+                            mainDetails.style.transition = originalTransition; // Restore transition
+
+                            requestAnimationFrame(() => { // Animate to full scrollHeight
+                                mainDetails.style.maxHeight = scrollHeight + "px";
+                            });
+
+                            mainToggleIcon.classList.remove('fa-chevron-down');
+                            mainToggleIcon.classList.add('fa-chevron-up');
+                        } else {
+                            // Closing:
+                            mainDetails.style.maxHeight = mainDetails.scrollHeight + 'px';
+                            mainDetails.offsetHeight;
+                            requestAnimationFrame(() => {
+                                mainDetails.style.maxHeight = '0px';
+                                mainDetails.style.paddingTop = '0';
+                                mainDetails.style.paddingBottom = '0';
+                            });
+
+                            mainToggleIcon.classList.remove('fa-chevron-up');
+                            mainToggleIcon.classList.add('fa-chevron-down');
+                        }
+                    });
+
+                    mainDetails.addEventListener('transitionend', (event) => {
+                        if (event.propertyName === 'max-height' && item.classList.contains('active')) {
+                            mainDetails.style.maxHeight = 'none';
+                        } else if (event.propertyName === 'max-height' && !item.classList.contains('active')) {
+                            mainDetails.hidden = true;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

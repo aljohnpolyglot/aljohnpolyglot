@@ -1,0 +1,43 @@
+window.frenchStudyKitData = {
+    resources: [
+        {
+            id: 'french-study-folder',
+            step: '1',
+            action: 'Rassembler',
+            name: 'French Studies, Workbooks, Audio & More',
+            description: 'Le dossier principal pour retrouver au même endroit les supports d’étude, les cahiers et les ressources audio fournis pour ce parcours.',
+            href: 'https://drive.google.com/drive/folders/1EWspriB7F8TlfEUe4i04H3zCjran38Yh',
+            linkLabel: 'Ouvrir le dossier',
+            icon: 'fa-solid fa-folder-open',
+            service: 'Google Drive',
+        },
+        {
+            id: 'french-audio-folder',
+            step: '2',
+            action: 'Écouter',
+            name: 'Audio — French Without Effort',
+            description: 'Le dossier dédié aux pistes numérotées de la méthode, séparé du reste des documents pour retrouver rapidement la séance d’écoute.',
+            href: 'https://drive.google.com/drive/folders/19bcbKK9a5odFi0FBb6p_IZ_lBmXKmcha',
+            linkLabel: 'Ouvrir les pistes audio',
+            icon: 'fa-solid fa-headphones',
+            service: 'Google Drive',
+        },
+        {
+            id: 'french-conjugation-map',
+            step: '3',
+            action: 'Réviser',
+            name: 'Carte des temps et conjugaisons',
+            description: 'Une grande feuille de référence qui met côte à côte indicatif, subjonctif, conditionnel, impératif, participes et exemples de terminaisons.',
+            href: 'https://docs.google.com/spreadsheets/d/1r_ChFFktV-o8TBEZ3KFYpISQeuKadktV8kXXilTNu-c/edit?gid=554078650#gid=554078650',
+            linkLabel: 'Consulter la carte',
+            icon: 'fa-solid fa-table-cells-large',
+            service: 'Google Sheets',
+        },
+    ],
+    linguno: {
+        title: 'Linguno pour les conjugaisons',
+        description: "Pour une séance courte et ciblée, Linguno permet de travailler les conjugaisons françaises sous forme de quiz. Je l'utilise comme complément pratique entre deux moments d'écoute ou de conversation. Choisis un temps, un groupe de verbes et un niveau de difficulté : dix minutes suffisent pour repérer les formes qui demandent encore de l'attention.",
+        href: 'https://www.linguno.com/language/fra/',
+        linkLabel: 'Pratiquer le français',
+    },
+};

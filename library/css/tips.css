@@ -1,0 +1,165 @@
+/* Tips Section Styles */
+#tips-section {
+   background-color: var(--section-bg-deep-wood, #3e2723); 
+    padding: clamp(35px, 5vh, 50px) 0; 
+    margin-top: px;
+    text-align: center;
+    border-top: 4px dotted var(--gold-trim-ornate, #c8a460);
+    border-bottom: 4px dotted var(--gold-trim-ornate, #c8a460);
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.4);
+    position: relative; /* ESSENTIAL for pseudo-element positioning */
+    overflow: hidden; 
+    /* z-index: 0; /* Not strictly needed here if children are managed */
+}
+
+
+#tips-section::before { /* Wood texture overlay */
+   content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('http://www.transparenttextures.com/patterns/wood-pattern.png'); /* YOUR TEXTURE */
+    /* OR local path: url('../images/assets/wood-pattern.png'); */
+    background-color: var(--section-bg-deep-wood, #3e2723); /* Base color FOR the texture overlay itself */
+    background-repeat: repeat;
+    opacity: 0.7; /* Texture itself is opaque or semi-opaque */
+    /* The visual strength of the texture comes from the texture image itself and mix-blend-mode */
+    mix-blend-mode: multiply; /* Or overlay, soft-light, etc. */
+                               /* Multiply will make the texture darken the --section-bg-deep-wood color */
+    z-index: 0; /* Sits at the base stacking level OF THIS ELEMENT, behind its children */
+}
+
+/* All direct children of #tips-section need to be above the ::after overlay */
+#tips-section > * {
+    position: relative; 
+    z-index: 1; /* Ensures tip cards, dots, etc., are above the texture overlay */
+}
+
+.tip-card-container {
+    display: flex; 
+    justify-content: center;
+    align-items: stretch; 
+    position: relative; 
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    overflow: hidden; 
+    min-height: 250px; 
+}
+
+.tip-card {
+    display: none; 
+    flex-direction: row; 
+    align-items: center;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 100%; 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    gap: 20px; 
+    /* Ensure tip cards have backgrounds that contrast with the textured section,
+       or make them slightly transparent to let texture show through if desired.
+       e.g., background-color: rgba(255, 255, 255, 0.9);
+    */
+}
+.tip-card.current-tip {
+    display: flex; 
+    opacity: 1;
+    transform: translateX(0);
+}
+/* For future JS animation:
+.tip-card.next-tip { transform: translateX(100%); opacity: 0; }
+.tip-card.prev-tip { transform: translateX(-100%); opacity: 0; }
+*/
+
+.immersive-translate-card {
+    background-color: var(--immersive-bg);
+    border: 2px solid var(--immersive-primary);
+}
+.immersive-translate-card h3, .immersive-translate-card p { color: #333; }
+.immersive-translate-card .tip-button {
+    background-color: var(--immersive-primary);
+    color: white;
+    border-color: var(--immersive-secondary);
+}
+.immersive-translate-card .tip-button:hover {
+    background-color: var(--immersive-secondary);
+    color: var(--immersive-primary);
+    border-color: var(--immersive-primary);
+}
+
+
+.readera-card {
+    background-color: var(--readera-bg);
+    border: 2px solid var(--readera-primary);
+}
+.readera-card h3, .readera-card p { color: #333; }
+.readera-card .tip-button {
+    background-color: var(--readera-primary);
+    color: white;
+    border-color: var(--readera-secondary);
+}
+.readera-card .tip-button:hover {
+    background-color: var(--readera-secondary);
+    color: var(--readera-primary);
+    border-color: var(--readera-primary);
+}
+
+.tip-icon-container {
+    flex: 0 0 120px; /* Fixed width for icon */
+    text-align: center;
+}
+.tip-icon {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.tip-text-content {
+    flex: 1;
+    text-align: left;
+}
+.tip-text-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+}
+.tip-text-content p {
+    font-size: 1rem;
+    color: var(--ink-black);
+    margin-bottom: 1.2em;
+}
+
+.tip-switcher {
+    text-align: center;
+}
+.tip-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--ocean-blue-medium);
+    margin: 0 5px;
+    border: 2px solid var(--gold-trim);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+.tip-dot.active {
+    background-color: var(--gold-trim);
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .tip-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tip-text-content {
+        text-align: center;
+    }
+    .tip-icon-container {
+        margin-bottom: 15px;
+    }
+}

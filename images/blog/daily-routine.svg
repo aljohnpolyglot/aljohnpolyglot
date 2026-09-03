@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">The 12-hour routine I actually used</title>
+  <desc id="desc">A twenty-four-hour training dial showing recall, input, movement, output, and sleep.</desc>
+  <rect width="1200" height="675" fill="#03142e"/>
+  <g opacity=".14" stroke="#ebe5dc">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200M0 630h1200"/>
+    <path d="M90 0v675M180 0v675M270 0v675M360 0v675M450 0v675M540 0v675"/>
+  </g>
+  <g transform="translate(855 338)">
+    <circle r="245" fill="#ebe5dc"/>
+    <path d="M0-224A224 224 0 0 1 187-123L0 0Z" fill="#c8a456"/>
+    <path d="M187-123A224 224 0 0 1 0 224L0 0Z" fill="#cc7d30"/>
+    <path d="M0 224A224 224 0 0 1-224 0L0 0Z" fill="#b23e2f"/>
+    <path d="M-224 0A224 224 0 0 1 0-224L0 0Z" fill="#4f8b70"/>
+    <circle r="82" fill="#03142e" stroke="#ebe5dc" stroke-width="7"/>
+    <path d="M0 0V-175" stroke="#f5f3ef" stroke-width="6" transform="rotate(30)"/>
+    <circle r="10" fill="#f5f3ef"/>
+    <text y="-12" fill="#c8a456" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700">CURRENT SPLIT</text>
+    <text y="28" fill="#f5f3ef" text-anchor="middle" font-family="Arial Narrow, Arial, sans-serif" font-size="42" font-weight="700">02:00</text>
+  </g>
+  <g fill="#f5f3ef" font-family="Arial Narrow, Arial, sans-serif" font-weight="700">
+    <text x="70" y="100" fill="#c8a456" font-family="monospace" font-size="20">POLYGLOT PAPERS / FIELD LOG</text>
+    <text x="70" y="230" font-size="112">THE 12-HOUR</text>
+    <text x="70" y="335" font-size="112">ROUTINE I</text>
+    <text x="70" y="440" font-size="112">ACTUALLY USED</text>
+  </g>
+  <rect x="70" y="500" width="510" height="5" fill="#b23e2f"/>
+  <text x="70" y="555" fill="#d7cba9" font-family="monospace" font-size="19">RECALL → INPUT → MOVEMENT → OUTPUT → SLEEP</text>
+  <text x="70" y="605" fill="#f5f3ef" font-family="Arial, sans-serif" font-size="22">The extreme schedule—and the reusable loop underneath it.</text>
+</svg>

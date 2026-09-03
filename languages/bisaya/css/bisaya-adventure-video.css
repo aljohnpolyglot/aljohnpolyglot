@@ -1,0 +1,144 @@
+/* css/bisaya-adventure-video.css - REVAMPED with Logbook Style */
+
+.adventure-section-bisaya {
+    background-color: var(--sinulog-teal); /* Using Teal from palette for this section */
+    color: var(--sinulog-white); /* White text on Teal */
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+    position: relative;
+}
+/* Optional: Add a subtle texture to the teal background */
+/*
+.adventure-section-bisaya::before {
+    content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+    background-image: url('../images/subtle_texture_light.png'); // A light texture
+    opacity: 0.1; mix-blend-mode: overlay; // Experiment with blend modes
+}
+.adventure-section-bisaya > .container { position: relative; z-index: 1; }
+*/
+
+
+.adventure-section-header {
+    margin-bottom: 2.5rem; 
+}
+
+.adventure-section-bisaya .section-title-bisaya { 
+    color: var(--sinulog-white); 
+    font-family: var(--font-display); 
+    font-size: clamp(2rem, 5.5vw, 3.5rem); 
+    font-weight: 900;
+    text-shadow: 2px 2px 0px rgba(var(--sinulog-black-rgb), 0.2), 
+                 3px 3px 0px rgba(var(--sinulog-deep-blue-rgb), 0.15);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+.adventure-section-bisaya .section-title-bisaya .highlight-adventure-title { /* "72 ORAS" */
+    background-color: var(--sinulog-yellow); 
+    color: var(--sinulog-deep-blue); /* Deep blue text on yellow */
+    padding: 0.1em 0.35em;
+    border-radius: 6px;
+    display: inline-block; 
+    box-shadow: 2px 2px 0px var(--sinulog-black); 
+    transform: rotate(1.5deg); /* Opposite tilt */
+    margin: 0 0.1em; 
+}
+
+/* Main wrapper for stacking Video and Logbook */
+.adventure-content-wrapper-logbook { /* Renamed from -stacked */
+    max-width: 800px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+}
+
+/* Video Player Container */
+.adventure-video-prominent-container { width: 100%; }
+.adventure-video-player-wrapper { 
+    width: 100%;
+    max-width: 720px; 
+    margin: 0 auto; 
+    aspect-ratio: 16 / 9;
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 4px solid var(--sinulog-white); /* White frame */
+    box-shadow: 0 8px 25px rgba(var(--sinulog-black-rgb), 0.4); 
+    background-color: var(--sinulog-black); 
+    padding: 4px; 
+    box-sizing: border-box;
+}
+.adventure-video-player-wrapper iframe {
+    width: 100%; height: 100%; border: none; display: block;
+    border-radius: 5px; 
+}
+
+/* Aljohn's Logbook Entry Styling */
+.adventure-logbook-entry {
+    background-color: var(--sinulog-off-white); /* Off-white for logbook "paper" */
+    color: var(--sinulog-dark-gray); /* Dark text on light paper */
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-strong);
+    border: 1px solid var(--sinulog-light-gray);
+    /* Optional: Add a subtle paper texture background image */
+    /* background-image: url('../images/paper_texture_light.png'); */
+}
+
+.logbook-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px dashed var(--sinulog-mid-gray); /* Dashed line for notebook feel */
+}
+.logbook-icon {
+    font-size: 1.8rem;
+    color: var(--sinulog-deep-blue); /* Icon color */
+}
+.logbook-header h3 {
+    font-family: var(--font-display); /* Or a script-like font if you have one */
+    font-size: 1.5rem;
+    color: var(--sinulog-deep-blue);
+    margin: 0;
+    font-weight: 700;
+}
+.logbook-date {
+    font-size: 0.8rem;
+    color: var(--sinulog-mid-gray);
+    margin-left: auto; /* Push date to the right */
+    font-style: italic;
+}
+
+.logbook-text-content p {
+    font-family: var(--font-body); /* Or a slightly more handwritten-looking font */
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #333; /* Dark gray for text */
+    margin-bottom: 1em;
+}
+.logbook-text-content p:last-of-type:not(.logbook-signature) {
+    margin-bottom: 0;
+}
+.logbook-signature {
+    text-align: right;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--sinulog-deep-blue);
+    margin-top: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .adventure-content-wrapper-logbook { gap: 2rem; }
+    .adventure-section-bisaya .section-title-bisaya { font-size: clamp(1.8rem, 5vw, 3rem); }
+    .adventure-logbook-entry { padding: 1.5rem; }
+    .logbook-header h3 { font-size: 1.3rem; }
+}
+@media (max-width: 576px) {
+    .adventure-section-bisaya { padding-top: 2.5rem; padding-bottom: 3rem; }
+    .adventure-logbook-entry { padding: 1.2rem; }
+    .logbook-header { flex-direction: column; align-items: flex-start; gap: 0.3rem; text-align: left; }
+    .logbook-date { margin-left: 0; margin-top: 0.2rem; }
+    .logbook-text-content p { font-size: 0.9rem; }
+}

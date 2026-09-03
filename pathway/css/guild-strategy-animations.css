@@ -1,0 +1,86 @@
+/* --- guild-strategy-animations.css --- */
+/* Or add to the end of your main stylesheet */
+
+/*
+  Transition for the main phase content blocks
+  (e.g., #phase-beginner-content-MOCKUP, #phase-intermediate-content-MOCKUP)
+  when they become visible.
+*/
+.quest-phase-content-MOCKUP {
+    opacity: 0;
+    transform: translateY(15px); /* Start slightly down */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    /* display: none; will be handled by JS initially */
+}
+
+.quest-phase-content-MOCKUP.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* display: flex; or display: block; will be set by JS when .visible is added */
+}
+
+/*
+  Transition for the individual tab content panes
+  (e.g., #objectives-a1-content, #mindset-a1-content)
+  when they become active.
+*/
+.tab-content-MOCKUP {
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly down */
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+    /* display: none; will be handled by JS initially */
+}
+
+.tab-content-MOCKUP.active {
+    opacity: 1;
+    transform: translateY(0);
+    /* display: block; will be set by JS when .active is added */
+}
+
+/*
+  Optional: Transition for the placeholder if it's also faded
+/* Placeholder content when no phase is selected (child of .quest-display-panel-MOCKUP) */
+.quest-display-panel-MOCKUP .panel-content-MOCKUP.placeholder-active-MOCKUP {
+    /* ... other styles ... */
+    display: flex; /* This is important, JS sets it */
+    /* If you have an opacity transition for it: */
+    opacity: 0; /* Start transparent if it fades in */
+    transition: opacity 0.4s ease-out; /* Example transition */
+}
+
+.quest-display-panel-MOCKUP .panel-content-MOCKUP.placeholder-active-MOCKUP.visible {
+    opacity: 1; /* Fade it in */
+}
+
+/*
+  Optional: Transitions for background images if handled by adding/removing a .visible class
+  These durations are referenced in the JS.
+*/
+#page-dynamic-background-MOCKUP {
+    transition: opacity 0.7s ease-in-out; /* For main page background */
+    opacity: 0; /* Start transparent */
+}
+#page-dynamic-background-MOCKUP.visible {
+    opacity: 1;
+}
+
+#progression-map-image-MOCKUP { /* The map image in the left panel */
+    transition: opacity 0.2s ease-in-out; /* For map image itself */
+    opacity: 1; /* Start opaque by default unless JS changes it */
+}
+
+
+/*
+  Static Fade-in elements (like the left navigation panel)
+*/
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0.2s; /* Optional delay before starting */
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

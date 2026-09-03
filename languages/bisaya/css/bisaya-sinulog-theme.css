@@ -1,0 +1,273 @@
+/* css/bisaya-sinulog-theme.css - REVAMPED */
+:root {
+    /* Sinulog Poster Inspired Palette */
+    --sinulog-yellow: #FFF200;         /* Bright, almost neon yellow from Poster 1 */
+    --sinulog-deep-blue: #1A4689;      /* Deep blue from Poster 2 */
+    --sinulog-magenta: #EC008C;        /* Hot pink/magenta from Poster 1 */
+    --sinulog-purple: #3C0E80;         /* Deep purple from Poster 1 */
+    --sinulog-orange: #F26D21;         /* Bright orange from Poster 2 */
+    --sinulog-teal: #0EACA2;           /* Teal from Poster 2 */
+    --sinulog-lime-green: #8DC63F;     /* Lime green from Poster 2 */
+    
+    /* Supporting & Neutral Colors */
+    --sinulog-black: #111111;          /* Deep black for backgrounds/text */
+    --sinulog-dark-gray: #2a2a2a;     /* Dark gray for less contrast than pure black */
+    --sinulog-mid-gray: #6c757d;       /* For secondary text */
+    --sinulog-light-gray: #e9ecef;     /* For subtle backgrounds or borders */
+    --sinulog-off-white: #f8f9fa;      /* Cleaner off-white */
+    --sinulog-white: #FFFFFF;
+
+    /* RGB versions for rgba() */
+    --sinulog-yellow-rgb: 255, 242, 0;
+    --sinulog-deep-blue-rgb: 26, 70, 137;
+    --sinulog-magenta-rgb: 236, 0, 140;
+    --sinulog-black-rgb: 17, 17, 17;
+
+    /* Typography (Keeping your existing choices, can be updated) */
+    --font-display: 'Montserrat', sans-serif; /* For large, impactful headings */
+    --font-heading: 'Montserrat', sans-serif; /* For section titles, card titles */
+    --font-body: 'Open Sans', sans-serif;      /* For paragraphs, UI text */
+
+    /* UI Elements - Standardized */
+    --card-border-radius: 8px;         /* Slightly less rounded for a modern graphic feel */
+    --button-border-radius: 500px;     /* Pill-shaped buttons for a modern touch */
+    --section-padding-normal: 4rem 1.5rem;
+    --section-padding-compact: 2.5rem 1.5rem;
+    
+    /* Shadows - Keep them subtle if using bold colors */
+    --shadow-soft: 0 2px 8px rgba(0,0,0, 0.08);
+    --shadow-medium: 0 5px 15px rgba(0,0,0, 0.1);
+    --shadow-strong: 0 8px 25px rgba(0,0,0, 0.12);
+
+    /* Sticky Navigation Offset */
+    --navbar-height: 70px; /* Adjust to your actual navbar height */
+    --sticky-top-offset: calc(var(--navbar-height) + 20px);
+
+    /* Alliance Française Inspired Palette (can be refined) */
+    --af-blue: #003B79; /* Common AF Deep Blue */
+    --af-red: #EF4135;  /* Common AF Red */
+    --af-white: #FFFFFF;
+    --af-light-gray: #f0f0f0; /* For light backgrounds if needed */
+}
+
+/* --- Base Body Styling --- */
+body.bisaya-page {
+    font-family: var(--font-body);
+    color: var(--sinulog-off-white); /* Default text color for dark mode */
+    background-color: var(--sinulog-black); /* DEFAULT BACKGROUND - DARK MODE */
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700; /* Bold headings */
+    line-height: 1.3;
+    margin-top: 0;
+    color: var(--sinulog-white); /* Headings white on dark bg */
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-family: var(--font-display); font-weight: 900; letter-spacing: -1px;}
+h2.section-title-bisaya { /* Standardized section title */
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--sinulog-yellow); /* Yellow titles */
+    text-shadow: 1px 1px 3px rgba(var(--sinulog-black-rgb), 0.5);
+}
+h2.section-title-bisaya .highlight { /* Generic highlight span */
+    color: var(--sinulog-magenta); /* Use a contrasting color for spans within titles */
+    /* background-color: transparent; */ /* No background for highlights unless specific */
+    padding: 0.05em 0.15em;
+}
+
+
+p.section-subtitle-bisaya { /* Standardized section subtitle */
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--sinulog-light-gray); /* Lighter gray for subtitle */
+    margin-top: 0;
+    margin-bottom: 3rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+a {
+    color: var(--sinulog-yellow); /* Default link color */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: var(--sinulog-magenta); /* Link hover color */
+}
+
+/* --- Basic Button Styling (Pill Shaped) --- */
+.btn-sinulog-style { /* Base class for all Sinulog themed buttons */
+    display: inline-block;
+    padding: 0.75em 1.8em; /* Adjusted padding */
+    border-radius: var(--button-border-radius);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    border: 2px solid transparent; /* Border for outline buttons */
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-soft);
+}
+.btn-sinulog-style:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Primary Button: Yellow with Dark Text */
+.btn-primary-sinulog {
+    background-color: var(--sinulog-yellow);
+    color: var(--sinulog-black);
+    border-color: var(--sinulog-yellow);
+}
+.btn-primary-sinulog:hover {
+    background-color: #FFD700; /* Slightly less intense yellow on hover */
+    border-color: #FFD700;
+}
+
+/* Secondary Button: Magenta with White Text */
+.btn-secondary-sinulog {
+    background-color: var(--sinulog-magenta);
+    color: var(--sinulog-white);
+    border-color: var(--sinulog-magenta);
+}
+.btn-secondary-sinulog:hover {
+    background-color: #D70079; /* Darker magenta */
+    border-color: #D70079;
+}
+
+/* Tertiary/Outline Button: White text, colored border */
+.btn-tertiary-sinulog {
+    background-color: transparent;
+    color: var(--sinulog-yellow); /* Text color matches border */
+    border-color: var(--sinulog-yellow);
+}
+.btn-tertiary-sinulog:hover {
+    background-color: var(--sinulog-yellow);
+    color: var(--sinulog-black);
+}
+
+/* Example: Teal outline button */
+.btn-outline-teal {
+    background-color: transparent;
+    color: var(--sinulog-teal);
+    border-color: var(--sinulog-teal);
+}
+.btn-outline-teal:hover {
+    background-color: var(--sinulog-teal);
+    color: var(--sinulog-white);
+}
+
+
+/* XLarge CTA Button */
+.btn-xlarge-sinulog-cta {
+    padding: 0.8em 2.2em;
+    font-size: 1.15rem; /* Larger font */
+    background: linear-gradient(45deg, var(--sinulog-orange) 0%, var(--sinulog-magenta) 100%);
+    color: var(--sinulog-white);
+    text-shadow: 1px 1px 2px rgba(var(--sinulog-black-rgb), 0.4);
+}
+.btn-xlarge-sinulog-cta:hover {
+    background: linear-gradient(45deg, var(--sinulog-magenta) 0%, var(--sinulog-orange) 100%);
+}
+
+/* --- Section Dividers --- */
+hr.sinulog-themed-divider {
+    border: 0;
+    height: 4px; /* Thinner, more graphic */
+    background-image: linear-gradient(to right, var(--sinulog-magenta) 0%, var(--sinulog-yellow) 50%, var(--sinulog-teal) 100%);
+    margin: 3.5rem auto;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 2px;
+}
+
+.sinulog-graphic-divider { /* For SVG dividers */
+    text-align: center;
+    margin: 2.5rem 0;
+}
+.sinulog-graphic-divider img {
+    max-height: 50px; /* Adjust based on your SVG */
+    opacity: 0.85;
+}
+
+/* --- Utility Classes for Text Highlights (using new palette) --- */
+.text-highlight-yellow { color: var(--sinulog-yellow) !important; }
+.text-highlight-magenta { color: var(--sinulog-magenta) !important; }
+.text-highlight-orange { color: var(--sinulog-orange) !important; }
+.text-highlight-teal { color: var(--sinulog-teal) !important; }
+.text-highlight-purple { color: var(--sinulog-purple) !important; }
+/* For span highlights with background */
+.span-bg-yellow { background-color: var(--sinulog-yellow); color: var(--sinulog-black); padding: 0.1em 0.3em; border-radius: 3px; }
+.span-bg-magenta { background-color: var(--sinulog-magenta); color: var(--sinulog-white); padding: 0.1em 0.3em; border-radius: 3px; }
+
+/* Accessibility: Focus states */
+a:focus, button:focus, .btn-sinulog-style:focus {
+    outline: 2px solid var(--sinulog-yellow);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(var(--sinulog-yellow-rgb), 0.4); /* Softer focus ring */
+}
+select:focus, input:focus { /* Basic focus for form elements */
+    outline: 2px solid var(--sinulog-yellow);
+    outline-offset: 1px;
+    border-color: var(--sinulog-yellow) !important; /* Ensure border highlights */
+}
+.banderitas-divider-container {
+    text-align: center;
+    margin: -5rem auto; /* Adjust vertical margin as needed */
+    padding: 0 1.5rem; /* Ensure it doesn't hit screen edges */
+    line-height: 0; /* Remove extra space if img is inline-block */
+}
+.creator-section-banderitas-divider {
+    text-align: center; /* Center the image */
+    margin: -1.5rem auto 1.5rem auto; /* Pull it up a bit into the subtitle's margin, add space below */
+    max-width: 900px; /* Constrain max width for desktop */
+    padding: 0 1rem; /* Inner padding for very wide screens */
+    box-sizing: border-box;
+    position: relative; /* If we want to layer things later */
+    z-index: 2; /* Ensure it's above potential section background patterns */
+    pointer-events: none; /* So it doesn't block clicks to filter sidebar or grid */
+}
+.creator-section-banderitas-divider img {
+    display: block; /* Remove extra space below image */
+    width: 100%; /* Make image fill container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80px; /* Control max height for this banner */
+    object-fit: contain; /* Ensure entire banderitas image fits */
+    /* Optional: subtle shadow for depth */
+    /* filter: drop-shadow(0 3px 5px rgba(var(--sinulog-black-rgb, 17, 17, 17), 0.3)); */
+}
+/*
+.banderitas-divider-container:hover img {
+    transform: scale(1.05);
+}
+*/
+
+/* Specific styling for the transition from light AFC section to dark final CTA */
+.banderitas-divider-container.afc-to-dark-transition {
+    /* background-color: var(--af-white); /* Match AFC bg for seamless transition */
+    /* margin-top: 0; /* If it's directly after AFC with no padding */
+    /* padding-top: 2rem; */ /* Space above banderitas */
+}
+.banderitas-divider-container.afc-to-dark-transition img {
+    /* You might need to use a banderitas version that looks good on light and transitions to dark */
+    /* Or, this divider could be part of the AFC section's bottom padding */
+}

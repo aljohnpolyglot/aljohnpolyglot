@@ -1,0 +1,367 @@
+/* css/page-language-swedish.css */
+
+:root {
+    /* Re-declaring these here for clarity and potential overrides,
+       though they should be available from main styles.css if linked first. */
+    --swedish-blue: #006AA7;
+    --swedish-yellow: #FECC00;
+    --spotify-bg: #191414;
+    --spotify-green: #1DB954;
+    --youtube-bg: #282828;
+    --youtube-red: #FF0000;
+    --svt-play-bg: #1C1C1E;
+    --svt-play-accent: #00AEEF; /* Main SVT blue accent */
+    --aftonbladet-red: #D9000D; /* Official Aftonbladet red */
+    --expressen-yellow: #FFC900; /* Official Expressen yellow */
+    --peppa-pig-pink: #F4B9D8;
+    --peppa-pig-blue: #98D9F3;
+    --pocket-casts-orange: #F47121;
+}
+
+/* Apply main background to body only when this page is active */
+body.swedish-page-active {
+    background-color: var(--swedish-yellow); /* Main page background yellow */
+}
+
+/* Ensure content sections on this specific page don't get default white/light-bg from main styles.css */
+#language-page-swedish .content-section,
+#language-page-swedish .language-hero-section {
+    background-color: transparent; /* Makes them inherit the body's yellow or their own specific bg */
+}
+
+/* Alt background for sections on this page */
+#language-page-swedish .alt-bg {
+     background-color: rgba(0, 106, 167, 0.07); /* Very light Swedish Blue tint for alt sections on yellow bg */
+}
+
+/* --- Hero Section Specific to Swedish Page --- */
+.language-hero-section#swedish-hero {
+    background: var(--swedish-blue); /* Solid Swedish Blue for the hero itself */
+    color: var(--swedish-yellow);
+    padding-top: calc(70px + 50px); /* Navbar height + extra padding */
+    padding-bottom: 60px;
+    min-height: 60vh;
+    text-align: center;
+    position: relative;
+}
+
+#swedish-hero .language-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#swedish-hero .language-hero-image {
+    order: -1; /* Image appears above text */
+    margin-bottom: 2rem;
+    max-width: 250px; /* Control hero image size */
+}
+#swedish-hero .language-hero-image img {
+    border: 5px solid var(--swedish-yellow);
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#swedish-hero .language-hero-text h1 {
+    color: var(--swedish-yellow);
+    font-size: clamp(2rem, 5vw, 3.2rem); /* Adjusted size */
+    margin-bottom: 0.75rem;
+}
+
+#swedish-hero .highlight-swedish {
+    background-color: rgba(254, 204, 0, 0.8); /* More solid yellow highlight on blue bg */
+    color: var(--swedish-blue);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#swedish-hero .language-hero-subtitle {
+    font-size: 1.2rem; /* Adjusted size */
+    color: var(--light-text);
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#swedish-hero p { /* Paragraphs within hero text */
+    color: var(--light-text);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+
+#swedish-hero .btn-primary {
+    background-color: var(--swedish-yellow);
+    color: var(--swedish-blue);
+    border-color: var(--swedish-yellow);
+}
+#swedish-hero .btn-primary:hover {
+    background-color: #e6b800; /* Darker yellow */
+    border-color: #e6b800;
+    color: var(--swedish-blue);
+}
+#swedish-hero .btn-outline {
+    color: var(--swedish-yellow);
+    border-color: var(--swedish-yellow);
+}
+#swedish-hero .btn-outline:hover {
+    background-color: var(--swedish-yellow);
+    color: var(--swedish-blue);
+}
+
+/* --- Aljohn's Swedish Journey & Highlighted Video --- */
+#aljohns-swedish-journey .section-title { color: var(--swedish-blue); }
+#aljohns-swedish-journey .section-title::after { background-color: var(--swedish-yellow); }
+#aljohns-swedish-journey .journey-narrative p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--dark-text); }
+#aljohns-swedish-journey .quote {
+    border-left-color: var(--swedish-blue);
+    background-color: rgba(254, 204, 0, 0.1); /* Light yellow quote bg */
+    max-width: 750px;
+    margin: 2rem auto;
+}
+.subsection-title.centered-subsection-title {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.7em;
+    color: var(--swedish-blue);
+}
+
+.highlighted-video-feature {
+    background-color: var(--light-text); /* White background for contrast */
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--swedish-blue);
+}
+.highlighted-video-feature .video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.highlighted-video-feature iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;}
+.highlighted-video-feature h3 { color: var(--swedish-blue); margin-bottom: 0.75rem; font-size:1.6rem; text-align: center;}
+.highlighted-video-feature p { text-align: center; margin-bottom: 1rem; color: #444; }
+.highlighted-video-feature .inline-link { color: var(--primary-red); font-weight: bold;} /* Using primary red for action links */
+
+.restaurant-details-buttons { text-align: center; margin-top:1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;}
+.restaurant-info-toggle {
+    background-color: transparent;
+    color: var(--swedish-blue);
+    border: 1px solid var(--swedish-blue);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+.restaurant-info-toggle:hover {
+    background-color: var(--swedish-blue);
+    color: white;
+}
+.restaurant-details {
+    background-color: rgba(0, 106, 167, 0.03); /* Very light blue tint */
+    border: 1px solid rgba(0, 106, 167, 0.2);
+    border-left: 3px solid var(--swedish-blue);
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    text-align: left;
+    display: none;
+}
+.restaurant-details.visible { display: block; }
+.restaurant-details p { margin-bottom: 5px; color: var(--dark-text); }
+.restaurant-details strong { color: var(--swedish-blue); }
+
+
+/* --- Swedish Immersion Resources Section --- */
+#swedish-resources .section-title { color: var(--swedish-blue); }
+#swedish-resources .section-title::after { background-color: var(--swedish-yellow); }
+
+.resource-category-swedish {
+    margin-bottom: 3rem;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff; /* White background for resource categories */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+}
+.resource-category-swedish h3 {
+    font-family: var(--font-primary);
+    color: var(--swedish-blue); /* Default title color */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--swedish-yellow); /* Default underline */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.6rem;
+}
+.resource-category-swedish h3 .fab,
+.resource-category-swedish h3 .fas {
+    font-size: 0.9em;
+    width: 30px; /* Ensure space for icon */
+    text-align: center;
+}
+
+/* Specific Theme Colors for Resource Categories */
+.resource-category-swedish.music-theme { border-left: 5px solid var(--spotify-green); }
+.resource-category-swedish.music-theme h3 i { color: var(--spotify-green); }
+
+.resource-category-swedish.youtube-theme { border-left: 5px solid var(--youtube-red); }
+.resource-category-swedish.youtube-theme h3 i { color: var(--youtube-red); }
+
+.resource-category-swedish.tv-theme { border-left: 5px solid var(--svt-play-accent); }
+.resource-category-swedish.tv-theme h3 i { color: var(--svt-play-accent); }
+
+.resource-category-swedish.news-theme { border-left: 5px solid var(--aftonbladet-red); }
+.resource-category-swedish.news-theme h3 i { color: var(--aftonbladet-red); }
+
+.resource-category-swedish.football-theme { border-left: 5px solid #008000; } /* Standard Green for football */
+.resource-category-swedish.football-theme h3 i { color: #008000; }
+
+.resource-category-swedish.learning-theme { border-left: 5px solid var(--primary-red); }
+.resource-category-swedish.learning-theme h3 i { color: var(--primary-red); }
+
+.resource-category-swedish.kids-theme { border-left: 5px solid var(--peppa-pig-pink); }
+.resource-category-swedish.kids-theme h3 i { color: var(--peppa-pig-pink); }
+
+.resource-category-swedish.podcast-theme { border-left: 5px solid var(--pocket-casts-orange); }
+.resource-category-swedish.podcast-theme h3 i { color: var(--pocket-casts-orange); }
+
+
+.resource-category-swedish > p { margin-bottom: 1.5rem; color: #444; }
+
+.horizontal-scroll-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar { height: 8px; }
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--swedish-blue); border-radius: 4px;}
+.horizontal-scroll-wrapper::-webkit-scrollbar-track { background: rgba(254, 204, 0, 0.2); border-radius: 4px;}
+
+.swedish-item-grid { display: inline-flex; gap: 1.5rem; }
+.resource-item-card {
+    background-color: var(--light-text); padding: 1.2rem; border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; display: inline-flex;
+    flex-direction: column; width: 200px;
+    vertical-align: top; white-space: normal; min-height: 300px; /* Increased min-height */
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.resource-item-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+.resource-item-card img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 0.75rem; }
+.resource-item-card h4 { font-family: var(--font-secondary); font-weight: 600; color: var(--dark-text); font-size: 1rem; margin-bottom: 0.5rem; min-height: 2.4em; line-height: 1.2; }
+.resource-item-card p { font-size: 0.8rem; color: #666; margin-bottom: 1rem; line-height: 1.4; flex-grow: 1; }
+.resource-item-card .btn-group { margin-top: 0.5rem; display: flex; justify-content: center; gap: 0.5rem; }
+.resource-item-card .btn-icon {
+    padding: 0.4rem; /* Adjust for smaller icons */
+    font-size: 0.9rem; border-radius: 50%; /* Circular icons */
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; line-height: 1;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.resource-item-card .btn-icon:hover { transform: scale(1.1); }
+.resource-item-card .btn-icon i { margin-right: 0; }
+
+/* Palette specific icons */
+.btn-icon.spotify { background-color: var(--spotify-green); color: white; border: 1px solid var(--spotify-green); }
+.btn-icon.spotify:hover { background-color: #1aa34a; border-color: #1aa34a; }
+.btn-icon.youtube { background-color: var(--youtube-red); color: white; border: 1px solid var(--youtube-red); }
+.btn-icon.youtube:hover { background-color: #cc0000; border-color: #cc0000; }
+.btn-icon.svtplay { background-color: var(--svt-play-accent); color: white; border: 1px solid var(--svt-play-accent); }
+.btn-icon.svtplay:hover { background-color: #0095c7; border-color: #0095c7; }
+.btn-icon.website { background-color: #6c757d; color:white; border: 1px solid #6c757d;}
+.btn-icon.website:hover { background-color: #5a6268; border-color: #545b62;}
+
+
+.resource-tip { background-color: rgba(0, 106, 167, 0.08); border-left: 4px solid var(--swedish-blue); padding: 1rem; margin-top: 1.5rem; border-radius: 4px; font-size: 0.95em; }
+.resource-tip strong { color: var(--swedish-blue); }
+
+.snabbfakta-card { background-color: #1e1e1e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border: 1px solid #333; }
+.snabbfakta-card h4 { color: var(--swedish-yellow); margin-bottom: 0.75rem;}
+.snabbfakta-card img.snabbfakta-logo { width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 1rem; border: 2px solid var(--swedish-yellow); }
+.snabbfakta-card .video-title { font-size: 1.1rem; font-weight: bold; display: block; margin-bottom: 0.5rem; color: var(--light-text); }
+.snabbfakta-card .video-title:hover { color: var(--swedish-yellow); }
+.snabbfakta-card .video-description { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1rem; }
+.snabbfakta-card .aljohn-comment { background-color: #2a2a2a; padding: 0.75rem 1rem; border-radius: 4px; margin-top: 1rem; font-style: italic; font-size: 0.85rem; border-left: 3px solid var(--swedish-yellow); }
+.snabbfakta-card .aljohn-comment strong { color: var(--swedish-yellow); }
+
+/* --- Connections Section (Scandinavian Themed) --- */
+#swedish-connections { background-color: #EFF7FB; /* Very light blue, almost white */ }
+#swedish-connections .section-title { color: var(--swedish-blue); }
+#swedish-connections .section-title::after { background-color: var(--swedish-yellow); }
+.event-showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
+.event-card { background-color: var(--light-text); padding: 1.5rem; border-radius: 8px; box-shadow: var(--card-shadow); }
+/* Flag-based top borders */
+.event-card.norway-theme { border-top: 5px solid #EF2B2D; } /* Norwegian Red */
+.event-card.eu-theme { border-top: 5px solid #003399; }    /* EU Blue */
+.event-card.finland-theme { border-top: 5px solid #002F6C; } /* Finnish Blue */
+
+.event-card .event-image { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem; }
+.event-card h4 { font-family: var(--font-primary); color: var(--dark-text); margin-bottom: 0.75rem; font-size: 1.2rem; }
+.event-card h4 i { margin-right: 0.5rem; } /* For flag icons */
+.event-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; color: #444; }
+.event-card .inline-link { color: var(--swedish-blue); font-weight: bold;}
+
+
+/* --- Roadmap Adaptation for Swedish --- */
+#roadmap-swedish .section-title { color: var(--swedish-blue); }
+#roadmap-swedish .section-title::after { background-color: var(--swedish-yellow); }
+.roadmap-adaptation { margin-top: 2rem; }
+.roadmap-adaptation h4 { font-family: var(--font-primary); color: var(--swedish-blue); font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.roadmap-adaptation ul { list-style: none; padding-left: 0; }
+.roadmap-adaptation ul li { background-color: rgba(254, 204, 0, 0.1); padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-left: 3px solid var(--swedish-yellow); border-radius: 4px; }
+.roadmap-adaptation ul ul { margin-top: 0.5rem; padding-left: 1.5rem; }
+.roadmap-adaptation ul ul li { background-color: rgba(254, 204, 0, 0.05); font-size: 0.95em; }
+
+/* --- Final Encouragement Section --- */
+.final-thoughts-swedish { background-color: var(--swedish-blue); color: var(--swedish-yellow); }
+.final-thoughts-swedish .section-title { color: var(--swedish-yellow); }
+.final-thoughts-swedish .section-title::after { background-color: var(--swedish-yellow); }
+.final-thoughts-swedish .text-center { color: var(--light-text); opacity: 0.95; font-size: 1.15rem; line-height: 1.7;}
+.final-thoughts-swedish .btn-accent { background-color: var(--swedish-yellow); color: var(--swedish-blue); border-color: #e6b800; font-weight: bold;}
+.final-thoughts-swedish .btn-accent:hover { background-color: #005286; color: var(--swedish-yellow); border-color: #005286; }
+
+
+/* --- Responsive Overrides for Swedish Page --- */
+@media (max-width: 992px) {
+    .resource-item-card { width: 180px; min-height: 280px; }
+}
+
+@media (max-width: 768px) {
+    .language-hero-section#swedish-hero { min-height: auto; padding-top: calc(70px + 20px); padding-bottom: 40px; }
+    #swedish-hero .language-hero-image { max-width: 150px; }
+    #swedish-hero .language-hero-text h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    #swedish-hero .language-hero-subtitle { font-size: 1.1rem; }
+
+
+    .horizontal-scroll-wrapper { padding-bottom: 0.5rem;}
+    .swedish-item-grid { gap: 0.75rem; }
+    .resource-item-card { width: 150px; min-height: auto; padding: 0.8rem; } /* More compact cards */
+    .resource-item-card img { height: 80px; margin-bottom: 0.5rem; }
+    .resource-item-card h4 { font-size: 0.85rem; min-height: 2em; margin-bottom: 0.3rem; }
+    .resource-item-card p { font-size: 0.7rem; margin-bottom: 0.5rem; line-height: 1.3;}
+    .resource-item-card .btn-group { gap: 0.3rem; }
+    .resource-item-card .btn-icon { width: 30px; height: 26px; font-size: 0.8rem;}
+
+    .key-moments-grid, .event-showcase-grid { grid-template-columns: 1fr; }
+    .resource-category-swedish { padding: 1rem 1.2rem; }
+    .resource-category-swedish h3 { font-size: 1.3rem; }
+    .highlighted-video-feature { padding: 1.5rem; }
+    .highlighted-video-feature h3 { font-size: 1.3rem;}
+
+}
+   

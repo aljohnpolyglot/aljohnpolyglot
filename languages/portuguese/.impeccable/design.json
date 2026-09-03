@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-30T09:15:35.3409428+08:00",
+  "title": "Design System: Caderno de Jogo",
+  "extensions": {
+    "colorMeta": {
+      "pitch-green": {
+        "role": "primary",
+        "displayName": "Pitch Green",
+        "canonical": "#075c36",
+        "tonalRamp": ["#03261a", "#06422a", "#075c36", "#23764e", "#4b916c", "#7fae91", "#b7cebd", "#e7f0e9"]
+      },
+      "pitch-green-deep": {
+        "role": "primary",
+        "displayName": "Deep Pitch Green",
+        "canonical": "#033b25",
+        "tonalRamp": ["#021c13", "#032d1d", "#034628", "#1c6040", "#477b5c", "#799b83", "#afc2b4", "#e4ebe6"]
+      },
+      "pitch-green-dark": {
+        "role": "primary",
+        "displayName": "Dark Pitch Green",
+        "canonical": "#022a1b",
+        "tonalRamp": ["#01150e", "#02231a", "#053a27", "#235540", "#4c735f", "#7f9888", "#b6c3ba", "#e8ece9"]
+      },
+      "canarinha-yellow": {
+        "role": "secondary",
+        "displayName": "Canarinha Yellow",
+        "canonical": "#ffdf36",
+        "tonalRamp": ["#3b3000", "#665200", "#957900", "#c5a30d", "#e9c724", "#ffdf36", "#ffed8d", "#fff8d7"]
+      },
+      "federation-blue": {
+        "role": "secondary",
+        "displayName": "Federation Blue",
+        "canonical": "#1546a0",
+        "tonalRamp": ["#071a3f", "#0a2b67", "#1546a0", "#3763b5", "#6182c8", "#91a7da", "#c2cee9", "#edf1f9"]
+      },
+      "federation-blue-deep": {
+        "role": "secondary",
+        "displayName": "Deep Federation Blue",
+        "canonical": "#0b2b6b",
+        "tonalRamp": ["#05152f", "#082352", "#0c367d", "#294f98", "#5570b1", "#8495ca", "#bac4df", "#e9edf6"]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#fffdf2",
+        "tonalRamp": ["#28271f", "#4e4c40", "#777568", "#a19f91", "#c5c3b5", "#dedccf", "#f1efe3", "#fffdf2"]
+      },
+      "editorial-ink": {
+        "role": "neutral",
+        "displayName": "Editorial Ink",
+        "canonical": "#10261d",
+        "tonalRamp": ["#09140f", "#10261d", "#294137", "#465d52", "#687d72", "#91a198", "#bdc8c1", "#ecf0ed"]
+      },
+      "utility-muted": {
+        "role": "neutral",
+        "displayName": "Utility Muted",
+        "canonical": "#5a6d64",
+        "tonalRamp": ["#18211d", "#304039", "#4a5d54", "#677a70", "#85978e", "#a7b5ae", "#cbd3cf", "#f0f3f1"]
+      },
+      "field-line": {
+        "role": "neutral",
+        "displayName": "Field Line",
+        "canonical": "rgba(255, 253, 242, 0.5)",
+        "tonalRamp": ["#28271f", "#4e4c40", "#777568", "#a19f91", "#c5c3b5", "#dedccf", "#f1efe3", "#fffdf2"]
+      },
+      "night-pitch": {
+        "role": "neutral",
+        "displayName": "Night Pitch",
+        "canonical": "#001d13",
+        "tonalRamp": ["#000f0a", "#001d13", "#12382a", "#315547", "#577568", "#83998e", "#b8c5bf", "#e9eeeb"]
+      },
+      "training-paper": {
+        "role": "neutral",
+        "displayName": "Training Paper",
+        "canonical": "#eef2e4",
+        "tonalRamp": ["#25271f", "#4a4d40", "#707467", "#999d8e", "#bdc1b1", "#d5d9c9", "#e6ead9", "#f7f9f1"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Matchday Display", "purpose": "The first-view statement and decisive chapter moments." },
+      "headline": { "displayName": "Chapter Headline", "purpose": "Large uppercase chapter titles." },
+      "title": { "displayName": "Editorial Title", "purpose": "Creator, podcast, playlist, book, and modal titles." },
+      "body": { "displayName": "Reading Body", "purpose": "Stories, guidance, descriptions, and modal copy." },
+      "label": { "displayName": "Scoreboard Label", "purpose": "Navigation, metadata, status, and actions." }
+    },
+    "shadows": [
+      { "name": "documentary-lift", "value": "8px 14px 32px rgba(0, 20, 12, 0.32)", "purpose": "Lift the hero documentary image above the pitch." },
+      { "name": "lineup-lift", "value": "8px 16px 36px rgba(0, 0, 0, 0.28)", "purpose": "Lift Aljohn's featured playlist board." },
+      { "name": "dialog-lift", "value": "10px 18px 48px rgba(0, 20, 12, 0.42)", "purpose": "Separate the open details dialog from its dark backdrop." }
+    ],
+    "motion": [
+      { "name": "hover-lift", "value": "translateY(-2px)", "purpose": "A small response on match buttons when motion is allowed." },
+      { "name": "kickoff-ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The one-time 800ms center-circle entrance." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Effectively removes animation and transitions under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "980px" },
+      { "name": "single-column", "value": "760px" },
+      { "name": "compact", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Yellow Match Button",
+      "kind": "button",
+      "refersTo": "button-yellow",
+      "description": "The main next action on a dark pitch field.",
+      "html": "<a class=\"ds-match-button ds-match-button-yellow\" href=\"#\">Assistir aos meus vídeos <span aria-hidden=\"true\">↓</span></a>",
+      "css": ".ds-match-button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:.8rem 1.1rem;border:2px solid currentColor;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:1.08rem;font-weight:800;letter-spacing:.04em;line-height:1;text-decoration:none;text-transform:uppercase;transition:transform .2s}.ds-match-button-yellow{background:#ffdf36;border-color:#ffdf36;color:#022a1b}.ds-match-button:hover{transform:translateY(-2px)}.ds-match-button:focus-visible{outline:3px solid #ffdf36;outline-offset:4px;box-shadow:0 0 0 7px #0b2b6b}"
+    },
+    {
+      "name": "Outline Match Button",
+      "kind": "button",
+      "refersTo": "button-yellow",
+      "description": "A secondary action used over a dark field.",
+      "html": "<a class=\"ds-match-button ds-match-button-outline\" href=\"#\">Abrir a arquibancada</a>",
+      "css": ".ds-match-button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;border:2px solid currentColor;border-radius:4px;background:transparent;color:#fffdf2;font-family:'Barlow Condensed',sans-serif;font-size:1.08rem;font-weight:800;letter-spacing:.04em;line-height:1;text-decoration:none;text-transform:uppercase;transition:transform .2s}.ds-match-button:hover{transform:translateY(-2px)}.ds-match-button:focus-visible{outline:3px solid #ffdf36;outline-offset:4px;box-shadow:0 0 0 7px #0b2b6b}"
+    },
+    {
+      "name": "Match Navigation",
+      "kind": "nav",
+      "description": "The yellow chapter bar below the shared global navigation.",
+      "html": "<nav class=\"ds-match-nav\" aria-label=\"Capítulos\"><a aria-current=\"location\" href=\"#\">Minha história</a><a href=\"#\">Meus vídeos</a><a href=\"#\">Criadores</a></nav>",
+      "css": ".ds-match-nav{display:flex;overflow-x:auto;background:#ffdf36;border-bottom:4px solid #1546a0}.ds-match-nav a{min-height:48px;display:inline-flex;align-items:center;padding:.65rem 1.2rem;border-right:1px solid rgba(3,59,37,.2);color:#022a1b;font-family:'Barlow Condensed',sans-serif;font-size:1.08rem;font-weight:800;letter-spacing:.04em;text-decoration:none;text-transform:uppercase;white-space:nowrap}.ds-match-nav a:hover,.ds-match-nav a:focus-visible,.ds-match-nav a[aria-current='location']{background:#1546a0;color:#fff}.ds-match-nav a:focus-visible{outline:3px solid #ffdf36;outline-offset:-5px}"
+    },
+    {
+      "name": "Selected CEFR Filter",
+      "kind": "chip",
+      "refersTo": "filter-selected",
+      "description": "A square scoreboard control for the active declared CEFR range.",
+      "html": "<button class=\"ds-cefr-filter\" type=\"button\" aria-pressed=\"true\">B1</button>",
+      "css": ".ds-cefr-filter{min-width:3.25rem;min-height:44px;padding:.5rem .8rem;border:1px solid rgba(255,253,242,.45);border-radius:0;background:#ffdf36;color:#022a1b;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;cursor:pointer}.ds-cefr-filter:hover{filter:brightness(.96)}.ds-cefr-filter:focus-visible{outline:3px solid #ffdf36;outline-offset:4px;box-shadow:0 0 0 7px #0b2b6b}"
+    },
+    {
+      "name": "Creator Stand Card",
+      "kind": "card",
+      "description": "A warm-paper creator card inside one independent thematic stand.",
+      "html": "<button class=\"ds-creator-card\" type=\"button\"><span class=\"ds-creator-media\" aria-hidden=\"true\"></span><span class=\"ds-creator-body\"><span class=\"ds-creator-meta\">Brasil <b>B1–C2</b></span><strong>Nome do criador</strong><small>Descrição editorial curta e específica.</small></span></button>",
+      "css": ".ds-creator-card{position:relative;width:20rem;min-height:25rem;padding:0;border:0;border-radius:0;background:#fffdf2;color:#10261d;font-family:Archivo,sans-serif;text-align:left;cursor:pointer}.ds-creator-card::after{content:'';position:absolute;inset:0;border:5px solid transparent;pointer-events:none}.ds-creator-card:hover::after{border-color:#ffdf36}.ds-creator-card:focus-visible{outline:3px solid #ffdf36;outline-offset:4px;box-shadow:0 0 0 7px #0b2b6b}.ds-creator-media{display:block;aspect-ratio:1.18/1;background:#5a6d64}.ds-creator-body{display:block;padding:1rem 1rem 1.2rem}.ds-creator-meta{display:flex;justify-content:space-between;color:#1546a0;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.ds-creator-body strong{display:block;margin:.55rem 0 .45rem;font-family:'Barlow Condensed',sans-serif;font-size:2rem;line-height:.95;text-transform:uppercase}.ds-creator-body small{color:#5a6d64;font-size:.88rem;line-height:1.5}"
+    },
+    {
+      "name": "Current Playlist Entry",
+      "kind": "custom",
+      "description": "The selected local-thumbnail entry in Aljohn's dedicated lineup rail.",
+      "html": "<button class=\"ds-playlist-entry\" type=\"button\" aria-current=\"true\"><span class=\"ds-playlist-thumb\" aria-hidden=\"true\"></span><span><strong>Português sem ensaio</strong><small>Conversa · 12 min</small></span></button>",
+      "css": ".ds-playlist-entry{width:100%;display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:center;padding:.9rem;border:0;background:#075c36;color:#fffdf2;font-family:Archivo,sans-serif;text-align:left;cursor:pointer;outline:2px solid #ffdf36;outline-offset:-2px}.ds-playlist-entry:hover{background:#075c36}.ds-playlist-entry:focus-visible{outline:3px solid #ffdf36;outline-offset:4px;box-shadow:0 0 0 7px #0b2b6b}.ds-playlist-thumb{display:block;aspect-ratio:16/9;background:#1546a0}.ds-playlist-entry strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:1.18rem;line-height:1.05;text-transform:uppercase}.ds-playlist-entry small{color:#ffdf36}"
+    },
+    {
+      "name": "Modal Link",
+      "kind": "button",
+      "refersTo": "button-blue",
+      "description": "A verified external destination inside the details dialog.",
+      "html": "<a class=\"ds-modal-link\" href=\"#\">Canal oficial <span aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-modal-link{min-height:44px;display:inline-flex;align-items:center;gap:.4rem;padding:.65rem .85rem;background:#1546a0;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-decoration:none;text-transform:uppercase}.ds-modal-link:hover{background:#0b2b6b}.ds-modal-link:focus-visible{outline:3px solid #ffdf36;outline-offset:4px;box-shadow:0 0 0 7px #0b2b6b}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Caderno de Jogo",
+      "overview": "The Portuguese surface is a Canarinha matchday notebook: a sports-editorial world where pitch markings, lineup rails, jersey colors, and documentary media give Aljohn's language journey a structure visitors can read and explore. The field metaphor organizes the experience instead of sitting on top of it as decoration. Chapters become match phases, Aljohn's playlist becomes the starting lineup, training becomes a tactics board, and each creator category keeps its own stand.\n\nThe page is energetic without becoming noisy. Deep greens hold the world together, yellow is reserved for decisions and active states, federation blue establishes structure, and warm paper gives long descriptions room to breathe. The Linguno training chapter stays on a bright yellow field while the podcast chapter shifts to deep federation blue, making practice and listening distinct modes at a glance. Real thumbnails, portraits, covers, logos, and photographs supply the evidence; the interface supplies the rhythm.",
+    "keyCharacteristics": [
+      "Canarinha matchday color blocking with legible warm-paper reading surfaces.",
+      "Condensed scoreboard typography paired with a practical editorial body face.",
+      "Squared cards, field geometry, strong rules, and restrained four-pixel control corners.",
+      "Local documentary media used as content evidence, never generic ornament.",
+      "Independent horizontal shelves that preserve category identity and contain their own overflow."
+    ],
+    "rules": [
+      { "name": "The Yellow Means Action Rule", "body": "Use Canarinha yellow for a decision, a current state, or a meaningful editorial emphasis; it is not ambient decoration.", "section": "colors" },
+      { "name": "The Evidence Stays Natural Rule", "body": "Do not recolor photographs, portraits, thumbnails, book covers, podcast artwork, or community identity assets to force them into the palette.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Barlow Condensed carries the stadium voice; Archivo carries explanation. Do not set long descriptions in the display face.", "section": "typography" },
+      { "name": "The Two-Navbar Rule", "body": "Offset the chapter bar and document anchors by the real shared-navbar height; neither navigation layer may cover or replace the other.", "section": "layout" },
+      { "name": "The Shelf Owns Its Overflow Rule", "body": "Every long row scrolls inside its own bounded track with overscroll containment; the page never scrolls sideways.", "section": "layout" },
+      { "name": "The Flat Field Rule", "body": "Cards and chapter surfaces stay flat at rest; depth is reserved for featured media and overlays.", "section": "elevation" },
+      { "name": "The No-Pills Rule", "body": "Do not turn filters, tags, navigation items, or metadata into capsules; square geometry is part of the Portuguese identity.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use field geometry to organize information and state.",
+      "Do keep Aljohn's personal player, podcasts, creator stands, books, training, and community chapters conceptually distinct.",
+      "Do use local thumbnails, portraits, covers, logos, and photographs as the page's visual proof.",
+      "Do preserve visible focus, 44-48px touch targets, dialog focus restoration, and reduced-motion behavior.",
+      "Do keep native Portuguese copy and distinct neutral versus personal commentary."
+    ],
+    "donts": [
+      "Don't recolor another language page into Portuguese; this page owns a Canarinha matchday notebook, not a generic language dashboard.",
+      "Don't flatten independent creator categories into one mixed grid or mix Crianças e animação into adult entertainment.",
+      "Don't replace the featured player and clickable local-thumbnail lineup with a generic playlist embed.",
+      "Don't use glass effects, rounded card systems, decorative pills, or unrelated stadium clichés.",
+      "Don't claim desktop or mobile screenshot validation until those captures have been recaptured and independently reviewed."
+    ]
+  }
+}

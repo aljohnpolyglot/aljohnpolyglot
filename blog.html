@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Polyglot Papers: Aljohn Polyglot's articles on language learning, study habits, immersion, and practical progress.">
+    <title>The Polyglot Papers | Aljohn Polyglot</title>
+    <link rel="icon" href="images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/polyglot-papers-preview.css">
+</head>
+<body class="polyglot-papers-page">
+    <!--
+    THESIS: Polyglot Papers is a language-lab foldout that turns four real essays into one clear reading path, refusing the generic blog-card archive.
+    OWN-WORLD: Cobalt instruction fields, bright paper, near-black ink, brick-red selection blocks, yellow inventory marks, compressed display type, measurement rules, and square controls.
+    STORY: Visitors understand the archive, narrow it by topic or language, inspect the newest paper, and open the essay that fits their next study question.
+    FIRST VIEWPORT: A giant cobalt masthead and search fold into the latest iceberg paper; the compact archive index begins immediately below, with the primary paper link inside the feature.
+    FORM: Language Lab Foldout, grounded direction 5, seed 6bfdb5f1; approved comp .impeccable/mocks/polyglot-papers-01-language-lab-foldout.png.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
+    <header id="main-header-placeholder"></header>
+
+    <main>
+        <section class="papers-masthead" aria-labelledby="papers-title">
+            <div class="papers-ruler papers-ruler--left" aria-hidden="true"></div>
+            <div class="papers-ruler papers-ruler--right" aria-hidden="true"></div>
+            <div class="papers-shell papers-masthead__grid">
+                <div class="papers-masthead__copy">
+                    <h1 id="papers-title">The Polyglot Papers</h1>
+                    <p>Articles on language learning, study habits, and practical progress.</p>
+                    <label class="papers-search" for="tagSearch">
+                        <span class="sr-only">Search papers by title, topic, or keyword</span>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+                        <input type="search" id="tagSearch" placeholder="Search papers by title, topic, or keyword">
+                    </label>
+                </div>
+
+                <div class="papers-foldout" aria-label="How to use the Polyglot Papers archive">
+                    <svg class="papers-foldout__map" aria-hidden="true" viewBox="0 0 360 230">
+                        <path d="M22 50 112 22l90 28 92-28 44 22v142l-44-22-92 28-90-28-90 28Z"></path>
+                        <path d="M112 22v142M202 50v142M294 22v142"></path>
+                        <circle cx="202" cy="103" r="40"></circle>
+                        <path d="M162 103h80M202 63c-22 24-22 56 0 80M202 63c22 24 22 56 0 80"></path>
+                    </svg>
+                    <ol class="papers-foldout__steps">
+                        <li><span>01</span>Choose a question</li>
+                        <li><span>02</span>Open a paper</li>
+                        <li><span>03</span>Apply the method</li>
+                    </ol>
+                    <span class="papers-inventory">PP—Archive</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="blogArchive" class="papers-archive" aria-labelledby="archive-title">
+            <div class="papers-shell">
+                <div class="papers-archive__heading">
+                    <h2 id="archive-title">Browse all papers</h2>
+                    <p id="resultsCount" aria-live="polite"></p>
+                </div>
+
+                <div class="papers-controls" aria-label="Filter and sort papers">
+                    <div class="papers-control-row">
+                        <span class="papers-control-label">Topic</span>
+                        <div id="categoryFilters" class="filter-options-list" role="group" aria-label="Filter by topic"></div>
+                    </div>
+                    <div class="papers-control-row">
+                        <span class="papers-control-label">Language</span>
+                        <div id="languageFilters" class="filter-options-list" role="group" aria-label="Filter by language"></div>
+                    </div>
+                    <div class="papers-control-row papers-control-row--utility">
+                        <label class="papers-sort" for="sortBy"><span>Sort</span><select id="sortBy"><option value="date-desc">Latest first</option><option value="date-asc">Oldest first</option><option value="title-asc">Title A–Z</option><option value="title-desc">Title Z–A</option></select></label>
+                        <button id="resetFilters" class="papers-reset" type="button">Reset filters</button>
+                    </div>
+                </div>
+
+                <div id="blogPostsGrid" class="papers-index">
+                    <p class="no-results-message" hidden>No papers match those filters. Clear a filter or try another keyword.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="main-footer-placeholder"></div>
+    <script>window.siteBasePath = '/';</script>
+    <script src="js/blog_data.js"></script>
+    <script src="js/blog_main.js"></script>
+    <script src="js/navbar-loader.js" defer></script>
+    <script src="js/footer-loader.js" defer></script>
+</body>
+</html>

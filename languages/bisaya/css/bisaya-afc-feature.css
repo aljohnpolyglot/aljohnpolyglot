@@ -1,0 +1,170 @@
+/* css/bisaya-afc-feature.css */
+
+/* .afc-feature-section styles are in bisaya-page-main.css for background */
+
+.afc-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.afc-logo {
+    max-width: 150px; /* Control logo size */
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 6px; /* Slight rounding if logo bg isn't transparent */
+    /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+}
+.afc-title { /* section-title-bisaya is base */
+    line-height: 1.3;
+}
+.mobile-break { display: none; }
+@media (max-width: 480px) {
+    .mobile-break { display: block; }
+}
+
+
+.afc-content-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2.5rem;
+    align-items: flex-start; /* Align items to top */
+    margin-bottom: 3rem;
+}
+
+.afc-text-content {
+    flex: 1.5; /* Text takes more space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+.afc-intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #222; /* Darker text for primary content */
+}
+.aljohn-experience-quote {
+    background-color: rgba(var(--af-blue-rgb, 0, 59, 121), 0.05); /* Very light blue bg for quote */
+    border-left: 4px solid var(--af-blue);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+.aljohn-experience-quote p {
+    margin-bottom: 0.5rem;
+    color: #111; /* Darker quote text */
+    font-size: 1.05rem;
+}
+.aljohn-experience-quote cite {
+    display: block;
+    text-align: right;
+    font-weight: 600;
+    color: var(--af-blue);
+    font-style: normal;
+}
+
+.afc-text-content p:not(.afc-intro-text):not(.aljohn-experience-quote p) {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #444; /* Standard paragraph text */
+    margin-bottom: 1rem;
+}
+
+.afc-cta-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+}
+.afc-highlight-text{
+    color: var(--af-red) ;
+}
+.btn-afc-primary, .btn-afc-secondary { /* Use base .btn-sinulog-style */
+    padding: 0.7em 1.5em;
+    font-size: 0.95rem;
+}
+.btn-afc-primary {
+    background-color: var(--af-blue);
+    color: var(--af-white);
+    border-color: var(--af-blue);
+}
+.btn-afc-primary:hover {
+    background-color: #002a53; /* Darker AF Blue */
+    border-color: #002a53;
+}
+.btn-afc-secondary {
+    background-color: transparent;
+    color: var(--af-red);
+    border-color: var(--af-red);
+}
+.btn-afc-secondary:hover {
+    background-color: var(--af-red);
+    color: var(--af-white);
+}
+.btn-afc-primary i, .btn-afc-secondary i {
+    margin-right: 0.6em;
+}
+
+
+.afc-visual-content {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+.afc-featured-image {
+    width: 100%;
+    max-width: 450px; /* Control max image size */
+    height: auto;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-strong);
+    margin-bottom: 0.8rem;
+    border: 3px solid var(--af-white); /* White frame for image */
+}
+.afc-image-caption {
+    font-size: 0.85rem;
+    color: var(--sinulog-mid-gray);
+    font-style: italic;
+}
+
+.afc-map-container {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sinulog-light-gray); /* Separator if map is included */
+    text-align: center;
+}
+.map-embed-wrapper {
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    max-width: 700px; /* Max width for map */
+    margin: 0 auto;
+    border: 2px solid var(--af-blue);
+}
+.map-embed-wrapper iframe {
+    display: block; /* Remove extra space below iframe */
+}
+
+@media (max-width: 768px) {
+    .afc-content-layout {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+    .afc-text-content {
+        order: 2; /* Text below image on mobile */
+        text-align: center;
+    }
+    .afc-visual-content {
+        order: 1; /* Image first on mobile */
+        margin-bottom: 1.5rem;
+    }
+    .afc-cta-buttons {
+        justify-content: center;
+    }
+    .afc-logo { max-width: 120px; }
+    .afc-title { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+}
+.afc-title .afc-name-highlight {
+    color: var(--af-red); /* Apply AF Red color directly */
+    text-shadow: 1px 1px 2px rgba(var(--af-blue-rgb, 0, 59, 121), 0.2); /* Subtle shadow for definition */
+}

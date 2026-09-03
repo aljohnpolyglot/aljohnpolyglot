@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title description">
+  <title id="title">Imagen de creador no disponible</title>
+  <desc id="description">Silueta neutra utilizada cuando una fotografía no puede cargarse.</desc>
+  <rect width="320" height="180" fill="#eee5db"/>
+  <circle cx="160" cy="72" r="34" fill="#b9a899"/>
+  <path d="M92 180c4-42 31-66 68-66s64 24 68 66H92Z" fill="#b9a899"/>
+</svg>

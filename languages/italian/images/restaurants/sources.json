@@ -1,0 +1,42 @@
+{
+  "giovannis-bar-ristorante.webp": {
+    "source": "https://primer.com.ph/food/wp-content/uploads/sites/4/2017/07/g3.jpg",
+    "asset": "restaurant interior photograph from Philippine Primer"
+  },
+  "ponte-rialto.webp": {
+    "source": "https://primer.com.ph/food/wp-content/uploads/sites/4/2017/07/Ponte-Rialto-3_web.jpg",
+    "asset": "restaurant interior photograph from Philippine Primer"
+  },
+  "casa-mia.webp": {
+    "source": "https://primer.com.ph/food/wp-content/uploads/sites/4/2024/01/Casa-Mia-2-1.jpg",
+    "asset": "restaurant interior photograph from Philippine Primer"
+  },
+  "caruso-ristorante.webp": {
+    "source": "https://carusoristorante.com/assets/img/restaurant/caruso-inside.png",
+    "asset": "official restaurant website interior photograph"
+  },
+  "mangiamo-makati.webp": {
+    "source": "https://mangiamomakati.com/wp-content/uploads/2024/12/mangiamo-family-2.jpg",
+    "asset": "official restaurant website photograph"
+  },
+  "giovannis-bar-ristorante-logo.webp": {
+    "source": "https://primer.com.ph/food/wp-content/uploads/sites/4/2017/07/g2.jpg",
+    "asset": "Giovanni’s storefront-sign crop from Philippine Primer"
+  },
+  "ponte-rialto-logo.webp": {
+    "source": "https://www.facebook.com/PonteRialtoPH/",
+    "asset": "official Ponte Rialto Facebook profile image, downloaded and stored locally"
+  },
+  "casa-mia-logo.webp": {
+    "source": "https://www.facebook.com/casamiaristoranteitaliano/",
+    "asset": "official Casa Mia Facebook profile logo, downloaded and stored locally"
+  },
+  "caruso-ristorante-logo.webp": {
+    "source": "https://carusoristorante.com/assets/img/restaurant/caruso_logo.png",
+    "asset": "official restaurant website logo"
+  },
+  "mangiamo-makati-logo.webp": {
+    "source": "https://mangiamomakati.com/wp-content/uploads/2024/12/mangiamo-half-logo-1.png",
+    "asset": "official restaurant website logo"
+  }
+}

@@ -1,0 +1,647 @@
+/* css/ztf_styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --font-title: 'Merriweather', serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --color-bg-main: #211D1A; /* Dark, rich brown */
+    --color-panel-bg: #382f27; /* Darker wood/parchment */
+    --color-panel-border: #5a4a3a;
+    --color-panel-header-bg: rgba(0,0,0,0.15);
+
+    --color-text-light: #e8e0d0; /* Light parchment text */
+    --color-text-dark: #40362C;  /* Dark text for contrast on light */
+    --color-text-muted: #a0988d;
+    --color-text-title: #f5e5c5; /* Lighter gold for titles */
+
+    --color-accent-gold: #D4AF37;
+    --color-accent-gold-deep: #b08d2d;
+    --color-accent-gold-rgb: 212, 175, 55;
+
+    --color-lu: #8bc34a; /* Lexical Units - Green */
+    --color-lu-dark: #689f38;
+    --color-progress-bar: var(--color-accent-gold);
+    --color-progress-bar-bg: rgba(var(--color-accent-gold-rgb), 0.2);
+
+    --color-button-primary-bg: var(--color-accent-gold);
+    --color-button-primary-text: var(--color-bg-main);
+    --color-button-primary-border: var(--color-accent-gold-deep);
+
+    --color-locked: #757575;
+    --color-modal-overlay: rgba(0, 0, 0, 0.75);
+    --color-modal-bg: #f4f0e8; /* Light parchment for modals */
+
+    --border-radius-main: 8px;
+    --border-radius-small: 5px;
+    --box-shadow-panel: 0 4px 12px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.05);
+    --box-shadow-button: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- Global & Body --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('../assets/pathway_epic_journey_montage.png'); /* Main background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body::before { /* Darkening overlay for background image */
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 1400px; /* Max width of the entire game area */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows main content to fill space */
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(var(--color-panel-bg-rgb, 48, 40, 33), 0.5);
+    border-radius: var(--border-radius-main);
+    border-bottom: 2px solid var(--color-accent-gold-deep);
+}
+.game-header h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-accent-gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    margin-bottom: 5px;
+}
+.game-header .subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.game-main-content {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px; /* Left, Center (Upgrades), Right */
+    gap: 20px;
+    flex-grow: 1; /* Takes up available space */
+    min-height: 0; /* Important for flex children in a flex column */
+}
+
+.panel {
+    background-color: var(--color-panel-bg);
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-panel);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Let children with overflow-y:auto handle scroll */
+}
+.panel h2 {
+    font-family: var(--font-title);
+    color: var(--color-text-title);
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(var(--color-accent-gold-rgb), 0.3);
+}
+.panel-placeholder-text {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* --- Left Panel: Current Language & Clicker --- */
+.current-language-panel {
+    align-items: center; /* Center its content */
+}
+#current-language-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.language-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#current-language-flag {
+    width: 32px;
+    height: auto;
+    border: 1px solid var(--color-panel-border);
+    border-radius: 3px;
+}
+#current-language-name {
+    font-size: 1.3rem;
+    margin: 0;
+}
+#current-cefr-level-display {
+    margin-bottom: 10px;
+}
+#main-character-art {
+    width: 100%;
+    max-width: 200px; /* Control character art size */
+    height: auto;
+    border-radius: var(--border-radius-small);
+    margin-bottom: 5px;
+    border: 2px solid var(--color-accent-gold-deep);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: opacity 0.5s ease-in-out; /* For art changes */
+}
+#current-cefr-level {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-accent-gold);
+}
+.language-level-progress {
+    width: 90%;
+    margin: 0 auto 15px auto;
+}
+.progress-bar-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3px;
+    text-align: left;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--color-panel-border);
+}
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-progress-bar);
+    border-radius: 6px 0 0 6px; /* Slight curve only on left */
+    transition: width 0.5s ease-out;
+}
+
+.clicker-zone {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.lu-display {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: bold;
+    color: var(--color-lu);
+    margin-bottom: 2px;
+}
+.lps-display {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 15px;
+}
+.clicker-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.1s ease-out;
+}
+.clicker-button img {
+    width: 120px; /* Adjust clicker icon size */
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.4));
+}
+.clicker-button span {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    color: var(--color-accent-gold);
+}
+.clicker-button:active img {
+    transform: scale(0.92);
+}
+.clicker-button:active span {
+    transform: scale(0.98);
+    display: inline-block;
+}
+.story-log-container {
+    width: 100%;
+    flex-grow: 1; /* Allow log to take remaining space */
+    display: flex;
+    flex-direction: column;
+    min-height: 80px; /* Ensure some space for the log */
+}
+.story-log-container h3 {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 5px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-panel-border);
+    padding-bottom: 3px;
+}
+.story-log-messages {
+    background-color: rgba(0,0,0,0.25);
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--border-radius-small);
+    padding: 8px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    overflow-y: auto;
+    flex-grow: 1; /* Take available space */
+    max-height: 150px; /* Control max height of log before scroll */
+}
+.story-log-messages p { margin: 0 0 4px 0; }
+.story-log-messages p span { color: var(--color-text-muted); margin-right: 5px; }
+
+/* --- Center Panel: Upgrades Grid --- */
+.upgrades-panel {
+    /* flex: 2; */ /* From main grid */
+}
+.upgrades-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for now, can be 2 for wider */
+    gap: 10px;
+    overflow-y: auto; /* Scroll if many upgrades */
+    padding-right: 5px; /* Space for scrollbar */
+    height: 100%; /* Fill panel */
+}
+.upgrade-item {
+    position: relative; /* For tooltips */
+}
+.upgrade-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(var(--color-accent-gold-rgb), 0.08);
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--border-radius-small);
+    text-align: left;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.upgrade-button:hover:not(:disabled) {
+    background-color: rgba(var(--color-accent-gold-rgb), 0.15);
+    border-color: var(--color-accent-gold);
+}
+.upgrade-button.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: var(--color-locked);
+}
+.upgrade-button.maxed {
+    opacity: 0.7;
+    cursor: default;
+    background-color: rgba(var(--color-text-muted-rgb, 160,152,141), 0.1);
+}
+.upgrade-button .item-icon {
+    width: 35px; height: 35px; object-fit: contain; flex-shrink: 0;
+}
+.upgrade-button .item-info { flex-grow: 1; }
+.upgrade-button .item-name { font-weight: bold; font-size: 1rem; color: var(--color-text-title); display: block; margin-bottom: 2px; }
+.upgrade-button .item-desc { font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 3px; display: block; }
+.upgrade-button .item-prod { font-size: 0.7rem; color: var(--color-accent-gold); display: block;}
+.upgrade-button .item-cost-container { text-align: right; }
+.upgrade-button .item-cost { font-size: 0.85rem; font-weight: bold; color: var(--color-lu); }
+.upgrade-button.locked .item-cost { color: var(--color-locked); }
+.upgrade-button.maxed .item-cost { font-size: 0.8rem; color: var(--color-text-muted); }
+
+/* --- Right Panel: Stats & Languages --- */
+.stats-languages-panel {
+    /* flex: 1; */ /* From main grid */
+}
+#mastered-languages-list {
+    margin-bottom: 20px;
+    max-height: 200px; /* Example max height */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+.mastered-language-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background-color: rgba(var(--color-accent-gold-rgb), 0.1);
+    border-radius: var(--border-radius-small);
+    margin-bottom: 8px;
+}
+.mastered-language-item img { width: 24px; height: auto; }
+.mastered-language-item span { font-size: 0.9rem; font-weight: 500; }
+
+.game-stats h3 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-top: 1px solid rgba(var(--color-accent-gold-rgb), 0.2);
+    padding-top: 15px;
+}
+.game-stats p {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: var(--color-text-muted);
+}
+.game-stats p span {
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+.control-button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 10px;
+    background-color: var(--color-panel-border);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-accent-gold-deep);
+    border-radius: var(--border-radius-small);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.control-button:hover {
+    background-color: var(--color-accent-gold-deep);
+}
+
+/* --- Modals & Overlays --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--color-modal-overlay);
+    display: none; /* JS toggles to flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    padding: 20px;
+}
+.modal-overlay.visible {
+    display: flex;
+    opacity: 1;
+}
+.modal-content {
+    background-color: var(--color-modal-bg);
+    color: var(--color-text-dark);
+    padding: 25px;
+    border-radius: var(--border-radius-main);
+    border: 2px solid var(--color-accent-gold-deep);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 550px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative; /* For close button */
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.language-choice-modal h2, .explainer-modal-content h3 {
+    font-family: var(--font-title);
+    color: var(--color-text-dark);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.language-options-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.language-choice-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(var(--color-accent-gold-rgb),0.1);
+    border: 1px solid var(--color-accent-gold);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    color: var(--color-text-dark);
+}
+.language-choice-button:hover {
+    background-color: rgba(var(--color-accent-gold-rgb),0.2);
+    transform: translateY(-2px);
+}
+.language-choice-button img {
+    width: 32px; height: auto; margin-bottom: 8px;
+}
+.language-choice-button span { font-weight: 500; }
+.language-choice-button small { font-size: 0.7rem; color: var(--color-text-dark); opacity: 0.8; }
+.modal-footer-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-dark);
+    opacity: 0.7;
+    margin-top: 15px;
+}
+
+.explainer-modal-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    opacity: 0.6;
+    background: none; border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+.explainer-modal-close:hover { opacity: 1; color: var(--color-accent-gold); }
+.explainer-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(var(--color-accent-gold-rgb), 0.3);
+}
+#explainer-icon {
+    width: 50px; height: 50px; object-fit: contain; flex-shrink: 0;
+}
+.explainer-body {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.explainer-body p, .explainer-body ul { margin-bottom: 10px; }
+.explainer-body ul { padding-left: 20px; }
+.modal-confirm-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto 0 auto;
+    padding: 10px 15px;
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-button-primary-text);
+    border: 1px solid var(--color-button-primary-border);
+    border-radius: var(--border-radius-small);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.modal-confirm-button:hover {
+    background-color: var(--color-accent-gold-deep);
+}
+
+/* Scrollbars for internal elements */
+.story-log-messages::-webkit-scrollbar,
+.upgrades-grid::-webkit-scrollbar,
+#mastered-languages-list::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.story-log-messages::-webkit-scrollbar-track,
+.upgrades-grid::-webkit-scrollbar-track,
+#mastered-languages-list::-webkit-scrollbar-track,
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1); border-radius: 3px;
+}
+.story-log-messages::-webkit-scrollbar-thumb,
+.upgrades-grid::-webkit-scrollbar-thumb,
+#mastered-languages-list::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--color-panel-border); border-radius: 3px;
+}
+.story-log-messages::-webkit-scrollbar-thumb:hover,
+.upgrades-grid::-webkit-scrollbar-thumb:hover,
+#mastered-languages-list::-webkit-scrollbar-thumb:hover,
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-gold-deep);
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 1024px) { /* Tablet */
+    .game-main-content {
+        grid-template-columns: 250px 1fr 250px; /* Adjust column widths */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .game-wrapper { padding: 10px; }
+    .game-header h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+    .game-header .subtitle { font-size: clamp(0.8rem, 1.8vw, 1rem); }
+    
+    .game-main-content {
+        grid-template-columns: 1fr; /* Stack all panels */
+        gap: 15px;
+    }
+    .panel { padding: 15px; }
+    .panel h2 { font-size: 1.3rem; margin-bottom: 12px; }
+
+    .clicker-button img { width: 100px; height: 100px; }
+    .clicker-button span { font-size: 1rem; }
+    .lu-display { font-size: clamp(1.2rem, 3.5vw, 1.6rem); }
+
+    .upgrades-grid { grid-template-columns: 1fr; padding-right: 0;} /* Single column for upgrades */
+    .upgrade-button { gap: 10px; padding: 8px; }
+    .upgrade-button .item-icon { width: 30px; height: 30px; }
+    .upgrade-button .item-name { font-size: 0.9rem; }
+    .upgrade-button .item-desc { font-size: 0.7rem; }
+    .upgrade-button .item-prod { font-size: 0.65rem; }
+    .upgrade-button .item-cost { font-size: 0.8rem; }
+    
+    #mastered-languages-list { max-height: 150px; }
+    .stats-languages-panel, .upgrades-panel { min-height: 200px; } /* Ensure they have some height when stacked */
+
+    .modal-content { max-width: 95%; padding: 20px; }
+    .language-options-list { grid-template-columns: 1fr; } /* Stack language choices */
+    .explainer-header { flex-direction: column; text-align: center; gap: 10px; }
+    #explainer-icon { margin-right: 0; margin-bottom: 10px; }
+}
+/* css/ztf_styles.css */
+/* ... (your existing beautiful CSS) ... */
+
+/* --- Feature: Floating Click Numbers --- */
+.floating-number {
+    position: fixed; /* Fixed position relative to viewport */
+    left: 50%; /* Initial position, will be updated by JS */
+    top: 50%;  /* Initial position, will be updated by JS */
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 5px 10px;
+    background-color: rgba(var(--color-accent-gold-rgb), 0.85);
+    color: var(--color-bg-main);
+    border-radius: var(--border-radius-small);
+    font-size: 1.1rem;
+    font-weight: bold;
+    z-index: 10001; /* Above modals if necessary, or adjust */
+    pointer-events: none; /* So it doesn't interfere with clicks */
+    opacity: 1;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* JS will override transform for up-drift */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
+}
+
+
+/* --- Feature: Upgrade Controls (Sort, Buy Qty) --- */
+.upgrades-controls {
+    display: flex;
+    justify-content: space-between; /* Or flex-end, flex-start */
+    align-items: center;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: var(--border-radius-small);
+}
+.upgrades-controls label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-right: 5px;
+}
+.upgrades-controls select {
+    background-color: var(--color-panel-bg);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--border-radius-small);
+    padding: 4px 6px;
+    font-size: 0.8rem;
+    outline: none;
+}
+.upgrades-controls select:focus {
+    border-color: var(--color-accent-gold);
+}
+
+/* --- Responsive adjustments for upgrade controls if needed --- */
+@media (max-width: 768px) {
+    .upgrades-controls {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch; /* Make selects full width */
+    }
+    .upgrades-controls label {
+        text-align: center; /* Or left */
+        margin-right: 0;
+    }
+}

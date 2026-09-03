@@ -1,0 +1,46 @@
+{
+  "title": "Choisir la composition du Patchwork",
+  "question": "Le monde visuel est verrouillé. Quelle composition doit guider le site final — et que faut-il conserver ou corriger ?",
+  "options": [
+    {
+      "id": "patchwork-manifeste",
+      "label": "Le manifeste cousu",
+      "kicker": "COMPOSITION A",
+      "lineage": "manifeste textile à gauche, preuves photographiques à droite",
+      "thesis": "La voix d'Aljohn ouvre la page, puis les rencontres et les créateurs deviennent les pièces de son carnet.",
+      "palette": ["#A7B8C7", "#E7E3D6", "#495F74", "#1B1B1D", "#D62828"],
+      "materials": ["chambray", "lin", "coutures rouges", "étiquettes cousues"],
+      "viewport": "Un manifeste calme occupe un tiers du pli, face à un grand album documentaire, avant trois rayons compacts.",
+      "risk": "Le manifeste peut ralentir l'accès direct aux vidéos si sa hauteur n'est pas tenue.",
+      "comp": ".impeccable/mocks/decision/challenger-quilt.png"
+    },
+    {
+      "id": "patchwork-cover",
+      "label": "La grande couverture",
+      "kicker": "COMPOSITION B",
+      "lineage": "couverture de quilt éditoriale et index de bibliothèque",
+      "thesis": "Un titre monumental et un quilt photographique forment une vraie couverture, puis les rayons respirent sur toute la largeur.",
+      "palette": ["#A7B8C7", "#E7E3D6", "#495F74", "#1B1B1D", "#D62828"],
+      "materials": ["chambray monumental", "planches photo", "bandes de chemise", "fil rouge"],
+      "viewport": "Le pli répartit nettement récit et preuve, puis montre des rayons complets et lisibles dans le second mouvement.",
+      "risk": "La grande couverture peut sembler éditoriale avant de sembler interactive si les actions manquent de contraste.",
+      "comp": ".impeccable/mocks/patchwork-cover.png"
+    },
+    {
+      "id": "patchwork-atlas",
+      "label": "L'atlas cousu",
+      "kicker": "COMPOSITION C",
+      "lineage": "atlas personnel à dos cousu et grand album photographique",
+      "thesis": "Les vraies photos prennent presque tout le pli, tandis qu'une tranche cousue garde l'immense bibliothèque navigable.",
+      "palette": ["#A7B8C7", "#E7E3D6", "#495F74", "#1B1B1D", "#D62828"],
+      "materials": ["dos toilé", "quilt photographique", "poche de lin", "onglets cousus"],
+      "viewport": "Une tranche verticale oriente un grand quilt vivant, puis les rayons apparaissent comme des bandes cousues indépendantes.",
+      "risk": "Le grand album exige une adaptation mobile très disciplinée pour ne pas cacher la navigation.",
+      "comp": ".impeccable/mocks/patchwork-atlas.png"
+    }
+  ],
+  "reroll": false,
+  "buildPath": {"value": "comp", "toggle": false},
+  "canon": false,
+  "steer": true
+}

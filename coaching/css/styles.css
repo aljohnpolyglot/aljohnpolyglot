@@ -1,0 +1,157 @@
+
+/* --- Why Coach With Me Section --- */
+.why-coach-section { background-color: #fff; } /* White to stand out */
+.why-coach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.benefit-card {
+    background-color: var(--light-bg);
+    padding: 1.8rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    border-bottom: 4px solid var(--primary-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+.benefit-card .fas, .benefit-card .fab {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+.benefit-card h3 {
+    font-family: var(--font-primary);
+    color: var(--primary-red);
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+}
+.benefit-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- Meet Your Coach Section (Styling from original, with slight tweaks) --- */
+.coaching-about-me { padding: 3rem 0; margin-top:0; border-radius: 8px; }
+.coaching-about-me .about-content { display: flex; align-items: center; gap: 3rem; }
+.coaching-about-me .about-image { flex-basis: 35%; max-width: 250px; flex-shrink: 0; text-align: center; }
+.coaching-about-me .about-image img { width: 100%; border-radius: 50%; border: 6px solid var(--primary-blue); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+.coaching-about-me .about-text { flex-basis: 65%; }
+.coaching-about-me .about-text ul { list-style: none; padding-left: 0; }
+.coaching-about-me .about-text ul li { margin-bottom: 1.2rem; display: flex; align-items: flex-start; font-size: 1.05rem; line-height: 1.7; }
+.coaching-about-me .about-text ul li i { color: var(--primary-red); margin-right: 15px; font-size: 1.5em; margin-top: 4px; width: 25px; text-align: center; }
+@media (max-width: 820px) { /* Adjusted breakpoint for stacking */
+    .coaching-about-me .about-content { flex-direction: column; text-align: center; }
+    .coaching-about-me .about-image { margin-bottom: 2rem; }
+    .coaching-about-me .about-text ul li { justify-content: flex-start; text-align: left; } /* Center icon, left align text */
+}
+
+/* --- Coaching Focus Section (Services Offered & Not Included) --- */
+.coaching-focus-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+@media (min-width: 992px) {
+    .coaching-focus-grid { grid-template-columns: 1fr 1fr; }
+}
+.focus-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+.focus-card h3 {
+    font-family: var(--font-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+.focus-card h3 i { margin-right: 12px; font-size: 1.3em; }
+.focus-card.included h3 { color: var(--primary-blue); }
+.focus-card.included h3 i { color: var(--primary-blue); }
+.focus-card.excluded h3 { color: var(--primary-red); }
+.focus-card.excluded h3 i { color: var(--primary-red); }
+.focus-card ul { list-style: none; padding-left: 0; }
+.focus-card ul li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.focus-card ul li i.fa-check-circle { color: #27ae60; margin-right: 10px; margin-top: 5px; font-size: 1.2em; }
+.focus-card ul li i.fa-times-circle { color: #c0392b; margin-right: 10px; margin-top: 5px; font-size: 1.2em; }
+
+/* --- My Approach Note --- */
+.my-approach-note {
+    background-color: #e9f5f9; /* Lighter, more inviting blue */
+    border-left: 6px solid var(--primary-blue);
+    color: #1c5b7c; /* Darker blue text for contrast */
+    padding: 1.8rem 2.2rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+.my-approach-note h4 {
+    margin-top: 0;
+    font-family: var(--font-primary);
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--primary-blue); /* Heading color */
+}
+.my-approach-note h4 i { margin-right: 12px; }
+.my-approach-note p { font-size: 1rem; line-height: 1.75; }
+
+/* --- Investment Section (Pricing) --- */
+.investment-section { text-align: center; padding: 3rem 1rem; border-radius: 10px; background-color: #fff; box-shadow: var(--card-shadow); }
+.investment-section .section-title { margin-bottom: 0.5rem; }
+.investment-section .price-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    margin: 0.5rem 0;
+    font-family: var(--font-primary);
+}
+.investment-section .payment-info { font-size: 1.15rem; color: #333; margin-bottom: 0.5rem; }
+.investment-section .session-platform { font-size: 1rem; color: #555; }
+.investment-section .payment-info strong { color: var(--primary-blue); }
+
+/* --- Video Preview --- */
+.coaching-video-preview .featured-video-player { max-width: 850px; margin: 0 auto; box-shadow: var(--hover-shadow); border-radius: 12px; background-color: #000; }
+.coaching-video-preview .video-placeholder-text { text-align: center; margin-top: 1.5rem; font-style: italic; color: #555; }
+
+/* --- Final CTA --- */
+.final-cta-coaching {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-blue)); /* Reversed gradient for variety */
+    color: var(--light-text);
+    padding: 3.5rem 1.5rem;
+    border-radius: 12px;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+.final-cta-coaching h2 { font-family: var(--font-primary); font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 1rem; }
+.final-cta-coaching p { font-size: 1.15rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.95; }
+.final-cta-coaching .btn-accent {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--accent-yellow);
+    color: var(--dark-text);
+    border-color: var(--accent-yellow);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+ .final-cta-coaching .btn-accent:hover {
+    background-color: #e6c300;
+    transform: translateY(-3px) scale(1.03);
+}
+.final-cta-coaching .btn-accent i { margin-left: 12px; }

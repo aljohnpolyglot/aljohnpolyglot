@@ -1,0 +1,7 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop website comp at 1536x1024 for a long-form Polyglot Papers article
+Primary request: Create a third composition for “The 12-Hour Routine I Actually Used” by Aljohn Polyglot in the same endurance training-log identity.
+Structure: shared site navbar. Use an asymmetric coach’s clipboard sheet occupying two-thirds of the viewport, slightly offset over a deep cobalt ground. On the sheet: Polyglot Papers label, May 31 2025, a giant condensed headline, deck, byline, and a compact contents list. Along the left edge, a vertical 2:00 AM-to-2:00 AM timing tape with color-blocked day periods. On the right third, a circular 24-hour dial and a 16:9 embedded routine video stacked as one strong media column. The lower edge reveals the first long-form chapter, “02:00 — The world is silent,” with readable prose and a detailed disclosure.
+Visual world: endurance athlete logbook, track meet timing sheet, analogue stopwatch, grease pencil, clipped paper. Committed cobalt ground, ivory paper, track red, saffron, recovery green. Hard edges, visible paper texture, one bold rubber-stamped “12 HOURS” mark, condensed grotesque display and tabular mono time.
+Signature interaction implied: the vertical timing tape fills as the reader descends; the dial hand rotates to the current block.
+Constraints: readable editorial web page, no serif, no glassmorphism, no rounded cards, no bento grid, no fake metrics beyond the verified 12-hour routine, no watermark.

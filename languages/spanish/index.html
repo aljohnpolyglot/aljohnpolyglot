@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Mi Rincón del Español</title>
+    <link rel="icon" href="../../images/channel_profile_aljohn_polyglot.png" type="image/png">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Enlace al CSS -->
+    <link rel="stylesheet" href="css/mock-style.css">
+    <link rel="stylesheet" href="css/books-style.css">
+    <link rel="stylesheet" href="css/playlist-style.css">
+    <link rel="stylesheet" href="css/spotlights-style.css">
+    <link id="app-logo-fallback-asset" rel="preload" as="image" href="../../images/apps/app-fallback.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/community-style.css">
+    <link rel="stylesheet" href="css/community-picks-style.css">
+    <link rel="stylesheet" href="css/creators-style.css">
+    <link rel="stylesheet" href="css/hero-style.css">
+    <link rel="stylesheet" href="css/extra-style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/nav-footer-fix.css">
+    <link rel="stylesheet" href="css/friends-style.css">
+    <link rel="stylesheet" href="css/filters-style.css">
+    <link rel="stylesheet" href="css/restaurants-style.css">
+    <link rel="stylesheet" href="../shared/css/language-section-nav.css">
+
+</head>
+<body class="spanish-page has-language-section-nav">
+    <header id="main-header-placeholder"></header>
+    <nav class="language-section-nav" data-language-section-nav aria-label="Capítulos de Mi rincón del español">
+        <div class="language-section-nav__viewport">
+            <ul class="language-section-nav__list">
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#hero-banner" aria-current="location">Mi historia</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#aljohn-playlist-section">Mis vídeos</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#spotlights-start-here">Ruta de estudio</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#community-spotlights">Comunidad</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#content-shelves">Creadores</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#shelf-books">Biblioteca</a></li>
+                <li class="language-section-nav__item"><a class="language-section-nav__link" href="#lugares-para-hablar-espanol">En la mesa</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="bodier">
+<section id="hero-banner" aria-labelledby="spanish-hero-title">
+    <div class="hero-fan" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-content-wrapper container">
+        <div class="hero-text-column">
+            <h1 id="spanish-hero-title">
+                <span class="hero-title-small">Mi rincón del</span>
+                <span class="hero-title-main">Español</span>
+            </h1>
+            <p class="hero-subtitle">
+                El español fue el primer idioma que decidí aprender de forma obsesiva. Fue una guerra contra el tiempo que lo cambió todo. Este rincón no es solo una lista de recursos; es el mapa de esa inmersión, el arsenal que usé y la increíble comunidad que encontré en el camino.
+            </p>
+            <div class="hero-cta-buttons">
+                <a href="#spotlights-start-here" class="btn btn-primary">
+                    <span>Explorar los recursos</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v13m0 0 5-5m-5 5-5-5" />
+                    </svg>
+                </a>
+            </div>
+            <p class="hero-signoff">
+                <img src="https://flagcdn.com/w40/es.png" alt="Bandera de España" class="hero-flag">
+                <span>Mi historia. Mis recursos. Mi comunidad.</span>
+            </p>
+        </div>
+
+        <div class="hero-gallery-column">
+            <div class="hero-gallery-heading">
+                <span>Momentos del camino</span>
+                <span id="hero-carousel-count" class="hero-carousel-count">01 / 19</span>
+            </div>
+            <div class="hero-photo-frame">
+                <div id="hero-carousel-container" class="hero-carousel" aria-label="Galería de momentos de mi camino con el español">
+                    <div id="hero-carousel-track" class="carousel-track">
+                        <!-- Las imágenes se cargarán aquí con JS -->
+                    </div>
+                    <button id="hero-prev-btn" class="carousel-button prev" type="button" aria-label="Ver foto anterior">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+                    </button>
+                    <button id="hero-next-btn" class="carousel-button next" type="button" aria-label="Ver foto siguiente">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+                    </button>
+                </div>
+                <div class="hero-photo-caption">
+                    <span aria-hidden="true"></span>
+                    <p id="hero-current-caption">Una vida vivida en español, foto a foto.</p>
+                </div>
+                <p id="hero-carousel-status" class="hero-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <div id="hero-modal" class="hero-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="hero-modal-caption" aria-hidden="true">
+    <div id="hero-modal-backdrop" class="hero-modal-backdrop"></div>
+    <div class="modal-content">
+        <button id="hero-modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Prev Arrow -->
+        <button id="hero-modal-prev-btn" class="modal-nav-btn prev" aria-label="Foto anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="hero-modal-media">
+            <img id="hero-modal-img" src="images/hero/aljohn_with_ambassador_spanish_miguel_utray.jpg" alt="Aljohn con el Embajador de España Miguel Utray">
+            <p id="hero-modal-caption" aria-live="polite" aria-atomic="true">Texto de ejemplo que podría ser muy largo</p>
+        </div>
+        
+        <!-- Next Arrow -->
+        <button id="hero-modal-next-btn" class="modal-nav-btn next" aria-label="Foto siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
+         <!-- ============================================== -->
+<!-- ==     BLOQUE DE REEMPLAZO (CORRECTO)       == -->
+<!-- ============================================== -->
+
+<section id="aljohn-playlist-section"> <!-- SE ELIMINÓ la clase "container" de aquí -->
+    
+    <div class="container"> <!-- SE AÑADIÓ un div interior con la clase "container" -->
+
+        <h2>Mis Videos en Español</h2>
+        <div class="playlist-wrapper">
+            
+            <!-- Columna Izquierda: Vídeo Destacado -->
+            <div class="featured-video-column">
+                <div class="featured-video-container">
+                    <iframe id="featured-video-player" src="" title="Reproductor de vídeo de YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 id="playlist-title">Título del vídeo</h3>
+            </div>
+
+            <!-- Columna Derecha: Lista de Vídeos -->
+            <div class="playlist-sidebar">
+                <div id="playlist-items-container">
+                    <!-- La lista de vídeos será generada aquí por JS -->
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- Fin del div .container interior -->
+
+</section>
+
+      <!-- =================================================================== -->
+<!-- == SECCIÓN DE SPOTLIGHTS REVISADA (ESTRUCTURA COMPLETA Y NATIVA) == -->
+<!-- =================================================================== -->
+<section id="spotlights-start-here" class="container">
+    
+   
+    <!-- Título y Descripción para la Primera Sección -->
+    <div class="spotlights-header">
+        <h2 class="spotlights-main-title">Mi "Kit de Inicio" Esencial</h2>
+        <p class="spotlights-subtitle">Si solo pudiera recomendar tres cosas para empezar desde cero, serían estas. Son la combinación perfecta de teoría, consulta y práctica.</p>
+    </div>
+        
+        <!-- Tarjeta 1: Language Transfer -->
+        <article class="spotlight-card" id="spotlight-lt">
+            <div class="spotlight-content">
+                <div class="spotlight-visual">
+                    <!-- ESTE ES EL NUEVO Y FUNCIONAL IFRAME -->
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/languagetransfer/sets/complete-spanish&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                </div>
+                <div class="spotlight-details">
+                    <a href="https://www.languagetransfer.org/complete-spanish" target="_blank" class="spotlight-logo-link">
+                        <img src="images/spotlights/language_transfer_logo.png" alt="Logo de Language Transfer" class="spotlight-logo">
+                    </a>
+                    <h3 class="spotlight-title">Language Transfer</h3>
+                    <p class="spotlight-description">El curso de audio GRATUITO que te enseñará a pensar en español. Es el mejor punto de partida.</p>
+                    <a href="https://www.languagetransfer.org/complete-spanish" target="_blank" class="button-link">Curso Completo</a>
+                </div>
+              
+            </div>
+        </article>
+         <!-- Tarjeta 3: SpanishDict -->
+         <article class="spotlight-card" id="spotlight-spanishdict">
+            <div class="spotlight-content">
+                <div class="spotlight-details">
+                    <h3 class="spotlight-title">SpanishDict</h3>
+                    <p class="spotlight-description">Tu app indispensable: el mejor diccionario, conjugador y traductor. Es mi consulta diaria.</p>
+                    <a href="https://www.spanishdict.com/" target="_blank" class="button-link">Descubrir</a>
+                </div>
+                <div class="spotlight-visual">
+                     <a href="https://www.spanishdict.com/" target="_blank" class="spotlight-logo-link">
+                        <img src="images/spotlights/spanishdict_logo.png" alt="Logo de SpanishDict" class="spotlight-logo">
+                    </a>
+                </div>
+              
+            </div>
+        </article>
+
+        <!-- Tarjeta 4: Linguno -->
+        <article class="spotlight-card" id="spotlight-linguno">
+            <div class="spotlight-content">
+                <div class="spotlight-visual">
+                    <!-- Placeholder visual para Linguno, puedes poner una captura de pantalla de la web -->
+                    <img src="images/spotlights/linguno_feature.png" alt="Interfaz de práctica de Linguno" class="feature-image">
+                </div>
+                <div class="spotlight-details">
+                     <a href="https://www.linguno.com/language/esp/" target="_blank" class="spotlight-logo-link">
+                        <img src="images/spotlights/linguno_logo.png" alt="Logo de Linguno" class="spotlight-logo">
+                    </a>
+                    <h3 class="spotlight-title">Linguno</h3>
+                    <p class="spotlight-description">Mi herramienta preferida para practicar conjugaciones y vocabulario de forma gamificada.</p>
+                    <a href="https://www.linguno.com/language/esp/" target="_blank" class="button-link">Practicar Conjugaciones</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ======================================================= -->
+<!-- ==           NUEVO SPOTLIGHT: ANKI                   == -->
+<!-- ======================================================= -->
+<article class="spotlight-card" id="spotlight-anki">
+    <div class="spotlight-content">
+        <div class="spotlight-details">
+            <a href="https://ankiweb.net/" target="_blank" class="spotlight-logo-link anki-logo">
+                <img src="../../images/apps/anki.webp" width="80" height="80" loading="lazy" decoding="async" alt="Logo de Anki" class="spotlight-logo resilient-logo" data-app-name="Anki">
+            </a>
+            <h3 class="spotlight-title"><br>Aljohn Polyglot Spanish Deck</h3>
+            <p class="spotlight-description">Anki es mi herramienta más importante: la repetición espaciada para no olvidar nunca. Aquí comparto mi mazo personal "My Spanish Soul", con miles de tarjetas que he creado en mi viaje.</p>
+            <a href="https://ankiweb.net/shared/info/980580505" target="_blank" class="button-link">Descargar mi Mazo</a>
+        </div>
+        <div class="spotlight-visual">
+            <div class="anki-sample-cards">
+                <div class="anki-card">
+                    <div class="card-front">querer (preterite)</div>
+                    <div class="card-back">quise</div>
+                </div>
+                <div class="anki-card">
+                    <div class="card-front">afortunadamente</div>
+                    <div class="card-back">fortunately</div>
+                </div>
+                <div class="anki-card">
+                    <div class="card-front">yo (haber)</div>
+                    <div class="card-back">he</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- ... (justo después del </article> de la tarjeta de Anki) ... -->
+
+<!-- ======================================================= -->
+<!-- ==     NUEVO SPOTLIGHT: OLLY RICHARDS' SHORT STORIES   == -->
+<!-- ======================================================= -->
+<article class="spotlight-card" id="spotlight-olly">
+    <div class="spotlight-content">
+        <div class="spotlight-visual">
+            <div class="olly-book-container">
+                <img src="/library/images/books/spanish/short-stories-spanish-beginners.webp" width="304" height="466" loading="lazy" decoding="async" alt="Portada del libro Short Stories in Spanish for Beginners de Olly Richards">
+            </div>
+        </div>
+        <div class="spotlight-details">
+            <h3 class="spotlight-title">El Primer Libro que Siempre Leo</h3>
+            <p class="spotlight-description">
+                "Short Stories for Beginners" de Olly Richards es, sin lugar a dudas, el primer libro que busco cada vez que empiezo un nuevo idioma. Aquí es donde cojo mi primer vocabulario y es siempre el primer libro que termino. Es la herramienta perfecta para ganar confianza en la lectura.
+            </p>
+            <ul class="olly-features">
+                <li><i class="fas fa-check-circle"></i> 8 historias entretenidas</li>
+                <li><i class="fas fa-check-circle"></i> Diseñado para niveles A2-B1</li>
+                <li><i class="fas fa-check-circle"></i> Incluye glosario y resúmenes</li>
+                <li><i class="fas fa-check-circle"></i> Preguntas de comprensión</li>
+            </ul>
+            <a href="https://www.amazon.com/Short-Stories-Spanish-Beginners-Yourself/dp/1473683254/" target="_blank" class="button-link">Ver en Amazon</a>
+        </div>
+    </div>
+</article>
+
+<!-- ... (La sección "Tu Puerta al Español Real" empieza aquí) ... -->
+        <!-- ======================================================= -->
+        <!-- ==        NUEVO SPOTLIGHT: SERIE "EXTR@"             == -->
+        <!-- ======================================================= -->
+        <article class="spotlight-card-full" id="extra-spotlight">
+            <div class="extra-wrapper">
+                
+                <!-- Columna Izquierda: Detalles de la Serie -->
+                <div class="extra-column">
+                    <div class="extra-details-column">
+                        <img id="extra-image" src="" alt="Poster de la serie Extr@">
+                        <h3 id="extra-title"></h3>
+                        <p id="extra-summary"></p>
+                        <a id="extra-fb-link" href="" target="_blank" class="button-link">Leer mi Reseña Completa en Facebook</a>
+                    </div>
+                
+                    <div id="extra-playlist" class="playlist">
+                        <div class="playlist-item active-video">
+                            <span class="ep-number">1</span>
+                            <div class="playlist-text">
+                                <h4 class="playlist-item-title">Episode Title Here</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Reproductor Nativo -->
+                <div class="extra-player-column">
+                    <!-- Featured Video -->
+                    <div class="featured-video-container">
+                        <iframe 
+                            id="extra-player" 
+                            src="" 
+                            title="Reproductor de vídeo de YouTube" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                
+                    <!-- Playlist -->
+                   
+                </div>
+                
+
+            </div>
+        </article>
+       <!-- Título y Descripción para la Segunda Sección -->
+       <div class="spotlights-header">
+        <h2 class="spotlights-main-title">Tu Puerta al Español Real</h2>
+        <p class="spotlights-subtitle">Aquí es donde la magia ocurre. Ver y escuchar contenido auténtico es lo que transformará tu conocimiento en fluidez real. ¡Estas son mis fuentes favoritas!</p>
+    </div>
+
+        <article class="spotlight-card" id="spotlight-rtve">
+            <div class="spotlight-content">
+                <div class="spotlight-visual">
+                    <!-- El contenedor principal ahora alinea los pósters perfectamente -->
+                    <div class="series-recommendations">
+                        <a href="https://www.rtve.es/play/videos/el-ministerio-del-tiempo/" target="_blank" class="series-item">
+                            <!-- Este div controla la proporción del póster -->
+                            <div class="poster-container">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYjQ0YzE2NzItNjU2Ny00NDU4LTg5NTktNWJhNGI1ZDZiMTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Póster de El Ministerio del Tiempo">
+                            </div>
+                        </a>
+                        <a href="https://www.rtve.es/play/masterchef/" target="_blank" class="series-item">
+                            <div class="poster-container">
+                                <img src="https://m.media-amazon.com/images/M/MV5BODU1ZmM1MzUtMTdlOS00NjZkLWFhYTYtYmJlZjk2MDY4OTA0XkEyXkFqcGc@._V1_.jpg" alt="Póster de MasterChef">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="spotlight-details">
+                    <a href="https://www.rtve.es/play/" target="_blank" class="spotlight-logo-link">
+                         <img src="images/spotlights/rtve_play_logo.png" alt="Logo de RTVE Play" class="spotlight-logo">
+                    </a>
+                    <h3 class="spotlight-title">RTVE Play - Inmersión Gratuita</h3>
+                    <p class="spotlight-description">Sumérgete en el español de España con series de alta calidad y acceso gratuito.</p>
+                    <div class="rtve-spotlight-actions">
+                        <a href="https://www.rtve.es/play/" target="_blank" rel="noopener noreferrer" class="button-link">Explorar RTVE</a>
+                        <a href="../french/#cinema-francais" class="button-link rtve-crosslink">Ver mi portal francés · TF1+</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+       
+
+        <!-- Tarjeta 5: EliteTorrent -->
+        <article class="spotlight-card" id="spotlight-elitetorrent">
+            <div class="spotlight-content">
+                <div class="spotlight-visual">
+                    <div class="movie-recommendations">
+                        <a href="https://www.elitetorrent.com/peliculas/superman/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/superman-2025.webp" alt="Póster de Superman (2025)" width="420" height="622" loading="lazy" decoding="async"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/jurassic-world-el-renacer/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/jurassic-world-rebirth.webp" alt="Póster de Jurassic World: Rebirth" width="420" height="594" loading="lazy" decoding="async"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/lilo-y-stitch-2/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/lilo-and-stitch-2025.webp" alt="Póster de Lilo &amp; Stitch (2025)" width="420" height="622" loading="lazy" decoding="async"></a>
+                        <a href="https://www.elitetorrent.com/peliculas/una-pelicula-de-minecraft-3/" target="_blank" rel="noopener noreferrer" class="movie-item"><img src="images/spotlights/posters/a-minecraft-movie.webp" alt="Póster de A Minecraft Movie" width="420" height="622" loading="lazy" decoding="async"></a>
+                    </div>
+                </div>
+                <div class="spotlight-details">
+                     <a href="https://www.elitetorrent.com/principal/" target="_blank" class="spotlight-logo-link">
+                        <img src="images/spotlights/elitetorrent_logo.png" alt="Logo de EliteTorrent" class="spotlight-logo">
+                    </a>
+                    <h3 class="spotlight-title">Películas y Series</h3>
+                    <p class="spotlight-description">Un recurso para descargar películas o series en español.</p>
+                    <a href="https://www.elitetorrent.com/principal/" target="_blank" class="button-link">Visitar EliteTorrent</a>
+                </div>
+            </div>
+        </article>
+
+
+       <!-- ======================================================= -->
+<!-- ==     BLOQUE DE REEMPLAZO (HTML FINAL PARA WEBTOON)   == -->
+<!-- ======================================================= -->
+<article class="spotlight-card" id="spotlight-webtoon">
+    <div class="spotlight-content">
+        <div class="spotlight-details">
+            <a href="https://www.webtoons.com/es/" target="_blank" class="spotlight-logo-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Naver_Line_Webtoon_logo.png" alt="Logo de WEBTOON" class="spotlight-logo">
+            </a>
+            <h3 class="spotlight-title">WEBTOON</h3>
+            <p class="spotlight-description">
+                Cómics en formato vertical, perfectos para una lectura moderna y adictiva.
+                Es una de mis formas favoritas de leer en español porque el apoyo visual ayuda muchísimo a la comprensión.
+            </p>
+            <a href="https://www.webtoons.com/es/" target="_blank" class="button-link">Explorar Cómics</a>
+        </div>
+        <div class="spotlight-visual">
+            <!-- Contenedor de scroll horizontal -->
+            <div id="webtoon-grid" class="webtoon-recommendations">
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+1" alt="Webtoon 1">
+                </div>
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+2" alt="Webtoon 2">
+                </div>
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+3" alt="Webtoon 3">
+                </div>
+                <div class="webtoon-item">
+                    <img src="https://placehold.co/140x200?text=Poster+4" alt="Webtoon 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+</section>
+        
+     <!-- ======================================================= -->
+<!-- == SECCIÓN DE COMUNIDAD REVISADA (ESTRUCTURA FINAL)  == -->
+<!-- ======================================================= -->
+<section id="community-spotlights">
+    <div class="container">
+        
+        <div class="community-header">
+            <h2>La Comunidad</h2>
+            <p class="community-subtitle">Conéctate con instituciones y grupos que hacen que aprender español en Filipinas sea una experiencia increíble.</p>
+        </div>
+
+        <!-- El feature de Cervantes se cargará aquí dinámicamente -->
+        <div id="cervantes-feature-container"></div>
+
+        <!-- Un subtítulo para la estantería de grupos -->
+        <h3 class="shelf-subheader">Grupos y Meetups Recomendados</h3>
+
+        <!-- La estantería para los grupos se cargará aquí -->
+        <div id="groups-container" class="shelf-container">
+            <!-- Contenido dinámico desde community-data.js -->
+        </div>
+  <!-- ======================================================= -->
+        <!-- ==        NUEVA SECCIÓN: AMIGOS Y COLABORADORES      == -->
+        <!-- ======================================================= -->
+        <section id="friends-section">
+            <div class="container">
+                <div class="community-header"> <!-- Reutilizamos el estilo del header -->
+                    <h2>Mis Amigos</h2>
+                    <p class="community-subtitle">El aprendizaje es mejor cuando se comparte. Estas son algunas de las personas increíbles que he conocido en el camino.</p>
+                </div>
+                <div id="friends-grid-container">
+                    <!-- Las tarjetas de amigos se cargarán aquí -->
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+        <section id="content-shelves" class="container">
+            
+        <!-- Nuevo Encabezado con Título y Descripción -->
+     <!-- ======================================================= -->
+<!-- ==        BLOQUE DE REEMPLAZO (HTML SIMPLIFICADO)    == -->
+<!-- ======================================================= -->
+<div class="shelves-header">
+    <h2>Explora Mis Favoritos</h2>
+    <p>Esta es mi colección personal de creadores, artistas y más. Usa los filtros para encontrar exactamente lo que buscas o simplemente explora las estanterías.</p>
+</div>
+
+<!-- Contenedor de los Controles de Filtro (sin botón) -->
+<div class="filter-controls">
+   
+    <!-- Filtro de Nivel CEFR (Slider) -->
+    <div class="filter-group">
+        <label for="cefr-slider">Elige tu nivel:</label>
+        <input type="range" id="cefr-slider" min="0" max="6" value="0" step="1">
+        <div class="cefr-labels">
+            <span>Todos</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span>
+        </div>
+        <p id="cefr-description" aria-live="polite">Todos los niveles de escucha.</p>
+    </div>
+
+    <!-- Filtro de País (Dropdown Nativo) -->
+    <div class="filter-group">
+        <label for="country-filter">Filtra por acento/país:</label>
+        <select id="country-filter">
+            <!-- Las opciones se cargarán aquí con JS -->
+        </select>
+  
+</div>
+</div>
+
+        <!-- Las estanterías ahora están dentro de un contenedor principal -->
+        <div id="shelves-wrapper">
+            <!-- Estantería Especial para Principiantes -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-play-circle"></i> Para Empezar: Input Comprensible</h3>
+                <p class="shelf-description">Si eres principiante, te recomiendo empezar aquí. Estos canales están diseñados para ser entendidos fácilmente.</p>
+                <div id="shelf-comprehensible-input" class="shelf-container"></div>
+            </article>
+
+            <!-- Podcast shelf: dedicated listening surface, directly after the beginner shelf. -->
+            <section id="spanish-podcasts" class="content-shelf podcast-shelf" aria-labelledby="podcast-shelf-title">
+                <h2 id="podcast-shelf-title"><i class="fas fa-podcast" aria-hidden="true"></i> Podcasts</h2>
+                <div id="shelf-podcasts" class="podcast-shelf-rail" role="list" tabindex="0"></div>
+            </section>
+            
+            <!-- Estantería de Creadores de Contenido y Vlogs -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-camera-retro"></i> Vlogs</h3>
+                <div id="shelf-vlogs-lifestyle" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Música -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-music"></i> Música</h3>
+                <div id="shelf-music" class="shelf-container"></div>
+            </article>
+            
+            <article class="content-shelf">
+                <h3><i class="fas fa-user"></i> Personalidades</h3>
+                <p class="shelf-description">Sigue a estas figuras públicas en Instagram para una dosis diaria de español en un contexto real y cotidiano.</p>
+                <div id="shelf-personalities" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Shows y Entretenimiento -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-star"></i> Shows, Talentos y Reality TV</h3>
+                <div id="shelf-shows-entertainment" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Cine y Series -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-film"></i> Cine, Series y Cultura Pop</h3>
+                <div id="shelf-movies-popculture" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Comedia y Animación -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-laugh"></i> Comedia y Animación</h3>
+                <div id="shelf-comedy-animation" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Deportes -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-basketball-ball"></i> Deportes</h3>
+                <div id="shelf-sports" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Ciencia y Curiosidades -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-flask"></i> Ciencia, Educación y Curiosidades</h3>
+                <div id="shelf-science-education" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Gaming -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-gamepad"></i> Gaming</h3>
+                <div id="shelf-gaming" class="shelf-container"></div>
+            </article>
+            
+            <!-- Estantería de Biblioteca -->
+            <article class="content-shelf">
+                <h3><i class="fas fa-book"></i> Biblioteca</h3>
+                <div id="shelf-books" class="shelf-container"></div>
+            </article>
+
+            
+            
+        </div>
+    </section>
+
+    <!-- ======================= -->
+    <!--  MODAL PARA LOS LIBROS  -->
+    <!-- ======================= -->
+    <div id="book-modal" class="modal-overlay hidden">
+        <div id="book-modal-content" class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-book-title">
+            <button id="modal-close-btn" class="modal-close-button" aria-label="Cerrar modal">&times;</button>
+            
+            <div class="modal-left">
+                <img id="modal-book-cover" src="/library/images/assets/open_book_flipping_icon.png" alt="Portada del libro">
+            </div>
+
+            <div class="modal-right">
+                <h2 id="modal-book-title">Título del Libro</h2>
+                <h3 id="modal-book-author">por Autor</h3>
+                <p id="modal-book-cefr">Nivel Sugerido: B2 - C1</p>
+                <p id="modal-book-long-desc">Aquí va la descripción larga y detallada del libro, explicando por qué es una buena recomendación, su trama principal y su relevancia cultural o lingüística para un estudiante de español.</p>
+                <div id="modal-book-links">
+                    <!-- Los enlaces de descarga se insertarán aquí con JS -->
+                </div>
+            </div>
+        </div>
+        <!-- Un overlay separado puede ayudar a manejar mejor los clics -->
+        <div id="book-modal-overlay"></div>
+    </div>
+
+
+<!-- ============================================== -->
+<!-- ==     HTML PARA EL MODAL DE CREADORES      == -->
+<!-- ============================================== -->
+<div id="creator-modal" class="creator-modal-overlay hidden">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="creatorModalTitle">
+        <button class="modal-close-btn" aria-label="Cerrar modal"><i class="fas fa-times"></i></button>
+        
+        <div class="modal-header">
+            <img src="" alt="" id="modal-creator-img" class="modal-image">
+            <h2 id="creatorModalTitle">Nombre del Creador</h2>
+        </div>
+        
+        <div class="modal-main-content-area">
+            
+            <!-- El vídeo se insertará aquí si existe -->
+            <div id="modal-video-embed-area"></div>
+                    
+            <div class="modal-long-description-area">
+                <h4>Sobre el Recurso</h4>
+                <p id="modal-creator-long-desc"></p>
+            </div>
+
+            <div class="modal-cefr-details-area">
+                <h4>Nivel Recomendado (CEFR):</h4>
+                <div id="modal-cefr-dots-container" class="cefr-dots-container">
+                    <!-- Los puntos de nivel se generarán aquí con JS -->
+                </div>
+            </div>
+                    
+            <div id="modal-aljohns-take-container"> 
+                <h4>Mi Opinión</h4> 
+                <div id="modal-creator-aljohns-comment" class="modal-aljohns-take">
+                    <!-- El comentario de Aljohn irá aquí -->
+                </div>
+            </div> 
+
+            <div class="modal-external-links-area">
+                <h4>Enlaces</h4>
+                <div id="modal-creator-links" class="modal-links">
+                    <!-- Los enlaces a redes se generarán aquí con JS -->
+                </div>
+            </div>       
+        </div>
+    </div>
+    <div id="creator-modal-overlay"></div>
+</div>
+
+<!-- Modal de detalles de podcast -->
+<div id="podcast-modal" class="podcast-modal-overlay hidden" aria-hidden="true">
+    <div class="podcast-modal-backdrop" data-podcast-modal-close></div>
+    <div class="podcast-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="podcast-modal-title" aria-describedby="podcast-modal-description podcast-modal-guidance">
+        <button type="button" class="podcast-modal-close" data-podcast-modal-close aria-label="Cerrar detalles del podcast">×</button>
+        <div id="podcast-modal-content"></div>
+    </div>
+</div>
+    <!-- =================================== -->
+    <!--  MODAL PARA SUGERENCIAS DE LA COMUNIDAD  -->
+    <!-- =================================== -->
+   <!-- Busca el div con id="picks-modal" y reemplaza su contenido con esto: -->
+   <div id="picks-modal" class="picks-modal-overlay hidden">
+    <div class="picks-modal-content">
+        <button id="picks-modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <img id="modal-pick-img" src="" alt="Logo del recurso">
+        <h3 id="modal-pick-name">Nombre del Recurso</h3>
+        <p id="modal-pick-type">Tipo de Recurso</p>
+
+        <!-- Separator (optional, display based on video presence) -->
+        <hr class="modal-separator video-separator-top"> 
+
+        <!-- Video wrapper -->
+        <div class="video-wrapper">
+            <div id="modal-pick-embed" class="embed-responsive">
+                <!-- Embed iframe or video will be inserted here -->
+            </div>
+        </div>
+        
+        <!-- Separator (optional, display based on video presence) -->
+        <hr class="modal-separator video-separator-bottom">
+
+        <p id="modal-pick-desc">Descripción detallada del recurso y por qué es una buena recomendación.</p>
+        <p id="modal-pick-recommended-by">Recomendado por: Nombre del Suscriptor</p>
+        <a id="modal-pick-link" href="#" target="_blank">
+            Visitar Recurso <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+    <div id="picks-modal-overlay"></div>
+</div>
+   <!-- ======================================================= -->
+<!-- ==     MODAL DE AMIGOS (VERSIÓN FINAL Y DETALLADA)   == -->
+<!-- ======================================================= -->
+<div id="friends-modal" class="picks-modal-overlay hidden">
+    <div class="picks-modal-content">
+        <button id="friends-modal-close-btn" class="modal-close-btn">&times;</button>
+        
+        <!-- Header del Modal con Imagen y Nombre -->
+        <div class="modal-header">
+            <img id="modal-friend-img" src="" alt="Foto de perfil del amigo" class="modal-image">
+            <h3 id="modal-friend-name"></h3>
+            <div id="modal-friend-logos" class="country-logos-container">
+                <!-- Los logos de países se cargarán aquí -->
+            </div>
+        </div>
+
+        <!-- Vídeo Embebido -->
+        <div id="modal-friend-embed" class="modal-video-embed-area">
+            <!-- El iframe del vídeo se cargará aquí -->
+        </div>
+
+        <!-- Descripción Larga -->
+        <div class="modal-long-description-area">
+             <h4>Sobre Nuestra Colaboración</h4>
+             <p id="modal-friend-long-desc"></p>
+        </div>
+
+        <!-- Botón de Enlace Externo -->
+        <a id="modal-friend-link" href="#" target="_blank" class="button-link">
+            Visitar su Perfil <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a id="modal-friend-collab-link" href="#" target="_blank" rel="noopener noreferrer" class="button-link hidden">
+            Ver nuestra colaboración <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a id="modal-friend-secondary-link" href="#" target="_blank" rel="noopener noreferrer" class="button-link hidden">
+            Ver Instagram <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+    <div id="friends-modal-overlay"></div>
+</div>
+
+    <!-- ======================================================= -->
+<!-- ==     BLOQUE DE REEMPLAZO / RESTAURACIÓN            == -->
+<!-- ==   SECCIÓN DE SUGERENCIAS DE LA COMUNIDAD          == -->
+<!-- ======================================================= -->
+<section id="community-picks">
+    <div class="container">
+        <h2><i class="fas fa-users"></i> Sugerencias de la Comunidad</h2>
+
+        <div id="community-carousel" class="shelf-container">
+            <!-- Las tarjetas de sugerencias se cargarán aquí dinámicamente con community-picks-loader.js -->
+        </div>
+    </div>
+</section>
+
+<section id="lugares-para-hablar-espanol" class="restaurant-places-section" aria-labelledby="lugares-para-hablar-espanol-title" data-language-restaurant-shelf>
+    <div class="container restaurant-places-inner">
+        <header class="restaurant-places-heading">
+            <h2 id="lugares-para-hablar-espanol-title">El español también se practica en la mesa</h2>
+            <p>Los restaurantes y lugares de encuentro que aparecen en mis videos: abre cada ficha para ver la dirección, el contacto y la conversación completa.</p>
+        </header>
+        <div class="restaurant-places-rail" data-language-restaurant-rail aria-live="polite"></div>
+    </div>
+</section>
+    </main>
+    <footer id="main-footer-placeholder"></footer>
+    <!-- Global JS (Shared) -->
+ <script>
+    let siteBasePath;
+
+    if (
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.protocol === 'file:'
+    ) {
+        siteBasePath = '/';
+    } else {
+        siteBasePath = '/';
+    }
+
+    console.log('Global siteBasePath set to:', siteBasePath);
+</script>
+
+    <!-- Archivos de Datos -->
+    <script src="js/community-data.js"></script>
+    <script src="js/books-data.js"></script>
+
+   <!-- Archivo de Lógica Principal -->
+   <script src="js/books-loader.js"></script> <!-- Enlazamos el nuevo loader -->
+   <script src="js/playlist-data.js"></script>
+<script src="js/playlist-loader.js"></script>
+<script src="js/restaurants-data.js"></script>
+<script src="../shared/js/language-restaurants.js"></script>
+<script src="js/community-loader.js"></script>
+<script src="js/community-picks-data.js"></script>
+<script src="js/community-picks-loader.js"></script>
+<script src="js/creators-data.js"></script> <!-- Crearemos este a continuación -->
+<script src="js/podcasts-data.js"></script>
+<script src="js/podcasts-loader.js"></script>
+<script src="js/creators-loader.js"></script>
+<script src="js/hero-loader.js"></script>
+<script src="js/hero-data.js"></script>
+<script src="js/extra-loader.js"></script>
+<script src="js/extra-data.js"></script>
+<script src="js/friends-data.js"></script>
+<script src="js/friends-loader.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/webtoon-data.js"></script>
+<script src="js/webtoon-loader.js"></script>
+<script type="module" src="../../js/app-preview.js"></script>
+<script src="../shared/js/language-section-nav.js" defer></script>
+<script src="../../js/navbar-loader.js" defer></script>
+<script src="../../js/footer-loader.js" defer></script>
+</body>
+</html>

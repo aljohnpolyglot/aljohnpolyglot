@@ -1,0 +1,2064 @@
+/* Swedish hero refresh and mobile flow hardening.
+   Loaded after the legacy page stylesheet so this layer can stay focused. */
+
+#language-page-swedish .custom-hero-section#swedish-custom-hero {
+    --hero-blue: #005293;
+    --hero-blue-deep: #002b50;
+    --hero-yellow: #fecb00;
+    --hero-ink: #07101a;
+    --hero-white: #f7fbff;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    align-items: center;
+    justify-content: stretch;
+    min-height: 760px;
+    min-height: max(760px, calc(100svh - 70px));
+    height: auto;
+    max-height: none;
+    padding: clamp(112px, 12vh, 148px) 0 clamp(72px, 9vh, 104px);
+    overflow: hidden;
+    background: var(--hero-ink);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-parallax-layer,
+#language-page-swedish #swedish-custom-hero .hero-content-scrim {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-parallax-bg {
+    z-index: 0;
+    background-image: url('../images/hero/header-design.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    filter: saturate(0.92) contrast(1.04);
+    transform: scale(1.015);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-parallax-fg {
+    z-index: 1;
+    background:
+        linear-gradient(90deg, transparent 0 15%, rgba(254, 203, 0, 0.11) 15% 15.7%, transparent 15.7%),
+        linear-gradient(0deg, transparent 0 64%, rgba(254, 203, 0, 0.09) 64% 64.7%, transparent 64.7%),
+        radial-gradient(circle at 50% 42%, transparent 0 24%, rgba(0, 42, 79, 0.12) 64%, rgba(2, 8, 14, 0.4) 100%);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-content-scrim {
+    z-index: 2;
+    opacity: 1;
+    background:
+        linear-gradient(90deg, rgba(2, 7, 13, 0.14) 0%, rgba(2, 7, 13, 0.64) 29%, rgba(2, 7, 13, 0.86) 50%, rgba(2, 7, 13, 0.64) 71%, rgba(2, 7, 13, 0.14) 100%),
+        linear-gradient(180deg, rgba(2, 7, 13, 0.32) 0%, rgba(2, 7, 13, 0.04) 34%, rgba(2, 7, 13, 0.72) 100%);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-text-overlay {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+    border-radius: 0;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-content-container {
+    width: min(92%, 760px);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box,
+#language-page-swedish #swedish-custom-hero .hero-intro-text,
+#language-page-swedish #swedish-custom-hero .hero-cta-buttons {
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-flag {
+    width: clamp(42px, 4vw, 52px);
+    height: auto;
+    aspect-ratio: 274 / 170;
+    margin: 0 0 14px;
+    object-fit: contain;
+    opacity: 1;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.38));
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box h1 {
+    margin: 0;
+    color: var(--hero-white);
+    font-family: 'Montserrat', var(--sw-font-display), sans-serif;
+    font-weight: 800;
+    line-height: 0.86;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.72);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-title-line-1 {
+    display: block;
+    margin: 0;
+    color: var(--hero-white);
+    font-size: clamp(3.2rem, 6vw, 5.6rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    text-transform: none;
+    opacity: 1;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
+    display: block;
+    margin-top: 0.08em;
+    color: var(--hero-yellow);
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: clamp(4.5rem, 8vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 0.94;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-main-title-box .highlight-yellow {
+    display: inline-block;
+    padding: 0 0.04em;
+    color: var(--hero-yellow);
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-shadow: 0 5px 0 rgba(109, 82, 0, 0.24), 0 7px 18px rgba(0, 0, 0, 0.64);
+    transform: none;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-intro-text {
+    max-width: 68ch;
+    margin: clamp(24px, 4vh, 38px) auto 30px;
+    color: #dce8f2;
+    font-family: 'Inter', var(--sw-font-primary), sans-serif;
+    font-size: clamp(0.98rem, 1.25vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.72;
+    text-wrap: pretty;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-intro-text .intro-text-highlight {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--hero-white);
+    font-size: clamp(1.08rem, 1.6vw, 1.2rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-intro-body {
+    display: block;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    width: auto;
+    margin: 0;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-cta-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 13px 20px;
+    margin: 0;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-family: 'Inter', var(--sw-font-primary), sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.055em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: none;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+#language-page-swedish #swedish-custom-hero .hero-cta-buttons .btn svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#language-page-swedish #swedish-custom-hero .btn.btn-hero-primary {
+    color: var(--hero-ink);
+    background: var(--hero-yellow);
+    border-color: var(--hero-yellow);
+    box-shadow: 0 5px 0 #a98400, 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+#language-page-swedish #swedish-custom-hero .btn.btn-hero-outline {
+    color: var(--hero-white);
+    background: rgba(3, 12, 21, 0.48);
+    border-color: rgba(247, 251, 255, 0.88);
+}
+
+#language-page-swedish #swedish-custom-hero .btn.btn-hero-primary:hover {
+    color: var(--hero-ink);
+    background: #ffdb42;
+    border-color: #ffdb42;
+    box-shadow: 0 3px 0 #a98400, 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+}
+
+#language-page-swedish #swedish-custom-hero .btn.btn-hero-outline:hover {
+    color: var(--hero-ink);
+    background: var(--hero-white);
+    border-color: var(--hero-white);
+    box-shadow: none;
+    transform: translateY(-2px);
+}
+
+#language-page-swedish #swedish-custom-hero .hero-cta-buttons .btn:focus-visible {
+    outline: 3px solid var(--hero-yellow);
+    outline-offset: 4px;
+}
+
+#language-page-swedish #swedish-custom-hero ::selection {
+    color: var(--hero-ink);
+    background: var(--hero-yellow);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #language-page-swedish #swedish-custom-hero .hero-content-container {
+        animation: swedish-hero-arrival 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes swedish-hero-arrival {
+        from {
+            opacity: 0.88;
+            filter: blur(2px);
+            transform: translateY(18px);
+        }
+        to {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #language-page-swedish .custom-hero-section#swedish-custom-hero {
+        display: grid;
+        align-items: start;
+        min-height: 0;
+        height: auto;
+        max-height: none;
+        padding-top: max(96px, calc(72px + env(safe-area-inset-top)));
+        padding-right: max(18px, env(safe-area-inset-right));
+        padding-bottom: max(62px, calc(54px + env(safe-area-inset-bottom)));
+        padding-left: max(18px, env(safe-area-inset-left));
+        overflow: hidden;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-parallax-bg {
+        background-color: var(--hero-ink);
+        background-position: center bottom;
+        background-size: 100% auto;
+        filter: saturate(0.9) contrast(1.06);
+        transform: none;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-parallax-fg {
+        background:
+            linear-gradient(90deg, transparent 0 23%, rgba(254, 203, 0, 0.08) 23% 24%, transparent 24%),
+            linear-gradient(180deg, rgba(0, 82, 147, 0.26) 0%, transparent 38%),
+            linear-gradient(180deg, transparent 62%, rgba(0, 43, 80, 0.24) 100%);
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-content-scrim {
+        background:
+            linear-gradient(180deg, rgba(3, 9, 16, 0.62) 0%, rgba(3, 9, 16, 0.86) 62%, rgba(3, 9, 16, 0.68) 100%),
+            radial-gradient(circle at 50% 20%, rgba(0, 82, 147, 0.2), transparent 58%);
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-text-overlay {
+        width: 100%;
+        padding: 0;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-content-container {
+        width: 100%;
+        max-width: 620px;
+        padding: 0;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-flag {
+        width: 44px;
+        margin-bottom: 12px;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-title-line-1 {
+        font-size: clamp(2.75rem, 13vw, 4.3rem);
+        line-height: 0.94;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
+        margin-top: 0.12em;
+        font-size: clamp(4rem, 19vw, 5.6rem);
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-intro-text {
+        max-width: 40rem;
+        margin: 26px auto 28px;
+        color: #e4edf5;
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: left;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.92);
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-intro-text .intro-text-highlight {
+        margin-bottom: 12px;
+        font-size: 1.08rem;
+        line-height: 1.45;
+        text-align: center;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-cta-buttons .btn {
+        width: 100%;
+        min-height: 52px;
+        margin: 0;
+        font-size: 0.82rem;
+    }
+
+    /* Keep everything after the hero in normal document flow on small screens. */
+    #language-page-swedish #fragmenterad-verklighet-section,
+    #language-page-swedish #aljohn-swedish-playlist,
+    #language-page-swedish #swedish-resources {
+        position: relative;
+        clear: both;
+        display: block;
+        width: 100%;
+        min-width: 0;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #language-page-swedish #fragmenterad-verklighet-section {
+        z-index: 1;
+    }
+
+    #language-page-swedish #aljohn-swedish-playlist,
+    #language-page-swedish #swedish-resources {
+        z-index: 0;
+    }
+
+    #language-page-swedish #swedish-resources {
+        overflow: visible;
+    }
+
+    #language-page-swedish #swedish-resources .container,
+    #language-page-swedish #swedish-resources .resource-category-wrapper,
+    #language-page-swedish #swedish-resources .horizontal-scroll-wrapper,
+    #language-page-swedish #swedish-resources .swedish-item-grid,
+    #language-page-swedish #swedish-resources .resource-item-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #language-page-swedish #swedish-resources .horizontal-scroll-wrapper {
+        display: block;
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 4px 0 12px;
+        overflow-x: visible;
+        overflow-y: visible;
+        white-space: normal;
+    }
+
+    #language-page-swedish #swedish-resources .swedish-item-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+        padding: 0;
+        white-space: normal;
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        white-space: normal;
+        overflow: hidden;
+        flex: none;
+    }
+
+    #language-page-swedish #swedish-resources .resource-category-wrapper .subsection-title {
+        min-width: 0;
+        overflow-wrap: normal;
+        hyphens: auto;
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card h4 {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    #language-page-swedish #swedish-resources .info-icon-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        margin: -10px -8px -10px 2px;
+    }
+}
+
+@media (max-width: 359px) {
+    #language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-title-line-1 {
+        font-size: 2.55rem;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-main-title-box .hero-title-line-2 {
+        font-size: 3.7rem;
+    }
+
+    #language-page-swedish #swedish-resources .swedish-item-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #language-page-swedish #swedish-resources .resource-item-card .card-short-desc {
+        max-height: 8rem;
+        margin-bottom: 10px;
+        opacity: 1;
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card:hover {
+        min-height: 100%;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish #swedish-custom-hero *,
+    #language-page-swedish #swedish-resources * {
+        scroll-behavior: auto;
+        animation: none;
+        transition: none;
+    }
+
+    #language-page-swedish #swedish-custom-hero .hero-main-title-box,
+    #language-page-swedish #swedish-custom-hero .hero-intro-text,
+    #language-page-swedish #swedish-custom-hero .hero-cta-buttons,
+    #language-page-swedish #swedish-custom-hero .hero-content-container {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+}
+
+/* Keep CEFR guidance and detail actions quiet until the card is being explored. */
+@media (hover: hover) and (pointer: fine) {
+    #language-page-swedish #swedish-resources .card-resource-meta,
+    #language-page-swedish #swedish-resources .resource-item-card .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card .podcast-card-button-new,
+    #language-page-swedish .restaurant-ph-card .card-details-button {
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 180ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card:hover .card-resource-meta,
+    #language-page-swedish #swedish-resources .resource-item-card:focus-within .card-resource-meta,
+    #language-page-swedish #swedish-resources .resource-item-card:hover .card-details-button,
+    #language-page-swedish #swedish-resources .resource-item-card:focus-within .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:hover .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:focus-within .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:hover .podcast-card-button-new,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:focus-within .podcast-card-button-new,
+    #language-page-swedish .restaurant-ph-card:hover .card-details-button,
+    #language-page-swedish .restaurant-ph-card:focus-within .card-details-button {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #language-page-swedish #swedish-resources .card-resource-meta,
+    #language-page-swedish #swedish-resources .resource-item-card .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card .card-details-button,
+    #language-page-swedish #swedish-resources .swedish-podcast-card .podcast-card-button-new,
+    #language-page-swedish .restaurant-ph-card .card-details-button {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Personal playlist: replaces the old single-video flip card. */
+#language-page-swedish #aljohn-swedish-playlist {
+    overflow: hidden;
+    color: #f7fbff;
+    background:
+        linear-gradient(125deg, rgba(0, 43, 80, 0.98), rgba(0, 82, 147, 0.92)),
+        #002b50;
+    border-top: 1px solid rgba(254, 203, 0, 0.55);
+    border-bottom: 1px solid rgba(254, 203, 0, 0.3);
+}
+
+#language-page-swedish #aljohn-swedish-playlist .container {
+    width: min(92%, 1220px);
+}
+
+#language-page-swedish .personal-playlist-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(24px, 5vw, 72px);
+    align-items: end;
+    margin-bottom: clamp(28px, 5vw, 54px);
+}
+
+#language-page-swedish .personal-playlist-heading h2 {
+    grid-column: 1;
+    max-width: 13ch;
+    margin: 0 0 16px;
+    color: #f7fbff;
+    font-family: 'Montserrat', var(--sw-font-display), sans-serif;
+    font-size: clamp(2.1rem, 5vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+}
+
+#language-page-swedish .personal-playlist-heading p {
+    grid-column: 1;
+    max-width: 68ch;
+    margin: 0;
+    color: #dce8f2;
+    font-size: clamp(1rem, 1.4vw, 1.08rem);
+    line-height: 1.72;
+    text-wrap: pretty;
+}
+
+#language-page-swedish .playlist-channel-link {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 0;
+    color: #fecb00;
+    border-bottom: 2px solid currentColor;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+#language-page-swedish .playlist-channel-link:hover {
+    color: #fff0a8;
+    text-decoration: none;
+}
+
+#language-page-swedish .personal-playlist-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.75fr);
+    gap: clamp(20px, 3vw, 36px);
+    align-items: stretch;
+}
+
+#language-page-swedish .personal-player-shell,
+#language-page-swedish .personal-playlist-panel {
+    min-width: 0;
+    overflow: hidden;
+    background: #07101a;
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+}
+
+#language-page-swedish .personal-player-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+#language-page-swedish .personal-player-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#language-page-swedish .personal-player-copy {
+    min-height: 150px;
+    padding: clamp(20px, 3vw, 32px);
+    border-top: 3px solid #fecb00;
+}
+
+#language-page-swedish .personal-player-copy h3 {
+    margin: 0 0 10px;
+    color: #f7fbff;
+    font-family: 'Inter', var(--sw-font-primary), sans-serif;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 800;
+    line-height: 1.32;
+    overflow-wrap: anywhere;
+}
+
+#language-page-swedish .personal-player-copy p {
+    margin: 0;
+    color: #c9d7e3;
+    font-size: 0.94rem;
+    line-height: 1.62;
+}
+
+#language-page-swedish .personal-playlist-panel {
+    display: flex;
+    flex-direction: column;
+    max-height: 650px;
+    border-top: 3px solid #fecb00;
+}
+
+#language-page-swedish .personal-playlist-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 22px 16px;
+    border-bottom: 1px solid rgba(220, 232, 242, 0.16);
+}
+
+#language-page-swedish .personal-playlist-panel-header h3 {
+    margin: 0;
+    color: #f7fbff;
+    font-family: 'Montserrat', var(--sw-font-display), sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+#language-page-swedish .personal-playlist-count {
+    flex: none;
+    color: #fecb00;
+    font-size: 0.875rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+#language-page-swedish .personal-playlist-list {
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: #fecb00 #07101a;
+}
+
+#language-page-swedish .personal-playlist-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#language-page-swedish .personal-playlist-list::-webkit-scrollbar-thumb {
+    background: #fecb00;
+}
+
+#language-page-swedish .personal-playlist-item {
+    display: grid;
+    grid-template-columns: 96px 42px minmax(0, 1fr);
+    gap: 14px;
+    width: 100%;
+    min-height: 108px;
+    padding: 18px 20px;
+    color: #dce8f2;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(220, 232, 242, 0.12);
+    cursor: pointer;
+    transition: color 180ms ease, background-color 180ms ease;
+}
+
+#language-page-swedish .personal-playlist-item-thumb {
+    width: 96px;
+    height: 54px;
+    align-self: center;
+    object-fit: cover;
+    border: 1px solid rgba(220, 232, 242, 0.2);
+    border-radius: 6px;
+    background: #07101a;
+}
+
+#language-page-swedish .personal-playlist-item:hover {
+    color: #fff;
+    background: rgba(0, 82, 147, 0.32);
+}
+
+#language-page-swedish .personal-playlist-item.is-selected {
+    color: #fff;
+    background: #005293;
+    box-shadow: inset 4px 0 #fecb00;
+}
+
+#language-page-swedish .personal-playlist-number {
+    color: #fecb00;
+    font-family: 'Montserrat', var(--sw-font-display), sans-serif;
+    font-size: 0.84rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+#language-page-swedish .personal-playlist-item-copy {
+    min-width: 0;
+}
+
+#language-page-swedish .personal-playlist-item-title {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+#language-page-swedish .personal-playlist-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 9px;
+    color: #aebfcd;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+#language-page-swedish .personal-playlist-item.is-selected .personal-playlist-action {
+    color: #fff0a8;
+}
+
+#language-page-swedish .playlist-empty-state,
+#language-page-swedish .playlist-noscript {
+    padding: 22px;
+    color: #dce8f2;
+}
+
+/* Accessibility and production hardening. */
+#language-page-swedish :focus-visible {
+    outline: 3px solid #fecb00;
+    outline-offset: 3px;
+}
+
+#language-page-swedish ::selection {
+    color: #07101a;
+    background: #fecb00;
+}
+
+#language-page-swedish .btn,
+#language-page-swedish .btn-filter-cefr,
+#language-page-swedish .btn-filter-cefr-clear,
+#language-page-swedish .btn-icon,
+#language-page-swedish .modal-close-btn {
+    min-height: 44px;
+}
+
+#language-page-swedish .info-popover-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: #f7fbff;
+    background: #07101a;
+    border: 1px solid rgba(247, 251, 255, 0.34);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#language-page-swedish .info-popover-close:hover,
+#language-page-swedish .info-popover-close:focus-visible {
+    color: #07101a;
+    background: #fecb00;
+    border-color: #fecb00;
+}
+
+#language-page-swedish .btn-icon,
+#language-page-swedish .modal-close-btn {
+    min-width: 44px;
+    width: 44px;
+    height: 44px;
+}
+
+#language-page-swedish .btn-outline:hover,
+#language-page-swedish .btn-outline:focus-visible {
+    color: #07101a;
+    background: #fecb00;
+    border-color: #fecb00;
+}
+
+#language-page-swedish .modal-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 12px;
+    right: 12px;
+    padding: 0;
+    color: #f7fbff;
+    background: #07101a;
+    border: 1px solid rgba(247, 251, 255, 0.38);
+    border-radius: 50%;
+}
+
+#language-page-swedish .modal-close-btn:hover,
+#language-page-swedish .modal-close-btn:focus-visible {
+    color: #07101a;
+    background: #fecb00;
+    border-color: #fecb00;
+    transform: none;
+}
+
+body.swedish-modal-open {
+    overscroll-behavior: contain;
+}
+
+#language-page-swedish .modal-overlay {
+    padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+
+#language-page-swedish .modal-content {
+    width: min(100%, 760px);
+    max-height: min(90vh, 900px);
+    max-height: min(90dvh, 900px);
+    overscroll-behavior: contain;
+}
+
+#language-page-swedish .resource-item-card,
+#language-page-swedish .swedish-podcast-card,
+#language-page-swedish .restaurant-ph-card,
+#language-page-swedish .scandinavian-encounter-card {
+    min-width: 0;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card {
+    min-height: 390px;
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card:hover,
+#language-page-swedish #swedish-resources .resource-item-card:focus-visible {
+    min-height: 390px;
+    transform: translateY(-4px);
+}
+
+#language-page-swedish .card-resource-meta {
+    margin: -2px 0 8px;
+    color: #fecb00;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+#language-page-swedish .card-details-button {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 10px;
+    padding: 9px 12px;
+    color: #f7fbff;
+    background: #005293;
+    border: 1px solid #3c95d8;
+    border-radius: 6px;
+    font-family: 'Inter', var(--sw-font-primary), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#language-page-swedish .card-details-button:hover,
+#language-page-swedish .card-details-button:focus-visible {
+    color: #07101a;
+    background: #fecb00;
+    border-color: #fecb00;
+}
+
+#language-page-swedish .podcast-card-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: auto;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card .card-short-desc,
+#language-page-swedish #swedish-resources .resource-item-card:hover .card-short-desc,
+#language-page-swedish #swedish-resources .resource-item-card:focus-within .card-short-desc {
+    display: -webkit-box;
+    max-height: none;
+    margin-bottom: 10px;
+    overflow: hidden;
+    opacity: 1;
+    transition: none;
+    font-size: 0.875rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+#language-page-swedish #fragmenterad-verklighet-section .narrative-hidden {
+    display: none;
+    max-height: none;
+    margin-top: 0;
+    overflow: visible;
+    opacity: 1;
+    transition: none;
+}
+
+#language-page-swedish #fragmenterad-verklighet-section .narrative-hidden.show {
+    display: block;
+    max-height: none;
+    margin-top: 14px;
+}
+
+#language-page-swedish #cefr-filter-controls-container .cefr-panel-intro,
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr,
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr .cefr-level-tag,
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr .cefr-level-desc,
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr-clear {
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr,
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr-clear {
+    font-size: 0.875rem;
+}
+
+#language-page-swedish .card-image-container img,
+#language-page-swedish .podcast-card-image-new,
+#language-page-swedish .restaurant-ph-card-image,
+#language-page-swedish .scandinavian-encounter-card .card-image,
+#language-page-swedish .modal-image {
+    background: #07101a;
+}
+
+@media (max-width: 900px) {
+    #language-page-swedish .personal-playlist-heading {
+        grid-template-columns: 1fr;
+    }
+
+    #language-page-swedish .playlist-channel-link {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: start;
+        margin-top: 18px;
+    }
+
+    #language-page-swedish .personal-playlist-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #language-page-swedish .personal-playlist-panel {
+        max-height: none;
+    }
+
+    #language-page-swedish .personal-playlist-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: visible;
+    }
+}
+
+/* Compact podcast cards; long copy lives in the dialog. */
+#language-page-swedish #swedish-resources #top-podcasts-grid .swedish-podcast-card {
+    flex: 0 0 clamp(230px, 27vw, 280px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+#language-page-swedish .swedish-podcast-card-trigger {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 14px;
+    color: var(--sw-text-on-yellow);
+    text-align: left;
+    background: var(--sw-flag-yellow);
+    border: 2px solid var(--sw-accent-yellow-darker);
+    border-radius: var(--sw-radius-lg);
+    box-shadow: var(--sw-shadow-md);
+    cursor: pointer;
+    transition: transform var(--sw-transition-speed) ease, box-shadow var(--sw-transition-speed) ease;
+}
+#language-page-swedish .swedish-podcast-card-trigger:hover { transform: translateY(-4px); box-shadow: 0 7px 20px rgba(var(--sw-flag-yellow-rgb), .35); }
+#language-page-swedish .swedish-podcast-card-trigger:focus-visible { outline: 3px solid var(--sw-flag-blue); outline-offset: 4px; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-image-new {
+    width: 100%; height: auto; aspect-ratio: 1; margin: 0; border: 0; border-radius: var(--sw-radius-md); object-fit: cover;
+}
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-meta { font-size: .75rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; opacity: .78; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-name-new { margin: 0; color: var(--sw-text-on-yellow); font-size: 1.12rem; line-height: 1.2; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-format { display: -webkit-box; overflow: hidden; min-height: 2.6em; color: var(--sw-text-on-yellow); font-size: .84rem; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+#language-page-swedish .swedish-podcast-card-trigger .podcast-card-button-new { align-self: center; margin-top: auto; color: var(--sw-text-on-blue); background: var(--sw-flag-blue); border-radius: var(--sw-radius-xl); padding: 7px 12px; font-size: .8rem; font-weight: 700; }
+
+#language-page-swedish .swedish-podcast-modal[hidden] { display: none; }
+#language-page-swedish .swedish-podcast-modal { position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center; padding: 20px; }
+#language-page-swedish .swedish-podcast-modal.is-open { animation: swedishPodcastFade .2s ease-out both; }
+#language-page-swedish .swedish-podcast-modal__backdrop { position: absolute; inset: 0; background: rgba(4, 16, 28, .82); }
+#language-page-swedish .swedish-podcast-modal__dialog { position: relative; width: min(900px, 100%); max-height: min(760px, calc(100dvh - 40px)); overflow: auto; padding: clamp(20px, 4vw, 38px); color: var(--sw-text-primary); background: var(--sw-bg-tertiary); border: 1px solid var(--sw-border-color); border-radius: var(--sw-radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+#language-page-swedish .swedish-podcast-modal__close { position: absolute; top: 12px; right: 14px; z-index: 1; width: 42px; height: 42px; color: var(--sw-text-primary); background: var(--sw-bg-secondary); border: 1px solid var(--sw-border-color); border-radius: 50%; font-size: 1.7rem; line-height: 1; cursor: pointer; }
+#language-page-swedish .swedish-podcast-modal__close:focus-visible { outline: 3px solid var(--sw-flag-yellow); outline-offset: 3px; }
+#language-page-swedish .swedish-podcast-modal__layout { display: grid; grid-template-columns: minmax(180px, 280px) minmax(0, 1fr); gap: clamp(20px, 4vw, 38px); align-items: center; }
+#language-page-swedish .swedish-podcast-modal__cover { width: 100%; height: auto; max-height: 62vh; object-fit: contain; align-self: center; border-radius: var(--sw-radius-md); }
+#language-page-swedish .swedish-podcast-modal__body h2 { margin: 0 0 12px; color: var(--sw-text-primary); font-size: clamp(1.7rem, 4vw, 2.4rem); }
+#language-page-swedish .swedish-podcast-modal__eyebrow { margin: 0 0 8px; color: var(--sw-flag-yellow); font-size: .8rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+#language-page-swedish .swedish-podcast-modal__description, #language-page-swedish .swedish-podcast-modal__guidance { color: var(--sw-text-secondary); line-height: 1.65; }
+#language-page-swedish .swedish-podcast-modal__note { margin: 18px 0; padding: 14px 16px; background: var(--sw-bg-secondary); border-radius: var(--sw-radius-md); }
+#language-page-swedish .swedish-podcast-modal__note p { margin: 6px 0 0; line-height: 1.6; }
+#language-page-swedish .swedish-podcast-modal__video { aspect-ratio: 16 / 9; margin-top: 20px; overflow: hidden; border-radius: var(--sw-radius-md); background: #000; }
+#language-page-swedish .swedish-podcast-modal__video iframe { width: 100%; height: 100%; border: 0; }
+#language-page-swedish .swedish-podcast-modal__unavailable { margin-top: 20px; padding: 14px; color: var(--sw-text-secondary); background: var(--sw-bg-secondary); border-radius: var(--sw-radius-md); }
+#language-page-swedish .swedish-podcast-modal__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+#language-page-swedish .swedish-podcast-modal__links a { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 14px; color: var(--sw-text-on-blue); background: var(--sw-flag-blue); border-radius: var(--sw-radius-xl); font-weight: 700; text-decoration: none; }
+#language-page-swedish .swedish-podcast-modal__links a:focus-visible { outline: 3px solid var(--sw-flag-yellow); outline-offset: 3px; }
+body.swedish-podcast-modal-open { overflow: hidden; }
+@keyframes swedishPodcastFade { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 640px) {
+    #language-page-swedish #swedish-resources #top-podcasts-grid .swedish-podcast-card { flex-basis: min(78vw, 278px); }
+    #language-page-swedish .swedish-podcast-modal { padding: 10px; }
+    #language-page-swedish .swedish-podcast-modal__dialog { max-height: calc(100dvh - 20px); padding: 20px 16px; }
+    #language-page-swedish .swedish-podcast-modal__layout { grid-template-columns: 1fr; }
+    #language-page-swedish .swedish-podcast-modal__cover { width: min(230px, 70vw); margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish .swedish-podcast-card-trigger, #language-page-swedish .swedish-podcast-modal.is-open { transition: none; animation: none; }
+}
+
+/* Shared Swedish chapter bar: the global site header remains the first layer. */
+.swedish-page-active {
+    --language-section-nav-height: 54px;
+}
+
+.swedish-page-active .language-section-nav {
+    --language-section-nav-bg: #07101a;
+    --language-section-nav-text: #ffffff;
+    --language-section-nav-muted: rgba(247, 251, 255, 0.76);
+    --language-section-nav-accent: #fecb00;
+    --language-section-nav-active-bg: #005293;
+    border-color: rgba(254, 203, 0, 0.38);
+    box-shadow: 0 8px 22px rgba(2, 9, 16, 0.32);
+}
+
+.swedish-page-active .language-section-nav__link {
+    font-family: 'Montserrat', var(--sw-font-display), sans-serif;
+}
+
+.swedish-page-active .language-section-nav__link:focus-visible {
+    outline-color: #fecb00;
+}
+
+/* The podcast collection is one contained shelf, not a second card grid. */
+#language-page-swedish #top-podcasts-section,
+#language-page-swedish .top-podcast-shelf {
+    min-width: 0;
+}
+
+#language-page-swedish .top-podcast-shelf__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 0 0 12px;
+}
+
+#language-page-swedish .top-podcast-shelf__button {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: #07101a;
+    background: #fecb00;
+    border: 1px solid #fecb00;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#language-page-swedish .top-podcast-shelf__button:hover:not(:disabled) {
+    color: #ffffff;
+    background: #005293;
+    border-color: #7cc5ff;
+}
+
+#language-page-swedish .top-podcast-shelf__button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+#language-page-swedish .top-podcast-shelf__button:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+#language-page-swedish #swedish-resources #top-podcasts-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    padding: 4px 4px 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 4px;
+    scroll-snap-type: inline mandatory;
+    scrollbar-color: #fecb00 rgba(0, 82, 147, 0.34);
+    scrollbar-width: thin;
+}
+
+#language-page-swedish #swedish-resources #top-podcasts-grid::-webkit-scrollbar {
+    height: 9px;
+}
+
+#language-page-swedish #swedish-resources #top-podcasts-grid::-webkit-scrollbar-track {
+    background: rgba(0, 82, 147, 0.34);
+    border-radius: 999px;
+}
+
+#language-page-swedish #swedish-resources #top-podcasts-grid::-webkit-scrollbar-thumb {
+    background: #fecb00;
+    border-radius: 999px;
+}
+
+#language-page-swedish #swedish-resources #top-podcasts-grid .swedish-podcast-card {
+    flex: 0 0 clamp(238px, 31%, 300px);
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+@media (max-width: 900px) {
+    .swedish-page-active {
+        --language-section-nav-height: 50px;
+    }
+
+    #language-page-swedish #swedish-resources #top-podcasts-grid .swedish-podcast-card {
+        flex-basis: min(78vw, 280px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish .top-podcast-shelf__button {
+        transition: none;
+    }
+}
+
+@media (max-width: 560px) {
+    #language-page-swedish #aljohn-swedish-playlist .container {
+        width: 100%;
+        padding-inline: 18px;
+    }
+
+    #language-page-swedish .personal-playlist-list {
+        grid-template-columns: 1fr;
+    }
+
+    #language-page-swedish .personal-playlist-item {
+        grid-template-columns: 72px 30px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    #language-page-swedish .personal-playlist-item-thumb {
+        width: 72px;
+        height: 54px;
+    }
+
+    #language-page-swedish #swedish-resources .swedish-item-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #language-page-swedish .personal-player-copy {
+        min-height: 0;
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card {
+        min-height: 100%;
+    }
+
+    #language-page-swedish .modal-content {
+        width: 100%;
+        padding: 56px 18px 22px;
+        border-radius: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish *,
+    #language-page-swedish *::before,
+    #language-page-swedish *::after {
+        scroll-behavior: auto;
+        animation: none;
+        transition: none;
+    }
+
+    #language-page-swedish .resource-item-card:hover,
+    #language-page-swedish .swedish-podcast-card:hover,
+    #language-page-swedish .restaurant-ph-card:hover,
+    #language-page-swedish .scandinavian-encounter-card:hover {
+        transform: none;
+    }
+}
+
+/* Swedish surface hardening: stable spacing, readable folios, and contained shelves. */
+
+#language-page-swedish :focus-visible {
+    outline: 3px solid #fecb00;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px #07101a;
+}
+
+#language-page-swedish .modal-overlay {
+    overflow: hidden;
+}
+
+#language-page-swedish .modal-content {
+    width: min(100%, 920px);
+    max-width: 920px;
+    max-height: min(90vh, 920px);
+    max-height: min(90dvh, 920px);
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #3d4c5f;
+    border-radius: 12px;
+    background: #151d27;
+}
+
+#language-page-swedish .modal-header {
+    min-width: 0;
+    margin: 0;
+    padding: 30px 76px 26px;
+    border-bottom: 1px solid #2b3646;
+    background: linear-gradient(145deg, #182330, #101720);
+}
+
+#language-page-swedish .modal-header h2,
+#language-page-swedish .restaurant-ph-modal-header-text {
+    min-width: 0;
+    max-width: 100%;
+}
+
+#language-page-swedish .modal-header h2,
+#language-page-swedish .restaurant-ph-modal-header-text h2 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: #f7fbff;
+    font-size: clamp(1.65rem, 3.5vw, 2.55rem);
+    line-height: 1.12;
+}
+
+#language-page-swedish .modal-header .modal-image,
+#language-page-swedish .swedish-resource-modal .modal-header img.modal-image {
+    width: 96px;
+    height: 96px;
+    margin: 0 0 16px;
+    border: 3px solid #fecb00;
+    background: #07101a;
+}
+
+#language-page-swedish .modal-main-content-area {
+    display: grid;
+    min-width: 0;
+    gap: 28px;
+    padding: 30px clamp(24px, 4vw, 44px) 38px;
+}
+
+#language-page-swedish .modal-video-embed-area,
+#language-page-swedish .modal-long-description-area,
+#language-page-swedish .modal-cefr-details-area,
+#language-page-swedish .modal-aljohns-take-container,
+#language-page-swedish .modal-external-links-area {
+    min-width: 0;
+    margin: 0;
+}
+
+#language-page-swedish .modal-long-description-area h4,
+#language-page-swedish .modal-cefr-details-area h4,
+#language-page-swedish .modal-aljohns-take-container h4,
+#language-page-swedish .modal-external-links-area h4 {
+    margin: 0 0 12px;
+    padding: 0 0 10px;
+    color: #fecb00;
+    font-size: 0.82rem;
+    line-height: 1.25;
+}
+
+#language-page-swedish .modal-long-description-area p,
+#language-page-swedish .modal-aljohns-take {
+    margin: 0;
+    color: #dce5ef;
+    font-size: 0.96rem;
+    line-height: 1.72;
+}
+
+#language-page-swedish .modal-aljohns-take {
+    padding: 18px 20px;
+    border-left: 4px solid #fecb00;
+    border-radius: 0 6px 6px 0;
+    background: #182635;
+}
+
+#language-page-swedish .modal-cefr-details-area .cefr-dots-container,
+#language-page-swedish .modal-cefr-details-area .cefr-dots-container p {
+    margin: 0;
+    line-height: 2.5;
+}
+
+#language-page-swedish .modal-external-links-area .modal-links {
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+}
+
+#language-page-swedish .modal-external-links-area .modal-links a {
+    pointer-events: auto;
+}
+
+#language-page-swedish .scandinavian-encounter-modal .modal-header {
+    min-height: 128px;
+    justify-content: center;
+}
+
+#language-page-swedish .scandinavian-encounter-modal .modal-header h2 {
+    flex-wrap: wrap;
+    color: #fecb00;
+    font-size: clamp(1.65rem, 3.5vw, 2.45rem);
+}
+
+#language-page-swedish .swedish-restaurant-ph-modal .modal-header.restaurant-ph-modal-header {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+    text-align: left;
+}
+
+#language-page-swedish .swedish-restaurant-ph-modal .modal-image.restaurant-modal-image {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #07101a;
+}
+
+#language-page-swedish .scandinavian-encounter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+#language-page-swedish .scandinavian-encounter-card {
+    min-height: 0;
+    border: 1px solid rgba(247, 251, 255, 0.24);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(4, 13, 22, 0.28);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover {
+    transform: translateY(-4px);
+    border-color: #fecb00;
+    box-shadow: 0 18px 36px rgba(4, 13, 22, 0.36);
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover .card-image {
+    transform: scale(1.025);
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover .card-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-overlay-details {
+    display: none;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-content {
+    padding: 18px 20px 20px;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-title {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 10px;
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-title-text {
+    min-width: 0;
+    flex: 1 1 9rem;
+    overflow-wrap: anywhere;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-teaser {
+    margin: 0 0 18px;
+    font-size: 0.88rem;
+}
+
+#language-page-swedish .encounter-card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 13px;
+    border-top: 1px solid rgba(247, 251, 255, 0.16);
+    color: #fecb00;
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+#language-page-swedish .encounter-card-action i {
+    transition: transform 180ms ease;
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover .encounter-card-action i,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .encounter-card-action i {
+    transform: translateX(4px);
+}
+
+#language-page-swedish .encounter-tip-box-magnus {
+    margin-top: 34px;
+    padding: 22px 26px;
+}
+
+#language-page-swedish .restaurant-ph-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: min(100%, 1040px);
+    margin: 30px auto 0;
+    padding: 0;
+}
+
+#language-page-swedish .restaurant-ph-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+}
+
+#language-page-swedish .restaurant-ph-card .restaurant-ph-card-image-wrapper {
+    display: grid;
+    place-items: center;
+    background: #07101a;
+}
+
+#language-page-swedish .restaurant-ph-card .restaurant-ph-card-image {
+    object-fit: contain;
+}
+
+#language-page-swedish .restaurant-ph-card .restaurant-ph-card-content {
+    min-width: 0;
+    padding: 18px;
+}
+
+#language-page-swedish .restaurant-ph-card .restaurant-ph-card-content h4 {
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+#language-page-swedish .restaurant-ph-card .restaurant-ph-card-location {
+    margin: 0 0 12px;
+}
+
+#language-page-swedish .restaurant-ph-card .restaurant-ph-card-links {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+#language-page-swedish .restaurant-ph-card .card-details-button {
+    margin-top: 12px;
+}
+
+#language-page-swedish .final-thoughts-swedish {
+    padding: clamp(56px, 8vw, 92px) 0;
+}
+
+#language-page-swedish .final-thoughts-swedish .container {
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: clamp(18px, 4vw, 56px);
+}
+
+#language-page-swedish .final-thoughts-swedish .final-thoughts-content-box {
+    width: min(100%, 880px);
+    margin-inline: auto;
+    padding: clamp(28px, 5vw, 52px);
+}
+
+#language-page-swedish .final-thoughts-swedish .section-title-final {
+    max-width: 22ch;
+    margin: 0 auto 22px;
+    padding-bottom: 18px;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.08;
+}
+
+#language-page-swedish .final-thoughts-swedish .final-message-text {
+    max-width: 68ch;
+    margin: 0 auto 30px;
+    font-size: clamp(1rem, 1.8vw, 1.08rem);
+    line-height: 1.72;
+}
+
+@media (max-width: 900px) {
+    #language-page-swedish .scandinavian-encounter-grid,
+    #language-page-swedish .restaurant-ph-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #language-page-swedish .swedish-restaurant-ph-modal .modal-header.restaurant-ph-modal-header {
+        grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    #language-page-swedish .modal-overlay {
+        padding: 0;
+    }
+
+    #language-page-swedish .modal-content {
+        width: 100%;
+        max-width: none;
+        min-height: 100dvh;
+        max-height: 100dvh;
+        border: 0;
+        border-radius: 0;
+    }
+
+    #language-page-swedish .modal-header {
+        padding: 70px 18px 24px;
+    }
+
+    #language-page-swedish .modal-main-content-area {
+        gap: 24px;
+        padding: 24px 18px 34px;
+    }
+
+    #language-page-swedish .swedish-restaurant-ph-modal .modal-header.restaurant-ph-modal-header,
+    #language-page-swedish .scandinavian-encounter-grid,
+    #language-page-swedish .restaurant-ph-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #language-page-swedish .swedish-restaurant-ph-modal .modal-header.restaurant-ph-modal-header {
+        text-align: center;
+    }
+
+    #language-page-swedish .swedish-restaurant-ph-modal .modal-image.restaurant-modal-image {
+        width: min(100%, 320px);
+        margin-inline: auto;
+    }
+
+    #language-page-swedish .encounter-tip-box-magnus {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish .modal-overlay,
+    #language-page-swedish .modal-content,
+    #language-page-swedish .scandinavian-encounter-card,
+    #language-page-swedish .restaurant-ph-card,
+    #language-page-swedish .final-thoughts-content-box {
+        scroll-behavior: auto;
+        transition: none;
+    }
+}
+
+/* Seasonal Swedish atmosphere + restored card motion. */
+#language-page-swedish #swedish-resources {
+    --season-accent: #fecb00;
+    --season-accent-strong: #005293;
+    --season-ink: #07101a;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #07101a;
+}
+
+#language-page-swedish #swedish-resources::before,
+#language-page-swedish #swedish-resources::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#language-page-swedish #swedish-resources::before {
+    z-index: -2;
+    background: url('../images/hero/swedish-seasonal-atmosphere.webp') left center / cover no-repeat;
+    opacity: 0.32;
+    transition: background-position 420ms cubic-bezier(0.16, 1, 0.3, 1), filter 420ms ease, opacity 420ms ease;
+}
+
+#language-page-swedish #swedish-resources::after {
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(2, 11, 20, 0.68) 0%, rgba(2, 11, 20, 0.9) 36%, rgba(2, 11, 20, 0.98) 100%);
+}
+
+#language-page-swedish #swedish-resources > .container {
+    position: relative;
+    z-index: 1;
+}
+
+#language-page-swedish #swedish-resources .resources-section-header .main-section-title,
+#language-page-swedish #swedish-resources .resources-section-header .title-highlight-yellow {
+    color: var(--season-accent);
+    transition: color 240ms ease;
+}
+
+/* Creator cards stay still and concise; full descriptions live in their modals. */
+#language-page-swedish #swedish-resources .resource-item-card {
+    transform: none;
+    transition: none;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card .card-short-desc {
+    display: none;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card:hover,
+#language-page-swedish #swedish-resources .resource-item-card:focus-within {
+    transform: none;
+    transition: none;
+    z-index: auto;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card:hover .card-short-desc,
+#language-page-swedish #swedish-resources .resource-item-card:focus-within .card-short-desc {
+    display: none;
+}
+
+#language-page-swedish #swedish-resources .resource-item-card:hover img,
+#language-page-swedish #swedish-resources .resource-item-card:focus-within img {
+    transform: none;
+    transition: none;
+}
+
+/* Featured cards: make the motion visible without making the row feel frantic. */
+#language-page-swedish #swedish-resources .swedish-podcast-card,
+#language-page-swedish .restaurant-ph-card,
+#language-page-swedish .scandinavian-encounter-card {
+    transform-origin: center center;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease, border-color 220ms ease;
+}
+
+#language-page-swedish #swedish-resources .swedish-podcast-card:hover,
+#language-page-swedish #swedish-resources .swedish-podcast-card:focus-within {
+    transform: translateY(-7px) scale(1.035);
+    box-shadow: var(--sw-shadow-lg);
+    border-color: var(--sw-flag-yellow);
+    z-index: 4;
+}
+
+#language-page-swedish #swedish-resources .swedish-podcast-card:hover .podcast-card-image-new,
+#language-page-swedish #swedish-resources .swedish-podcast-card:focus-within .podcast-card-image-new {
+    transform: scale(1.06);
+}
+
+#language-page-swedish #swedish-resources .podcast-card-image-new {
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), filter 320ms ease;
+}
+
+#language-page-swedish #swedish-resources .swedish-podcast-card {
+    overflow: hidden;
+}
+
+/* The featured player and its list keep the same tactile lift as the cards. */
+#language-page-swedish .personal-player-shell,
+#language-page-swedish .personal-playlist-panel {
+    transform-origin: center center;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
+}
+
+#language-page-swedish .personal-player-shell:hover,
+#language-page-swedish .personal-playlist-panel:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
+}
+
+#language-page-swedish .restaurant-ph-card:hover,
+#language-page-swedish .restaurant-ph-card:focus-within {
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(0, 38, 64, 0.26);
+    border-color: var(--sw-flag-yellow);
+    z-index: 4;
+}
+
+#language-page-swedish .restaurant-ph-card:hover .restaurant-ph-card-image,
+#language-page-swedish .restaurant-ph-card:focus-within .restaurant-ph-card-image {
+    transform: scale(1.05);
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover,
+#language-page-swedish .scandinavian-encounter-card:focus-visible {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 18px 36px rgba(4, 13, 22, 0.42);
+    z-index: 4;
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover .card-image,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .card-image {
+    transform: scale(1.08);
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-content {
+    transition: opacity 260ms ease;
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover .card-content,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .card-content {
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-overlay-details {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 260ms ease 40ms, transform 300ms cubic-bezier(0.16, 1, 0.3, 1) 40ms, visibility 0s linear 300ms;
+}
+
+#language-page-swedish .scandinavian-encounter-card:hover .card-overlay-details,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .card-overlay-details {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #language-page-swedish #swedish-resources .resource-item-card:hover,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:hover,
+    #language-page-swedish .restaurant-ph-card:hover,
+    #language-page-swedish .scandinavian-encounter-card:hover,
+    #language-page-swedish .personal-player-shell:hover,
+    #language-page-swedish .personal-playlist-panel:hover {
+        transform: none;
+        z-index: auto;
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card .card-short-desc {
+        display: none;
+        transition: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #language-page-swedish #swedish-resources::before,
+    #language-page-swedish #swedish-resources .resources-section-header .main-section-title,
+    #language-page-swedish #swedish-resources .resource-item-card,
+    #language-page-swedish #swedish-resources .resource-item-card .card-short-desc,
+    #language-page-swedish #swedish-resources .swedish-podcast-card,
+    #language-page-swedish #swedish-resources .podcast-card-image-new,
+    #language-page-swedish .personal-player-shell,
+    #language-page-swedish .personal-playlist-panel,
+    #language-page-swedish .restaurant-ph-card,
+    #language-page-swedish .scandinavian-encounter-card,
+    #language-page-swedish .scandinavian-encounter-card .card-content,
+    #language-page-swedish .scandinavian-encounter-card .card-overlay-details {
+        transition: none;
+    }
+
+    #language-page-swedish #swedish-resources .resource-item-card:hover,
+    #language-page-swedish #swedish-resources .resource-item-card:focus-within,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:hover,
+    #language-page-swedish #swedish-resources .swedish-podcast-card:focus-within,
+    #language-page-swedish .restaurant-ph-card:hover,
+    #language-page-swedish .restaurant-ph-card:focus-within,
+    #language-page-swedish .personal-player-shell:hover,
+    #language-page-swedish .personal-playlist-panel:hover,
+    #language-page-swedish .scandinavian-encounter-card:hover,
+    #language-page-swedish .scandinavian-encounter-card:focus-visible {
+        transform: none;
+    }
+}
+
+/* Scandinavian encounters stay readable at rest; the modal remains the interaction. */
+#language-page-swedish .scandinavian-encounter-card,
+#language-page-swedish .scandinavian-encounter-card:hover,
+#language-page-swedish .scandinavian-encounter-card:focus-visible {
+    transform: none;
+    z-index: auto;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-image,
+#language-page-swedish .scandinavian-encounter-card:hover .card-image,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .card-image {
+    transform: none;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-content,
+#language-page-swedish .scandinavian-encounter-card:hover .card-content,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .card-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-overlay-details,
+#language-page-swedish .scandinavian-encounter-card:hover .card-overlay-details,
+#language-page-swedish .scandinavian-encounter-card:focus-visible .card-overlay-details {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+}
+
+#language-page-swedish .scandinavian-encounter-card .card-title > .title-inline-flag-img {
+    width: auto;
+    height: 1em;
+    max-width: 1.6em;
+    max-height: 1em;
+    object-fit: contain;
+}
+
+/* Podcast actions stay quiet until the card itself is explored. */
+#language-page-swedish #swedish-resources .swedish-podcast-card .podcast-card-actions > .card-details-button,
+#language-page-swedish #swedish-resources .swedish-podcast-card .podcast-card-actions > .podcast-card-button-new {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 180ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#language-page-swedish #swedish-resources .swedish-podcast-card:hover .podcast-card-actions > .card-details-button,
+#language-page-swedish #swedish-resources .swedish-podcast-card:hover .podcast-card-actions > .podcast-card-button-new,
+#language-page-swedish #swedish-resources .swedish-podcast-card:focus-within .podcast-card-actions > .card-details-button,
+#language-page-swedish #swedish-resources .swedish-podcast-card:focus-within .podcast-card-actions > .podcast-card-button-new {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keep Swedish modal embeds on the same reliable aspect-ratio model as French. */
+#language-page-swedish .modal-video-embed-area .video-embed-container {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    padding-bottom: 0;
+    overflow: hidden;
+    background: #080b13;
+}
+
+#language-page-swedish .modal-video-embed-area iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Level path: sticky rail on wide screens, horizontal strip on mobile. */
+#language-page-swedish #swedish-resources {
+    overflow: clip;
+}
+
+#language-page-swedish #swedish-resources > .container {
+    display: grid;
+    grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
+    grid-template-areas:
+        "header header"
+        "filter shelves";
+    column-gap: clamp(24px, 3vw, 40px);
+    align-items: start;
+}
+
+#language-page-swedish #swedish-resources .resources-section-header {
+    grid-area: header;
+    width: 100%;
+}
+
+#language-page-swedish #cefr-filter-sticky-wrapper {
+    grid-area: filter;
+    position: sticky;
+    top: calc(var(--main-navbar-height, 70px) + var(--language-section-nav-height, 54px) + 20px);
+    align-self: start;
+    min-width: 0;
+    margin: 0;
+    padding: 4px 0 0;
+    z-index: 220;
+}
+
+#language-page-swedish #cefr-filter-controls-container {
+    width: 100%;
+    max-width: none;
+    max-height: calc(100dvh - var(--main-navbar-height, 70px) - var(--language-section-nav-height, 54px) - 40px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+}
+
+#language-page-swedish #cefr-filter-controls-container .cefr-panel-content-wrapper {
+    padding: 20px 16px;
+}
+
+#language-page-swedish #cefr-filter-controls-container .cefr-panel-header {
+    margin-bottom: 16px;
+}
+
+#language-page-swedish #cefr-filter-controls-container .cefr-panel-header h3 {
+    margin-bottom: 8px;
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+}
+
+#language-page-swedish #cefr-filter-controls-container .cefr-panel-intro {
+    margin-bottom: 0;
+    font-size: 0.76rem;
+}
+
+#language-page-swedish #cefr-filter-controls-container .cefr-filter-buttons {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+}
+
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr,
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr-clear {
+    width: 100%;
+    min-height: 44px;
+    justify-content: flex-start;
+    padding: 9px 11px;
+}
+
+#language-page-swedish #cefr-filter-controls-container .btn-filter-cefr-clear {
+    justify-content: center;
+    margin-top: 4px;
+}
+
+#language-page-swedish #swedish-resources > .container > div:last-child {
+    grid-area: shelves;
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    #language-page-swedish #swedish-resources > .container {
+        display: block;
+    }
+
+    #language-page-swedish #cefr-filter-sticky-wrapper {
+        position: sticky;
+        top: calc(var(--main-navbar-height, 70px) + var(--language-section-nav-height, 50px) + 8px);
+        width: 100%;
+        margin: 0 0 36px;
+        padding: 0;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container .cefr-panel-content-wrapper {
+        padding: 12px 14px 8px;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container {
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container .cefr-panel-header {
+        margin-bottom: 8px;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container .cefr-panel-header h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container .cefr-panel-intro {
+        display: none;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container .cefr-filter-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        width: 100%;
+        padding: 2px 2px 6px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container .btn-filter-cefr,
+    #language-page-swedish #cefr-filter-controls-container .btn-filter-cefr-clear {
+        flex: 0 0 auto;
+        width: auto;
+        min-height: 44px;
+        justify-content: center;
+        margin: 0;
+        padding: 8px 12px;
+        scroll-snap-align: start;
+    }
+
+    #language-page-swedish #cefr-filter-controls-container #active-filters-display-container {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+}
