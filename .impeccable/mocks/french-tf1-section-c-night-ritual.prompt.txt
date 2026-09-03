@@ -1,0 +1,9 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop website section mockup
+Primary request: Design a dedicated TF1+ section inside Aljohn Polyglot's existing French "L'atlas cousu" language page. Direction C: Manila Night Ritual. A midnight indigo textile spread dramatizes Aljohn's 3 a.m. Star Academy ritual: a large embroidered clock reading "3 H · MANILLE" anchors the left, a central framed Star Academy program image glows like a television in a dark room, and a cream handwritten diary folio on the right explains in French that TF1+ is where he follows the primes, quotidiennes, and replay. A red sewn pocket button reads "REGARDER SUR TF1+ ↗". The emotional focus is personal ritual first, platform second.
+Style/medium: polished photorealistic web UI mockup, nocturnal indigo denim, cream linen diary paper, red stitching, restrained screen glow, tactile sewn atlas
+Composition/framing: landscape 16:9, isolated desktop section, asymmetric three-part composition with the program image dominant
+Color palette: #111D2D midnight indigo, #1A2C40 indigo, #D9CEBE cream, #8A2B1F red, warm screen light
+Text: "3 H · MANILLE"; "TF1+"; "Mon rituel Star Academy"; "REGARDER SUR TF1+ ↗"
+Constraints: inherit the supplied French page identity; personal and story-led; real Star Academy evidence; readable and accessible
+Avoid: France.tv, generic streaming dashboard, multiple program cards, glassmorphism, neon cyberpunk, gradients, rounded app chrome, invented claims, garbled text

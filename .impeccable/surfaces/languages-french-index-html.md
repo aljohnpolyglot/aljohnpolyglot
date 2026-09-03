@@ -28,6 +28,7 @@ related_targets: ["languages/french/css/page-language-french-patchwork.css","lan
 - Approved comp: `.impeccable/mocks/patchwork-atlas.png` at 1672 × 941.
 - Memorable moment: a cream stitched atlas spine orients a near-full-bleed quilt of real Saging Ça Va ? photos; independent creator shelves begin immediately below.
 - Interaction: drawers and rows slide like cloth strips while modals open as full-screen sewn folios; motion remains subtle and respects reduced-motion preferences.
+- TF1+ extension: approved direction **A — Broadcast Folio**, a 60/40 Star Academy media window and cream program folio using the same denim, linen, and red-thread grammar. Approved comp: `.impeccable/mocks/french-tf1-section-a-broadcast-folio.png`.
 
 ## Sampled color record
 

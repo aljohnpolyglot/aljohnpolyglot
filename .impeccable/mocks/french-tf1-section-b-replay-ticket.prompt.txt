@@ -1,0 +1,9 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop website section mockup
+Primary request: Design a dedicated TF1+ section inside Aljohn Polyglot's existing French "L'atlas cousu" language page. Direction B: Replay Ticket Archive. A wide cream linen ticket is stitched across an indigo textile field. On the left, oversized condensed "TF1+" and heading "Le français continue après le direct" with short French copy. Across the center, three narrow sewn ticket stubs labeled "PRIMES", "QUOTIDIENNES", and "MOMENTS FORTS", describing the real types of Star Academy replay available without pretending they are separate creator cards. On the right, a red perforated action tab reads "OUVRIR TF1+ ↗". Include one restrained Star Academy portrait image strip as evidence.
+Style/medium: polished photorealistic web UI mockup, tactile cream linen ticket paper, indigo denim, red thread, perforated edges, squared French editorial layout
+Composition/framing: landscape 16:9, isolated full-width section, horizontal archive rhythm, strong typographic hierarchy
+Color palette: #1A2C40 indigo, #E2D8C7 cream, #2A4257 blue, #8A2B1F red, #111820 ink
+Text: "TF1+"; "Le français continue après le direct"; "PRIMES"; "QUOTIDIENNES"; "MOMENTS FORTS"; "OUVRIR TF1+ ↗"
+Constraints: inherit the supplied French patchwork page; make one platform feature rather than a creator shelf; accessible contrast and obvious single action
+Avoid: France.tv, Netflix-like carousel, generic SaaS cards, glassmorphism, gradients, rounded pills, invented viewing statistics, excessive logos, garbled text

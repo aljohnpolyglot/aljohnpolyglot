@@ -1,0 +1,9 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop website section mockup
+Primary request: Design a dedicated TF1+ section inside Aljohn Polyglot's existing French "L'atlas cousu" language page. Direction A: Broadcast Folio. A full-width indigo textile broadcast panel is sewn into cream linen, with a large 16:9 Star Academy editorial image area on the left and a cream program folio on the right. The right folio clearly shows "TF1+", heading "Mon rendez-vous français en direct", concise French copy about watching Star Academy live from Manila, and one red stitched action "REGARDER SUR TF1+ ↗". Include a small "VF · ST" availability line. The section must feel like a dramatic television window embedded in a handmade atlas, not a generic streaming card.
+Style/medium: polished photorealistic web UI mockup, tactile indigo denim, cream linen, red running stitches, squared folios, French editorial typography
+Composition/framing: landscape 16:9, isolated section at desktop width, complete section visible, strong 60/40 image-to-copy split
+Color palette: #1A2C40 indigo, #D9CEBE cream, #2A4257 blue, #8A2B1F red, #111820 ink
+Text: "TF1+"; "Mon rendez-vous français en direct"; "REGARDER SUR TF1+ ↗"; "VF · ST"
+Constraints: inherit the supplied French page's patchwork identity; use Star Academy imagery only as editorial program evidence; preserve clear hierarchy and accessible contrast
+Avoid: France.tv, generic cards, glassmorphism, gradients, rounded app UI, multiple program tiles, fake metrics, clutter, cropped or garbled text

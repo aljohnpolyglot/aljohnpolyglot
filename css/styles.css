@@ -439,6 +439,11 @@ body {
 .floating-flags img:nth-child(3) { bottom: 20%; left: 0%; transform: rotate(5deg); --initial-rotate: 5deg; }
 .floating-flags img:nth-child(4) { bottom: 10%; right: 10%; transform: rotate(-5deg); --initial-rotate: -5deg; }
 .floating-flags img:nth-child(5) { top: 40%; left: -5%; transform: rotate(15deg); --initial-rotate: 15deg; }
+.floating-flags img:nth-child(6) { top: 52%; right: -5%; transform: rotate(-10deg); --initial-rotate: -10deg; }
+.floating-flags img:nth-child(7) { top: 0%; right: 25%; transform: rotate(8deg); --initial-rotate: 8deg; }
+.floating-flags img:nth-child(8) { bottom: 0%; left: 28%; transform: rotate(-8deg); --initial-rotate: -8deg; }
+.floating-flags img:nth-child(9) { bottom: 28%; right: 0%; transform: rotate(12deg); --initial-rotate: 12deg; }
+.floating-flags img:nth-child(10) { top: 0%; left: 25%; transform: rotate(-6deg); --initial-rotate: -6deg; }
 
 /* --- Featured Video Section (index.html) --- */
 .featured-video-content {

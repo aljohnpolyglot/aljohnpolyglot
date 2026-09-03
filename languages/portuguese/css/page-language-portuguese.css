@@ -98,7 +98,7 @@ body.portuguese-page.modal-open { overflow: hidden; }
 .edition-nav a[aria-current="location"] { background: var(--pt-blue); color: #fff; }
 
 .cover-story {
-    height: clamp(44rem, 78svh, 56rem);
+    min-height: calc(100svh - var(--pt-global-nav) - var(--pt-local-nav));
     display: grid;
     grid-template-columns: minmax(22rem, .82fr) minmax(0, 1.18fr);
     grid-template-areas: "copy photo";
@@ -459,7 +459,7 @@ body.portuguese-page.modal-open { overflow: hidden; }
 .detail-modal-pt { position: fixed; z-index: 10010; inset: 0; display: grid; place-items: center; padding: clamp(.75rem, 3vw, 2rem); }
 .detail-modal-pt[hidden] { display: none; }
 .detail-modal-pt__backdrop { position: absolute; inset: 0; background: rgba(0, 35, 24, .9); }
-.detail-modal-pt__dialog { position: relative; width: min(96vw, 68rem); max-height: 92dvh; overflow: auto; background: var(--pt-paper); color: var(--pt-ink); box-shadow: 0 24px 64px rgba(0, 20, 14, .42); }
+.detail-modal-pt__dialog { position: relative; width: min(100%, 68rem); max-height: 92dvh; overflow: auto; background: var(--pt-paper); color: var(--pt-ink); box-shadow: 0 24px 64px rgba(0, 20, 14, .42); }
 .detail-modal-pt__close { position: sticky; z-index: 3; top: .75rem; float: right; width: 48px; height: 48px; margin: .75rem .75rem -3.75rem 0; border: 0; border-radius: 0; background: var(--pt-blue); color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
 .modal-layout-pt { display: grid; grid-template-columns: minmax(18rem, .72fr) minmax(0, 1.28fr); min-height: 35rem; }
 .modal-media-pt { min-width: 0; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--pt-green-deep); color: var(--pt-paper); }
