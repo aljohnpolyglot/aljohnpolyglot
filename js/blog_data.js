@@ -15,6 +15,19 @@ const blogPostsData = [
         readTime: "Approx. 9 min read"
     },
     {
+        id: "three-games-fluency",
+        title: "These Three Games Made Me Fluent in 11 Languages",
+        date: "2025-08-25",
+        author: "Aljohn Polyglot",
+        categories: ["Study Methods", "Learning Strategy", "Language Notes"],
+        languageFocus: ["Multi-Language Focus"],
+        tags: ["games", "immersion", "BitLife", "Cell to Singularity", "Plague Inc.", "reading", "vocabulary"],
+        excerpt: "The three rules I use to judge games as language-learning tools—and the three mobile games that force me to read, decide, and understand.",
+        link: "blog/games/index.html",
+        featuredImage: "blog/games/images/generated/arcade-language-machine.png",
+        readTime: "Approx. 10 min read"
+    },
+    {
         id: "daily-routine-i-actually-used",
         title: "Aljohn's Daily Immersion System",
         date: "2025-05-31",
@@ -50,7 +63,7 @@ const blogPostsData = [
         tags: ["deliberate practice", "immersion", "language learning routine", "polyglot journey", "rapid fluency", "sacrifice", "mindset", "language acquisition"],
         excerpt: "Can a language be learned in three months? This article outlines the method, the time commitment, and the habits that make consistent progress possible.",
         link: "blog/learn_in_3_months/index.html", // Relative path from blog.html to the article
-        featuredImage: "images/blog/aljohn_3_months.png", // Placeholder - Create a compelling image for this
+        featuredImage: "blog/learn_in_3_months/images/three-months-thumbnail.png",
         // For "Most Popular" (future feature - can be updated dynamically or manually)
         views: 1500, // Example view count
         readTime: "Approx. 15 min read" // Example read time

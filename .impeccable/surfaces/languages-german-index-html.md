@@ -12,8 +12,8 @@ related_targets: ["languages/german/css/page-language-german.css","languages/ger
 - Primary target: `languages/german/index.html`
 - Visitor mode: Read, watch, and browse an evidence-led language portal.
 - Audience: German learners and viewers following Aljohn Polyglot's personal language journey.
-- Job: understand where German entered Aljohn's real life, watch his one verified German episode, choose a learning route, then discover books and German-language creators.
-- Primary action: play Aljohn's German video. Secondary actions: open the official playlist, start a learning resource, filter creator shelves by CEFR, and open creator or book details.
+- Job: understand where German entered Aljohn's real life, watch his one verified German episode, choose a learning route, open his featured ZDF documentary, then discover books and German-language creators.
+- Primary action: play Aljohn's German video. Secondary actions: open the official playlist, start a learning resource, explore ZDF through *The Wagner Brothers*, filter creator shelves by CEFR, and open creator or book details.
 
 ## Proof and constraints
 
@@ -34,7 +34,7 @@ related_targets: ["languages/german/css/page-language-german.css","languages/ger
 
 ## Visitor path
 
-Shared navigation and centered German chapters → split story/player hero with the full-scale jersey V between them → compact learning-route strip → Language Transfer and Linguno practice → separate 13-episode `Extr@ auf Deutsch` player → native German bookshelf → independent creator shelves with CEFR filtering → standalone Goethe-Institut and German Embassy module → closing first-person note.
+Shared navigation and centered German chapters → split story/player hero with the full-scale jersey V between them → compact learning-route strip → Language Transfer and Linguno practice → separate 13-episode `Extr@ auf Deutsch` player → dedicated ZDF broadcaster feature led by Aljohn's favourite Wagner Brothers documentary → native German bookshelf → independent creator shelves with CEFR filtering → standalone Goethe-Institut and German Embassy module → closing first-person note.
 
 ## Comp implementation inventory
 
@@ -46,9 +46,10 @@ Shared navigation and centered German chapters → split story/player hero with 
 | Black/red/gold V | Literal layered 1990-shirt geometry repeated as seams and rails | CSS geometry / authored SVG only where useful |
 | Story opening | Evidence-grounded first person, 28–38ch | Semantic HTML |
 | Featured video | Real local thumbnail, playable YouTube embed, exact official title and playlist link | Local sourced raster + iframe |
-| Learning route | Complete German, Linguno, Extr@, books, voices | Semantic links/cards using existing data |
+| Learning route | Complete German, Linguno, Extr@, ZDF, books, voices | Semantic links/cards using existing data |
 | Practice modules | SoundCloud Complete German set and Linguno routes; German Linguno mascot matches the established French/Brazilian mascot family and wears the page's literal jersey V | SoundCloud iframe + semantic links + local ImageGen raster with provenance |
 | Extr@ playlist | Thirteen verified episodes, one player, clickable list and local episode thumbnails | Local sourced rasters + YouTube iframe + semantic buttons + JS |
+| ZDF feature | Aljohn's documented favourite leads a dedicated public-broadcaster module with verified programme facts and direct official routes | Local official artwork + semantic HTML/CSS |
 | German bookshelf | Canonical catalogue records resolved into a contained shelf | Shared local covers + semantic buttons + JS |
 | Creator shelves | Repeated category heading and contained horizontal row; optional personal note omitted when null | Existing local portraits + JSON + semantic buttons + JS |
 | CEFR filter | All levels selected by default; exact metadata only | Native select/buttons + JS |

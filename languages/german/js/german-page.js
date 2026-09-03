@@ -3,9 +3,11 @@ import '../../../js/footer-loader.js';
 import '../../../library/js/data/book_data.js';
 import './data/german-learning-resources-data.js';
 import './data/german-books-data.js';
+import { germanPodcasts } from './data/german-podcasts-data.js';
 import { renderGermanPlaylists } from './renderers/german-playlists-renderer.js';
 import { renderGermanBooks } from './renderers/german-books-renderer.js';
 import { renderGermanCreators } from './renderers/german-creators-renderer.js';
+import { renderGermanPodcasts } from './renderers/german-podcasts-renderer.js';
 
 const initialiseChapterNavigation = () => {
   const links = [...document.querySelectorAll('.chapter-track-de a[href^="#"]')];
@@ -47,6 +49,7 @@ const initialiseImageFallbacks = () => {
 const initialiseGermanPage = async () => {
   renderGermanPlaylists();
   renderGermanBooks();
+  renderGermanPodcasts(germanPodcasts);
   initialiseChapterNavigation();
   initialiseImageFallbacks();
   await renderGermanCreators();

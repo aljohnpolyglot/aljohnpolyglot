@@ -48,15 +48,15 @@
 
 .community-theme-filipinhos .community-detail-hero h1 {
     color: #fff;
-    margin-bottom: 1.8rem;
-    font-size: clamp(4.8rem, 7vw, 7.4rem);
-    letter-spacing: -0.085em;
+    margin-bottom: 1.15rem;
+    font-size: clamp(3.8rem, 6vw, 6.25rem);
+    letter-spacing: -0.04em;
 }
 
 .community-theme-filipinhos .community-hero-lede {
-    max-width: 35ch;
-    font-size: clamp(1.45rem, 2.1vw, 2.15rem);
-    line-height: 1.32;
+    max-width: 40ch;
+    font-size: clamp(1.15rem, 1.7vw, 1.65rem);
+    line-height: 1.38;
 }
 
 .community-theme-filipinhos .community-hero-detail {
@@ -77,13 +77,16 @@
 }
 
 .community-theme-filipinhos .filipinhos-brand {
+    width: min(32rem, 100%);
+    margin: 0;
     border-color: #f3c720;
     box-shadow: 14px 14px 0 #153f78;
 }
 
-.community-theme-filipinhos .filipinhos-hero-art figure {
-    border-color: #fff;
-    box-shadow: 16px 16px 0 #f3c720;
+.community-theme-filipinhos .filipinhos-hero-art {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    place-items: center;
 }
 
 @media (max-width: 1150px) {

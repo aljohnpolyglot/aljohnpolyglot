@@ -43,10 +43,11 @@
         const updateFromScroll = () => {
             frame = 0;
             const navBottom = nav.getBoundingClientRect().bottom + 28;
+            const activationLine = Math.max(navBottom, window.innerHeight * 0.35);
             let current = entries[0];
 
             entries.forEach((entry) => {
-                if (entry.target.getBoundingClientRect().top <= navBottom) current = entry;
+                if (entry.target.getBoundingClientRect().top <= activationLine) current = entry;
             });
 
             setActive(current.link, true);

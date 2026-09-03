@@ -1,0 +1,6 @@
+{
+  "source": "YouTube thumbnails from Aljohn Polyglot videos",
+  "pattern": "https://i.ytimg.com/vi/{videoId}/maxresdefault.jpg",
+  "fallbackPattern": "https://i.ytimg.com/vi/{videoId}/hqdefault.jpg",
+  "videoIds": ["ik5oUOY63o0", "BL4aA6nBW6k", "Yn7hmz3sM-o", "wHlIGafu6uQ", "NVpggRuc-z8", "gOzMcdrX0aU", "nupBNppwYEk", "x3mFQBa9Pk8", "biPy5irbLG4", "D1GjiRb9m3U", "VjuBvugjaIQ", "oDoST-RuizU", "0tZCWqu3MaM", "MTdXyKZsSsw", "rXFYFCjLFXI", "IJ-vJoMTrIc", "eTNp_IZnHeI"]
+}

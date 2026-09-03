@@ -37,6 +37,8 @@
   --signal: #f4b51e;
   --red: #c83725;
   --route-paper: #e7e2d6;
+  --story-surface: #d9eef3;
+  --map-surface: #f0dfb2;
   --nav-height: 70px;
   --page-gutter: clamp(1.1rem, 4vw, 5rem);
 }
@@ -327,6 +329,11 @@ img {
   background: var(--route-paper);
 }
 
+.opening-essay {
+  background: var(--story-surface);
+  border-bottom: 8px solid var(--surface);
+}
+
 .opening-lead h2,
 .after-dive h2,
 .closing-manifesto h2 {
@@ -352,6 +359,146 @@ img {
   margin: 0 0 1.5rem;
 }
 
+.model-primer {
+  position: relative;
+  z-index: 5;
+  padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
+  color: var(--ink);
+  background: var(--map-surface);
+  border-bottom: 8px solid var(--signal);
+}
+
+.primer-heading {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.75fr) minmax(24rem, 1fr);
+  gap: clamp(3rem, 8vw, 10rem);
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.primer-heading h2,
+.research-note h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.primer-heading p {
+  max-width: 62ch;
+  margin: 0;
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+}
+
+.comparison-wrap {
+  max-width: 90rem;
+  overflow-x: auto;
+  border-block: 4px solid var(--ink);
+  outline: none;
+  overscroll-behavior-x: contain;
+}
+
+.comparison-wrap:focus-visible {
+  box-shadow: 0 0 0 4px var(--signal);
+}
+
+.framework-comparison {
+  width: 100%;
+  min-width: 48rem;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.framework-comparison th,
+.framework-comparison td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(6, 16, 26, 0.28);
+  text-align: left;
+  vertical-align: top;
+}
+
+.framework-comparison thead th {
+  color: white;
+  background: var(--ink);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.framework-comparison tbody th {
+  width: 20%;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.depth-bands {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 90rem;
+  margin-top: 2rem;
+}
+
+.depth-bands a {
+  display: grid;
+  gap: 0.25rem;
+  min-height: 8.5rem;
+  padding: 1.2rem;
+  color: var(--ink);
+  background: var(--ice);
+  border-right: 1px solid rgba(6, 16, 26, 0.28);
+  text-decoration: none;
+}
+
+.depth-bands a:nth-child(2) {
+  color: white;
+  background: var(--primary-blue);
+}
+
+.depth-bands a:nth-child(3) {
+  color: white;
+  background: var(--trench);
+  border-right: 0;
+}
+
+.depth-bands b,
+.depth-bands span {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.depth-bands b {
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+}
+
+.depth-bands span {
+  font-size: clamp(1.55rem, 2.7vw, 2.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.depth-bands small {
+  align-self: end;
+  font-size: 1rem;
+}
+
+.model-caveat {
+  max-width: 76ch;
+  margin: 2rem 0 0;
+  padding: 1.2rem 1.4rem;
+  color: var(--ice);
+  background: var(--ocean);
+  border-bottom: 4px solid var(--signal);
+}
+
 .meme-interlude {
   position: relative;
   z-index: 5;
@@ -359,6 +506,7 @@ img {
   grid-template-columns: minmax(18rem, 42rem) minmax(12rem, 20rem);
   gap: clamp(2rem, 6vw, 6rem);
   align-items: end;
+  justify-content: center;
   margin: 0;
   padding: clamp(4rem, 8vw, 8rem) var(--page-gutter);
   color: var(--ice);
@@ -751,6 +899,64 @@ img {
   text-shadow: none;
 }
 
+.field-notes {
+  max-width: 58ch;
+  margin-top: 1.6rem;
+  color: var(--ink);
+  background: var(--ice);
+  text-shadow: none;
+}
+
+.field-notes summary {
+  padding: 0.85rem 1rem;
+  color: var(--ink);
+  background: var(--signal);
+  cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.field-notes summary::marker {
+  color: var(--red);
+}
+
+.field-notes summary:focus-visible {
+  outline: 4px solid white;
+  outline-offset: 3px;
+}
+
+.field-notes dl {
+  margin: 0;
+  padding: 0.3rem 1rem 1rem;
+}
+
+.field-notes dl div {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(6, 16, 26, 0.2);
+}
+
+.field-notes dl div:last-child {
+  border-bottom: 0;
+}
+
+.field-notes dt {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.field-notes dd {
+  margin: 0;
+  line-height: 1.45;
+}
+
 .crossing {
   display: grid;
   min-height: 40svh;
@@ -782,6 +988,26 @@ img {
 .after-dive {
   color: var(--ice);
   background: #092743;
+}
+
+.research-note {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.75fr) minmax(24rem, 1fr);
+  gap: clamp(3rem, 8vw, 10rem);
+  padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
+  color: var(--ink);
+  background: var(--signal);
+}
+
+.research-note > div {
+  max-width: 70ch;
+  font-size: 1.08rem;
+}
+
+.research-note p {
+  margin: 0 0 1.5rem;
 }
 
 .after-dive-copy p {
@@ -925,15 +1151,29 @@ img {
 
   .opening-essay,
   .after-dive,
-  .meme-interlude {
+  .meme-interlude,
+  .primer-heading,
+  .research-note {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
   .opening-lead h2,
   .after-dive h2,
-  .closing-manifesto h2 {
+  .closing-manifesto h2,
+  .primer-heading h2,
+  .research-note h2 {
     font-size: clamp(3.2rem, 14vw, 5rem);
+  }
+
+  .depth-bands {
+    grid-template-columns: 1fr;
+  }
+
+  .depth-bands a {
+    min-height: 7rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(6, 16, 26, 0.28);
   }
 
   .dive {
@@ -1028,6 +1268,11 @@ img {
     font-size: clamp(3rem, 14vw, 4.5rem);
   }
 
+  .field-notes dl div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
   .crossing {
     min-height: 48svh;
     padding-top: 22svh;
@@ -1047,7 +1292,9 @@ img {
 
   .opening-essay,
   .after-dive,
-  .closing-manifesto {
+  .closing-manifesto,
+  .model-primer,
+  .research-note {
     padding-block: 4rem;
   }
 

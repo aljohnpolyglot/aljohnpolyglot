@@ -1,0 +1,35 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop website section mockup, 1536×1024 landscape
+Primary request: Design one standalone editorial section for the Memory Forest language-learning article. Direction: “Card Anatomy / Botanical Specimen.” The section teaches exactly how an Anki review works: recall before reveal, then rate recall honestly.
+Scene/backdrop: a botanical-black-green full-width website section, flat editorial composition, hard 1px rules, with a field-note cream inset specimen workspace.
+Style/medium: premium high-fidelity web UI screenshot, modern editorial field manual, botanical specimen plate meets serious flashcard interface. Square corners, condensed editorial typography, no app-dashboard clichés.
+Composition/framing: full 1536×1024 desktop viewport of only this section, no global navbar. At left, a narrow editorial introduction column. At right, a very large exploded Anki card presented as three vertically offset layers connected by fine specimen leader lines: (1) dark front prompt layer, (2) cream revealed-answer layer, (3) soil-brown scheduling underside with four square rating controls. Keep abundant negative space and an immediately readable left-to-right / top-to-bottom teaching sequence.
+Color palette: botanical black-green #071A13 and #0B241A, field-note cream #F0EADC, coral #F4544C, leaf green #9CCC5A, soil brown #65402F, restrained muted sage. No gradients.
+Materials/textures: almost flat; subtle recycled-paper grain only on cream; thin botanical annotation rules; no gloss.
+Text (verbatim):
+“ANKI, WITHOUT THE MYSTERY.”
+“THE CARD IS NOT THE TEST. RECALL IS.”
+“Anki handles the schedule. You supply the honest memory check.”
+“01 · FRONT”
+“TO MAKE UP ONE’S MIND”
+“Recall the phrase before revealing it.”
+“SHOW ANSWER”
+“02 · REVEAL”
+“SE DÉCIDER”
+“Je n’arrive pas à me décider.”
+“Audio · Context sentence · Source”
+“03 · RATE YOUR RECALL”
+“AGAIN”
+“< 1 MIN”
+“HARD”
+“6 MIN”
+“GOOD”
+“10 MIN”
+“EASY”
+“4 DAYS”
+“Intervals are examples. Anki adapts them to your history and deck settings.”
+“DOWNLOAD ANKI ↗”
+“RECALL → REVEAL → RATE HONESTLY”
+Typography: tall narrow condensed display face for title and numbered labels; compact clean sans serif for explanations; strong hierarchy, fully legible.
+Constraints: preserve the Memory Forest identity from the reference: botanical black-green, cream, coral, leaf green, soil brown, hard rules, square corners, oversized editorial scale. Make the exploded card dominate. The rating row must clearly read as four distinct buttons; Again coral, Hard soil brown, Good leaf green, Easy pale cream. Official-download CTA should be restrained, not a huge marketing button. No Anki logo required. Accurate behavior: user recalls before revealing, then chooses Again/Hard/Good/Easy; shown intervals are only examples.
+Avoid: gradients, glassmorphism, rounded cards, pills, generic SaaS dashboard, stock photography, tree illustration, fake metrics, excessive decoration, 3D perspective, illegible or garbled text, duplicate words, typo text, mobile layout, global navbar, footer, watermark.

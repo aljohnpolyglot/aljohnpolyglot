@@ -213,7 +213,12 @@ body.german-page > header nav.container {
     align-items: stretch;
     min-width: 0;
     height: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
 }
+
+.chapter-track-de::-webkit-scrollbar { display: none; }
 
 .chapter-track-de a {
     position: relative;
@@ -516,7 +521,9 @@ body.german-page > header nav.container {
 .route-de,
 .learning-de,
 .extra-de,
+.zdf-de,
 .books-de,
+.podcasts-de,
 .creators-de,
 .institutions-de {
     padding: clamp(62px, 7vw, 100px) clamp(22px, 5vw, 76px);
@@ -566,7 +573,7 @@ body.german-page > header nav.container {
 
 .route-track-de {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 14px;
     max-width: 1500px;
     margin: 0 auto;
@@ -759,6 +766,172 @@ body.german-page > header nav.container {
 .extra-de {
     background: rgba(239, 239, 236, 0.92);
     border-block: 1px solid var(--de-rule);
+}
+
+.zdf-de {
+    background: var(--de-black);
+    color: var(--de-white);
+}
+
+.zdf-shell-de {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+    max-width: 1460px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--de-white);
+    color: var(--de-ink);
+    box-shadow: var(--de-shadow);
+}
+
+.zdf-media-de {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    margin: 0;
+    padding: clamp(24px, 4vw, 48px);
+    overflow: hidden;
+    background: var(--de-gold);
+}
+
+.zdf-media-de::before,
+.zdf-media-de::after {
+    content: "";
+    position: absolute;
+    left: -18%;
+    width: 138%;
+    height: 56px;
+    background: var(--de-black);
+    transform: rotate(-24deg);
+}
+
+.zdf-media-de::before { top: 12%; }
+.zdf-media-de::after { bottom: 10%; background: var(--de-red); }
+
+.zdf-media-de > img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: min(520px, 58vw);
+    object-fit: contain;
+    background: var(--de-black);
+    border-radius: 8px;
+    box-shadow: 0 18px 38px rgba(7, 8, 11, 0.3);
+}
+
+.zdf-media-de figcaption {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: baseline;
+    padding-top: 16px;
+}
+
+.zdf-media-de figcaption .zdf-logo-de {
+    width: 74px;
+    height: auto;
+    display: block;
+}
+
+.zdf-media-de figcaption span {
+    color: var(--de-black);
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+.zdf-copy-de {
+    align-self: center;
+    padding: clamp(32px, 5vw, 72px);
+}
+
+.zdf-copy-de h2 {
+    max-width: 13ch;
+    margin: 0 0 22px;
+    font-family: var(--de-display);
+    font-size: clamp(2.8rem, 5vw, 4.7rem);
+    line-height: 0.91;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.zdf-copy-de > p {
+    max-width: 68ch;
+    margin: 0 0 16px;
+}
+
+.zdf-personal-de {
+    font-size: 1.08rem;
+}
+
+.zdf-personal-de strong {
+    color: var(--de-red-dark);
+}
+
+.zdf-facts-de {
+    display: grid;
+    margin: 28px 0 0;
+    border-block: 1px solid var(--de-rule);
+}
+
+.zdf-facts-de div {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--de-rule);
+}
+
+.zdf-facts-de div:last-child { border-bottom: 0; }
+
+.zdf-facts-de dt {
+    color: var(--de-red-dark);
+    font-family: var(--de-display);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.zdf-facts-de dd { margin: 0; }
+
+.zdf-actions-de {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.zdf-routes-de {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 24px;
+    background: var(--de-rule);
+}
+
+.zdf-routes-de a {
+    display: grid;
+    gap: 2px;
+    min-height: 74px;
+    padding: 14px 16px;
+    background: var(--de-soft);
+    color: var(--de-ink);
+    text-decoration: none;
+}
+
+.zdf-routes-de a:hover { background: var(--de-gold); }
+
+.zdf-routes-de strong {
+    font-family: var(--de-display);
+    text-transform: uppercase;
+}
+
+.zdf-routes-de span {
+    color: var(--de-muted);
+    font-size: 0.84rem;
 }
 
 .extra-layout-de {
@@ -1022,6 +1195,205 @@ body.german-page > header nav.container {
     margin-top: 6px;
     color: var(--de-muted);
     font-size: 0.82rem;
+}
+
+.podcasts-de {
+    background: rgba(255, 255, 255, 0.92);
+    border-top: 1px solid var(--de-rule);
+}
+
+.podcast-shelf-de {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(220px, 23vw, 300px);
+    gap: 18px;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 4px 3px 22px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-color: var(--de-red) var(--de-soft);
+    scrollbar-width: thin;
+}
+
+.podcast-card-de {
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.podcast-card-trigger-de {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--de-rule);
+    border-radius: 14px;
+    background: var(--de-white);
+    color: var(--de-ink);
+    text-align: left;
+    cursor: pointer;
+    transition: transform 170ms ease-out, box-shadow 170ms ease-out, border-color 170ms ease-out;
+}
+
+.podcast-card-trigger-de:hover {
+    transform: translateY(-4px);
+    border-color: #bcbdbf;
+    box-shadow: 0 16px 30px rgba(7, 8, 11, 0.12);
+}
+
+.podcast-cover-de {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--de-soft);
+}
+
+.podcast-cover-de::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 7px;
+    background: linear-gradient(90deg, var(--de-black) 0 44%, var(--de-red) 44% 72%, var(--de-gold) 72% 100%);
+}
+
+.podcast-cover-de img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 220ms ease-out;
+}
+
+.podcast-card-trigger-de:hover img { transform: scale(1.025); }
+
+.podcast-card-copy-de {
+    display: grid;
+    grid-template-rows: auto minmax(2.8rem, 1fr) auto;
+    gap: 10px;
+    min-height: 150px;
+    padding: 16px;
+}
+
+.podcast-card-meta-de {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--de-red-dark);
+    font-family: var(--de-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.podcast-card-title-de {
+    align-self: center;
+    font-family: var(--de-display);
+    font-size: 1.52rem;
+    line-height: 0.98;
+}
+
+.podcast-card-format-de {
+    align-self: end;
+    color: var(--de-muted);
+    font-size: 0.84rem;
+    line-height: 1.35;
+}
+
+.podcast-card-action-de {
+    display: block;
+    margin-top: 4px;
+    padding-top: 10px;
+    border-top: 1px solid var(--de-rule);
+    color: var(--de-red-dark);
+    font-family: var(--de-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.podcast-dialog-de {
+    display: grid;
+    grid-template-columns: minmax(270px, 0.75fr) minmax(0, 1.25fr);
+    max-width: 900px;
+}
+
+.podcast-modal-cover-de {
+    display: grid;
+    place-items: center;
+    padding: clamp(26px, 4vw, 48px);
+    background: var(--de-black);
+}
+
+.podcast-modal-cover-de img {
+    width: min(100%, 320px);
+    height: auto;
+    max-height: 320px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+}
+
+.podcast-modal-copy-de {
+    padding: clamp(26px, 4vw, 48px) clamp(50px, 7vw, 82px) clamp(26px, 4vw, 48px) clamp(26px, 4vw, 48px);
+    background: var(--de-paper);
+}
+
+.podcast-modal-copy-de > p:first-child {
+    margin: 0 0 12px;
+    color: var(--de-red);
+    font-family: var(--de-display);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.podcast-modal-copy-de h2 {
+    margin: 0;
+    font-family: var(--de-display);
+    font-size: clamp(2rem, 3vw, 3.1rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+#podcast-modal-publisher-de,
+#podcast-modal-level-de {
+    margin: 12px 0 0;
+    color: var(--de-muted);
+}
+
+#podcast-modal-description-de {
+    margin: 24px 0 0;
+}
+
+.podcast-modal-guidance-de,
+.podcast-modal-sample-de {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--de-rule);
+}
+
+.podcast-modal-guidance-de h3,
+.podcast-modal-sample-de h3 {
+    margin: 0 0 8px;
+    font-family: var(--de-display);
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+
+.podcast-modal-guidance-de p,
+.podcast-modal-sample-de p {
+    margin: 0;
+}
+
+.podcast-modal-copy-de .modal-links-de {
+    margin-top: 24px;
 }
 
 .creators-de {
@@ -1468,7 +1840,8 @@ body.german-page > header nav.container {
 }
 
 .creator-dialog-de .modal-stripe-de,
-.book-dialog-de .modal-stripe-de {
+.book-dialog-de .modal-stripe-de,
+.podcast-dialog-de .modal-stripe-de {
     grid-column: 1 / -1;
 }
 
@@ -1560,6 +1933,9 @@ body.german-page > header nav.container {
 }
 
 .creator-modal-media-de {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: var(--de-soft);
 }
 
@@ -1642,6 +2018,10 @@ body.german-page > header nav.container {
 }
 
 @media (min-width: 901px) and (max-width: 1180px) {
+    .chapter-track-de {
+        justify-content: flex-start;
+    }
+
     .hero-de {
         grid-template-columns: minmax(300px, 0.86fr) 118px minmax(390px, 1.14fr);
         padding-inline: 34px;
@@ -1652,7 +2032,7 @@ body.german-page > header nav.container {
     }
 
     .route-track-de {
-        grid-template-columns: repeat(5, minmax(210px, 1fr));
+        grid-template-columns: repeat(6, minmax(210px, 1fr));
         overflow-x: auto;
         padding-bottom: 18px;
         scroll-snap-type: inline mandatory;
@@ -1748,8 +2128,13 @@ body.german-page > header nav.container {
 
     .learning-audio-de,
     .learning-practice-de,
-    .extra-layout-de {
+    .extra-layout-de,
+    .zdf-shell-de {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .zdf-media-de > img {
+        height: min(560px, 76vw);
     }
 
     .learning-practice-de .linguno-visual-de {
@@ -1776,7 +2161,8 @@ body.german-page > header nav.container {
     }
 
     .creator-dialog-de,
-    .book-dialog-de {
+    .book-dialog-de,
+    .podcast-dialog-de {
         grid-template-columns: minmax(0, 1fr);
     }
 
@@ -1841,6 +2227,34 @@ body.german-page > header nav.container {
         gap: 5px;
     }
 
+    .zdf-media-de,
+    .zdf-copy-de {
+        padding: 24px 18px;
+    }
+
+    .zdf-media-de > img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    .zdf-media-de figcaption {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .zdf-media-de figcaption span {
+        text-align: left;
+    }
+
+    .zdf-facts-de div,
+    .zdf-routes-de {
+        grid-template-columns: 1fr;
+    }
+
+    .zdf-actions-de .button-de {
+        width: 100%;
+    }
+
     .playlist-item-de {
         grid-template-columns: 96px 1fr;
     }
@@ -1854,12 +2268,14 @@ body.german-page > header nav.container {
         height: 54px;
     }
 
-    .route-de,
-    .learning-de,
-    .extra-de,
-    .books-de,
-    .creators-de,
-    .institutions-de {
+.route-de,
+.learning-de,
+.extra-de,
+.zdf-de,
+.books-de,
+.podcasts-de,
+.creators-de,
+.institutions-de {
         padding: 58px 18px;
     }
 
@@ -1973,15 +2389,19 @@ body.german-page > header nav.container {
     .creator-modal-copy-de,
     .creator-modal-media-de,
     .book-modal-cover-de,
-    .book-modal-copy-de {
+    .book-modal-copy-de,
+    .podcast-modal-cover-de,
+    .podcast-modal-copy-de {
         padding: 28px 22px;
     }
 
-    .book-modal-cover-de {
+    .book-modal-cover-de,
+    .podcast-modal-cover-de {
         padding-top: 68px;
     }
 
-    .book-modal-copy-de {
+    .book-modal-copy-de,
+    .podcast-modal-copy-de {
         padding-right: 22px;
     }
 }

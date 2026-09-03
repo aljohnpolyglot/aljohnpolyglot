@@ -179,7 +179,7 @@ The page starts below the shared 70px site navbar. A 64px German chapter bar sti
 
 The first viewport is a three-part split: personal story, a 170–240px V cut, and the featured player. The outer columns use approximately 0.9fr and 1.18fr, the hero stays at least 610px tall, and the video remains a recognizable 16:9 player with its clickable local-thumbnail entry. At 900px the layout becomes one column and the vertical V turns into a horizontal downward cut between story and player.
 
-Content sections use fluid block and inline spacing, with primary modules and shelves capped at 1460px. Route cards form five columns on wide screens, a contained horizontal track through intermediate widths, and a touch-scrollable card rail on narrower screens. Learning and Extr@ features use two-column player/copy layouts until 900px. Books, creator categories, and institutions each own their horizontal overflow, use scroll snapping and overscroll containment, and never create document-level sideways scrolling.
+Content sections use fluid block and inline spacing, with primary modules and shelves capped at 1460px. Route cards form six columns on wide screens, a contained horizontal track through intermediate widths, and a touch-scrollable card rail on narrower screens. Learning, Extr@, and ZDF features use two-column media/copy layouts until 900px. Books, creator categories, and institutions each own their horizontal overflow, use scroll snapping and overscroll containment, and never create document-level sideways scrolling.
 
 At 600px, section padding tightens, creator and book cards occupy most of the viewport without clipping, institution features stack image above copy, and shelf arrows that duplicate direct touch scrolling are removed. Dialogs become edge-to-edge, full-height folios with one-column content and internal vertical scrolling.
 
@@ -229,15 +229,16 @@ The V itself is a nested polygon cut: black outside, red in the middle, gold ins
 
 ### Learning Route and Modules
 
-- Route cards are white, lightly ruled, and finished by a six-pixel black-red-gold seam. They form a quick path into Complete German, Linguno, Extr@, books, and creator voices.
+- Route cards are white, lightly ruled, and finished by a six-pixel black-red-gold seam. They form a quick path into Complete German, Linguno, Extr@, ZDF, books, and creator voices.
 - Complete German pairs a black copy panel with the verified SoundCloud embed inside a diagonal red-gold-paper frame.
 - Linguno uses a gold training field, diagonal black and red cuts, and the local German-jersey mascot.
 
-### Personal and Extr@ Players
+### Personal Video, Extr@, and ZDF
 
 - Aljohn's single verified German video stays in its own featured 16:9 player and clickable local-thumbnail list entry.
 - Extr@ uses a separate player plus a vertically contained 13-episode list. The current episode receives a soft background and a red inset seam; durations use tabular numerals.
 - Player and episode thumbnails remain local, lazy-loaded below the first viewport, and backed by a local fallback.
+- The dedicated ZDF feature follows the public-broadcaster pattern proven by TF1+, RTVE Play, and RaiPlay while remaining inside the German jersey world. It pairs verified local programme artwork with Aljohn's documented favourite, neutral series context, listening guidance, accessibility labels, and direct official destinations.
 
 ### Bookshelves
 

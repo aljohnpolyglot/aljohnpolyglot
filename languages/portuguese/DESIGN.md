@@ -145,7 +145,7 @@ Pitch greens establish place, Canarinha yellow marks consequential choices, fede
 
 The page uses a fluid inline gutter, generous vertical chapter rhythm, and a centered maximum content field. The shared global navbar remains present; the yellow chapter bar sits below it, centered at desktop widths and becoming a contained single-row scroller on narrow screens.
 
-The hero is a split pitch: the personal statement and actions face a real day-one/day-sixty image within visible field markings. The playlist pairs a featured player with a lineup rail. Podcasts, books, and creator categories use contained horizontal shelves with scroll snapping, while creator categories remain independent labeled rows. The document itself never gains horizontal overflow.
+The hero is a split pitch: Aljohn's expanded first-person story faces an accessible carousel of real community photographs. His personal playlist follows immediately as the second chapter, pairing a featured player with a lineup rail. Podcasts, books, and creator categories use contained horizontal shelves with scroll snapping, while creator categories remain independent labeled rows. The document itself never gains horizontal overflow.
 
 At 980px, the hero and playlist stack, the three match moments become a single column, and the tactics board simplifies. At 760px, headings, creator headers, community features, and modal bodies collapse to one column; navigation changes to a left-aligned horizontal track. At 520px, calls to action become full width, shelf cards switch to viewport-relative widths, and dialogs become edge-to-edge.
 

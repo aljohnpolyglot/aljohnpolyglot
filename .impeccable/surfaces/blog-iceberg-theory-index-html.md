@@ -17,7 +17,7 @@ Language learners who currently measure progress through levels, plus viewers co
 
 ## Content truth
 
-The supplied essay and five supplied iceberg graphics are visual-reference material only. Ten levels descend through Survival, Functional, Mastery, Code, Action, Shared World: Factual, Shared World: Narrative, Nostalgia, Expertise, and Unspoken Code. Aljohn's first-person voice stays primary. The shipped interactive diagram must be code-native and contain no stock or photographic imagery.
+The supplied essay and five supplied iceberg graphics are visual-reference material only. Ten levels descend through Survival, Functional, Mastery, Code, Action, Shared World: Factual, Shared World: Narrative, Nostalgia, Expertise, and Unspoken Code. Aljohn's first-person voice stays primary. The model is presented as a conceptual compass rather than a validated scale: depth is non-linear, culture is plural, and CEFR remains useful for the assessment job it was designed to do. The shipped interactive diagram must be code-native and contain no stock or photographic imagery.
 
 ## Chosen direction
 
@@ -29,7 +29,7 @@ The first wheel/touch movement crosses a bright, physical waterline. The sky col
 
 ## Implementation fidelity inventory
 
-- Component grammar: one continuous sticky visual chamber, ten long-form depth stops, a jeepney route rail, painted route plaques, documentary bands, and a final surfaced essay. No card grid.
+- Component grammar: one continuous sticky visual chamber, a pre-dive CEFR comparison and three-band map, ten long-form depth stops with native expandable field notes, a jeepney route rail, painted route plaques, documentary bands, and a final surfaced essay. No card grid.
 - Color: near-black `#06101a`, surface blue `#168fc8`, submerged cobalt `#063f72`, trench `#020711`, signal red `#c83725`, route yellow `#f4b51e`, ice `#e9f7fb`.
 - Type: self-hosted Barlow Condensed for painted display lettering; Barlow for readable editorial text.
 - Media: one inline, code-native SVG iceberg supplies all ten individually focusable and clickable strata. The supplied infographic PNGs inform the hierarchy and proportions but do not appear in the page. Aljohn's supplied CEFR-versus-Iceberg Drake meme appears once as an editorial interlude before the dive.

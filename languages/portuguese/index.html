@@ -19,16 +19,15 @@
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="css/page-language-portuguese.css?v=20260903-1">
+    <link rel="stylesheet" href="css/page-language-portuguese.css?v=20260903-5">
 </head>
 <body class="portuguese-page">
     <!-- DIRECTION CONTRACT — REVISTA DE JOGO / APPROVED OPTION A
     Thesis: Portuguese became real for Aljohn through people, events and conversation; football opens the story but does not become the interface.
-    Composition: preserve the shared white navbar and centered yellow chapter bar; the first viewport is a deep-green editorial story panel beside one dominant verified event photograph, with a smaller verified photo overlapping the fold; a warm-paper contents strip follows immediately.
+    Composition: preserve the shared white navbar and centered yellow chapter bar; the first viewport pairs Aljohn's expanded story with an accessible carousel of verified event photographs; his personal video player follows immediately as section two.
     Visual world: contemporary Brazilian sports-weekly typography, Canarinha yellow decisions, cobalt editorial marks, warm paper, documentary photography and precise print rhythm.
     Non-negotiables: no YouTube thumbnail in the hero, no pitch/dashboard/scoreboard UI, no generic page-wide card grid, no stretched media, no invented event imagery, and no replacement of the independent creator shelves or visible CEFR control.
-    Mobile: recompose the cover into story → dominant event portrait → inset photograph → contents rail while keeping both navigation layers usable and preventing document overflow.
-    Approved comp: .impeccable/mocks/portuguese-revista-de-jogo-cover-story-approved.png
+    Mobile: recompose the cover into story → carousel → personal player while keeping both navigation layers usable and preventing document overflow.
     -->
     <a class="skip-link-pt" href="#conteudo-principal">Pular para o conteúdo</a>
     <header id="main-header-placeholder"></header>
@@ -48,30 +47,27 @@
     <main id="conteudo-principal">
         <section class="cover-story" id="minha-historia" aria-labelledby="cover-title">
             <div class="cover-story__copy">
-                <p class="edition-mark" aria-label="Revista de Jogo, edição em português"><span>Revista de Jogo</span><span>Português</span></p>
                 <h1 id="cover-title">Meu português <strong>aconteceu entre pessoas.</strong></h1>
                 <p class="cover-story__lede">Do futebol às conversas que encontrei nas Filipinas.</p>
+                <div class="cover-story__story">
+                    <p>Comecei ouvindo o Brasil pelo futebol. A rotina de estudo me deu palavras; falar com pessoas me deu ritmo, surpresa e vontade de continuar.</p>
+                    <p>Nas Filipinas, o português passou a ter rostos e histórias. Conversar com brasileiros e angolanos ampliou aquilo que eu entendia como mundo lusófono.</p>
+                </div>
                 <div class="cover-story__actions">
                     <a class="editorial-button editorial-button--yellow" href="#meus-videos">Ver minhas conversas <span aria-hidden="true">→</span></a>
-                    <a class="editorial-button editorial-button--line" href="#criadores">Conhecer as vozes</a>
                 </div>
-            </div>
-            <figure class="cover-story__main-photo">
-                <img src="images/community/calvin-castiel-with-aljohn.jpg" width="960" height="1280" alt="Aljohn, Calvin Castiel e outro participante em um encontro ao ar livre à noite" fetchpriority="high" decoding="async">
-            </figure>
-        </section>
-
-        <section class="story-spread" id="historia-em-fotos" aria-labelledby="story-title">
-            <div class="story-spread__copy">
-                <h2 id="story-title">A língua saiu do estudo e entrou na conversa.</h2>
-                <p>Comecei ouvindo o Brasil pelo futebol. A rotina de estudo me deu palavras; falar com pessoas me deu ritmo, surpresa e vontade de continuar.</p>
-                <p>Nas Filipinas, o português passou a ter rostos e histórias. Conversar com brasileiros e angolanos ampliou aquilo que eu entendia como mundo lusófono.</p>
             </div>
             <div class="story-carousel" aria-label="Fotografias de conversas em português">
                 <div class="story-carousel__viewport" id="story-carousel-viewport" tabindex="0" aria-live="polite">
                     <figure class="story-carousel__slide">
                         <div class="story-carousel__frame">
-                            <img src="images/community/angolan-event-interview-blue-suit.jpg" width="960" height="1280" alt="Aljohn segura um microfone ao lado de um participante de terno azul durante uma gravação" loading="lazy" decoding="async">
+                            <img src="images/community/calvin-castiel-with-aljohn.jpg" width="960" height="1280" alt="Aljohn, Calvin Castiel e outro participante em um encontro ao ar livre à noite" fetchpriority="high" decoding="async">
+                        </div>
+                        <figcaption>Com Calvin, o português abriu espaço para Angola e para novas histórias lusófonas.</figcaption>
+                    </figure>
+                    <figure class="story-carousel__slide">
+                        <div class="story-carousel__frame">
+                            <img src="images/community/angolan-event-interview-blue-suit.jpg" width="960" height="1280" alt="Aljohn segura um microfone ao lado de um participante de terno azul durante uma gravação" decoding="async">
                         </div>
                         <figcaption>Ouvir antes de responder continua sendo parte do aprendizado.</figcaption>
                     </figure>
@@ -92,7 +88,7 @@
                     <button type="button" data-story-slide="-1" aria-controls="story-carousel-viewport" aria-label="Fotografia anterior">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
                     </button>
-                    <span id="story-carousel-status" aria-live="polite">1 / 3</span>
+                    <span id="story-carousel-status" aria-live="polite">1 / 4</span>
                     <button type="button" data-story-slide="1" aria-controls="story-carousel-viewport" aria-label="Próxima fotografia">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </button>

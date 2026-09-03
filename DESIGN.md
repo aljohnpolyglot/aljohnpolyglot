@@ -23,6 +23,12 @@ colors:
   pp-muted: "#5e6670"
   pp-paper: "#fbfbfa"
   pp-line: "#cfd4da"
+  tl-lime: "#a6cf2a"
+  tl-pink: "#ef3856"
+  tl-orange: "#f15a24"
+  tl-cream: "#f8e8c3"
+  tl-ink: "#11100f"
+  tl-blue: "#102968"
 typography:
   display:
     fontFamily: "Barlow Condensed, sans-serif"
@@ -72,6 +78,18 @@ typography:
     fontWeight: 400
     lineHeight: 1.55
     letterSpacing: "normal"
+  tl-display:
+    fontFamily: "Barya, Arial Black, sans-serif"
+    fontSize: "clamp(3rem, 8vw, 7rem)"
+    fontWeight: 800
+    lineHeight: 0.82
+    letterSpacing: "0.01em"
+  tl-body:
+    fontFamily: "Archivo, Arial, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
 rounded:
   square: "0"
   seam-soft: "0.2rem"
@@ -79,6 +97,8 @@ rounded:
   pocket: "0 0 1.15rem 1.15rem"
   final-pocket: "0 0 1.75rem 1.75rem"
   circle: "50%"
+  tl-chrome: "2rem"
+  tl-ticket: "1.15rem"
 spacing:
   xs: "0.45rem"
   sm: "0.75rem"
@@ -393,3 +413,15 @@ Polyglot Papers behaves like an instruction-manual archive: a decisive cobalt ma
 **The One Fold Rule.** Lead with one featured paper and quieter indexed rows. Never flatten the archive into equal-weight cards.
 
 **The Measured Motion Rule.** Motion is limited to the paper-action arrow microinteraction and must disappear under reduced-motion preferences.
+
+## Tagalog — Sakay sa Tagalog
+
+The Tagalog surface is a restored-jeepney dashboard theater built around Aljohn's real Jared/Ryan challenge and broader Tagalog playlist. It uses locally hosted Barya display lettering, Archivo for readable copy, warm jeepney wood, matte painted signboards, polished chrome framing, and lime, hot-pink, orange, cream, ink, and navy accents.
+
+- Keep the global navbar and footer canonical; the chrome route strip is secondary navigation.
+- Use Barya for destination signs, headings, labels, and short calls to action only. Use Archivo for paragraphs and supporting copy.
+- Preserve every video thumbnail in full with a 16:9 media well and `object-fit: contain`; letterbox instead of cropping.
+- Let real videos lead. Generated imagery is limited to material textures, never people, thumbnails, or editorial evidence.
+- Use visible fasteners, soft offset depth, fare-ticket labels, and chrome frames as the component grammar. Avoid generic floating cards, pills, glass, and soft SaaS styling.
+- The featured hero is one centered dashboard theater: semantic route-board heading above the live player, generated chrome-and-wood frame as a noninteractive overlay, and side chevrons.
+- On narrow screens, scale the dashboard as one composition and keep its local navigation in a contained horizontal track without document overflow.
